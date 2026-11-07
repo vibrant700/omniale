@@ -11,73 +11,59 @@
 <header class="hero">
 <div class="eyebrow">OMNIALE · CASE 02 · 教育、训练与学习应用</div>
 <h1>采样率与混叠 → <span style="white-space:nowrap">中文教学短片</span></h1>
-<p class="lead">将知识资料、真实声音素材和视觉风格参考，制作成面向大学新生的教学动画。考察智能体能否把科学解释、动态画面与实际声音准确对应起来。</p>
-<div class="tags"><span>知识转教学视频</span><span>动画 × 旁白 × 字幕</span><span>可重建工程</span><span class="neutral">0.1-pilot · 尚未测试模型</span></div>
-<div class="facts"><div><strong>60—120 秒</strong><span>中文教学短片</span></div><div><strong>3 组声音示例</strong><span>原声 / 混叠 / 滤波</span></div><div><strong>720p · 25 fps</strong><span>H.264 / AAC 48 kHz</span></div><div><strong>100 分</strong><span>五个维度与关键门槛</span></div></div>
+<p class="lead">面向大学新生，把一个定义清楚的小知识点制作成风格协调的教学短片。先提出问题，再用可检查的例子动态演示，最后说明结论。</p>
+<div class="tags"><span>知识转教学视频</span><span>动画 × 旁白 × 字幕</span><span>可重建工程</span><span class="neutral">0.2-draft · 尚未测试模型</span></div>
+<div class="facts"><div><strong>60—120 秒</strong><span>中文教学短片</span></div><div><strong>一个可检查的例子</strong><span>示例与参数自主设计</span></div><div><strong>动态演示</strong><span>动画、讲解与字幕一致</span></div><div><strong>100 分</strong><span>五个维度与关键门槛</span></div></div>
 </header>
 <nav class="nav side-nav" aria-label="章节导航"><a href="#task">题目要求</a><a href="#inputs">题目输入</a><a href="#results">模型交付</a><a href="#rubric">评分标准</a><a href="#traces">运行轨迹</a><a href="#analysis">错误分析</a><a href="#downloads">文件下载</a></nav>
 <section id="task" class="content-section">
 <h2>一、题目要求</h2>
-<article class="task-text"><h3>任务</h3><p>你为大学音频入门课制作一段 60—120 秒中文教学动画。受众没有信号处理基础。利用提供的资料与素材，自行设计叙事、分镜、动画、旁白与字幕，让观众理解采样、混叠及抗混叠处理。</p>
-<h3>必须讲清楚的内容</h3><ol>
-<li>说明采样率的含义与单位，区分信号频率和采样率；动态展示波形、采样时刻及取样值。</li>
-<li>对同一 3 kHz 信号比较 8 kHz 与 4 kHz 采样，使时间轴、波形、采样点和结论一致。</li>
-<li>解释未做抗混叠处理时，为什么本例的 3 kHz 信号在 4 kHz 采样下与 1 kHz 信号产生相同采样值。</li>
-<li>完整播放原声、混叠、滤波三段声音。每段预留独立试听，不叠旁白或配乐，标签与实际音轨对应。</li>
-<li>说明采样前限制带宽的作用：滤掉高频不等于恢复原声，事后升采样也不能找回已丢失的信息。</li>
-<li>使用真实中文旁白和可读字幕。慢速波形动画是毫秒尺度示意，不能说成声音的实际播放速度。</li>
-</ol></article>
-<div class="grid"><article class="card"><h3>工作方式</h3><p>允许动画脚本、剪辑软件、FFmpeg 及预先声明的 TTS。叙事和视觉方案自由，不要求复刻唯一分镜。开始前需明确可用工具、网络条件和运行预算。</p></article><article class="card"><h3>交付规格</h3><p>成片、独立字幕、三段试听的时间定位记录，以及可重建工程、依赖素材和说明文档。成片需有真实动画与音轨，字幕和定位记录需与成片一致。</p></article></div>
-<details id="full-task" class="full-task">
-<summary>查看完整题面（点击展开 / 收起）</summary>
-<article class="full-task-content">
-<h3>将采样率与混叠制作成中文教学短片</h3>
-<p>你为大学音频入门课制作一段60—120秒中文教学动画。读者没有信号处理基础。请利用提供的事实资料和声音素材，自行设计叙事、分镜、动画、旁白与字幕，让读者理解采样、混叠及抗混叠处理。</p>
+<article class="task-text"><h3>现实场景</h3><p>教师想把一个小知识点做成有统一视觉风格的短片，用动画、例子和讲解帮助学生理解。这里的 vibe 指风格协调，不是只评“高级感”。</p>
+<h3>任务要求</h3><p>本题选择“采样率与混叠”，制作约 60—120 秒的中文教学片。要先提出问题，再用一个可检查的例子演示，最后说明结论。动画变化、标记、旁白和字幕对应同一个事实，不能讲对但画错。允许自主设计，不要求照抄参考风格。</p></article>
+<div class="grid"><article class="card"><h3>创作与工具</h3><p>例子、参数和叙事自主设计。提供基础动画模板与配音入口，减少脚手架代码；不要求使用固定频率、固定声音片段或照抄参考。</p></article><article class="card"><h3>交付</h3><p>教学 MP4、讲解文本与实际音轨、字幕、可编辑或可重建工程、素材与关键事实对应表。</p></article></div>
+<details id="full-task" class="full-task"><summary>查看完整题面（点击展开 / 收起）</summary><article class="full-task-content">
+<h3>采样率与混叠教学短片</h3>
+<h4>现实场景</h4>
+<p>教师想把一个小知识点做成有统一视觉风格的短片，用动画、例子和讲解帮助学生理解。这里的 vibe 指风格协调，不是只评“高级感”。</p>
+<h4>任务要求</h4>
+<p>本题选择的概念是“采样率与混叠”。制作约 60—120 秒的中文教学片。要先提出问题，再用一个可检查的例子演示，最后说明结论。动画变化、标记、旁白和字幕对应同一个事实，不能讲对但画错。允许自主设计，不要求照抄参考风格。</p>
+<p>例子和参数可以自行选择，也可使用提供的示例素材；不强制指定频率、采样率或播放固定数量的声音片段。</p>
 <h4>输入</h4>
 <ul>
-<li>input/knowledge.md：审核用知识依据、示例条件及常见误解，非成片脚本。</li>
-<li>input/audio/：四段48 kHz、单声道、16-bit PCM声音，来源和各自实验条件见 input/manifest.json。</li>
-<li>input/style_reference.mp4 与 STYLE.md：只参考视觉节奏、颜色、布局，不要求逐帧复刻。</li>
-<li>input/SOURCES.md：来源和生成方法说明。</li>
+<li>input/knowledge.md：知识事实、教学目标、受众、术语及常见误解；不给完整成片脚本和全部时间轴。</li>
+<li>input/audio/ 与 input/manifest.json：可选例子素材及生成条件，不要求全部使用。</li>
+<li>input/style_reference.mp4 与 STYLE.md：短音视频风格参考及可读性说明，不是唯一画面标准。</li>
+<li>tools/：基础动画模板、使用说明与配音引擎入口。用于减少脚手架代码，不包含本题成片或分镜。</li>
+<li>input/SOURCES.md：素材和资料来源。</li>
 </ul>
-<h4>必须实现的教学内容</h4>
-<ol>
-<li>说明采样率的单位与含义，区分信号频率和采样率。动态展示连续波形、采样时刻及取样值。</li>
-<li>对同一3 kHz单频信号比较8 kHz与4 kHz采样条件。使时间轴、波形、采样点、标注和结论相互一致。图中显示的是毫秒尺度示意，不能把波形的慢速动画说成真实声音的播放速度。</li>
-<li>展示刻意不做抗混叠处理时，3 kHz信号以4 kHz采样可能被解释为1 kHz；通过共享采样点或等效动态演示解释原因。</li>
-<li>实际播放source_3000.wav、aliased_1000.wav和filtered.wav各一次完整声音示例，并明确对应条件。每次预留至少2秒单独试听，不叠旁白、音乐或其他声音；可加短静音引导和轻微整体增益调整，不能变速、变调或替换素材。</li>
-<li>说明采样前限制输入带宽的作用，以及丢失的信息不能靠事后提高采样率恢复。filtered.wav中3 kHz成分被显著抑制，不应被解释为恢复原声。</li>
-<li>使用中文实际旁白和字幕，保证可理解的图例、坐标、数字与音画对应。允许自由安排顺序、比喻和视觉风格，不强制逐句照抄资料。</li>
-</ol>
-<h4>交付</h4>
+<p>受众为没有信号处理基础的大学新生。教学目标是让观众理解采样率的含义，以及采样条件不足时可能出现的混叠。知识资料须在正式测试前由教师审核；配音引擎和模板须在所有模型使用的同一环境中预检。</p>
+<h4>输出</h4>
 <p>在 submission/ 中提交：</p>
 <ul>
-<li>final.mp4：1280×720、25 fps、60—120秒，H.264画面、AAC 48 kHz声音；有真实动画、中文旁白与可读字幕。</li>
-<li>captions.srt：与实际旁白对应的UTF-8字幕，按正常语义分句。</li>
-<li>media_map.json：三条试听定位记录，格式为 {"demos":[{"source":"source_3000.wav","start":12.0,"end":14.4}]}。另外两条使用aliased_1000.wav、filtered.wav；时间为最终成片秒数，每条必须覆盖对应原始素材的全部2.4秒，可有最多0.15秒静音边缘，不重叠。字段是定位索引，评分仍检查实际音轨。</li>
-<li>project/：能重建成片的源文件、脚本和实际依赖素材。</li>
-<li>README.md：完整重建命令、软件/依赖版本、来源署名、旁白生成方式及已知不足。</li>
+<li>教学 MP4。</li>
+<li>讲解文本与实际音轨。</li>
+<li>字幕。</li>
+<li>可编辑或可重建工程及必要使用说明。</li>
+<li>素材与关键事实对应表：说明所用素材、关键事实或示例结果及其成片位置。可用 Markdown、表格或 JSON，不限定固定字段。</li>
 </ul>
-<h4>工具与执行</h4>
-<p>允许动画脚本、剪辑工具、FFmpeg和预先声明的TTS。无需指定专业软件或强制GUI。主办方在开始前告知已验证的配音与渲染工具、网络条件和预算；缺失必要工具应先解决环境，而不算模型能力失败。仅使用本次候选包及允许的工具，不读取其他答卷、私有参考或评分数据。</p>
 <h4>验收</h4>
-<p>知识与示例35分、动态演示25分、声音及音画对应20分、可读性与风格10分、工程与交付10分。总分至少80，且核心概念/示例正确、三段实际声音示范合格、关键动态演示存在、工程能重建，才通过。缺失真实成片不能通过。允许多种有效讲解和实现方法，评分不比较唯一参考分镜。</p>
-</article>
-</details>
-</section>
-<section id="inputs" class="content-section"><h2>二、题目输入</h2><p>以下均为本题程序生成的候选输入，不是模型制作结果。三段使用相同的 48 kHz 播放格式，实验中的采样条件另行标明。</p><p class="audio-note">建议以较低音量试听。每段 2.4 秒，播放不会自动开始。</p><div class="audio-grid"><article class="audio-card"><div class="audio-label"><span class="mono">A / ORIGINAL</span><span class="signal-dot blue-bg"></span></div><h3>原始单音</h3><p class="frequency">3 <small>kHz</small></p><p>未经本例低采样率处理的原始信号。</p><audio controls preload="metadata" aria-label="原始3千赫兹声音" src="assets/source_3000.wav"></audio><a href="assets/source_3000.wav" download>下载 WAV ↓</a></article><article class="audio-card"><div class="audio-label"><span class="mono">B / ALIASED</span><span class="signal-dot coral-bg"></span></div><h3>混叠后的声音</h3><p class="frequency coral">1 <small>kHz</small></p><p>故意省略抗混叠处理，以 4 kHz 采样。</p><audio controls preload="metadata" aria-label="混叠后1千赫兹声音" src="assets/aliased_1000.wav"></audio><a href="assets/aliased_1000.wav" download>下载 WAV ↓</a></article><article class="audio-card"><div class="audio-label"><span class="mono">C / FILTERED</span><span class="signal-dot gray-bg"></span></div><h3>先低通，再降采样</h3><p class="quiet">接近静音</p><p>3 kHz 已被抑制，近零输出是预期结果。</p><audio controls preload="metadata" aria-label="低通处理后接近静音的声音" src="assets/filtered.wav"></audio><a href="assets/filtered.wav" download>下载 WAV ↓</a></article></div><details class="material-details"><summary>候选包里还有什么？ <span>＋</span></summary><div class="details-content"><ul><li><strong>事实资料：</strong>采样条件、数学示例、适用边界与常见误解。</li><li><strong>辅助音频：</strong>1 kHz 单音，可辅助比较。</li><li><strong>风格参考：</strong>原创几何动画与视觉规范，非答案分镜。</li><li><strong>素材清单：</strong>生成说明、时长、格式与 SHA256 校验值。</li></ul><video controls preload="metadata" aria-label="候选输入中的视觉风格参考" src="assets/style_reference.mp4"></video><p class="caption">8 秒动态风格参考；只参考留白、色彩和运动节奏。</p></div></details><h3>原理对照：同一信号，不同采样率</h3><p class="caption">页面辅助演示，非模型交付。两条曲线始终保留，切换采样率观察采样点是否同时落在两条曲线上。</p><div class="experiment"><div class="experiment-header"><span class="mono">FIG. 01</span><span>不同采样条件，同一个信号</span><span class="live">交互演示</span></div><div class="experiment-values"><div><span>原始信号</span><strong>3<span> kHz</span></strong></div><div><span>采样率</span><strong id="rate-value">4<span> kHz</span></strong></div><div><span id="alias-label">对照信号</span><strong id="alias-value" class="coral">1<span> kHz</span></strong></div></div><div class="canvas-wrap"><canvas id="wave" role="img" aria-label="3千赫兹原信号与1千赫兹对照信号，4千赫兹采样时采样值全部重合；黑点为3千赫兹信号的采样值"></canvas></div><div class="legend"><span><i class="line blue"></i>3 kHz 原信号</span><span><i class="dot"></i>3 kHz 采样值</span><span><i class="line coral-line"></i>1 kHz 对照信号</span></div><div class="experiment-controls"><span>切换采样率</span><div class="segmented" role="group" aria-label="模拟采样率"><button type="button" data-rate="4000" aria-pressed="true">4 kHz</button><button type="button" data-rate="8000" aria-pressed="false">8 kHz</button></div></div><p id="sampling-explanation" class="sampling-explanation" aria-live="polite">4 kHz 采样：黑点同时落在 3 kHz 与 1 kHz 曲线上，两个信号的采样值全部重合，无法区分。</p><p class="experiment-note">数学原理演示，非模型交付。横轴为 0—2 毫秒；未模拟真实声音播放速度。</p></div></section>
+<p>知识与例子正确 35 分；实际动画清楚呈现关键关系 25 分；讲解、字幕、画面阶段一致 20 分；可读性和明确风格约束 10 分；工程与交付 10 分。对每个知识点查成片证据，不评分抽象“启发性”或未经测量的学习效果。</p>
+<p>核心概念错误、示例结果错误、仅交文字或静态 PPT 冒充要求的动态演示，均不通过。</p>
+<p>保留创作，不扩大成科学模型研发。提供基础动画工具，防止大量脚手架代码主导难度。本题归音视频制作，不单独证明原生感知优势。</p>
+</article></details></section>
+<section id="inputs" class="content-section"><h2>二、题目输入</h2><p>输入包括知识资料、教学目标、受众与术语、可选例子素材、风格参考、字体说明、配音入口和基础动画模板。公开资料给事实，不给完整脚本与全部时间轴。</p><div class="callout"><strong>基础工具与审核状态</strong><p>候选包提供通用动画模板与配音入口；已有声音仅作可选示例，不要求全部使用。正式测试前仍需教师审核知识与示例、统一环境预检及配音引擎联通检查。</p></div><h3>可选声音素材</h3><p>以下由程序生成，非模型制作结果。具体数值只说明这组素材，不限定受测模型的例子设计。</p><p class="audio-note">建议以较低音量试听。每段 2.4 秒，播放不会自动开始。</p><div class="audio-grid"><article class="audio-card"><div class="audio-label"><span class="mono">A / ORIGINAL</span><span class="signal-dot blue-bg"></span></div><h3>原始单音</h3><p class="frequency">3 <small>kHz</small></p><p>未经本例低采样率处理的原始信号。</p><audio controls preload="metadata" aria-label="原始3千赫兹声音" src="assets/source_3000.wav"></audio><a href="assets/source_3000.wav" download>下载 WAV ↓</a></article><article class="audio-card"><div class="audio-label"><span class="mono">B / ALIASED</span><span class="signal-dot coral-bg"></span></div><h3>混叠后的声音</h3><p class="frequency coral">1 <small>kHz</small></p><p>故意省略抗混叠处理，以 4 kHz 采样。</p><audio controls preload="metadata" aria-label="混叠后1千赫兹声音" src="assets/aliased_1000.wav"></audio><a href="assets/aliased_1000.wav" download>下载 WAV ↓</a></article><article class="audio-card"><div class="audio-label"><span class="mono">C / FILTERED</span><span class="signal-dot gray-bg"></span></div><h3>先低通，再降采样</h3><p class="quiet">接近静音</p><p>3 kHz 已被抑制，近零输出是预期结果。</p><audio controls preload="metadata" aria-label="低通处理后接近静音的声音" src="assets/filtered.wav"></audio><a href="assets/filtered.wav" download>下载 WAV ↓</a></article></div><details class="material-details"><summary>候选包里还有什么？ <span>＋</span></summary><div class="details-content"><ul><li><strong>事实资料：</strong>采样条件、数学示例、适用边界与常见误解。</li><li><strong>辅助音频：</strong>1 kHz 单音，可辅助比较。</li><li><strong>风格参考：</strong>原创几何动画，只供参考，不要求照抄配色和分镜。</li><li><strong>基础工具：</strong>通用动画模板、字体使用说明与配音引擎入口。</li><li><strong>素材清单：</strong>生成说明、时长、格式与 SHA256 校验值。</li></ul><video controls preload="metadata" aria-label="候选输入中的视觉风格参考" src="assets/style_reference.mp4"></video><p class="caption">8 秒动态风格参考；只参考留白、色彩和运动节奏。</p></div></details><h3>原理对照：同一信号，不同采样率</h3><p class="caption">可选数学示例，非模型交付，也不是必须复刻的答案。两条曲线始终保留，切换采样率观察采样点；成片可采用其他正确例子。</p><div class="experiment"><div class="experiment-header"><span class="mono">FIG. 01</span><span>不同采样条件，同一个信号</span><span class="live">交互演示</span></div><div class="experiment-values"><div><span>原始信号</span><strong>3<span> kHz</span></strong></div><div><span>采样率</span><strong id="rate-value">4<span> kHz</span></strong></div><div><span id="alias-label">对照信号</span><strong id="alias-value" class="coral">1<span> kHz</span></strong></div></div><div class="canvas-wrap"><canvas id="wave" role="img" aria-label="3千赫兹原信号与1千赫兹对照信号，4千赫兹采样时采样值全部重合；黑点为3千赫兹信号的采样值"></canvas></div><div class="legend"><span><i class="line blue"></i>3 kHz 原信号</span><span><i class="dot"></i>3 kHz 采样值</span><span><i class="line coral-line"></i>1 kHz 对照信号</span></div><div class="experiment-controls"><span>切换采样率</span><div class="segmented" role="group" aria-label="模拟采样率"><button type="button" data-rate="4000" aria-pressed="true">4 kHz</button><button type="button" data-rate="8000" aria-pressed="false">8 kHz</button></div></div><p id="sampling-explanation" class="sampling-explanation" aria-live="polite">4 kHz 采样：黑点同时落在 3 kHz 与 1 kHz 曲线上，两个信号的采样值全部重合，无法区分。</p><p class="experiment-note">数学原理演示，非模型交付。横轴为 0—2 毫秒；未模拟真实声音播放速度。</p></div></section>
 <section id="results" class="content-section">
 <h2>三、模型交付与结果</h2>
-<div class="callout"><strong>尚未运行受测模型，暂无成片与模型成绩。</strong><p>当前已完成题包构建及出题端自检。作者参考与自检结果不作为受测模型的交付或成绩展示。</p></div>
-<div class="table-scroll"><table><thead><tr><th>阶段</th><th>状态</th><th>说明</th></tr></thead><tbody><tr><td>输入构建与自检</td><td><span class="pill">已完成</span></td><td>真实素材、自动检查、反例检查与源码重建验证</td></tr><tr><td>受测模型运行</td><td>待测试</td><td>测试后展示实际成片、原始交付与逐项评分证据</td></tr><tr><td>独立专业复核</td><td>待完成</td><td>知识、教学效果与评分门槛尚需独立复核和校准</td></tr></tbody></table></div>
+<div class="callout"><strong>尚未运行受测模型，暂无成片与模型成绩。</strong><p>当前题面与评分已按原始范围修订。旧版作者参考及固定素材自检仅作为历史记录，不作为新版验证或模型成绩。</p></div>
+<div class="table-scroll"><table><thead><tr><th>阶段</th><th>状态</th><th>说明</th></tr></thead><tbody><tr><td>题面与基础材料</td><td><span class="pill">已修订</span></td><td>可选素材与基础模板已提供；正式测试环境仍需预检</td></tr><tr><td>受测模型运行</td><td>待测试</td><td>测试后展示实际成片、原始交付与逐项评分证据</td></tr><tr><td>独立专业复核</td><td>待完成</td><td>教师审核事实与示例、确认可观察演示；不评未经测量的学习效果</td></tr></tbody></table></div>
 </section>
-<section id="rubric" class="content-section"><h2>四、评分标准</h2><p>按五个维度验收。允许不同的讲解、剪辑和动画方案；不要求复刻唯一参考片，不评分抽象的“高级感”。</p><div class="table-scroll"><table><caption class="sr-only">Case 02 评分结构</caption><thead><tr><th>维度</th><th>分值</th><th>检查内容</th></tr></thead><tbody><tr><td>知识与示例</td><td class="score">35</td><td>概念、数值、采样条件和结论准确。</td></tr><tr><td>动态演示</td><td class="score">25</td><td>波形、取样点、候选重建及标注相互一致。</td></tr><tr><td>声音与音画对应</td><td class="score">20</td><td>实际音轨正确，试听、画面和解释同步。</td></tr><tr><td>可读性与风格</td><td class="score">10</td><td>字幕、坐标及图例清楚，旁白可理解。</td></tr><tr><td>工程与交付</td><td class="score">10</td><td>格式完整，依赖明确，工程可以重建。</td></tr></tbody><tfoot><tr><td>总分</td><td class="score">100</td><td>至少 80 分且全部关键要求通过。</td></tr></tfoot></table></div><p class="gate"><span>关键门槛</span>核心概念或示例错误、关键动态演示缺失、声音示范不合格、工程无法重建，均不能通过。</p><p class="caption">开发期评分：17 分自动检查，83 分需要独立评审。未完成的评审项保留待核验，不生成完整总分；门槛尚待 pilot 校准。</p></section>
+<section id="rubric" class="content-section"><h2>四、评分标准</h2><p>对每个知识点查实际成片证据，不评分抽象“启发性”或未经测量的学习效果；参考片只示范合格质量，不作为唯一画面。</p><div class="table-scroll"><table><thead><tr><th>维度</th><th>分值</th><th>检查内容</th></tr></thead><tbody><tr><td>知识与例子正确</td><td class="score">35</td><td>对照教师审核的事实清单，核查实际选用例子的条件、状态、数值与结论；不要求使用固定参数。</td></tr><tr><td>实际动画清楚呈现关键关系</td><td class="score">25</td><td>实际观看动态演示，确认变化和标记呈现了所解释的关系；不以静态文字或PPT代替。</td></tr><tr><td>讲解、字幕、画面阶段一致</td><td class="score">20</td><td>按成片时间核查动画变化、标记、旁白与字幕是否对应同一事实和阶段；核对实际音轨，不强制三段试听。</td></tr><tr><td>可读性和明确风格约束</td><td class="score">10</td><td>检查可读性、风格协调与已明确声明的阅读/品牌约束；不要求复刻参考，不评价抽象高级感。</td></tr><tr><td>工程与交付</td><td class="score">10</td><td>核验教学MP4、讲解文本与实际音轨、字幕、可编辑或可重建工程、素材与关键事实对应表。</td></tr></tbody><tfoot><tr><td>总分</td><td class="score">100</td><td>逐项记录成片证据与评分，不额外设置总分通过线。</td></tr></tfoot></table></div><h3>真值依据</h3><p>教师确认的事实清单、示例的正确状态或结果、需要避免的误解、必须出现的可观察演示，以及公开品牌与阅读约束。例子可自主设计，核查其正确性。</p><p class="gate"><span>关键门槛</span>核心概念错误、示例结果错误、仅交文字或静态 PPT 冒充要求的动态演示，均不通过。</p><p class="caption">本题归音视频制作，不单独证明原生感知优势。正式评审尚未开展，未完成项目保持待核验，不生成完整总分。旧版固定三段音频的自动评分不适用于本版。</p></section>
 <section id="traces" class="content-section"><h2>五、运行轨迹</h2>
 <article class="card"><h3>暂无受测运行记录</h3><p>测试后按每次独立运行归档配置、增量工具日志、媒体观察记录和原始交付。公开轨迹需能对应到实际操作与产物。</p><p class="caption">当前没有可供展示的模型工具调用、运行耗时或资源消耗。</p></article></section>
 <section id="analysis" class="content-section"><h2>六、错误分析</h2>
 <p>尚未取得模型交付，暂无实测错误结论。以下是测试时需要核验的风险点，不代表模型已出现这些错误。</p>
-<div class="grid"><article class="card"><h3>知识与画面</h3><p>是否混淆频率与采样率；采样点是否真正落在对应波形；是否把滤除高频说成恢复原声。</p></article><article class="card"><h3>声音与工程</h3><p>是否真的使用指定声音；试听是否被旁白覆盖；定位记录是否与实际音轨一致；工程是否能重建。</p></article></div>
+<div class="grid"><article class="card"><h3>知识与画面</h3><p>核心概念与所选例子是否正确；实际动画是否呈现关键关系；标记是否与解释相符。</p></article><article class="card"><h3>声音与工程</h3><p>讲解、字幕和画面是否处于同一阶段；实际音轨是否与讲解文本相符；工程和事实对应表是否可用。</p></article></div>
 </section>
-<section id="downloads" class="content-section"><h2>七、文件下载与来源</h2><div class="download-list"><a href="assets/case02-candidate.zip" download><div><strong>完整候选包</strong><span>题面、声音、知识资料、风格参考与素材清单</span></div><span class="download-arrow">↓</span></a><a href="assets/TASK.md" download><div><strong>完整任务说明</strong><span>工作要求、交付格式与执行边界</span></div><span class="download-arrow">↓</span></a><a href="assets/manifest.json" target="_blank" rel="noopener"><div><strong>素材与校验清单</strong><span>生成条件、文件格式及 SHA256</span></div><span class="download-arrow">↗</span></a></div><div class="sources"><h3>知识与素材来源</h3><p>音频与几何风格动画由程序原创生成，无真人录音或商业音乐。知识资料为自写摘要，参考以下公开技术资料；原文献不随包再分发。</p><a href="https://www.analog.com/media/en/technical-documentation/dsp-book/dsp_book_Ch3.pdf" target="_blank" rel="noopener">The Scientist and Engineer’s Guide to DSP · Chapter 3 ↗</a><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.resample_poly.html" target="_blank" rel="noopener">SciPy · resample_poly ↗</a><a href="assets/SOURCES.md" target="_blank" rel="noopener">查看素材来源说明 ↗</a></div></section>
-<footer><span>OmniALE · Case 02 · 0.1-pilot</span><a href="https://github.com/vibrant700/omniale" target="_blank" rel="noopener">GitHub · vibrant700 / omniale ↗</a></footer>
+<section id="downloads" class="content-section"><h2>七、文件下载与来源</h2><div class="download-list"><a href="assets/case02-candidate.zip" download><div><strong>完整候选包</strong><span>新版题面、知识、可选素材、基础动画模板与配音入口</span></div><span class="download-arrow">↓</span></a><a href="assets/TASK.md" download><div><strong>完整任务说明</strong><span>工作要求、交付格式与执行边界</span></div><span class="download-arrow">↓</span></a><a href="assets/manifest.json" target="_blank" rel="noopener"><div><strong>素材与校验清单</strong><span>生成条件、文件格式及 SHA256</span></div><span class="download-arrow">↗</span></a></div><div class="sources"><h3>知识与素材来源</h3><p>音频与几何风格动画由程序原创生成，无真人录音或商业音乐。知识资料为自写摘要，参考以下公开技术资料；原文献不随包再分发。</p><a href="https://www.analog.com/media/en/technical-documentation/dsp-book/dsp_book_Ch3.pdf" target="_blank" rel="noopener">The Scientist and Engineer’s Guide to DSP · Chapter 3 ↗</a><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.resample_poly.html" target="_blank" rel="noopener">SciPy · resample_poly ↗</a><a href="assets/SOURCES.md" target="_blank" rel="noopener">查看素材来源说明 ↗</a></div></section>
+<footer><span>OmniALE · Case 02 · 0.2-draft</span><a href="https://github.com/vibrant700/omniale" target="_blank" rel="noopener">GitHub · vibrant700 / omniale ↗</a></footer>
 </main></body></html>

@@ -1,5 +1,5 @@
 {
-  "version": "0.1-pilot",
+  "version": "0.2-draft",
   "source_frequency_hz": 3000,
   "experimental_sampling_rates_hz": [
     8000,
@@ -42,5 +42,66 @@
     }
   ],
   "filtered_method": "1025-tap Kaiser FIR, cutoff 1700Hz, then 4k sampling and Fourier interpolation",
-  "note": "filtered.wav is near digital silence after PCM quantization; this is expected, not a missing file."
+  "note": "filtered.wav is near digital silence after PCM quantization; this is expected, not a missing file.",
+  "usage": "Optional example assets; all numerical parameters may be changed.",
+  "teacher_review": "pending",
+  "tts_preflight": "pending",
+  "candidate_files": [
+    {
+      "file": "input/audio/aliased_1000.wav",
+      "sha256": "46a0c2323c0a885567ada398210af0707fdf8410ee752afef04eb3d7dfa13ab1"
+    },
+    {
+      "file": "input/audio/filtered.wav",
+      "sha256": "8aab35d779576c64261e44b64e7b76eaa63ca1b3f4871b9773bc63cf139322e0"
+    },
+    {
+      "file": "input/audio/safe_1000.wav",
+      "sha256": "46a0c2323c0a885567ada398210af0707fdf8410ee752afef04eb3d7dfa13ab1"
+    },
+    {
+      "file": "input/audio/source_3000.wav",
+      "sha256": "ff9ae5d5de82befe7119fe6d5658ac7f4ab431540c7f7bff55330e1530e0e3db"
+    },
+    {
+      "file": "input/knowledge.md",
+      "sha256": "aab891acf0eb7cedf0d2508d55bd77a70fcb65a7e416f325712d958374dea8ca"
+    },
+    {
+      "file": "input/SOURCES.md",
+      "sha256": "aa0e1861e2d37cdeda342183be5f21574a63d1f6adb8def4226544c79f5424f9"
+    },
+    {
+      "file": "input/style_reference.mp4",
+      "sha256": "6c4abf9c53c44f30a49a409108a2bce981fd5483f6be78677fab48ab201e4bfd"
+    },
+    {
+      "file": "STYLE.md",
+      "sha256": "b076f612d761b239aec99fb7a671ebe362e854a82cc2e8c78a3d4086c4d79394"
+    },
+    {
+      "file": "TASK.md",
+      "sha256": "f3231222503f857a08a7d7903bb55b56679d4af24618cd6255885f6d92950f79"
+    },
+    {
+      "file": "tools/animation.py",
+      "sha256": "425558ea24d1ef474c693be74d7cf9a9636dcb3893b1b0a35fe79db48d09271b"
+    },
+    {
+      "file": "tools/example.py",
+      "sha256": "ae6afdcfd505f432d26d9636d49b2e5ead4fa7de7ba9f7afea1ea2e05bff421e"
+    },
+    {
+      "file": "tools/README.md",
+      "sha256": "144f7ea6c4605f9242b60d33b13593abf23569c9ff8d22c79abe416678d33368"
+    },
+    {
+      "file": "tools/requirements.txt",
+      "sha256": "31c459984342d57fcf493fffa0cd44dbd40dd108f3fb6418b0c9c2b52986aed2"
+    },
+    {
+      "file": "tools/speak.py",
+      "sha256": "453debb285640248d9ed8809ab4946ba1609efc02f853b589b3f881915cbf7ec"
+    }
+  ]
 }
