@@ -28,7 +28,43 @@
 <li>使用真实中文旁白和可读字幕。慢速波形动画是毫秒尺度示意，不能说成声音的实际播放速度。</li>
 </ol></article>
 <div class="grid"><article class="card"><h3>工作方式</h3><p>允许动画脚本、剪辑软件、FFmpeg 及预先声明的 TTS。叙事和视觉方案自由，不要求复刻唯一分镜。开始前需明确可用工具、网络条件和运行预算。</p></article><article class="card"><h3>交付规格</h3><p>成片、独立字幕、三段试听的时间定位记录，以及可重建工程、依赖素材和说明文档。成片需有真实动画与音轨，字幕和定位记录需与成片一致。</p></article></div>
-<div class="actions"><a class="button" href="assets/case02-candidate.zip" download>下载候选包</a><a href="assets/TASK.md" target="_blank" rel="noopener">查看完整题面 ↗</a></div>
+<div class="actions"><a class="button" href="assets/case02-candidate.zip" download>下载候选包</a><a href="assets/TASK.md" download>下载题面</a></div>
+<details id="full-task" class="full-task">
+<summary>查看完整题面（点击展开 / 收起）</summary>
+<article class="full-task-content">
+<h3>将采样率与混叠制作成中文教学短片</h3>
+<p>你为大学音频入门课制作一段60—120秒中文教学动画。读者没有信号处理基础。请利用提供的事实资料和声音素材，自行设计叙事、分镜、动画、旁白与字幕，让读者理解采样、混叠及抗混叠处理。</p>
+<h4>输入</h4>
+<ul>
+<li>input/knowledge.md：审核用知识依据、示例条件及常见误解，非成片脚本。</li>
+<li>input/audio/：四段48 kHz、单声道、16-bit PCM声音，来源和各自实验条件见 input/manifest.json。</li>
+<li>input/style_reference.mp4 与 STYLE.md：只参考视觉节奏、颜色、布局，不要求逐帧复刻。</li>
+<li>input/SOURCES.md：来源和生成方法说明。</li>
+</ul>
+<h4>必须实现的教学内容</h4>
+<ol>
+<li>说明采样率的单位与含义，区分信号频率和采样率。动态展示连续波形、采样时刻及取样值。</li>
+<li>对同一3 kHz单频信号比较8 kHz与4 kHz采样条件。使时间轴、波形、采样点、标注和结论相互一致。图中显示的是毫秒尺度示意，不能把波形的慢速动画说成真实声音的播放速度。</li>
+<li>展示刻意不做抗混叠处理时，3 kHz信号以4 kHz采样可能被解释为1 kHz；通过共享采样点或等效动态演示解释原因。</li>
+<li>实际播放source_3000.wav、aliased_1000.wav和filtered.wav各一次完整声音示例，并明确对应条件。每次预留至少2秒单独试听，不叠旁白、音乐或其他声音；可加短静音引导和轻微整体增益调整，不能变速、变调或替换素材。</li>
+<li>说明采样前限制输入带宽的作用，以及丢失的信息不能靠事后提高采样率恢复。filtered.wav中3 kHz成分被显著抑制，不应被解释为恢复原声。</li>
+<li>使用中文实际旁白和字幕，保证可理解的图例、坐标、数字与音画对应。允许自由安排顺序、比喻和视觉风格，不强制逐句照抄资料。</li>
+</ol>
+<h4>交付</h4>
+<p>在 submission/ 中提交：</p>
+<ul>
+<li>final.mp4：1280×720、25 fps、60—120秒，H.264画面、AAC 48 kHz声音；有真实动画、中文旁白与可读字幕。</li>
+<li>captions.srt：与实际旁白对应的UTF-8字幕，按正常语义分句。</li>
+<li>media_map.json：三条试听定位记录，格式为 {"demos":[{"source":"source_3000.wav","start":12.0,"end":14.4}]}。另外两条使用aliased_1000.wav、filtered.wav；时间为最终成片秒数，每条必须覆盖对应原始素材的全部2.4秒，可有最多0.15秒静音边缘，不重叠。字段是定位索引，评分仍检查实际音轨。</li>
+<li>project/：能重建成片的源文件、脚本和实际依赖素材。</li>
+<li>README.md：完整重建命令、软件/依赖版本、来源署名、旁白生成方式及已知不足。</li>
+</ul>
+<h4>工具与执行</h4>
+<p>允许动画脚本、剪辑工具、FFmpeg和预先声明的TTS。无需指定专业软件或强制GUI。主办方在开始前告知已验证的配音与渲染工具、网络条件和预算；缺失必要工具应先解决环境，而不算模型能力失败。仅使用本次候选包及允许的工具，不读取其他答卷、私有参考或评分数据。</p>
+<h4>验收</h4>
+<p>知识与示例35分、动态演示25分、声音及音画对应20分、可读性与风格10分、工程与交付10分。总分至少80，且核心概念/示例正确、三段实际声音示范合格、关键动态演示存在、工程能重建，才通过。缺失真实成片不能通过。允许多种有效讲解和实现方法，评分不比较唯一参考分镜。</p>
+</article>
+</details>
 </section>
 <section id="inputs" class="content-section"><h2>二、题目输入</h2><p>以下均为本题程序生成的候选输入，不是模型制作结果。三段使用相同的 48 kHz 播放格式，实验中的采样条件另行标明。</p><p class="audio-note">建议以较低音量试听。每段 2.4 秒，播放不会自动开始。</p><div class="audio-grid"><article class="audio-card"><div class="audio-label"><span class="mono">A / ORIGINAL</span><span class="signal-dot blue-bg"></span></div><h3>原始单音</h3><p class="frequency">3 <small>kHz</small></p><p>未经本例低采样率处理的原始信号。</p><audio controls preload="metadata" aria-label="原始3千赫兹声音" src="assets/source_3000.wav"></audio><a href="assets/source_3000.wav" download>下载 WAV ↓</a></article><article class="audio-card"><div class="audio-label"><span class="mono">B / ALIASED</span><span class="signal-dot coral-bg"></span></div><h3>混叠后的声音</h3><p class="frequency coral">1 <small>kHz</small></p><p>故意省略抗混叠处理，以 4 kHz 采样。</p><audio controls preload="metadata" aria-label="混叠后1千赫兹声音" src="assets/aliased_1000.wav"></audio><a href="assets/aliased_1000.wav" download>下载 WAV ↓</a></article><article class="audio-card"><div class="audio-label"><span class="mono">C / FILTERED</span><span class="signal-dot gray-bg"></span></div><h3>先低通，再降采样</h3><p class="quiet">接近静音</p><p>3 kHz 已被抑制，近零输出是预期结果。</p><audio controls preload="metadata" aria-label="低通处理后接近静音的声音" src="assets/filtered.wav"></audio><a href="assets/filtered.wav" download>下载 WAV ↓</a></article></div><details class="material-details"><summary>候选包里还有什么？ <span>＋</span></summary><div class="details-content"><ul><li><strong>事实资料：</strong>采样条件、数学示例、适用边界与常见误解。</li><li><strong>辅助音频：</strong>1 kHz 单音，可辅助比较。</li><li><strong>风格参考：</strong>原创几何动画与视觉规范，非答案分镜。</li><li><strong>素材清单：</strong>生成说明、时长、格式与 SHA256 校验值。</li></ul><video controls preload="metadata" aria-label="候选输入中的视觉风格参考" src="assets/style_reference.mp4"></video><p class="caption">8 秒动态风格参考；只参考留白、色彩和运动节奏。</p></div></details><h3>原理对照：同一信号，不同采样率</h3><p class="caption">页面辅助演示，非模型交付。两条曲线始终保留，切换采样率观察采样点是否同时落在两条曲线上。</p><div class="experiment"><div class="experiment-header"><span class="mono">FIG. 01</span><span>不同采样条件，同一个信号</span><span class="live">交互演示</span></div><div class="experiment-values"><div><span>原始信号</span><strong>3<span> kHz</span></strong></div><div><span>采样率</span><strong id="rate-value">4<span> kHz</span></strong></div><div><span id="alias-label">对照信号</span><strong id="alias-value" class="coral">1<span> kHz</span></strong></div></div><div class="canvas-wrap"><canvas id="wave" role="img" aria-label="3千赫兹原信号与1千赫兹对照信号，4千赫兹采样时采样值全部重合；黑点为3千赫兹信号的采样值"></canvas></div><div class="legend"><span><i class="line blue"></i>3 kHz 原信号</span><span><i class="dot"></i>3 kHz 采样值</span><span><i class="line coral-line"></i>1 kHz 对照信号</span></div><div class="experiment-controls"><span>切换采样率</span><div class="segmented" role="group" aria-label="模拟采样率"><button type="button" data-rate="4000" aria-pressed="true">4 kHz</button><button type="button" data-rate="8000" aria-pressed="false">8 kHz</button></div></div><p id="sampling-explanation" class="sampling-explanation" aria-live="polite">4 kHz 采样：黑点同时落在 3 kHz 与 1 kHz 曲线上，两个信号的采样值全部重合，无法区分。</p><p class="experiment-note">数学原理演示，非模型交付。横轴为 0—2 毫秒；未模拟真实声音播放速度。</p></div></section>
 <section id="results" class="content-section">
