@@ -1,0 +1,46 @@
+{
+  "version": "0.1-pilot",
+  "source_frequency_hz": 3000,
+  "experimental_sampling_rates_hz": [
+    8000,
+    4000
+  ],
+  "delivery_sample_rate_hz": 48000,
+  "duration_sec": 2.4,
+  "files": [
+    {
+      "file": "audio/source_3000.wav",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_sec": 2.4,
+      "sha256": "ff9ae5d5de82befe7119fe6d5658ac7f4ab431540c7f7bff55330e1530e0e3db",
+      "rms_dbfs": -17.08252895991428
+    },
+    {
+      "file": "audio/safe_1000.wav",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_sec": 2.4,
+      "sha256": "46a0c2323c0a885567ada398210af0707fdf8410ee752afef04eb3d7dfa13ab1",
+      "rms_dbfs": -17.082133587298475
+    },
+    {
+      "file": "audio/aliased_1000.wav",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_sec": 2.4,
+      "sha256": "46a0c2323c0a885567ada398210af0707fdf8410ee752afef04eb3d7dfa13ab1",
+      "rms_dbfs": -17.082133587298475
+    },
+    {
+      "file": "audio/filtered.wav",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "duration_sec": 2.4,
+      "sha256": "8aab35d779576c64261e44b64e7b76eaa63ca1b3f4871b9773bc63cf139322e0",
+      "rms_dbfs": -240.0
+    }
+  ],
+  "filtered_method": "1025-tap Kaiser FIR, cutoff 1700Hz, then 4k sampling and Fourier interpolation",
+  "note": "filtered.wav is near digital silence after PCM quantization; this is expected, not a missing file."
+}
