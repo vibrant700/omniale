@@ -1,8 +1,11 @@
-# OmniALE Case 02 — 采样率与混叠
+# OmniALE 案例仓库
 
-公开的Case介绍页。部署目标：https://vibrant700.github.io/omniale-case02/
+统一构建和展示专业音视频智能体评测案例。
 
-GitHub Pages发布目录为main分支的/docs。页面使用原生HTML/CSS/JavaScript，无构建依赖。
+- 案例目录：https://vibrant700.github.io/omniale/
+- 采样率与混叠：https://vibrant700.github.io/omniale/sampling/
+
+GitHub Pages发布目录为main分支的/docs。每个Case使用独立子目录，在docs/index.html维护案例入口。页面使用原生HTML/CSS/JavaScript，无构建依赖。
 
 公开内容仅包含题面、原创候选素材、候选包、评分结构和真实测试状态。没有受测模型成绩或运行轨迹；不包含私有参考成片、答案目录或评分器。
 
