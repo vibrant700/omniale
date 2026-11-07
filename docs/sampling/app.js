@@ -33,7 +33,8 @@ function draw() {
     ctx.stroke();ctx.setLineDash([]);
   }
   curve(3000,'#315bce',false);
-  curve(sampleRate===4000?1000:3000,'#c75e44',true);
+  // Keep the 1 kHz comparison fixed; only the sampling grid changes.
+  curve(1000,'#c75e44',true);
   for(let n=0;n<=sampleRate*.002;n++){
     const t=n/sampleRate;if(t>.002*progress)break;
     const x=x0+t/.002*(x1-x0),y=mid-amp*Math.cos(2*Math.PI*3000*t);
@@ -50,12 +51,10 @@ document.querySelectorAll('[data-rate]').forEach(button=>button.addEventListener
   sampleRate=Number(button.dataset.rate);
   document.querySelectorAll('[data-rate]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
   document.querySelector('#rate-value').innerHTML=`${sampleRate/1000}<span> kHz</span>`;
-  document.querySelector('#alias-label').textContent=sampleRate===4000?'混叠频率':'可表示的原频率';
-  document.querySelector('#alias-value').innerHTML=`${sampleRate===4000?1:3}<span> kHz</span>`;
   document.querySelector('#sampling-explanation').textContent=sampleRate===4000?
-    '不做抗混叠处理时，3 kHz 与 1 kHz 在这些采样点上无法区分。':
-    '3 kHz 低于 4 kHz 奈奎斯特频率；在带限前提下，可正确表示原信号。';
-  canvas.setAttribute('aria-label',`3千赫兹原信号，以${sampleRate/1000}千赫兹采样，候选重建为${sampleRate===4000?1:3}千赫兹`);
+    '4 kHz 采样：黑点同时落在 3 kHz 与 1 kHz 曲线上，两个信号的采样值全部重合，无法区分。':
+    '8 kHz 采样：新增黑点不再全部落在 1 kHz 曲线上，两组采样值不同，可以区分这两个信号。';
+  canvas.setAttribute('aria-label',`始终显示3千赫兹原信号与1千赫兹对照信号；${sampleRate/1000}千赫兹采样时，两者采样值${sampleRate===4000?'全部重合':'存在差异'}，黑点为3千赫兹信号的采样值`);
   if(reducedMotion.matches){progress=1;draw();}else if(progress>=1){progress=0;previousTime=performance.now();requestAnimationFrame(animate);}else{progress=0;}
 }));
 new ResizeObserver(draw).observe(canvas);
