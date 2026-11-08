@@ -1,12 +1,5 @@
 {
-  "version": "0.3.1-draft",
-  "source_frequency_hz": 3000,
-  "experimental_sampling_rates_hz": [
-    8000,
-    4000
-  ],
-  "delivery_sample_rate_hz": 48000,
-  "duration_sec": 2.4,
+  "version": "0.4-draft",
   "files": [
     {
       "file": "audio/source_3000.wav",
@@ -14,49 +7,28 @@
       "channels": 1,
       "duration_sec": 2.4,
       "sha256": "ff9ae5d5de82befe7119fe6d5658ac7f4ab431540c7f7bff55330e1530e0e3db",
-      "rms_dbfs": -17.08252895991428
+      "rms_dbfs": -17.08252895991428,
+      "frequency_hz": 3000,
+      "role": "raw_optional_source"
     },
     {
-      "file": "audio/safe_1000.wav",
+      "file": "audio/source_1000.wav",
       "sample_rate_hz": 48000,
       "channels": 1,
       "duration_sec": 2.4,
       "sha256": "46a0c2323c0a885567ada398210af0707fdf8410ee752afef04eb3d7dfa13ab1",
-      "rms_dbfs": -17.082133587298475
-    },
-    {
-      "file": "audio/aliased_1000.wav",
-      "sample_rate_hz": 48000,
-      "channels": 1,
-      "duration_sec": 2.4,
-      "sha256": "46a0c2323c0a885567ada398210af0707fdf8410ee752afef04eb3d7dfa13ab1",
-      "rms_dbfs": -17.082133587298475
-    },
-    {
-      "file": "audio/filtered.wav",
-      "sample_rate_hz": 48000,
-      "channels": 1,
-      "duration_sec": 2.4,
-      "sha256": "8aab35d779576c64261e44b64e7b76eaa63ca1b3f4871b9773bc63cf139322e0",
-      "rms_dbfs": -240.0
+      "rms_dbfs": -17.082133587298475,
+      "frequency_hz": 1000,
+      "role": "raw_optional_source"
     }
   ],
-  "filtered_method": "1025-tap Kaiser FIR, cutoff 1700Hz, then 4k sampling and Fourier interpolation",
-  "note": "filtered.wav is near digital silence after PCM quantization; this is expected, not a missing file.",
-  "usage": "Optional example assets; all numerical parameters may be changed.",
+  "generation": "Program-generated cosine tones at 48 kHz, with shared envelope and short fades; not recordings of real people.",
+  "usage": "Optional raw audio; signal, experimental parameters, processing and lesson design are chosen by the solver.",
   "teacher_review": "pending",
   "tts_preflight": "pending",
   "candidate_files": [
     {
-      "file": "input/audio/aliased_1000.wav",
-      "sha256": "46a0c2323c0a885567ada398210af0707fdf8410ee752afef04eb3d7dfa13ab1"
-    },
-    {
-      "file": "input/audio/filtered.wav",
-      "sha256": "8aab35d779576c64261e44b64e7b76eaa63ca1b3f4871b9773bc63cf139322e0"
-    },
-    {
-      "file": "input/audio/safe_1000.wav",
+      "file": "input/audio/source_1000.wav",
       "sha256": "46a0c2323c0a885567ada398210af0707fdf8410ee752afef04eb3d7dfa13ab1"
     },
     {
@@ -65,11 +37,11 @@
     },
     {
       "file": "input/knowledge.md",
-      "sha256": "31634089073383cec2e257ddc232c0b0555f480c40249be828834f2d71963ecf"
+      "sha256": "002f1547d7dcafc45ad1ad8d90f7dc307257935517815c4b6894420d292d52d7"
     },
     {
       "file": "input/SOURCES.md",
-      "sha256": "aa0e1861e2d37cdeda342183be5f21574a63d1f6adb8def4226544c79f5424f9"
+      "sha256": "0c77c9dbb256c5942a83de864298f12b55e2e431650461cc8c7fde3b29dacdf6"
     },
     {
       "file": "input/style_reference.mp4",
@@ -81,7 +53,7 @@
     },
     {
       "file": "TASK.md",
-      "sha256": "b764e1e51ca3df25e94e06fa1fe34caa7899dab3d12af08e16578ce226230177"
+      "sha256": "4f00ed90baf2cf19ecfde7acea11552affe1b2558c8ecb605a17fe88d9bf4445"
     },
     {
       "file": "tools/animation.py",
