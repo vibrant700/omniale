@@ -6,5 +6,14 @@
   "original_video_sha256": "f851405865d0b495d58ae5009b5b418742b06740c212f24ed89d43de8252c38b",
   "subtitle_note": "WebVTT仅由原交付SRT转换格式，未修正其错位。原视频字节不变。",
   "raw_sessions_published": false,
-  "published_tool_entries": 31
+  "published_tool_entries": 31,
+  "original_candidate_package": {
+    "file": "candidate-v03.zip",
+    "sha256": "c576a9f78aa45099f80e32918fba73daca1a6e1f12c7659e05cdb0bbc4ba32e0",
+    "verified_against": "Archived run candidate directory, all ZIP members byte-identical"
+  },
+  "original_task": {
+    "file": "TASK.md",
+    "sha256": "abd4f1f4ab03cce6bb1dd43228f72de064dc092713776b59ef29f4e943d6ee28"
+  }
 }

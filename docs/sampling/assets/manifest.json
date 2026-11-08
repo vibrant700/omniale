@@ -1,5 +1,5 @@
 {
-  "version": "0.3-draft",
+  "version": "0.3.1-draft",
   "source_frequency_hz": 3000,
   "experimental_sampling_rates_hz": [
     8000,
@@ -65,7 +65,7 @@
     },
     {
       "file": "input/knowledge.md",
-      "sha256": "aab891acf0eb7cedf0d2508d55bd77a70fcb65a7e416f325712d958374dea8ca"
+      "sha256": "31634089073383cec2e257ddc232c0b0555f480c40249be828834f2d71963ecf"
     },
     {
       "file": "input/SOURCES.md",
@@ -77,11 +77,11 @@
     },
     {
       "file": "STYLE.md",
-      "sha256": "b076f612d761b239aec99fb7a671ebe362e854a82cc2e8c78a3d4086c4d79394"
+      "sha256": "ff0ca9911a1f5b672f0f4e3f88d870f5be2dcbfe37b1d216cbe18382582070c3"
     },
     {
       "file": "TASK.md",
-      "sha256": "abd4f1f4ab03cce6bb1dd43228f72de064dc092713776b59ef29f4e943d6ee28"
+      "sha256": "b764e1e51ca3df25e94e06fa1fe34caa7899dab3d12af08e16578ce226230177"
     },
     {
       "file": "tools/animation.py",
