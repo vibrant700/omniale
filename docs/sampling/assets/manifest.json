@@ -1,5 +1,5 @@
 {
-  "version": "0.2-draft",
+  "version": "0.3-draft",
   "source_frequency_hz": 3000,
   "experimental_sampling_rates_hz": [
     8000,
@@ -81,7 +81,7 @@
     },
     {
       "file": "TASK.md",
-      "sha256": "f3231222503f857a08a7d7903bb55b56679d4af24618cd6255885f6d92950f79"
+      "sha256": "abd4f1f4ab03cce6bb1dd43228f72de064dc092713776b59ef29f4e943d6ee28"
     },
     {
       "file": "tools/animation.py",
