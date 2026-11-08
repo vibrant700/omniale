@@ -1,0 +1,76 @@
+{
+  "model": "gpt-6-luna",
+  "task_version": "0.3-draft",
+  "duration_sec": 101,
+  "technical_external_provisional_subtotal": 74,
+  "formal_score": null,
+  "formal_status": "待教师及连续听评复核",
+  "reviewer": "主会话技术外评；不是Luna自评，也不是独立教师认证",
+  "gates": {
+    "concept": "met",
+    "example": "pending",
+    "animation": "met"
+  },
+  "items": {
+    "K": {
+      "score": 32,
+      "anchors": [
+        10,
+        12,
+        10
+      ],
+      "evidence": [
+        "Definitions and scalar fold magnitude are correct: 20>2*7; at10Hz, 2Hz persists and7Hz aliases in magnitude to3Hz. Same-origin sine reconstruction requires a sign/phase change; supplied positive3Hz illustration does not preserve the original samples, and the mapping is not explained. Withhold3/15 example points pending semantic review rather than assert a proven core-concept error. evaluation/example_checks.json."
+      ]
+    },
+    "V": {
+      "score": 17,
+      "anchors": [
+        10,
+        3,
+        4
+      ],
+      "evidence": [
+        "Continuous 36–44s grid change exists; independently checked markers at fs20/18/15/11/10 all match. 10/10 continuous motion. 3/10 for component relationship: only summed curve and sample chord drawn, not the distinct2/7 components or a reconstructed3Hz candidate curve; retention/folding primarily textual. 4/5 for correspondence/readability: sample geometry correct but numeric time axis/unit absent."
+      ]
+    },
+    "A": {
+      "score": 5,
+      "anchors": [
+        2,
+        1,
+        2
+      ],
+      "evidence": [
+        "2/8 phase correspondence: delivered subtitles describe continuous lowering at44–66s, but animation transition36–44s; narration/subtitles claim orange low, blue high, white sum, unlike actual dark sum and orange sampling polygon. 1/8 actual sound comparison: real signal file exists, but2/3/7Hz has no declared audible mapping, is mono despite left/right narration, and ends60s before the66–84s listening-caption segment. At66–84s movie is effectively narration only (correlation0.99997). 2/4 transcript/subtitles: actual TTS and five subtitle paragraphs delivered, but wording is summarized and timing crude; continuous human listening not completed."
+      ]
+    },
+    "L": {
+      "score": 10,
+      "anchors": [
+        5,
+        5
+      ],
+      "evidence": [
+        "Inspected12 actual decoded frames and full-resolution37.87s/71.54s frames: readable font, coordinated style and no harmful text overlap observed. Color explanation error counted under A, not mechanically deducted again here."
+      ]
+    },
+    "E": {
+      "score": 10,
+      "anchors": [
+        5,
+        5
+      ],
+      "evidence": [
+        "All original output categories present. Independent directory copied delivered source/cached speech/subtitles and provided candidate tools; build.py and mux.py regenerate video_silent.mp4,comparison.wav,lesson.mp4 with identical hashes, no source repair. Reused cached narration/subtitles are explicitly distinguished from regenerated media."
+      ]
+    }
+  },
+  "conditions": {
+    "fresh_context": true,
+    "prior_answers_provided": false,
+    "procedural_resume": true,
+    "neutral_tts_probe": true,
+    "os_enforced_isolation": false
+  }
+}

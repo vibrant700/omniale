@@ -1,0 +1,149 @@
+{
+  "example": {
+    "chosen_frequencies_hz": [
+      2,
+      7
+    ],
+    "adequate_sampling_hz": 20,
+    "insufficient_sampling_hz": 10,
+    "frequency_fold_magnitude_correct": true,
+    "preserved_frequency_hz": 2,
+    "folded_frequency_hz": 3,
+    "same_origin_sine_math": {
+      "correct_negative_3_max_sample_error": 1.379452108096757e-14,
+      "positive_3_max_sample_error": 0.5706339097770996,
+      "interpretation": "The sine alias has a phase/sign change for the same time origin. Solver audio is described as simplified illustration, so document an unexplained mapping rather than automatically declare a core-concept failure."
+    },
+    "comparison_audio_duration_sec": 60.0,
+    "comparison_high_state_amplitudes": {
+      "2": 0.19997482354662613,
+      "3": 5.075891307101915e-06,
+      "7": 0.1199890103502143,
+      "20": 1.918893165546904e-06,
+      "100": 2.6392996528369142e-08,
+      "500": 1.507429708238333e-07
+    },
+    "comparison_low_state_amplitudes": {
+      "2": 0.1999739638347779,
+      "3": 0.1199913412495463,
+      "7": 2.700660702154857e-06,
+      "20": 8.657289776307853e-07,
+      "100": 8.501411965676725e-08,
+      "500": 6.02582247657218e-08
+    },
+    "comparison_high_wave_correlation": 0.999999997382567,
+    "comparison_low_positive_3_correlation": 0.9999999972716842,
+    "comparison_low_same_origin_negative_3_correlation": 0.4705656489997195,
+    "timeline": {
+      "actual_rate_transition_sec": [
+        36,
+        44
+      ],
+      "caption_claiming_continuous_lowering_sec": [
+        44,
+        66
+      ],
+      "caption_listening_example_sec": [
+        66,
+        84
+      ],
+      "comparison_audio_ends_sec": 60.0
+    },
+    "audio_has_no_declared_audible_frequency_mapping": true,
+    "hearing_context_source": "https://www.canada.ca/en/health-canada/services/noise-your-health.html",
+    "caution": "No calibrated playback SPL or continuous human listening review. Do not claim universal inaudibility under every sound level.",
+    "movie_vs_narration_correlation_during_caption_listening": 0.9999701287809543,
+    "actual_movie_listening_window_amplitudes": {
+      "2": 3.3083326053270413e-06,
+      "3": 1.2674983754053383e-05,
+      "7": 2.3055460749978864e-06,
+      "20": 6.112048119555679e-06,
+      "100": 3.14409906926597e-05,
+      "500": 0.0016821737749214355
+    },
+    "above_20Hz_energy_fraction_in_comparison": 1.2452197368946152e-07
+  },
+  "drawn_samples": {
+    "marker_checks": [
+      {
+        "time": 30,
+        "expected_fs": 20,
+        "markers_matching": 31,
+        "expected_markers": 31,
+        "all_match": true,
+        "frame": "evidence/marker_check_30.0s.png"
+      },
+      {
+        "time": 37.6,
+        "expected_fs": 18,
+        "markers_matching": 28,
+        "expected_markers": 28,
+        "all_match": true,
+        "frame": "evidence/marker_check_37.6s.png"
+      },
+      {
+        "time": 40,
+        "expected_fs": 15,
+        "markers_matching": 23,
+        "expected_markers": 23,
+        "all_match": true,
+        "frame": "evidence/marker_check_40.0s.png"
+      },
+      {
+        "time": 43.2,
+        "expected_fs": 11,
+        "markers_matching": 17,
+        "expected_markers": 17,
+        "all_match": true,
+        "frame": "evidence/marker_check_43.2s.png"
+      },
+      {
+        "time": 52,
+        "expected_fs": 10,
+        "markers_matching": 16,
+        "expected_markers": 16,
+        "all_match": true,
+        "frame": "evidence/marker_check_52.0s.png"
+      }
+    ],
+    "scope": "Only these sampled frames; not full-video verification.",
+    "visual_animation_transition_sec": [
+      36,
+      44
+    ],
+    "delivered_caption_transition_sec": [
+      44,
+      66
+    ],
+    "axis_issue": "No numeric horizontal axis or time unit shown in inspected plot frames.",
+    "color_issue": "Narration/subtitles claim orange low, blue high, white sum; actual drawing has dark sum plus orange sample chord/markers."
+  },
+  "rebuild": {
+    "all_regenerated_identical": true,
+    "regenerated_files": {
+      "video_silent.mp4": {
+        "original": "a7a57dcd75af7fea96070382020020ead45be71a0ce63a7ac8da709a754b4ddb",
+        "rebuilt": "a7a57dcd75af7fea96070382020020ead45be71a0ce63a7ac8da709a754b4ddb",
+        "identical": true
+      },
+      "comparison.wav": {
+        "original": "3aa3018bb42fe9747b3819006363c0e250d5b76077d6050e2b153dcab44a65b6",
+        "rebuilt": "3aa3018bb42fe9747b3819006363c0e250d5b76077d6050e2b153dcab44a65b6",
+        "identical": true
+      },
+      "lesson.mp4": {
+        "original": "f851405865d0b495d58ae5009b5b418742b06740c212f24ed89d43de8252c38b",
+        "rebuilt": "f851405865d0b495d58ae5009b5b418742b06740c212f24ed89d43de8252c38b",
+        "identical": true
+      }
+    },
+    "cached_inputs": [
+      "narration.mp3",
+      "captions.srt",
+      "facts.csv",
+      "narration.txt"
+    ],
+    "network_tts_calls": 0,
+    "provided_candidate_tools_required": true
+  }
+}

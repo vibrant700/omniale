@@ -1,0 +1,10 @@
+{
+  "model": "gpt-6-luna",
+  "native_model_route_confirmed": true,
+  "task_version": "0.3-draft",
+  "video_sha256": "f851405865d0b495d58ae5009b5b418742b06740c212f24ed89d43de8252c38b",
+  "original_video_sha256": "f851405865d0b495d58ae5009b5b418742b06740c212f24ed89d43de8252c38b",
+  "subtitle_note": "WebVTT仅由原交付SRT转换格式，未修正其错位。原视频字节不变。",
+  "raw_sessions_published": false,
+  "published_tool_entries": 31
+}
