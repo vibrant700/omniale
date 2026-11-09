@@ -1,0 +1,271 @@
+{
+  "media_probe": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\r\n  built with gcc 16.2.0 (Rev3, Built by MSYS2 project)\r\n  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband\r\n  libavutil      61.  1.102 / 61.  1.102\r\n  libavcodec     63.  1.102 / 63.  1.102\r\n  libavformat    63.  1.102 / 63.  1.102\r\n  libavdevice    63.  1.102 / 63.  1.102\r\n  libavfilter    12.  1.102 / 12.  1.102\r\n  libswscale     10.  1.102 / 10.  1.102\r\n  libswresample   7.  1.102 /  7.  1.102\r\nInput #0, mov,mp4,m4a,3gp,3g2,mj2, from '$USER\\Documents\\Codex\\2026-11-05\\o-m\\outputs\\Case02_GitHubPages\\private\\reviews\\case04_attempt01\\submission\\采样与混叠_教学短片.mp4':\r\n  Metadata:\r\n    major_brand     : isom\r\n    minor_version   : 512\r\n    compatible_brands: isomiso2avc1mp41\r\n    encoder         : Lavf63.1.102\r\n  Duration: 00:01:51.50, start: 0.000000, bitrate: 290 kb/s\r\n  Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(progressive), 1280x720, 155 kb/s, 20 fps, 20 tbr, 10240 tbn (default)\r\n    Metadata:\r\n      handler_name    : VideoHandler\r\n      encoder         : Lavc63.1.102 libx264\r\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 130 kb/s (default)\r\n    Metadata:\r\n      handler_name    : SoundHandler\r\n  Stream #0:2[0x3](und): Subtitle: mov_text (tx3g / 0x67337874), 0 kb/s (default)\r\n    Metadata:\r\n      handler_name    : SubtitleHandler\r\nAt least one output file must be specified\r\n",
+  "audio_fft": [
+    {
+      "time": 10,
+      "top_hz": [
+        375,
+        374,
+        370,
+        379,
+        388,
+        389,
+        192,
+        380
+      ],
+      "amp5000": 5.203560130373938,
+      "amp3000": 5.773935947400861,
+      "rms": 0.0704498440027237
+    },
+    {
+      "time": 49,
+      "top_hz": [
+        5000,
+        5001,
+        4999,
+        314,
+        313,
+        315,
+        316,
+        312
+      ],
+      "amp5000": 359.50615076724637,
+      "amp3000": 2.2915130834101802,
+      "rms": 0.05970162898302078
+    },
+    {
+      "time": 52,
+      "top_hz": [
+        5000,
+        228,
+        217,
+        227,
+        215,
+        209,
+        216,
+        229
+      ],
+      "amp5000": 360.00753996233425,
+      "amp3000": 5.183959508445784,
+      "rms": 0.08248238265514374
+    },
+    {
+      "time": 55,
+      "top_hz": [
+        294,
+        295,
+        293,
+        296,
+        3000,
+        209,
+        210,
+        211
+      ],
+      "amp5000": 1.0913989145251504,
+      "amp3000": 357.8539224329535,
+      "rms": 0.09136081486940384
+    },
+    {
+      "time": 58,
+      "top_hz": [
+        3000,
+        208,
+        206,
+        207,
+        205,
+        209,
+        210,
+        211
+      ],
+      "amp5000": 1.2133884252559262,
+      "amp3000": 359.26923541236874,
+      "rms": 0.07845038920640945
+    },
+    {
+      "time": 76,
+      "top_hz": [
+        3000,
+        229,
+        243,
+        237,
+        242,
+        3001,
+        2999,
+        232
+      ],
+      "amp5000": 0.6876872661961857,
+      "amp3000": 357.97440098454217,
+      "rms": 0.07585401833057404
+    },
+    {
+      "time": 80,
+      "top_hz": [
+        3000,
+        258,
+        257,
+        254,
+        259,
+        294,
+        253,
+        262
+      ],
+      "amp5000": 1.3421239794381712,
+      "amp3000": 358.8847863048116,
+      "rms": 0.07387495785951614
+    },
+    {
+      "time": 90,
+      "top_hz": [
+        168,
+        227,
+        183,
+        228,
+        171,
+        223,
+        184,
+        222
+      ],
+      "amp5000": 0.7745551109141448,
+      "amp3000": 1.4500398125363094,
+      "rms": 0.059491805732250214
+    }
+  ],
+  "motion": [
+    {
+      "times": [
+        8,
+        16
+      ],
+      "plot_changed_pixels": 68261
+    },
+    {
+      "times": [
+        26,
+        35
+      ],
+      "plot_changed_pixels": 0
+    },
+    {
+      "times": [
+        62,
+        76
+      ],
+      "plot_changed_pixels": 65604
+    }
+  ],
+  "independent_math": {
+    "alias_max_error": 3.429011037612589e-15,
+    "plotted_sample_vs_5cycle_curve_max_error": 2.0,
+    "curve_cycles": 5,
+    "sample_implied_cycles": 10,
+    "alias_curve_cycles": 3,
+    "alias_sample_implied_cycles": 6
+  },
+  "audio_listening": "No model-accessible listening interface; no subjective listening performed. FFT only.",
+  "files": [
+    {
+      "name": "build.py",
+      "bytes": 6975,
+      "sha256": "f19be7a7087eed943c2fb57166414043a89441d3dba05b69f349af0a49e7a541"
+    },
+    {
+      "name": "finalize.py",
+      "bytes": 4598,
+      "sha256": "dd460ba826cd2b9d5fe620456911bd73e535ef488d3a79bf7a74a8bd3508098b"
+    },
+    {
+      "name": "narration.mp3",
+      "bytes": 668016,
+      "sha256": "b7359ac6443ca0a37a6d6f963e20ccb7e36b758999d00807bff103de7e37bbd8"
+    },
+    {
+      "name": "参数与画面对应表.md",
+      "bytes": 1525,
+      "sha256": "4d0773bce87a7ce96c9230c71b45dd619197b1eb743de9349e46633a6804e3d5"
+    },
+    {
+      "name": "字幕.srt",
+      "bytes": 1628,
+      "sha256": "254fdaf18dcc32f597c6b9bb1e607d2a303c454699748b2bfe567b89cd1d263f"
+    },
+    {
+      "name": "实际音轨.wav",
+      "bytes": 21408078,
+      "sha256": "0b6351b1b9f427749f6258d0191e64576428120e4e8db2630b10b33c2a710d60"
+    },
+    {
+      "name": "工程说明.md",
+      "bytes": 2126,
+      "sha256": "6cef83b769b8b6b5e1b3499c581fb3535840528b7f12c857bda49e0d4040b5e1"
+    },
+    {
+      "name": "旁白源稿.txt",
+      "bytes": 1406,
+      "sha256": "e60aec2c26b6a7fc18066179f8c971d0a8e87e563565262df0dbb5ff5eed2d29"
+    },
+    {
+      "name": "讲解稿.md",
+      "bytes": 1422,
+      "sha256": "85f071e63572ba7f69fd7bffa996308d6b5568651c5614fbe596165c0a72d755"
+    },
+    {
+      "name": "采样与混叠_教学短片.mp4",
+      "bytes": 4045585,
+      "sha256": "ec9c87d62a762d8575d5971dabb42b6bfa7cb0d25fa80a4bda326738909b932d"
+    }
+  ],
+  "motion_pixel_differences": [
+    {
+      "times": [
+        8,
+        16
+      ],
+      "max": 13,
+      "mean": 0.2782375366568915,
+      "fraction_over_20": 0.0
+    },
+    {
+      "times": [
+        26,
+        35
+      ],
+      "max": 0,
+      "mean": 0.0,
+      "fraction_over_20": 0.0
+    },
+    {
+      "times": [
+        62,
+        76
+      ],
+      "max": 13,
+      "mean": 0.223950146627566,
+      "fraction_over_20": 0.0
+    }
+  ],
+  "rebuild": {
+    "build_exit": 0,
+    "finalize_exit": 0,
+    "cached_narration_reused": true,
+    "scratch_directory_precreated": true,
+    "note": "Original build.py assumes scratch exists; independent precreated scratch. No TTS network regeneration. Full image and audio rebuild completed."
+  },
+  "audio_sidecar_max_error": 0.12934547662734985,
+  "rebuild_frame_mae": [
+    {
+      "t": 8,
+      "mae": 0.0
+    },
+    {
+      "t": 35,
+      "mae": 0.0
+    },
+    {
+      "t": 76,
+      "mae": 0.0
+    }
+  ],
+  "audio_sidecar_gain": 0.7071577032429959,
+  "audio_sidecar_scaled_rmse": 9.089185408861023e-06,
+  "audio_sidecar_note": "Stereo sidecar compared with mono decode: conversion gain differs; scaled residual given, not treated as content mismatch."
+}
