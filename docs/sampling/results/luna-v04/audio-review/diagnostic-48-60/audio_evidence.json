@@ -1,0 +1,46 @@
+{
+  "protocol_version": "qwen-audio-evidence-1",
+  "source_sha256": "c92fe381bbd8b3ae9d11c65b65810702dab54a0f4f462a964458ecc91e8fc677",
+  "reports": [
+    {
+      "chunk": {
+        "file": "clip_00.wav",
+        "start": 48.0,
+        "end": 60.0,
+        "sha256": "c92fe381bbd8b3ae9d11c65b65810702dab54a0f4f462a964458ecc91e8fc677"
+      },
+      "actual_models": [
+        "qwen3.8-omni-flash"
+      ],
+      "evidence": {
+        "speech": [
+          {
+            "start": 48.0,
+            "end": 52.96,
+            "text": "相同样本，听原始五千赫兹音，再听由这组样本人工重建的三千赫兹音。",
+            "confidence": "high"
+          },
+          {
+            "start": 53.72,
+            "end": 60.0,
+            "text": "统一用四十八千赫兹播放，音高对应各自的信号频率是……",
+            "confidence": "high"
+          }
+        ],
+        "sound_events": [],
+        "intelligibility": {
+          "observation": "旁白发音清晰，语速适中偏慢，无明显口齿不清或吞音现象。",
+          "uncertain": false
+        },
+        "masking": {
+          "observation": "全程仅有旁白人声，未听到任何非语音持续声（如测试音调），因此不存在声音被遮蔽的情况。",
+          "uncertain": false
+        },
+        "limitations": [
+          "无法确认原片中是否实际播放了所描述的‘五千赫兹’和‘三千赫兹’测试音，因为在该时间段内仅听到了人声解说，没有听到对应的音调。"
+        ]
+      }
+    }
+  ],
+  "complete": true
+}

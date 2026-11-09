@@ -1,0 +1,129 @@
+{
+  "model": "gpt-6.1-sol",
+  "evidence_directory": "$USER\\Documents\\Codex\\2026-11-05\\o-m\\outputs\\Case02_GitHubPages\\runs\\20261109_gpt6luna_v04_attempt01\\evaluation\\qwen_audio_01\\attempt02",
+  "clips": [
+    {
+      "file": "clip_00.wav",
+      "sha256": "379fb2da667eccf6180acbfeea46d22580a4037b9ce6f69715591dc2ee761231",
+      "params": "_wave_params(nchannels=1, sampwidth=2, framerate=48000, nframes=1440000, comptype='NONE', compname='not compressed')",
+      "pcm_vs_decoded_float_round_max_error": 0.0
+    },
+    {
+      "file": "clip_01.wav",
+      "sha256": "924965dc82fde9c9da74f5694aa3414b21d361e1ba4a988c9218b652933cdae3",
+      "params": "_wave_params(nchannels=1, sampwidth=2, framerate=48000, nframes=1440000, comptype='NONE', compname='not compressed')",
+      "pcm_vs_decoded_float_round_max_error": 0.0
+    },
+    {
+      "file": "clip_02.wav",
+      "sha256": "f724a1f960cd35345fa9927e82380ea325d69005d76f5ede6d9ba549faae371a",
+      "params": "_wave_params(nchannels=1, sampwidth=2, framerate=48000, nframes=1440000, comptype='NONE', compname='not compressed')",
+      "pcm_vs_decoded_float_round_max_error": 0.0
+    },
+    {
+      "file": "clip_03.wav",
+      "sha256": "7304b929d462ba862e53e534a207a0d6fa2eaea5d8385d93242176a85974ec62",
+      "params": "_wave_params(nchannels=1, sampwidth=2, framerate=48000, nframes=1032000, comptype='NONE', compname='not compressed')",
+      "pcm_vs_decoded_float_round_max_error": 0.0
+    }
+  ],
+  "independent_fft": [
+    {
+      "t": 43,
+      "fft5000": 3.58828056300606,
+      "fft3000": 1.428280104415707,
+      "speech_band_100_2500_power": 1551694.8728389896
+    },
+    {
+      "t": 44,
+      "fft5000": 0.2596707008305799,
+      "fft3000": 0.6997707992688824,
+      "speech_band_100_2500_power": 142783.4018278256
+    },
+    {
+      "t": 46,
+      "fft5000": 0.46138386566337597,
+      "fft3000": 0.6570925843117827,
+      "speech_band_100_2500_power": 1438206.255611995
+    },
+    {
+      "t": 49,
+      "fft5000": 359.50615076724637,
+      "fft3000": 2.2915130834101802,
+      "speech_band_100_2500_power": 410143.61708933895
+    },
+    {
+      "t": 51,
+      "fft5000": 359.58349382773633,
+      "fft3000": 0.775388217780308,
+      "speech_band_100_2500_power": 483749.6751283491
+    },
+    {
+      "t": 54,
+      "fft5000": 0.2735246463929324,
+      "fft3000": 356.6996699301526,
+      "speech_band_100_2500_power": 679242.6069907477
+    },
+    {
+      "t": 57,
+      "fft5000": 0.29101576373233695,
+      "fft3000": 358.70275957603246,
+      "speech_band_100_2500_power": 408024.47001858766
+    },
+    {
+      "t": 75,
+      "fft5000": 0.4983628663690464,
+      "fft3000": 356.7900790949661,
+      "speech_band_100_2500_power": 714100.4422045479
+    },
+    {
+      "t": 77,
+      "fft5000": 0.7914844606075484,
+      "fft3000": 359.1592207053474,
+      "speech_band_100_2500_power": 513738.97910312854
+    }
+  ],
+  "note": "FFT confirms simultaneous speech-band energy and tones at 49/51/54/57/75/77; rejects Qwen no-overlap and no-tone claims. Float-to-PCM differences are conversion rounding, not different content.",
+  "qwen_evidence_sha256": "b68b4ba74e7993625684a05016352ff11f0c4e8d5fe112f70d3ec0470d933178",
+  "complete": true,
+  "covered_intervals": [
+    [
+      0.0,
+      30.0
+    ],
+    [
+      30.0,
+      60.0
+    ],
+    [
+      60.0,
+      90.0
+    ],
+    [
+      90.0,
+      111.5
+    ]
+  ],
+  "actual_audio_models": [
+    [
+      "qwen3.8-omni-flash"
+    ],
+    [
+      "qwen3.8-omni-flash"
+    ],
+    [
+      "qwen3.8-omni-flash"
+    ],
+    [
+      "qwen3.8-omni-flash"
+    ]
+  ],
+  "source_sha256_reported": "39fe3a4f24b05a60860aaaee4c4d7affd653c1e22961692e79ff3d7ea9194628",
+  "conflicts": [
+    "Qwen在30–60s报告43.8/46/48.2s三个音调，独立FFT不支持。实际两段为48–54s 5k及54–60s 3k。",
+    "Qwen声称演示音均处于旁白间隙、无重叠；实际相同时间窗有显著语音频段能量，不能接受该判断。",
+    "Qwen在60–90s称仅语音，无音调；FFT在75/77s确认3k成分。",
+    "第一段转写未覆盖所有可识别文本，不能把Qwen逐句时间当真实对齐。",
+    "末段是否采购为中信心ASR疑问，不据此认定原旁白概念错误。"
+  ]
+}

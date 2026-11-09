@@ -1,0 +1,25 @@
+{
+  "ai_score": null,
+  "reviewed_points": 47,
+  "reviewed_max": 92,
+  "pending_max": 8,
+  "possible_total_interval": [
+    47,
+    55
+  ],
+  "pending": [
+    "A.2"
+  ],
+  "critical_failures": [
+    "example",
+    "animation",
+    "required_demo"
+  ],
+  "decision": "fail",
+  "formal_score": null,
+  "human_teacher_review": false,
+  "note": "AI-only evaluation. No calibrated quality/pass threshold; unknowns are not zero.",
+  "review_sha256": "b208bad4a89e4f7414a330cb229b1bafaf8cedee0714ec24c3f5190a7433d7b2",
+  "rubric_sha256": "7a94c267c8ac3d5417a734b9b13fb1006cc60dc11a288b7e5d370c6e28891a82",
+  "gate_status_normalization": "passed/failed are read as met/unmet; original review file untouched"
+}

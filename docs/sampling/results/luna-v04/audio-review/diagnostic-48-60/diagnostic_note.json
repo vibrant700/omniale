@@ -1,0 +1,38 @@
+{
+  "type": "additional_diagnostic_only_no_rescoring",
+  "primary_reviewer_model": "gpt-6.1-sol",
+  "actual_audio_sensor_models": [
+    "qwen3.8-omni-flash"
+  ],
+  "evidence_path": "$USER\\Documents\\Codex\\2026-11-05\\o-m\\outputs\\Case02_GitHubPages\\runs\\20261109_gpt6luna_v04_attempt01\\evaluation\\qwen_audio_01\\focus_48_60_review\\audio_evidence.json",
+  "evidence_sha256": "5186363da1ee4c0dcbc3bf8eb2054b61dae50826c2bd4ae004174b97e74ac9d4",
+  "provenance_path": "$USER\\Documents\\Codex\\2026-11-05\\o-m\\outputs\\Case02_GitHubPages\\runs\\20261109_gpt6luna_v04_attempt01\\evaluation\\qwen_audio_01\\focus_48_60_provenance.json",
+  "provenance": {
+    "source_sha256": "39fe3a4f24b05a60860aaaee4c4d7affd653c1e22961692e79ff3d7ea9194628",
+    "source_start": 48,
+    "source_end": 60,
+    "gain_changed": false,
+    "sample_values_preserved": true
+  },
+  "complete": true,
+  "window": [
+    48,
+    60
+  ],
+  "observation": "短窗口Qwen仍报告仅人声、未听到测试音调；sound_events为空。",
+  "cross_check": "原片独立FFT在49/51秒有5kHz峰、54/57秒有3kHz峰；与模型无音调判断冲突。该复核未解决辅助音频传感器的漏检。",
+  "inference_limit": "不能由模型漏检推断原片音调绝对不可听，也不能把客观存在等同于听觉可辨。该传感证据不足以评定遮蔽和实际比较质量。",
+  "score_unchanged": {
+    "A2": null,
+    "reviewed_points": 47,
+    "reviewed_max": 92,
+    "pending_max": 8,
+    "possible_total_interval": [
+      47,
+      55
+    ],
+    "formal_score": null,
+    "ground_truth_reviewed": false
+  },
+  "prior_files_modified": false
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "chunk": {
+      "file": "clip_00.wav",
+      "start": 0.0,
+      "end": 30.0,
+      "sha256": "379fb2da667eccf6180acbfeea46d22580a4037b9ce6f69715591dc2ee761231"
+    },
+    "response": {
+      "model_ids": [
+        "qwen3.8-omni-flash"
+      ],
+      "content": "{\n  \"speech\": [\n    {\n      \"start\": 0.24,\n      \"end\": 1.68,\n      \"text\": \"问题：采样率不足，声音为什么会变样？\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 2.16,\n      \"end\": 3.52,\n      \"text\": \"升到更高采样率能补救吗？\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 3.76,\n      \"end\": 5.28,\n      \"text\": \"看一个逐点可核对的例子。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 5.6,\n      \"end\": 8.24,\n      \"text\": \"原信号是五千赫兹余弦，每秒震荡五千次。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 8.56,\n      \"end\": 10.4,\n      \"text\": \"实验每秒只取八千个样本。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 10.96,\n      \"end\": 13.04,\n      \"text\": \"橙线是连续信号，蓝点是记录值。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 13.52,\n      \"end\": 17.44,\n      \"text\": \"下方慢速展开横轴，样本仍取自原信号同一时刻，这不是声音慢放。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 17.92,\n      \"end\": 18.96,\n      \"text\": \"现在叠加三千赫兹余弦。\",\n      \"confidence\": \"high\"\n    }\n  ],\n  \"sound_events\": [],\n  \"intelligibility\": {\n    \"observation\": \"旁白发音清晰，语速平稳适中，无明显的削波或爆音现象。\",\n    \"uncertain\": false\n  },\n  \"masking\": {\n    \"observation\": \"全程仅有旁白人声，未听到任何背景音效或非语音音调，不存在遮蔽情况。\",\n    \"uncertain\": false\n  },\n  \"limitations\": [\n    \"无法看到画面以核对视觉描述（如颜色、图表变化）。\",\n    \"音频中并未实际播放所描述的声波效果，仅包含解说词。\"\n  ]\n}",
+      "usage": {
+        "completion_tokens": 591,
+        "completion_tokens_details": {
+          "text_tokens": 591
+        },
+        "prompt_tokens": 464,
+        "prompt_tokens_details": {
+          "audio_tokens": 212,
+          "cached_tokens": 0,
+          "text_tokens": 252
+        },
+        "total_tokens": 1055
+      },
+      "finish_reason": "stop"
+    }
+  },
+  {
+    "chunk": {
+      "file": "clip_01.wav",
+      "start": 30.0,
+      "end": 60.0,
+      "sha256": "924965dc82fde9c9da74f5694aa3414b21d361e1ba4a988c9218b652933cdae3"
+    },
+    "response": {
+      "model_ids": [
+        "qwen3.8-omni-flash"
+      ],
+      "content": "{\n  \"speech\": [\n    {\n      \"start\": 30.0,\n      \"end\": 41.52,\n      \"text\": \"八千赫兹采样时，五千赫兹与三千赫兹在每个采样的值完全相同，频率和相位差对应整圈。蓝点无法告诉我们原来是五还是三千赫兹，这就是混叠。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 41.92,\n      \"end\": 48.72,\n      \"text\": \"图中逐点重合表明两种波形有相同样本。听原始五千赫兹音，再听由这组样本重建的三千赫兹音。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 49.12,\n      \"end\": 60.0,\n      \"text\": \"统一用四十八千赫兹播放，音高对应各自的信号频率，是——\",\n      \"confidence\": \"high\"\n    }\n  ],\n  \"sound_events\": [\n    {\n      \"start\": 43.8,\n      \"end\": 45.6,\n      \"observation\": \"一段持续的合成音调（听起来像正弦波），作为旁白中提到的“原始五千赫兹音”演示。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 46.0,\n      \"end\": 47.8,\n      \"observation\": \"另一段持续的合成音调，与前一个音调在音色上非常相似，但基频明显不同，作为“重建的三千赫兹音”演示。\",\n      \"confidence\": \"medium\"\n    },\n    {\n      \"start\": 48.2,\n      \"end\": 50.0,\n      \"observation\": \"第三段持续的合成音调，其基频与前两段均不同，作为“统一用四十八千赫兹播放”时的效果演示。\",\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"intelligibility\": {\n    \"observation\": \"人声发音清晰、标准，语速适中且平稳。数字和单位（如“八千赫兹”、“五千赫兹”）吐字清楚，易于分辨。没有听到削波、爆音或其他影响可懂度的失真。\",\n    \"uncertain\": false\n  },\n  \"masking\": {\n    \"observation\": \"所有演示用的合成音调都出现在旁白的停顿间隙，与人声完全没有重叠，因此不存在相互遮蔽的情况，两者都非常清晰。\",\n    \"uncertain\": false\n  },\n  \"limitations\": [\n    \"仅能根据听觉判断相对音高变化，无法精确测定每个音调的实际频率数值。\",\n    \"无法确认这些声音是否就是理论上的纯正弦波，只能描述为“合成音调”。\",\n    \"音频在60秒处突然中断，最后一句话不完整。\"\n  ]\n}",
+      "usage": {
+        "completion_tokens": 661,
+        "completion_tokens_details": {
+          "text_tokens": 661
+        },
+        "prompt_tokens": 465,
+        "prompt_tokens_details": {
+          "audio_tokens": 212,
+          "cached_tokens": 0,
+          "text_tokens": 253
+        },
+        "total_tokens": 1126
+      },
+      "finish_reason": "stop"
+    }
+  },
+  {
+    "chunk": {
+      "file": "clip_02.wav",
+      "start": 60.0,
+      "end": 90.0,
+      "sha256": "f724a1f960cd35345fa9927e82380ea325d69005d76f5ede6d9ba549faae371a"
+    },
+    "response": {
+      "model_ids": [
+        "qwen3.8-omni-flash"
+      ],
+      "content": "{\n  \"speech\": [\n    {\n      \"start\": 60.0,\n      \"end\": 72.18,\n      \"text\": \"时长不变。把八千赫兹样本转换到三十二千赫兹并保持时长，绿色新增点由插值产生，它让表示更密却没有重新测量。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 72.54,\n      \"end\": 83.94,\n      \"text\": \"听声采样结果仍是三千赫兹，不能自动回到五千赫兹。只改采样率标记会改变播放速度和音高，这里做的是实际转换。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 84.5,\n      \"end\": 90.0,\n      \"text\": \"结论：带限基带信号的理想重建通常要求采样率严格大于最——\",\n      \"confidence\": \"high\"\n    }\n  ],\n  \"sound_events\": [],\n  \"intelligibility\": {\n    \"observation\": \"旁白为清晰的女声合成语音，语速适中且均匀，发音标准，无背景噪音干扰或削波失真，整体清晰度极高。\",\n    \"uncertain\": false\n  },\n  \"masking\": {\n    \"observation\": \"全程仅有单一人声轨道，未检测到任何非语音音调、音效或背景音乐，不存在声音遮蔽现象。\",\n    \"uncertain\": false\n  },\n  \"limitations\": [\n    \"无法确认原片中是否包含与音频同步的画面（如波形图或频谱图）。\",\n    \"由于缺乏参考基准，无法对旁白的绝对音高进行精确量化评估。\"\n  ]\n}",
+      "usage": {
+        "completion_tokens": 393,
+        "completion_tokens_details": {
+          "text_tokens": 393
+        },
+        "prompt_tokens": 465,
+        "prompt_tokens_details": {
+          "audio_tokens": 212,
+          "cached_tokens": 0,
+          "text_tokens": 253
+        },
+        "total_tokens": 858
+      },
+      "finish_reason": "stop"
+    }
+  },
+  {
+    "chunk": {
+      "file": "clip_03.wav",
+      "start": 90.0,
+      "end": 111.5,
+      "sha256": "7304b929d462ba862e53e534a207a0d6fa2eaea5d8385d93242176a85974ec62"
+    },
+    "response": {
+      "model_ids": [
+        "qwen3.8-omni-flash"
+      ],
+      "content": "{\"speech\":[{\"start\":90.0,\"end\":92.84,\"text\":\"最高频率的两倍，实际滤波还需余量。\",\"confidence\":\"high\"},{\"start\":93.56,\"end\":95.72,\"text\":\"是否采购取决于带宽？\",\"confidence\":\"medium\"},{\"start\":96.36,\"end\":99.4,\"text\":\"升采样不能保证找回混叠前的信息。\",\"confidence\":\"high\"},{\"start\":99.96,\"end\":106.96,\"text\":\"若降采样前用抗混叠低通滤掉带外成分，那是避免混叠，不是恢复这些成分。\",\"confidence\":\"high\"},{\"start\":107.52,\"end\":110.76,\"text\":\"听感还会受重建滤波和播放设备影响。\",\"confidence\":\"high\"}],\"sound_events\":[],\"intelligibility\":{\"observation\":\"女声旁白发音清晰，语速中等偏快且均匀，无削波或爆音现象。\",\"uncertain\":false},\"masking\":{\"observation\":\"全程仅有单一语音轨道，未听到任何背景音乐或环境音效，因此不存在声音遮蔽现象。\",\"uncertain\":false},\"limitations\":[\"无法确认‘是否采购’一词的确切含义（可能是ASR识别错误或口误，如‘是否采用’），但按实际听到的音节记录为‘采购’。\"]}",
+      "usage": {
+        "completion_tokens": 293,
+        "completion_tokens_details": {
+          "text_tokens": 293
+        },
+        "prompt_tokens": 403,
+        "prompt_tokens_details": {
+          "audio_tokens": 149,
+          "cached_tokens": 0,
+          "text_tokens": 254
+        },
+        "total_tokens": 696
+      },
+      "finish_reason": "stop"
+    }
+  }
+]

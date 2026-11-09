@@ -1,0 +1,20 @@
+{
+  "model_ids": [
+    "qwen3.8-omni-flash"
+  ],
+  "content": "{\n  \"speech\": [\n    {\n      \"start\": 60.0,\n      \"end\": 72.18,\n      \"text\": \"时长不变。把八千赫兹样本转换到三十二千赫兹并保持时长，绿色新增点由插值产生，它让表示更密却没有重新测量。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 72.54,\n      \"end\": 83.94,\n      \"text\": \"听声采样结果仍是三千赫兹，不能自动回到五千赫兹。只改采样率标记会改变播放速度和音高，这里做的是实际转换。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 84.5,\n      \"end\": 90.0,\n      \"text\": \"结论：带限基带信号的理想重建通常要求采样率严格大于最——\",\n      \"confidence\": \"high\"\n    }\n  ],\n  \"sound_events\": [],\n  \"intelligibility\": {\n    \"observation\": \"旁白为清晰的女声合成语音，语速适中且均匀，发音标准，无背景噪音干扰或削波失真，整体清晰度极高。\",\n    \"uncertain\": false\n  },\n  \"masking\": {\n    \"observation\": \"全程仅有单一人声轨道，未检测到任何非语音音调、音效或背景音乐，不存在声音遮蔽现象。\",\n    \"uncertain\": false\n  },\n  \"limitations\": [\n    \"无法确认原片中是否包含与音频同步的画面（如波形图或频谱图）。\",\n    \"由于缺乏参考基准，无法对旁白的绝对音高进行精确量化评估。\"\n  ]\n}",
+  "usage": {
+    "completion_tokens": 393,
+    "completion_tokens_details": {
+      "text_tokens": 393
+    },
+    "prompt_tokens": 465,
+    "prompt_tokens_details": {
+      "audio_tokens": 212,
+      "cached_tokens": 0,
+      "text_tokens": 253
+    },
+    "total_tokens": 858
+  },
+  "finish_reason": "stop"
+}

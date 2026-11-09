@@ -1,0 +1,37 @@
+{
+  "kind": "supplemental_audio_evidence_same_submission",
+  "task_version": "0.4-draft",
+  "judge": "gpt-6.1-sol",
+  "actual_audio_model": "qwen3.8-omni-flash",
+  "decoded_mix_sha256": "39fe3a4f24b05a60860aaaee4c4d7affd653c1e22961692e79ff3d7ea9194628",
+  "source_evidence_sha256": "b68b4ba74e7993625684a05016352ff11f0c4e8d5fe112f70d3ec0470d933178",
+  "original_video_sha256": "ec9c87d62a762d8575d5971dabb42b6bfa7cb0d25fa80a4bda326738909b932d",
+  "covered_intervals": [
+    [
+      0.0,
+      30.0
+    ],
+    [
+      30.0,
+      60.0
+    ],
+    [
+      60.0,
+      90.0
+    ],
+    [
+      90.0,
+      111.5
+    ]
+  ],
+  "reviewed_points": 47,
+  "reviewed_max": 92,
+  "pending_max": 8,
+  "formal_score": null,
+  "human_teacher_review": false,
+  "solver_rerun": false,
+  "full_reliable_listening_completed": false,
+  "scope": "Four full-coverage audio windows underpin the 47/92 supplemental review. A separately published 48–60s follow-up diagnostic did not change the score or resolve pending audio judgment.",
+  "safety": "Only the audio collector’s explicit request/visible response artifacts are published; no main-chat logs, authentication headers, keys or hidden reasoning.",
+  "follow_up_diagnostic": "diagnostic-48-60/"
+}

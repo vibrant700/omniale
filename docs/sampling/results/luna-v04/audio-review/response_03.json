@@ -1,0 +1,20 @@
+{
+  "model_ids": [
+    "qwen3.8-omni-flash"
+  ],
+  "content": "{\"speech\":[{\"start\":90.0,\"end\":92.84,\"text\":\"最高频率的两倍，实际滤波还需余量。\",\"confidence\":\"high\"},{\"start\":93.56,\"end\":95.72,\"text\":\"是否采购取决于带宽？\",\"confidence\":\"medium\"},{\"start\":96.36,\"end\":99.4,\"text\":\"升采样不能保证找回混叠前的信息。\",\"confidence\":\"high\"},{\"start\":99.96,\"end\":106.96,\"text\":\"若降采样前用抗混叠低通滤掉带外成分，那是避免混叠，不是恢复这些成分。\",\"confidence\":\"high\"},{\"start\":107.52,\"end\":110.76,\"text\":\"听感还会受重建滤波和播放设备影响。\",\"confidence\":\"high\"}],\"sound_events\":[],\"intelligibility\":{\"observation\":\"女声旁白发音清晰，语速中等偏快且均匀，无削波或爆音现象。\",\"uncertain\":false},\"masking\":{\"observation\":\"全程仅有单一语音轨道，未听到任何背景音乐或环境音效，因此不存在声音遮蔽现象。\",\"uncertain\":false},\"limitations\":[\"无法确认‘是否采购’一词的确切含义（可能是ASR识别错误或口误，如‘是否采用’），但按实际听到的音节记录为‘采购’。\"]}",
+  "usage": {
+    "completion_tokens": 293,
+    "completion_tokens_details": {
+      "text_tokens": 293
+    },
+    "prompt_tokens": 403,
+    "prompt_tokens_details": {
+      "audio_tokens": 149,
+      "cached_tokens": 0,
+      "text_tokens": 254
+    },
+    "total_tokens": 696
+  },
+  "finish_reason": "stop"
+}

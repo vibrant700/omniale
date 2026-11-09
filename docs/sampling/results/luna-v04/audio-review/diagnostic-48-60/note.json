@@ -1,0 +1,14 @@
+{
+  "purpose": "Unmodified 48–60 second audio diagnostic after the four-window supplemental review; no score change.",
+  "actual_audio_model": "qwen3.8-omni-flash",
+  "source_clip_sha256": "c92fe381bbd8b3ae9d11c65b65810702dab54a0f4f462a964458ecc91e8fc677",
+  "observation": "Qwen again reported speech only, no tone. This disagrees with decoded-media FFT confirming 5/3 kHz components.",
+  "judgment": "This result does not resolve the 8 pending points and is not proof the original tones are inaudible to humans.",
+  "audio_processing": "Direct time slice, no gain adjustment or narration suppression.",
+  "score_unchanged": {
+    "reviewed_points": 47,
+    "reviewed_max": 92,
+    "pending_max": 8,
+    "formal_score": null
+  }
+}

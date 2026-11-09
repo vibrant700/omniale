@@ -1,0 +1,20 @@
+{
+  "model_ids": [
+    "qwen3.8-omni-flash"
+  ],
+  "content": "{\n  \"speech\": [\n    {\n      \"start\": 30.0,\n      \"end\": 41.52,\n      \"text\": \"八千赫兹采样时，五千赫兹与三千赫兹在每个采样的值完全相同，频率和相位差对应整圈。蓝点无法告诉我们原来是五还是三千赫兹，这就是混叠。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 41.92,\n      \"end\": 48.72,\n      \"text\": \"图中逐点重合表明两种波形有相同样本。听原始五千赫兹音，再听由这组样本重建的三千赫兹音。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 49.12,\n      \"end\": 60.0,\n      \"text\": \"统一用四十八千赫兹播放，音高对应各自的信号频率，是——\",\n      \"confidence\": \"high\"\n    }\n  ],\n  \"sound_events\": [\n    {\n      \"start\": 43.8,\n      \"end\": 45.6,\n      \"observation\": \"一段持续的合成音调（听起来像正弦波），作为旁白中提到的“原始五千赫兹音”演示。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 46.0,\n      \"end\": 47.8,\n      \"observation\": \"另一段持续的合成音调，与前一个音调在音色上非常相似，但基频明显不同，作为“重建的三千赫兹音”演示。\",\n      \"confidence\": \"medium\"\n    },\n    {\n      \"start\": 48.2,\n      \"end\": 50.0,\n      \"observation\": \"第三段持续的合成音调，其基频与前两段均不同，作为“统一用四十八千赫兹播放”时的效果演示。\",\n      \"confidence\": \"medium\"\n    }\n  ],\n  \"intelligibility\": {\n    \"observation\": \"人声发音清晰、标准，语速适中且平稳。数字和单位（如“八千赫兹”、“五千赫兹”）吐字清楚，易于分辨。没有听到削波、爆音或其他影响可懂度的失真。\",\n    \"uncertain\": false\n  },\n  \"masking\": {\n    \"observation\": \"所有演示用的合成音调都出现在旁白的停顿间隙，与人声完全没有重叠，因此不存在相互遮蔽的情况，两者都非常清晰。\",\n    \"uncertain\": false\n  },\n  \"limitations\": [\n    \"仅能根据听觉判断相对音高变化，无法精确测定每个音调的实际频率数值。\",\n    \"无法确认这些声音是否就是理论上的纯正弦波，只能描述为“合成音调”。\",\n    \"音频在60秒处突然中断，最后一句话不完整。\"\n  ]\n}",
+  "usage": {
+    "completion_tokens": 661,
+    "completion_tokens_details": {
+      "text_tokens": 661
+    },
+    "prompt_tokens": 465,
+    "prompt_tokens_details": {
+      "audio_tokens": 212,
+      "cached_tokens": 0,
+      "text_tokens": 253
+    },
+    "total_tokens": 1126
+  },
+  "finish_reason": "stop"
+}

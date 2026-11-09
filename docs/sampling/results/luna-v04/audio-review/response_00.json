@@ -1,0 +1,20 @@
+{
+  "model_ids": [
+    "qwen3.8-omni-flash"
+  ],
+  "content": "{\n  \"speech\": [\n    {\n      \"start\": 0.24,\n      \"end\": 1.68,\n      \"text\": \"问题：采样率不足，声音为什么会变样？\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 2.16,\n      \"end\": 3.52,\n      \"text\": \"升到更高采样率能补救吗？\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 3.76,\n      \"end\": 5.28,\n      \"text\": \"看一个逐点可核对的例子。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 5.6,\n      \"end\": 8.24,\n      \"text\": \"原信号是五千赫兹余弦，每秒震荡五千次。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 8.56,\n      \"end\": 10.4,\n      \"text\": \"实验每秒只取八千个样本。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 10.96,\n      \"end\": 13.04,\n      \"text\": \"橙线是连续信号，蓝点是记录值。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 13.52,\n      \"end\": 17.44,\n      \"text\": \"下方慢速展开横轴，样本仍取自原信号同一时刻，这不是声音慢放。\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"start\": 17.92,\n      \"end\": 18.96,\n      \"text\": \"现在叠加三千赫兹余弦。\",\n      \"confidence\": \"high\"\n    }\n  ],\n  \"sound_events\": [],\n  \"intelligibility\": {\n    \"observation\": \"旁白发音清晰，语速平稳适中，无明显的削波或爆音现象。\",\n    \"uncertain\": false\n  },\n  \"masking\": {\n    \"observation\": \"全程仅有旁白人声，未听到任何背景音效或非语音音调，不存在遮蔽情况。\",\n    \"uncertain\": false\n  },\n  \"limitations\": [\n    \"无法看到画面以核对视觉描述（如颜色、图表变化）。\",\n    \"音频中并未实际播放所描述的声波效果，仅包含解说词。\"\n  ]\n}",
+  "usage": {
+    "completion_tokens": 591,
+    "completion_tokens_details": {
+      "text_tokens": 591
+    },
+    "prompt_tokens": 464,
+    "prompt_tokens_details": {
+      "audio_tokens": 212,
+      "cached_tokens": 0,
+      "text_tokens": 252
+    },
+    "total_tokens": 1055
+  },
+  "finish_reason": "stop"
+}

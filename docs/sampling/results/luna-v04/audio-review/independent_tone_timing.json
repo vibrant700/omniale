@@ -1,0 +1,41 @@
+{
+  "method": "1-second Hann-window FFT of sealed final mix, no amplitude normalization; diagnostic threshold >15% total spectral power in +/-2Hz",
+  "segments": [
+    {
+      "start": 49,
+      "end": 50,
+      "dominant_test_frequency_hz": 5000,
+      "fraction_of_total_spectral_power": 0.3111466575114225
+    },
+    {
+      "start": 51,
+      "end": 52,
+      "dominant_test_frequency_hz": 5000,
+      "fraction_of_total_spectral_power": 0.2798376942360453
+    },
+    {
+      "start": 54,
+      "end": 55,
+      "dominant_test_frequency_hz": 3000,
+      "fraction_of_total_spectral_power": 0.2205099680620202
+    },
+    {
+      "start": 57,
+      "end": 58,
+      "dominant_test_frequency_hz": 3000,
+      "fraction_of_total_spectral_power": 0.317344846313465
+    },
+    {
+      "start": 75,
+      "end": 76,
+      "dominant_test_frequency_hz": 3000,
+      "fraction_of_total_spectral_power": 0.2108775400008441
+    },
+    {
+      "start": 77,
+      "end": 78,
+      "dominant_test_frequency_hz": 3000,
+      "fraction_of_total_spectral_power": 0.25505231770376685
+    }
+  ]
+}
