@@ -2,7 +2,7 @@
 
 展示页：https://vibrant700.github.io/omniale/plnba/
 
-将12段无声比赛片段与含部分错误的引导稿，制作成带普通话旁白、中文字幕的复盘短片。实际题面见TASK.md；完整候选输入包在同仓库Release中。工具只提供制作能力，不提供事实答案、修订稿、配音或最终时间轴。
+将12段无声比赛片段与初步引导稿，制作成带普通话旁白、中文字幕的复盘短片。制作委托见TASK.md，导出规格见delivery_spec.md；完整素材包在同仓库Release中。
 
 tools/speak.py与speak_local.py为实际试测提供的离线Piper入口，依赖已准备好的Piper运行时及huayan中文音色。默认部署路径C:/Users/Public/omniale_tts，跨环境复用时应调整为本机已安装的运行时位置。
 

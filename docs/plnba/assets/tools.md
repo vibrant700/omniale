@@ -10,7 +10,7 @@
 
 ## 视频观察和音频检查
 
-Python 可用 OpenCV、Pillow、numpy、PyAV、faster-whisper。FFmpeg 可以逐帧提取画面；view_image 发送实际图片给你。listen_audio 将本地音频无损发送给固定 Qwen 音频观察工具，返回听到的文本及声音问题，不提供比赛事实、评分标准或分数。可以用工具提取短音频检查，不提供现成解说答案。
+Python 可用 OpenCV、Pillow、numpy、PyAV、faster-whisper。FFmpeg 可以逐帧提取画面；view_image 发送实际图片给你。listen_audio 将本地音频无损发送给音频观察工具，返回听到的文本及声音问题，用于检查听到的内容和声音表现。可以用工具提取短音频检查，不提供现成解说答案。
 
 ## Shotcut / MLT
 
@@ -18,4 +18,4 @@ Python 可用 OpenCV、Pillow、numpy、PyAV、faster-whisper。FFmpeg 可以逐
 
 MLT 的时间单位可用整数帧，60 帧为 1 秒；entry 的 in/out 包括端点。初始工程总长159秒，只有中性章节、原速视频、空配音/字幕轨。你可以自行改轨道、切片、旁白、字幕、暂停和回放。dynamictext filter 参数包括 argument、family、size、geometry、fgcolour、bgcolour、outlinecolour、outlinewidth。字体 Microsoft YaHei 可用于中文。音频 playlist 与画面轨需保持正确混合/隐藏设置。
 
-FFmpeg 可供分析、抽帧、转码、音量处理和字幕生成。原生 MLT 重导出会被单独检查，不要求只能用某一种编辑方式。请等待真实渲染完成，不提交仍在运行的文件。
+FFmpeg 可供分析、抽帧、转码、音量处理和字幕生成。可直接使用 MLT 原生导出，也可以结合其他工具完成制作。请等待真实渲染完成，不提交仍在运行的文件。
