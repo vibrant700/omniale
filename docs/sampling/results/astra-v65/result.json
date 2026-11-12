@@ -2,23 +2,43 @@
   "case": "OmniALE Case 02",
   "task_version": "6.5-strict-evidence",
   "solver_model": "gpt-6-astra",
-  "score": 97.5,
+  "score": 85,
   "max_score": 100,
   "breakdown": {
     "knowledge": 15,
     "dynamic_demonstration": 15,
     "av_caption_consistency_and_teaching_progression": 20,
-    "subjective_audio": 27.5,
+    "subjective_audio": 15,
     "objective_audio": 10,
     "readability_and_visual_language": 10
   },
-  "deduction": {
-    "points": 2.5,
-    "time_s": [98, 105],
-    "reason": "The key negations in the conclusion were clear but not sufficiently emphasized in prosody."
+  "strict_audio_review": {
+    "judge_model": "qwen3.8-omni-flash",
+    "audio_sha256": "5369202d5fd8605beb9f9c393933ff37b6abdec0bc8b3cfe7140d97694fcb6e9",
+    "audio_tokens": 807,
+    "dimensions": {
+      "segmentation": {"level_4": 2, "score_10": 5},
+      "prosody": {"level_4": 2, "score_10": 5},
+      "listening_clarity": {"level_4": 2, "score_10": 5}
+    },
+    "total": 15,
+    "maximum": 30,
+    "verdict": "needs substantial narration revision",
+    "confirmed_issue_summary": [
+      "Dense numeric and formula passages repeatedly lack functional pauses.",
+      "Questions, causal relations, contrasts and negations are often under-emphasized.",
+      "P/Q labels and several key phrases are not consistently easy to distinguish.",
+      "The listening examples enter and end abruptly."
+    ],
+    "scoring_note": "Each dimension used a 0-4 integer level mapped to 0, 2.5, 5, 7.5 or 10 points. Three scores of 5 indicate the same broad level, not exact continuous measurement.",
+    "reliability_note": "The first strict call incorrectly returned unknown despite consuming 807 audio tokens. A second call with the identical audio hash produced the scored review. ASR confusion around Q labels and closing terminology supports some clarity concerns, but the result remains an AI judgment."
   },
-  "gates": {"format": "met", "core_science": "met", "continuous_demo": "met", "deliverables": "met"},
-  "review_mode": "AI-only",
-  "human_teacher_reviewed": false,
-  "note": "Two earlier audio attempts returned unknown because the Base64 upload exceeded the service limit. They were evaluation-infrastructure failures and were not scored."
+  "gates": {
+    "format": "met",
+    "core_science": "met",
+    "continuous_demo": "met",
+    "deliverables": "met"
+  },
+  "review_mode": "AI-only strict re-review",
+  "human_teacher_reviewed": false
 }
