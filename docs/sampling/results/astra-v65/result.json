@@ -1,0 +1,24 @@
+{
+  "case": "OmniALE Case 02",
+  "task_version": "6.5-strict-evidence",
+  "solver_model": "gpt-6-astra",
+  "score": 97.5,
+  "max_score": 100,
+  "breakdown": {
+    "knowledge": 15,
+    "dynamic_demonstration": 15,
+    "av_caption_consistency_and_teaching_progression": 20,
+    "subjective_audio": 27.5,
+    "objective_audio": 10,
+    "readability_and_visual_language": 10
+  },
+  "deduction": {
+    "points": 2.5,
+    "time_s": [98, 105],
+    "reason": "The key negations in the conclusion were clear but not sufficiently emphasized in prosody."
+  },
+  "gates": {"format": "met", "core_science": "met", "continuous_demo": "met", "deliverables": "met"},
+  "review_mode": "AI-only",
+  "human_teacher_reviewed": false,
+  "note": "Two earlier audio attempts returned unknown because the Base64 upload exceeded the service limit. They were evaluation-infrastructure failures and were not scored."
+}
