@@ -21,4 +21,4 @@ Luna实际测试版本为0.3-draft。其101秒原片、原题包、74分临时�
 
 ## PL-NBA 中文篮球解说制作
 
-展示页：https://vibrant700.github.io/omniale/plnba/ 。Astra 单次试测后，用户授权 Qwen 对同一完整成片音轨重测，合计83.4/100，工程独立门槛满足。候选输入包和1080p60封存原片在对应Release，网页播放器为完整时长的720p30转码预览。
+展示页：https://vibrant700.github.io/omniale/plnba/ 。当前独立 Astra 制作试测已完成，Qwen 音频项待评；其余分项和工程核验见页面。原片在对应 Release，网页提供完整时长预览。

@@ -1,0 +1,70 @@
+{
+  "task_id": "omniale-plnba-commentary-production",
+  "solver_model": "gpt-6-astra",
+  "trial": "astra02",
+  "run_status": "solver_budget_exhausted",
+  "elapsed_solver_seconds": 3671.2189999999973,
+  "tool_calls": 120,
+  "evaluation_status": "pending_audio_review",
+  "quality_score": null,
+  "quality_subscores": {
+    "A_facts": 34.166666666666664,
+    "B_audiovisual_editing": 20.0,
+    "C_qwen_subjective_audio": null,
+    "D_subtitles": 10
+  },
+  "assessed_subtotal": {
+    "points": 64.16666666666666,
+    "maximum": 70,
+    "not_renormalized": true
+  },
+  "engineering_gate": "met",
+  "engineering_checks": {
+    "G1": {
+      "status": "met",
+      "evidence": "必要文件非空，MP4完整解码成功，WAV、SRT、alignment与MLT可读取。"
+    },
+    "G2": {
+      "status": "met",
+      "evidence": "202.5秒，1080p60 H264，AAC48kHz双声道平均172759bps；独立PCM WAV与成片音轨零时差内容相关；响度及峰值满足合同。"
+    },
+    "G3": {
+      "status": "met",
+      "evidence": "整个输出包复制到另一目录；所有MLT媒体为包内相对路径；同一已提供字体可解析。"
+    },
+    "G4": {
+      "status": "met",
+      "evidence": "12个独立无字幕画面切片、43个可编辑字幕滤镜、独立旁白轨及43句替换配音素材；旁白轨可分割替换，附带原片与变速映射。"
+    },
+    "G5": {
+      "status": "met",
+      "evidence": "已实际使用迁移后MLT完整原生渲染；比较25处画面、全长配音及时长。ASS与dynamictext字号/背景框略有差异，内容、章节、慢放与字幕对应。"
+    }
+  },
+  "maximum": 100,
+  "quality_pass_threshold": null,
+  "engineering_gate_affects_score": false,
+  "automatic_iteration": false,
+  "media": {
+    "duration_seconds": 202.5,
+    "original": {
+      "url": "https://github.com/vibrant700/omniale/releases/download/plnba-commentary-astra02/astra02-commentary-original.mp4",
+      "bytes": 548380266,
+      "sha256": "90fde11a6aacca3f8574d30155b7c4378bf50c9a97486f8aa3a318cbffb77974"
+    },
+    "web_preview": {
+      "file": "preview.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "complete_duration": true,
+      "audio_stream_copied": true
+    }
+  },
+  "qwen": {
+    "model": "qwen3.8-omni-flash",
+    "formal_requests": 1,
+    "status": "unknown",
+    "score": null
+  }
+}
