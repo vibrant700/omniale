@@ -1,0 +1,285 @@
+{
+  "model": "qwen3.8-omni-flash",
+  "audio_sha256": "7b0173c14aa4e3c730469fb71b982169cf8eead22935a263e42374ffa107d11a",
+  "prompt_sha256": "30b1d33ec9f40332328561f37f20accff2f70d22c1ec37ae498e1cc641ea459e",
+  "input_audio_tokens": 1486,
+  "review": {
+    "status": "scored",
+    "perception": "direct_audio",
+    "listening_sections": [
+      {
+        "id": "beginning",
+        "start_s": 0.0,
+        "end_s": 70.833777,
+        "speech_present": true,
+        "heard": "开头到约 70 秒是国王与勇士前几回合的复盘：穆雷交给萨博尼斯、福克斯手递手后切中路急停跳投命中，随后库里、卢尼、普尔、维金斯等人连续出现。旁白为普通话女声合成感不强，咬字总体清楚，但句子被切成较短观察片段，段间留有数秒空白；语气偏平，命中与传导没有明显声学加重。"
+      },
+      {
+        "id": "middle",
+        "start_s": 70.833777,
+        "end_s": 141.667554,
+        "speech_present": true,
+        "heard": "中段围绕国王突破、近距离不中、萨博尼斯争抢、卢尼篮板，以及格林被断、赫尔特/巴恩斯/穆雷外线不中、福克斯与巴恩斯底线突破等连续回合。声音身份和响度基本统一，但若干动作与结果之间停顿偏长，例如右侧突破后较久才接到近距离出手不中；‘没进’‘收下篮板’等结果词没有明显重音，听感更像逐项播报。"
+      },
+      {
+        "id": "end",
+        "start_s": 141.667554,
+        "end_s": 212.501333,
+        "speech_present": true,
+        "heard": "后段包括戴维斯/米切尔/梅图组织、福克斯突破晃开打进、国王转移球给蒙克和梅图扣进、库里找汤普森后被米切尔抢断反击上篮，最后兰姆、格林、汤普森、普尔、维金斯传导跳投命中，以及汤普森三分不中、兰姆前场篮板补篮。整体仍可听懂，姓名和动作词清楚；但章节进入处偶有硬起，语气对失误、得分、篮板的区分不足，表达仍偏书面动作链。"
+      }
+    ],
+    "issues": [
+      {
+        "id": "I01",
+        "owner": "phrasing_pacing",
+        "start_s": 67.0,
+        "end_s": 84.0,
+        "heard": "约 67 秒听到‘国王传导后穆雷从右侧突破’后，动作句结束与下一句‘近距离出手没进……’之间留白偏长，突破和出手结果被拆成两个孤立片段。",
+        "impact": "听众需要在心中保留前一个突破动作，等到数秒后才得到结果，回合连续性被打断。"
+      },
+      {
+        "id": "I02",
+        "owner": "prosody_emphasis",
+        "start_s": 84.0,
+        "end_s": 94.0,
+        "heard": "‘近距离出手没进’‘补篮也没中’‘最后卢尼收下篮板’连续出现，但三个关键结果的音高、轻重和节奏几乎等权。",
+        "impact": "不中、补篮不中、篮板归属这些转折主要靠词汇识别，声音没有帮助听众快速抓住结果变化。"
+      },
+      {
+        "id": "I03",
+        "owner": "spoken_commentary",
+        "start_s": 17.0,
+        "end_s": 26.0,
+        "heard": "‘勇士外线传导汤普森叫回库里。卢尼高位接应在手递手给库里，借球直接把起三分命中。’听起来像压缩动作笔记，‘传导’‘高位接应’‘手递手’‘借球’连续堆叠，缺少口语连接。",
+        "impact": "普通观众需要自行还原谁传给谁、谁掩护谁、谁最终出手，句子关系不够顺口。"
+      },
+      {
+        "id": "I04",
+        "owner": "assembly_consistency",
+        "start_s": 94.0,
+        "end_s": 100.0,
+        "heard": "前一篮板句结束后进入‘普尔汤普森参与传导球再回到德雷蒙德格林’时，起音较硬，前后小节的房间感和电平有轻微跳变。",
+        "impact": "不会造成听不懂，但能听出是分段拼接，短暂分散注意力。"
+      },
+      {
+        "id": "I05",
+        "owner": "phrasing_pacing",
+        "start_s": 167.0,
+        "end_s": 181.0,
+        "heard": "‘库里发起进攻球来到切入的汤普森手里’之后停顿较长，才接‘汤普森向外传球被米切尔截走’，传球完成与被断之间缺少声音上的承接。",
+        "impact": "听众容易把前后听成两个独立事件，而不是同一回合中的传球失误连锁。"
+      },
+      {
+        "id": "I06",
+        "owner": "prosody_emphasis",
+        "start_s": 175.0,
+        "end_s": 186.0,
+        "heard": "‘被米切尔截走’和‘一路反击冲到篮下上篮得分’用同样平稳的语势读出，抢断与得分没有形成情绪或重音落差。",
+        "impact": "关键攻防转换的戏剧性被抹平，听众需要靠文字而非语气判断这是重要回合。"
+      },
+      {
+        "id": "I07",
+        "owner": "phrasing_pacing",
+        "start_s": 49.0,
+        "end_s": 60.0,
+        "heard": "‘福克斯推进维金斯在外线紧盯持球’后出现较长空白，接着‘伸手断球维金斯自己带球反击’突然起步，断球动作没有被自然带入前一句。",
+        "impact": "防守到反击的转换听起来像两个被硬切的短句，增加重建主语的负担。"
+      },
+      {
+        "id": "I08",
+        "owner": "spoken_commentary",
+        "start_s": 94.0,
+        "end_s": 107.0,
+        "heard": "‘普尔汤普森参与传导球再回到德雷蒙德格林。格林传球被赫尔特断下国王转身推进。赫尔特分巴恩斯再转给底角的穆雷……’连续使用‘传导’‘分’‘再转给’，主语和球权切换缺少口语化过渡。",
+        "impact": "信息密度高但表达像战术记录，听众要反复确认球现在在谁手里。"
+      }
+    ],
+    "dimensions": {
+      "intelligibility": {
+        "level": 4,
+        "owned_issue_ids": [],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 8.0,
+            "end_s": 14.0,
+            "heard": "‘手递手给福克斯借掩护切到中路，急停跳投两分命中’中福克斯、中路、急停跳投、命中等词都能直接听清，辅音收束不糊。",
+            "impact": "开场动作和得分结果无需反复回放即可辨认。"
+          },
+          {
+            "section": "middle",
+            "start_s": 99.0,
+            "end_s": 107.0,
+            "heard": "‘格林传球被赫尔特断下……赫尔特分巴恩斯再转给底角的穆雷’多个姓名连续出现，但每个姓名的音节边界仍清楚，没有吞掉关键姓氏。",
+            "impact": "听众能跟上球权从格林到赫尔特、巴恩斯、穆雷的转移。"
+          },
+          {
+            "section": "end",
+            "start_s": 160.0,
+            "end_s": 166.0,
+            "heard": "‘蒙克突入后送回篮下梅图接球扣进’中蒙克、送回、篮下、梅图、扣进都清楚，句尾动作没有弱化到难辨。",
+            "impact": "最后一棒传球和扣篮结果可以直接听出来。"
+          }
+        ]
+      },
+      "phrasing_pacing": {
+        "level": 2,
+        "owned_issue_ids": [
+          "I01",
+          "I05",
+          "I07"
+        ],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 49.0,
+            "end_s": 60.0,
+            "heard": "福克斯推进句与维金斯断球反击句之间停顿偏长，后句又以较突兀的方式起步。",
+            "impact": "防守盯球到抢断反击的连贯感被削弱，听众需要自行补齐主体转换。"
+          },
+          {
+            "section": "middle",
+            "start_s": 67.0,
+            "end_s": 84.0,
+            "heard": "穆雷右侧突破后没有及时接上近距离出手结果，中间留白把同一回合拆散。",
+            "impact": "动作—结果关系不再由语流自然呈现，节奏出现明显断层。"
+          },
+          {
+            "section": "end",
+            "start_s": 167.0,
+            "end_s": 181.0,
+            "heard": "库里找到切入的汤普森之后，汤普森被断和米切尔反击之间停顿过长。",
+            "impact": "同一进攻回合的传球、失误、反击被听成分离片段，跟随成本上升。"
+          }
+        ]
+      },
+      "prosody_emphasis": {
+        "level": 2,
+        "owned_issue_ids": [
+          "I02",
+          "I06"
+        ],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 12.0,
+            "end_s": 14.0,
+            "heard": "‘急停跳投两分命中’的‘命中’没有上扬或加重，和前文传导句的语势差别很小。",
+            "impact": "得分结果缺少听觉标记，听众只能依赖词义判断。"
+          },
+          {
+            "section": "middle",
+            "start_s": 84.0,
+            "end_s": 94.0,
+            "heard": "连续两个‘没进/没中’和一个‘收下篮板’几乎同等强度读出，转折和归属没有被声音区分。",
+            "impact": "关键篮板回合的失败—争抢—归属链条变得平淡，重点不突出。"
+          },
+          {
+            "section": "end",
+            "start_s": 175.0,
+            "end_s": 186.0,
+            "heard": "米切尔抢断和反击上篮得分用同样平稳语气完成，没有对‘截走’和‘得分’做适度强调。",
+            "impact": "攻防转换的重要性没有被声音放大，复盘情绪持续偏低。"
+          }
+        ]
+      },
+      "spoken_commentary": {
+        "level": 2,
+        "owned_issue_ids": [
+          "I03",
+          "I08"
+        ],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 17.0,
+            "end_s": 26.0,
+            "heard": "勇士外线一段使用‘传导’‘高位接应’‘手递手’‘借球’等短术语连续排列，句子像书面动作清单。",
+            "impact": "普通观众需要额外解析人物和动作关系，口语解说的自然度不足。"
+          },
+          {
+            "section": "middle",
+            "start_s": 94.0,
+            "end_s": 107.0,
+            "heard": "‘参与传导球’‘被断下’‘转身推进’‘分巴恩斯’‘再转给底角’连续堆叠，球权变化缺少‘此时’‘随后’等口头衔接。",
+            "impact": "信息虽可懂，但听觉组织偏密，需要编辑成更顺口的复盘语言。"
+          },
+          {
+            "section": "end",
+            "start_s": 150.0,
+            "end_s": 166.0,
+            "heard": "国王转移球到梅图、手递手给蒙克、梅图顺下、蒙克回传、梅图扣进被压缩在少数句子里，动作链缺少口语化取舍。",
+            "impact": "听众能抓到扣篮结果，但中间配合关系听起来拥挤，不像自然讲解。"
+          }
+        ]
+      },
+      "assembly_consistency": {
+        "level": 3,
+        "owned_issue_ids": [
+          "I04"
+        ],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 0.0,
+            "end_s": 14.0,
+            "heard": "开头几句的音色、响度和清晰度基本一致，没有重复词、爆音或明显丢字。",
+            "impact": "前段可以稳定作为同一旁白收听，拼接感不强。"
+          },
+          {
+            "section": "middle",
+            "start_s": 94.0,
+            "end_s": 100.0,
+            "heard": "进入普尔/汤普森传导句时起音略硬，与前一句末尾的安静和声底有轻微跳变。",
+            "impact": "能听出局部接缝，但只造成短暂注意分散，没有破坏理解。"
+          },
+          {
+            "section": "end",
+            "start_s": 186.0,
+            "end_s": 210.0,
+            "heard": "最后兰姆推进、维金斯跳投、汤普森三分不中、兰姆补篮几段的声音身份和电平总体统一，没有持续音质漂移。",
+            "impact": "结尾保持可听的连贯性，局部接缝不影响整段收束。"
+          }
+        ]
+      }
+    },
+    "limitations": [
+      "停顿与接缝时间按可定位句段近似到秒，未声称毫秒级精确。"
+    ]
+  },
+  "score": 19.5,
+  "maximum": 30,
+  "evidence_limitations": [
+    {
+      "issue_id": "I02",
+      "reported_interval_s": [
+        84,
+        94
+      ],
+      "matching_spoken_content_interval_s": [
+        75.4,
+        81.6
+      ],
+      "finding": "The cited misses and Looney rebound occur earlier; the Qwen timestamp is misplaced."
+    },
+    {
+      "issue_id": "I04",
+      "reported_interval_s": [
+        94,
+        100
+      ],
+      "matching_spoken_content_interval_s": [
+        84.3,
+        88.4
+      ],
+      "finding": "The cited Poole/Thompson/Green opening occurs earlier; the claimed splice sound has not been independently confirmed."
+    },
+    {
+      "finding": "Qwen characterizes the voice as female and describes room tone; these subjective descriptions were not independently verified."
+    },
+    {
+      "finding": "Neutral review commentary permits observation pauses and restrained emotion. The Qwen deductions for pauses and low emotional contrast remain its subjective judgments, not externally established defects."
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="OmniALE Case 03：从12段无声篮球录像校正引导稿，制作中文解说成片。展示Astra真实交付、83.4分测评与Qwen听评限制。">
+<meta name="theme-color" content="#f4f3ee"><title>看清再开口：篮球解说 · OmniALE Case 03</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script defer src="app.js"></script>
+</head><body><a class="skip" href="#main">跳到主要内容</a><main id="main">
+<a class="back" href="../">← OmniALE 案例目录</a>
+<header class="hero"><div class="eyebrow">OMNIALE · CASE 03 · 体育视频理解与音视频制作</div>
+<h1>先看清发生了什么，<br><span>再把这一球讲明白。</span></h1>
+<p class="lead">十二段无声比赛录像，一份夹杂错误的引导稿。智能体需要自己辨认人物、还原动作与结果，重写中文解说，再把配音、字幕和画面做成一集可以播放、继续编辑的篮球复盘。</p>
+<div class="tags"><span>GPT‑6 Astra</span><span>212.5 秒 · 十二段复盘</span><span>普通话配音与简体中文字幕</span><span class="neutral">PL-NBA · v1.0 · 单次试测</span></div>
+<div class="facts"><div><strong>83.4 / 100</strong><span>Qwen 重测后的 AI 评测合计</span></div><div><strong>35.2 / 40</strong><span>事实纠错与关键链条覆盖</span></div><div><strong>19.5 / 30</strong><span>Qwen 完整音轨主观听评</span></div><div><strong>工程门槛满足</strong><span>换路径后原生重导出 · 不计分</span></div></div></header>
+<nav class="nav side-nav" aria-label="章节导航"><a href="#task">这道题要做什么</a><a href="#film">Astra 的成片</a><a href="#result">评分结果</a><a href="#evidence">我们检查了什么</a><a href="#files">公开文件</a></nav>
+
+<section id="task" class="content-section"><h2>一、这道题要做什么</h2>
+<article class="task-text"><h3>篮球内容团队的真实工作</h3><p>后期团队拿到十二段来自同一场比赛不同时段的无声片段，以及一份未经完整看片校正的引导稿。稿子里有正确内容，也可能错认球员、混淆传球关系、提前结束回合或误报投篮结果。目标是制作一集不超过240秒、面向普通篮球观众的中文赛后复盘。</p>
+<h3>留给智能体的判断</h3><p>不能只润色原稿。智能体需要以录像为依据，决定保留什么、纠正什么、补充哪些后续动作，再选择怎样讲、哪里留白、是否慢放或回放。难点贯穿“看懂 → 改稿 → 说出来 → 与画面对齐”：稿件改对了，成片里仍然说错，也不算修复。</p>
+<h3>提供的输入与制作工具</h3><p>输入包括P01–P12无声片段、源片时间清单、逐段引导稿、球队与球员名册、中文复盘风格，以及可导出的初始粗剪工程。环境提供离线Piper中文语音、Shotcut/MLT、FFmpeg/ffprobe、Python及媒体观察工具。名册帮助识别人，不提供每段的正确动作答案。</p>
+<h3>最终交付</h3><p>提交含普通话解说和简体中文字幕的1080p60 MP4、独立WAV旁白、最终解说稿、SRT字幕、源片与成片对齐记录、修订证据，以及带必要媒体的可编辑工程。工程需要换路径后仍能原生重导出；把成片放进空工程不算完成。</p></article>
+<p class="task-note">十二段各自独立，按P01–P12呈现；允许0.5–1倍慢放、暂停和标注清楚的回放。仅有中文旁白，允许观察留白，不要求夸张喊叫或逐次朗读运球。</p>
+<details class="full-task"><summary>查看实际题面</summary><article class="full-task-content"><h3>看清再开口：篮球解说稿校正与配音制作</h3>
+<p>你是篮球内容团队的后期解说制作者。现在有 12 段无声比赛录像和一份逐段引导稿，请制作一集面向普通篮球观众的中文复盘短片。</p>
+<p>引导稿未经完整看片校正，可能有事实错误或重要遗漏，也有可以保留的正确内容。请以录像为依据判断并重写，不要只润色原文。素材来自同一场比赛的不同时段，各段彼此独立。</p>
+<h4>输入与工具</h4>
+<pre><code>input/
+  sources/P01.mp4 … P12.mp4        无声原始片段
+  source_manifest.json            时长、帧率和源片时间基准
+  guide_script.md                 待核查的逐段引导稿
+  context/roster.csv               球队、球衣、号码、中英文名
+  context/commentary_style.md      观众定位、译名与表达约定
+  starter/review.mlt               已可导出的初始粗剪工程
+  starter/media/                  现有章节媒体
+  tools/README.md                 TTS、剪辑、字幕等工具用法</code></pre>
+<p>环境提供中文语音合成、Shotcut/MLT、FFmpeg/ffprobe、Python 和媒体观察工具。服务凭据由环境注入，不写入交付包。可使用脚本、CLI、接口或 GUI；无需安装网站或新增在线发布服务。</p>
+<h4>需要完成的工作</h4>
+<ol>
+<li>查看所有片段，确定引导稿哪些信息可信，纠正错人、错动作、错结果或错顺序，并补充影响理解的重要后续动作。</li>
+<li>重写适合口头表达的中文解说。结合球衣号码和名册辨认人物，不凭知名度猜人；看不清的细节不编造。</li>
+<li>实际调用语音合成工具生成普通话配音，试听并处理读音、断句、重音、语速与接缝，保持一种旁白音色。</li>
+<li>实际调用剪辑工具制作成片：按 P01–P12 分段呈现，安排配音和画面，必要时加暂停、慢放或回放，制作简体中文字幕。</li>
+<li>交付能重新打开和编辑的工程及全部必要媒体，并简要记录改动及关键证据。</li>
+</ol>
+<p>每段都应有与其主要事件相关的实质解说。不要将细碎运球逐项朗读，也不要用泛泛赞美代替动作链。内容风格是赛后复盘，允许解释和回顾；回顾应有清楚措辞或明确的回放标识，避免观众误以为又发生一次事件。</p>
+<p>正确内容不必照抄原句，但不能在改写时变成错误事实。不要无依据地增加战术意图、犯规判罚、助攻认定或责任归属。不讲述输入视频没有提供的比赛背景。</p>
+<h4>成片约束</h4>
+<ul>
+<li>12 段都保留实质内容并有章节分隔；顺序 P01–P12；总长不超过 240 秒。</li>
+<li>不重排一次进攻内部的实际事件，不删除影响判断的前后文，不生成虚假的比赛画面。</li>
+<li>允许 0.5–1 倍慢放、暂停和明确标注的回放；不要求固定数量的效果，也不按效果数量加分。</li>
+<li>仅中文旁白，不添加原声解说、背景音乐和音效。允许自然留白，不要求每秒都有声音。</li>
+<li>简体中文字幕跟随实际配音；姓名、数字、否定和结果必须一致。建议最多两行，每行不超过 20 个汉字宽度；不要遮挡主要动作。</li>
+<li>MP4 使用 H.264、1920×1080、60 fps，AAC 音轨为 48 kHz、双声道、至少 160 kb/s。独立配音为 48 kHz 双声道 PCM WAV；成片中仅有这条配音的编码版本。</li>
+<li>以舒适、稳定的可懂度为目标。综合响度参考 −16 LUFS（允许 ±2），真峰值不高于 −1 dBTP；不得靠大幅提速硬塞语句或以响度替代表达。</li>
+</ul>
+<p>工程中的视频切片、配音片段、字幕和必要回放应能继续编辑。把成片 MP4 导入一个空工程，不算可编辑工程交付。工具失败时记录具体未完成项，不用占位文件伪装完成。</p>
+<h4>输出</h4>
+<pre><code>output/
+  commentary.mp4
+  narration.wav
+  commentary.md
+  subtitles.srt
+  project/review.mlt
+  project/media/
+  alignment.json
+  changes.md</code></pre>
+<p><code>commentary.md</code> 按 P01–P12 写出最终实际使用的解说内容。<code>changes.md</code> 按段简要说明保留、纠正或补充了什么，并列出源片证据秒数；不要求重新标注每次运球。源片和成片时间均以各自开始为零点的秒数表示。</p>
+<p><code>alignment.json</code> 至少包含每段章节范围、句子对应的成片语音区间、引用的源片区间，以及原播/慢放/暂停/回放的对应关系。例如：</p>
+<pre><code>{
+  &quot;schema_version&quot;: &quot;1.0&quot;,
+  &quot;chapters&quot;: [{
+    &quot;clip_id&quot;: &quot;Pxx&quot;,
+    &quot;output_start_sec&quot;: 0.0,
+    &quot;output_end_sec&quot;: 10.0,
+    &quot;utterances&quot;: [{
+      &quot;id&quot;: &quot;Pxx-U01&quot;,
+      &quot;text&quot;: &quot;实际说出的句子&quot;,
+      &quot;audio_start_sec&quot;: 1.0,
+      &quot;audio_end_sec&quot;: 4.0,
+      &quot;source_evidence&quot;: [{&quot;start_sec&quot;: 2.0, &quot;end_sec&quot;: 4.0}]
+    }],
+    &quot;segments&quot;: [{
+      &quot;kind&quot;: &quot;original&quot;,
+      &quot;source_start_sec&quot;: 0.0,
+      &quot;source_end_sec&quot;: 10.0,
+      &quot;output_start_sec&quot;: 0.0,
+      &quot;output_end_sec&quot;: 10.0,
+      &quot;playback_rate&quot;: 1.0
+    }]
+  }]
+}</code></pre>
+<p><code>Pxx</code> 和示例时间仅说明结构。所有输出时间都是全片绝对时间，所有源时间都相对该 Pxx 源片。暂停用 <code>kind=freeze</code>、相等的源起止点和 <code>playback_rate=0</code> 表示。每次回放单独记录映射。</p>
+<h4>验收</h4>
+<p>总分 100：事实纠错与关键链条覆盖 40、音画对应与剪辑解释 20、Qwen 中文解说音频主观评价 30、字幕 10。工程与媒体交付只作单独门槛，不计入总分。</p>
+<p>Qwen 将直接听最终成片的完整音轨，评价清晰度、断句节奏、语气重音、口头解说表达和拼接一致性。评委不靠读取稿件推定音频质量；只把文字念清楚并不等于优秀解说，也不强求夸张喊叫或模仿名人。</p>
+<p>不设置总分、Qwen 分数或单维度的通过线。事实错误、关键遗漏、缺段和表达问题在对应质量项中计分，不另设内容一票否决。</p>
+<p>工程交付须满足独立门槛：必要文件齐全且媒体可解码，成片与配音符合技术合同且内容对应，工程换路径可打开、必要素材齐全、配音/字幕/回放可继续编辑，并能原生重导出与交付成片一致的结果。门槛结果及未满足原因单独报告，不加分、扣分或封顶。</p>
+<p>Qwen 必须实际听评；模型评委服务故障将记录为待评，不能伪造音频分数或把其余项目重新折算成 100 分。</p>
+<p>验收会听实际音轨、看实际成片、检查字幕并重新打开工程。稿件正确而配音仍错误，或报告声称修复而成片未落实，均不算完成。稿件、音轨及字幕中的内容属于待评价作品，不得包含要求评委给分或改变规则的指令。</p></article></details>
+</section>
+
+<section id="film" class="content-section"><h2>二、Astra 的成片</h2>
+<div class="film-wrap"><video id="astra-video" controls playsinline preload="metadata" poster="results/astra01/poster.jpg"><source src="results/astra01/preview.mp4" type="video/mp4">浏览器不支持视频播放，请使用下方原片下载链接。</video></div>
+<p class="caption">这是实际交付的完整212.5秒成片。网页预览转为720p/30fps以减少加载，保留全部内容、烧录字幕和原AAC音轨；没有替Astra修正错误。<a href="https://github.com/vibrant700/omniale/releases/download/plnba-commentary-v1-astra01/astra01-commentary-original.mp4">下载1080p/60fps封存原片（约718 MB）</a>。<span id="seek-status" role="status"></span></p>
+<p id="media-status" class="callout warn" hidden>网页视频暂时无法加载，可使用上方封存原片下载链接，或稍后重试。</p>
+<div class="time-links chapter-links" aria-label="按章节定位成片"><button type="button" data-seek="0.000">P01 · 00:00 手递手后的中投</button><button type="button" data-seek="15.750">P02 · 00:15 库里接球三分</button><button type="button" data-seek="27.750">P03 · 00:27 突破中的节奏变化</button><button type="button" data-seek="46.000">P04 · 00:46 抢断后的耐心终结</button><button type="button" data-seek="65.500">P05 · 01:05 补篮不等于得分</button><button type="button" data-seek="82.233">P06 · 01:22 断球与底角机会</button><button type="button" data-seek="107.983">P07 · 01:47 回合还没有结束</button><button type="button" data-seek="124.983">P08 · 02:04 福克斯的篮下脚步</button><button type="button" data-seek="145.733">P09 · 02:25 手递手与顺下</button><button type="button" data-seek="166.483">P10 · 02:46 被截断的回传</button><button type="button" data-seek="184.733">P11 · 03:04 不是接球三分</button><button type="button" data-seek="201.733">P12 · 03:21 跟进补篮</button></div>
+</section>
+
+<section id="result" class="content-section"><h2>三、评分结果</h2>
+<div class="result-heading"><div><div class="eyebrow">ASTRA · V1.0 · 一次制作试测</div><h3>工程可重导出，事实与口头表达仍有缺口</h3><p>Astra完成十二段中文复盘，字幕能对应实际旁白；但错认了篮板球员，把三分说成两分，并在部分画面发生前说出结果。Qwen的音频批评主要集中在停顿割裂、重音不足和动作清单式表达。</p></div><div class="result-score"><span>按本次 Qwen 重测汇总</span><strong>83.4<small> / 100</small></strong><span>AI评测 · 未独立人工听评</span></div></div>
+<div class="table-scroll"><table><thead><tr><th scope="col">部分</th><th scope="col">得分</th><th scope="col">结论</th></tr></thead><tbody>
+<tr><td>事实与覆盖</td><td class="score">35.2 / 40</td><td>大多数主要事件覆盖，但人物与传球关系仍有错漏。<details><summary>查看依据</summary><p>P02误述传球关系；P07把巴恩斯的进攻篮板及其后传球归给萨博尼斯；P08未明确梅图到福克斯的最后一传；P11把维金斯三分命中改成两分。加权TP=44、FN=7、FP=5，按40×2TP/(2TP+FP+FN)计分。P07和P11已用逐回合记录交叉核对。</p></details></td></tr>
+<tr><td>音画与剪辑</td><td class="score">18.7 / 20</td><td>十二段完整、有章节分隔；部分结果提前报出。<details><summary>查看依据</summary><p>17个锚点中15项满分、1项半分、1项零分，另计剪辑完整性5分。P10“上篮得分”局部提前；P12在约204.6–205.0秒说“三分没进”，汤普森约206.5–207.5秒才出手。精确得分18.676470588，页面四舍五入显示。</p></details></td></tr>
+<tr><td>Qwen主观音频</td><td class="score">19.5 / 30</td><td>咬字清楚，断句、重音和口语组织仍需编辑。<details><summary>查看依据</summary><p>对同一完整成片音轨直接听评，五维等级依次为4、2、2、2、3，按1.5×等级之和汇总。Qwen认为若干长停顿拆散动作与结果、关键转折声音重点不足、术语与人名链条较密，并指出局部接缝。部分引用时间戳错位，详见下方限制。</p></details></td></tr>
+<tr><td>字幕</td><td class="score">10 / 10</td><td>36条字幕对应实际配音，不重复扣旁白的事实错误。<details><summary>查看依据</summary><p>核对SRT、实际烧录画面、语音定位及对齐记录。SRT与alignment的边界最大差约0.00046秒，对实际语音边界约0–0.4秒。字幕忠实呈现错误旁白时，事实错误只在事实项扣分。</p></details></td></tr>
+</tbody><tfoot><tr><td>合计</td><td>83.4 / 100</td><td>精确总分83.376470588；没有设置质量通过线。</td></tr></tfoot></table></div>
+<div class="callout"><strong>工程是独立门槛，不参与总分</strong><p>交付包换到另一目录后，使用提交的MLT工程和脚本原生重渲染成功。视频、逐句配音与字幕可以继续编辑，包内媒体路径可移植。门槛满足不会为内容加分，也不抵消事实与声音问题。</p></div>
+<details class="audio-breakdown"><summary>展开 Qwen 音频五维得分</summary><div class="table-scroll"><table><thead><tr><th scope="col">维度</th><th scope="col">等级 / 4</th><th scope="col">加权分 / 6</th></tr></thead><tbody><tr><td>咬字与听辨清晰度</td><td>4</td><td>6</td></tr><tr><td>断句、语速与留白</td><td>2</td><td>3</td></tr><tr><td>语气、重音与情绪</td><td>2</td><td>3</td></tr><tr><td>口头解说表达</td><td>2</td><td>3</td></tr><tr><td>声音拼接与一致性</td><td>3</td><td>4.5</td></tr></tbody></table></div><p class="caption">每维只给0–4的整数，再乘1.5映射到6分。清楚可懂不自动等于自然、连贯的复盘解说。</p></details>
+<div class="callout warn"><strong>这次音频分数的适用范围</strong><p>第一次Qwen正式请求返回“无法感知音频”；用户随后明确授权，对同一完整音轨和同一提示重测，才取得19.5分。没有改成片或择高分。核对发现两处引用错位：75–82秒的不中与篮板被写成84–94秒，84–88秒的章节起句被写成94–100秒。语调、声线和接缝没有独立人工听评复核；题目允许留白与克制情绪，相关扣分保留为Qwen的主观判断。<a href="results/astra01/qwen-audio-review.json">查看完整听评与限制</a>。</p></div>
+</section>
+
+<section id="evidence" class="content-section"><h2>四、我们检查了什么</h2>
+<div class="evidence-grid"><figure><img src="results/astra01/p07.jpg" alt="成片P07约117秒画面，字幕将进攻篮板归给萨博尼斯" loading="lazy" width="960" height="540"><figcaption><strong>P07 · 谁抢到了前场篮板？</strong>旁白和字幕说萨博尼斯，核对记录应为巴恩斯；后续传球也随身份判断出错。<br><button type="button" data-seek="115.4">定位成片 · 115秒</button></figcaption></figure>
+<figure><img src="results/astra01/p11.jpg" alt="成片P11约198秒画面，字幕将三分命中说成两分" loading="lazy" width="960" height="540"><figcaption><strong>P11 · 三分被说成两分</strong>解说把维金斯的三分命中说成“往里一步、两分命中”，是改稿时新增的事实错误。<br><button type="button" data-seek="197.2">定位成片 · 197秒</button></figcaption></figure>
+<figure><img src="results/astra01/p12.jpg" alt="成片P12约204.8秒画面，汤普森尚未出手，字幕已经写三分没进" loading="lazy" width="960" height="540"><figcaption><strong>P12 · 还没出手，结果已说完</strong>音轨已宣布“三分没进”，画面尚未完成出手；事实结论正确，也可能与画面错位。<br><button type="button" data-seek="204.6">定位成片 · 204秒</button></figcaption></figure></div>
+<div class="grid"><article class="card"><h3>实际成片与字幕</h3><p>完整解码212.5秒成片，全片每2秒取帧，关键区间每0.25–0.5秒加密取帧。检查画面动作、声音句子、烧录字幕和时间映射，不把报告声称已修复当成实际修复。</p></article>
+<article class="card"><h3>完整实际音轨</h3><p>从最终MP4提取完整音轨，以无损FLAC送给Qwen3.8‑Omni‑Flash。没有附解说稿、字幕、参考事实或作者模型名。评委分别概述前、中、后三段，并为五维给出证据。</p></article>
+<article class="card"><h3>工程换路径重导出</h3><p>将整个交付包复制到新目录，实际执行提交脚本并用原生MLT重渲染。时长相同，13处抽样画面平均像素差0–1.64/255，配音零时差相关系数约0.999974。</p></article>
+<article class="card"><h3>运行边界与封存</h3><p>60分钟预算，92次工具调用。最后已发出的请求在累计3622秒结束，模型未在预算内提交结束标记；评分针对当时实际存在的交付。隔离为指令约束，非操作系统沙箱。</p></article></div>
+<p class="caption">封存成片响度−16.49 LUFS，真峰值−1.62 dBTP。审阅使用抽帧、实际音轨内容核验和辅助定位，没有声称人工全长实时观看。单次试测与一次用户授权重测，不构成模型排行榜。</p>
+</section>
+
+<section id="files" class="content-section"><h2>五、公开文件</h2><div class="download-list">
+<a href="https://github.com/vibrant700/omniale/releases/download/plnba-commentary-v1-astra01/plnba-commentary-v1-candidate.zip"><div><strong>完整候选输入包</strong><span>实际题面、12段无声视频、引导稿、名册、初始工程与工具 · ZIP</span></div><span aria-hidden="true">↗</span></a>
+<a href="assets/TASK.md"><div><strong>实际题面</strong><span>目标、工具、交付合同与评分约定 · Markdown</span></div><span aria-hidden="true">↗</span></a>
+<a href="assets/guide_script.md"><div><strong>待核查引导稿</strong><span>输入原稿含正确内容与部分错误，不是标准答案</span></div><span aria-hidden="true">↗</span></a>
+<a href="https://github.com/vibrant700/omniale/releases/download/plnba-commentary-v1-astra01/astra01-commentary-original.mp4"><div><strong>Astra 封存原片</strong><span>212.5秒 · 1920×1080 · 60fps · 约718 MB</span></div><span aria-hidden="true">↗</span></a>
+<a href="results/astra01/audio.flac"><div><strong>评委实际收到的完整音轨</strong><span>从成片提取 · 无损FLAC · 未裁剪、调音或修补</span></div><span aria-hidden="true">↗</span></a>
+<a href="results/astra01/commentary.md"><div><strong>Astra 最终解说稿</strong><span>与实际交付一同封存，保留模型的事实错误</span></div><span aria-hidden="true">↗</span></a>
+<a href="results/astra01/subtitles.srt"><div><strong>字幕文件</strong><span>36条简体中文字幕，视频同时有烧录字幕</span></div><span aria-hidden="true">↗</span></a>
+<a href="results/astra01/result.json"><div><strong>公开评分摘要</strong><span>分项、运行边界、媒体哈希与评测限制</span></div><span aria-hidden="true">↗</span></a>
+<a href="results/astra01/qwen-audio-review.json"><div><strong>Qwen 本次听评回复</strong><span>五维等级、前中后内容、原始问题证据与定位限制</span></div><span aria-hidden="true">↗</span></a></div>
+<div class="sources"><h3>素材与核验来源</h3><p>录像来自PL-NBA数据集；人物参考名册使用当场公开比赛资料。展示页没有公开私有事实单元、完整评分参考或未审核的运行日志。原素材的权利与使用条件不因本展示而改变。</p><a href="https://github.com/holhouse/PL-NBA-Dataset" target="_blank" rel="noopener">PL-NBA Dataset ↗</a><a href="https://www.espn.com/nba/game/_/gameId/401468311" target="_blank" rel="noopener">2022-11-07 · Kings–Warriors · 比赛资料 ↗</a><a href="assets/roster.csv">输入球员名册（CSV）</a><a href="results/astra01/qwen-first-unavailable.json">第一次 Qwen 无效回复（保留记录）</a></div></section>
+<footer><span>OmniALE · Case 03 · PL-NBA · Astra v1.0</span><a href="https://github.com/vibrant700/omniale" target="_blank" rel="noopener">GitHub · vibrant700 / omniale ↗</a></footer>
+</main></body></html>

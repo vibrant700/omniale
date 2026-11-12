@@ -1,0 +1,745 @@
+{
+  "schema_version": "1.0",
+  "chapters": [
+    {
+      "clip_id": "P01",
+      "title": "手递手后的中投",
+      "output_start_sec": 0,
+      "output_end_sec": 15.75,
+      "base": 0.75,
+      "rate": 0.8,
+      "L": 12,
+      "utterances": [
+        {
+          "id": "P01_01",
+          "text": "穆雷交给萨博尼斯，国王在右侧展开配合。",
+          "audio_start_sec": 2.35,
+          "audio_end_sec": 6.104291666666667,
+          "source_evidence": [
+            {
+              "start_sec": 2,
+              "end_sec": 7
+            }
+          ]
+        },
+        {
+          "id": "P01_02",
+          "text": "手递手给福克斯，借掩护切到中路。",
+          "audio_start_sec": 8.6,
+          "audio_end_sec": 11.479291666666667,
+          "source_evidence": [
+            {
+              "start_sec": 7,
+              "end_sec": 10
+            }
+          ]
+        },
+        {
+          "id": "P01_03",
+          "text": "急停跳投，两分命中。",
+          "audio_start_sec": 12.35,
+          "audio_end_sec": 14.254041666666666,
+          "source_evidence": [
+            {
+              "start_sec": 10,
+              "end_sec": 12
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 12,
+          "output_start_sec": 0.75,
+          "output_end_sec": 15.75,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 0,
+        "output_end_sec": 0.75
+      }
+    },
+    {
+      "clip_id": "P02",
+      "title": "库里接球三分",
+      "output_start_sec": 15.75,
+      "output_end_sec": 27.75,
+      "base": 16.5,
+      "rate": 0.8,
+      "L": 9,
+      "utterances": [
+        {
+          "id": "P02_01",
+          "text": "勇士外线传导，汤普森交回库里。",
+          "audio_start_sec": 16.65,
+          "audio_end_sec": 19.7034375,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 4
+            }
+          ]
+        },
+        {
+          "id": "P02_02",
+          "text": "卢尼高位接应，再手递手给库里。",
+          "audio_start_sec": 20.6,
+          "audio_end_sec": 23.584541666666667,
+          "source_evidence": [
+            {
+              "start_sec": 4,
+              "end_sec": 6
+            }
+          ]
+        },
+        {
+          "id": "P02_03",
+          "text": "接球直接拔起，三分命中！",
+          "audio_start_sec": 23.8,
+          "audio_end_sec": 26.04072916666667,
+          "source_evidence": [
+            {
+              "start_sec": 6,
+              "end_sec": 9
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 9,
+          "output_start_sec": 16.5,
+          "output_end_sec": 27.75,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 15.75,
+        "output_end_sec": 16.5
+      }
+    },
+    {
+      "clip_id": "P03",
+      "title": "突破中的节奏变化",
+      "output_start_sec": 27.75,
+      "output_end_sec": 46.0,
+      "base": 28.5,
+      "rate": 0.8,
+      "L": 14,
+      "utterances": [
+        {
+          "id": "P03_01",
+          "text": "卢尼高位手递手，普尔接球组织。",
+          "audio_start_sec": 28.85,
+          "audio_end_sec": 31.938270833333334,
+          "source_evidence": [
+            {
+              "start_sec": 1,
+              "end_sec": 5
+            }
+          ]
+        },
+        {
+          "id": "P03_02",
+          "text": "普尔回传库里，库里沿左侧突破。",
+          "audio_start_sec": 35.1,
+          "audio_end_sec": 37.9560625,
+          "source_evidence": [
+            {
+              "start_sec": 5,
+              "end_sec": 11
+            }
+          ]
+        },
+        {
+          "id": "P03_03",
+          "text": "篮下先虚晃，再起身把球打进。",
+          "audio_start_sec": 41.35,
+          "audio_end_sec": 43.88097916666667,
+          "source_evidence": [
+            {
+              "start_sec": 11,
+              "end_sec": 14
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 14,
+          "output_start_sec": 28.5,
+          "output_end_sec": 46.0,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 27.75,
+        "output_end_sec": 28.5
+      }
+    },
+    {
+      "clip_id": "P04",
+      "title": "抢断后的耐心终结",
+      "output_start_sec": 46.0,
+      "output_end_sec": 65.5,
+      "base": 46.75,
+      "rate": 0.8,
+      "L": 15,
+      "utterances": [
+        {
+          "id": "P04_01",
+          "text": "福克斯推进，维金斯在外线紧盯持球。",
+          "audio_start_sec": 49.6,
+          "audio_end_sec": 53.02495833333334,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 9
+            }
+          ]
+        },
+        {
+          "id": "P04_02",
+          "text": "伸手断球，维金斯自己带球反击。",
+          "audio_start_sec": 57.1,
+          "audio_end_sec": 60.016375000000004,
+          "source_evidence": [
+            {
+              "start_sec": 9,
+              "end_sec": 12
+            }
+          ]
+        },
+        {
+          "id": "P04_03",
+          "text": "篮下没有急着出手，连续虚晃后打进。",
+          "audio_start_sec": 60.85,
+          "audio_end_sec": 64.33739583333333,
+          "source_evidence": [
+            {
+              "start_sec": 12,
+              "end_sec": 15
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 15,
+          "output_start_sec": 46.75,
+          "output_end_sec": 65.5,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 46.0,
+        "output_end_sec": 46.75
+      }
+    },
+    {
+      "clip_id": "P05",
+      "title": "补篮不等于得分",
+      "output_start_sec": 65.5,
+      "output_end_sec": 82.23333333333333,
+      "base": 66.25,
+      "rate": 0.8,
+      "L": 12,
+      "utterances": [
+        {
+          "id": "P05_01",
+          "text": "国王传导后，穆雷从右侧突破。",
+          "audio_start_sec": 66.6,
+          "audio_end_sec": 69.56056249999999,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 8
+            }
+          ]
+        },
+        {
+          "id": "P05_02",
+          "text": "近距离出手没进，萨博尼斯跟进争抢。",
+          "audio_start_sec": 75.35,
+          "audio_end_sec": 78.61241666666666,
+          "source_evidence": [
+            {
+              "start_sec": 8,
+              "end_sec": 10
+            }
+          ]
+        },
+        {
+          "id": "P05_03",
+          "text": "补篮也没中，最后卢尼收下篮板。",
+          "audio_start_sec": 78.83333333333333,
+          "audio_end_sec": 81.85193749999999,
+          "source_evidence": [
+            {
+              "start_sec": 9,
+              "end_sec": 12
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 12,
+          "output_start_sec": 66.25,
+          "output_end_sec": 81.25,
+          "playback_rate": 0.8
+        },
+        {
+          "kind": "freeze",
+          "source_start_sec": 11.983333333333333,
+          "source_end_sec": 11.983333333333333,
+          "output_start_sec": 81.25,
+          "output_end_sec": 82.23333333333333,
+          "playback_rate": 0
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 65.5,
+        "output_end_sec": 66.25
+      }
+    },
+    {
+      "clip_id": "P06",
+      "title": "断球与底角机会",
+      "output_start_sec": 82.23333333333333,
+      "output_end_sec": 107.98333333333333,
+      "base": 82.98333333333333,
+      "rate": 0.8,
+      "L": 20,
+      "utterances": [
+        {
+          "id": "P06_01",
+          "text": "普尔、汤普森参与传导，球再回到德雷蒙德·格林。",
+          "audio_start_sec": 84.58333333333333,
+          "audio_end_sec": 88.64683333333333,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 10
+            }
+          ]
+        },
+        {
+          "id": "P06_02",
+          "text": "格林传球被赫尔特断下，国王转身推进。",
+          "audio_start_sec": 94.58333333333333,
+          "audio_end_sec": 98.14760416666667,
+          "source_evidence": [
+            {
+              "start_sec": 10,
+              "end_sec": 14
+            }
+          ]
+        },
+        {
+          "id": "P06_03",
+          "text": "赫尔特分巴恩斯，再转给底角的穆雷。",
+          "audio_start_sec": 99.58333333333333,
+          "audio_end_sec": 102.65997916666666,
+          "source_evidence": [
+            {
+              "start_sec": 14,
+              "end_sec": 16
+            }
+          ]
+        },
+        {
+          "id": "P06_04",
+          "text": "穆雷虚晃后调整出手，三分不中，格林收下篮板。",
+          "audio_start_sec": 102.88333333333334,
+          "audio_end_sec": 107.0520625,
+          "source_evidence": [
+            {
+              "start_sec": 16,
+              "end_sec": 20
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 20,
+          "output_start_sec": 82.98333333333333,
+          "output_end_sec": 107.98333333333333,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 82.23333333333333,
+        "output_end_sec": 82.98333333333333
+      }
+    },
+    {
+      "clip_id": "P07",
+      "title": "回合还没有结束",
+      "output_start_sec": 107.98333333333333,
+      "output_end_sec": 124.98333333333333,
+      "base": 108.73333333333333,
+      "rate": 0.8,
+      "L": 13,
+      "utterances": [
+        {
+          "id": "P07_01",
+          "text": "福克斯分球，巴恩斯沿底线突破。",
+          "audio_start_sec": 108.88333333333334,
+          "audio_end_sec": 111.86710416666668,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 6
+            }
+          ]
+        },
+        {
+          "id": "P07_02",
+          "text": "上篮没进，但萨博尼斯抢到前场篮板。",
+          "audio_start_sec": 115.33333333333333,
+          "audio_end_sec": 118.7084375,
+          "source_evidence": [
+            {
+              "start_sec": 6,
+              "end_sec": 9
+            }
+          ]
+        },
+        {
+          "id": "P07_03",
+          "text": "再分底角赫尔特，三分不中，格林拿下篮板。",
+          "audio_start_sec": 119.08333333333333,
+          "audio_end_sec": 122.71727083333333,
+          "source_evidence": [
+            {
+              "start_sec": 9,
+              "end_sec": 13
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 13,
+          "output_start_sec": 108.73333333333333,
+          "output_end_sec": 124.98333333333333,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 107.98333333333333,
+        "output_end_sec": 108.73333333333333
+      }
+    },
+    {
+      "clip_id": "P08",
+      "title": "福克斯的篮下脚步",
+      "output_start_sec": 124.98333333333333,
+      "output_end_sec": 145.73333333333332,
+      "base": 125.73333333333333,
+      "rate": 0.8,
+      "L": 16,
+      "utterances": [
+        {
+          "id": "P08_01",
+          "text": "戴维恩·米切尔组织，戴维斯和梅图参与传递。",
+          "audio_start_sec": 125.88333333333334,
+          "audio_end_sec": 129.6638125,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 7
+            }
+          ]
+        },
+        {
+          "id": "P08_02",
+          "text": "福克斯接球突破，来到篮筐右侧。",
+          "audio_start_sec": 133.58333333333334,
+          "audio_end_sec": 136.3116875,
+          "source_evidence": [
+            {
+              "start_sec": 7,
+              "end_sec": 11
+            }
+          ]
+        },
+        {
+          "id": "P08_03",
+          "text": "先做投篮假动作，再转回中路，晃出空间打进。",
+          "audio_start_sec": 138.58333333333334,
+          "audio_end_sec": 142.65843750000002,
+          "source_evidence": [
+            {
+              "start_sec": 11,
+              "end_sec": 16
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 16,
+          "output_start_sec": 125.73333333333333,
+          "output_end_sec": 145.73333333333335,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 124.98333333333333,
+        "output_end_sec": 125.73333333333333
+      }
+    },
+    {
+      "clip_id": "P09",
+      "title": "手递手与顺下",
+      "output_start_sec": 145.73333333333332,
+      "output_end_sec": 166.48333333333332,
+      "base": 146.48333333333332,
+      "rate": 0.8,
+      "L": 16,
+      "utterances": [
+        {
+          "id": "P09_01",
+          "text": "国王转移球，梅图来到外线接应。",
+          "audio_start_sec": 150.58333333333334,
+          "audio_end_sec": 153.45100000000002,
+          "source_evidence": [
+            {
+              "start_sec": 4,
+              "end_sec": 11
+            }
+          ]
+        },
+        {
+          "id": "P09_02",
+          "text": "手递手交给蒙克，梅图随即顺下。",
+          "audio_start_sec": 159.33333333333334,
+          "audio_end_sec": 162.622,
+          "source_evidence": [
+            {
+              "start_sec": 11,
+              "end_sec": 13
+            }
+          ]
+        },
+        {
+          "id": "P09_03",
+          "text": "蒙克突入后送回篮下，梅图接球扣进！",
+          "audio_start_sec": 162.85,
+          "audio_end_sec": 166.08918749999998,
+          "source_evidence": [
+            {
+              "start_sec": 13,
+              "end_sec": 16
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 16,
+          "output_start_sec": 146.48333333333332,
+          "output_end_sec": 166.48333333333332,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 145.73333333333332,
+        "output_end_sec": 146.48333333333332
+      }
+    },
+    {
+      "clip_id": "P10",
+      "title": "被截断的回传",
+      "output_start_sec": 166.48333333333332,
+      "output_end_sec": 184.73333333333332,
+      "base": 167.23333333333332,
+      "rate": 0.8,
+      "L": 14,
+      "utterances": [
+        {
+          "id": "P10_01",
+          "text": "库里发起进攻，球来到切入的汤普森手里。",
+          "audio_start_sec": 167.38333333333333,
+          "audio_end_sec": 170.92439583333334,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 7
+            }
+          ]
+        },
+        {
+          "id": "P10_02",
+          "text": "汤普森向外传球，被米切尔截走。",
+          "audio_start_sec": 175.08333333333334,
+          "audio_end_sec": 177.88135416666668,
+          "source_evidence": [
+            {
+              "start_sec": 7,
+              "end_sec": 9
+            }
+          ]
+        },
+        {
+          "id": "P10_03",
+          "text": "米切尔一路反击，冲到篮下，上篮得分。",
+          "audio_start_sec": 178.1,
+          "audio_end_sec": 181.13020833333331,
+          "source_evidence": [
+            {
+              "start_sec": 9,
+              "end_sec": 14
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 14,
+          "output_start_sec": 167.23333333333332,
+          "output_end_sec": 184.73333333333332,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 166.48333333333332,
+        "output_end_sec": 167.23333333333332
+      }
+    },
+    {
+      "clip_id": "P11",
+      "title": "不是接球三分",
+      "output_start_sec": 184.73333333333332,
+      "output_end_sec": 201.73333333333332,
+      "base": 185.48333333333332,
+      "rate": 0.8,
+      "L": 13,
+      "utterances": [
+        {
+          "id": "P11_01",
+          "text": "兰姆推进，勇士通过格林和汤普森继续传导。",
+          "audio_start_sec": 185.63333333333333,
+          "audio_end_sec": 189.31370833333332,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 7
+            }
+          ]
+        },
+        {
+          "id": "P11_02",
+          "text": "兰姆再分格林，经普尔送到底角维金斯。",
+          "audio_start_sec": 193.33333333333334,
+          "audio_end_sec": 196.97887500000002,
+          "source_evidence": [
+            {
+              "start_sec": 7,
+              "end_sec": 10
+            }
+          ]
+        },
+        {
+          "id": "P11_03",
+          "text": "虚晃点起防守，往里一步，跳投命中两分。",
+          "audio_start_sec": 197.2,
+          "audio_end_sec": 200.70622916666665,
+          "source_evidence": [
+            {
+              "start_sec": 10,
+              "end_sec": 13
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 13,
+          "output_start_sec": 185.48333333333332,
+          "output_end_sec": 201.73333333333332,
+          "playback_rate": 0.8
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 184.73333333333332,
+        "output_end_sec": 185.48333333333332
+      }
+    },
+    {
+      "clip_id": "P12",
+      "title": "跟进补篮",
+      "output_start_sec": 201.73333333333332,
+      "output_end_sec": 212.48333333333332,
+      "base": 202.48333333333332,
+      "rate": 0.5,
+      "L": 5,
+      "utterances": [
+        {
+          "id": "P12_01",
+          "text": "格林交给汤普森，外线三分没进。",
+          "audio_start_sec": 202.63333333333333,
+          "audio_end_sec": 205.15270833333332,
+          "source_evidence": [
+            {
+              "start_sec": 0,
+              "end_sec": 4
+            }
+          ]
+        },
+        {
+          "id": "P12_02",
+          "text": "兰姆跟到篮下，抢下前场篮板，补篮得分。",
+          "audio_start_sec": 207.58333333333334,
+          "audio_end_sec": 210.67160416666667,
+          "source_evidence": [
+            {
+              "start_sec": 3,
+              "end_sec": 5
+            }
+          ]
+        }
+      ],
+      "segments": [
+        {
+          "kind": "slow",
+          "source_start_sec": 0,
+          "source_end_sec": 5,
+          "output_start_sec": 202.48333333333332,
+          "output_end_sec": 212.48333333333332,
+          "playback_rate": 0.5
+        }
+      ],
+      "chapter_card": {
+        "output_start_sec": 201.73333333333332,
+        "output_end_sec": 202.48333333333332
+      }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "clips": [
+    {
+      "clip_id": "P01",
+      "path": "sources/P01.mp4",
+      "duration_sec": 12.0,
+      "fps": 60.0,
+      "frame_count": 720,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "10ddbfd4c77e9b21ea475c3125a7f67abcfcf4885cf880af94f9d4e459b3a351",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P02",
+      "path": "sources/P02.mp4",
+      "duration_sec": 9.0,
+      "fps": 60.0,
+      "frame_count": 540,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "13e6c5bf7e0db9ca7142034850eebd23dd81c4720310d7803654b9630ce6e8b4",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P03",
+      "path": "sources/P03.mp4",
+      "duration_sec": 14.0,
+      "fps": 60.0,
+      "frame_count": 840,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "2b88f67329fe82a1d5ff90fd93757798498ebc56a42b619b7dc647ae2d99bb19",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P04",
+      "path": "sources/P04.mp4",
+      "duration_sec": 15.0,
+      "fps": 60.0,
+      "frame_count": 900,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "f2dcb432c956be970726a620717026b01143ec9e97f756ab44fe794913b3944d",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P05",
+      "path": "sources/P05.mp4",
+      "duration_sec": 12.0,
+      "fps": 60.0,
+      "frame_count": 720,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "d6d2490004bf9b04a5df967331c1cc57804a4e1b7024769cc93ed4207d125101",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P06",
+      "path": "sources/P06.mp4",
+      "duration_sec": 20.0,
+      "fps": 60.0,
+      "frame_count": 1200,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "727aea0aaef00f6bf231068691b1687b9397ea866fa3c5527c7fa87390e30498",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P07",
+      "path": "sources/P07.mp4",
+      "duration_sec": 13.0,
+      "fps": 60.0,
+      "frame_count": 780,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "341a034ebbfe9c192193608f7694ac203839f672f5dd591e520cd2c40cc13246",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P08",
+      "path": "sources/P08.mp4",
+      "duration_sec": 16.0,
+      "fps": 60.0,
+      "frame_count": 960,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "f033841438c9f292390a7d4f0eb9f93a774c9f9b8523d3f01168f44771709950",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P09",
+      "path": "sources/P09.mp4",
+      "duration_sec": 16.0,
+      "fps": 60.0,
+      "frame_count": 960,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "fbdcd6befe01c875228af5196070046788483fec7dd8e44bca34894c30e6c458",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P10",
+      "path": "sources/P10.mp4",
+      "duration_sec": 14.0,
+      "fps": 60.0,
+      "frame_count": 840,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "e8e22b5549664284531d510fc0c64ff0cddb94fea0884ddd00d429b42d0c2be0",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P11",
+      "path": "sources/P11.mp4",
+      "duration_sec": 13.0,
+      "fps": 60.0,
+      "frame_count": 780,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "e40962838427acecac736bc6205d60795904c10f9a7cc9d7e6f94c11273fe6a2",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    },
+    {
+      "clip_id": "P12",
+      "path": "sources/P12.mp4",
+      "duration_sec": 5.0,
+      "fps": 60.0,
+      "frame_count": 300,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "2e8aeaa88bd6ce00cae7095810f6f4cbadca253316f08b0200f1cfd57387b164",
+      "source_time_origin": "first presented frame = 0.0 seconds",
+      "audio_streams": 0
+    }
+  ]
+}

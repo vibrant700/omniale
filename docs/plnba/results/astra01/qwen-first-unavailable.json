@@ -1,0 +1,12 @@
+{
+  "model": "qwen3.8-omni-flash",
+  "audio_sha256": "7b0173c14aa4e3c730469fb71b982169cf8eead22935a263e42374ffa107d11a",
+  "input_audio_tokens": 1486,
+  "review": {
+    "status": "unknown",
+    "perception": "unavailable",
+    "reason": "当前输入中没有可直接感知的完整音频轨道，仅提供了文字内容、时间戳和作品说明；无法真实听到咬字、断句、语速、语气重音、口头表达和声音拼接质量，因此不能按听觉维度评分。",
+    "dimensions": null
+  },
+  "score": null
+}

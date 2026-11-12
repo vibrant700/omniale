@@ -1,0 +1,20 @@
+{
+  "candidate": {
+    "filename": "plnba-commentary-v1-candidate.zip",
+    "bytes": 358964750,
+    "sha256": "17bcba50a7959ba10bfd4d15dfe44b97c8e0a5360cb4a99aea0fc1d685ec91ac",
+    "file_count": 22
+  },
+  "original": {
+    "filename": "astra01-commentary-original.mp4",
+    "bytes": 718518908,
+    "sha256": "590fdeb87e9ba193c328302b447cf83f80c2c32caae8eb91e629dfca5d424681"
+  },
+  "preview": {
+    "filename": "preview.mp4",
+    "bytes": 45068256,
+    "sha256": "adf2488af4a1d09e923283c85c809fb0930313e84f750783f08c12112509fc7a",
+    "duration_seconds": 212.501333,
+    "aac_bitstream_identical_to_original": true
+  }
+}

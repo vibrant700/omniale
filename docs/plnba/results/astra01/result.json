@@ -1,0 +1,124 @@
+{
+  "task_id": "omniale-plnba-commentary-production",
+  "task_version": "1.0",
+  "solver_model": "gpt-6-astra",
+  "trial": "astra01",
+  "quality_score": 83.37647058823529,
+  "maximum": 100,
+  "display_score": 83.4,
+  "subscores": {
+    "facts": {
+      "score": 35.2,
+      "maximum": 40
+    },
+    "audiovisual_editing": {
+      "score": 18.676470588235293,
+      "maximum": 20
+    },
+    "qwen_subjective_audio": {
+      "score": 19.5,
+      "maximum": 30
+    },
+    "subtitles": {
+      "score": 10,
+      "maximum": 10
+    }
+  },
+  "engineering_gate": "met",
+  "engineering_gate_affects_score": false,
+  "quality_pass_threshold": null,
+  "solver_run": {
+    "status": "solver_budget_exhausted",
+    "budget_seconds": 3600,
+    "elapsed_seconds": 3622.0149999999994,
+    "tool_calls": 92,
+    "execution_isolation": "instruction_only_not_os_sandbox",
+    "independent_solver_runs": 1
+  },
+  "qwen": {
+    "model": "qwen3.8-omni-flash",
+    "formal_requests": 2,
+    "first_result": "unavailable",
+    "rerun_explicitly_authorized_by_user": true,
+    "same_audio_and_prompt": true,
+    "rerun_content_order": [
+      "input_audio",
+      "text"
+    ],
+    "dimensions": {
+      "intelligibility": 4,
+      "phrasing_pacing": 2,
+      "prosody_emphasis": 2,
+      "spoken_commentary": 2,
+      "assembly_consistency": 3
+    },
+    "score_formula": "1.5 * sum(five integer levels from 0 to 4)",
+    "independent_human_listening_review": false
+  },
+  "evidence_limitations": [
+    {
+      "issue_id": "I02",
+      "reported_interval_s": [
+        84,
+        94
+      ],
+      "matching_spoken_content_interval_s": [
+        75.4,
+        81.6
+      ],
+      "finding": "The cited misses and Looney rebound occur earlier; the Qwen timestamp is misplaced."
+    },
+    {
+      "issue_id": "I04",
+      "reported_interval_s": [
+        94,
+        100
+      ],
+      "matching_spoken_content_interval_s": [
+        84.3,
+        88.4
+      ],
+      "finding": "The cited Poole/Thompson/Green opening occurs earlier; the claimed splice sound has not been independently confirmed."
+    },
+    {
+      "finding": "Qwen characterizes the voice as female and describes room tone; these subjective descriptions were not independently verified."
+    },
+    {
+      "finding": "Neutral review commentary permits observation pauses and restrained emotion. The Qwen deductions for pauses and low emotional contrast remain its subjective judgments, not externally established defects."
+    }
+  ],
+  "review_method": "Full video decode; frames every 2 seconds and 0.25–0.5 seconds in key intervals; actual audio content checks, local ASR used only for positioning; no human full-length real-time viewing claim.",
+  "media": {
+    "duration_seconds": 212.501333,
+    "original": {
+      "url": "https://github.com/vibrant700/omniale/releases/download/plnba-commentary-v1-astra01/astra01-commentary-original.mp4",
+      "bytes": 718518908,
+      "sha256": "590fdeb87e9ba193c328302b447cf83f80c2c32caae8eb91e629dfca5d424681",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60
+    },
+    "web_preview": {
+      "file": "preview.mp4",
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "complete_duration": true,
+      "audio_stream_copied": true,
+      "presentation_copy_not_graded_original": true
+    }
+  },
+  "independent_engineering_checks": {
+    "relocated_native_MLT_reexport": true,
+    "duration_matches": true,
+    "sampled_video_checks": 13,
+    "mean_pixel_difference_range_out_of_255": [
+      0,
+      1.64
+    ],
+    "audio_zero_lag_correlation": 0.999974,
+    "integrated_loudness_lufs": -16.49,
+    "true_peak_dbtp": -1.62
+  },
+  "automatic_iteration": false
+}
