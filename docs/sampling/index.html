@@ -9,20 +9,22 @@
 <header class="hero"><div class="eyebrow">OMNIALE · CASE 02 · 教育与音视频制作</div>
 <h1>采样之后再滤波，<br><span>还来得及吗？</span></h1>
 <p class="lead">让智能体把一个数字音频问题做成可以直接进课堂的短片。它需要自己选择讲法、完成动画和配音，并让画面、字幕与声音讲的是同一件事。</p>
-<div class="tags"><span>GPT‑6 Astra</span><span>115.5 秒</span><span>中文旁白与烧录字幕</span><span class="neutral">题目版本 v6.5</span></div>
+<div class="tags"><span>GPT‑6 Astra</span><span>115.5 秒</span><span>中文旁白与烧录字幕</span><span class="neutral">实测 v6.5 · 当前题面 v6.5.1</span></div>
 <div class="facts"><div><strong>85</strong><span>严格 AI 复评 / 100</span></div><div><strong>60 / 60</strong><span>知识、动画、一致性与视觉</span></div><div><strong>25 / 40</strong><span>主观与客观音频</span></div><div><strong>需重做旁白</strong><span>格式与科学性门槛仍通过</span></div></div></header>
 <nav class="nav side-nav" aria-label="章节导航"><a href="#task">这道题要做什么</a><a href="#film">Astra 的成片</a><a href="#result">评分结果</a><a href="#evidence">我们检查了什么</a><a href="#files">公开文件</a></nav>
 
 <section id="task" class="content-section"><h2>一、这道题要做什么</h2>
 <article class="task-text"><h3>课堂里的真实问题</h3><p>数字音频入门课上，有学生问：“先把声音采样下来，之后再滤掉高频，不也一样吗？”任务要求智能体制作一段60—120秒的中文短片，用一个听得见、看得懂的例子回答这个问题。</p>
 <h3>留给智能体的选择</h3><p>题包给出两条处理链、两组可用输入和基础制作工具，但不提供脚本、分镜或答案时间轴。智能体需要自行决定用哪个例子、怎样讲、哪里安排试听，以及怎样把采样点重合和混叠结果画清楚。</p>
-<h3>最终交付</h3><p>成片需要包含中文讲解和烧录字幕，并同时交付实际音轨、字幕文件、讲解文本和可重建工程。片子要能在课堂上独立播放，不能依赖老师现场补充解释。</p></article>
+<h3>提供的制作工具</h3><p>题包内含Python/Pillow动画模板、基于FFmpeg的时间轴合成工具和Piper中文配音入口。它们只减少画曲线、混音、烧录字幕和配音的脚手架工作，不提供本题答案；也允许使用其他工具。</p>
+<h3>最终交付</h3><p>提交60—120秒教学MP4、视频实际使用的WAV音轨、讲解文本、SRT字幕，以及包含素材、来源和重建说明的工程目录。工程应能重新生成与提交成片内容一致的结果。</p></article>
 <details class="full-task"><summary>查看实际题面</summary><article class="full-task-content"><h3>制作一段采样课程短片</h3>
 <p>下周的数字音频入门课需要一段60—120秒的中文教学短片。学生已经学过频率、采样率和余弦，但还没接触混叠。上课时有人问：“先把声音采样下来，之后再滤掉高频，不也一样吗？”希望用这段短片回应这个问题。</p>
-<p>附件给了两条处理链和两组可用的输入设置。请自行选择适合这段短片的例子和讲法，用讲解、动画和可以试听的声音回应学生的问题。结尾请说明这个例子能告诉我们什么。素材和工程都从头制作；可以使用提供的动画、剪辑与配音工具，风格由你决定。</p>
+<p>附件给了两条处理链和两组可用的输入设置。请自行选择适合这段短片的例子和讲法，用讲解、动画和可以试听的声音回应学生的问题。结尾请说明这个例子能告诉我们什么。素材和工程都从头制作，风格由你决定。</p>
 <p>时长有限，优先把一个例子讲清楚，给学生留出观察和听辨的时间，不必把附件中的内容全部讲完。另一组输入可作为拓展，是否使用由你决定。</p>
 <p>片子会在教室里直接播放，老师不会另外补充解释。请照顾初学者的阅读和听讲节奏，字幕别挡住演示，比较不同结果时让学生看得清、听得出正在比较什么。</p>
-<ul><li>final.mp4：60—120秒，至少1280×720、20fps，含中文讲解和烧录字幕。</li><li>audio_track.wav、narration.txt、captions.srt。</li><li>project/：可编辑工程、素材、重建说明和来源说明。</li></ul></article></details></section>
+<h4>可用工具</h4><ul><li><code>animation.py</code>：Python/Pillow动画模板，可绘制文字、曲线、采样点和移动标记。</li><li><code>compose.py</code>：基于FFmpeg的时间轴合成工具，可放置视频、标注、音轨并烧录SRT字幕。</li><li><code>speak.ps1</code>：Piper中文配音入口，支持调整语速、分段生成和混音。</li></ul><p>工具只减少脚手架工作，不提供脚本、分镜、时间轴、示例选择或答案。可以修改模板，也可以使用环境中的其他工具。</p>
+<h4>交付内容</h4><ul><li><code>final.mp4</code>：60—120秒，至少1280×720、20fps，含中文讲解和烧录字幕。</li><li><code>audio_track.wav</code>、<code>narration.txt</code>和<code>captions.srt</code>：用于后续修改配音和字幕。</li><li><code>project/</code>：可编辑或可重建工程、实际素材、来源和重建说明；应能重新生成与提交成片内容一致的结果。</li></ul><p class="caption">v6.5.1只把实测时已经存在的工具和交付要求写明，没有增加任务能力、评分项或隐藏答案；Astra实际运行使用的是v6.5原文字版本。</p></article></details></section>
 
 <section id="film" class="content-section"><h2>二、Astra 的成片</h2>
 <video id="astra-video" controls playsinline preload="metadata" poster="results/astra-v65/poster.jpg" style="width:100%"><source src="results/astra-v65/final.mp4" type="video/mp4"></video>
@@ -32,12 +34,12 @@
 <section id="result" class="content-section"><h2>三、评分结果</h2>
 <div class="result-heading"><div><div class="eyebrow">ASTRA · V6.5 · 2026-11-12</div><h3>画面和知识完成度高，中文旁白需要明显重做</h3><p>Astra选择了同相的900 Hz与3100 Hz输入，对比“先低通再抽取”和“先抽取再低通”。知识、动画和声画对应没有改分；严格复评主要发现旁白断句、重音和清晰度问题。</p></div><div class="result-score"><span>严格AI复评</span><strong>85<small> / 100</small></strong><span>尚未经过教师人工复核</span></div></div>
 <div class="table-scroll"><table><thead><tr><th>部分</th><th>得分</th><th>结论</th></tr></thead><tbody>
-<tr><td>知识正确性</td><td class="score">15 / 15</td><td>采样关系、两条处理顺序、P/Q结果和结论均成立。</td></tr>
-<tr><td>动态演示</td><td class="score">15 / 15</td><td>采样点重合、频率身份变化和P/Q结果可以从实际动画中跟随。</td></tr>
-<tr><td>声画字幕与教学推进</td><td class="score">20 / 20</td><td>关键数值、单位、播放状态与当时画面一致，问题—演示—结论闭环完整。</td></tr>
-<tr><td>主观音频</td><td class="score">15 / 30</td><td>断句、韵律和清晰度均为2/4档；可听懂，但机械朗读和局部辨识问题反复出现。</td></tr>
-<tr><td>客观音频</td><td class="score">10 / 10</td><td>没有持续削波；P/Q均为900 Hz，幅度比约为2。</td></tr>
-<tr><td>可读性与视觉语言</td><td class="score">10 / 10</td><td>字幕没有遮挡关键图形，P/Q颜色、尺度和标识保持稳定。</td></tr>
+<tr><td>知识正确性</td><td class="score">15 / 15</td><td>采样关系、两条处理顺序、P/Q结果和结论均成立。<details><summary>查看依据</summary><p>8—24秒核对输入为8kHz、900Hz与3100Hz，两条链均降至4kHz；32—48秒核对P链先低通再抽取；50—69秒核对3100=4000−900及同相幅度叠加；105—115秒结论限定为本例，并指出采样前限制带宽。</p></details></td></tr>
+<tr><td>动态演示</td><td class="score">15 / 15</td><td>采样点重合、频率身份变化和P/Q结果可以从实际动画中跟随。<details><summary>查看依据</summary><p>32秒附近可见P链滤除3100Hz；51—63秒逐步显示两条频率在新采样点留下同一串数；64—75秒显示Q链中同相900Hz叠加为0.8；检查不是只看结论文字。</p></details></td></tr>
+<tr><td>声画字幕与教学推进</td><td class="score">20 / 20</td><td>关键数值、单位、播放状态与当时画面一致，问题—演示—结论闭环完整。<details><summary>查看依据</summary><p>逐段核对烧录字幕、旁白文本和画面数值；82.5—94.5秒按P、Q、P、Q顺序播放四段试听，画面标签与实际音轨时段一致；结论在试听结束后出现。</p></details></td></tr>
+<tr><td>主观音频</td><td class="score">15 / 30</td><td>断句、韵律和清晰度均为2/4档；可听懂，但机械朗读和局部辨识问题反复出现。<details><summary>查看依据</summary><p>11.2—16.8秒参数连读；50—55.8秒公式句缺少语义气口；101.5—110秒核心否定和对比缺少重音；P/Q代号及结尾术语存在辨识困难；85.5—101秒纯音进入和结束较突然。每项采用0—4整数档，再映射为0、2.5、5、7.5、10分。</p></details></td></tr>
+<tr><td>客观音频</td><td class="score">10 / 10</td><td>没有持续削波；P/Q均为900 Hz，幅度比约为2。<details><summary>查看依据</summary><p>从最终MP4独立提取PCM，不使用工程声明代替成片检查。四段试听的主频均为900Hz；Q段幅度约为P段2倍，与0.4和0.8的设定一致；未检测到持续削波。</p></details></td></tr>
+<tr><td>可读性与视觉语言</td><td class="score">10 / 10</td><td>字幕没有遮挡关键图形，P/Q颜色、尺度和标识保持稳定。<details><summary>查看依据</summary><p>完整解码115.5秒并按0.5秒间隔检查231帧；重点抽查参数、采样点重合、试听和结论画面。字幕位于固定底部区域，关键波形、采样点、公式和P/Q状态仍可见。</p></details></td></tr>
 </tbody><tfoot><tr><td>合计</td><td>85 / 100</td><td>格式、科学性和动态演示门槛通过；旁白质量未达到可直接进课堂的标准。</td></tr></tfoot></table></div>
 <div class="callout warn"><strong>旁白为什么只有15分</strong><p>严格听评把断句、韵律、清晰度分别判为5/10。数字和公式经常连读；问句、因果和否定缺少重音；P/Q代号及个别关键词不够清楚；纯音与讲解的衔接也偏硬。三个5分来自0—4档位映射，不代表测量精确到5分。</p></div></section>
 

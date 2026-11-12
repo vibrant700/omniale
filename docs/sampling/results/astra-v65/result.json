@@ -1,6 +1,8 @@
 {
   "case": "OmniALE Case 02",
   "task_version": "6.5-strict-evidence",
+  "current_task_wording": "6.5.1-editorial-clarification",
+  "task_revision_note": "The current wording explicitly names the animation, composition and TTS tools and expands the existing deliverable list. The Astra run used v6.5; no capability, scoring criterion or answer was added in v6.5.1.",
   "solver_model": "gpt-6-astra",
   "score": 85,
   "max_score": 100,
