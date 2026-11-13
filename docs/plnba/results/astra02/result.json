@@ -63,17 +63,25 @@
   },
   "qwen": {
     "model": "qwen3.8-omni-flash",
-    "formal_requests": 4,
-    "status": "partial",
+    "formal_requests": 5,
+    "status": "scored_but_evidence_invalid",
     "score": null,
     "rerun_explicitly_authorized_by_user": true,
-    "same_audio_and_prompt": false,
+    "same_audio_and_prompt": true,
     "neutral_diagnostic_requests": 2,
     "same_audio": true,
     "prompt_version": "wording_v2",
     "requests_by_prompt": {
       "original": 3,
-      "wording_v2": 1
-    }
+      "wording_v2": 2
+    },
+    "reasoning_effort": "none",
+    "requests_by_method": {
+      "original_default": 3,
+      "wording_v2_default": 1,
+      "wording_v2_no_thinking": 1
+    },
+    "raw_computed_score": 28.5,
+    "raw_computed_score_is_official": false
   }
 }
