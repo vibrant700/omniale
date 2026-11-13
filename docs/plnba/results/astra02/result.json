@@ -84,6 +84,10 @@
       "simplified_v3_no_thinking": 1
     },
     "raw_computed_score": 16.5,
-    "raw_computed_score_is_official": false
-  }
+    "raw_computed_score_is_official": false,
+    "adjusted_score": 18.0,
+    "adjustment_source": "user-authorized duplicate-silence correction"
+  },
+  "user_adjusted_audio_score": 18.0,
+  "user_adjusted_quality_score": 82.16666666666666
 }

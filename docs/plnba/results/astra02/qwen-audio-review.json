@@ -103,5 +103,54 @@
     "manual_rescore": false,
     "automatic_rerate": false,
     "conclusion": "Qwen本轮将节奏和语气各评1分，但仍存在重复扣分与虚构长静音区间。保留16.5原始分，不作为通过证据核验的正式成绩。"
+  },
+  "adjusted_score": 18.0,
+  "adjustment": {
+    "authorization": "User: 那你把静音加回来呗",
+    "type": "human_correction_of_duplicate_deduction",
+    "raw_audio_score": 16.5,
+    "adjusted_audio_score": 18.0,
+    "maximum": 30,
+    "delta_audio_points": 1.5,
+    "dimension_change": {
+      "dimension": "assembly_consistency",
+      "before": 3,
+      "after": 4
+    },
+    "adjusted_dimensions": {
+      "intelligibility": {
+        "label": "咬字清晰度",
+        "level": 4,
+        "reason": "所有球员姓名（如“萨博尼斯”、“德雷蒙德·格林”）、动作术语（如“手递手”、“空切接回传”）及否定词（如“没进”、“命中”）均发音饱满清晰，无含糊吞音现象，观众极易分辨。 |"
+      },
+      "phrasing_pacing": {
+        "label": "断句、语速与留白",
+        "level": 1,
+        "reason": "存在大量非自然的长时静默（如0:29-0:36、0:47-0:51等处），导致叙述严重割裂，听众需等待声音重新响起才能继续理解；此外，“普尔和库里来回配合球又回到普尔手上”一句内部缺乏必要停顿，意群粘连，节奏极不稳定。 |"
+      },
+      "prosody_emphasis": {
+        "label": "语气、重音与情绪",
+        "level": 1,
+        "reason": "全程为机械平读，毫无情感起伏与逻辑重音。例如在描述关键结果时，“库里有三分出手命中”与前面的铺垫语调完全一致，未体现“命中”的重要性；“穆雷晃开防守三分不中”中的“不中”也未做强调处理，无法通过声音区分主次信息。 |"
+      },
+      "spoken_commentary": {
+        "label": "口头表达",
+        "level": 2,
+        "reason": "措辞虽基本符合篮球解说习惯，但因过度依赖短句堆砌且缺乏连接词，显得生硬破碎。如“顶著追防上拦把球打进”中“上拦”疑似口误或转写偏差（应为上篮），且多处主语省略导致指代不明（如“再回到高位鲁尼手里交给绕出的库里”前文缺少过渡）。 |"
+      },
+      "assembly_consistency": {
+        "label": "声音一致性与拼接",
+        "level": 4,
+        "reason": "音色、音量保持高度统一，无明显爆音或截词；但频繁出现的超长静音段落暗示可能存在素材剪辑痕迹或TTS生成时的异常暂停，虽不影响单点音质，却破坏了整体连贯性。 |",
+        "adjustment_reason": "移除静音在本项的重复扣分；静音节奏问题保留在断句、语速与留白项。原回复称音色音量统一、无明显爆音或截词，未列独立拼接缺陷。"
+      }
+    },
+    "adjusted_quality_score": 82.16666666666666,
+    "quality_maximum": 100,
+    "other_dimension_levels_unchanged": true,
+    "new_qwen_request": false,
+    "raw_response_unchanged": true,
+    "independent_evidence_validation_passed": false,
+    "remaining_limitations": "本次只移除重复扣分；原回复错误静音区间等证据问题保留，未声称校正后已通过独立听评核验。"
   }
 }
