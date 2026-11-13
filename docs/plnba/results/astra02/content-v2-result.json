@@ -1,0 +1,60 @@
+{
+  "version": "content_v2",
+  "authorization": "User: 请你修改 (accepting five-category proposal)",
+  "method_change_after_trial": true,
+  "score": 34.388888888888886,
+  "maximum": 40,
+  "old_score": 34.166666666666664,
+  "old_method": "weighted factual F1",
+  "audio_adjusted_score": 18,
+  "combined_user_adjusted_score": 82.38888888888889,
+  "combined_score_maximum": 100,
+  "engineering_gate": "met",
+  "engineering_affects_score": false,
+  "rubric_sha256": "72cb809b87020077ad135f5d4b5e59b8b7cfefa9675808e0f1cc6f39d33b5b25",
+  "new_solver_run": false,
+  "new_qwen_request": false,
+  "basis": "Reclassification and reweighting of existing reviewed actual-audio evidence and accepted source facts; no newly invented ground truth.",
+  "limitations": [
+    "这是用户授权的回溯重评，不是试测前冻结的同口径成绩。",
+    "沿用已接受参考事实和已有音轨核对，不声称新增专家真值、独立人工全片听评或新的音频质量核验。",
+    "音频18分沿用用户授权去重校正，原Qwen证据局限保留。"
+  ],
+  "categories": [
+    {
+      "label": "出手与终结结果",
+      "maximum": 10,
+      "score": 9.166666666666666,
+      "applicable_clips": 12,
+      "id": "A1"
+    },
+    {
+      "label": "篮板与球权延续",
+      "maximum": 8,
+      "score": 7.0,
+      "applicable_clips": 4,
+      "id": "A2"
+    },
+    {
+      "label": "失误与责任归属",
+      "maximum": 8,
+      "score": 5.333333333333333,
+      "applicable_clips": 3,
+      "id": "A3"
+    },
+    {
+      "label": "关键配合链条",
+      "maximum": 10,
+      "score": 8.88888888888889,
+      "applicable_clips": 9,
+      "id": "A4"
+    },
+    {
+      "label": "表述准确与证据边界",
+      "maximum": 4,
+      "score": 4,
+      "applicable_clips": 12,
+      "id": "A5"
+    }
+  ]
+}
