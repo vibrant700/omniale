@@ -63,25 +63,27 @@
   },
   "qwen": {
     "model": "qwen3.8-omni-flash",
-    "formal_requests": 5,
+    "formal_requests": 6,
     "status": "scored_but_evidence_invalid",
     "score": null,
     "rerun_explicitly_authorized_by_user": true,
-    "same_audio_and_prompt": true,
+    "same_audio_and_prompt": false,
     "neutral_diagnostic_requests": 2,
     "same_audio": true,
-    "prompt_version": "wording_v2",
+    "prompt_version": "simplified_v3",
     "requests_by_prompt": {
       "original": 3,
-      "wording_v2": 2
+      "wording_v2": 2,
+      "simplified_v3": 1
     },
     "reasoning_effort": "none",
     "requests_by_method": {
       "original_default": 3,
       "wording_v2_default": 1,
-      "wording_v2_no_thinking": 1
+      "wording_v2_no_thinking": 1,
+      "simplified_v3_no_thinking": 1
     },
-    "raw_computed_score": 28.5,
+    "raw_computed_score": 16.5,
     "raw_computed_score_is_official": false
   }
 }

@@ -1,0 +1,278 @@
+{
+  "model": "qwen3.8-omni-flash",
+  "audio_sha256": "a02ad32ea4bc7bab77838bed57d8d1c7a3a2d89675f0932b382cd202edca6a08",
+  "prompt_sha256": "1f1c8999a350b9df32f9d152dd9fc188832f73fef08cabc2a9caa87584b3468c",
+  "input_audio_tokens": 1416,
+  "formal_requests": 5,
+  "requests_by_method": {
+    "original_default": 3,
+    "wording_v2_default": 1,
+    "wording_v2_no_thinking": 1
+  },
+  "rerun_explicitly_authorized_by_user": true,
+  "same_audio": true,
+  "same_prompt_as_previous": true,
+  "prompt_version": "wording_v2",
+  "prompt_file": "qwen-audio-prompt-v2.md",
+  "reasoning_effort": "none",
+  "review": {
+    "status": "scored",
+    "listening_sections": [
+      {
+        "id": "beginning",
+        "start_s": 0.0,
+        "end_s": 67.5,
+        "speech_present": true,
+        "heard": "开头介绍国王穿白色、勇士穿蓝色。随后描述穆雷传球给萨博尼斯，福克斯借掩护急停跳投命中；库里借手递手三分出手命中；普尔与库里的配合及空切篮下打进。接着是福克斯带球过半场被维金斯抢断反击上篮得分。声音表现为典型的合成TTS音色，语调平直，缺乏真人呼吸感，但在人名和动作词上咬字清晰。"
+      },
+      {
+        "id": "middle",
+        "start_s": 67.5,
+        "end_s": 135.0,
+        "speech_present": true,
+        "heard": "中段描述穆雷切入中距离不中，萨博尼斯补篮命中；格林传球被赫尔特截断导致国王反击，赫尔特分球巴恩斯再送底角穆雷三分不中，格林收下篮板。随后福克斯推进，巴恩斯突破不上但抢回球分给赫尔特三分也不中。最后米切尔组织进攻，福克斯利用脚步晃开防守将球放进。此区间语速均匀，停顿多用于分隔不同回合或长句中的逻辑点，听感较为机械但信息完整。"
+      },
+      {
+        "id": "end",
+        "start_s": 135.0,
+        "end_s": 202.5,
+        "speech_present": true,
+        "heard": "结尾部分包括梅图接蒙克手递手后扣篮得分；库里突破分球被米切尔预判拦截并快攻上篮得手；兰姆推球给格林发起转移，经汤普森、兰姆、格林、普尔传导至维金斯底角三分命中；最后格林传给汤普森三分不中，兰姆跟进抢板补篮得分。整体维持一致的电子合成音质，无明显音量波动或拼接瑕疵，直到音频结束。"
+      }
+    ],
+    "issues": [],
+    "dimensions": {
+      "intelligibility": {
+        "level": 4,
+        "owned_issue_ids": [],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 8.0,
+            "end_s": 14.0,
+            "heard": "'...福克斯绕过来借手递手...借掩护突进福克斯急停跳投两分命中'",
+            "impact": "尽管句子较长且包含多个动作转换，但'福克斯'、'掩护'、'急停跳投'等关键名词和动词发音饱满清晰，未出现吞音或模糊现象，听众能准确捕捉战术细节。"
+          },
+          {
+            "section": "middle",
+            "start_s": 90.0,
+            "end_s": 96.0,
+            "heard": "'...传球被赫尔特截下国王立刻反击...'",
+            "impact": "在快速叙述攻防转换时，'赫尔特'这一相对少见的译名以及'截下'、'反击'等动作词依然保持了极高的辨识度，没有因语速而牺牲清晰度。"
+          },
+          {
+            "section": "end",
+            "start_s": 185.0,
+            "end_s": 192.0,
+            "heard": "'...经过格林和普尔球到了底角维金斯，维金斯底角三分命中'",
+            "impact": "连续的人名传递（格林->普尔->维金斯）处理得非常干净，每个名字的声调起伏自然区分了主语变化，确保了复杂传导路线的听觉可追踪性。"
+          }
+        ]
+      },
+      "phrasing_pacing": {
+        "level": 4,
+        "owned_issue_ids": [],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 15.0,
+            "end_s": 22.0,
+            "heard": "'库里线叫球勇士在左侧手递手 / (pause) / 再回到高位卢尼手里交给绕出的库里'",
+            "impact": "在描述复杂的站位和球权转移时，利用了适当的停顿将'左侧手递手'与后续的'高位交接'分层，避免了长难句造成的认知过载，节奏符合复盘观察的需求。"
+          },
+          {
+            "section": "middle",
+            "start_s": 105.0,
+            "end_s": 115.0,
+            "heard": "'巴恩斯沿底线突破上篮没进 / (pause) / 但他抢回球权分给底角赫尔特'",
+            "impact": "在'没进'之后有明显的留白，模拟了篮球比赛中投篮不中后的短暂停滞感，随即衔接'但是'引导的二次进攻，这种断句增强了叙事的戏剧张力和逻辑连贯性。"
+          },
+          {
+            "section": "end",
+            "start_s": 160.0,
+            "end_s": 168.0,
+            "heard": "'库里向外传球米切尔预判线路把球截下 / (pause) / 米切尔一路推进冲到篮下上篮得手'",
+            "impact": "抢断动作与随后的快攻之间做了清晰的切分，既突出了失误的瞬间，又给了听众反应时间迎接下一个得分高潮， pacing 控制得当。"
+          }
+        ]
+      },
+      "prosody_emphasis": {
+        "level": 3,
+        "owned_issue_ids": [],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 25.0,
+            "end_s": 30.0,
+            "heard": "'库里没有停在外线空切接回传篮下打进关键是传球后的移动'",
+            "impact": "虽然语义重音落在了'空切'和'移动'上，但整体语调曲线较为平坦，缺乏真人在强调'关键'二字时通常伴随的语气加重或音调拔高，略显机械。"
+          },
+          {
+            "section": "middle",
+            "start_s": 85.0,
+            "end_s": 90.0,
+            "heard": "'萨博尼斯留在篮下连续争抢补篮终于补进'",
+            "impact": "'终于'一词本应带有如释重负或兴奋的情绪色彩，但此处朗读仅作为普通副词处理，情感参与度较低，属于典型的合成语音特征，虽不影响理解但感染力稍弱。"
+          },
+          {
+            "section": "end",
+            "start_s": 195.0,
+            "end_s": 200.0,
+            "heard": "'球没进兰姆跟进抢下篮板补篮得分'",
+            "impact": "对于'没进'到'得分'的快速转换，语调保持了一致的陈述风格，未能通过明显的升降调来区分失败与成功的对比，情绪表达克制但也因此显得单一。"
+          }
+        ]
+      },
+      "spoken_commentary": {
+        "level": 4,
+        "owned_issue_ids": [],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 0.0,
+            "end_s": 5.0,
+            "heard": "'国王穿白色勇士穿蓝色'",
+            "impact": "开篇直接交代基础视觉信息，简洁明了，没有任何冗余铺垫，非常适合短视频或快速复盘场景，体现了高效的信息传达策略。"
+          },
+          {
+            "section": "middle",
+            "start_s": 120.0,
+            "end_s": 130.0,
+            "heard": "'戴维斯和梅图参与配合...求到福克斯手中他借掩护往里走...继续运球找角度转回篮下'",
+            "impact": "使用了'参与配合'、'找角度'、'转回'等地道的篮球口语词汇，生动地描绘了球员的动态过程，而非枯燥的数据罗列，语言组织流畅自然。"
+          },
+          {
+            "section": "end",
+            "start_s": 175.0,
+            "end_s": 185.0,
+            "heard": "'兰姆推进交给格林勇士开始转移球...汤普森送到内线兰姆再往外分'",
+            "impact": "清晰地梳理了球的流动路径（Transfer Ball），用词精准（'送到内线'、'往外分'），让即使不看画面的观众也能在脑海中构建出战术跑位图，解说质量高。"
+          }
+        ]
+      },
+      "assembly_consistency": {
+        "level": 4,
+        "owned_issue_ids": [],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 0.0,
+            "end_s": 67.5,
+            "heard": "全段背景安静，人声居中，无任何环境噪音干扰，音量电平稳定。",
+            "impact": "提供了纯净的收听体验，没有任何突兀的剪辑痕迹或音质跳变。"
+          },
+          {
+            "section": "middle",
+            "start_s": 67.5,
+            "end_s": 135.0,
+            "heard": "与前段相比，音色、语速基准和混响效果完全一致，无缝过渡。",
+            "impact": "证实了这是同一套合成引擎生成的连续内容，不存在拼凑感。"
+          },
+          {
+            "section": "end",
+            "start_s": 135.0,
+            "end_s": 202.5,
+            "heard": "直至最后一句'补篮得分'，声音特质未发生任何衰减或改变，收尾干脆。",
+            "impact": "全程保持高度一致性，符合高质量自动化生产内容的标准。"
+          }
+        ]
+      }
+    },
+    "limitations": []
+  },
+  "score": null,
+  "maximum": 30,
+  "raw_computed_score": 28.5,
+  "raw_computed_score_is_official": false,
+  "assessment": {
+    "status": "rejected_as_official_score",
+    "accepted_score": null,
+    "raw_level_sum": 19,
+    "raw_computed_score": 28.5,
+    "maximum": 30,
+    "raw_computed_score_is_official": false,
+    "dimension_levels": {
+      "intelligibility": 4,
+      "phrasing_pacing": 4,
+      "prosody_emphasis": 3,
+      "spoken_commentary": 4,
+      "assembly_consistency": 4
+    },
+    "structural_errors": [
+      "Submaximal dimension lacks owned real defect: prosody_emphasis"
+    ],
+    "timing_checks": [
+      {
+        "claim": "关键是传球后的移动",
+        "judge_interval_s": [
+          25,
+          30
+        ],
+        "actual_speech_interval_s": [
+          37.18,
+          43.32
+        ],
+        "diagnostic_asr_role": "Locating corroborating phrase, not subjective judge",
+        "result": "disjoint"
+      },
+      {
+        "claim": "萨博尼斯留在篮下连续争抢补篮终于补进",
+        "judge_interval_s": [
+          85,
+          90
+        ],
+        "actual_speech_interval_s": [
+          73.4,
+          77.0
+        ],
+        "result": "disjoint"
+      },
+      {
+        "claim": "抢断与米切尔快攻上篮",
+        "judge_interval_s": [
+          160,
+          168
+        ],
+        "actual_speech_interval_s": [
+          166.8,
+          174.18
+        ],
+        "result": "insufficient_coverage_for_claimed_pause_and_finish"
+      },
+      {
+        "claim": "转回篮下（口头表达middle证据）",
+        "judge_interval_s": [
+          120,
+          130
+        ],
+        "actual_speech_interval_s": [
+          135.43,
+          138.15
+        ],
+        "result": "disjoint_for_quoted_tail"
+      }
+    ],
+    "semantic_review": [
+      "语调3分却issues与owned_issue_ids均为空，未遵循低于4分须登记问题的固定要求。",
+      "对语调的部分批评使用“终于”应兴奋、合成特征等理由；既有规则允许克制情绪且合成音色本身不扣分，需要明确区分声音表达缺陷。",
+      "未声称独立人工复核声线、语调或接缝；现有时间证据和结构问题已足以判定本回复不可作为正式成绩。"
+    ],
+    "no_manual_rescore": true,
+    "no_automatic_rerate": true,
+    "complete_original_audio_unchanged": true,
+    "method": {
+      "model": "qwen3.8-omni-flash",
+      "prompt_version": "wording_v2",
+      "reasoning_effort": "none",
+      "full_duration_s": 202.5
+    },
+    "authorization": "User requested another evaluation: 请你再测",
+    "total_formal_requests": 5,
+    "requests_by_method": {
+      "original_default": 3,
+      "wording_v2_default": 1,
+      "wording_v2_no_thinking": 1
+    }
+  },
+  "previous_response": "qwen-fourth-partial.json"
+}
