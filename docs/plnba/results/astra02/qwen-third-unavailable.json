@@ -1,0 +1,25 @@
+{
+  "model": "qwen3.8-omni-flash",
+  "audio_sha256": "a02ad32ea4bc7bab77838bed57d8d1c7a3a2d89675f0932b382cd202edca6a08",
+  "prompt_sha256": "203c750df15cf9fe98a368104363106baffba41d462d6d08761b03dfcbec9a33",
+  "input_audio_tokens": 1416,
+  "formal_requests": 3,
+  "rerun_explicitly_authorized_by_user": true,
+  "same_audio_and_prompt": true,
+  "review": {
+    "status": "unknown",
+    "perception": "unavailable",
+    "reason": "当前会话中只能看到文本说明与疑似转写内容，没有可直接感知的完整音频流；无法按实际听觉证据评价咬字、断句、语气、解说组织和拼接一致性。",
+    "dimensions": null
+  },
+  "score": null,
+  "maximum": 30,
+  "previous_response": "qwen-second-unavailable.json",
+  "neutral_diagnostics": {
+    "requests": 2,
+    "count_as_score": false,
+    "full_audio_content_recognized": true,
+    "short_wav_response_received": true,
+    "root_cause": "unresolved"
+  }
+}

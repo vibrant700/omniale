@@ -1,25 +1,150 @@
 {
   "model": "qwen3.8-omni-flash",
   "audio_sha256": "a02ad32ea4bc7bab77838bed57d8d1c7a3a2d89675f0932b382cd202edca6a08",
-  "prompt_sha256": "203c750df15cf9fe98a368104363106baffba41d462d6d08761b03dfcbec9a33",
+  "prompt_sha256": "1f1c8999a350b9df32f9d152dd9fc188832f73fef08cabc2a9caa87584b3468c",
   "input_audio_tokens": 1416,
-  "formal_requests": 3,
+  "formal_requests": 4,
+  "requests_by_prompt": {
+    "original": 3,
+    "wording_v2": 1
+  },
   "rerun_explicitly_authorized_by_user": true,
-  "same_audio_and_prompt": true,
+  "same_audio": true,
+  "same_audio_and_prompt": false,
+  "prompt_version": "wording_v2",
+  "prompt_file": "qwen-audio-prompt-v2.md",
   "review": {
-    "status": "unknown",
-    "perception": "unavailable",
-    "reason": "当前会话中只能看到文本说明与疑似转写内容，没有可直接感知的完整音频流；无法按实际听觉证据评价咬字、断句、语气、解说组织和拼接一致性。",
-    "dimensions": null
+    "status": "partial",
+    "listening_sections": [
+      {
+        "id": "beginning",
+        "start_s": 0,
+        "end_s": 67.5,
+        "speech_present": true,
+        "heard": "按所给转写与总时长粗略对应，开头三分之一包含的语句为：国王穿白色勇士穿蓝色。穆雷叫给萨博尼斯福克斯绕过来借手低手。借掩护突进福克斯急停跳投两分命中。库里线教球勇士在左侧手低手。再回到高位卢尼手里交给绕出的库里。库里三分出手命中。卢尼在高位手低手交给普尔。普尔和库里来回配合球又回到普尔手上。库里没有停在外线空切接回传，篮下打进关键是传球后的移动。福克斯带国半场为金斯贴深定防。萨博尼斯上来掩护福克斯准备突破，维金斯把球断下自己加速反击，顶着追防上篮把球打进。国王在外线转移寻找突破口。穆雷从右侧切入中距离出手没进。萨博尼斯留在篮下连续争抢补篮终于补进。勇士推进普尔和汤普森先后参与传导。转写呈现多个短段，疑似对应独立章节；但实际咬字、语速、重音、语调、音量和章节接缝无法直接核验。"
+      },
+      {
+        "id": "middle",
+        "start_s": 67.5,
+        "end_s": 135,
+        "speech_present": true,
+        "heard": "按转写顺序粗略对应，中段包含：球来到德雷蒙德格林手里。传球被赫尔特截下国王立刻反击。赫尔特分给巴恩斯再送到底角穆雷，穆雷晃开防守三分不中格林收下篮板。福克斯推进把球送给巴恩斯。巴恩斯沿底线突破上篮没进，但他抢回球权分给底角赫尔特，赫尔特三分也没进格林拿下防守篮板。戴维恩米切尔组织戴维斯和梅图参与配合。球到福克斯手中他借掩护往里走。底线虚晃不急着出手继续运球找角度，转回篮下福克斯把球放进。国王推进现在外线耐心传导。此处只能确认语句内容和顺序；实际声音表现、停顿是否自然、是否有拼接跳变不能从文本可靠判断。"
+      },
+      {
+        "id": "end",
+        "start_s": 135,
+        "end_s": 202.5,
+        "speech_present": true,
+        "heard": "按转写顺序粗略对应，结尾包含：梅图接球再与蒙克完成手递手，蒙克持球吸引防守梅图顺势往篮下走，接到回传梅图起身扣进。勇士前场配合库里持球往篮下突破。库里向外传球米切尔预判线路把球截下，米切尔一路推进冲到篮下上篮得手。兰姆推进交给格林勇士开始转移球。汤普森送到内线兰姆兰姆再往外分。经过格林和普尔球到了底角维金斯，维金斯底角三分命中。格林传给汤普森三分出手。球没进兰姆跟进抢下篮板补篮得分。结尾仍是短句式复盘；实际语气、重音、响度一致性和剪口平顺度无法直接听取确认。"
+      }
+    ],
+    "issues": [
+      {
+        "id": "SPK-01",
+        "owner": "spoken_commentary",
+        "start_s": 0,
+        "end_s": 20,
+        "heard": "国王穿白色勇士穿蓝色。穆雷叫给萨博尼斯福克斯绕过来借手低手。借掩护突进福克斯急停跳投两分命中。",
+        "impact": "开头把球衣颜色、人物和连续动作名词直接并列，更像画面指令或要点清单，而不是面向普通观众的口头复盘；听者需要自行补全谁在做什么、动作之间如何衔接。"
+      },
+      {
+        "id": "SPK-02",
+        "owner": "spoken_commentary",
+        "start_s": 20,
+        "end_s": 135,
+        "heard": "库里线教球勇士在左侧手低手。福克斯带国半场为金斯贴深定防。戴维恩米切尔组织戴维斯和梅图参与配合。",
+        "impact": "中段多处指代和动作链条不顺，人名、动作词密集且缺少连接说明，听觉上需要反复重建传球、掩护、防守和结果关系，口头组织仍明显依赖编辑。"
+      },
+      {
+        "id": "SPK-03",
+        "owner": "spoken_commentary",
+        "start_s": 135,
+        "end_s": 202.5,
+        "heard": "汤普森送到内线兰姆兰姆再往外分。经过格林和普尔球到了底角维金斯，维金斯底角三分命中。",
+        "impact": "后段继续以短标签推进比赛回合，虽然交代了部分结果，但缺少面向普通观众的过渡和取舍，表达不够自然口语化，信息堆叠感较强。"
+      }
+    ],
+    "dimensions": {
+      "intelligibility": {
+        "level": null,
+        "owned_issue_ids": [],
+        "evidence": []
+      },
+      "phrasing_pacing": {
+        "level": null,
+        "owned_issue_ids": [],
+        "evidence": []
+      },
+      "prosody_emphasis": {
+        "level": null,
+        "owned_issue_ids": [],
+        "evidence": []
+      },
+      "spoken_commentary": {
+        "level": 2,
+        "owned_issue_ids": [
+          "SPK-01",
+          "SPK-02",
+          "SPK-03"
+        ],
+        "evidence": [
+          {
+            "section": "beginning",
+            "start_s": 0,
+            "end_s": 20,
+            "heard": "国王穿白色勇士穿蓝色。穆雷叫给萨博尼斯福克斯绕过来借手低手。借掩护突进福克斯急停跳投两分命中。",
+            "impact": "开头语句偏指令化和标签化，人物、动作、结果之间缺少自然口头连接，普通观众跟随成本较高。"
+          },
+          {
+            "section": "middle",
+            "start_s": 20,
+            "end_s": 135,
+            "heard": "库里线教球勇士在左侧手低手。福克斯带国半场为金斯贴深定防。戴维恩米切尔组织戴维斯和梅图参与配合。",
+            "impact": "中段多处措辞不顺、指代不清，动作关系需要听者自行补全，说明口头表达仍像未经充分口语化编辑的稿子。"
+          },
+          {
+            "section": "end",
+            "start_s": 135,
+            "end_s": 202.5,
+            "heard": "汤普森送到内线兰姆兰姆再往外分。经过格林和普尔球到了底角维金斯，维金斯底角三分命中。",
+            "impact": "结尾继续密集罗列人名和动作，虽有比分结果，但缺少解释性过渡，面向普通观众的取舍和表达自然度不足。"
+          }
+        ]
+      },
+      "assembly_consistency": {
+        "level": null,
+        "owned_issue_ids": [],
+        "evidence": []
+      }
+    },
+    "limitations": [
+      "当前交互中没有可播放或可直接分析的音频附件，因此无法听取 0–202.5 秒的真实声音表现；intelligibility、phrasing_pacing、prosody_emphasis、assembly_consistency 缺少必要声学证据，只能填 null。",
+      "用户提供的长文本可作为措辞、内容顺序和复盘组织方式的参考，但不能单独证明咬字清晰度、意群停顿、语速、重音、语调、音色变化、音量跳变或章节接缝质量。",
+      "三个 listening_sections 的时间边界按总时长 202.5 秒和转写顺序粗略划分，缺少逐句时间戳，不能精确定位每个句子、每次停顿或每个章节接缝。",
+      "转写中的“赫尔特/赫尔特”“梅图”“蓝姆”“手低手/手递手”“线教球”等差异可能是转写误差、译名差异、口误或发音问题；在未直接听取音频前，不能将其归因为咬字或发音缺陷。",
+      "本次仅基于可核实的措辞与内容组织完成 spoken_commentary 的部分评价，其他四维不做分数判断。"
+    ]
   },
   "score": null,
   "maximum": 30,
-  "previous_response": "qwen-second-unavailable.json",
-  "neutral_diagnostics": {
-    "requests": 2,
-    "count_as_score": false,
-    "full_audio_content_recognized": true,
-    "short_wav_response_received": true,
-    "root_cause": "unresolved"
-  }
+  "assessment": {
+    "status": "not_accepted_as_complete_audio_review",
+    "score": null,
+    "reasons": [
+      "四个声学维度为null；Qwen自称仅依据转写进行部分口头表达评价。",
+      "部分措辞批评引用了疑似转写错误，不能把转写错误直接当作候选人发音或表达缺陷。",
+      "回答承认分段按转写顺序粗分，时间证据未经音频定位；例如实际约15–25秒的片段被归入middle证据。"
+    ],
+    "method_change": "用户授权修改提示词；五维评分锚点与证据规则逐字保留，取消感知自检和预填示例。",
+    "same_audio": true,
+    "same_prompt": false,
+    "total_formal_requests": 4,
+    "requests_by_prompt": {
+      "original": 3,
+      "wording_v2": 1
+    },
+    "no_more_automatic_requests": true
+  },
+  "previous_response": "qwen-third-unavailable.json",
+  "neutral_diagnostic_requests": 2
 }

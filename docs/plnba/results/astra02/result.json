@@ -63,11 +63,17 @@
   },
   "qwen": {
     "model": "qwen3.8-omni-flash",
-    "formal_requests": 3,
-    "status": "unknown",
+    "formal_requests": 4,
+    "status": "partial",
     "score": null,
     "rerun_explicitly_authorized_by_user": true,
-    "same_audio_and_prompt": true,
-    "neutral_diagnostic_requests": 2
+    "same_audio_and_prompt": false,
+    "neutral_diagnostic_requests": 2,
+    "same_audio": true,
+    "prompt_version": "wording_v2",
+    "requests_by_prompt": {
+      "original": 3,
+      "wording_v2": 1
+    }
   }
 }
