@@ -1,0 +1,14 @@
+{
+  "model": "qwen3.8-omni-flash",
+  "audio_sha256": "a02ad32ea4bc7bab77838bed57d8d1c7a3a2d89675f0932b382cd202edca6a08",
+  "prompt_sha256": "203c750df15cf9fe98a368104363106baffba41d462d6d08761b03dfcbec9a33",
+  "input_audio_tokens": 1416,
+  "review": {
+    "status": "unknown",
+    "perception": "unavailable",
+    "reason": "当前仅收到文本内容与评测提示词，没有可直接收听的完整音频附件或可验证的音轨输入；无法真实感知咬字、断句、语速、语气重音、口头表达组织和声音拼接一致性，因此不能按实际听觉证据评分。",
+    "dimensions": null
+  },
+  "score": null,
+  "maximum": 30
+}

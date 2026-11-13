@@ -63,8 +63,10 @@
   },
   "qwen": {
     "model": "qwen3.8-omni-flash",
-    "formal_requests": 1,
+    "formal_requests": 2,
     "status": "unknown",
-    "score": null
+    "score": null,
+    "rerun_explicitly_authorized_by_user": true,
+    "same_audio_and_prompt": true
   }
 }
