@@ -9,7 +9,6 @@
     "audio": 12.597941627240846,
     "editing": 7.541611479028698
   },
-  "initial_automatic_total": 73.58955310626955,
   "content_dimensions": {
     "factual_correctness": 7.8,
     "evidence_consistency": 4.3,
@@ -41,9 +40,6 @@
       "依据": "提供的实际帧可核对早期增援者、远程对手与亚索三者身份，以及后期水晶、远程角色名牌和外形。口播完成两处身份比较。212秒与1719秒并非唯一合法证据时刻，稀疏参考窗口未覆盖所选帧不构成否定理由。"
     }
   },
-  "run_note": "首轮一小时未提交；新上下文继承工作文件后继续，约44分钟时环境中断；随后原生恢复已保存会话，约34分钟完成。含重新看图和恢复成本。",
-  "budget_label": "一小时首轮＋文件接手＋原生恢复",
-  "original_budget_completed": false,
   "duration": 452.680333,
   "chapters": [
     {
@@ -1347,5 +1343,7 @@
         }
       }
     ]
-  }
+  },
+  "runtime_seconds": 8300.266,
+  "runtime_label": "累计运行约138分20秒"
 }

@@ -9,7 +9,6 @@
     "audio": 12.671198094674443,
     "editing": 8.913636363636364
   },
-  "initial_automatic_total": 86.4848344583108,
   "content_dimensions": {
     "factual_correctness": 8.1,
     "evidence_consistency": 4.3,
@@ -35,9 +34,6 @@
       "依据": "提交片内自洽地描述了另一个较早时刻的营地状态，但题目明确指定了较晚的攻击事件，不能将该pack结论改写为指定事件的答案。"
     }
   },
-  "run_note": "原一小时截止时视频封装中断；随后只执行它已经发出的渲染命令，额外约33秒。没有恢复模型会话，也没有改写答案。",
-  "budget_label": "60分钟上限＋约33秒补渲染",
-  "original_budget_completed": false,
   "duration": 329.514666,
   "chapters": [
     {
@@ -1227,5 +1223,7 @@
         }
       }
     ]
-  }
+  },
+  "runtime_seconds": 3634.267,
+  "runtime_label": "累计运行约60分34秒"
 }
