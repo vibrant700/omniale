@@ -1,0 +1,1037 @@
+{
+  "id": "luna",
+  "name": "GPT‑6‑luna",
+  "total": 32.843927139916936,
+  "maximum": 100,
+  "scores": {
+    "qa": 6.5,
+    "content": 9.0,
+    "audio": 11.79623927864526,
+    "editing": 5.547687861271676
+  },
+  "content_dimensions": {
+    "factual_correctness": 4.8,
+    "evidence_consistency": 1.7,
+    "explanation_clarity": 2.5
+  },
+  "editing_dimensions": {
+    "source_scene_correctness": 4.797687861271676,
+    "required_event_coverage": 0.75,
+    "question_segment_alignment": 0.0
+  },
+  "rationale": "依据实际语音、所附成片画面和来源匹配记录评分。主要问题是多项结论保留未定，以及用真实比赛中的其他时段替代指定事件；真实来源匹配率高不代表题目事件对应正确。死亡商店判断、H07有效下界链及部分后期纠错获得分数。H07不因未穷尽区间内状态转换扣分。按根因记录事件选择错误及其影响，不将同一问题的反复出现当成独立事实错误；未评价发音、音质或混音。",
+  "runtime_seconds": 2195.312,
+  "runtime_label": "累计运行约36分35秒",
+  "duration": 172.785986,
+  "chapters": [
+    {
+      "id": "H01",
+      "start": 0,
+      "end": 21.6
+    },
+    {
+      "id": "H02",
+      "start": 21.6,
+      "end": 43.2
+    },
+    {
+      "id": "H03",
+      "start": 43.2,
+      "end": 64.8
+    },
+    {
+      "id": "H04",
+      "start": 64.8,
+      "end": 86.4
+    },
+    {
+      "id": "H05",
+      "start": 86.4,
+      "end": 108
+    },
+    {
+      "id": "H06",
+      "start": 108,
+      "end": 129.6
+    },
+    {
+      "id": "H07",
+      "start": 129.6,
+      "end": 151.2
+    },
+    {
+      "id": "H08",
+      "start": 151.2,
+      "end": 172.8
+    }
+  ],
+  "preview": "results/luna/preview.mp4",
+  "poster": "results/luna/poster.jpg",
+  "original_url": "https://github.com/vibrant700/omniale/releases/download/coach-review-codex-v5/luna-codex-review-original.mp4",
+  "original_bytes": 28243487,
+  "original_sha256": "d9a39b8b00ebcdb879b6b6451a6caa334334c944488c41e9cf05a11b17ecd461",
+  "preview_bytes": 20411174,
+  "preview_sha256": "72af054b08272bacaf5a68a1d0696022cc52f2d49e9a32238dde030af3a40f79",
+  "answers_sha256": "0a0a0916c9a9d70ddfa411c7388eb1244e488b4002d0baadff612403a1de1bf6",
+  "qa": [
+    {
+      "id": "H01",
+      "title": "同一建筑的跨阶段审计",
+      "question": "找到早期对线时玩家在蓝方中路外塔旁打开商店的回城、后来该位置附近伴随建筑摧毁公告的回城，以及紫色远程对手带红方兵线经过这处位置的事件。跟踪同一座蓝方中路外塔，填写三次的建筑状态；另填写第二次回城时摧毁公告所指建筑的阵营。每个结论须有对应证据，不得把不同建筑当作同一对象。",
+      "maximum": 8,
+      "score": 0,
+      "units": [
+        {
+          "field": "early_tower",
+          "maximum": 2,
+          "points": 0,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "later_recall_tower",
+          "maximum": 2,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "enemy_push_tower",
+          "maximum": 2,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "announced_destroyed_tower_team",
+          "maximum": 2,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        }
+      ],
+      "answer": {
+        "question_id": "H01",
+        "answer": {
+          "early_tower": "standing",
+          "later_recall_tower": null,
+          "enemy_push_tower": null,
+          "announced_destroyed_tower_team": null
+        },
+        "evidence": {
+          "early_recall": {
+            "t": 180,
+            "observation": "中路画面右上方可见蓝方外塔塔体仍完整；该帧用于确认早期塔位状态。"
+          },
+          "later_recall": {
+            "t": 1100,
+            "observation": "灰阶死亡视角与推荐商店覆盖画面，未能从该代表帧确认公告指向哪座塔。"
+          },
+          "enemy_push": {
+            "t": 1400,
+            "observation": "中路兵线与英雄交战可见，但该帧不足以确认所问塔体状态。"
+          }
+        },
+        "review_segments": [
+          {
+            "start": 0,
+            "end": 21.6
+          }
+        ]
+      },
+      "verification": {
+        "units": {
+          "early_tower": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "180秒所选帧右上确有蓝色水晶、完整塔身及血条，支持该时刻塔仍站立这一局部观察。但玩家为3级，正在塔前遭敌人逼近，画面没有商店或回城引导；前后上下文也是对线移动，不是题目要求的开商店回城事件。不能仅因塔状态相同而作为该次回城的证据。"
+          },
+          "later_recall_tower": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1100秒所选帧为彩色画面，本体foreverkiller21为12级、HUD生命1893/1893，正沿基地附近道路移动；左下可见另一座蓝方防御塔，不是所跟踪的中路外塔。画面既无商店覆盖，也无回城引导，提交所写的灰阶死亡视角不符。该槽没有提供指定第二次回城的塔身证据，答案亦未填写状态。"
+          },
+          "enemy_push_tower": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1400秒所选帧显示13级玩家亚索随蓝方兵线在中路面对红方小兵，未见指定紫色远程对手维克兹，也未展示目标外塔塔址。1398秒上下文虽在右上出现残余塔基，但不能替代所选帧，且此处是玩家推进清兵，并非指定敌方带线经过的事件；答案未填写建筑状态。"
+          },
+          "announced_destroyed_tower_team": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1100秒实际顶部公告为“EL MEZ is unstoppable!”，配英雄击杀图标，而非“Enemy turret destroyed!”建筑摧毁公告。该帧不属于题目所要求的伴随摧毁公告的回城，无法用它判定所问被摧毁建筑的阵营；提交也未填写阵营。"
+          }
+        }
+      },
+      "narration_evidence": [
+        {
+          "start_s": 0,
+          "end_s": 24,
+          "question_ids": [
+            "H01"
+          ],
+          "observation": "口播确认早期蓝方外塔存在，但将后两次塔状态及公告归属保留待核实。实际引用约原片178—183秒、1097—1103秒和1396—1403秒，未建立题目要求的三次同一建筑追踪；后续回城段也不是860秒的指定事件。",
+          "impact": "早期建筑判断方向正确，但缺少指定回城依据；遗漏后来塔仍站立、推进时已毁和公告属于红方三项关键结论。"
+        }
+      ],
+      "alignment": {
+        "question_id": "H01",
+        "passed": false,
+        "observation": "0—21.6秒没有展示指定的三次同塔事件，口播也没有完成三阶段状态及公告归属核验。"
+      }
+    },
+    {
+      "id": "H02",
+      "title": "相似商店界面的本体状态",
+      "question": "定位低血量中路交战之后的推荐商店画面，以及蓝色标记下方狼形营地事件之后的推荐商店画面。分别填写玩家本体是否存活，并为两次判断各写出实际画面依据。",
+      "maximum": 5,
+      "score": 2.5,
+      "units": [
+        {
+          "field": "after_mid_alive",
+          "maximum": 2.5,
+          "points": 2.5,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": true
+        },
+        {
+          "field": "after_wolves_alive",
+          "maximum": 2.5,
+          "points": 0,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": false
+        }
+      ],
+      "answer": {
+        "question_id": "H02",
+        "answer": {
+          "after_mid_alive": false,
+          "after_wolves_alive": true
+        },
+        "evidence": {
+          "shop_after_mid": {
+            "t": 1080,
+            "observation": "低血量中路交战后打开推荐商店；画面呈灰阶死亡视角且HUD生命值为零。"
+          },
+          "shop_after_wolves": {
+            "t": 1500,
+            "observation": "营地事件后的推荐商店画面仍为彩色，玩家HUD生命条非零，角色仍存活。"
+          }
+        },
+        "review_segments": [
+          {
+            "start": 21.6,
+            "end": 43.2
+          }
+        ]
+      },
+      "verification": {
+        "units": {
+          "after_mid_alive": {
+            "status": "scored",
+            "supported": true,
+            "same_event": true,
+            "observation": "1080秒所选帧属于指定中路交战后的同一次推荐商店事件，RECOMMENDED页已打开。场景为灰阶，底部本人头像灰化并显示红色复活倒计时8，生命值为0/1893，支持玩家本体已死亡及所写依据。"
+          },
+          "after_wolves_alive": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1500秒所选帧中，本人彩色头像对应场内foreverkiller21，HUD生命值为847/2160，确实存活；但该帧没有打开商店，角色位于可见15900血量纳什男爵的坑边，并非指定狼形营地事件后的泉水推荐商店画面。1498秒上下文虽打开推荐商店，背景仍为男爵坑且提示Too Far Away，也不能替代所选帧或证明属于指定购物事件。"
+          }
+        }
+      },
+      "narration_evidence": [
+        {
+          "start_s": 24,
+          "end_s": 45.5,
+          "question_ids": [
+            "H02"
+          ],
+          "observation": "口播用灰阶、零生命值说明中路交战后已死亡，有对应死亡商店画面。随后称狼形营地后的推荐商店显示存活，但约32.5—42.5秒实际是紫色大怪坑外河道活动，并非指定泉水购物画面。",
+          "impact": "两项存活判断与参考答案一致，但第二项事件定位和商店描述没有得到所引画面支持。"
+        }
+      ],
+      "alignment": {
+        "question_id": "H02",
+        "passed": false,
+        "observation": "前半死亡商店基本对应；32.5—42.5秒却以紫怪坑外河道画面承接营地后推荐商店说明，第二次购物事件不对应。"
+      }
+    },
+    {
+      "id": "H03",
+      "title": "相似进攻的结果核验",
+      "question": "审核两次进攻的直接结果：早期对线对手出现回城圆环之后的中路推塔，以及玩家随蓝方兵线和队友进行的侧路推塔。分别填写本轮进攻后目标塔的状态，提交能证明本轮结果的代表性画面和对应片段；不能用更晚另一轮进攻的结果代替。",
+      "maximum": 5,
+      "score": 0,
+      "units": [
+        {
+          "field": "mid_push_result",
+          "maximum": 2.5,
+          "points": 0,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "side_push_result",
+          "maximum": 2.5,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        }
+      ],
+      "answer": {
+        "question_id": "H03",
+        "answer": {
+          "mid_push_result": "standing",
+          "side_push_result": null
+        },
+        "evidence": {
+          "mid_push": {
+            "t": 520,
+            "observation": "对手回城圆环出现后的中路推进；目标红方外塔塔体仍完整可见，尚未摧毁。"
+          },
+          "side_push": {
+            "t": 1500,
+            "observation": "侧路推进区域可见蓝方英雄与兵线，目标塔本轮结束状态未能确认。"
+          }
+        },
+        "review_segments": [
+          {
+            "start": 43.2,
+            "end": 64.8
+          }
+        ]
+      },
+      "verification": {
+        "units": {
+          "mid_push_result": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "所选520秒画面中，8级玩家foreverkiller21正在中路清兵，左下方可见低血量对手dmgall；画面未展示目标红方外塔，更没有可核实的完整塔体。相邻画面同样为双方中路交锋，并非早期回城后那轮推塔的直接结果。实际参考画面中的该轮进攻为6级玩家随蓝兵攻击仍有4263/5000血量的红方塔，不能用所选的后续对线场景证明该轮结果。"
+          },
+          "side_push_result": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "所选1500秒画面显示14级玩家位于纳什男爵坑边，坑内男爵血量15900；没有侧路目标塔，也没有玩家随队友、蓝方兵线推塔的场景，文字所称的侧路推进区域不符。实际指定侧路进攻画面可见玩家、队友Oliw及蓝方兵线围绕正在坍塌的红方塔，并出现敌方防御塔被摧毁提示。提交的null及男爵坑画面未提供该轮塔状态，且不属于同一事件。"
+          }
+        }
+      },
+      "narration_evidence": [
+        {
+          "start_s": 45.5,
+          "end_s": 64.5,
+          "question_ids": [
+            "H03"
+          ],
+          "observation": "口播称本轮中路推进未摧毁塔，结论方向正确，但所引约原片517—525秒不是指定401秒附近的本轮结果。侧路结果保留未定，同时画面切到紫怪坑外河道，没有展示侧路塔坍塌。",
+          "impact": "中路结果缺乏本轮对应证据，侧路摧毁结论缺失。"
+        }
+      ],
+      "alignment": {
+        "question_id": "H03",
+        "passed": false,
+        "observation": "43.2—54秒引用另一时段中路画面，54—64.8秒为河道活动，未展示指定两轮推进的直接结果。"
+      }
+    },
+    {
+      "id": "H04",
+      "title": "跨营地的目标对应",
+      "question": "定位蓝色标记下方凹地的一次营地攻击，以及较晚侧路推塔区域外岩石营地的那次攻击。分别填写该事件被攻击营地中可见的目标组成（single或pack），并指出实际对应的攻击目标。不能把邻近营地、其他时刻或怪物消失后的画面代替被问事件。",
+      "maximum": 5,
+      "score": 0,
+      "units": [
+        {
+          "field": "blue_mark_camp",
+          "maximum": 2.5,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "rocky_camp",
+          "maximum": 2.5,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        }
+      ],
+      "answer": {
+        "question_id": "H04",
+        "answer": {
+          "blue_mark_camp": null,
+          "rocky_camp": null
+        },
+        "evidence": {
+          "blue_mark_attack": {
+            "t": 700,
+            "observation": "蓝色标记附近的野区路径可见，但该帧不能可靠数清被攻击营地的全部目标。"
+          },
+          "rocky_attack": {
+            "t": 1500,
+            "observation": "侧路附近的野区交战画面未能清晰区分岩石营地存活目标数量。"
+          }
+        },
+        "review_segments": [
+          {
+            "start": 64.8,
+            "end": 86.4
+          }
+        ]
+      },
+      "verification": {
+        "units": {
+          "blue_mark_camp": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "700秒所选帧中，亚索位于大型河道坑体外的草丛与岩壁旁，下方可见青色球状植物；未见凹地内的狼形营地目标或对其攻击的画面。这不是题目指定的蓝标下方凹地营地攻击，不能据此填写目标组成。提交答案为null，也未指认实际攻击目标。"
+          },
+          "rocky_camp": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1500秒所选帧明确位于纳什男爵坑：右侧可见紫色多头男爵及15900血量条，亚索站在坑体左上边缘，未展示所问岩石营地的攻击。这不是侧路推塔区域外的大型岩石目标被击中的事件，不能将男爵当作该营地目标。提交答案为null，未提供所要求的single或pack及实际目标对应。"
+          }
+        }
+      },
+      "narration_evidence": [
+        {
+          "start_s": 64.5,
+          "end_s": 83.8,
+          "question_ids": [
+            "H04"
+          ],
+          "observation": "口播解释不能混入邻近营地，但没有说出狼群为pack、岩石营地本次可见目标为single。实际画面来自约原片695—705秒及1495—1504秒，没有呈现指定两次营地攻击。",
+          "impact": "方法原则合理，但两项核心观察均未完成，也未指认实际被攻击目标。"
+        }
+      ],
+      "alignment": {
+        "question_id": "H04",
+        "passed": false,
+        "observation": "64.8—86.4秒的野区路径和河道片段未显示指定狼群攻击及岩石营地单个大型目标受击。"
+      }
+    },
+    {
+      "id": "H05",
+      "title": "同一玩家在两处边界中的位置",
+      "question": "定位大型紫色野怪可见的坑口事件，以及攻击绿色翅膀巨龙的事件。跟踪玩家本体，分别填写它相对两处坑体边界的位置（inside或outside），并在证据描述中指出你跟踪的是哪一个角色以及边界在哪里。",
+      "maximum": 5,
+      "score": 0,
+      "units": [
+        {
+          "field": "purple_pit",
+          "maximum": 2.5,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "dragon_pit",
+          "maximum": 2.5,
+          "points": 0,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": false
+        }
+      ],
+      "answer": {
+        "question_id": "H05",
+        "answer": {
+          "purple_pit": null,
+          "dragon_pit": "inside"
+        },
+        "evidence": {
+          "purple_pit_event": {
+            "t": 1660,
+            "observation": "该代表帧没有清晰显示大型紫色野怪及其坑沿，不能据此判定玩家相对坑体的位置。"
+          },
+          "dragon_pit_event": {
+            "t": 2280,
+            "observation": "玩家本体在绿色巨龙身旁、龙坑岩壁围出的内侧攻击；HUD生命值非零。"
+          }
+        },
+        "review_segments": [
+          {
+            "start": 86.4,
+            "end": 108
+          }
+        ]
+      },
+      "verification": {
+        "units": {
+          "purple_pit": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1660秒所选帧是中路场景，不是大型紫色野怪可见的坑口事件。HUD头像对应亚索，生命值2300/2300；场中foreverkiller21为玩家本体，其旁的大型紫色角色是带友方姓名和血条的英雄，并非坑内野怪。画面没有显示目标紫怪及其坑体边界。提交关于此帧无法判定坑体位置的描述符合画面，但null未完成所要求的位置判断，且证据选错事件。"
+          },
+          "dragon_pit": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "2280秒所选帧显示基地外中路战斗及建筑残基，没有绿色翅膀巨龙或龙坑边界。玩家HUD为亚索，头像上有19秒死亡计时，画面灰白并显示死亡回顾，说明本体已死亡；不能因HUD仍显示183/2641便认定本体正在攻击。镜头中的AntekMar等友方角色不是玩家本体。该帧不支持本体在龙坑内攻击的描述，且不属于要求的巨龙事件。"
+          }
+        }
+      },
+      "narration_evidence": [
+        {
+          "start_s": 83.8,
+          "end_s": 103.1,
+          "question_ids": [
+            "H05"
+          ],
+          "observation": "紫怪坑位置判断保留未定，绿色巨龙事件则说本体在坑内，并提到岩壁边界。实际该章主要显示中路及约原片2275—2284秒的灰阶死亡画面，不是指定紫怪坑口和绿色巨龙攻击。",
+          "impact": "遗漏坑外判断；巨龙坑内结论虽符合参考事实，但实际配图无法支持本体、巨龙和边界的关系。"
+        }
+      ],
+      "alignment": {
+        "question_id": "H05",
+        "passed": false,
+        "observation": "86.4—108秒实际以中路和灰阶死亡场景为主，无法对应口播所述两处坑体及玩家位置。"
+      }
+    },
+    {
+      "id": "H06",
+      "title": "远距离重现的对手身份",
+      "question": "比较早期中路大型敌方角色加入的事件与后来裸露红色基地水晶旁的交战：早期紫色远程对线者是否在后者中再次出现？填写判断，并在两个事件中分别指认对应角色、给出同一对象或不同对象的核对依据。单独填写一个判断、只找到其中一次出现，均不能完成本项。",
+      "maximum": 4,
+      "score": 0,
+      "units": [
+        {
+          "field": "same_ranged_opponent",
+          "maximum": 4,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        }
+      ],
+      "answer": {
+        "question_id": "H06",
+        "answer": {
+          "same_ranged_opponent": null
+        },
+        "evidence": {
+          "early_opponent": {
+            "t": 180,
+            "observation": "早期中路可见紫色远程敌方英雄，但单帧不足以和后期基地交战角色完成身份核对。"
+          },
+          "base_opponent": {
+            "t": 2200,
+            "observation": "红色基地水晶附近存在多名交战角色；无法从该抽样帧锁定早期同一远程英雄。"
+          }
+        },
+        "review_segments": [
+          {
+            "start": 108,
+            "end": 129.6
+          }
+        ]
+      },
+      "verification": {
+        "units": {
+          "same_ranged_opponent": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "180秒所选帧为早期中路大型敌人MonsieurMozoli追近foreverkiller21的场景；紫发持剑的foreverkiller21与底部本人头像、血量对应，是玩家本体，并非待核对的紫色远程敌人。178及182秒上下文虽可辨认另一名紫色持枪敌人，但不能替代180秒所选帧完成指认。2200秒所选帧则在边路、野区墙边交战，可见TENSAZANGETSU31及右下方blag vlag，画面没有裸露红色基地水晶，不属于题目指定的后期基地事件。提交判断为null，且未在两个指定事件中分别锁定对象或提供可核对的角色外形、武器与姓名关联，未完成跨事件身份核验。"
+          }
+        }
+      },
+      "narration_evidence": [
+        {
+          "start_s": 103.1,
+          "end_s": 124.8,
+          "question_ids": [
+            "H06"
+          ],
+          "observation": "口播提出比较轮廓、配色和技能特效，但最终将身份关系保留未定。后段所引为约原片2195—2205秒的野区交战，而不是1719秒裸露红水晶旁事件。",
+          "impact": "没有完成两处同一远程对手的身份核对；不因转写中的人名或发音问题另扣分。"
+        }
+      ],
+      "alignment": {
+        "question_id": "H06",
+        "passed": false,
+        "observation": "108—129.6秒没有展示指定红方裸露基地水晶交战，无法完成跨事件身份核对。"
+      }
+    },
+    {
+      "id": "H07",
+      "title": "无中间提示的本体状态轨迹",
+      "question": "anchors/endpoint_A.jpg和endpoint_B.jpg来自原片同一有序区间的两个端点，A在B之前。请定位这两个画面，在其间自行寻找证据，恢复一条能证明玩家本体发生状态转变的时间链。每个节点填写时刻、alive布尔值和可见依据；按时间排序。根据所提交且被证据支持的链，填写复活次数下界和新增死亡次数下界，起点已发生的死亡不重复计入。无需证明链穷尽区间所有事件；连续相同状态不构成新转变。",
+      "maximum": 10,
+      "score": 0,
+      "units": [
+        {
+          "field": "verified_transitions",
+          "maximum": 8,
+          "points": 0,
+          "status": "scored",
+          "proved_respawns": null,
+          "proved_new_deaths": null
+        },
+        {
+          "field": "min_respawns",
+          "maximum": 1,
+          "points": 0,
+          "status": "scored"
+        },
+        {
+          "field": "min_new_deaths",
+          "maximum": 1,
+          "points": 0,
+          "status": "scored"
+        }
+      ],
+      "answer": {
+        "question_id": "H07",
+        "answer": {
+          "chain": [
+            {
+              "t": 1057,
+              "alive": false,
+              "observation": "与端点A相同的死亡视角，画面灰阶且HUD生命值为零。"
+            },
+            {
+              "t": 1320,
+              "alive": true,
+              "observation": "画面恢复彩色，玩家本体可行动且HUD生命值非零，证明端点A后已复活。"
+            },
+            {
+              "t": 1630,
+              "alive": false,
+              "observation": "端点B前画面转为灰阶死亡视角，玩家HUD生命值为零，死亡计时已开始。"
+            }
+          ],
+          "min_respawns": 1,
+          "min_new_deaths": 1
+        },
+        "evidence": {
+          "endpoint_A": {
+            "t": 1057,
+            "observation": "端点A中灰阶死亡画面、0生命值和死亡倒计时均可见。"
+          },
+          "endpoint_B": {
+            "t": 1633,
+            "observation": "端点B显示灰阶死亡画面及新的死亡倒计时；其后于端点A。"
+          }
+        },
+        "review_segments": [
+          {
+            "start": 129.6,
+            "end": 151.2
+          }
+        ]
+      },
+      "verification": {
+        "endpoints": {
+          "endpoint_A": {
+            "status": "scored",
+            "supported": true,
+            "same_event": true,
+            "observation": "1057秒为中路死亡后的灰阶视角；底部本体亚索头像灰化，死亡倒计时31，生命值0/1893，并显示被blag vlag击杀的死亡信息。与A对应同一段死亡事件。"
+          },
+          "endpoint_B": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1633秒所选帧已恢复彩色，本体foreverkiller21的15级亚索出现在泉水，底部生命值2300/2300、头像彩色且无死亡倒计时。该帧已是复活状态，不是B所限定的复活前死亡状态，不能用1631秒的死亡上下文帧替代。"
+          }
+        },
+        "nodes": [
+          {
+            "status": "scored",
+            "supported": true,
+            "same_event": true,
+            "observation": "1057秒底部本体亚索生命值0/1893，头像灰化并显示31秒死亡倒计时，场景灰阶，支持alive=false；属于A对应的起点死亡事件。"
+          },
+          {
+            "status": "scored",
+            "supported": true,
+            "same_event": true,
+            "observation": "1320秒本体13级亚索在中路进行回城引导，头顶显示CHANNELING；底部本人头像彩色，生命值604/2025，无死亡倒计时，支持alive=true。该节点位于限定区间内，证明起点死亡后至少复活一次。"
+          },
+          {
+            "status": "scored",
+            "supported": true,
+            "same_event": true,
+            "observation": "1630秒场景灰阶，底部本体15级亚索头像灰化、死亡倒计时3，生命值0/2300，并显示死亡回顾，支持alive=false。该帧仍属于B对应的同一段复活前死亡事件；结合1320秒存活节点，可证明至少新增死亡一次，但不能据此认定死亡刚在1630秒开始。"
+          }
+        ]
+      },
+      "narration_evidence": [
+        {
+          "start_s": 124.8,
+          "end_s": 149.8,
+          "question_ids": [
+            "H07"
+          ],
+          "observation": "实际口播给出A死亡、约22分钟存活、B前再次死亡，并得出至少复活一次、新增死亡一次。章节画面包含约1054—1060秒死亡、1317—1323秒彩色回城及1627—1633秒死亡片段，但语音先于相应画面切换，部分状态说明与当时画面不同步。",
+          "impact": "所选稀疏链及次数下界成立，不要求补齐全部中间转变；局部音画错位影响证据表达，而非次数计算错误。"
+        }
+      ],
+      "alignment": {
+        "question_id": "H07",
+        "passed": false,
+        "observation": "129.6—151.2秒总体包含有效死亡—存活—死亡证据，但口播约124.8秒已开始讲A，约135.6—140.6秒讲B时画面仍先后展示A和存活回城，逐段时间对应未通过。"
+      }
+    },
+    {
+      "id": "H08",
+      "title": "后期复盘的多事实审核",
+      "question": "核查教练草稿：“敌方四杀公告出现时，本体仍在行动；其后蓝方主基地防御塔附近的画面中，本体已经恢复行动，但主基地防御塔已全毁；较晚蓝色标记营地上方的冲突发生在基地外，本体当时仍未恢复行动。”逐项填写这些事件中玩家本体和建筑的实际状态，提供三处对应证据，并在解说中纠正草稿里的错误。不要假定草稿的所有句子都错，也不要把公告参与者等同于玩家本体。",
+      "maximum": 8,
+      "score": 4,
+      "units": [
+        {
+          "field": "quadra_alive",
+          "maximum": 2,
+          "points": 0,
+          "status": "scored",
+          "content_correct": false,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "base_alive",
+          "maximum": 1,
+          "points": 0,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "base_towers_standing",
+          "maximum": 1,
+          "points": 0,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": false
+        },
+        {
+          "field": "later_alive",
+          "maximum": 2,
+          "points": 2,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": true
+        },
+        {
+          "field": "later_outside_base",
+          "maximum": 2,
+          "points": 2,
+          "status": "scored",
+          "content_correct": true,
+          "evidence_submitted": true,
+          "media_verified": true
+        }
+      ],
+      "answer": {
+        "question_id": "H08",
+        "answer": {
+          "quadra_alive": null,
+          "base_alive": true,
+          "base_towers_standing": true,
+          "later_alive": true,
+          "later_outside_base": true
+        },
+        "evidence": {
+          "quadra_event": {
+            "t": 2000,
+            "observation": "基地方向团战中有击杀提示，但当前帧未能确认四杀公告时玩家本体状态。"
+          },
+          "base_event": {
+            "t": 1860,
+            "observation": "玩家本体彩色且HUD生命值非零；蓝色水晶旁的蓝方防御塔塔体完整站立。"
+          },
+          "later_camp_event": {
+            "t": 2340,
+            "observation": "玩家本体在蓝方基地外的野区仍有生命值，周围是野区地形而非基地地板。"
+          }
+        },
+        "review_segments": [
+          {
+            "start": 151.2,
+            "end": 172.8
+          }
+        ]
+      },
+      "verification": {
+        "units": {
+          "quadra_alive": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "所选2000秒帧没有四杀公告；本体foreverkiller21的亚索与HUD对应，生命值为2147/2590，仍存活。它不能证明四杀公告同时的状态。实际四杀公告画面中，本体HUD生命值为0/2590、头像显示52秒死亡倒计时，场景灰白；提交的null未回答该事实。"
+          },
+          "base_alive": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1860秒所选帧中，本体亚索确实存活，HUD为2443/2443，但位置是蓝方上路高地防御塔及召唤水晶附近，并非四杀之后的主基地双塔场景。该帧虽支持一般的存活观察，却不属于要求核查的后续事件。"
+          },
+          "base_towers_standing": {
+            "status": "scored",
+            "supported": false,
+            "same_event": false,
+            "observation": "1860秒可见完整直立的蓝方防御塔，但其右侧是单个召唤水晶，结合上路位置可辨为高地塔，不是主基地防御塔。不能用此塔证明指定后续场景的主基地双塔状态。"
+          },
+          "later_alive": {
+            "status": "scored",
+            "supported": true,
+            "same_event": true,
+            "observation": "2340秒属于指定营地上方冲突的同一段场景。本体foreverkiller21的18级亚索位于草丛旁，头顶绿血条与底部亚索HUD对应，生命值2641/2641，没有死亡倒计时，支持本体已存活恢复行动。"
+          },
+          "later_outside_base": {
+            "status": "scored",
+            "supported": true,
+            "same_event": true,
+            "observation": "2340秒本体位于营地上方的野区通道，周围是草丛、岩壁、树木、爆炸果实及眼位；小地图位置也在基地外野区。相邻画面中的狼营及同一岩壁、草丛布局可确认这是指定营地上方的同一处冲突，而非基地内或另一处坑口。"
+          }
+        }
+      },
+      "narration_evidence": [
+        {
+          "start_s": 149.8,
+          "end_s": 172.8,
+          "question_ids": [
+            "H08"
+          ],
+          "observation": "四杀时本体状态仍被保留待核实；随后正确说出本体存活、基地塔仍站立，以及较晚冲突发生于基地外且已恢复行动。但四杀段引用约1997—2003秒，基地段引用约1856—1863秒，并非指定2023秒与其后2078秒事件；最后一段才对应2337—2343秒附近野区。",
+          "impact": "部分纠错结论正确，但遗漏四杀时本体死亡；用更早基地画面支持“随后”事件，破坏了先后关系和指定证据对应。"
+        }
+      ],
+      "alignment": {
+        "question_id": "H08",
+        "passed": false,
+        "observation": "末段对应指定野区附近事件，但前两段没有展示四杀公告及指定后续基地事件，且基地引用时刻早于所引团战时刻。"
+      }
+    }
+  ],
+  "audio_review": {
+    "judge": "gemini-3.1-pro-preview",
+    "score": 11.79623927864526,
+    "maximum": 20,
+    "dimensions": {
+      "clarity": 4.5369995254245135,
+      "delivery": 3.092600094915097,
+      "mix": 2.6851596772886692,
+      "noise": 1.4814799810169805
+    },
+    "method": "Actual final playback mix, 32s cores plus +/-2s context, duration weighted. Same strict simple rubric, no target score.",
+    "chunks": [
+      {
+        "index": 0,
+        "start": 0,
+        "end": 32,
+        "duration": 32,
+        "attachment_start": 0,
+        "attachment_end": 34,
+        "parsed": {
+          "clarity": 4.5,
+          "delivery": 3.5,
+          "mix": 2.5,
+          "noise": 1.5,
+          "total": 12.0,
+          "evidence": [
+            {
+              "time_s": 8,
+              "heard": "无法刻靠区分红蓝双方对影的是",
+              "comment": "多处发音错误，断句显机械。"
+            },
+            {
+              "time_s": 13,
+              "heard": "紫色远程兵雄进过时",
+              "comment": "个别字词错读，如行进误读。"
+            },
+            {
+              "time_s": 29,
+              "heard": "底部的生命值位零",
+              "comment": "字音偏离，合成痕迹明显。"
+            }
+          ],
+          "actual_speech": "早期中路画面里蓝方外塔仍在原位。后续回城附近能看到中路地形和已损毁的塔基，但这仅凭抽样帧无法可靠区分红蓝双方对应的是哪一座塔。紫色远程兵行进过时，也要以同一条中路塔线核对，不能把另一轮推进代替，这里把无法从代表帧确认的塔状态保留为待核实。先看中路低血量交战后的商店，商店打开时画面仍是灰色死亡视角，底部的生命值为零，因此"
+        }
+      },
+      {
+        "index": 1,
+        "start": 32,
+        "end": 64,
+        "duration": 32,
+        "attachment_start": 30,
+        "attachment_end": 66,
+        "parsed": {
+          "clarity": 3.5,
+          "delivery": 3.0,
+          "mix": 2.5,
+          "noise": 1.5,
+          "total": 10.5,
+          "evidence": [
+            {
+              "time_s": 2,
+              "heard": "王氏叫地不生命只为零因此本体已阵亡",
+              "comment": "咬字含混"
+            },
+            {
+              "time_s": 11,
+              "heard": "玩家和生命条废灵因此本体存活",
+              "comment": "断句杂乱"
+            }
+          ],
+          "actual_speech": "仍是会接死王氏叫地不生命，只为零因此本体已阵亡。狼行营地之后得推介商店画面同样不能只看商店布局这一阵仍是彩色游戏画面，玩家和生命条废灵因此本体存活。中路对手回城圆环出现后目标，红方外塔仍有完整塔体本轮推进没有摧毁塔。侧路推进要单独看蓝方兵线与队友攻击的目标，表现有代表这不足以核定该轮结束结果不能拿更晚的塔机画面替代，蓝色标记下方"
+        }
+      },
+      {
+        "index": 2,
+        "start": 64,
+        "end": 96,
+        "duration": 32,
+        "attachment_start": 62,
+        "attachment_end": 98,
+        "parsed": {
+          "clarity": 4.5,
+          "delivery": 3.0,
+          "mix": 2.8,
+          "noise": 1.4,
+          "total": 11.7,
+          "evidence": [
+            {
+              "time_s": 2,
+              "heard": "不能拿更晚的塔基画面替代",
+              "comment": "咬字基本清晰"
+            },
+            {
+              "time_s": 21,
+              "heard": "故不做生赛白猜测",
+              "comment": "词语含混，无法理解"
+            },
+            {
+              "time_s": 29,
+              "heard": "绿色翅膀巨龙事件中玩家本体在坑内天",
+              "comment": "节奏不自然，断句突兀"
+            }
+          ],
+          "actual_speech": "不能拿更晚的塔基画面替代。蓝色标记下方的凹的与侧露岩石营地是两处不同营地。证据应同时包含被攻击单位及同一营地内其他怪物。零星营地不能算进目标组成。当前代表证不足以清楚数出两处营地的存活目标，故不做生还猜测。紫色大型野怪对应的坑口事件，还需要可靠画面才能判定本体在边界哪侧。绿色翅膀巨龙事件中玩家本体在坑内天，巨龙攻击为住巨龙得言，必是判断边界"
+        }
+      },
+      {
+        "index": 3,
+        "start": 96,
+        "end": 128,
+        "duration": 32,
+        "attachment_start": 94,
+        "attachment_end": 130,
+        "parsed": {
+          "clarity": 5,
+          "delivery": 3,
+          "mix": 3,
+          "noise": 1.5,
+          "total": 12.5,
+          "evidence": [
+            {
+              "time_s": 10,
+              "heard": "早期中...路...的",
+              "comment": "Unnatural breaks."
+            },
+            {
+              "time_s": 20,
+              "heard": "技...能特...效而不是",
+              "comment": "Broken rhythm."
+            }
+          ],
+          "actual_speech": "言，必是判断边界，俩题都跟踪同一玩家模型不用堆有惑，特效代替。早期中路的大型紫色远程英雄与后期红色基地裸露水晶旁的交战，都要分别辨认。比较模型轮廓、配色合技能特效而不是只看队伍颜色或击杀公告。本次可见片段不足以在两处都清晰锁定同一角色身份关系，保留未定。断点A是灰阶死亡，视角生命值为零之后，商店画面仍处"
+        }
+      },
+      {
+        "index": 4,
+        "start": 128,
+        "end": 160,
+        "duration": 32,
+        "attachment_start": 126,
+        "attachment_end": 162,
+        "parsed": {
+          "clarity": 5,
+          "delivery": 3,
+          "mix": 2.5,
+          "noise": 1.5,
+          "total": 12,
+          "evidence": [
+            {
+              "time_s": 10,
+              "heard": "去建默顿必再次实汇结死亡视角",
+              "comment": "吐字含混"
+            },
+            {
+              "time_s": 24,
+              "heard": "击杀公告时本体状态仍带清",
+              "comment": "无停顿"
+            }
+          ],
+          "actual_speech": "上电话面仍处于死亡状态到22分钟左右本体恢复彩色且生命值非零去建默顿必再次实汇结死亡视角计时器已开始炼制技能有画面确认的转变死亡后复活一次随后新增死亡一次不把之前的死亡重复计入击杀公告时本体状态仍带清细针和准不能把公告参与者当成玩家随后蓝方基地画面里本体已存活且水晶旁仍有防御塔塔体阵"
+        }
+      },
+      {
+        "index": 5,
+        "start": 160,
+        "end": 172.786,
+        "duration": 12.786000000000001,
+        "attachment_start": 158,
+        "attachment_end": 172.786,
+        "parsed": {
+          "clarity": 5,
+          "delivery": 3,
+          "mix": 3,
+          "noise": 1.5,
+          "total": 12.5,
+          "evidence": [
+            {
+              "time_s": 2,
+              "heard": "仍有防御塔塔体站立所以防御塔全毁不成立",
+              "comment": "语速偏快，句间无停顿"
+            },
+            {
+              "time_s": 6,
+              "heard": "更晚的基地外野区冲突中玩家仍有生命值",
+              "comment": "长句连读，需自行断句"
+            }
+          ],
+          "actual_speech": "仍有防御塔塔体站立，所以防御塔全毁不成立。更晚的基地外野区冲突中玩家仍有生命值，地点却是在基地之外草稿，关于未恢复行动不成立。"
+        }
+      }
+    ]
+  }
+}

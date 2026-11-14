@@ -1,0 +1,177 @@
+{
+  "answers": [
+    {
+      "question_id": "H01",
+      "answer": {
+        "early_tower": "standing",
+        "later_recall_tower": null,
+        "enemy_push_tower": null,
+        "announced_destroyed_tower_team": null
+      },
+      "evidence": {
+        "early_recall": {
+          "t": 180,
+          "observation": "中路画面右上方可见蓝方外塔塔体仍完整；该帧用于确认早期塔位状态。"
+        },
+        "later_recall": {
+          "t": 1100,
+          "observation": "灰阶死亡视角与推荐商店覆盖画面，未能从该代表帧确认公告指向哪座塔。"
+        },
+        "enemy_push": {
+          "t": 1400,
+          "observation": "中路兵线与英雄交战可见，但该帧不足以确认所问塔体状态。"
+        }
+      },
+      "review_segments": [{"start": 0, "end": 21.6}]
+    },
+    {
+      "question_id": "H02",
+      "answer": {
+        "after_mid_alive": false,
+        "after_wolves_alive": true
+      },
+      "evidence": {
+        "shop_after_mid": {
+          "t": 1080,
+          "observation": "低血量中路交战后打开推荐商店；画面呈灰阶死亡视角且HUD生命值为零。"
+        },
+        "shop_after_wolves": {
+          "t": 1500,
+          "observation": "营地事件后的推荐商店画面仍为彩色，玩家HUD生命条非零，角色仍存活。"
+        }
+      },
+      "review_segments": [{"start": 21.6, "end": 43.2}]
+    },
+    {
+      "question_id": "H03",
+      "answer": {
+        "mid_push_result": "standing",
+        "side_push_result": null
+      },
+      "evidence": {
+        "mid_push": {
+          "t": 520,
+          "observation": "对手回城圆环出现后的中路推进；目标红方外塔塔体仍完整可见，尚未摧毁。"
+        },
+        "side_push": {
+          "t": 1500,
+          "observation": "侧路推进区域可见蓝方英雄与兵线，目标塔本轮结束状态未能确认。"
+        }
+      },
+      "review_segments": [{"start": 43.2, "end": 64.8}]
+    },
+    {
+      "question_id": "H04",
+      "answer": {
+        "blue_mark_camp": null,
+        "rocky_camp": null
+      },
+      "evidence": {
+        "blue_mark_attack": {
+          "t": 700,
+          "observation": "蓝色标记附近的野区路径可见，但该帧不能可靠数清被攻击营地的全部目标。"
+        },
+        "rocky_attack": {
+          "t": 1500,
+          "observation": "侧路附近的野区交战画面未能清晰区分岩石营地存活目标数量。"
+        }
+      },
+      "review_segments": [{"start": 64.8, "end": 86.4}]
+    },
+    {
+      "question_id": "H05",
+      "answer": {
+        "purple_pit": null,
+        "dragon_pit": "inside"
+      },
+      "evidence": {
+        "purple_pit_event": {
+          "t": 1660,
+          "observation": "该代表帧没有清晰显示大型紫色野怪及其坑沿，不能据此判定玩家相对坑体的位置。"
+        },
+        "dragon_pit_event": {
+          "t": 2280,
+          "observation": "玩家本体在绿色巨龙身旁、龙坑岩壁围出的内侧攻击；HUD生命值非零。"
+        }
+      },
+      "review_segments": [{"start": 86.4, "end": 108}]
+    },
+    {
+      "question_id": "H06",
+      "answer": {
+        "same_ranged_opponent": null
+      },
+      "evidence": {
+        "early_opponent": {
+          "t": 180,
+          "observation": "早期中路可见紫色远程敌方英雄，但单帧不足以和后期基地交战角色完成身份核对。"
+        },
+        "base_opponent": {
+          "t": 2200,
+          "observation": "红色基地水晶附近存在多名交战角色；无法从该抽样帧锁定早期同一远程英雄。"
+        }
+      },
+      "review_segments": [{"start": 108, "end": 129.6}]
+    },
+    {
+      "question_id": "H07",
+      "answer": {
+        "chain": [
+          {
+            "t": 1057,
+            "alive": false,
+            "observation": "与端点A相同的死亡视角，画面灰阶且HUD生命值为零。"
+          },
+          {
+            "t": 1320,
+            "alive": true,
+            "observation": "画面恢复彩色，玩家本体可行动且HUD生命值非零，证明端点A后已复活。"
+          },
+          {
+            "t": 1630,
+            "alive": false,
+            "observation": "端点B前画面转为灰阶死亡视角，玩家HUD生命值为零，死亡计时已开始。"
+          }
+        ],
+        "min_respawns": 1,
+        "min_new_deaths": 1
+      },
+      "evidence": {
+        "endpoint_A": {
+          "t": 1057,
+          "observation": "端点A中灰阶死亡画面、0生命值和死亡倒计时均可见。"
+        },
+        "endpoint_B": {
+          "t": 1633,
+          "observation": "端点B显示灰阶死亡画面及新的死亡倒计时；其后于端点A。"
+        }
+      },
+      "review_segments": [{"start": 129.6, "end": 151.2}]
+    },
+    {
+      "question_id": "H08",
+      "answer": {
+        "quadra_alive": null,
+        "base_alive": true,
+        "base_towers_standing": true,
+        "later_alive": true,
+        "later_outside_base": true
+      },
+      "evidence": {
+        "quadra_event": {
+          "t": 2000,
+          "observation": "基地方向团战中有击杀提示，但当前帧未能确认四杀公告时玩家本体状态。"
+        },
+        "base_event": {
+          "t": 1860,
+          "observation": "玩家本体彩色且HUD生命值非零；蓝色水晶旁的蓝方防御塔塔体完整站立。"
+        },
+        "later_camp_event": {
+          "t": 2340,
+          "observation": "玩家本体在蓝方基地外的野区仍有生命值，周围是野区地形而非基地地板。"
+        }
+      },
+      "review_segments": [{"start": 151.2, "end": 172.8}]
+    }
+  ]
+}
