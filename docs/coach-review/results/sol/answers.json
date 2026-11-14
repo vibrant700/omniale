@@ -1,0 +1,227 @@
+{
+  "answers": [
+    {
+      "question_id": "H01",
+      "answer": {
+        "early_tower": "standing",
+        "later_recall_tower": "standing",
+        "enemy_push_tower": "destroyed",
+        "announced_destroyed_tower_team": "red"
+      },
+      "evidence": {
+        "early_recall": {
+          "t": 285,
+          "observation": "商店打开前280秒可见同一蓝方中路外塔的竖立蓝色塔身及血条；285秒推荐商店打开，塔的蓝色血条边缘仍在右上，底部Recall读条和393/1080生命值说明亚索在塔旁活着回城。"
+        },
+        "later_recall": {
+          "t": 860,
+          "observation": "亚索在蓝方中路外塔后侧的青色回城圈中读条；身旁蓝色塔身与蓝色血条仍在。上方明确写Enemy turret destroyed，末尾红色塔图标，公告指红方塔。"
+        },
+        "enemy_push": {
+          "t": 1042,
+          "observation": "中路原蓝方外塔处已成圆形残基，右下紫色持枪的dmgall（Jhin）随红方兵线推进经过，圆形残基在他左侧清楚可见；不能把后方仍站立的蓝方内塔当作外塔。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 0,
+          "end": 57.233
+        }
+      ]
+    },
+    {
+      "question_id": "H02",
+      "answer": {
+        "after_mid_alive": true,
+        "after_wolves_alive": true
+      },
+      "evidence": {
+        "shop_after_mid": {
+          "t": 285,
+          "observation": "低血量中路换血后打开RECOMMENDED商店，底部亚索彩色头像，生命393/1080非零，世界彩色且Recall进度条仍在，故本体存活。"
+        },
+        "shop_after_wolves": {
+          "t": 1340,
+          "observation": "1280—1290秒蓝色符文下方狼形营地事件后，1340秒打开RECOMMENDED商店；蓝方基地彩色背景，底部亚索生命2025/2025满血、头像彩色、无死亡倒计时，故存活。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 57.233,
+          "end": 104.2
+        }
+      ]
+    },
+    {
+      "question_id": "H03",
+      "answer": {
+        "mid_push_result": "standing",
+        "side_push_result": "destroyed"
+      },
+      "evidence": {
+        "mid_push": {
+          "t": 410,
+          "observation": "378秒左右敌方烬出现回城圆环，随后亚索攻击红方中路外塔；410秒亚索已撤离塔边，目标仍有完整塔身、红色血条，左上被选塔生命3601/5000。本轮未拆掉。"
+        },
+        "side_push": {
+          "t": 918,
+          "observation": "亚索与Oliw双枪队友、蓝兵在侧路推塔，918秒出现Enemy turret destroyed及红塔图标，地面只留圆形破损塔基；903—921秒连续片段展示的是同一轮。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 104.2,
+          "end": 168.2
+        }
+      ]
+    },
+    {
+      "question_id": "H04",
+      "answer": {
+        "blue_mark_camp": "pack",
+        "rocky_camp": "pack"
+      },
+      "evidence": {
+        "blue_mark_attack": {
+          "t": 1283,
+          "observation": "上方岩石有蓝色符文，凹地中大狼被红色轮廓选中、血条2194，身旁两只小狼各有血条；亚索正出剑造成伤害，实际为狼群pack，不是邻近蓝buff。"
+        },
+        "rocky_attack": {
+          "t": 1885,
+          "observation": "侧路区域外的岩石凹地，亚索攻击大石甲虫，518伤害数字、108剩余血条可见；周围还有多个小石头单位和独立红血条，故可见组成是pack。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 168.2,
+          "end": 211.5
+        }
+      ]
+    },
+    {
+      "question_id": "H05",
+      "answer": {
+        "purple_pit": "outside",
+        "dragon_pit": "inside"
+      },
+      "evidence": {
+        "purple_pit_event": {
+          "t": 1497,
+          "observation": "跟踪foreverkiller21、白紫长发持剑亚索。大型紫色纳什男爵在石壁围出的坑内；1497秒本体脚下在两端石壁开口外的河道一侧，尚未越过坑口，故本帧outside。"
+        },
+        "dragon_pit_event": {
+          "t": 2135,
+          "observation": "foreverkiller21亚索在绿色翅膀巨龙上方近身出剑；左侧弧形石壁、右侧石壁和下方草地围住龙坑，其脚下位于坑内地面，不是坑外河道。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 211.5,
+          "end": 252.267
+        }
+      ]
+    },
+    {
+      "question_id": "H06",
+      "answer": {
+        "same_ranged_opponent": true
+      },
+      "evidence": {
+        "early_opponent": {
+          "t": 178,
+          "observation": "大型蝎形敌人MonsieurMozoli加入中路；左下紫色衣装、面具、长枪的远程人形对手头顶dmgall，是Jhin（烬）。玩家本人是中右白紫持剑foreverkiller21。"
+        },
+        "base_opponent": {
+          "t": 1780,
+          "observation": "红方裸露水晶旁，右下红条角色头顶dmgall，面具、紫色衣装和长枪轮廓与早期烬一致；不是左侧大型蝎形角色，也不是紫色触手维克兹。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 252.267,
+          "end": 295.1
+        }
+      ]
+    },
+    {
+      "question_id": "H07",
+      "answer": {
+        "chain": [
+          {
+            "t": 1053,
+            "alive": false,
+            "observation": "与端点A一致：灰白世界画面，亚索0/1893生命，灰色头像上死亡倒计时35；镜头中的队友行动不是玩家存活。"
+          },
+          {
+            "t": 1090,
+            "alive": true,
+            "observation": "蓝方基地出现名为foreverkiller21的持剑亚索；世界彩色，头像正常，生命1893/1893，无死亡倒计时。"
+          },
+          {
+            "t": 1145,
+            "alive": false,
+            "observation": "推荐商店后是灰白中路，底部亚索头像灰色并有新的死亡倒计时，生命为0/1893，说明在上一个存活节点后再次死亡。"
+          },
+          {
+            "t": 1185,
+            "alive": true,
+            "observation": "世界恢复彩色，底部亚索头像、技能栏正常，生命1893/1893，没有死亡倒计时；镜头暂时观看河道不改变本体已复活的状态。"
+          },
+          {
+            "t": 1629,
+            "alive": false,
+            "observation": "与端点B一致：镜头看红色水晶，世界灰白，亚索0/2300生命，灰色头像上还有4秒死亡倒计时。"
+          }
+        ],
+        "min_respawns": 2,
+        "min_new_deaths": 2
+      },
+      "evidence": {
+        "endpoint_A": {
+          "t": 1053,
+          "observation": "与端点A一致：灰白世界画面，亚索0/1893生命，灰色头像上死亡倒计时35；镜头中的队友行动不是玩家存活。"
+        },
+        "endpoint_B": {
+          "t": 1629,
+          "observation": "与端点B一致：镜头看红色水晶，世界灰白，亚索0/2300生命，灰色头像上还有4秒死亡倒计时。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 295.1,
+          "end": 385.867
+        }
+      ]
+    },
+    {
+      "question_id": "H08",
+      "answer": {
+        "quadra_alive": false,
+        "base_alive": true,
+        "base_towers_standing": true,
+        "later_alive": true,
+        "later_outside_base": true
+      },
+      "evidence": {
+        "quadra_event": {
+          "t": 2023,
+          "observation": "屏幕中央QUADRA KILL公告，左下聊天写EL MEZ（Vel'Koz）四杀；世界灰白，玩家亚索0/2590生命，灰色头像死亡倒计时52，因此本体已死。"
+        },
+        "base_event": {
+          "t": 2078,
+          "observation": "名为foreverkiller21的亚索在蓝方主基地水晶前移动，世界彩色、2490/2490生命；水晶前近处和左上两座主基地防御塔都仍有实体及蓝色血条，没有全毁。"
+        },
+        "later_camp_event": {
+          "t": 2200,
+          "observation": "蓝色符文营地上方野区通道，亚索foreverkiller21正与红方TENSAZANGETSU31交战；绿色血条及2565/2641生命证明本体存活。野区营地、岩石与小地图位置说明冲突在基地外。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 385.867,
+          "end": 452.667
+        }
+      ]
+    }
+  ]
+}

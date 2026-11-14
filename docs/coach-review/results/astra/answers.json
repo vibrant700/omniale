@@ -1,0 +1,232 @@
+{
+  "answers": [
+    {
+      "question_id": "H01",
+      "answer": {
+        "early_tower": "standing",
+        "later_recall_tower": "standing",
+        "enemy_push_tower": "destroyed",
+        "announced_destroyed_tower_team": "red"
+      },
+      "evidence": {
+        "early_recall": {
+          "t": 280,
+          "observation": "亚索退到蓝方中路外塔旁，完整塔身、蓝色水晶与蓝色建筑血条可见；紧接着282-286秒在同处打开推荐商店并回城。以左侧河道墙和右侧山壁定位同一外塔。"
+        },
+        "later_recall": {
+          "t": 860,
+          "observation": "亚索在同一外塔后方回城，塔身及蓝色血条仍在。上方为 Enemy turret destroyed!，右侧红色塔图标；公告所指为红方塔，不是画面中央这座蓝方外塔。"
+        },
+        "enemy_push": {
+          "t": 1200,
+          "observation": "紫色持枪敌人dmgall（烬）与红色近战、远程和炮车兵经过蓝方中路外塔位置；画面下方仅剩圆形碎裂塔基。右上方另一座蓝塔是后方建筑，不能替代这座外塔。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 0,
+          "end": 39.6
+        }
+      ]
+    },
+    {
+      "question_id": "H02",
+      "answer": {
+        "after_mid_alive": false,
+        "after_wolves_alive": true
+      },
+      "evidence": {
+        "shop_after_mid": {
+          "t": 1058,
+          "observation": "1046-1050秒中路交战后亚索死亡；1058秒推荐商店打开，背景灰白，本体头像灰色并有红色复活倒计时，生命栏0/1893。商店虽有彩色物品，不代表本体存活。"
+        },
+        "shop_after_wolves": {
+          "t": 1330,
+          "observation": "1281-1291秒攻击蓝色符文下方狼营后，1323-1327秒回城，1330秒在泉水推荐商店中。场景彩色，绿色生命条正在恢复，亚索头像彩色且无复活倒计时，本体存活。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 39.6,
+          "end": 71.367
+        }
+      ]
+    },
+    {
+      "question_id": "H03",
+      "answer": {
+        "mid_push_result": "standing",
+        "side_push_result": "destroyed"
+      },
+      "evidence": {
+        "mid_push": {
+          "t": 410,
+          "observation": "378-383秒烬脚下出现回城圆环，395秒起亚索攻击红方中路塔。410秒本轮攻击结束、亚索后撤，目标塔仍有完整塔身及红色血条，选中建筑生命尚余约3601/5000。"
+        },
+        "side_push": {
+          "t": 920,
+          "observation": "905-915秒亚索、队友和蓝方兵线攻击侧路红塔，塔血量耗尽并倒塌。920秒同一塔的位置只剩残破基座，队伍继续向前推进；未使用后续另一轮结果。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 71.367,
+          "end": 110.367
+        }
+      ]
+    },
+    {
+      "question_id": "H04",
+      "answer": {
+        "blue_mark_camp": "pack",
+        "rocky_camp": "pack"
+      },
+      "evidence": {
+        "blue_mark_attack": {
+          "t": 1283,
+          "observation": "蓝色发光符文石下方的凹地中，亚索正在攻击狼形野怪。大狼及旁边的小狼同时可见且各有血条，是狼群，不是邻近蓝BUFF或其他营地。"
+        },
+        "rocky_attack": {
+          "t": 1880.7,
+          "observation": "侧路区域外的岩石凹地，亚索正在施放Steel Tempest，营地内一大一小两只石甲虫同时可见，光标红边选中右侧小石甲虫，左侧大型石甲虫有3011血量条。此后伤害命中并分裂，故为pack。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 110.367,
+          "end": 140.433
+        }
+      ]
+    },
+    {
+      "question_id": "H05",
+      "answer": {
+        "purple_pit": "outside",
+        "dragon_pit": "inside"
+      },
+      "evidence": {
+        "purple_pit_event": {
+          "t": 1500,
+          "observation": "跟踪绿色血条下、名字foreverkiller21的白紫长发持刀亚索。他在紫色野怪左上方岩壁外侧小路，脚下不在野怪所在坑底水面，岩石边界将二者隔开，属于坑外。"
+        },
+        "dragon_pit_event": {
+          "t": 2133,
+          "observation": "仍跟踪foreverkiller21的亚索，而非河道其他单位。亚索贴近绿色翅膀巨龙，在坑口两端石壁连线的内侧水面攻击，巨龙显示受击伤害与下降血条，属于坑内；蓝色技能范围圈不是坑边界。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 140.433,
+          "end": 170.167
+        }
+      ]
+    },
+    {
+      "question_id": "H06",
+      "answer": {
+        "same_ranged_opponent": true
+      },
+      "evidence": {
+        "early_opponent": {
+          "t": 178,
+          "observation": "大型敌方角色MonsieurMozoli加入中路时，左下方紫色持枪远程对手名字为dmgall，血条下有烬特有四格弹药，穿紫色长衣。玩家为右侧foreverkiller21亚索；不是这名对手。"
+        },
+        "base_opponent": {
+          "t": 1713,
+          "observation": "裸露的红色基地水晶旁交战，画面右侧红色血条角色同样标注dmgall，紫色持枪外形与血条下四格弹药均与早期相同，确认为烬再次出现；不是左侧触手角色或已经被击杀的韦鲁斯。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 170.167,
+          "end": 201.733
+        }
+      ]
+    },
+    {
+      "question_id": "H07",
+      "answer": {
+        "chain": [
+          {
+            "t": 1053,
+            "alive": false,
+            "observation": "端点A：灰白死亡视角，亚索生命0/1893，灰色头像上红色倒计时35；聊天可见亚索被击杀。"
+          },
+          {
+            "t": 1090,
+            "alive": true,
+            "observation": "亚索已在蓝方基地道路移动，场景与头像彩色，生命1893/1893，头像无死亡计时；证明A之后复活。"
+          },
+          {
+            "t": 1150,
+            "alive": false,
+            "observation": "中路再战后灰白死亡视角，本体生命0/1893，灰色头像红色复活计时；此前已存活，故为一次新增死亡。"
+          },
+          {
+            "t": 1195,
+            "alive": true,
+            "observation": "亚索再次从蓝方基地道路返回，场景和头像彩色，生命1893/1893，无复活倒计时；证明第二次复活。"
+          },
+          {
+            "t": 1586,
+            "alive": false,
+            "observation": "红方基地交战后画面灰白，生命0/2300，灰色头像上复活倒计时仍在；此前存活，构成第二次新增死亡。"
+          },
+          {
+            "t": 1629,
+            "alive": false,
+            "observation": "端点B：镜头看红方水晶，本体生命0/2300，灰色头像红色计时4，仍未复活。与1586秒同状态，不再累计死亡。"
+          }
+        ],
+        "min_respawns": 2,
+        "min_new_deaths": 2
+      },
+      "evidence": {
+        "endpoint_A": {
+          "t": 1053,
+          "observation": "与给定A端点对应：游戏内17:37，中路灰白团战，亚索0/1893，头像计时35，击杀者blag vlag。播放时间为1053秒。"
+        },
+        "endpoint_B": {
+          "t": 1629,
+          "observation": "与给定B端点对应：游戏内27:13，镜头停在红色水晶，本体0/2300，头像计时4。播放时间为1629秒。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 201.733,
+          "end": 281.9
+        }
+      ]
+    },
+    {
+      "question_id": "H08",
+      "answer": {
+        "quadra_alive": false,
+        "base_alive": true,
+        "base_towers_standing": true,
+        "later_alive": true,
+        "later_outside_base": true
+      },
+      "evidence": {
+        "quadra_event": {
+          "t": 2022,
+          "observation": "上方QUADRA KILL敌方四杀公告可见，但场景灰白，本体生命0/2590，灰色头像倒计时53。公告受害者头像不是亚索本体的存活证据。"
+        },
+        "base_event": {
+          "t": 2077,
+          "observation": "foreverkiller21亚索满血2490/2490从泉水方向移动；蓝方主水晶前两座主基地防御塔完整站立且均有蓝色血条。已复活为真、双塔全毁为假。"
+        },
+        "later_camp_event": {
+          "t": 2340,
+          "observation": "蓝色标记营地上方野区通道交战，foreverkiller21亚索位于草丛边并移动，生命2641/2641，场景彩色且无复活计时。周围是野区岩壁草丛，小地图位置在基地围墙外；基地外为真、未恢复行动为假。"
+        }
+      },
+      "review_segments": [
+        {
+          "start": 281.9,
+          "end": 329.5
+        }
+      ]
+    }
+  ]
+}
