@@ -2990,5 +2990,19 @@
       "主观设计评分以提交PDF页面为主要对象；重导出的字体与布局差异集中计入render_consistency，不重复扣减设计评分。",
       "按任务范围，不复核装配事实、语音转写、截图来源身份及箭头指向的事实准确性；不输出总分。"
     ]
-  }
+  },
+  "comparison": [
+    {
+      "model": "gpt-6.1-sol",
+      "score": 63.108,
+      "score_display": "63.11",
+      "url": "./"
+    },
+    {
+      "model": "gpt-6-luna",
+      "score": 54.642,
+      "score_display": "54.64",
+      "url": "luna/"
+    }
+  ]
 }
