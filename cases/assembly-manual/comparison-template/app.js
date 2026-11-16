@@ -93,7 +93,6 @@ function selectSystem(key,updateUrl=true){
   $('#system-status').textContent=`当前展示 ${name}：${d.pages}页手册 · ${data.result.score_display} / 100`;
   $('#hero-pages').replaceChildren(document.createTextNode(String(d.pages)),el('small','页'));
   $('#hero-figures').textContent=`实际手册 · ${d.editable_svg}组标注配图`;
-  $('#hero-score').replaceChildren(document.createTextNode(data.result.score_display),el('small','/ 100'));
   $('#manual-description').textContent=`这里展示${name}实际提交的${d.pages}页PDF。正文、截图和标注内容均保留原样。`;
   $('#artifact-pages').textContent=d.pages;$('#artifact-figures').textContent=d.editable_svg;
   $('#manual-page').replaceChildren();$('#page-dots').replaceChildren();
