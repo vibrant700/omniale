@@ -8,7 +8,7 @@
 
 结果：63.11/100。问答31.25/50、证据9.333333/20、手册14.525/20、设计8/10。事实按原数据集标注；GPT-6-astra评审，Gemini核听音频，脚本汇总。
 
-Luna展示页：https://vibrant700.github.io/omniale/assembly-manual/luna/
+Sol与Luna共用上述展示页，点击模型卡片或选择“查看交付”，同步切换手册、问答、逐题评分和下载文件。Luna可直接定位：https://vibrant700.github.io/omniale/assembly-manual/?model=luna#systems
 
 新增受测：gpt-6-luna＋Official Codex CLI 0.142.4，独立初始上下文，问答后在同一会话中制作手册；累计模型与工具运行约32分35秒，81次工具调用、15次本地Whisper调用，无人为总时长和工具次数限制。实际交付为6页Word/PDF手册、7组原图／标注PNG／SVG源，共21份配图素材。
 
@@ -16,4 +16,4 @@ Luna结果：54.64/100。问答26.25/50、证据7.666667/20、手册12.725/20、
 
 公开内容仅为审核后的题面、实际交付、展示用评分依据与哈希；不包含API凭据、宿主路径、原始运行记录或私有原始标注。视频许可CDLA-Permissive-2.0，不表示由数据集作者审核。
 
-静态页面无需构建依赖，在docs目录启动HTTP服务即可预览。页面生成工具位于build_case_page.py及build_luna_page.py，模板位于site-template/；生成工具需要组织者本地封存资料，不包含在公开输入中。先构建Sol，再构建Luna以保留比较入口。媒体由页面相对路径及GitHub Release提供。
+静态页面无需构建依赖，在docs目录启动HTTP服务即可预览。页面生成工具位于build_case_page.py及build_luna_page.py，原Sol模板位于site-template/，合并展示模板位于comparison-template/；生成工具需要组织者本地封存资料，不包含在公开输入中。先构建Sol，再构建Luna以生成合并页。data.json的systems字段包含两份独立结果，资源位于results/sol/及results/luna/；旧luna/地址仅跳转到合并页。媒体由页面相对路径及GitHub Release提供。
