@@ -87,7 +87,7 @@ function renderScores(){
 function selectSystem(key,updateUrl=true){
   if(!systems||!Object.hasOwn(systems,key))return;
   active=key;data=systems[key];const name=modelNames[key],d=data.delivery;
-  document.querySelectorAll('[data-system]').forEach(b=>{const chosen=b.dataset.system===key;b.setAttribute('aria-pressed',String(chosen));b.classList.toggle('active',chosen);b.querySelector('b').textContent=chosen?'当前展示':'切换手册与逐题评分 →';});
+  document.querySelectorAll('[data-system]').forEach(b=>{const chosen=b.dataset.system===key;b.setAttribute('aria-pressed',String(chosen));b.classList.toggle('active',chosen);const label=b.dataset.system==='sol'?'Sol':'Luna';b.querySelector('b').textContent=chosen?`✓ 当前展示 ${label}`:`查看 ${label} 手册与评分 →`;});
   document.querySelectorAll('.system-select').forEach(s=>s.value=key);
   document.querySelectorAll('.model-name').forEach(n=>n.textContent=name);
   $('#system-status').textContent=`当前展示 ${name}：${d.pages}页手册 · ${data.result.score_display} / 100`;
