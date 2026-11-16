@@ -3,7 +3,8 @@ const $=s=>document.querySelector(s);
 const num=n=>(Math.round((Number(n)+1e-8)*100)/100).toFixed(2);
 const time=n=>`${Math.floor(n/60)}:${String(Math.floor(n%60)).padStart(2,'0')}`;
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
-const modelNames={sol:'GPT-6.1-Sol',luna:'GPT-6-Luna'};
+const modelNames={sol:'GPT-6.1-Sol · 默认 low',luna:'GPT-6-Luna · 默认 medium','sol-xhigh':'GPT-6.1-Sol · xhigh'};
+const shortNames={sol:'Sol 默认',luna:'Luna 默认','sol-xhigh':'Sol xhigh'};
 const labels={qa_semantic:'十题结论与关系',qa_evidence:'证据时间与动作语音配对',manual_delivery:'手册综合交付',subjective_design:'美观与教学引导'};
 const statusNames={pass:'通过',partial:'部分通过',fail:'未通过'};
 let systems,data,active='sol',page=1,requestedSeek=null;
@@ -87,14 +88,16 @@ function renderScores(){
 function selectSystem(key,updateUrl=true){
   if(!systems||!Object.hasOwn(systems,key))return;
   active=key;data=systems[key];const name=modelNames[key],d=data.delivery;
-  document.querySelectorAll('[data-system]').forEach(b=>{const chosen=b.dataset.system===key;b.setAttribute('aria-pressed',String(chosen));b.classList.toggle('active',chosen);const label=b.dataset.system==='sol'?'Sol':'Luna';b.querySelector('b').textContent=chosen?`✓ 当前展示 ${label}`:`查看 ${label} 手册与评分 →`;});
+  document.querySelectorAll('[data-system]').forEach(b=>{const chosen=b.dataset.system===key;b.setAttribute('aria-pressed',String(chosen));b.classList.toggle('active',chosen);const label=shortNames[b.dataset.system]||b.dataset.system;b.querySelector('b').textContent=chosen?`✓ 当前展示 ${label}`:`查看 ${label} 手册与评分 →`;});
   document.querySelectorAll('.system-select').forEach(s=>s.value=key);
   document.querySelectorAll('.model-name').forEach(n=>n.textContent=name);
-  $('#system-status').textContent=`当前展示 ${name}：${d.pages}页手册 · ${data.result.score_display} / 100`;
+  $('#system-status').textContent=`当前展示 ${name}：${d.pages}页手册 · ${data.result.score_display} / 100 · 主评 ${data.scoring.judge} · Gemini核听音频`;
   $('#hero-pages').replaceChildren(document.createTextNode(String(d.pages)),el('small','页'));
-  $('#hero-figures').textContent=`实际手册 · ${d.editable_svg}组标注配图`;
+  const figures=d.figure_count??d.original_screenshots??d.editable_svg;
+  $('#hero-figures').textContent=d.figure_summary||`实际手册 · ${figures}组标注配图`;
   $('#manual-description').textContent=`这里展示${name}实际提交的${d.pages}页PDF。正文、截图和标注内容均保留原样。`;
-  $('#artifact-pages').textContent=d.pages;$('#artifact-figures').textContent=d.editable_svg;
+  $('#artifact-pages').textContent=d.pages;$('#artifact-figures').textContent=figures;
+  $('#artifact-figures-label').textContent=d.figure_description||'组原图及SVG标注源';
   $('#manual-page').replaceChildren();$('#page-dots').replaceChildren();
   for(let i=1;i<=d.pages;i++){
     const o=el('option',`第${i}页 · ${d.page_topics[i-1]}`);o.value=String(i);$('#manual-page').append(o);
@@ -102,7 +105,7 @@ function selectSystem(key,updateUrl=true){
   }
   showPage(1);
   for(const [id,url] of [['download-pdf',d.pdf],['download-docx',d.docx],['file-pdf',d.pdf],['file-answers',d.answers],['file-bundle',d.bundle]])$('#'+id).href=url;
-  $('#file-bundle-description').textContent=`${name}：Word、PDF、答案、${d.editable_svg}组原图与SVG标注源${key==='luna'?'，附标注PNG预览':''}。`;
+  $('#file-bundle-description').textContent=d.bundle_description||`${name}：Word、PDF、答案、${figures}组原图与SVG标注源${key==='luna'?'，附标注PNG预览':''}。`;
   $('#result-total').replaceChildren(document.createTextNode(data.result.score_display),el('small','/ 100'));
   const seconds=Math.round(data.solver.elapsed_seconds);
   $('#result-duration').textContent=`约${Math.floor(seconds/60)}分${String(seconds%60).padStart(2,'0')}秒`;
