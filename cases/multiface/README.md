@@ -9,7 +9,7 @@ Agent 自行完成，累计 107 次工具调用；无外部墙钟时限。时长
 `build.py`、`render.py` 等是封存提交中的实际代码；完整 Blender 工程及依赖见页面链接的 Release 附件。
 `evaluate_visual.py`、`evaluate_avsync.py` 为实际评测入口，保留当时目录约定，需按本地素材、运行时与缓存目录适配后使用。
 图像/视频原始指标与合成分分别保留；合成分是事后约定、未经专家校准的换算，不是准确率。
-`task-original.txt` 为冻结题面原文，其原始试跑评分段落已由页面中的视觉60＋同步40协议替代，未修改历史题面。
+`task.txt` 展示委托、素材、制作要求与交付，评分依据单独列在页面结果部分。
 
 素材来源：Multiface, Meta / Facebook Research, https://github.com/facebookresearch/multiface 。
 素材及衍生媒体按 CC BY-NC 4.0 使用：https://creativecommons.org/licenses/by-nc/4.0/ 。
