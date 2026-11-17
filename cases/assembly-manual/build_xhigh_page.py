@@ -26,6 +26,8 @@ TEMPLATE = Path(__file__).with_name('xhigh-template')
 RELEASE_URL = 'https://github.com/vibrant700/omniale/releases/download/assembly-manual-v1/'
 KEY = 'sol-xhigh'
 TRIAL = 'sol-xhigh-codex01'
+SOLVER_MODEL = 'gpt-6.1-sol'
+SOLVER_LABEL = 'GPT-6.1-Sol'
 
 
 def load(path):
@@ -73,8 +75,11 @@ def compare(systems):
     cards = []
     labels = {'sol': ('GPT-6.1-Sol', 'Sol 默认', 'low（模型目录默认）'),
               'luna': ('GPT-6-Luna', 'Luna 默认', 'medium（模型目录默认）'),
-              KEY: ('GPT-6.1-Sol', 'Sol xhigh', 'xhigh（显式设置，逐请求核验）')}
-    for key in ['sol', 'luna', KEY]:
+              'sol-xhigh': ('GPT-6.1-Sol', 'Sol xhigh', 'xhigh（显式设置，逐请求核验）'),
+              'luna-xhigh': ('GPT-6-Luna', 'Luna xhigh', 'xhigh（显式设置，逐请求核验）')}
+    order = [key for key in ['sol', 'luna', 'sol-xhigh', 'luna-xhigh'] if key in systems]
+    count_label = '四组' if len(order) == 4 else '三组'
+    for key in order:
         item = systems[key]
         label, short, effort = labels[key]
         active = key == 'sol'
@@ -92,14 +97,14 @@ def compare(systems):
             f'<strong>{item["result"]["score_display"]}<small> / 100</small></strong>'
             f'<p>{detail}</p><small>{seconds // 60}分{seconds % 60:02}秒 · '
             f'{item["solver"]["tool_calls"]}次工具调用</small><b>{button}</b></button>')
-    caption = ('三组完整结果在此对比；点击卡片可同步切换分项、逐题依据、同页手册和下载文件。'
+    caption = (count_label + '完整结果在此对比；点击卡片可同步切换分项、逐题依据、同页手册和下载文件。'
                '采用相同录像、十题与50/20/20/10评分权重，各次运行独立封存、分别验收。'
                '原Sol与Luna采用模型目录默认推理强度，分别为low与medium；旧会话未独立声明该参数。'
-               'Sol xhigh在配置与CLI中显式设置，并由网关核验每次模型请求。'
+               'xhigh运行在配置与CLI中显式设置，并由网关核验每次模型请求。'
                '共同源音频的Gemini核听结果复用，事实计分以原标注为准。')
-    caption += '主评：Sol默认与Luna默认使用GPT-6-Astra；Sol xhigh使用GPT-6.1-Sol。评委不同，分差不能单独归因于推理强度。'
+    caption += '主评：Sol默认与Luna默认使用GPT-6-Astra；xhigh运行使用GPT-6.1-Sol。评委不同，分差不能单独归因于推理强度。'
     caption += 'Sol xhigh在同一原生会话中自动压缩上下文并续接接口中断；显示耗时包含运行期间的接口等待。'
-    return ('<div id="systems" class="results-comparison"><h3>三组运行的完整结果</h3>'
+    return ('<div id="systems" class="results-comparison"><h3>' + count_label + '运行的完整结果</h3>'
             f'<p class="caption">{caption}</p><div class="system-grid">' + ''.join(cards) +
             '</div><p id="system-status" role="status" aria-live="polite">正在加载模型交付…</p></div>')
 
@@ -113,7 +118,8 @@ def build_data(run, existing):
     record = load(run / 'run_record.json')
     inspection = load(prep / 'inspection/inspection.json')
     assert not result['errors'] and result['pending_points'] == 0, 'Evaluation must be final and complete'
-    assert record['solver_model'] == 'gpt-6.1-sol' and record['reasoning_effort'] == 'xhigh'
+    assert record['solver_model'] == SOLVER_MODEL and record['reasoning_effort'] == 'xhigh'
+    assert result['solver_model'] == SOLVER_MODEL
     assert record['status'] == 'solver_finished', 'Only completed runs may be published'
     verification = record['reasoning_verification']
     assert verification['request_count'] > 0 and verification['all_requests_explicit_xhigh'] is True
@@ -162,7 +168,7 @@ def build_data(run, existing):
                        key=lambda check: {'fail': 0, 'partial': 1, 'pass': 2}[check['status']])
         question['summary'] = lower[0]['evidence'][:240] + ('…' if len(lower[0]['evidence']) > 240 else '')
         questions.append(question)
-    data['solver'] = {'model': 'gpt-6.1-sol', 'framework': 'Official Codex CLI',
+    data['solver'] = {'model': SOLVER_MODEL, 'framework': 'Official Codex CLI',
                       'version': record['codex_version'], 'elapsed_seconds': record['elapsed_seconds'],
                       'tool_calls': record['tool_calls'], 'audio_tool': 'whisper.cpp / base.en',
                       'local_asr_calls': record['asr_calls'], 'time_limit': None, 'tool_limit': None,
@@ -193,12 +199,16 @@ def build_data(run, existing):
                         'pdf_sha256': sha(submission / 'manual.pdf'), 'docx_sha256': sha(submission / 'manual.docx'),
                         'page_images': [f'results/{KEY}/pages/page-{i:03}.png' for i in range(1, count + 1)],
                         'page_topics': [f'实际交付第{i}页' for i in range(1, count + 1)],
-                        'bundle_description': f'GPT-6.1-Sol · xhigh：Word、PDF、答案与{len(assets)}份图像／标注文件，其中{svg_count}份SVG源。'}
+                        'bundle_description': f'{SOLVER_LABEL} · xhigh：Word、PDF、答案与{len(assets)}份图像／标注文件，其中{svg_count}份SVG源。'}
     data['document_checks'] = clean_tree(load(prep / 'document.json'))
     data['source']['preview'] = 'assets/recording-preview.mp4'
     data['scoring']['audio_reuse'] = 'The same immutable source-audio observations are shared across systems; artifact and document judgments are independent.'
     data['scoring']['judge'] = result['model']
     data['scoring']['judge_reasoning_effort'] = 'high'
+    if KEY == 'luna-xhigh':
+        data['scoring']['criterion_group_judgments'] = ['Q07', 'Q10']
+        data['scoring']['criterion_group_method'] = 'Same complete evidence and criteria; independent criterion groups combined by the fixed script.'
+        data['solver']['local_asr_count_note'] = 'Completed observations only; interrupted attempts are excluded.'
     return data, record, inspection, submission, answers_path
 
 
@@ -226,11 +236,20 @@ def audit_public_text(files):
 
 
 def main():
+    global KEY, TRIAL, SOLVER_MODEL, SOLVER_LABEL, TEMPLATE
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--trial', default=TRIAL)
+    parser.add_argument('--system', choices=['sol-xhigh', 'luna-xhigh'], default='sol-xhigh')
+    parser.add_argument('--trial')
     parser.add_argument('--check-only', action='store_true', help='Validate final inputs without changing the public page')
     parser.add_argument('--check-template', action='store_true', help='Validate dormant template structure without result files')
     args = parser.parse_args()
+    KEY = args.system
+    if KEY == 'luna-xhigh':
+        TRIAL = 'luna-xhigh-codex01'
+        SOLVER_MODEL = 'gpt-6-luna'
+        SOLVER_LABEL = 'GPT-6-Luna'
+        TEMPLATE = Path(__file__).with_name('luna-xhigh-template')
+    args.trial = args.trial or TRIAL
     assert re.fullmatch(r'[a-z0-9_-]+', args.trial)
     if args.check_template:
         template = (TEMPLATE / 'index.html').read_text(encoding='utf8')
@@ -239,6 +258,10 @@ def main():
         assert template.count('{{SYSTEM_COMPARISON}}') == 1
         assert template.count('<section id="task"') == 1
         assert 'value="sol-xhigh"' in template
+        if KEY == 'luna-xhigh':
+            assert 'value="luna-xhigh"' in template
+            assert "'luna-xhigh':'GPT-6-Luna · xhigh'" in app
+            assert '4<small>组结果</small>' in template
         assert "'sol-xhigh':'GPT-6.1-Sol · xhigh'" in app
         assert 'shortNames[b.dataset.system]' in app
         assert 'repeat(3,minmax(0,1fr))' in style
@@ -251,7 +274,7 @@ def main():
     run = ROOT / 'outputs/HoloAssist_manual_v1/runs' / args.trial
     existing = load(PAGE / 'data.json')
     assert {'sol', 'luna'} <= set(existing['systems'])
-    preserved = {key: copy.deepcopy(existing['systems'][key]) for key in ['sol', 'luna']}
+    preserved = {key: copy.deepcopy(value) for key, value in existing['systems'].items() if key != KEY}
     data, record, inspection, submission, answers_path = build_data(run, existing)
     combined = copy.deepcopy(existing)
     combined['systems'][KEY] = data
@@ -259,7 +282,7 @@ def main():
     template = (TEMPLATE / 'index.html').read_text(encoding='utf8')
     page = template.replace('{{SYSTEM_COMPARISON}}', compare(combined['systems']))
     assert '{{SYSTEM_COMPARISON}}' not in page
-    assert all(f'data-system="{key}"' in page for key in ['sol', 'luna', KEY])
+    assert all(f'data-system="{key}"' in page for key in combined['systems'])
     assert len(re.findall(r'<section id="task"', page)) == 1
     if args.check_only:
         print(json.dumps({'trial': args.trial, 'score': data['result']['score_display'],
@@ -267,7 +290,7 @@ def main():
                           'verified_xhigh_requests': record['reasoning_verification']['request_count'],
                           'old_systems_preserved': True}, ensure_ascii=False))
         return
-    old_assets = {path: sha(path) for key in ['sol', 'luna'] for path in (PAGE / 'results' / key).rglob('*') if path.is_file()}
+    old_assets = {path: sha(path) for key in preserved for path in (PAGE / 'results' / key).rglob('*') if path.is_file()}
     target = PAGE / 'results' / KEY
     for path in [target / 'pages', RELEASE]:
         path.mkdir(parents=True, exist_ok=True)
@@ -293,9 +316,17 @@ def main():
     scoring_text = scoring_path.read_text(encoding='utf8')
     scoring_text = scoring_text.replace('语义与图文由GPT-6-astra逐项评审，',
         'Sol默认与Luna默认的语义、图文及文档由GPT-6-Astra逐项评审；Sol xhigh由GPT-6.1-Sol主评。')
-    comparison_note = '三组使用相同输入、工具和固定权重，但Sol xhigh的主评与前两组不同，分差不能单独归因于推理强度。'
+    if KEY == 'luna-xhigh':
+        scoring_text = scoring_text.replace('Sol xhigh由GPT-6.1-Sol主评。', 'Sol xhigh与Luna xhigh由GPT-6.1-Sol主评。')
+        scoring_text = scoring_text.replace('三组使用相同输入、工具和固定权重，但Sol xhigh的主评与前两组不同，分差不能单独归因于推理强度。',
+            '四组使用相同输入、工具和固定权重，但xhigh运行的主评与两组默认运行不同，分差不能单独归因于推理强度。')
+    comparison_note = ('四组使用相同输入、工具和固定权重，但xhigh运行的主评与两组默认运行不同，分差不能单独归因于推理强度。'
+                       if KEY == 'luna-xhigh' else '三组使用相同输入、工具和固定权重，但Sol xhigh的主评与前两组不同，分差不能单独归因于推理强度。')
     if comparison_note not in scoring_text:
         scoring_text += '\n' + comparison_note + '\n'
+    group_note = 'Luna xhigh的Q07、Q10由同一主评按问答、证据、手册事实、图示四类条目分别裁定；各请求提供相同完整证据，随后由固定脚本汇总。其余题目逐题裁定。'
+    if KEY == 'luna-xhigh' and group_note not in scoring_text:
+        scoring_text += '\n' + group_note + '\n'
     scoring_path.write_text(scoring_text, encoding='utf8')
     for name in ['app.js', 'case.css']:
         shutil.copyfile(TEMPLATE / name, PAGE / name)
@@ -303,15 +334,16 @@ def main():
     code = Path(__file__).read_text(encoding='utf8').replace(
         'ROOT = Path(os.environ['OMNIALE_ORGANIZER_ROOT']).resolve()', "ROOT = Path(os.environ['OMNIALE_ORGANIZER_ROOT']).resolve()")
     public.write_text(code, encoding='utf8')
-    shutil.copytree(TEMPLATE, CASE / 'xhigh-template', dirs_exist_ok=True)
+    shutil.copytree(TEMPLATE, CASE / TEMPLATE.name, dirs_exist_ok=True)
     catalog = REPO / 'docs/index.html'
     text = catalog.read_text(encoding='utf8')
-    status = f'Sol 默认 63.11 · Luna 默认 54.64 · Sol xhigh {data["result"]["score_display"]} · 同页查看手册与评分'
+    short_names = {'sol': 'Sol 默认', 'luna': 'Luna 默认', 'sol-xhigh': 'Sol xhigh', 'luna-xhigh': 'Luna xhigh'}
+    status = ' · '.join(short_names[key] + ' ' + value['result']['score_display'] for key, value in combined['systems'].items()) + ' · 同页查看手册与评分'
     text, count = re.subn(r'(<a class="case-card" href="assembly-manual/".*?<div class="status"><span class="status-dot"></span>).*?(</div>)',
                          lambda match: match[1] + status + match[2], text, count=1, flags=re.S)
     assert count == 1
     catalog.write_text(text, encoding='utf8')
-    manifest = {'model': 'gpt-6.1-sol', 'reasoning_effort': 'xhigh', 'score': data['result']['score_display'],
+    manifest = {'model': SOLVER_MODEL, 'reasoning_effort': 'xhigh', 'score': data['result']['score_display'],
                 'assets': [{'name': path.name, 'bytes': path.stat().st_size, 'sha256': sha(path)}
                            for path in [RELEASE / (KEY + '-manual.docx'), bundle]]}
     dump(RELEASE / (KEY + '-release-manifest.json'), manifest)
