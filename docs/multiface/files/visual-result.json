@@ -1,0 +1,58 @@
+{
+  "protocol_sha256": "f7c4139d4c7fc05b5f716ee55386a3a4d1c7bd67955b159e670845c761c81542",
+  "protocol_label": "post_hoc_standard_metrics_v1_not_a_reproduction_of_any_paper",
+  "versions": {
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu",
+    "numpy": "2.2.6",
+    "Pillow": "13.0.0",
+    "scipy": "1.18.1",
+    "scikit-image": "0.25.2",
+    "lpips": "0.1.4",
+    "pyfvvdp": "1.2.2"
+  },
+  "views": {
+    "T1": {
+      "PSNR_dB": 19.9052302129736,
+      "SSIM": 0.5922260475431577,
+      "LPIPS_alex": 0.3042207474891956,
+      "surface_PSNR_dB": 23.147061704755192,
+      "surface_SSIM_map_mean": 0.7257653363552306,
+      "surface_LPIPS_alex_map_mean": 0.2904081774314855,
+      "JOD": 3.6870226860046387
+    },
+    "T2": {
+      "PSNR_dB": 20.544831278558465,
+      "SSIM": 0.6110570167323325,
+      "LPIPS_alex": 0.3282593067448873,
+      "surface_PSNR_dB": 24.607286449171696,
+      "surface_SSIM_map_mean": 0.7292103570380386,
+      "surface_LPIPS_alex_map_mean": 0.31932876369866214,
+      "JOD": 3.690561294555664
+    }
+  },
+  "no_combined_score": true,
+  "jod_display_description": "\"FovVideoVDP v1.2.2, 37.84 [pix/deg], Lpeak=200, Lblack=0.5979 [cd/m^2], non-foveated, (standard_fhd)\"",
+  "sanity_checks": {
+    "identical_PSNR_dB": "infinity",
+    "identical_SSIM": 1.0,
+    "identical_LPIPS": 0.0,
+    "identical_8_frame_JOD": 10.0,
+    "black_PSNR_dB": 13.843231647274104,
+    "black_SSIM": 0.06761285786574865,
+    "black_LPIPS": 0.7497425079345703
+  },
+  "mean": {
+    "PSNR_dB": 20.225030745766034,
+    "SSIM": 0.6016415321377451,
+    "LPIPS_alex": 0.31624002711704147,
+    "surface_PSNR_dB": 23.877174076963442,
+    "surface_SSIM_map_mean": 0.7274878466966346,
+    "surface_LPIPS_alex_map_mean": 0.3048684705650738,
+    "JOD": 3.6887919902801514
+  },
+  "submitted_videos_unchanged": true,
+  "model_weights_sha256": {
+    "hub\\checkpoints\\alexnet-owt-7be5be79.pth": "7be5be791159472b1fbf3c69796f7cb30dca7ad8466c2df70058c37116cdee02"
+  }
+}

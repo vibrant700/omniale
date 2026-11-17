@@ -1,0 +1,2251 @@
+{
+  "implementation_commit": "907c0b579c2e2d83f0eae1b2ac9e720cde4e5623",
+  "protocol_sha256": "1d6d785618c3a83d7446b7c3fd6b6c105907329b45510a5d547ad08bbfcf2521",
+  "versions": {
+    "torch": "2.5.1+cpu",
+    "numpy": "2.2.6",
+    "opencv-python-headless": "4.11.0.86",
+    "python-speech-features": "0.6"
+  },
+  "clips": {
+    "T1_reference": {
+      "offset_frames": 0,
+      "offset_ms": 0,
+      "LSE_D": 6.152046203613281,
+      "LSE_C": 6.978389739990234,
+      "zero_lag_distance": 6.152046203613281,
+      "offset_on_search_boundary": false,
+      "feature_windows": 81,
+      "curve": [
+        {
+          "offset_ms": 600,
+          "distance": 14.125922203063965
+        },
+        {
+          "offset_ms": 560,
+          "distance": 13.861359596252441
+        },
+        {
+          "offset_ms": 520,
+          "distance": 14.01087474822998
+        },
+        {
+          "offset_ms": 480,
+          "distance": 14.306310653686523
+        },
+        {
+          "offset_ms": 440,
+          "distance": 14.304681777954102
+        },
+        {
+          "offset_ms": 400,
+          "distance": 13.85562515258789
+        },
+        {
+          "offset_ms": 360,
+          "distance": 13.130435943603516
+        },
+        {
+          "offset_ms": 320,
+          "distance": 12.417468070983887
+        },
+        {
+          "offset_ms": 280,
+          "distance": 12.013030052185059
+        },
+        {
+          "offset_ms": 240,
+          "distance": 11.955894470214844
+        },
+        {
+          "offset_ms": 200,
+          "distance": 12.017082214355469
+        },
+        {
+          "offset_ms": 160,
+          "distance": 12.07666301727295
+        },
+        {
+          "offset_ms": 120,
+          "distance": 11.457797050476074
+        },
+        {
+          "offset_ms": 80,
+          "distance": 9.821922302246094
+        },
+        {
+          "offset_ms": 40,
+          "distance": 7.452352046966553
+        },
+        {
+          "offset_ms": 0,
+          "distance": 6.152046203613281
+        },
+        {
+          "offset_ms": -40,
+          "distance": 7.827998638153076
+        },
+        {
+          "offset_ms": -80,
+          "distance": 10.089249610900879
+        },
+        {
+          "offset_ms": -120,
+          "distance": 11.562078475952148
+        },
+        {
+          "offset_ms": -160,
+          "distance": 12.152301788330078
+        },
+        {
+          "offset_ms": -200,
+          "distance": 12.35614013671875
+        },
+        {
+          "offset_ms": -240,
+          "distance": 12.742436408996582
+        },
+        {
+          "offset_ms": -280,
+          "distance": 13.19837474822998
+        },
+        {
+          "offset_ms": -320,
+          "distance": 13.728922843933105
+        },
+        {
+          "offset_ms": -360,
+          "distance": 14.353726387023926
+        },
+        {
+          "offset_ms": -400,
+          "distance": 14.813722610473633
+        },
+        {
+          "offset_ms": -440,
+          "distance": 14.995566368103027
+        },
+        {
+          "offset_ms": -480,
+          "distance": 14.889606475830078
+        },
+        {
+          "offset_ms": -520,
+          "distance": 14.696813583374023
+        },
+        {
+          "offset_ms": -560,
+          "distance": 14.61874771118164
+        },
+        {
+          "offset_ms": -600,
+          "distance": 14.80238151550293
+        }
+      ],
+      "status": "measured",
+      "detection_coverage": 1.0
+    },
+    "T1_submitted": {
+      "offset_frames": 0,
+      "offset_ms": 0,
+      "LSE_D": 7.249087333679199,
+      "LSE_C": 5.537744522094727,
+      "zero_lag_distance": 7.249087333679199,
+      "offset_on_search_boundary": false,
+      "feature_windows": 81,
+      "curve": [
+        {
+          "offset_ms": 600,
+          "distance": 13.85281753540039
+        },
+        {
+          "offset_ms": 560,
+          "distance": 13.712163925170898
+        },
+        {
+          "offset_ms": 520,
+          "distance": 13.844637870788574
+        },
+        {
+          "offset_ms": 480,
+          "distance": 14.079218864440918
+        },
+        {
+          "offset_ms": 440,
+          "distance": 14.174970626831055
+        },
+        {
+          "offset_ms": 400,
+          "distance": 13.975414276123047
+        },
+        {
+          "offset_ms": 360,
+          "distance": 13.314468383789062
+        },
+        {
+          "offset_ms": 320,
+          "distance": 12.45934009552002
+        },
+        {
+          "offset_ms": 280,
+          "distance": 12.025789260864258
+        },
+        {
+          "offset_ms": 240,
+          "distance": 12.064752578735352
+        },
+        {
+          "offset_ms": 200,
+          "distance": 12.165331840515137
+        },
+        {
+          "offset_ms": 160,
+          "distance": 12.343727111816406
+        },
+        {
+          "offset_ms": 120,
+          "distance": 11.877484321594238
+        },
+        {
+          "offset_ms": 80,
+          "distance": 10.515386581420898
+        },
+        {
+          "offset_ms": 40,
+          "distance": 8.41019344329834
+        },
+        {
+          "offset_ms": 0,
+          "distance": 7.249087333679199
+        },
+        {
+          "offset_ms": -40,
+          "distance": 8.586854934692383
+        },
+        {
+          "offset_ms": -80,
+          "distance": 10.459456443786621
+        },
+        {
+          "offset_ms": -120,
+          "distance": 11.679292678833008
+        },
+        {
+          "offset_ms": -160,
+          "distance": 12.169160842895508
+        },
+        {
+          "offset_ms": -200,
+          "distance": 12.299647331237793
+        },
+        {
+          "offset_ms": -240,
+          "distance": 12.462396621704102
+        },
+        {
+          "offset_ms": -280,
+          "distance": 12.786831855773926
+        },
+        {
+          "offset_ms": -320,
+          "distance": 13.346851348876953
+        },
+        {
+          "offset_ms": -360,
+          "distance": 14.059468269348145
+        },
+        {
+          "offset_ms": -400,
+          "distance": 14.597051620483398
+        },
+        {
+          "offset_ms": -440,
+          "distance": 14.77760124206543
+        },
+        {
+          "offset_ms": -480,
+          "distance": 14.667656898498535
+        },
+        {
+          "offset_ms": -520,
+          "distance": 14.523823738098145
+        },
+        {
+          "offset_ms": -560,
+          "distance": 14.512190818786621
+        },
+        {
+          "offset_ms": -600,
+          "distance": 14.629683494567871
+        }
+      ],
+      "status": "measured",
+      "detection_coverage": 1.0
+    },
+    "T2_reference": {
+      "offset_frames": 0,
+      "offset_ms": 0,
+      "LSE_D": 7.342865467071533,
+      "LSE_C": 6.254239559173584,
+      "zero_lag_distance": 7.342865467071533,
+      "offset_on_search_boundary": false,
+      "feature_windows": 81,
+      "curve": [
+        {
+          "offset_ms": 600,
+          "distance": 14.698929786682129
+        },
+        {
+          "offset_ms": 560,
+          "distance": 14.363598823547363
+        },
+        {
+          "offset_ms": 520,
+          "distance": 14.385765075683594
+        },
+        {
+          "offset_ms": 480,
+          "distance": 14.50904655456543
+        },
+        {
+          "offset_ms": 440,
+          "distance": 14.493266105651855
+        },
+        {
+          "offset_ms": 400,
+          "distance": 14.1903076171875
+        },
+        {
+          "offset_ms": 360,
+          "distance": 13.597105026245117
+        },
+        {
+          "offset_ms": 320,
+          "distance": 12.862231254577637
+        },
+        {
+          "offset_ms": 280,
+          "distance": 12.397372245788574
+        },
+        {
+          "offset_ms": 240,
+          "distance": 12.235406875610352
+        },
+        {
+          "offset_ms": 200,
+          "distance": 12.232165336608887
+        },
+        {
+          "offset_ms": 160,
+          "distance": 12.243760108947754
+        },
+        {
+          "offset_ms": 120,
+          "distance": 11.683670997619629
+        },
+        {
+          "offset_ms": 80,
+          "distance": 10.275498390197754
+        },
+        {
+          "offset_ms": 40,
+          "distance": 8.322699546813965
+        },
+        {
+          "offset_ms": 0,
+          "distance": 7.342865467071533
+        },
+        {
+          "offset_ms": -40,
+          "distance": 8.79030990600586
+        },
+        {
+          "offset_ms": -80,
+          "distance": 10.732522964477539
+        },
+        {
+          "offset_ms": -120,
+          "distance": 12.030253410339355
+        },
+        {
+          "offset_ms": -160,
+          "distance": 12.58700180053711
+        },
+        {
+          "offset_ms": -200,
+          "distance": 12.784468650817871
+        },
+        {
+          "offset_ms": -240,
+          "distance": 13.140364646911621
+        },
+        {
+          "offset_ms": -280,
+          "distance": 13.644353866577148
+        },
+        {
+          "offset_ms": -320,
+          "distance": 14.242795944213867
+        },
+        {
+          "offset_ms": -360,
+          "distance": 14.862957000732422
+        },
+        {
+          "offset_ms": -400,
+          "distance": 15.28930950164795
+        },
+        {
+          "offset_ms": -440,
+          "distance": 15.443307876586914
+        },
+        {
+          "offset_ms": -480,
+          "distance": 15.306215286254883
+        },
+        {
+          "offset_ms": -520,
+          "distance": 15.034132957458496
+        },
+        {
+          "offset_ms": -560,
+          "distance": 14.949265480041504
+        },
+        {
+          "offset_ms": -600,
+          "distance": 15.134684562683105
+        }
+      ],
+      "status": "measured",
+      "detection_coverage": 1.0
+    },
+    "T2_submitted": {
+      "offset_frames": 0,
+      "offset_ms": 0,
+      "LSE_D": 7.842170715332031,
+      "LSE_C": 5.149008750915527,
+      "zero_lag_distance": 7.842170715332031,
+      "offset_on_search_boundary": false,
+      "feature_windows": 81,
+      "curve": [
+        {
+          "offset_ms": 600,
+          "distance": 14.117199897766113
+        },
+        {
+          "offset_ms": 560,
+          "distance": 13.7503662109375
+        },
+        {
+          "offset_ms": 520,
+          "distance": 13.718463897705078
+        },
+        {
+          "offset_ms": 480,
+          "distance": 13.876914024353027
+        },
+        {
+          "offset_ms": 440,
+          "distance": 13.887310981750488
+        },
+        {
+          "offset_ms": 400,
+          "distance": 13.57249641418457
+        },
+        {
+          "offset_ms": 360,
+          "distance": 12.991179466247559
+        },
+        {
+          "offset_ms": 320,
+          "distance": 12.325602531433105
+        },
+        {
+          "offset_ms": 280,
+          "distance": 11.969286918640137
+        },
+        {
+          "offset_ms": 240,
+          "distance": 11.963150978088379
+        },
+        {
+          "offset_ms": 200,
+          "distance": 12.154273986816406
+        },
+        {
+          "offset_ms": 160,
+          "distance": 12.216869354248047
+        },
+        {
+          "offset_ms": 120,
+          "distance": 11.666738510131836
+        },
+        {
+          "offset_ms": 80,
+          "distance": 10.312203407287598
+        },
+        {
+          "offset_ms": 40,
+          "distance": 8.512423515319824
+        },
+        {
+          "offset_ms": 0,
+          "distance": 7.842170715332031
+        },
+        {
+          "offset_ms": -40,
+          "distance": 9.238296508789062
+        },
+        {
+          "offset_ms": -80,
+          "distance": 11.026361465454102
+        },
+        {
+          "offset_ms": -120,
+          "distance": 12.159449577331543
+        },
+        {
+          "offset_ms": -160,
+          "distance": 12.600472450256348
+        },
+        {
+          "offset_ms": -200,
+          "distance": 12.704145431518555
+        },
+        {
+          "offset_ms": -240,
+          "distance": 12.946930885314941
+        },
+        {
+          "offset_ms": -280,
+          "distance": 13.390281677246094
+        },
+        {
+          "offset_ms": -320,
+          "distance": 13.895824432373047
+        },
+        {
+          "offset_ms": -360,
+          "distance": 14.395452499389648
+        },
+        {
+          "offset_ms": -400,
+          "distance": 14.748826026916504
+        },
+        {
+          "offset_ms": -440,
+          "distance": 14.914522171020508
+        },
+        {
+          "offset_ms": -480,
+          "distance": 14.856152534484863
+        },
+        {
+          "offset_ms": -520,
+          "distance": 14.664381980895996
+        },
+        {
+          "offset_ms": -560,
+          "distance": 14.619586944580078
+        },
+        {
+          "offset_ms": -600,
+          "distance": 14.853824615478516
+        }
+      ],
+      "status": "measured",
+      "detection_coverage": 1.0
+    }
+  },
+  "controls": {
+    "T1_reference": {
+      "shift_controls": [
+        {
+          "offset_frames": 10,
+          "offset_ms": 400,
+          "LSE_D": 7.046113967895508,
+          "LSE_C": 6.417532920837402,
+          "zero_lag_distance": 13.685736656188965,
+          "offset_on_search_boundary": false,
+          "feature_windows": 81,
+          "curve": [
+            {
+              "offset_ms": 600,
+              "distance": 12.089019775390625
+            },
+            {
+              "offset_ms": 560,
+              "distance": 12.327549934387207
+            },
+            {
+              "offset_ms": 520,
+              "distance": 11.893345832824707
+            },
+            {
+              "offset_ms": 480,
+              "distance": 10.46604061126709
+            },
+            {
+              "offset_ms": 440,
+              "distance": 8.28887939453125
+            },
+            {
+              "offset_ms": 400,
+              "distance": 7.046113967895508
+            },
+            {
+              "offset_ms": 360,
+              "distance": 8.58182144165039
+            },
+            {
+              "offset_ms": 320,
+              "distance": 10.715252876281738
+            },
+            {
+              "offset_ms": 280,
+              "distance": 12.014007568359375
+            },
+            {
+              "offset_ms": 240,
+              "distance": 12.394024848937988
+            },
+            {
+              "offset_ms": 200,
+              "distance": 12.365174293518066
+            },
+            {
+              "offset_ms": 160,
+              "distance": 12.534379959106445
+            },
+            {
+              "offset_ms": 120,
+              "distance": 12.733609199523926
+            },
+            {
+              "offset_ms": 80,
+              "distance": 13.010038375854492
+            },
+            {
+              "offset_ms": 40,
+              "distance": 13.402790069580078
+            },
+            {
+              "offset_ms": 0,
+              "distance": 13.685736656188965
+            },
+            {
+              "offset_ms": -40,
+              "distance": 13.868927001953125
+            },
+            {
+              "offset_ms": -80,
+              "distance": 13.759078025817871
+            },
+            {
+              "offset_ms": -120,
+              "distance": 13.554993629455566
+            },
+            {
+              "offset_ms": -160,
+              "distance": 13.46364688873291
+            },
+            {
+              "offset_ms": -200,
+              "distance": 13.686783790588379
+            },
+            {
+              "offset_ms": -240,
+              "distance": 14.039652824401855
+            },
+            {
+              "offset_ms": -280,
+              "distance": 14.233291625976562
+            },
+            {
+              "offset_ms": -320,
+              "distance": 14.117621421813965
+            },
+            {
+              "offset_ms": -360,
+              "distance": 14.032506942749023
+            },
+            {
+              "offset_ms": -400,
+              "distance": 14.107032775878906
+            },
+            {
+              "offset_ms": -440,
+              "distance": 14.34279727935791
+            },
+            {
+              "offset_ms": -480,
+              "distance": 14.388504981994629
+            },
+            {
+              "offset_ms": -520,
+              "distance": 14.261781692504883
+            },
+            {
+              "offset_ms": -560,
+              "distance": 14.14120864868164
+            },
+            {
+              "offset_ms": -600,
+              "distance": 14.386180877685547
+            }
+          ],
+          "audio_delay_ms": -400,
+          "expected_offset_change_ms": 400,
+          "measured_offset_change_ms": 400,
+          "offset_change_error_ms": 0,
+          "passed": true
+        },
+        {
+          "offset_frames": 5,
+          "offset_ms": 200,
+          "LSE_D": 6.438111305236816,
+          "LSE_C": 6.245262145996094,
+          "zero_lag_distance": 11.806358337402344,
+          "offset_on_search_boundary": false,
+          "feature_windows": 81,
+          "curve": [
+            {
+              "offset_ms": 600,
+              "distance": 13.57422924041748
+            },
+            {
+              "offset_ms": 560,
+              "distance": 12.817424774169922
+            },
+            {
+              "offset_ms": 520,
+              "distance": 12.20105266571045
+            },
+            {
+              "offset_ms": 480,
+              "distance": 11.92243766784668
+            },
+            {
+              "offset_ms": 440,
+              "distance": 12.009781837463379
+            },
+            {
+              "offset_ms": 400,
+              "distance": 12.185187339782715
+            },
+            {
+              "offset_ms": 360,
+              "distance": 12.373808860778809
+            },
+            {
+              "offset_ms": 320,
+              "distance": 11.751703262329102
+            },
+            {
+              "offset_ms": 280,
+              "distance": 10.109112739562988
+            },
+            {
+              "offset_ms": 240,
+              "distance": 7.736639976501465
+            },
+            {
+              "offset_ms": 200,
+              "distance": 6.438111305236816
+            },
+            {
+              "offset_ms": 160,
+              "distance": 7.995906829833984
+            },
+            {
+              "offset_ms": 120,
+              "distance": 10.138277053833008
+            },
+            {
+              "offset_ms": 80,
+              "distance": 11.442692756652832
+            },
+            {
+              "offset_ms": 40,
+              "distance": 11.822623252868652
+            },
+            {
+              "offset_ms": 0,
+              "distance": 11.806358337402344
+            },
+            {
+              "offset_ms": -40,
+              "distance": 12.21035385131836
+            },
+            {
+              "offset_ms": -80,
+              "distance": 12.68337345123291
+            },
+            {
+              "offset_ms": -120,
+              "distance": 13.229400634765625
+            },
+            {
+              "offset_ms": -160,
+              "distance": 13.853538513183594
+            },
+            {
+              "offset_ms": -200,
+              "distance": 14.316153526306152
+            },
+            {
+              "offset_ms": -240,
+              "distance": 14.502924919128418
+            },
+            {
+              "offset_ms": -280,
+              "distance": 14.392644882202148
+            },
+            {
+              "offset_ms": -320,
+              "distance": 14.183038711547852
+            },
+            {
+              "offset_ms": -360,
+              "distance": 14.085444450378418
+            },
+            {
+              "offset_ms": -400,
+              "distance": 14.303544998168945
+            },
+            {
+              "offset_ms": -440,
+              "distance": 14.642437934875488
+            },
+            {
+              "offset_ms": -480,
+              "distance": 14.826719284057617
+            },
+            {
+              "offset_ms": -520,
+              "distance": 14.720895767211914
+            },
+            {
+              "offset_ms": -560,
+              "distance": 14.644824981689453
+            },
+            {
+              "offset_ms": -600,
+              "distance": 14.71468734741211
+            }
+          ],
+          "audio_delay_ms": -200,
+          "expected_offset_change_ms": 200,
+          "measured_offset_change_ms": 200,
+          "offset_change_error_ms": 0,
+          "passed": true
+        },
+        {
+          "offset_frames": -5,
+          "offset_ms": -200,
+          "LSE_D": 6.848631858825684,
+          "LSE_C": 6.486248016357422,
+          "zero_lag_distance": 11.899401664733887,
+          "offset_on_search_boundary": false,
+          "feature_windows": 81,
+          "curve": [
+            {
+              "offset_ms": 600,
+              "distance": 14.331900596618652
+            },
+            {
+              "offset_ms": 560,
+              "distance": 14.522886276245117
+            },
+            {
+              "offset_ms": 520,
+              "distance": 14.731050491333008
+            },
+            {
+              "offset_ms": 480,
+              "distance": 14.869769096374512
+            },
+            {
+              "offset_ms": 440,
+              "distance": 14.629578590393066
+            },
+            {
+              "offset_ms": 400,
+              "distance": 14.147515296936035
+            },
+            {
+              "offset_ms": 360,
+              "distance": 13.706330299377441
+            },
+            {
+              "offset_ms": 320,
+              "distance": 13.609804153442383
+            },
+            {
+              "offset_ms": 280,
+              "distance": 14.007601737976074
+            },
+            {
+              "offset_ms": 240,
+              "distance": 14.156432151794434
+            },
+            {
+              "offset_ms": 200,
+              "distance": 13.759464263916016
+            },
+            {
+              "offset_ms": 160,
+              "distance": 13.005101203918457
+            },
+            {
+              "offset_ms": 120,
+              "distance": 12.298347473144531
+            },
+            {
+              "offset_ms": 80,
+              "distance": 11.896196365356445
+            },
+            {
+              "offset_ms": 40,
+              "distance": 11.83757495880127
+            },
+            {
+              "offset_ms": 0,
+              "distance": 11.899401664733887
+            },
+            {
+              "offset_ms": -40,
+              "distance": 12.209691047668457
+            },
+            {
+              "offset_ms": -80,
+              "distance": 11.78695297241211
+            },
+            {
+              "offset_ms": -120,
+              "distance": 10.295208930969238
+            },
+            {
+              "offset_ms": -160,
+              "distance": 8.03677749633789
+            },
+            {
+              "offset_ms": -200,
+              "distance": 6.848631858825684
+            },
+            {
+              "offset_ms": -240,
+              "distance": 8.519347190856934
+            },
+            {
+              "offset_ms": -280,
+              "distance": 10.764227867126465
+            },
+            {
+              "offset_ms": -320,
+              "distance": 12.216813087463379
+            },
+            {
+              "offset_ms": -360,
+              "distance": 12.789545059204102
+            },
+            {
+              "offset_ms": -400,
+              "distance": 12.975115776062012
+            },
+            {
+              "offset_ms": -440,
+              "distance": 13.334879875183105
+            },
+            {
+              "offset_ms": -480,
+              "distance": 13.78114128112793
+            },
+            {
+              "offset_ms": -520,
+              "distance": 14.322821617126465
+            },
+            {
+              "offset_ms": -560,
+              "distance": 14.955340385437012
+            },
+            {
+              "offset_ms": -600,
+              "distance": 15.390385627746582
+            }
+          ],
+          "audio_delay_ms": 200,
+          "expected_offset_change_ms": -200,
+          "measured_offset_change_ms": -200,
+          "offset_change_error_ms": 0,
+          "passed": true
+        },
+        {
+          "offset_frames": -10,
+          "offset_ms": -400,
+          "LSE_D": 7.47252082824707,
+          "LSE_C": 5.589564323425293,
+          "zero_lag_distance": 13.062085151672363,
+          "offset_on_search_boundary": false,
+          "feature_windows": 81,
+          "curve": [
+            {
+              "offset_ms": 600,
+              "distance": 13.742142677307129
+            },
+            {
+              "offset_ms": 560,
+              "distance": 13.644964218139648
+            },
+            {
+              "offset_ms": 520,
+              "distance": 13.847593307495117
+            },
+            {
+              "offset_ms": 480,
+              "distance": 14.061182975769043
+            },
+            {
+              "offset_ms": 440,
+              "distance": 14.252848625183105
+            },
+            {
+              "offset_ms": 400,
+              "distance": 14.400457382202148
+            },
+            {
+              "offset_ms": 360,
+              "distance": 14.609875679016113
+            },
+            {
+              "offset_ms": 320,
+              "distance": 14.687804222106934
+            },
+            {
+              "offset_ms": 280,
+              "distance": 14.655713081359863
+            },
+            {
+              "offset_ms": 240,
+              "distance": 14.214942932128906
+            },
+            {
+              "offset_ms": 200,
+              "distance": 13.565336227416992
+            },
+            {
+              "offset_ms": 160,
+              "distance": 13.010879516601562
+            },
+            {
+              "offset_ms": 120,
+              "distance": 12.91283893585205
+            },
+            {
+              "offset_ms": 80,
+              "distance": 13.309333801269531
+            },
+            {
+              "offset_ms": 40,
+              "distance": 13.457558631896973
+            },
+            {
+              "offset_ms": 0,
+              "distance": 13.062085151672363
+            },
+            {
+              "offset_ms": -40,
+              "distance": 12.598333358764648
+            },
+            {
+              "offset_ms": -80,
+              "distance": 12.180503845214844
+            },
+            {
+              "offset_ms": -120,
+              "distance": 12.053520202636719
+            },
+            {
+              "offset_ms": -160,
+              "distance": 12.26789379119873
+            },
+            {
+              "offset_ms": -200,
+              "distance": 12.601561546325684
+            },
+            {
+              "offset_ms": -240,
+              "distance": 12.90402889251709
+            },
+            {
+              "offset_ms": -280,
+              "distance": 12.46179485321045
+            },
+            {
+              "offset_ms": -320,
+              "distance": 10.947141647338867
+            },
+            {
+              "offset_ms": -360,
+              "distance": 8.675840377807617
+            },
+            {
+              "offset_ms": -400,
+              "distance": 7.47252082824707
+            },
+            {
+              "offset_ms": -440,
+              "distance": 9.118436813354492
+            },
+            {
+              "offset_ms": -480,
+              "distance": 11.355344772338867
+            },
+            {
+              "offset_ms": -520,
+              "distance": 12.817462921142578
+            },
+            {
+              "offset_ms": -560,
+              "distance": 13.395257949829102
+            },
+            {
+              "offset_ms": -600,
+              "distance": 13.552068710327148
+            }
+          ],
+          "audio_delay_ms": 400,
+          "expected_offset_change_ms": -400,
+          "measured_offset_change_ms": -400,
+          "offset_change_error_ms": 0,
+          "passed": true
+        }
+      ],
+      "all_shift_controls_passed": true,
+      "frozen_visual": {
+        "offset_frames": -1,
+        "offset_ms": -40,
+        "LSE_D": 12.338340759277344,
+        "LSE_C": 0.8613605499267578,
+        "zero_lag_distance": 12.36498737335205,
+        "offset_on_search_boundary": false,
+        "feature_windows": 81,
+        "curve": [
+          {
+            "offset_ms": 600,
+            "distance": 14.528956413269043
+          },
+          {
+            "offset_ms": 560,
+            "distance": 14.385965347290039
+          },
+          {
+            "offset_ms": 520,
+            "distance": 14.238551139831543
+          },
+          {
+            "offset_ms": 480,
+            "distance": 14.099624633789062
+          },
+          {
+            "offset_ms": 440,
+            "distance": 13.9569091796875
+          },
+          {
+            "offset_ms": 400,
+            "distance": 13.81142807006836
+          },
+          {
+            "offset_ms": 360,
+            "distance": 13.661476135253906
+          },
+          {
+            "offset_ms": 320,
+            "distance": 13.515316009521484
+          },
+          {
+            "offset_ms": 280,
+            "distance": 13.373374938964844
+          },
+          {
+            "offset_ms": 240,
+            "distance": 13.228180885314941
+          },
+          {
+            "offset_ms": 200,
+            "distance": 13.085521697998047
+          },
+          {
+            "offset_ms": 160,
+            "distance": 12.940899848937988
+          },
+          {
+            "offset_ms": 120,
+            "distance": 12.797269821166992
+          },
+          {
+            "offset_ms": 80,
+            "distance": 12.655092239379883
+          },
+          {
+            "offset_ms": 40,
+            "distance": 12.509655952453613
+          },
+          {
+            "offset_ms": 0,
+            "distance": 12.36498737335205
+          },
+          {
+            "offset_ms": -40,
+            "distance": 12.338340759277344
+          },
+          {
+            "offset_ms": -80,
+            "distance": 12.345052719116211
+          },
+          {
+            "offset_ms": -120,
+            "distance": 12.399057388305664
+          },
+          {
+            "offset_ms": -160,
+            "distance": 12.49132251739502
+          },
+          {
+            "offset_ms": -200,
+            "distance": 12.640684127807617
+          },
+          {
+            "offset_ms": -240,
+            "distance": 12.78233814239502
+          },
+          {
+            "offset_ms": -280,
+            "distance": 12.917524337768555
+          },
+          {
+            "offset_ms": -320,
+            "distance": 13.051921844482422
+          },
+          {
+            "offset_ms": -360,
+            "distance": 13.14428997039795
+          },
+          {
+            "offset_ms": -400,
+            "distance": 13.199701309204102
+          },
+          {
+            "offset_ms": -440,
+            "distance": 13.213366508483887
+          },
+          {
+            "offset_ms": -480,
+            "distance": 13.213106155395508
+          },
+          {
+            "offset_ms": -520,
+            "distance": 13.21835708618164
+          },
+          {
+            "offset_ms": -560,
+            "distance": 13.242059707641602
+          },
+          {
+            "offset_ms": -600,
+            "distance": 13.301334381103516
+          }
+        ]
+      },
+      "reversed_audio": {
+        "offset_frames": -2,
+        "offset_ms": -80,
+        "LSE_D": 10.107037544250488,
+        "LSE_C": 2.246356964111328,
+        "zero_lag_distance": 10.709847450256348,
+        "offset_on_search_boundary": false,
+        "feature_windows": 81,
+        "curve": [
+          {
+            "offset_ms": 600,
+            "distance": 14.217357635498047
+          },
+          {
+            "offset_ms": 560,
+            "distance": 13.792818069458008
+          },
+          {
+            "offset_ms": 520,
+            "distance": 13.382619857788086
+          },
+          {
+            "offset_ms": 480,
+            "distance": 13.182568550109863
+          },
+          {
+            "offset_ms": 440,
+            "distance": 13.267635345458984
+          },
+          {
+            "offset_ms": 400,
+            "distance": 13.294656753540039
+          },
+          {
+            "offset_ms": 360,
+            "distance": 13.13113021850586
+          },
+          {
+            "offset_ms": 320,
+            "distance": 12.795856475830078
+          },
+          {
+            "offset_ms": 280,
+            "distance": 12.526060104370117
+          },
+          {
+            "offset_ms": 240,
+            "distance": 12.353394508361816
+          },
+          {
+            "offset_ms": 200,
+            "distance": 11.826460838317871
+          },
+          {
+            "offset_ms": 160,
+            "distance": 10.96236801147461
+          },
+          {
+            "offset_ms": 120,
+            "distance": 10.399779319763184
+          },
+          {
+            "offset_ms": 80,
+            "distance": 10.541089057922363
+          },
+          {
+            "offset_ms": 40,
+            "distance": 10.837414741516113
+          },
+          {
+            "offset_ms": 0,
+            "distance": 10.709847450256348
+          },
+          {
+            "offset_ms": -40,
+            "distance": 10.404285430908203
+          },
+          {
+            "offset_ms": -80,
+            "distance": 10.107037544250488
+          },
+          {
+            "offset_ms": -120,
+            "distance": 10.111291885375977
+          },
+          {
+            "offset_ms": -160,
+            "distance": 10.71597957611084
+          },
+          {
+            "offset_ms": -200,
+            "distance": 11.761423110961914
+          },
+          {
+            "offset_ms": -240,
+            "distance": 12.649707794189453
+          },
+          {
+            "offset_ms": -280,
+            "distance": 12.837241172790527
+          },
+          {
+            "offset_ms": -320,
+            "distance": 12.395626068115234
+          },
+          {
+            "offset_ms": -360,
+            "distance": 11.727275848388672
+          },
+          {
+            "offset_ms": -400,
+            "distance": 11.402200698852539
+          },
+          {
+            "offset_ms": -440,
+            "distance": 11.689104080200195
+          },
+          {
+            "offset_ms": -480,
+            "distance": 12.276959419250488
+          },
+          {
+            "offset_ms": -520,
+            "distance": 13.038751602172852
+          },
+          {
+            "offset_ms": -560,
+            "distance": 13.673765182495117
+          },
+          {
+            "offset_ms": -600,
+            "distance": 13.91346549987793
+          }
+        ]
+      }
+    },
+    "T2_reference": {
+      "shift_controls": [
+        {
+          "offset_frames": 10,
+          "offset_ms": 400,
+          "LSE_D": 8.245519638061523,
+          "LSE_C": 5.608844757080078,
+          "zero_lag_distance": 14.100668907165527,
+          "offset_on_search_boundary": false,
+          "feature_windows": 81,
+          "curve": [
+            {
+              "offset_ms": 600,
+              "distance": 12.649961471557617
+            },
+            {
+              "offset_ms": 560,
+              "distance": 12.77563190460205
+            },
+            {
+              "offset_ms": 520,
+              "distance": 12.355613708496094
+            },
+            {
+              "offset_ms": 480,
+              "distance": 11.099228858947754
+            },
+            {
+              "offset_ms": 440,
+              "distance": 9.22366714477539
+            },
+            {
+              "offset_ms": 400,
+              "distance": 8.245519638061523
+            },
+            {
+              "offset_ms": 360,
+              "distance": 9.574332237243652
+            },
+            {
+              "offset_ms": 320,
+              "distance": 11.390686988830566
+            },
+            {
+              "offset_ms": 280,
+              "distance": 12.49477481842041
+            },
+            {
+              "offset_ms": 240,
+              "distance": 12.806915283203125
+            },
+            {
+              "offset_ms": 200,
+              "distance": 12.763175964355469
+            },
+            {
+              "offset_ms": 160,
+              "distance": 12.892744064331055
+            },
+            {
+              "offset_ms": 120,
+              "distance": 13.126505851745605
+            },
+            {
+              "offset_ms": 80,
+              "distance": 13.45108413696289
+            },
+            {
+              "offset_ms": 40,
+              "distance": 13.854364395141602
+            },
+            {
+              "offset_ms": 0,
+              "distance": 14.100668907165527
+            },
+            {
+              "offset_ms": -40,
+              "distance": 14.252017974853516
+            },
+            {
+              "offset_ms": -80,
+              "distance": 14.112130165100098
+            },
+            {
+              "offset_ms": -120,
+              "distance": 13.855710983276367
+            },
+            {
+              "offset_ms": -160,
+              "distance": 13.78480052947998
+            },
+            {
+              "offset_ms": -200,
+              "distance": 14.003921508789062
+            },
+            {
+              "offset_ms": -240,
+              "distance": 14.297045707702637
+            },
+            {
+              "offset_ms": -280,
+              "distance": 14.458511352539062
+            },
+            {
+              "offset_ms": -320,
+              "distance": 14.421802520751953
+            },
+            {
+              "offset_ms": -360,
+              "distance": 14.384196281433105
+            },
+            {
+              "offset_ms": -400,
+              "distance": 14.49489688873291
+            },
+            {
+              "offset_ms": -440,
+              "distance": 14.653024673461914
+            },
+            {
+              "offset_ms": -480,
+              "distance": 14.695030212402344
+            },
+            {
+              "offset_ms": -520,
+              "distance": 14.524297714233398
+            },
+            {
+              "offset_ms": -560,
+              "distance": 14.251062393188477
+            },
+            {
+              "offset_ms": -600,
+              "distance": 14.466723442077637
+            }
+          ],
+          "audio_delay_ms": -400,
+          "expected_offset_change_ms": 400,
+          "measured_offset_change_ms": 400,
+          "offset_change_error_ms": 0,
+          "passed": true
+        },
+        {
+          "offset_frames": 5,
+          "offset_ms": 200,
+          "LSE_D": 7.638906955718994,
+          "LSE_C": 5.436770915985107,
+          "zero_lag_distance": 12.215141296386719,
+          "offset_on_search_boundary": false,
+          "feature_windows": 81,
+          "curve": [
+            {
+              "offset_ms": 600,
+              "distance": 14.079290390014648
+            },
+            {
+              "offset_ms": 560,
+              "distance": 13.488452911376953
+            },
+            {
+              "offset_ms": 520,
+              "distance": 12.810918807983398
+            },
+            {
+              "offset_ms": 480,
+              "distance": 12.464090347290039
+            },
+            {
+              "offset_ms": 440,
+              "distance": 12.417770385742188
+            },
+            {
+              "offset_ms": 400,
+              "distance": 12.496931076049805
+            },
+            {
+              "offset_ms": 360,
+              "distance": 12.546555519104004
+            },
+            {
+              "offset_ms": 320,
+              "distance": 11.97890567779541
+            },
+            {
+              "offset_ms": 280,
+              "distance": 10.563995361328125
+            },
+            {
+              "offset_ms": 240,
+              "distance": 8.611307144165039
+            },
+            {
+              "offset_ms": 200,
+              "distance": 7.638906955718994
+            },
+            {
+              "offset_ms": 160,
+              "distance": 8.986892700195312
+            },
+            {
+              "offset_ms": 120,
+              "distance": 10.813026428222656
+            },
+            {
+              "offset_ms": 80,
+              "distance": 11.931879997253418
+            },
+            {
+              "offset_ms": 40,
+              "distance": 12.2537260055542
+            },
+            {
+              "offset_ms": 0,
+              "distance": 12.215141296386719
+            },
+            {
+              "offset_ms": -40,
+              "distance": 12.577735900878906
+            },
+            {
+              "offset_ms": -80,
+              "distance": 13.075677871704102
+            },
+            {
+              "offset_ms": -120,
+              "distance": 13.65920352935791
+            },
+            {
+              "offset_ms": -160,
+              "distance": 14.284366607666016
+            },
+            {
+              "offset_ms": -200,
+              "distance": 14.717015266418457
+            },
+            {
+              "offset_ms": -240,
+              "distance": 14.869789123535156
+            },
+            {
+              "offset_ms": -280,
+              "distance": 14.732990264892578
+            },
+            {
+              "offset_ms": -320,
+              "distance": 14.475858688354492
+            },
+            {
+              "offset_ms": -360,
+              "distance": 14.40577220916748
+            },
+            {
+              "offset_ms": -400,
+              "distance": 14.624870300292969
+            },
+            {
+              "offset_ms": -440,
+              "distance": 14.916114807128906
+            },
+            {
+              "offset_ms": -480,
+              "distance": 15.079976081848145
+            },
+            {
+              "offset_ms": -520,
+              "distance": 15.042855262756348
+            },
+            {
+              "offset_ms": -560,
+              "distance": 14.994853019714355
+            },
+            {
+              "offset_ms": -600,
+              "distance": 15.093430519104004
+            }
+          ],
+          "audio_delay_ms": -200,
+          "expected_offset_change_ms": 200,
+          "measured_offset_change_ms": 200,
+          "offset_change_error_ms": 0,
+          "passed": true
+        },
+        {
+          "offset_frames": -5,
+          "offset_ms": -200,
+          "LSE_D": 8.027544975280762,
+          "LSE_C": 5.820407867431641,
+          "zero_lag_distance": 12.111753463745117,
+          "offset_on_search_boundary": false,
+          "feature_windows": 81,
+          "curve": [
+            {
+              "offset_ms": 600,
+              "distance": 14.862963676452637
+            },
+            {
+              "offset_ms": 560,
+              "distance": 15.008489608764648
+            },
+            {
+              "offset_ms": 520,
+              "distance": 15.204327583312988
+            },
+            {
+              "offset_ms": 480,
+              "distance": 15.409270286560059
+            },
+            {
+              "offset_ms": 440,
+              "distance": 15.173828125
+            },
+            {
+              "offset_ms": 400,
+              "distance": 14.635419845581055
+            },
+            {
+              "offset_ms": 360,
+              "distance": 14.117106437683105
+            },
+            {
+              "offset_ms": 320,
+              "distance": 14.057029724121094
+            },
+            {
+              "offset_ms": 280,
+              "distance": 14.297874450683594
+            },
+            {
+              "offset_ms": 240,
+              "distance": 14.366984367370605
+            },
+            {
+              "offset_ms": 200,
+              "distance": 14.082347869873047
+            },
+            {
+              "offset_ms": 160,
+              "distance": 13.476696968078613
+            },
+            {
+              "offset_ms": 120,
+              "distance": 12.74219036102295
+            },
+            {
+              "offset_ms": 80,
+              "distance": 12.273704528808594
+            },
+            {
+              "offset_ms": 40,
+              "distance": 12.11207389831543
+            },
+            {
+              "offset_ms": 0,
+              "distance": 12.111753463745117
+            },
+            {
+              "offset_ms": -40,
+              "distance": 12.370133399963379
+            },
+            {
+              "offset_ms": -80,
+              "distance": 12.005602836608887
+            },
+            {
+              "offset_ms": -120,
+              "distance": 10.739830017089844
+            },
+            {
+              "offset_ms": -160,
+              "distance": 8.89913558959961
+            },
+            {
+              "offset_ms": -200,
+              "distance": 8.027544975280762
+            },
+            {
+              "offset_ms": -240,
+              "distance": 9.478436470031738
+            },
+            {
+              "offset_ms": -280,
+              "distance": 11.42644214630127
+            },
+            {
+              "offset_ms": -320,
+              "distance": 12.732260704040527
+            },
+            {
+              "offset_ms": -360,
+              "distance": 13.29482650756836
+            },
+            {
+              "offset_ms": -400,
+              "distance": 13.491539001464844
+            },
+            {
+              "offset_ms": -440,
+              "distance": 13.847952842712402
+            },
+            {
+              "offset_ms": -480,
+              "distance": 14.352985382080078
+            },
+            {
+              "offset_ms": -520,
+              "distance": 14.934112548828125
+            },
+            {
+              "offset_ms": -560,
+              "distance": 15.527241706848145
+            },
+            {
+              "offset_ms": -600,
+              "distance": 15.907896041870117
+            }
+          ],
+          "audio_delay_ms": 200,
+          "expected_offset_change_ms": -200,
+          "measured_offset_change_ms": -200,
+          "offset_change_error_ms": 0,
+          "passed": true
+        },
+        {
+          "offset_frames": -10,
+          "offset_ms": -400,
+          "LSE_D": 8.733281135559082,
+          "LSE_C": 4.7082109451293945,
+          "zero_lag_distance": 13.418669700622559,
+          "offset_on_search_boundary": false,
+          "feature_windows": 81,
+          "curve": [
+            {
+              "offset_ms": 600,
+              "distance": 13.862232208251953
+            },
+            {
+              "offset_ms": 560,
+              "distance": 13.703940391540527
+            },
+            {
+              "offset_ms": 520,
+              "distance": 13.841285705566406
+            },
+            {
+              "offset_ms": 480,
+              "distance": 14.163426399230957
+            },
+            {
+              "offset_ms": 440,
+              "distance": 14.500997543334961
+            },
+            {
+              "offset_ms": 400,
+              "distance": 14.657095909118652
+            },
+            {
+              "offset_ms": 360,
+              "distance": 14.805458068847656
+            },
+            {
+              "offset_ms": 320,
+              "distance": 14.950127601623535
+            },
+            {
+              "offset_ms": 280,
+              "distance": 15.031610488891602
+            },
+            {
+              "offset_ms": 240,
+              "distance": 14.657167434692383
+            },
+            {
+              "offset_ms": 200,
+              "distance": 14.005521774291992
+            },
+            {
+              "offset_ms": 160,
+              "distance": 13.441492080688477
+            },
+            {
+              "offset_ms": 120,
+              "distance": 13.378721237182617
+            },
+            {
+              "offset_ms": 80,
+              "distance": 13.623517036437988
+            },
+            {
+              "offset_ms": 40,
+              "distance": 13.699715614318848
+            },
+            {
+              "offset_ms": 0,
+              "distance": 13.418669700622559
+            },
+            {
+              "offset_ms": -40,
+              "distance": 13.09179401397705
+            },
+            {
+              "offset_ms": -80,
+              "distance": 12.627742767333984
+            },
+            {
+              "offset_ms": -120,
+              "distance": 12.420976638793945
+            },
+            {
+              "offset_ms": -160,
+              "distance": 12.529003143310547
+            },
+            {
+              "offset_ms": -200,
+              "distance": 12.804082870483398
+            },
+            {
+              "offset_ms": -240,
+              "distance": 13.063512802124023
+            },
+            {
+              "offset_ms": -280,
+              "distance": 12.701969146728516
+            },
+            {
+              "offset_ms": -320,
+              "distance": 11.445735931396484
+            },
+            {
+              "offset_ms": -360,
+              "distance": 9.6090669631958
+            },
+            {
+              "offset_ms": -400,
+              "distance": 8.733281135559082
+            },
+            {
+              "offset_ms": -440,
+              "distance": 10.18435287475586
+            },
+            {
+              "offset_ms": -480,
+              "distance": 12.13431167602539
+            },
+            {
+              "offset_ms": -520,
+              "distance": 13.420631408691406
+            },
+            {
+              "offset_ms": -560,
+              "distance": 13.954864501953125
+            },
+            {
+              "offset_ms": -600,
+              "distance": 14.102816581726074
+            }
+          ],
+          "audio_delay_ms": 400,
+          "expected_offset_change_ms": -400,
+          "measured_offset_change_ms": -400,
+          "offset_change_error_ms": 0,
+          "passed": true
+        }
+      ],
+      "all_shift_controls_passed": true,
+      "frozen_visual": {
+        "offset_frames": -1,
+        "offset_ms": -40,
+        "LSE_D": 14.095807075500488,
+        "LSE_C": 0.888178825378418,
+        "zero_lag_distance": 14.123849868774414,
+        "offset_on_search_boundary": false,
+        "feature_windows": 81,
+        "curve": [
+          {
+            "offset_ms": 600,
+            "distance": 16.296266555786133
+          },
+          {
+            "offset_ms": 560,
+            "distance": 16.15081787109375
+          },
+          {
+            "offset_ms": 520,
+            "distance": 16.00113868713379
+          },
+          {
+            "offset_ms": 480,
+            "distance": 15.860084533691406
+          },
+          {
+            "offset_ms": 440,
+            "distance": 15.713210105895996
+          },
+          {
+            "offset_ms": 400,
+            "distance": 15.56531810760498
+          },
+          {
+            "offset_ms": 360,
+            "distance": 15.416933059692383
+          },
+          {
+            "offset_ms": 320,
+            "distance": 15.270792961120605
+          },
+          {
+            "offset_ms": 280,
+            "distance": 15.129007339477539
+          },
+          {
+            "offset_ms": 240,
+            "distance": 14.983985900878906
+          },
+          {
+            "offset_ms": 200,
+            "distance": 14.842215538024902
+          },
+          {
+            "offset_ms": 160,
+            "distance": 14.700267791748047
+          },
+          {
+            "offset_ms": 120,
+            "distance": 14.555242538452148
+          },
+          {
+            "offset_ms": 80,
+            "distance": 14.41306209564209
+          },
+          {
+            "offset_ms": 40,
+            "distance": 14.267356872558594
+          },
+          {
+            "offset_ms": 0,
+            "distance": 14.123849868774414
+          },
+          {
+            "offset_ms": -40,
+            "distance": 14.095807075500488
+          },
+          {
+            "offset_ms": -80,
+            "distance": 14.108481407165527
+          },
+          {
+            "offset_ms": -120,
+            "distance": 14.173930168151855
+          },
+          {
+            "offset_ms": -160,
+            "distance": 14.283467292785645
+          },
+          {
+            "offset_ms": -200,
+            "distance": 14.430870056152344
+          },
+          {
+            "offset_ms": -240,
+            "distance": 14.570624351501465
+          },
+          {
+            "offset_ms": -280,
+            "distance": 14.706896781921387
+          },
+          {
+            "offset_ms": -320,
+            "distance": 14.843557357788086
+          },
+          {
+            "offset_ms": -360,
+            "distance": 14.939422607421875
+          },
+          {
+            "offset_ms": -400,
+            "distance": 14.998984336853027
+          },
+          {
+            "offset_ms": -440,
+            "distance": 15.011210441589355
+          },
+          {
+            "offset_ms": -480,
+            "distance": 15.008445739746094
+          },
+          {
+            "offset_ms": -520,
+            "distance": 15.008461952209473
+          },
+          {
+            "offset_ms": -560,
+            "distance": 15.032325744628906
+          },
+          {
+            "offset_ms": -600,
+            "distance": 15.094502449035645
+          }
+        ]
+      },
+      "reversed_audio": {
+        "offset_frames": -3,
+        "offset_ms": -120,
+        "LSE_D": 10.733386039733887,
+        "LSE_C": 2.019803047180176,
+        "zero_lag_distance": 11.46586799621582,
+        "offset_on_search_boundary": false,
+        "feature_windows": 81,
+        "curve": [
+          {
+            "offset_ms": 600,
+            "distance": 14.448311805725098
+          },
+          {
+            "offset_ms": 560,
+            "distance": 13.957355499267578
+          },
+          {
+            "offset_ms": 520,
+            "distance": 13.581537246704102
+          },
+          {
+            "offset_ms": 480,
+            "distance": 13.427879333496094
+          },
+          {
+            "offset_ms": 440,
+            "distance": 13.384477615356445
+          },
+          {
+            "offset_ms": 400,
+            "distance": 13.263687133789062
+          },
+          {
+            "offset_ms": 360,
+            "distance": 13.026528358459473
+          },
+          {
+            "offset_ms": 320,
+            "distance": 12.76917552947998
+          },
+          {
+            "offset_ms": 280,
+            "distance": 12.745317459106445
+          },
+          {
+            "offset_ms": 240,
+            "distance": 12.766120910644531
+          },
+          {
+            "offset_ms": 200,
+            "distance": 12.429956436157227
+          },
+          {
+            "offset_ms": 160,
+            "distance": 11.704428672790527
+          },
+          {
+            "offset_ms": 120,
+            "distance": 11.146309852600098
+          },
+          {
+            "offset_ms": 80,
+            "distance": 11.200626373291016
+          },
+          {
+            "offset_ms": 40,
+            "distance": 11.460601806640625
+          },
+          {
+            "offset_ms": 0,
+            "distance": 11.46586799621582
+          },
+          {
+            "offset_ms": -40,
+            "distance": 11.242391586303711
+          },
+          {
+            "offset_ms": -80,
+            "distance": 10.83447551727295
+          },
+          {
+            "offset_ms": -120,
+            "distance": 10.733386039733887
+          },
+          {
+            "offset_ms": -160,
+            "distance": 11.265408515930176
+          },
+          {
+            "offset_ms": -200,
+            "distance": 12.104042053222656
+          },
+          {
+            "offset_ms": -240,
+            "distance": 12.861627578735352
+          },
+          {
+            "offset_ms": -280,
+            "distance": 13.056921005249023
+          },
+          {
+            "offset_ms": -320,
+            "distance": 12.753189086914062
+          },
+          {
+            "offset_ms": -360,
+            "distance": 12.207507133483887
+          },
+          {
+            "offset_ms": -400,
+            "distance": 11.87488079071045
+          },
+          {
+            "offset_ms": -440,
+            "distance": 12.158744812011719
+          },
+          {
+            "offset_ms": -480,
+            "distance": 12.872933387756348
+          },
+          {
+            "offset_ms": -520,
+            "distance": 13.681118965148926
+          },
+          {
+            "offset_ms": -560,
+            "distance": 14.276780128479004
+          },
+          {
+            "offset_ms": -600,
+            "distance": 14.463318824768066
+          }
+        ]
+      }
+    }
+  },
+  "interpretation": {
+    "T1": {
+      "reference_shift_controls_passed": true,
+      "offset_difference_from_reference_ms": 0,
+      "LSE_D_difference_from_reference": 1.097041130065918,
+      "LSE_C_difference_from_reference": -1.4406452178955078,
+      "status": "reference_calibrated_raw_measurement",
+      "no_calibrated_pass_threshold": true
+    },
+    "T2": {
+      "reference_shift_controls_passed": true,
+      "offset_difference_from_reference_ms": 0,
+      "LSE_D_difference_from_reference": 0.49930524826049805,
+      "LSE_C_difference_from_reference": -1.1052308082580566,
+      "status": "reference_calibrated_raw_measurement",
+      "no_calibrated_pass_threshold": true
+    }
+  },
+  "submitted_videos_unchanged": true
+}

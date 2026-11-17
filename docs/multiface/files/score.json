@@ -1,0 +1,81 @@
+{
+  "label": "post_hoc_uncalibrated_linear_composite_v1",
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "utc": "2026-11-17T15:34:49.312925+00:00",
+  "weights": {
+    "PSNR": 15,
+    "SSIM": 15,
+    "LPIPS": 15,
+    "JOD": 15,
+    "AV_sync": 40
+  },
+  "normalization": {
+    "PSNR": "clip(PSNR_dB / 40, 0, 1); 40dB is an uncalibrated chosen full-score anchor",
+    "SSIM": "clip(SSIM, 0, 1)",
+    "LPIPS": "clip(1-LPIPS_alex, 0, 1)",
+    "JOD": "clip(JOD / 10, 0, 1)",
+    "AV_sync": "clip((D0_frozen - D0_submitted)/(D0_frozen - D0_reference),0,1), with D0=SyncNet zero-lag distance"
+  },
+  "aggregation": "Normalize and weight per view, then equally average T1 and T2; round only for display",
+  "visual_region": "entire frame, 668x1024, all104frames,30fps; not supplementary face-region metrics",
+  "limitations": [
+    "All numerical normalization choices are post-hoc, uncalibrated, and not a published standard or an accuracy percentage.",
+    "PSNR 40dB anchor and linear 1-LPIPS/JOD mappings are conventions, not expert-validated quality scales.",
+    "AV normalization uses reference100 and frozen-mouth0; no claim of phoneme-level accuracy."
+  ],
+  "input_sha256": {
+    "visual_result": "869a55a9026b5d51a086166d0dcf8a158b1e1804f90a6341e58b3100b5aa6bc8",
+    "av_result": "68f4e9e7ed01f956a87461219d17e2abc4bfb95eb53f8c9ed726eca593948a89"
+  },
+  "views": {
+    "T1": {
+      "normalized": {
+        "PSNR": 0.49763075532434,
+        "SSIM": 0.5922260475431577,
+        "LPIPS": 0.6957792525108044,
+        "JOD": 0.36870226860046384,
+        "AV_sync": 0.8234264416651407
+      },
+      "weighted": {
+        "PSNR": 7.4644613298651,
+        "SSIM": 8.883390713147366,
+        "LPIPS": 10.436688787662066,
+        "JOD": 5.530534029006958,
+        "AV_sync": 32.937057666605625
+      },
+      "visual_subtotal": 32.31507485968149,
+      "AV_subtotal": 32.937057666605625,
+      "total": 65.25213252628711
+    },
+    "T2": {
+      "normalized": {
+        "PSNR": 0.5136207819639617,
+        "SSIM": 0.6110570167323325,
+        "LPIPS": 0.6717406932551127,
+        "JOD": 0.36905612945556643,
+        "AV_sync": 0.92636684901751
+      },
+      "weighted": {
+        "PSNR": 7.704311729459425,
+        "SSIM": 9.165855250984988,
+        "LPIPS": 10.076110398826689,
+        "JOD": 5.535841941833496,
+        "AV_sync": 37.0546739607004
+      },
+      "visual_subtotal": 32.4821193211046,
+      "AV_subtotal": 37.0546739607004,
+      "total": 69.53679328180499
+    }
+  },
+  "scores": {
+    "PSNR": 7.584386529662263,
+    "SSIM": 9.024622982066177,
+    "LPIPS": 10.256399593244378,
+    "JOD": 5.533187985420227,
+    "AV_sync": 34.99586581365301
+  },
+  "visual_subtotal": 32.39859709039305,
+  "AV_subtotal": 34.99586581365301,
+  "total": 67.39446290404605
+}

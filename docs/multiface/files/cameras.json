@@ -1,0 +1,2876 @@
+{
+  "projection": "pixel_homogeneous = K @ world_to_camera @ [X,Y,Z,1]",
+  "note": "Calibration matrices follow the upstream loader. Do not transpose, crop or rescale without updating K.",
+  "cameras": [
+    {
+      "view_id": "I1",
+      "role": "input",
+      "width": 1334,
+      "height": 2048,
+      "fps": 30,
+      "frame_count": 104,
+      "K": [
+        [
+          7694.736,
+          0.0,
+          840.94543
+        ],
+        [
+          0.0,
+          7694.88,
+          980.1076
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "distortion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_to_camera": [
+        [
+          0.20813718,
+          0.06840672,
+          0.9757046,
+          -1029.0814
+        ],
+        [
+          0.1099602,
+          0.9895908,
+          -0.09283698,
+          95.697716
+        ],
+        [
+          -0.971899,
+          0.1266115,
+          0.19844863,
+          891.0712
+        ]
+      ],
+      "frames": [
+        {
+          "source_frame_id": "040434",
+          "time_s": 0.0,
+          "file": "040434.png"
+        },
+        {
+          "source_frame_id": "040437",
+          "time_s": 0.03333333333333333,
+          "file": "040437.png"
+        },
+        {
+          "source_frame_id": "040440",
+          "time_s": 0.06666666666666667,
+          "file": "040440.png"
+        },
+        {
+          "source_frame_id": "040443",
+          "time_s": 0.1,
+          "file": "040443.png"
+        },
+        {
+          "source_frame_id": "040446",
+          "time_s": 0.13333333333333333,
+          "file": "040446.png"
+        },
+        {
+          "source_frame_id": "040449",
+          "time_s": 0.16666666666666666,
+          "file": "040449.png"
+        },
+        {
+          "source_frame_id": "040452",
+          "time_s": 0.2,
+          "file": "040452.png"
+        },
+        {
+          "source_frame_id": "040455",
+          "time_s": 0.23333333333333334,
+          "file": "040455.png"
+        },
+        {
+          "source_frame_id": "040458",
+          "time_s": 0.26666666666666666,
+          "file": "040458.png"
+        },
+        {
+          "source_frame_id": "040461",
+          "time_s": 0.3,
+          "file": "040461.png"
+        },
+        {
+          "source_frame_id": "040464",
+          "time_s": 0.3333333333333333,
+          "file": "040464.png"
+        },
+        {
+          "source_frame_id": "040467",
+          "time_s": 0.36666666666666664,
+          "file": "040467.png"
+        },
+        {
+          "source_frame_id": "040470",
+          "time_s": 0.4,
+          "file": "040470.png"
+        },
+        {
+          "source_frame_id": "040473",
+          "time_s": 0.43333333333333335,
+          "file": "040473.png"
+        },
+        {
+          "source_frame_id": "040476",
+          "time_s": 0.4666666666666667,
+          "file": "040476.png"
+        },
+        {
+          "source_frame_id": "040479",
+          "time_s": 0.5,
+          "file": "040479.png"
+        },
+        {
+          "source_frame_id": "040482",
+          "time_s": 0.5333333333333333,
+          "file": "040482.png"
+        },
+        {
+          "source_frame_id": "040485",
+          "time_s": 0.5666666666666667,
+          "file": "040485.png"
+        },
+        {
+          "source_frame_id": "040488",
+          "time_s": 0.6,
+          "file": "040488.png"
+        },
+        {
+          "source_frame_id": "040491",
+          "time_s": 0.6333333333333333,
+          "file": "040491.png"
+        },
+        {
+          "source_frame_id": "040494",
+          "time_s": 0.6666666666666666,
+          "file": "040494.png"
+        },
+        {
+          "source_frame_id": "040497",
+          "time_s": 0.7,
+          "file": "040497.png"
+        },
+        {
+          "source_frame_id": "040500",
+          "time_s": 0.7333333333333333,
+          "file": "040500.png"
+        },
+        {
+          "source_frame_id": "040503",
+          "time_s": 0.7666666666666667,
+          "file": "040503.png"
+        },
+        {
+          "source_frame_id": "040506",
+          "time_s": 0.8,
+          "file": "040506.png"
+        },
+        {
+          "source_frame_id": "040509",
+          "time_s": 0.8333333333333334,
+          "file": "040509.png"
+        },
+        {
+          "source_frame_id": "040512",
+          "time_s": 0.8666666666666667,
+          "file": "040512.png"
+        },
+        {
+          "source_frame_id": "040515",
+          "time_s": 0.9,
+          "file": "040515.png"
+        },
+        {
+          "source_frame_id": "040518",
+          "time_s": 0.9333333333333333,
+          "file": "040518.png"
+        },
+        {
+          "source_frame_id": "040521",
+          "time_s": 0.9666666666666667,
+          "file": "040521.png"
+        },
+        {
+          "source_frame_id": "040524",
+          "time_s": 1.0,
+          "file": "040524.png"
+        },
+        {
+          "source_frame_id": "040527",
+          "time_s": 1.0333333333333334,
+          "file": "040527.png"
+        },
+        {
+          "source_frame_id": "040530",
+          "time_s": 1.0666666666666667,
+          "file": "040530.png"
+        },
+        {
+          "source_frame_id": "040533",
+          "time_s": 1.1,
+          "file": "040533.png"
+        },
+        {
+          "source_frame_id": "040536",
+          "time_s": 1.1333333333333333,
+          "file": "040536.png"
+        },
+        {
+          "source_frame_id": "040539",
+          "time_s": 1.1666666666666667,
+          "file": "040539.png"
+        },
+        {
+          "source_frame_id": "040542",
+          "time_s": 1.2,
+          "file": "040542.png"
+        },
+        {
+          "source_frame_id": "040545",
+          "time_s": 1.2333333333333334,
+          "file": "040545.png"
+        },
+        {
+          "source_frame_id": "040548",
+          "time_s": 1.2666666666666666,
+          "file": "040548.png"
+        },
+        {
+          "source_frame_id": "040551",
+          "time_s": 1.3,
+          "file": "040551.png"
+        },
+        {
+          "source_frame_id": "040554",
+          "time_s": 1.3333333333333333,
+          "file": "040554.png"
+        },
+        {
+          "source_frame_id": "040557",
+          "time_s": 1.3666666666666667,
+          "file": "040557.png"
+        },
+        {
+          "source_frame_id": "040560",
+          "time_s": 1.4,
+          "file": "040560.png"
+        },
+        {
+          "source_frame_id": "040563",
+          "time_s": 1.4333333333333333,
+          "file": "040563.png"
+        },
+        {
+          "source_frame_id": "040566",
+          "time_s": 1.4666666666666666,
+          "file": "040566.png"
+        },
+        {
+          "source_frame_id": "040569",
+          "time_s": 1.5,
+          "file": "040569.png"
+        },
+        {
+          "source_frame_id": "040572",
+          "time_s": 1.5333333333333334,
+          "file": "040572.png"
+        },
+        {
+          "source_frame_id": "040575",
+          "time_s": 1.5666666666666667,
+          "file": "040575.png"
+        },
+        {
+          "source_frame_id": "040578",
+          "time_s": 1.6,
+          "file": "040578.png"
+        },
+        {
+          "source_frame_id": "040581",
+          "time_s": 1.6333333333333333,
+          "file": "040581.png"
+        },
+        {
+          "source_frame_id": "040584",
+          "time_s": 1.6666666666666667,
+          "file": "040584.png"
+        },
+        {
+          "source_frame_id": "040587",
+          "time_s": 1.7,
+          "file": "040587.png"
+        },
+        {
+          "source_frame_id": "040590",
+          "time_s": 1.7333333333333334,
+          "file": "040590.png"
+        },
+        {
+          "source_frame_id": "040593",
+          "time_s": 1.7666666666666666,
+          "file": "040593.png"
+        },
+        {
+          "source_frame_id": "040596",
+          "time_s": 1.8,
+          "file": "040596.png"
+        },
+        {
+          "source_frame_id": "040599",
+          "time_s": 1.8333333333333333,
+          "file": "040599.png"
+        },
+        {
+          "source_frame_id": "040602",
+          "time_s": 1.8666666666666667,
+          "file": "040602.png"
+        },
+        {
+          "source_frame_id": "040605",
+          "time_s": 1.9,
+          "file": "040605.png"
+        },
+        {
+          "source_frame_id": "040608",
+          "time_s": 1.9333333333333333,
+          "file": "040608.png"
+        },
+        {
+          "source_frame_id": "040611",
+          "time_s": 1.9666666666666666,
+          "file": "040611.png"
+        },
+        {
+          "source_frame_id": "040614",
+          "time_s": 2.0,
+          "file": "040614.png"
+        },
+        {
+          "source_frame_id": "040617",
+          "time_s": 2.033333333333333,
+          "file": "040617.png"
+        },
+        {
+          "source_frame_id": "040620",
+          "time_s": 2.066666666666667,
+          "file": "040620.png"
+        },
+        {
+          "source_frame_id": "040623",
+          "time_s": 2.1,
+          "file": "040623.png"
+        },
+        {
+          "source_frame_id": "040626",
+          "time_s": 2.1333333333333333,
+          "file": "040626.png"
+        },
+        {
+          "source_frame_id": "040629",
+          "time_s": 2.1666666666666665,
+          "file": "040629.png"
+        },
+        {
+          "source_frame_id": "040632",
+          "time_s": 2.2,
+          "file": "040632.png"
+        },
+        {
+          "source_frame_id": "040635",
+          "time_s": 2.2333333333333334,
+          "file": "040635.png"
+        },
+        {
+          "source_frame_id": "040638",
+          "time_s": 2.2666666666666666,
+          "file": "040638.png"
+        },
+        {
+          "source_frame_id": "040641",
+          "time_s": 2.3,
+          "file": "040641.png"
+        },
+        {
+          "source_frame_id": "040644",
+          "time_s": 2.3333333333333335,
+          "file": "040644.png"
+        },
+        {
+          "source_frame_id": "040647",
+          "time_s": 2.3666666666666667,
+          "file": "040647.png"
+        },
+        {
+          "source_frame_id": "040650",
+          "time_s": 2.4,
+          "file": "040650.png"
+        },
+        {
+          "source_frame_id": "040653",
+          "time_s": 2.433333333333333,
+          "file": "040653.png"
+        },
+        {
+          "source_frame_id": "040656",
+          "time_s": 2.466666666666667,
+          "file": "040656.png"
+        },
+        {
+          "source_frame_id": "040659",
+          "time_s": 2.5,
+          "file": "040659.png"
+        },
+        {
+          "source_frame_id": "040662",
+          "time_s": 2.533333333333333,
+          "file": "040662.png"
+        },
+        {
+          "source_frame_id": "040665",
+          "time_s": 2.566666666666667,
+          "file": "040665.png"
+        },
+        {
+          "source_frame_id": "040668",
+          "time_s": 2.6,
+          "file": "040668.png"
+        },
+        {
+          "source_frame_id": "040671",
+          "time_s": 2.6333333333333333,
+          "file": "040671.png"
+        },
+        {
+          "source_frame_id": "040674",
+          "time_s": 2.6666666666666665,
+          "file": "040674.png"
+        },
+        {
+          "source_frame_id": "040677",
+          "time_s": 2.7,
+          "file": "040677.png"
+        },
+        {
+          "source_frame_id": "040680",
+          "time_s": 2.7333333333333334,
+          "file": "040680.png"
+        },
+        {
+          "source_frame_id": "040683",
+          "time_s": 2.7666666666666666,
+          "file": "040683.png"
+        },
+        {
+          "source_frame_id": "040686",
+          "time_s": 2.8,
+          "file": "040686.png"
+        },
+        {
+          "source_frame_id": "040689",
+          "time_s": 2.8333333333333335,
+          "file": "040689.png"
+        },
+        {
+          "source_frame_id": "040692",
+          "time_s": 2.8666666666666667,
+          "file": "040692.png"
+        },
+        {
+          "source_frame_id": "040695",
+          "time_s": 2.9,
+          "file": "040695.png"
+        },
+        {
+          "source_frame_id": "040698",
+          "time_s": 2.933333333333333,
+          "file": "040698.png"
+        },
+        {
+          "source_frame_id": "040701",
+          "time_s": 2.966666666666667,
+          "file": "040701.png"
+        },
+        {
+          "source_frame_id": "040704",
+          "time_s": 3.0,
+          "file": "040704.png"
+        },
+        {
+          "source_frame_id": "040707",
+          "time_s": 3.033333333333333,
+          "file": "040707.png"
+        },
+        {
+          "source_frame_id": "040710",
+          "time_s": 3.066666666666667,
+          "file": "040710.png"
+        },
+        {
+          "source_frame_id": "040713",
+          "time_s": 3.1,
+          "file": "040713.png"
+        },
+        {
+          "source_frame_id": "040716",
+          "time_s": 3.1333333333333333,
+          "file": "040716.png"
+        },
+        {
+          "source_frame_id": "040719",
+          "time_s": 3.1666666666666665,
+          "file": "040719.png"
+        },
+        {
+          "source_frame_id": "040722",
+          "time_s": 3.2,
+          "file": "040722.png"
+        },
+        {
+          "source_frame_id": "040725",
+          "time_s": 3.2333333333333334,
+          "file": "040725.png"
+        },
+        {
+          "source_frame_id": "040728",
+          "time_s": 3.2666666666666666,
+          "file": "040728.png"
+        },
+        {
+          "source_frame_id": "040731",
+          "time_s": 3.3,
+          "file": "040731.png"
+        },
+        {
+          "source_frame_id": "040734",
+          "time_s": 3.3333333333333335,
+          "file": "040734.png"
+        },
+        {
+          "source_frame_id": "040737",
+          "time_s": 3.3666666666666667,
+          "file": "040737.png"
+        },
+        {
+          "source_frame_id": "040740",
+          "time_s": 3.4,
+          "file": "040740.png"
+        },
+        {
+          "source_frame_id": "040743",
+          "time_s": 3.433333333333333,
+          "file": "040743.png"
+        }
+      ]
+    },
+    {
+      "view_id": "I2",
+      "role": "input",
+      "width": 1334,
+      "height": 2048,
+      "fps": 30,
+      "frame_count": 104,
+      "K": [
+        [
+          7736.1045,
+          0.0,
+          622.39465
+        ],
+        [
+          0.0,
+          7735.2666,
+          943.4244
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "distortion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_to_camera": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "frames": [
+        {
+          "source_frame_id": "040434",
+          "time_s": 0.0,
+          "file": "040434.png"
+        },
+        {
+          "source_frame_id": "040437",
+          "time_s": 0.03333333333333333,
+          "file": "040437.png"
+        },
+        {
+          "source_frame_id": "040440",
+          "time_s": 0.06666666666666667,
+          "file": "040440.png"
+        },
+        {
+          "source_frame_id": "040443",
+          "time_s": 0.1,
+          "file": "040443.png"
+        },
+        {
+          "source_frame_id": "040446",
+          "time_s": 0.13333333333333333,
+          "file": "040446.png"
+        },
+        {
+          "source_frame_id": "040449",
+          "time_s": 0.16666666666666666,
+          "file": "040449.png"
+        },
+        {
+          "source_frame_id": "040452",
+          "time_s": 0.2,
+          "file": "040452.png"
+        },
+        {
+          "source_frame_id": "040455",
+          "time_s": 0.23333333333333334,
+          "file": "040455.png"
+        },
+        {
+          "source_frame_id": "040458",
+          "time_s": 0.26666666666666666,
+          "file": "040458.png"
+        },
+        {
+          "source_frame_id": "040461",
+          "time_s": 0.3,
+          "file": "040461.png"
+        },
+        {
+          "source_frame_id": "040464",
+          "time_s": 0.3333333333333333,
+          "file": "040464.png"
+        },
+        {
+          "source_frame_id": "040467",
+          "time_s": 0.36666666666666664,
+          "file": "040467.png"
+        },
+        {
+          "source_frame_id": "040470",
+          "time_s": 0.4,
+          "file": "040470.png"
+        },
+        {
+          "source_frame_id": "040473",
+          "time_s": 0.43333333333333335,
+          "file": "040473.png"
+        },
+        {
+          "source_frame_id": "040476",
+          "time_s": 0.4666666666666667,
+          "file": "040476.png"
+        },
+        {
+          "source_frame_id": "040479",
+          "time_s": 0.5,
+          "file": "040479.png"
+        },
+        {
+          "source_frame_id": "040482",
+          "time_s": 0.5333333333333333,
+          "file": "040482.png"
+        },
+        {
+          "source_frame_id": "040485",
+          "time_s": 0.5666666666666667,
+          "file": "040485.png"
+        },
+        {
+          "source_frame_id": "040488",
+          "time_s": 0.6,
+          "file": "040488.png"
+        },
+        {
+          "source_frame_id": "040491",
+          "time_s": 0.6333333333333333,
+          "file": "040491.png"
+        },
+        {
+          "source_frame_id": "040494",
+          "time_s": 0.6666666666666666,
+          "file": "040494.png"
+        },
+        {
+          "source_frame_id": "040497",
+          "time_s": 0.7,
+          "file": "040497.png"
+        },
+        {
+          "source_frame_id": "040500",
+          "time_s": 0.7333333333333333,
+          "file": "040500.png"
+        },
+        {
+          "source_frame_id": "040503",
+          "time_s": 0.7666666666666667,
+          "file": "040503.png"
+        },
+        {
+          "source_frame_id": "040506",
+          "time_s": 0.8,
+          "file": "040506.png"
+        },
+        {
+          "source_frame_id": "040509",
+          "time_s": 0.8333333333333334,
+          "file": "040509.png"
+        },
+        {
+          "source_frame_id": "040512",
+          "time_s": 0.8666666666666667,
+          "file": "040512.png"
+        },
+        {
+          "source_frame_id": "040515",
+          "time_s": 0.9,
+          "file": "040515.png"
+        },
+        {
+          "source_frame_id": "040518",
+          "time_s": 0.9333333333333333,
+          "file": "040518.png"
+        },
+        {
+          "source_frame_id": "040521",
+          "time_s": 0.9666666666666667,
+          "file": "040521.png"
+        },
+        {
+          "source_frame_id": "040524",
+          "time_s": 1.0,
+          "file": "040524.png"
+        },
+        {
+          "source_frame_id": "040527",
+          "time_s": 1.0333333333333334,
+          "file": "040527.png"
+        },
+        {
+          "source_frame_id": "040530",
+          "time_s": 1.0666666666666667,
+          "file": "040530.png"
+        },
+        {
+          "source_frame_id": "040533",
+          "time_s": 1.1,
+          "file": "040533.png"
+        },
+        {
+          "source_frame_id": "040536",
+          "time_s": 1.1333333333333333,
+          "file": "040536.png"
+        },
+        {
+          "source_frame_id": "040539",
+          "time_s": 1.1666666666666667,
+          "file": "040539.png"
+        },
+        {
+          "source_frame_id": "040542",
+          "time_s": 1.2,
+          "file": "040542.png"
+        },
+        {
+          "source_frame_id": "040545",
+          "time_s": 1.2333333333333334,
+          "file": "040545.png"
+        },
+        {
+          "source_frame_id": "040548",
+          "time_s": 1.2666666666666666,
+          "file": "040548.png"
+        },
+        {
+          "source_frame_id": "040551",
+          "time_s": 1.3,
+          "file": "040551.png"
+        },
+        {
+          "source_frame_id": "040554",
+          "time_s": 1.3333333333333333,
+          "file": "040554.png"
+        },
+        {
+          "source_frame_id": "040557",
+          "time_s": 1.3666666666666667,
+          "file": "040557.png"
+        },
+        {
+          "source_frame_id": "040560",
+          "time_s": 1.4,
+          "file": "040560.png"
+        },
+        {
+          "source_frame_id": "040563",
+          "time_s": 1.4333333333333333,
+          "file": "040563.png"
+        },
+        {
+          "source_frame_id": "040566",
+          "time_s": 1.4666666666666666,
+          "file": "040566.png"
+        },
+        {
+          "source_frame_id": "040569",
+          "time_s": 1.5,
+          "file": "040569.png"
+        },
+        {
+          "source_frame_id": "040572",
+          "time_s": 1.5333333333333334,
+          "file": "040572.png"
+        },
+        {
+          "source_frame_id": "040575",
+          "time_s": 1.5666666666666667,
+          "file": "040575.png"
+        },
+        {
+          "source_frame_id": "040578",
+          "time_s": 1.6,
+          "file": "040578.png"
+        },
+        {
+          "source_frame_id": "040581",
+          "time_s": 1.6333333333333333,
+          "file": "040581.png"
+        },
+        {
+          "source_frame_id": "040584",
+          "time_s": 1.6666666666666667,
+          "file": "040584.png"
+        },
+        {
+          "source_frame_id": "040587",
+          "time_s": 1.7,
+          "file": "040587.png"
+        },
+        {
+          "source_frame_id": "040590",
+          "time_s": 1.7333333333333334,
+          "file": "040590.png"
+        },
+        {
+          "source_frame_id": "040593",
+          "time_s": 1.7666666666666666,
+          "file": "040593.png"
+        },
+        {
+          "source_frame_id": "040596",
+          "time_s": 1.8,
+          "file": "040596.png"
+        },
+        {
+          "source_frame_id": "040599",
+          "time_s": 1.8333333333333333,
+          "file": "040599.png"
+        },
+        {
+          "source_frame_id": "040602",
+          "time_s": 1.8666666666666667,
+          "file": "040602.png"
+        },
+        {
+          "source_frame_id": "040605",
+          "time_s": 1.9,
+          "file": "040605.png"
+        },
+        {
+          "source_frame_id": "040608",
+          "time_s": 1.9333333333333333,
+          "file": "040608.png"
+        },
+        {
+          "source_frame_id": "040611",
+          "time_s": 1.9666666666666666,
+          "file": "040611.png"
+        },
+        {
+          "source_frame_id": "040614",
+          "time_s": 2.0,
+          "file": "040614.png"
+        },
+        {
+          "source_frame_id": "040617",
+          "time_s": 2.033333333333333,
+          "file": "040617.png"
+        },
+        {
+          "source_frame_id": "040620",
+          "time_s": 2.066666666666667,
+          "file": "040620.png"
+        },
+        {
+          "source_frame_id": "040623",
+          "time_s": 2.1,
+          "file": "040623.png"
+        },
+        {
+          "source_frame_id": "040626",
+          "time_s": 2.1333333333333333,
+          "file": "040626.png"
+        },
+        {
+          "source_frame_id": "040629",
+          "time_s": 2.1666666666666665,
+          "file": "040629.png"
+        },
+        {
+          "source_frame_id": "040632",
+          "time_s": 2.2,
+          "file": "040632.png"
+        },
+        {
+          "source_frame_id": "040635",
+          "time_s": 2.2333333333333334,
+          "file": "040635.png"
+        },
+        {
+          "source_frame_id": "040638",
+          "time_s": 2.2666666666666666,
+          "file": "040638.png"
+        },
+        {
+          "source_frame_id": "040641",
+          "time_s": 2.3,
+          "file": "040641.png"
+        },
+        {
+          "source_frame_id": "040644",
+          "time_s": 2.3333333333333335,
+          "file": "040644.png"
+        },
+        {
+          "source_frame_id": "040647",
+          "time_s": 2.3666666666666667,
+          "file": "040647.png"
+        },
+        {
+          "source_frame_id": "040650",
+          "time_s": 2.4,
+          "file": "040650.png"
+        },
+        {
+          "source_frame_id": "040653",
+          "time_s": 2.433333333333333,
+          "file": "040653.png"
+        },
+        {
+          "source_frame_id": "040656",
+          "time_s": 2.466666666666667,
+          "file": "040656.png"
+        },
+        {
+          "source_frame_id": "040659",
+          "time_s": 2.5,
+          "file": "040659.png"
+        },
+        {
+          "source_frame_id": "040662",
+          "time_s": 2.533333333333333,
+          "file": "040662.png"
+        },
+        {
+          "source_frame_id": "040665",
+          "time_s": 2.566666666666667,
+          "file": "040665.png"
+        },
+        {
+          "source_frame_id": "040668",
+          "time_s": 2.6,
+          "file": "040668.png"
+        },
+        {
+          "source_frame_id": "040671",
+          "time_s": 2.6333333333333333,
+          "file": "040671.png"
+        },
+        {
+          "source_frame_id": "040674",
+          "time_s": 2.6666666666666665,
+          "file": "040674.png"
+        },
+        {
+          "source_frame_id": "040677",
+          "time_s": 2.7,
+          "file": "040677.png"
+        },
+        {
+          "source_frame_id": "040680",
+          "time_s": 2.7333333333333334,
+          "file": "040680.png"
+        },
+        {
+          "source_frame_id": "040683",
+          "time_s": 2.7666666666666666,
+          "file": "040683.png"
+        },
+        {
+          "source_frame_id": "040686",
+          "time_s": 2.8,
+          "file": "040686.png"
+        },
+        {
+          "source_frame_id": "040689",
+          "time_s": 2.8333333333333335,
+          "file": "040689.png"
+        },
+        {
+          "source_frame_id": "040692",
+          "time_s": 2.8666666666666667,
+          "file": "040692.png"
+        },
+        {
+          "source_frame_id": "040695",
+          "time_s": 2.9,
+          "file": "040695.png"
+        },
+        {
+          "source_frame_id": "040698",
+          "time_s": 2.933333333333333,
+          "file": "040698.png"
+        },
+        {
+          "source_frame_id": "040701",
+          "time_s": 2.966666666666667,
+          "file": "040701.png"
+        },
+        {
+          "source_frame_id": "040704",
+          "time_s": 3.0,
+          "file": "040704.png"
+        },
+        {
+          "source_frame_id": "040707",
+          "time_s": 3.033333333333333,
+          "file": "040707.png"
+        },
+        {
+          "source_frame_id": "040710",
+          "time_s": 3.066666666666667,
+          "file": "040710.png"
+        },
+        {
+          "source_frame_id": "040713",
+          "time_s": 3.1,
+          "file": "040713.png"
+        },
+        {
+          "source_frame_id": "040716",
+          "time_s": 3.1333333333333333,
+          "file": "040716.png"
+        },
+        {
+          "source_frame_id": "040719",
+          "time_s": 3.1666666666666665,
+          "file": "040719.png"
+        },
+        {
+          "source_frame_id": "040722",
+          "time_s": 3.2,
+          "file": "040722.png"
+        },
+        {
+          "source_frame_id": "040725",
+          "time_s": 3.2333333333333334,
+          "file": "040725.png"
+        },
+        {
+          "source_frame_id": "040728",
+          "time_s": 3.2666666666666666,
+          "file": "040728.png"
+        },
+        {
+          "source_frame_id": "040731",
+          "time_s": 3.3,
+          "file": "040731.png"
+        },
+        {
+          "source_frame_id": "040734",
+          "time_s": 3.3333333333333335,
+          "file": "040734.png"
+        },
+        {
+          "source_frame_id": "040737",
+          "time_s": 3.3666666666666667,
+          "file": "040737.png"
+        },
+        {
+          "source_frame_id": "040740",
+          "time_s": 3.4,
+          "file": "040740.png"
+        },
+        {
+          "source_frame_id": "040743",
+          "time_s": 3.433333333333333,
+          "file": "040743.png"
+        }
+      ]
+    },
+    {
+      "view_id": "I3",
+      "role": "input",
+      "width": 1334,
+      "height": 2048,
+      "fps": 30,
+      "frame_count": 104,
+      "K": [
+        [
+          7673.167,
+          0.0,
+          645.63403
+        ],
+        [
+          0.0,
+          7671.5815,
+          1010.9865
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "distortion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_to_camera": [
+        [
+          0.38344875,
+          -0.06625185,
+          -0.9211828,
+          965.3134
+        ],
+        [
+          -0.10849345,
+          0.9872863,
+          -0.1161672,
+          116.26532
+        ],
+        [
+          0.9171675,
+          0.14448647,
+          0.37138584,
+          718.95135
+        ]
+      ],
+      "frames": [
+        {
+          "source_frame_id": "040434",
+          "time_s": 0.0,
+          "file": "040434.png"
+        },
+        {
+          "source_frame_id": "040437",
+          "time_s": 0.03333333333333333,
+          "file": "040437.png"
+        },
+        {
+          "source_frame_id": "040440",
+          "time_s": 0.06666666666666667,
+          "file": "040440.png"
+        },
+        {
+          "source_frame_id": "040443",
+          "time_s": 0.1,
+          "file": "040443.png"
+        },
+        {
+          "source_frame_id": "040446",
+          "time_s": 0.13333333333333333,
+          "file": "040446.png"
+        },
+        {
+          "source_frame_id": "040449",
+          "time_s": 0.16666666666666666,
+          "file": "040449.png"
+        },
+        {
+          "source_frame_id": "040452",
+          "time_s": 0.2,
+          "file": "040452.png"
+        },
+        {
+          "source_frame_id": "040455",
+          "time_s": 0.23333333333333334,
+          "file": "040455.png"
+        },
+        {
+          "source_frame_id": "040458",
+          "time_s": 0.26666666666666666,
+          "file": "040458.png"
+        },
+        {
+          "source_frame_id": "040461",
+          "time_s": 0.3,
+          "file": "040461.png"
+        },
+        {
+          "source_frame_id": "040464",
+          "time_s": 0.3333333333333333,
+          "file": "040464.png"
+        },
+        {
+          "source_frame_id": "040467",
+          "time_s": 0.36666666666666664,
+          "file": "040467.png"
+        },
+        {
+          "source_frame_id": "040470",
+          "time_s": 0.4,
+          "file": "040470.png"
+        },
+        {
+          "source_frame_id": "040473",
+          "time_s": 0.43333333333333335,
+          "file": "040473.png"
+        },
+        {
+          "source_frame_id": "040476",
+          "time_s": 0.4666666666666667,
+          "file": "040476.png"
+        },
+        {
+          "source_frame_id": "040479",
+          "time_s": 0.5,
+          "file": "040479.png"
+        },
+        {
+          "source_frame_id": "040482",
+          "time_s": 0.5333333333333333,
+          "file": "040482.png"
+        },
+        {
+          "source_frame_id": "040485",
+          "time_s": 0.5666666666666667,
+          "file": "040485.png"
+        },
+        {
+          "source_frame_id": "040488",
+          "time_s": 0.6,
+          "file": "040488.png"
+        },
+        {
+          "source_frame_id": "040491",
+          "time_s": 0.6333333333333333,
+          "file": "040491.png"
+        },
+        {
+          "source_frame_id": "040494",
+          "time_s": 0.6666666666666666,
+          "file": "040494.png"
+        },
+        {
+          "source_frame_id": "040497",
+          "time_s": 0.7,
+          "file": "040497.png"
+        },
+        {
+          "source_frame_id": "040500",
+          "time_s": 0.7333333333333333,
+          "file": "040500.png"
+        },
+        {
+          "source_frame_id": "040503",
+          "time_s": 0.7666666666666667,
+          "file": "040503.png"
+        },
+        {
+          "source_frame_id": "040506",
+          "time_s": 0.8,
+          "file": "040506.png"
+        },
+        {
+          "source_frame_id": "040509",
+          "time_s": 0.8333333333333334,
+          "file": "040509.png"
+        },
+        {
+          "source_frame_id": "040512",
+          "time_s": 0.8666666666666667,
+          "file": "040512.png"
+        },
+        {
+          "source_frame_id": "040515",
+          "time_s": 0.9,
+          "file": "040515.png"
+        },
+        {
+          "source_frame_id": "040518",
+          "time_s": 0.9333333333333333,
+          "file": "040518.png"
+        },
+        {
+          "source_frame_id": "040521",
+          "time_s": 0.9666666666666667,
+          "file": "040521.png"
+        },
+        {
+          "source_frame_id": "040524",
+          "time_s": 1.0,
+          "file": "040524.png"
+        },
+        {
+          "source_frame_id": "040527",
+          "time_s": 1.0333333333333334,
+          "file": "040527.png"
+        },
+        {
+          "source_frame_id": "040530",
+          "time_s": 1.0666666666666667,
+          "file": "040530.png"
+        },
+        {
+          "source_frame_id": "040533",
+          "time_s": 1.1,
+          "file": "040533.png"
+        },
+        {
+          "source_frame_id": "040536",
+          "time_s": 1.1333333333333333,
+          "file": "040536.png"
+        },
+        {
+          "source_frame_id": "040539",
+          "time_s": 1.1666666666666667,
+          "file": "040539.png"
+        },
+        {
+          "source_frame_id": "040542",
+          "time_s": 1.2,
+          "file": "040542.png"
+        },
+        {
+          "source_frame_id": "040545",
+          "time_s": 1.2333333333333334,
+          "file": "040545.png"
+        },
+        {
+          "source_frame_id": "040548",
+          "time_s": 1.2666666666666666,
+          "file": "040548.png"
+        },
+        {
+          "source_frame_id": "040551",
+          "time_s": 1.3,
+          "file": "040551.png"
+        },
+        {
+          "source_frame_id": "040554",
+          "time_s": 1.3333333333333333,
+          "file": "040554.png"
+        },
+        {
+          "source_frame_id": "040557",
+          "time_s": 1.3666666666666667,
+          "file": "040557.png"
+        },
+        {
+          "source_frame_id": "040560",
+          "time_s": 1.4,
+          "file": "040560.png"
+        },
+        {
+          "source_frame_id": "040563",
+          "time_s": 1.4333333333333333,
+          "file": "040563.png"
+        },
+        {
+          "source_frame_id": "040566",
+          "time_s": 1.4666666666666666,
+          "file": "040566.png"
+        },
+        {
+          "source_frame_id": "040569",
+          "time_s": 1.5,
+          "file": "040569.png"
+        },
+        {
+          "source_frame_id": "040572",
+          "time_s": 1.5333333333333334,
+          "file": "040572.png"
+        },
+        {
+          "source_frame_id": "040575",
+          "time_s": 1.5666666666666667,
+          "file": "040575.png"
+        },
+        {
+          "source_frame_id": "040578",
+          "time_s": 1.6,
+          "file": "040578.png"
+        },
+        {
+          "source_frame_id": "040581",
+          "time_s": 1.6333333333333333,
+          "file": "040581.png"
+        },
+        {
+          "source_frame_id": "040584",
+          "time_s": 1.6666666666666667,
+          "file": "040584.png"
+        },
+        {
+          "source_frame_id": "040587",
+          "time_s": 1.7,
+          "file": "040587.png"
+        },
+        {
+          "source_frame_id": "040590",
+          "time_s": 1.7333333333333334,
+          "file": "040590.png"
+        },
+        {
+          "source_frame_id": "040593",
+          "time_s": 1.7666666666666666,
+          "file": "040593.png"
+        },
+        {
+          "source_frame_id": "040596",
+          "time_s": 1.8,
+          "file": "040596.png"
+        },
+        {
+          "source_frame_id": "040599",
+          "time_s": 1.8333333333333333,
+          "file": "040599.png"
+        },
+        {
+          "source_frame_id": "040602",
+          "time_s": 1.8666666666666667,
+          "file": "040602.png"
+        },
+        {
+          "source_frame_id": "040605",
+          "time_s": 1.9,
+          "file": "040605.png"
+        },
+        {
+          "source_frame_id": "040608",
+          "time_s": 1.9333333333333333,
+          "file": "040608.png"
+        },
+        {
+          "source_frame_id": "040611",
+          "time_s": 1.9666666666666666,
+          "file": "040611.png"
+        },
+        {
+          "source_frame_id": "040614",
+          "time_s": 2.0,
+          "file": "040614.png"
+        },
+        {
+          "source_frame_id": "040617",
+          "time_s": 2.033333333333333,
+          "file": "040617.png"
+        },
+        {
+          "source_frame_id": "040620",
+          "time_s": 2.066666666666667,
+          "file": "040620.png"
+        },
+        {
+          "source_frame_id": "040623",
+          "time_s": 2.1,
+          "file": "040623.png"
+        },
+        {
+          "source_frame_id": "040626",
+          "time_s": 2.1333333333333333,
+          "file": "040626.png"
+        },
+        {
+          "source_frame_id": "040629",
+          "time_s": 2.1666666666666665,
+          "file": "040629.png"
+        },
+        {
+          "source_frame_id": "040632",
+          "time_s": 2.2,
+          "file": "040632.png"
+        },
+        {
+          "source_frame_id": "040635",
+          "time_s": 2.2333333333333334,
+          "file": "040635.png"
+        },
+        {
+          "source_frame_id": "040638",
+          "time_s": 2.2666666666666666,
+          "file": "040638.png"
+        },
+        {
+          "source_frame_id": "040641",
+          "time_s": 2.3,
+          "file": "040641.png"
+        },
+        {
+          "source_frame_id": "040644",
+          "time_s": 2.3333333333333335,
+          "file": "040644.png"
+        },
+        {
+          "source_frame_id": "040647",
+          "time_s": 2.3666666666666667,
+          "file": "040647.png"
+        },
+        {
+          "source_frame_id": "040650",
+          "time_s": 2.4,
+          "file": "040650.png"
+        },
+        {
+          "source_frame_id": "040653",
+          "time_s": 2.433333333333333,
+          "file": "040653.png"
+        },
+        {
+          "source_frame_id": "040656",
+          "time_s": 2.466666666666667,
+          "file": "040656.png"
+        },
+        {
+          "source_frame_id": "040659",
+          "time_s": 2.5,
+          "file": "040659.png"
+        },
+        {
+          "source_frame_id": "040662",
+          "time_s": 2.533333333333333,
+          "file": "040662.png"
+        },
+        {
+          "source_frame_id": "040665",
+          "time_s": 2.566666666666667,
+          "file": "040665.png"
+        },
+        {
+          "source_frame_id": "040668",
+          "time_s": 2.6,
+          "file": "040668.png"
+        },
+        {
+          "source_frame_id": "040671",
+          "time_s": 2.6333333333333333,
+          "file": "040671.png"
+        },
+        {
+          "source_frame_id": "040674",
+          "time_s": 2.6666666666666665,
+          "file": "040674.png"
+        },
+        {
+          "source_frame_id": "040677",
+          "time_s": 2.7,
+          "file": "040677.png"
+        },
+        {
+          "source_frame_id": "040680",
+          "time_s": 2.7333333333333334,
+          "file": "040680.png"
+        },
+        {
+          "source_frame_id": "040683",
+          "time_s": 2.7666666666666666,
+          "file": "040683.png"
+        },
+        {
+          "source_frame_id": "040686",
+          "time_s": 2.8,
+          "file": "040686.png"
+        },
+        {
+          "source_frame_id": "040689",
+          "time_s": 2.8333333333333335,
+          "file": "040689.png"
+        },
+        {
+          "source_frame_id": "040692",
+          "time_s": 2.8666666666666667,
+          "file": "040692.png"
+        },
+        {
+          "source_frame_id": "040695",
+          "time_s": 2.9,
+          "file": "040695.png"
+        },
+        {
+          "source_frame_id": "040698",
+          "time_s": 2.933333333333333,
+          "file": "040698.png"
+        },
+        {
+          "source_frame_id": "040701",
+          "time_s": 2.966666666666667,
+          "file": "040701.png"
+        },
+        {
+          "source_frame_id": "040704",
+          "time_s": 3.0,
+          "file": "040704.png"
+        },
+        {
+          "source_frame_id": "040707",
+          "time_s": 3.033333333333333,
+          "file": "040707.png"
+        },
+        {
+          "source_frame_id": "040710",
+          "time_s": 3.066666666666667,
+          "file": "040710.png"
+        },
+        {
+          "source_frame_id": "040713",
+          "time_s": 3.1,
+          "file": "040713.png"
+        },
+        {
+          "source_frame_id": "040716",
+          "time_s": 3.1333333333333333,
+          "file": "040716.png"
+        },
+        {
+          "source_frame_id": "040719",
+          "time_s": 3.1666666666666665,
+          "file": "040719.png"
+        },
+        {
+          "source_frame_id": "040722",
+          "time_s": 3.2,
+          "file": "040722.png"
+        },
+        {
+          "source_frame_id": "040725",
+          "time_s": 3.2333333333333334,
+          "file": "040725.png"
+        },
+        {
+          "source_frame_id": "040728",
+          "time_s": 3.2666666666666666,
+          "file": "040728.png"
+        },
+        {
+          "source_frame_id": "040731",
+          "time_s": 3.3,
+          "file": "040731.png"
+        },
+        {
+          "source_frame_id": "040734",
+          "time_s": 3.3333333333333335,
+          "file": "040734.png"
+        },
+        {
+          "source_frame_id": "040737",
+          "time_s": 3.3666666666666667,
+          "file": "040737.png"
+        },
+        {
+          "source_frame_id": "040740",
+          "time_s": 3.4,
+          "file": "040740.png"
+        },
+        {
+          "source_frame_id": "040743",
+          "time_s": 3.433333333333333,
+          "file": "040743.png"
+        }
+      ]
+    },
+    {
+      "view_id": "T1",
+      "role": "held_out",
+      "width": 1334,
+      "height": 2048,
+      "fps": 30,
+      "frame_count": 104,
+      "K": [
+        [
+          7713.868,
+          0.0,
+          803.3897
+        ],
+        [
+          0.0,
+          7713.425,
+          944.887
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "distortion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_to_camera": [
+        [
+          0.7006988,
+          0.049731564,
+          0.71172184,
+          -755.60516
+        ],
+        [
+          0.078939594,
+          0.9860386,
+          -0.14661644,
+          151.19057
+        ],
+        [
+          -0.7090767,
+          0.158917,
+          0.68699026,
+          372.85193
+        ]
+      ],
+      "frames": [
+        {
+          "source_frame_id": "040434",
+          "time_s": 0.0,
+          "file": "040434.png"
+        },
+        {
+          "source_frame_id": "040437",
+          "time_s": 0.03333333333333333,
+          "file": "040437.png"
+        },
+        {
+          "source_frame_id": "040440",
+          "time_s": 0.06666666666666667,
+          "file": "040440.png"
+        },
+        {
+          "source_frame_id": "040443",
+          "time_s": 0.1,
+          "file": "040443.png"
+        },
+        {
+          "source_frame_id": "040446",
+          "time_s": 0.13333333333333333,
+          "file": "040446.png"
+        },
+        {
+          "source_frame_id": "040449",
+          "time_s": 0.16666666666666666,
+          "file": "040449.png"
+        },
+        {
+          "source_frame_id": "040452",
+          "time_s": 0.2,
+          "file": "040452.png"
+        },
+        {
+          "source_frame_id": "040455",
+          "time_s": 0.23333333333333334,
+          "file": "040455.png"
+        },
+        {
+          "source_frame_id": "040458",
+          "time_s": 0.26666666666666666,
+          "file": "040458.png"
+        },
+        {
+          "source_frame_id": "040461",
+          "time_s": 0.3,
+          "file": "040461.png"
+        },
+        {
+          "source_frame_id": "040464",
+          "time_s": 0.3333333333333333,
+          "file": "040464.png"
+        },
+        {
+          "source_frame_id": "040467",
+          "time_s": 0.36666666666666664,
+          "file": "040467.png"
+        },
+        {
+          "source_frame_id": "040470",
+          "time_s": 0.4,
+          "file": "040470.png"
+        },
+        {
+          "source_frame_id": "040473",
+          "time_s": 0.43333333333333335,
+          "file": "040473.png"
+        },
+        {
+          "source_frame_id": "040476",
+          "time_s": 0.4666666666666667,
+          "file": "040476.png"
+        },
+        {
+          "source_frame_id": "040479",
+          "time_s": 0.5,
+          "file": "040479.png"
+        },
+        {
+          "source_frame_id": "040482",
+          "time_s": 0.5333333333333333,
+          "file": "040482.png"
+        },
+        {
+          "source_frame_id": "040485",
+          "time_s": 0.5666666666666667,
+          "file": "040485.png"
+        },
+        {
+          "source_frame_id": "040488",
+          "time_s": 0.6,
+          "file": "040488.png"
+        },
+        {
+          "source_frame_id": "040491",
+          "time_s": 0.6333333333333333,
+          "file": "040491.png"
+        },
+        {
+          "source_frame_id": "040494",
+          "time_s": 0.6666666666666666,
+          "file": "040494.png"
+        },
+        {
+          "source_frame_id": "040497",
+          "time_s": 0.7,
+          "file": "040497.png"
+        },
+        {
+          "source_frame_id": "040500",
+          "time_s": 0.7333333333333333,
+          "file": "040500.png"
+        },
+        {
+          "source_frame_id": "040503",
+          "time_s": 0.7666666666666667,
+          "file": "040503.png"
+        },
+        {
+          "source_frame_id": "040506",
+          "time_s": 0.8,
+          "file": "040506.png"
+        },
+        {
+          "source_frame_id": "040509",
+          "time_s": 0.8333333333333334,
+          "file": "040509.png"
+        },
+        {
+          "source_frame_id": "040512",
+          "time_s": 0.8666666666666667,
+          "file": "040512.png"
+        },
+        {
+          "source_frame_id": "040515",
+          "time_s": 0.9,
+          "file": "040515.png"
+        },
+        {
+          "source_frame_id": "040518",
+          "time_s": 0.9333333333333333,
+          "file": "040518.png"
+        },
+        {
+          "source_frame_id": "040521",
+          "time_s": 0.9666666666666667,
+          "file": "040521.png"
+        },
+        {
+          "source_frame_id": "040524",
+          "time_s": 1.0,
+          "file": "040524.png"
+        },
+        {
+          "source_frame_id": "040527",
+          "time_s": 1.0333333333333334,
+          "file": "040527.png"
+        },
+        {
+          "source_frame_id": "040530",
+          "time_s": 1.0666666666666667,
+          "file": "040530.png"
+        },
+        {
+          "source_frame_id": "040533",
+          "time_s": 1.1,
+          "file": "040533.png"
+        },
+        {
+          "source_frame_id": "040536",
+          "time_s": 1.1333333333333333,
+          "file": "040536.png"
+        },
+        {
+          "source_frame_id": "040539",
+          "time_s": 1.1666666666666667,
+          "file": "040539.png"
+        },
+        {
+          "source_frame_id": "040542",
+          "time_s": 1.2,
+          "file": "040542.png"
+        },
+        {
+          "source_frame_id": "040545",
+          "time_s": 1.2333333333333334,
+          "file": "040545.png"
+        },
+        {
+          "source_frame_id": "040548",
+          "time_s": 1.2666666666666666,
+          "file": "040548.png"
+        },
+        {
+          "source_frame_id": "040551",
+          "time_s": 1.3,
+          "file": "040551.png"
+        },
+        {
+          "source_frame_id": "040554",
+          "time_s": 1.3333333333333333,
+          "file": "040554.png"
+        },
+        {
+          "source_frame_id": "040557",
+          "time_s": 1.3666666666666667,
+          "file": "040557.png"
+        },
+        {
+          "source_frame_id": "040560",
+          "time_s": 1.4,
+          "file": "040560.png"
+        },
+        {
+          "source_frame_id": "040563",
+          "time_s": 1.4333333333333333,
+          "file": "040563.png"
+        },
+        {
+          "source_frame_id": "040566",
+          "time_s": 1.4666666666666666,
+          "file": "040566.png"
+        },
+        {
+          "source_frame_id": "040569",
+          "time_s": 1.5,
+          "file": "040569.png"
+        },
+        {
+          "source_frame_id": "040572",
+          "time_s": 1.5333333333333334,
+          "file": "040572.png"
+        },
+        {
+          "source_frame_id": "040575",
+          "time_s": 1.5666666666666667,
+          "file": "040575.png"
+        },
+        {
+          "source_frame_id": "040578",
+          "time_s": 1.6,
+          "file": "040578.png"
+        },
+        {
+          "source_frame_id": "040581",
+          "time_s": 1.6333333333333333,
+          "file": "040581.png"
+        },
+        {
+          "source_frame_id": "040584",
+          "time_s": 1.6666666666666667,
+          "file": "040584.png"
+        },
+        {
+          "source_frame_id": "040587",
+          "time_s": 1.7,
+          "file": "040587.png"
+        },
+        {
+          "source_frame_id": "040590",
+          "time_s": 1.7333333333333334,
+          "file": "040590.png"
+        },
+        {
+          "source_frame_id": "040593",
+          "time_s": 1.7666666666666666,
+          "file": "040593.png"
+        },
+        {
+          "source_frame_id": "040596",
+          "time_s": 1.8,
+          "file": "040596.png"
+        },
+        {
+          "source_frame_id": "040599",
+          "time_s": 1.8333333333333333,
+          "file": "040599.png"
+        },
+        {
+          "source_frame_id": "040602",
+          "time_s": 1.8666666666666667,
+          "file": "040602.png"
+        },
+        {
+          "source_frame_id": "040605",
+          "time_s": 1.9,
+          "file": "040605.png"
+        },
+        {
+          "source_frame_id": "040608",
+          "time_s": 1.9333333333333333,
+          "file": "040608.png"
+        },
+        {
+          "source_frame_id": "040611",
+          "time_s": 1.9666666666666666,
+          "file": "040611.png"
+        },
+        {
+          "source_frame_id": "040614",
+          "time_s": 2.0,
+          "file": "040614.png"
+        },
+        {
+          "source_frame_id": "040617",
+          "time_s": 2.033333333333333,
+          "file": "040617.png"
+        },
+        {
+          "source_frame_id": "040620",
+          "time_s": 2.066666666666667,
+          "file": "040620.png"
+        },
+        {
+          "source_frame_id": "040623",
+          "time_s": 2.1,
+          "file": "040623.png"
+        },
+        {
+          "source_frame_id": "040626",
+          "time_s": 2.1333333333333333,
+          "file": "040626.png"
+        },
+        {
+          "source_frame_id": "040629",
+          "time_s": 2.1666666666666665,
+          "file": "040629.png"
+        },
+        {
+          "source_frame_id": "040632",
+          "time_s": 2.2,
+          "file": "040632.png"
+        },
+        {
+          "source_frame_id": "040635",
+          "time_s": 2.2333333333333334,
+          "file": "040635.png"
+        },
+        {
+          "source_frame_id": "040638",
+          "time_s": 2.2666666666666666,
+          "file": "040638.png"
+        },
+        {
+          "source_frame_id": "040641",
+          "time_s": 2.3,
+          "file": "040641.png"
+        },
+        {
+          "source_frame_id": "040644",
+          "time_s": 2.3333333333333335,
+          "file": "040644.png"
+        },
+        {
+          "source_frame_id": "040647",
+          "time_s": 2.3666666666666667,
+          "file": "040647.png"
+        },
+        {
+          "source_frame_id": "040650",
+          "time_s": 2.4,
+          "file": "040650.png"
+        },
+        {
+          "source_frame_id": "040653",
+          "time_s": 2.433333333333333,
+          "file": "040653.png"
+        },
+        {
+          "source_frame_id": "040656",
+          "time_s": 2.466666666666667,
+          "file": "040656.png"
+        },
+        {
+          "source_frame_id": "040659",
+          "time_s": 2.5,
+          "file": "040659.png"
+        },
+        {
+          "source_frame_id": "040662",
+          "time_s": 2.533333333333333,
+          "file": "040662.png"
+        },
+        {
+          "source_frame_id": "040665",
+          "time_s": 2.566666666666667,
+          "file": "040665.png"
+        },
+        {
+          "source_frame_id": "040668",
+          "time_s": 2.6,
+          "file": "040668.png"
+        },
+        {
+          "source_frame_id": "040671",
+          "time_s": 2.6333333333333333,
+          "file": "040671.png"
+        },
+        {
+          "source_frame_id": "040674",
+          "time_s": 2.6666666666666665,
+          "file": "040674.png"
+        },
+        {
+          "source_frame_id": "040677",
+          "time_s": 2.7,
+          "file": "040677.png"
+        },
+        {
+          "source_frame_id": "040680",
+          "time_s": 2.7333333333333334,
+          "file": "040680.png"
+        },
+        {
+          "source_frame_id": "040683",
+          "time_s": 2.7666666666666666,
+          "file": "040683.png"
+        },
+        {
+          "source_frame_id": "040686",
+          "time_s": 2.8,
+          "file": "040686.png"
+        },
+        {
+          "source_frame_id": "040689",
+          "time_s": 2.8333333333333335,
+          "file": "040689.png"
+        },
+        {
+          "source_frame_id": "040692",
+          "time_s": 2.8666666666666667,
+          "file": "040692.png"
+        },
+        {
+          "source_frame_id": "040695",
+          "time_s": 2.9,
+          "file": "040695.png"
+        },
+        {
+          "source_frame_id": "040698",
+          "time_s": 2.933333333333333,
+          "file": "040698.png"
+        },
+        {
+          "source_frame_id": "040701",
+          "time_s": 2.966666666666667,
+          "file": "040701.png"
+        },
+        {
+          "source_frame_id": "040704",
+          "time_s": 3.0,
+          "file": "040704.png"
+        },
+        {
+          "source_frame_id": "040707",
+          "time_s": 3.033333333333333,
+          "file": "040707.png"
+        },
+        {
+          "source_frame_id": "040710",
+          "time_s": 3.066666666666667,
+          "file": "040710.png"
+        },
+        {
+          "source_frame_id": "040713",
+          "time_s": 3.1,
+          "file": "040713.png"
+        },
+        {
+          "source_frame_id": "040716",
+          "time_s": 3.1333333333333333,
+          "file": "040716.png"
+        },
+        {
+          "source_frame_id": "040719",
+          "time_s": 3.1666666666666665,
+          "file": "040719.png"
+        },
+        {
+          "source_frame_id": "040722",
+          "time_s": 3.2,
+          "file": "040722.png"
+        },
+        {
+          "source_frame_id": "040725",
+          "time_s": 3.2333333333333334,
+          "file": "040725.png"
+        },
+        {
+          "source_frame_id": "040728",
+          "time_s": 3.2666666666666666,
+          "file": "040728.png"
+        },
+        {
+          "source_frame_id": "040731",
+          "time_s": 3.3,
+          "file": "040731.png"
+        },
+        {
+          "source_frame_id": "040734",
+          "time_s": 3.3333333333333335,
+          "file": "040734.png"
+        },
+        {
+          "source_frame_id": "040737",
+          "time_s": 3.3666666666666667,
+          "file": "040737.png"
+        },
+        {
+          "source_frame_id": "040740",
+          "time_s": 3.4,
+          "file": "040740.png"
+        },
+        {
+          "source_frame_id": "040743",
+          "time_s": 3.433333333333333,
+          "file": "040743.png"
+        }
+      ]
+    },
+    {
+      "view_id": "T2",
+      "role": "held_out",
+      "width": 1334,
+      "height": 2048,
+      "fps": 30,
+      "frame_count": 104,
+      "K": [
+        [
+          7734.624,
+          0.0,
+          660.2456
+        ],
+        [
+          0.0,
+          7733.216,
+          998.0302
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "distortion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_to_camera": [
+        [
+          0.6705655,
+          -0.03315247,
+          -0.7411092,
+          764.9264
+        ],
+        [
+          0.02521152,
+          0.9994423,
+          -0.021896914,
+          10.248322
+        ],
+        [
+          0.7414218,
+          -0.004001174,
+          0.67102736,
+          362.85666
+        ]
+      ],
+      "frames": [
+        {
+          "source_frame_id": "040434",
+          "time_s": 0.0,
+          "file": "040434.png"
+        },
+        {
+          "source_frame_id": "040437",
+          "time_s": 0.03333333333333333,
+          "file": "040437.png"
+        },
+        {
+          "source_frame_id": "040440",
+          "time_s": 0.06666666666666667,
+          "file": "040440.png"
+        },
+        {
+          "source_frame_id": "040443",
+          "time_s": 0.1,
+          "file": "040443.png"
+        },
+        {
+          "source_frame_id": "040446",
+          "time_s": 0.13333333333333333,
+          "file": "040446.png"
+        },
+        {
+          "source_frame_id": "040449",
+          "time_s": 0.16666666666666666,
+          "file": "040449.png"
+        },
+        {
+          "source_frame_id": "040452",
+          "time_s": 0.2,
+          "file": "040452.png"
+        },
+        {
+          "source_frame_id": "040455",
+          "time_s": 0.23333333333333334,
+          "file": "040455.png"
+        },
+        {
+          "source_frame_id": "040458",
+          "time_s": 0.26666666666666666,
+          "file": "040458.png"
+        },
+        {
+          "source_frame_id": "040461",
+          "time_s": 0.3,
+          "file": "040461.png"
+        },
+        {
+          "source_frame_id": "040464",
+          "time_s": 0.3333333333333333,
+          "file": "040464.png"
+        },
+        {
+          "source_frame_id": "040467",
+          "time_s": 0.36666666666666664,
+          "file": "040467.png"
+        },
+        {
+          "source_frame_id": "040470",
+          "time_s": 0.4,
+          "file": "040470.png"
+        },
+        {
+          "source_frame_id": "040473",
+          "time_s": 0.43333333333333335,
+          "file": "040473.png"
+        },
+        {
+          "source_frame_id": "040476",
+          "time_s": 0.4666666666666667,
+          "file": "040476.png"
+        },
+        {
+          "source_frame_id": "040479",
+          "time_s": 0.5,
+          "file": "040479.png"
+        },
+        {
+          "source_frame_id": "040482",
+          "time_s": 0.5333333333333333,
+          "file": "040482.png"
+        },
+        {
+          "source_frame_id": "040485",
+          "time_s": 0.5666666666666667,
+          "file": "040485.png"
+        },
+        {
+          "source_frame_id": "040488",
+          "time_s": 0.6,
+          "file": "040488.png"
+        },
+        {
+          "source_frame_id": "040491",
+          "time_s": 0.6333333333333333,
+          "file": "040491.png"
+        },
+        {
+          "source_frame_id": "040494",
+          "time_s": 0.6666666666666666,
+          "file": "040494.png"
+        },
+        {
+          "source_frame_id": "040497",
+          "time_s": 0.7,
+          "file": "040497.png"
+        },
+        {
+          "source_frame_id": "040500",
+          "time_s": 0.7333333333333333,
+          "file": "040500.png"
+        },
+        {
+          "source_frame_id": "040503",
+          "time_s": 0.7666666666666667,
+          "file": "040503.png"
+        },
+        {
+          "source_frame_id": "040506",
+          "time_s": 0.8,
+          "file": "040506.png"
+        },
+        {
+          "source_frame_id": "040509",
+          "time_s": 0.8333333333333334,
+          "file": "040509.png"
+        },
+        {
+          "source_frame_id": "040512",
+          "time_s": 0.8666666666666667,
+          "file": "040512.png"
+        },
+        {
+          "source_frame_id": "040515",
+          "time_s": 0.9,
+          "file": "040515.png"
+        },
+        {
+          "source_frame_id": "040518",
+          "time_s": 0.9333333333333333,
+          "file": "040518.png"
+        },
+        {
+          "source_frame_id": "040521",
+          "time_s": 0.9666666666666667,
+          "file": "040521.png"
+        },
+        {
+          "source_frame_id": "040524",
+          "time_s": 1.0,
+          "file": "040524.png"
+        },
+        {
+          "source_frame_id": "040527",
+          "time_s": 1.0333333333333334,
+          "file": "040527.png"
+        },
+        {
+          "source_frame_id": "040530",
+          "time_s": 1.0666666666666667,
+          "file": "040530.png"
+        },
+        {
+          "source_frame_id": "040533",
+          "time_s": 1.1,
+          "file": "040533.png"
+        },
+        {
+          "source_frame_id": "040536",
+          "time_s": 1.1333333333333333,
+          "file": "040536.png"
+        },
+        {
+          "source_frame_id": "040539",
+          "time_s": 1.1666666666666667,
+          "file": "040539.png"
+        },
+        {
+          "source_frame_id": "040542",
+          "time_s": 1.2,
+          "file": "040542.png"
+        },
+        {
+          "source_frame_id": "040545",
+          "time_s": 1.2333333333333334,
+          "file": "040545.png"
+        },
+        {
+          "source_frame_id": "040548",
+          "time_s": 1.2666666666666666,
+          "file": "040548.png"
+        },
+        {
+          "source_frame_id": "040551",
+          "time_s": 1.3,
+          "file": "040551.png"
+        },
+        {
+          "source_frame_id": "040554",
+          "time_s": 1.3333333333333333,
+          "file": "040554.png"
+        },
+        {
+          "source_frame_id": "040557",
+          "time_s": 1.3666666666666667,
+          "file": "040557.png"
+        },
+        {
+          "source_frame_id": "040560",
+          "time_s": 1.4,
+          "file": "040560.png"
+        },
+        {
+          "source_frame_id": "040563",
+          "time_s": 1.4333333333333333,
+          "file": "040563.png"
+        },
+        {
+          "source_frame_id": "040566",
+          "time_s": 1.4666666666666666,
+          "file": "040566.png"
+        },
+        {
+          "source_frame_id": "040569",
+          "time_s": 1.5,
+          "file": "040569.png"
+        },
+        {
+          "source_frame_id": "040572",
+          "time_s": 1.5333333333333334,
+          "file": "040572.png"
+        },
+        {
+          "source_frame_id": "040575",
+          "time_s": 1.5666666666666667,
+          "file": "040575.png"
+        },
+        {
+          "source_frame_id": "040578",
+          "time_s": 1.6,
+          "file": "040578.png"
+        },
+        {
+          "source_frame_id": "040581",
+          "time_s": 1.6333333333333333,
+          "file": "040581.png"
+        },
+        {
+          "source_frame_id": "040584",
+          "time_s": 1.6666666666666667,
+          "file": "040584.png"
+        },
+        {
+          "source_frame_id": "040587",
+          "time_s": 1.7,
+          "file": "040587.png"
+        },
+        {
+          "source_frame_id": "040590",
+          "time_s": 1.7333333333333334,
+          "file": "040590.png"
+        },
+        {
+          "source_frame_id": "040593",
+          "time_s": 1.7666666666666666,
+          "file": "040593.png"
+        },
+        {
+          "source_frame_id": "040596",
+          "time_s": 1.8,
+          "file": "040596.png"
+        },
+        {
+          "source_frame_id": "040599",
+          "time_s": 1.8333333333333333,
+          "file": "040599.png"
+        },
+        {
+          "source_frame_id": "040602",
+          "time_s": 1.8666666666666667,
+          "file": "040602.png"
+        },
+        {
+          "source_frame_id": "040605",
+          "time_s": 1.9,
+          "file": "040605.png"
+        },
+        {
+          "source_frame_id": "040608",
+          "time_s": 1.9333333333333333,
+          "file": "040608.png"
+        },
+        {
+          "source_frame_id": "040611",
+          "time_s": 1.9666666666666666,
+          "file": "040611.png"
+        },
+        {
+          "source_frame_id": "040614",
+          "time_s": 2.0,
+          "file": "040614.png"
+        },
+        {
+          "source_frame_id": "040617",
+          "time_s": 2.033333333333333,
+          "file": "040617.png"
+        },
+        {
+          "source_frame_id": "040620",
+          "time_s": 2.066666666666667,
+          "file": "040620.png"
+        },
+        {
+          "source_frame_id": "040623",
+          "time_s": 2.1,
+          "file": "040623.png"
+        },
+        {
+          "source_frame_id": "040626",
+          "time_s": 2.1333333333333333,
+          "file": "040626.png"
+        },
+        {
+          "source_frame_id": "040629",
+          "time_s": 2.1666666666666665,
+          "file": "040629.png"
+        },
+        {
+          "source_frame_id": "040632",
+          "time_s": 2.2,
+          "file": "040632.png"
+        },
+        {
+          "source_frame_id": "040635",
+          "time_s": 2.2333333333333334,
+          "file": "040635.png"
+        },
+        {
+          "source_frame_id": "040638",
+          "time_s": 2.2666666666666666,
+          "file": "040638.png"
+        },
+        {
+          "source_frame_id": "040641",
+          "time_s": 2.3,
+          "file": "040641.png"
+        },
+        {
+          "source_frame_id": "040644",
+          "time_s": 2.3333333333333335,
+          "file": "040644.png"
+        },
+        {
+          "source_frame_id": "040647",
+          "time_s": 2.3666666666666667,
+          "file": "040647.png"
+        },
+        {
+          "source_frame_id": "040650",
+          "time_s": 2.4,
+          "file": "040650.png"
+        },
+        {
+          "source_frame_id": "040653",
+          "time_s": 2.433333333333333,
+          "file": "040653.png"
+        },
+        {
+          "source_frame_id": "040656",
+          "time_s": 2.466666666666667,
+          "file": "040656.png"
+        },
+        {
+          "source_frame_id": "040659",
+          "time_s": 2.5,
+          "file": "040659.png"
+        },
+        {
+          "source_frame_id": "040662",
+          "time_s": 2.533333333333333,
+          "file": "040662.png"
+        },
+        {
+          "source_frame_id": "040665",
+          "time_s": 2.566666666666667,
+          "file": "040665.png"
+        },
+        {
+          "source_frame_id": "040668",
+          "time_s": 2.6,
+          "file": "040668.png"
+        },
+        {
+          "source_frame_id": "040671",
+          "time_s": 2.6333333333333333,
+          "file": "040671.png"
+        },
+        {
+          "source_frame_id": "040674",
+          "time_s": 2.6666666666666665,
+          "file": "040674.png"
+        },
+        {
+          "source_frame_id": "040677",
+          "time_s": 2.7,
+          "file": "040677.png"
+        },
+        {
+          "source_frame_id": "040680",
+          "time_s": 2.7333333333333334,
+          "file": "040680.png"
+        },
+        {
+          "source_frame_id": "040683",
+          "time_s": 2.7666666666666666,
+          "file": "040683.png"
+        },
+        {
+          "source_frame_id": "040686",
+          "time_s": 2.8,
+          "file": "040686.png"
+        },
+        {
+          "source_frame_id": "040689",
+          "time_s": 2.8333333333333335,
+          "file": "040689.png"
+        },
+        {
+          "source_frame_id": "040692",
+          "time_s": 2.8666666666666667,
+          "file": "040692.png"
+        },
+        {
+          "source_frame_id": "040695",
+          "time_s": 2.9,
+          "file": "040695.png"
+        },
+        {
+          "source_frame_id": "040698",
+          "time_s": 2.933333333333333,
+          "file": "040698.png"
+        },
+        {
+          "source_frame_id": "040701",
+          "time_s": 2.966666666666667,
+          "file": "040701.png"
+        },
+        {
+          "source_frame_id": "040704",
+          "time_s": 3.0,
+          "file": "040704.png"
+        },
+        {
+          "source_frame_id": "040707",
+          "time_s": 3.033333333333333,
+          "file": "040707.png"
+        },
+        {
+          "source_frame_id": "040710",
+          "time_s": 3.066666666666667,
+          "file": "040710.png"
+        },
+        {
+          "source_frame_id": "040713",
+          "time_s": 3.1,
+          "file": "040713.png"
+        },
+        {
+          "source_frame_id": "040716",
+          "time_s": 3.1333333333333333,
+          "file": "040716.png"
+        },
+        {
+          "source_frame_id": "040719",
+          "time_s": 3.1666666666666665,
+          "file": "040719.png"
+        },
+        {
+          "source_frame_id": "040722",
+          "time_s": 3.2,
+          "file": "040722.png"
+        },
+        {
+          "source_frame_id": "040725",
+          "time_s": 3.2333333333333334,
+          "file": "040725.png"
+        },
+        {
+          "source_frame_id": "040728",
+          "time_s": 3.2666666666666666,
+          "file": "040728.png"
+        },
+        {
+          "source_frame_id": "040731",
+          "time_s": 3.3,
+          "file": "040731.png"
+        },
+        {
+          "source_frame_id": "040734",
+          "time_s": 3.3333333333333335,
+          "file": "040734.png"
+        },
+        {
+          "source_frame_id": "040737",
+          "time_s": 3.3666666666666667,
+          "file": "040737.png"
+        },
+        {
+          "source_frame_id": "040740",
+          "time_s": 3.4,
+          "file": "040740.png"
+        },
+        {
+          "source_frame_id": "040743",
+          "time_s": 3.433333333333333,
+          "file": "040743.png"
+        }
+      ]
+    }
+  ]
+}
