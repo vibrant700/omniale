@@ -3,11 +3,11 @@ const $=s=>document.querySelector(s);
 const num=n=>(Math.round((Number(n)+1e-8)*100)/100).toFixed(2);
 const time=n=>`${Math.floor(n/60)}:${String(Math.floor(n%60)).padStart(2,'0')}`;
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
-const modelNames={sol:'GPT-6.1-Sol · 默认 low',luna:'GPT-6-Luna · 默认 medium','sol-xhigh':'GPT-6.1-Sol · xhigh','luna-xhigh':'GPT-6-Luna · xhigh'};
-const shortNames={sol:'Sol 默认',luna:'Luna 默认','sol-xhigh':'Sol xhigh','luna-xhigh':'Luna xhigh'};
+const modelNames={'sol-xhigh':'GPT-6.1-Sol · xhigh','luna-xhigh':'GPT-6-Luna · xhigh'};
+const shortNames={'sol-xhigh':'Sol xhigh','luna-xhigh':'Luna xhigh'};
 const labels={qa_semantic:'十题结论与关系',qa_evidence:'证据时间与动作语音配对',manual_delivery:'手册综合交付',subjective_design:'美观与教学引导'};
 const statusNames={pass:'通过',partial:'部分通过',fail:'未通过'};
-let systems,data,active='sol',page=1,requestedSeek=null;
+let systems,data,active='sol-xhigh',page=1,requestedSeek=null;
 
 function showPage(n,scroll=false){
   page=Math.max(1,Math.min(data.delivery.pages,Number(n)||1));
@@ -105,7 +105,7 @@ function selectSystem(key,updateUrl=true){
   }
   showPage(1);
   for(const [id,url] of [['download-pdf',d.pdf],['download-docx',d.docx],['file-pdf',d.pdf],['file-answers',d.answers],['file-bundle',d.bundle]])$('#'+id).href=url;
-  $('#file-bundle-description').textContent=d.bundle_description||`${name}：Word、PDF、答案、${figures}组原图与SVG标注源${key==='luna'?'，附标注PNG预览':''}。`;
+  $('#file-bundle-description').textContent=d.bundle_description||`${name}：Word、PDF、答案、${figures}组原图与SVG标注源。`;
   $('#result-total').replaceChildren(document.createTextNode(data.result.score_display),el('small','/ 100'));
   const seconds=Math.round(data.solver.elapsed_seconds);
   $('#result-duration').textContent=`约${Math.floor(seconds/60)}分${String(seconds%60).padStart(2,'0')}秒`;
@@ -123,11 +123,11 @@ $('#prev-page').onclick=()=>{if(data)showPage(page-1);};$('#next-page').onclick=
 $('#source-chapter').onchange=e=>seekSource(e.target.value,'源录像');
 document.querySelectorAll('[data-system]').forEach(b=>b.onclick=()=>selectSystem(b.dataset.system));
 document.querySelectorAll('.system-select').forEach(s=>s.onchange=e=>selectSystem(e.target.value));
-window.addEventListener('popstate',()=>selectSystem(new URLSearchParams(location.search).get('model')||'sol',false));
+window.addEventListener('popstate',()=>selectSystem(new URLSearchParams(location.search).get('model')||'sol-xhigh',false));
 
 fetch('data.json').then(r=>{if(!r.ok)throw new Error('展示数据暂时无法加载');return r.json();}).then(all=>{
   systems=all.systems;
-  for(const q of systems.sol.result.questions){const o=el('option',`${q.id} · ${q.title} · ${time(q.source_start)}`);o.value=String(q.source_start);$('#source-chapter').append(o);}
+  for(const q of systems[all.default_system].result.questions){const o=el('option',`${q.id} · ${q.title} · ${time(q.source_start)}`);o.value=String(q.source_start);$('#source-chapter').append(o);}
   const requested=new URLSearchParams(location.search).get('model');selectSystem(Object.hasOwn(systems,requested)?requested:all.default_system,false);
   document.querySelectorAll('[data-system],.system-select').forEach(n=>n.disabled=false);
 }).catch(err=>{const e=$('#load-error');e.hidden=false;e.textContent=err.message+'。仍可直接翻阅Sol手册或下载完整交付。';$('#system-status').textContent='结果切换暂时无法加载';$('#qa-list').replaceChildren(el('p','逐题材料暂未加载，请打开下方展示数据文件。','caption'));});
