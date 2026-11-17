@@ -14,9 +14,13 @@ PAGE = REPO / 'docs/assembly-manual'
 RULES = Path(__file__).with_name('STRICT_MANUAL_RUBRIC.zh-CN.md')
 
 def main():
+    global OUT
     parser = argparse.ArgumentParser()
     parser.add_argument('--check-only', action='store_true')
+    parser.add_argument('--output-name', default='strict-manual-v3')
     args = parser.parse_args()
+    assert args.output_name and all(c.isalnum() or c in '-_' for c in args.output_name)
+    OUT = ROOT / 'outputs/HoloAssist_manual_v1' / args.output_name
     final = page_builder.load(OUT / 'evaluation.json')
     assert final['all_seals_unchanged'] and page_builder.load(OUT / 'errors.json') == []
     original = page_builder.load(OUT / 'baseline-public-data.json')
@@ -56,6 +60,9 @@ def main():
                 assert q['checks'][group] == previous['checks'][group]
         assert item['delivery'] == original['systems'][key]['delivery']
         assert abs(sum(g['score'] for g in item['result']['groups'].values()) - review['total']) < 1e-7
+    for key in data['systems']:
+        if key not in final['systems']:
+            assert data['systems'][key] == original['systems'][key]
     data = page_builder.clean_tree(data)
     comparison = page_builder.compare(data['systems']).replace(
         '主评：Sol默认与Luna默认使用GPT-6-Astra；xhigh运行使用GPT-6.1-Sol。评委不同，分差不能单独归因于推理强度。',
@@ -76,8 +83,10 @@ def main():
     rules = (PAGE / 'SCORING.zh-CN.md').read_text(encoding='utf8')
     rules = re.sub(r'Sol默认与Luna默认的语义、图文及文档由.*?脚本负责时间格式换算、文件检查、字段校验和固定权重汇总。',
         '问答50分与时间证据20分：Sol默认、Luna默认由GPT-6-Astra裁定，两个xhigh运行由GPT-6.1-Sol裁定。手册20分与美观引导10分：四组统一由GPT-6.1-Sol按v3标准验收，逐条核对原始交付，评委不接收旧分数和旧评语。pass全分、partial半分、fail零分；设计五项分别按0—4级换算成2分。脚本负责时间换算、文件检查、字段校验和固定权重汇总。', rules)
-    rules += ('\n手册与设计的等级门槛和逐项要求见[完整验收标准](STRICT_MANUAL_RUBRIC.zh-CN.md)。'
+    extra_rules = ('\n手册与设计的等级门槛和逐项要求见[完整验收标准](STRICT_MANUAL_RUBRIC.zh-CN.md)。'
               '实际编辑抽查在交付副本中修改原生正文与SVG文字/图形，保存重开并用Word重导出，确认修改出现在PDF中；原封存文件保持不变。抽查不能替代全册内容核验。\n')
+    if extra_rules.strip() not in rules:
+        rules += extra_rules
     rules = rules.replace('Luna xhigh的Q07、Q10由同一主评按问答、证据、手册事实、图示四类条目分别裁定；各请求提供相同完整证据，随后由固定脚本汇总。其余题目逐题裁定。',
         'Luna xhigh的问答与时间证据Q07、Q10按条目类别独立裁定后脚本汇总。手册各题的事实与图示逐题裁定，全局组织、编辑性及设计分别验收。')
     (PAGE / 'SCORING.zh-CN.md').write_text(rules, encoding='utf8')
