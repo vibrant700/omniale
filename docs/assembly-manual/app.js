@@ -91,7 +91,7 @@ function selectSystem(key,updateUrl=true){
   document.querySelectorAll('[data-system]').forEach(b=>{const chosen=b.dataset.system===key;b.setAttribute('aria-pressed',String(chosen));b.classList.toggle('active',chosen);const label=shortNames[b.dataset.system]||b.dataset.system;b.querySelector('b').textContent=chosen?`✓ 当前展示 ${label}`:`查看 ${label} 手册与评分 →`;});
   document.querySelectorAll('.system-select').forEach(s=>s.value=key);
   document.querySelectorAll('.model-name').forEach(n=>n.textContent=name);
-  $('#system-status').textContent=`当前展示 ${name}：${d.pages}页手册 · ${data.result.score_display} / 100 · 主评 ${data.scoring.judge} · Gemini核听音频`;
+  $('#system-status').textContent=`当前展示 ${name}：${d.pages}页手册 · ${data.result.score_display} / 100 · 问答 ${data.scoring.judge} · 手册 ${data.scoring.manual_judge} · Gemini核听音频`;
   $('#hero-pages').replaceChildren(document.createTextNode(String(d.pages)),el('small','页'));
   const figures=d.figure_count??d.original_screenshots??d.editable_svg;
   $('#hero-figures').textContent=d.figure_summary||`实际手册 · ${figures}组标注配图`;
