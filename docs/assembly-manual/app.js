@@ -125,9 +125,11 @@ document.querySelectorAll('[data-system]').forEach(b=>b.onclick=()=>selectSystem
 document.querySelectorAll('.system-select').forEach(s=>s.onchange=e=>selectSystem(e.target.value));
 window.addEventListener('popstate',()=>selectSystem(new URLSearchParams(location.search).get('model')||'sol-xhigh',false));
 
-fetch('data.json').then(r=>{if(!r.ok)throw new Error('展示数据暂时无法加载');return r.json();}).then(all=>{
-  systems=all.systems;
-  for(const q of systems[all.default_system].result.questions){const o=el('option',`${q.id} · ${q.title} · ${time(q.source_start)}`);o.value=String(q.source_start);$('#source-chapter').append(o);}
-  const requested=new URLSearchParams(location.search).get('model');selectSystem(Object.hasOwn(systems,requested)?requested:all.default_system,false);
+fetch('data.json?v=xhigh-only-2',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('展示数据暂时无法加载');return r.json();}).then(all=>{
+  systems=Object.fromEntries(['sol-xhigh','luna-xhigh'].map(key=>[key,all.systems?.[key]]));
+  if(Object.values(systems).some(value=>!value?.result||!value?.delivery))throw new Error('xhigh结果数据不完整，请刷新页面');
+  const defaultSystem='sol-xhigh';
+  for(const q of systems[defaultSystem].result.questions){const o=el('option',`${q.id} · ${q.title} · ${time(q.source_start)}`);o.value=String(q.source_start);$('#source-chapter').append(o);}
+  const requested=new URLSearchParams(location.search).get('model');selectSystem(Object.hasOwn(systems,requested)?requested:defaultSystem,true);
   document.querySelectorAll('[data-system],.system-select').forEach(n=>n.disabled=false);
 }).catch(err=>{const e=$('#load-error');e.hidden=false;e.textContent=err.message+'。仍可直接翻阅Sol手册或下载完整交付。';$('#system-status').textContent='结果切换暂时无法加载';$('#qa-list').replaceChildren(el('p','逐题材料暂未加载，请打开下方展示数据文件。','caption'));});
