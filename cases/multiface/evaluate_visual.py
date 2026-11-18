@@ -15,7 +15,7 @@ OUT = Path(__file__).resolve().parent
 DATA = ROOT/'outputs/multiface-reconstruction-data-v1'
 RUN = ROOT/'outputs/multiface-agent-pilot-v1/runs/sol-xhigh-02'
 SUB = RUN/'sealed_submission'
-FF = ROOT/'work/plnba-runtime/shotcut/Shotcut/ffmpeg.exe'
+FF = ROOT/'work/media-runtime/shotcut/Shotcut/ffmpeg.exe'
 W,H,N = 668,1024,104
 SCRATCH = Path('D:/OmniALE-metrics/multiface-standard-metrics-v1')
 SCRATCH.mkdir(parents=True,exist_ok=True)

@@ -14,7 +14,7 @@ OUT=Path(__file__).resolve().parent
 TMP=Path('D:/OmniALE-metrics/multiface-avsync-v1')
 STANDARD_TMP=Path('D:/OmniALE-metrics/multiface-standard-metrics-v1')
 RUN=ROOT/'outputs/multiface-agent-pilot-v1/runs/sol-xhigh-02'
-FF=ROOT/'work/plnba-runtime/shotcut/Shotcut/ffmpeg.exe'
+FF=ROOT/'work/media-runtime/shotcut/Shotcut/ffmpeg.exe'
 sys.path.insert(0,str(TMP/'python-libs'))
 sys.path.insert(0,str(TMP/'official'))
 W,H,N=668,1024,104
