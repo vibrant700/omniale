@@ -1,154 +1,46 @@
 {
-  "version": "coach-hard-v5",
   "questions": [
     {
-      "id": "H01",
-      "title": "同一建筑的跨阶段审计",
-      "points": 8,
-      "question": "找到早期对线时玩家在蓝方中路外塔旁打开商店的回城、后来该位置附近伴随建筑摧毁公告的回城，以及紫色远程对手带红方兵线经过这处位置的事件。跟踪同一座蓝方中路外塔，填写三次的建筑状态；另填写第二次回城时摧毁公告所指建筑的阵营。每个结论须有对应证据，不得把不同建筑当作同一对象。",
-      "fields": {
-        "early_tower": [
-          "standing",
-          "destroyed"
-        ],
-        "later_recall_tower": [
-          "standing",
-          "destroyed"
-        ],
-        "enemy_push_tower": [
-          "standing",
-          "destroyed"
-        ],
-        "announced_destroyed_tower_team": [
-          "blue",
-          "red"
-        ]
-      },
-      "slots": [
-        "early_recall",
-        "later_recall",
-        "enemy_push"
-      ]
+      "id": "Q01",
+      "title": "生存历程",
+      "question": "复盘端点A、B之间玩家的生存与死亡历程，定位关键状态转折，说明证据能确认到什么程度。",
+      "category": "时序与状态追踪",
+      "qa_maximum": 5.555555555555556
     },
     {
-      "id": "H02",
-      "title": "相似商店界面的本体状态",
-      "points": 5,
-      "question": "定位低血量中路交战之后的推荐商店画面，以及蓝色标记下方狼形营地事件之后的推荐商店画面。分别填写玩家本体是否存活，并为两次判断各写出实际画面依据。",
-      "fields": {
-        "after_mid_alive": "boolean",
-        "after_wolves_alive": "boolean"
-      },
-      "slots": [
-        "shop_after_mid",
-        "shop_after_wolves"
-      ]
+      "id": "Q03",
+      "title": "建筑变化",
+      "question": "追踪玩家早期回城地点附近的己方中路外塔。它后来发生了什么变化？用可确认是同一建筑位置的画面支持回答。",
+      "category": "实体与空间关系",
+      "qa_maximum": 11.111111111111112
     },
     {
-      "id": "H03",
-      "title": "相似进攻的结果核验",
-      "points": 5,
-      "question": "审核两次进攻的直接结果：早期对线对手出现回城圆环之后的中路推塔，以及玩家随蓝方兵线和队友进行的侧路推塔。分别填写本轮进攻后目标塔的状态，提交能证明本轮结果的代表性画面和对应片段；不能用更晚另一轮进攻的结果代替。",
-      "fields": {
-        "mid_push_result": [
-          "standing",
-          "destroyed"
-        ],
-        "side_push_result": [
-          "standing",
-          "destroyed"
-        ]
-      },
-      "slots": [
-        "mid_push",
-        "side_push"
-      ]
+      "id": "Q04",
+      "title": "回补状态",
+      "question": "比较中路低血量交战后与清理狼形营地后的商店画面。玩家的本体状态有何区别？定位并解释依据。",
+      "category": "时序与状态追踪",
+      "qa_maximum": 5.555555555555556
     },
     {
-      "id": "H04",
-      "title": "跨营地的目标对应",
-      "points": 5,
-      "question": "定位蓝色标记下方凹地的一次营地攻击，以及较晚侧路推塔区域外岩石营地的那次攻击。分别填写该事件被攻击营地中可见的目标组成（single或pack），并指出实际对应的攻击目标。不能把邻近营地、其他时刻或怪物消失后的画面代替被问事件。",
-      "fields": {
-        "blue_mark_camp": [
-          "single",
-          "pack"
-        ],
-        "rocky_camp": [
-          "single",
-          "pack"
-        ]
-      },
-      "slots": [
-        "blue_mark_attack",
-        "rocky_attack"
-      ]
+      "id": "Q06",
+      "title": "对手追踪",
+      "question": "前期中路的紫色远程对手，是否也出现在后期红方基地交战中？定位两处人物并说明身份对应依据。",
+      "category": "实体与空间关系",
+      "qa_maximum": 11.111111111111112
     },
     {
-      "id": "H05",
-      "title": "同一玩家在两处边界中的位置",
-      "points": 5,
-      "question": "定位大型紫色野怪可见的坑口事件，以及攻击绿色翅膀巨龙的事件。跟踪玩家本体，分别填写它相对两处坑体边界的位置（inside或outside），并在证据描述中指出你跟踪的是哪一个角色以及边界在哪里。",
-      "fields": {
-        "purple_pit": [
-          "inside",
-          "outside"
-        ],
-        "dragon_pit": [
-          "inside",
-          "outside"
-        ]
-      },
-      "slots": [
-        "purple_pit_event",
-        "dragon_pit_event"
-      ]
+      "id": "Q07",
+      "title": "空间关系",
+      "question": "比较玩家在紫光大型野怪附近与攻击绿色双翼巨龙时的位置。玩家本体与各自野怪坑边界是什么关系？",
+      "category": "实体与空间关系",
+      "qa_maximum": 11.111111111111112
     },
     {
-      "id": "H06",
-      "title": "远距离重现的对手身份",
-      "points": 4,
-      "question": "比较早期中路大型敌方角色加入的事件与后来裸露红色基地水晶旁的交战：早期紫色远程对线者是否在后者中再次出现？填写判断，并在两个事件中分别指认对应角色、给出同一对象或不同对象的核对依据。单独填写一个判断、只找到其中一次出现，均不能完成本项。",
-      "fields": {
-        "same_ranged_opponent": "boolean"
-      },
-      "slots": [
-        "early_opponent",
-        "base_opponent"
-      ]
-    },
-    {
-      "id": "H07",
-      "title": "无中间提示的本体状态轨迹",
-      "points": 10,
-      "question": "anchors/endpoint_A.jpg和endpoint_B.jpg来自原片同一有序区间的两个端点，A在B之前。请定位这两个画面，在其间自行寻找证据，恢复一条能证明玩家本体发生状态转变的时间链。每个节点填写时刻、alive布尔值和可见依据；按时间排序。根据所提交且被证据支持的链，填写复活次数下界和新增死亡次数下界，起点已发生的死亡不重复计入。无需证明链穷尽区间所有事件；连续相同状态不构成新转变。",
-      "fields": {
-        "chain": "array of {t:number, alive:boolean, observation:string}",
-        "min_respawns": "nonnegative integer",
-        "min_new_deaths": "nonnegative integer"
-      },
-      "slots": [
-        "endpoint_A",
-        "endpoint_B"
-      ]
-    },
-    {
-      "id": "H08",
-      "title": "后期复盘的多事实审核",
-      "points": 8,
-      "question": "核查教练草稿：“敌方四杀公告出现时，本体仍在行动；其后蓝方主基地防御塔附近的画面中，本体已经恢复行动，但主基地防御塔已全毁；较晚蓝色标记营地上方的冲突发生在基地外，本体当时仍未恢复行动。”逐项填写这些事件中玩家本体和建筑的实际状态，提供三处对应证据，并在解说中纠正草稿里的错误。不要假定草稿的所有句子都错，也不要把公告参与者等同于玩家本体。",
-      "fields": {
-        "quadra_alive": "boolean",
-        "base_alive": "boolean",
-        "base_towers_standing": "boolean",
-        "later_alive": "boolean",
-        "later_outside_base": "boolean"
-      },
-      "slots": [
-        "quadra_event",
-        "base_event",
-        "later_camp_event"
-      ]
+      "id": "Q09",
+      "title": "公告后的参战变化",
+      "question": "敌方四杀公告出现后，玩家的参战状态怎样变化？自行定位能够证明状态变化与后续行动的关键画面。",
+      "category": "时序与状态追踪",
+      "qa_maximum": 5.555555555555556
     }
   ]
 }

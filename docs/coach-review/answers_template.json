@@ -1,160 +1,51 @@
 {
   "answers": [
     {
-      "question_id": "H01",
-      "answer": {
-        "early_tower": null,
-        "later_recall_tower": null,
-        "enemy_push_tower": null,
-        "announced_destroyed_tower_team": null
-      },
-      "evidence": {
-        "early_recall": {
-          "t": null,
-          "observation": ""
-        },
-        "later_recall": {
-          "t": null,
-          "observation": ""
-        },
-        "enemy_push": {
-          "t": null,
-          "observation": ""
-        }
-      },
+      "question_id": "Q01",
+      "answer": "",
+      "events": [],
+      "claims": [],
+      "uncertainties": [],
       "review_segments": []
     },
     {
-      "question_id": "H02",
-      "answer": {
-        "after_mid_alive": null,
-        "after_wolves_alive": null
-      },
-      "evidence": {
-        "shop_after_mid": {
-          "t": null,
-          "observation": ""
-        },
-        "shop_after_wolves": {
-          "t": null,
-          "observation": ""
-        }
-      },
+      "question_id": "Q03",
+      "answer": "",
+      "events": [],
+      "claims": [],
+      "uncertainties": [],
       "review_segments": []
     },
     {
-      "question_id": "H03",
-      "answer": {
-        "mid_push_result": null,
-        "side_push_result": null
-      },
-      "evidence": {
-        "mid_push": {
-          "t": null,
-          "observation": ""
-        },
-        "side_push": {
-          "t": null,
-          "observation": ""
-        }
-      },
+      "question_id": "Q04",
+      "answer": "",
+      "events": [],
+      "claims": [],
+      "uncertainties": [],
       "review_segments": []
     },
     {
-      "question_id": "H04",
-      "answer": {
-        "blue_mark_camp": null,
-        "rocky_camp": null
-      },
-      "evidence": {
-        "blue_mark_attack": {
-          "t": null,
-          "observation": ""
-        },
-        "rocky_attack": {
-          "t": null,
-          "observation": ""
-        }
-      },
+      "question_id": "Q06",
+      "answer": "",
+      "events": [],
+      "claims": [],
+      "uncertainties": [],
       "review_segments": []
     },
     {
-      "question_id": "H05",
-      "answer": {
-        "purple_pit": null,
-        "dragon_pit": null
-      },
-      "evidence": {
-        "purple_pit_event": {
-          "t": null,
-          "observation": ""
-        },
-        "dragon_pit_event": {
-          "t": null,
-          "observation": ""
-        }
-      },
+      "question_id": "Q07",
+      "answer": "",
+      "events": [],
+      "claims": [],
+      "uncertainties": [],
       "review_segments": []
     },
     {
-      "question_id": "H06",
-      "answer": {
-        "same_ranged_opponent": null
-      },
-      "evidence": {
-        "early_opponent": {
-          "t": null,
-          "observation": ""
-        },
-        "base_opponent": {
-          "t": null,
-          "observation": ""
-        }
-      },
-      "review_segments": []
-    },
-    {
-      "question_id": "H07",
-      "answer": {
-        "chain": [],
-        "min_respawns": null,
-        "min_new_deaths": null
-      },
-      "evidence": {
-        "endpoint_A": {
-          "t": null,
-          "observation": ""
-        },
-        "endpoint_B": {
-          "t": null,
-          "observation": ""
-        }
-      },
-      "review_segments": []
-    },
-    {
-      "question_id": "H08",
-      "answer": {
-        "quadra_alive": null,
-        "base_alive": null,
-        "base_towers_standing": null,
-        "later_alive": null,
-        "later_outside_base": null
-      },
-      "evidence": {
-        "quadra_event": {
-          "t": null,
-          "observation": ""
-        },
-        "base_event": {
-          "t": null,
-          "observation": ""
-        },
-        "later_camp_event": {
-          "t": null,
-          "observation": ""
-        }
-      },
+      "question_id": "Q09",
+      "answer": "",
+      "events": [],
+      "claims": [],
+      "uncertainties": [],
       "review_segments": []
     }
   ]
