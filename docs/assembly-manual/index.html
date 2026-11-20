@@ -1,20 +1,81 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f6ef"><meta name="description" content="OmniALE：从HoloAssist装配录像核查十项问题，制作带标注截图的可编辑操作手册。在同一页面查看Sol xhigh与Luna xhigh的真实交付、手册和逐题评分。"><meta property="og:title" content="从装配现场，到可用手册。· OmniALE"><meta property="og:description" content="18分31秒音视频 · 十题核查 · 两组独立交付 · 页内切换真实手册"><meta property="og:image" content="https://vibrant700.github.io/omniale/assembly-manual/assets/early-tray.jpg"><title>装配录像核查与图解手册 · OmniALE</title><link rel="stylesheet" href="case.css?v=report-1"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23243f32'/%3E%3Ctext x='13' y='47' font-size='46' fill='%23dfeaa5'%3Ea%3C/text%3E%3C/svg%3E"></head>
-<body><a class="skip" href="#main">跳到正文</a><main id="main"><div class="eyebrow">OMNIALE · 音视频理解与专业文档交付</div>
-<h1>核查装配录像 → 交付图解操作手册</h1>
-<p class="lead">观看带英文指导的第一人称装配录像，回答十个跨时刻核查问题，再把结论整理成可查阅、可编辑的操作与纠错手册。</p>
-<div class="tags"><span>18分31秒音视频</span><span>十题核查</span><span>DOCX＋PDF＋标注源文件</span><span>Codex · xhigh</span></div>
-<nav class="contents"><a href="#task">任务定义</a><a href="#source">输入录像</a><a href="#scoring">验收标准</a><a href="#results">测评结果</a><a href="#deliverable">交付预览</a><a href="#questions">逐题依据</a></nav>
-<div hidden><strong id="hero-pages">13</strong><span id="hero-figures"></span></div><section id="task" aria-labelledby="task-title"><div class="section-heading"><div><h2 id="task-title">一、任务定义</h2></div><a href="TASK.zh-CN.md">阅读完整题面 →</a></div><div class="task-brief-grid">
-<article><span class="number">01 / 委托目标</span><h3>把装配录像整理成培训手册。</h3><p>先回答十题核查单，再根据结论制作带标注截图的操作与纠错手册，供新员工辨认部件、查阅阶段要求和排查典型问题。</p></article>
-<article><span class="number">02 / 提供资料</span><h3>完整音视频＋十题核查单。</h3><ul><li>18分31秒录像：第一人称操作画面与英文远程指导，采用公开变调版本。</li><li>十题核查单、空白答案模板、素材来源与许可。</li></ul><p>不提供参考答案、语音转录、事件时间锚点或手册初稿。输入录像单独下载。</p></article>
-<article><span class="number">03 / 任务要求</span><h3>核查结论，并用图文说明。</h3><p>结合画面与语音回答十题，分别定位相似事件，给出源时间与对应证据；再按操作与纠错主题组织手册，自行选图、标注对象与状态。</p><p class="task-caution">录像包含错误尝试、指导者的提醒和后续纠正。需区分错误操作、指导要求和实际执行情况，不能把所有实际动作都当作正确示范。</p></article>
-<article><span class="number">04 / 交付内容</span><h3>答案＋可编辑手册＋配图源文件。</h3><ul><li><code>answers.md</code>：十题结论与音画证据。</li><li><code>manual.docx</code>：正文可编辑、配图嵌入的手册。</li><li><code>manual.pdf</code>：内容一致、正常显示的PDF。</li><li>原始截图及可编辑标注源文件。</li></ul><p>不限定手册页数或截图数量；标注可用文档原生形状、SVG等形式。</p></article>
-</div></section>
-<section id="source"><div class="section-heading"><div><h2>二、给 Agent 的输入</h2></div><p>录像中的英文指导声与第一人称画面共同构成输入。<br>按题定位，只改变播放位置。</p></div><div class="source-grid"><div class="source-player"><div class="toolbar"><label for="source-chapter">定位问题</label><select id="source-chapter"><option value="0">从头播放 · 完整录像</option></select></div><video id="source-video" controls playsinline preload="metadata" poster="assets/poster.jpg" aria-label="HoloAssist完整源录像预览"><source src="assets/recording-preview.mp4" type="video/mp4"></video><p id="video-status" class="caption" aria-live="polite">完整时长预览 · 704px / 12fps · 原AAC音轨直接复制</p><p class="caption"><a href="https://github.com/vibrant700/omniale/releases/download/assembly-manual-v1/z057-june-28-22-rashult_assemble.mp4">下载原分辨率输入录像 ↗</a>　<a href="https://holoassist.github.io/" target="_blank" rel="noopener">HoloAssist项目 ↗</a></p></div><div class="input-notes"><span class="pill muted-pill">给 AGENT 的输入</span><h3>完整录像＋十题核查单。</h3><ul><li>18分31秒，英文远程指导与装配现场画面。</li><li>十道中文核查题与空白答案模板。</li><li>手册委托、素材来源和许可。</li></ul><p>输入不包含参考答案、语音转录、事件时间锚点或手册初稿。</p><div class="input-rule"><b>声音决定“要求什么”</b><span>是整个架体，还是手里的托盘？</span><b>画面确认“实际做了什么”</b><span>手里是什么，执行到哪一步？</span></div><p class="caption">公开素材为变调语音版本；受测模型使用本地Whisper转写工具辅助理解。</p></div></div></section>
-<section id="scoring"><div class="section-heading"><div><h2>三、验收标准</h2></div><a href="SCORING.zh-CN.md">完整评分规则 →</a></div><div class="scoring-grid"><div class="table-wrap"><table><thead><tr><th>维度</th><th>分值</th><th>核查内容</th></tr></thead><tbody><tr><td>十题结论与关系</td><td>50</td><td>对象、指代、阶段、动作及纠正关系</td></tr><tr><td>证据时间与配对</td><td>20</td><td>源时间定位、动作语音对应、证据具体性</td></tr><tr><td>手册综合交付</td><td>20</td><td>事实6 / 图文8 / 可用性2 / 可编辑与导出4</td></tr><tr><td>美观与教学引导</td><td>10</td><td>层级、布局、字体配色、教学顺序、视觉引导</td></tr></tbody></table></div><div class="quality"><h3>事实采用原数据集标注。</h3><p>两组手册20分与美观引导10分统一由GPT-6.1-Sol按v3标准验收。问答及时间证据由GPT-6.1-Sol主评。Gemini核听源音频；事实计分以原标注为准。</p><p>脚本检查文件与返回字段、换算源时间并汇总固定权重。模型给出逐项判断，不自行调整分值。</p><div class="judge-tags"><span>GPT-6.1-Sol</span><span>Gemini 3.1 Pro Preview</span><span>Script aggregation</span></div></div></div><details class="scope-note"><summary>结果范围与评价说明</summary><b>结果范围</b><p>本页展示Sol xhigh与Luna xhigh两组独立运行的实际交付；上方选择决定当前展示的手册和评分，评分依据为原数据集标注及模型评审，未进行人工盲评。十题共享部分事件，其中部分题目以视觉为主；不将其视为十个独立的双模态样本。</p></details></section>
-<section id="results"><div class="section-heading"><div><h2>四、测评结果</h2></div><p>分数按原数据集标注核对。<br>问答、证据和手册分别计分。</p></div><div id="systems"><div class="table-wrap"><table class="comparison"><thead><tr><th>受测系统</th><th>问答 /50</th><th>证据 /20</th><th>手册 /20</th><th>设计 /10</th><th>总分 /100</th><th>实际交付</th></tr></thead><tbody><tr><td><b>GPT-6.1-Sol</b><small>Codex · xhigh</small></td><td class="num">40.00</td><td class="num">13.67</td><td class="num">16.28</td><td class="num">6.00</td><td class="num total-cell">75.94</td><td><button id="select-sol-xhigh" data-system="sol-xhigh" aria-pressed="false" disabled><b>查看交付与评分 →</b></button></td></tr><tr><td><b>GPT-6-Luna</b><small>Codex · xhigh</small></td><td class="num">27.50</td><td class="num">9.33</td><td class="num">10.73</td><td class="num">6.00</td><td class="num total-cell">53.56</td><td><button id="select-luna-xhigh" data-system="luna-xhigh" aria-pressed="false" disabled><b>查看交付与评分 →</b></button></td></tr></tbody></table></div><p class="caption">相同录像、题目、工具与评分权重。两组均显式设置xhigh，逐请求核验；无总答题时间与工具次数上限。</p><p id="system-status" role="status" aria-live="polite">正在加载结果…</p></div><details class="detail-card"><summary>当前模型的分项与文档验收</summary><div class="selected-result-label"><span class="model-name">GPT-6.1-Sol</span> · 当前分项与逐题依据</div><div class="result-grid"><article class="total-card"><div class="total" id="result-total">75.94<small>/ 100</small></div><div class="result-meta"><span id="result-duration">约462分58秒</span><span id="result-tools">640次工具调用</span></div><p>无总时长或工具次数上限；计入模型与工具累计运行时间，含导出，不含评分时间。</p></article><div class="score-panel" id="score-bars" aria-label="四项评分"></div></div><div class="readout"><span>RESULT AT A GLANCE</span><p id="result-readout">选择上方模型，查看对应的实际交付和逐项评分。</p></div><div class="table-wrap"><table><thead><tr><th>手册20分的组成</th><th>得分</th><th>满分</th></tr></thead><tbody id="manual-scores"></tbody></table></div><details><summary>查看文档可编辑性与设计评分依据</summary><div id="document-review" class="qa-content"></div></details><p class="caption">实际工具包括Shell、抽帧与看图、本地Whisper、文档生成及LibreOffice导出。求解模型没有原生音频输入；评委在交付封存后介入。</p></details></section>
-<section id="deliverable"><div class="section-heading"><div><h2>五、实际交付预览</h2></div><p id="manual-description">这里展示Sol xhigh实际提交的13页PDF，正文、截图和标注保留原样。</p></div><div class="model-switch"><label for="delivery-system">查看交付</label><select id="delivery-system" class="system-select" disabled aria-label="选择交付模型"><option value="sol-xhigh">GPT-6.1-Sol · xhigh</option><option value="luna-xhigh">GPT-6-Luna · xhigh</option></select><a href="#systems">返回结果对比 ↑</a></div><div class="manual-grid"><aside><span class="pill">培训部门委托</span><h3>做过的动作，<br>不一定是正确示范。</h3><p>新员工需要看清部件、理解阶段要求，并在同类问题出现时知道该检查哪里。手册从零制作，没有现成初稿。</p><div class="artifact-list"><div><b id="artifact-pages">13</b><span>页 · 实际PDF手册</span></div><div><b id="artifact-figures">84</b><span id="artifact-figures-label">份图像及标注文件</span></div><div><b>DOCX</b><span>可编辑正文 · 内嵌配图</span></div></div><a id="download-pdf" href="results/sol-xhigh/manual.pdf" target="_blank" rel="noopener">打开完整PDF ↗</a><a id="download-docx" href="https://github.com/vibrant700/omniale/releases/download/assembly-manual-v1/sol-xhigh-manual.docx">下载可编辑Word ↗</a></aside><div class="manual-panel"><div class="manual-toolbar"><label for="manual-page">翻阅手册</label><select id="manual-page" aria-label="选择手册页面"><option value="1">第1页</option><option value="2">第2页</option><option value="3">第3页</option><option value="4">第4页</option><option value="5">第5页</option><option value="6">第6页</option><option value="7">第7页</option><option value="8">第8页</option><option value="9">第9页</option><option value="10">第10页</option><option value="11">第11页</option><option value="12">第12页</option><option value="13">第13页</option></select><div class="page-arrows"><button id="prev-page" aria-label="上一页">←</button><button id="next-page" aria-label="下一页">→</button></div></div><a id="page-full" href="results/sol-xhigh/pages/page-001.png" target="_blank" rel="noopener"><img id="manual-image" src="results/sol-xhigh/pages/page-001.png" alt="实际提交手册第1页" width="990" height="1400"></a><div class="manual-bottom"><span id="page-label" aria-live="polite">01 / 13</span><span>点击页面查看大图 ↗</span></div><div class="page-dots" id="page-dots" role="group" aria-label="快速翻页"></div></div></div></section>
-<section id="questions"><div class="section-heading"><div><h2>六、逐题答案与验收依据</h2></div><p>展开题目可见实际答案、标注依据、分项判断，<br>并跳到源录像与对应手册页。</p></div><p class="caption">当前核查：<b class="model-name">GPT-6.1-Sol</b> · <a href="#systems">切换结果模型 ↑</a></p><div class="qa-legend"><span>每题最高8.4分</span><span>问答5 · 证据2 · 手册事实及图文1.4</span></div><div id="qa-list"><p class="caption">正在加载逐题材料…</p></div><p class="caption">十题合计84分；文档全局组织、可编辑交付和设计质量另计16分。各项按原始精度求和，显示值可能存在末位舍入差。</p></section>
-<section id="files"><h2>七、案例文件</h2><div class="three file-grid"><a href="public-task.zip"><b>公开题包 ↗</b><p>委托、十题核查单、空白模板和来源许可。输入录像单独下载。</p></a><a id="file-bundle" href="https://github.com/vibrant700/omniale/releases/download/assembly-manual-v1/sol-xhigh-editable-delivery.zip"><b>完整可编辑交付 ↗</b><p id="file-bundle-description">GPT-6.1-Sol · xhigh：Word、PDF、答案与84份图像／标注文件，其中42份SVG源。</p></a><a href="data.json"><b>逐项评分与展示数据 ↗</b><p>实际答案、标注依据、评审理由、评分分项与媒体SHA256。</p></a></div><div class="file-links"><a id="file-pdf" href="results/sol-xhigh/manual.pdf">PDF手册 ↗</a><a id="file-answers" href="results/sol-xhigh/answers.md">实际问答 ↗</a><a href="questions.md">十题核查单 ↗</a><a href="https://github.com/vibrant700/omniale/tree/main/cases/assembly-manual">案例源码 ↗</a><a href="CDLA-Permissive-2.0.txt">素材许可 ↗</a></div><p class="caption">素材：HoloAssist · z057-june-28-22-rashult_assemble · 公开变调音视频版本。数据许可为CDLA-Permissive-2.0。案例改编与评分不表示经过原数据集作者审核。</p></section><footer><a href="../">← OmniALE 案例目录</a><span>HoloAssist · CDLA-Permissive-2.0</span></footer></main><div id="load-error" role="alert" hidden></div><script src="app.js?v=report-1"></script></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="OmniALE装配录像理解与图解手册：任务、评分标准、GPT-6.2-Sol xhigh真实交付、逐题评分与失败分析。">
+  <meta property="og:title" content="装配录像理解与图解手册 · OmniALE">
+  <meta property="og:description" content="18分31秒音视频 → 十题回答 → 可用的图解操作手册。查看真实交付与详细评分。">
+  <meta property="og:image" content="https://vibrant700.github.io/omniale/assembly-manual/assets/poster.jpg">
+  <title>装配录像理解与图解手册 · OmniALE</title>
+  <link rel="stylesheet" href="case.css?v=report-v2-20261120">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='12' width='64' height='64' fill='%23255750'/%3E%3Ctext x='12' y='46' font-size='42' fill='white'%3Ea%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<main id="main" class="report">
+  <header class="report-header">
+    <a class="brand" href="../">OmniALE <span>/ CASE STUDY</span></a>
+    <h1>装配录像理解与图解手册</h1>
+    <p class="subtitle">从远程指导的操作现场，整理出新员工能够查阅和使用的培训资料。</p>
+    <div class="tags"><span>音视频理解</span><span>跨时刻事件追踪</span><span>图解文档制作</span><span>HoloAssist</span></div>
+    <nav aria-label="页面目录"><a href="#task">任务定义</a><a href="#scoring">评分标准</a><a href="#results">测试结果</a><a href="#execution">执行过程</a><a href="#analysis">失败分析</a></nav>
+  </header>
+
+  <section id="task" class="section">
+    <h2><span>01</span>任务定义</h2>
+    <figure class="source-figure">
+      <video id="source-video" controls playsinline preload="metadata" poster="assets/poster.jpg" aria-label="完整装配录像，包含现场原声"><source src="assets/recording-preview.mp4" type="video/mp4"></video>
+      <figcaption><span>输入录像 · 18分31秒 · 第一人称操作画面＋远程指导语音</span><a href="https://github.com/vibrant700/omniale/releases/download/assembly-manual-v1/z057-june-28-22-rashult_assemble.mp4">下载原分辨率录像 ↗</a></figcaption>
+    </figure>
+    <div class="source-controls"><label for="source-chapter">查看题目相关片段</label><select id="source-chapter"><option value="0">完整录像 · 从头开始</option></select><span id="video-status" role="status">网页预览保留完整时长与原AAC音轨</span></div>
+    <h3>委托背景</h3>
+    <p>培训部门希望将一次推车装配的远程指导录像整理为操作与纠错手册。Agent需要结合画面和语音回答十个问题，再将结论转化为带关键截图、对象标注和操作说明的培训资料。</p>
+    <div class="task-columns">
+      <div><h3>提供什么</h3><ul><li>一段完整装配录像，含第一人称画面与英文指导语音。</li><li>十个问题与空白答案模板。</li><li>素材来源、许可及交付要求。</li></ul><a class="button" href="public-task.zip">下载任务资料 ↓</a><a class="text-link" href="questions.md">查看十个问题 ↗</a></div>
+      <div><h3>交付什么</h3><ul><li><code>answers.md</code>：逐题结论与对应的源录像时间、证据。</li><li><code>manual.docx</code>＋<code>manual.pdf</code>：带标注截图的操作与纠错手册。</li><li>手册使用的原始截图及可编辑标注源文件。</li></ul><p class="note">手册需将回答中的理解落实为可使用的图文说明，不限定页数和截图数量。</p></div>
+    </div>
+    <details class="disclosure"><summary>展开完整委托题面</summary><div id="task-prompt" class="prose"><p>正在载入题面…</p></div><p><a href="TASK.zh-CN.md">下载题面原文 ↗</a></p></details>
+    <details class="disclosure"><summary>展开十个问题</summary><div id="task-questions" class="prose"></div></details>
+    <h3>任务难点</h3>
+    <ol class="difficulty-list"><li><b>区分相似事件。</b>多次选盘、夹座脱落和安装尝试散落于不同阶段，时间最近的动作未必解释后来的返工。</li><li><b>同时理解要求与执行。</b>语音中的指代要落到画面里的具体部件，还要区分指导要求、当前状态与后续响应。</li><li><b>把理解转化为手册。</b>不仅要答对，还要选取有辨识力的截图，准确标出对象，讲清必要顺序与恢复过程。</li></ol>
+  </section>
+
+  <section id="scoring" class="section">
+    <div class="section-heading"><h2><span>02</span>评分标准</h2><a href="SCORING.zh-CN.md">完整评分说明 ↗</a></div>
+    <p>总分100分，由十题回答、时间证据和手册质量组成。事实以HoloAssist原数据集标注为依据；手册质量直接评价最终提交的手册。</p>
+    <div class="formula">总分 <span>＝</span> 十题回答 <b>50</b> <span>＋</span> 时间证据 <b>20</b> <span>＋</span> 手册质量 <b>30</b></div>
+    <article class="rubric-block"><h3>2.1 十题回答 <span>50分</span></h3><p>每题拆成四条结论，检查对象、事件关系、阶段区别及后续动作。每条满分1.25分：符合得1.25，部分符合得0.625，不符合得0。每题最高5分。</p><p class="note">各题的四条参考要点、实际回答和逐条判定，均在“测试结果 → 十题答案与评分”中展开。</p></article>
+    <article class="rubric-block"><h3>2.2 时间证据 <span>20分</span></h3><div class="table-wrap"><table><thead><tr><th>每题项目</th><th>分值</th><th>判断内容</th></tr></thead><tbody><tr><td>时间定位</td><td>1</td><td>所给源时间能否找到目标事件；能否区分相邻但不同的操作。</td></tr><tr><td>证据支持结论</td><td>1</td><td>所写画面观察或指导内容，能否支持对应结论及事件关系。</td></tr></tbody></table></div><p class="note">每项符合1分、部分符合0.5分、不符合0分。评价对象是答案中明确对应的时间和证据。</p></article>
+    <article class="rubric-block"><h3>2.3 手册质量 <span>30分</span></h3><div class="table-wrap"><table><thead><tr><th>维度</th><th>满分</th><th>评价重点</th></tr></thead><tbody id="rubric-dimensions"></tbody></table></div><p>先记录手册中的独立问题，再按维度汇总：轻微问题计1单位，实质问题计2单位。同一根本错误只归入一个维度，避免重复扣分。</p><div class="table-wrap"><table class="conversion-table"><thead><tr><th>某维度的问题单位</th><th>等级</th><th>该维度得分 /7.5</th></tr></thead><tbody><tr><td>0</td><td>3</td><td>7.5</td></tr><tr><td>1</td><td>2</td><td>5</td></tr><tr><td>2–3</td><td>1</td><td>2.5</td></tr><tr><td>≥4，或有证据支持的关键错误</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note"><b>换算方式：</b>每项得分＝等级÷3×7.5。问题单位用于确定等级，不是直接从总分中减去的分数。</p><details class="disclosure compact"><summary>轻微、实质与关键错误如何区分</summary><p>轻微问题造成局部阅读或辨认负担，但上下文仍能支持理解；实质问题使重要主题、对象辨认或必要过程缺失，读者需要猜测、回看资料或求助；关键错误必须有明确反证，且会把读者引向错误操作、对象或状态，才将所属维度记0分。仅有遗漏不自动认定为关键错误。</p><p>可编辑、导出一致和基本可读性单独检查，不占这30分。</p></details></article>
+    <details class="disclosure"><summary>评委分工与评分边界</summary><p>GPT-6.1-Sol（high）负责结论、证据和手册主评；Gemini 3.1 Pro Preview的独立源音频观察作辅助，事实裁定仍以原标注为准。脚本校验字段与固定权重并汇总分数。模型评审不等同于真人跟做验证；部分问题共享源事件。</p></details>
+  </section>
+
+  <section id="results" class="section">
+    <h2><span>03</span>测试结果</h2>
+    <p>下表对应实际完成的运行与原始交付。选择模型后，交付预览、逐题评分、手册问题和执行过程同步切换。</p>
+    <div class="table-wrap"><table class="results-table"><thead><tr><th>模型与框架</th><th>总分 /100</th><th>回答 /50</th><th>证据 /20</th><th>手册 /30</th><th>详细结果</th></tr></thead><tbody id="systems-table"><tr><td colspan="6">正在载入结果…</td></tr></tbody></table></div>
+    <p class="note">各项按原始精度相加，总分显示两位小数。窄屏可左右滑动表格查看全部分项。</p>
+    <div class="selection-bar"><label for="result-system">当前查看</label><select id="result-system" disabled></select><span id="system-status" aria-live="polite">正在载入…</span></div>
+    <div id="run-config" class="run-config"></div>
+    <div class="result-tabs" role="tablist" aria-label="结果内容"><button id="tab-delivery" role="tab" aria-controls="pane-delivery" aria-selected="true" tabindex="0" data-tab="delivery">手册交付</button><button id="tab-qa" role="tab" aria-controls="pane-qa" aria-selected="false" tabindex="-1" data-tab="qa">十题答案与评分</button><button id="tab-manual" role="tab" aria-controls="pane-manual" aria-selected="false" tabindex="-1" data-tab="manual">手册质量评分</button></div>
+    <div id="pane-delivery" class="tab-panel" role="tabpanel" aria-labelledby="tab-delivery">
+      <div class="delivery-intro"><div><h3 id="delivery-title">实际提交的手册</h3><p id="delivery-description"></p></div><div class="download-links"><a id="download-pdf" href="#" target="_blank" rel="noopener">打开PDF ↗</a><a id="download-docx" href="#">下载Word ↓</a><a id="download-bundle" href="#">完整可编辑交付 ↓</a><a id="download-answers" href="#">原始回答 ↗</a></div></div>
+      <div class="manual-toolbar"><label for="manual-page">手册页面</label><select id="manual-page"></select><div class="page-arrows"><button id="prev-page" aria-label="上一页">←</button><span id="page-label" aria-live="polite"></span><button id="next-page" aria-label="下一页">→</button></div></div>
+      <figure class="manual-preview"><a id="page-full" href="#" target="_blank" rel="noopener"><img id="manual-image" alt="实际提交的手册" width="990" height="1400"></a><figcaption>原始交付保持原样；点击页面可查看大图。</figcaption></figure>
+    </div>
+    <div id="pane-qa" class="tab-panel" role="tabpanel" aria-labelledby="tab-qa" hidden><div class="panel-heading"><h3>逐题回答与判分</h3><p>每题7分＝回答5分＋证据2分。展开可查看全部原答、四条参考要点和六项判定。</p></div><div id="qa-summary" class="table-wrap"></div><div id="qa-list"></div></div>
+    <div id="pane-manual" class="tab-panel" role="tabpanel" aria-labelledby="tab-manual" hidden><div class="panel-heading"><h3>从独立问题到手册得分</h3><p id="manual-score-intro"></p></div><div id="manual-score-table" class="table-wrap"></div><div id="manual-errors"></div></div>
+  </section>
+
+  <section id="execution" class="section"><h2><span>04</span>执行过程</h2><p id="execution-intro">下面按实际工具记录整理求解过程。展开每一步可查看经整理的命令与输出摘录。</p><div id="execution-steps"></div></section>
+
+  <section id="analysis" class="section"><h2><span>05</span>失败分析</h2><p id="analysis-intro"></p><div id="qa-findings"></div><div id="failure-findings"></div><details id="review-disclosure" class="disclosure"><summary>查看实际标注的局部放大图</summary><p id="review-intro"></p><div id="review-images" class="review-images"></div></details></section>
+
+  <footer><div><a href="../">← OmniALE案例目录</a><a href="data-v2.json">完整公开评分数据 ↗</a><a href="https://github.com/vibrant700/omniale/tree/main/cases/assembly-manual">案例源码 ↗</a></div><p>素材：<a href="https://holoassist.github.io/">HoloAssist</a> · z057-june-28-22-rashult_assemble · 公开变调版本 · <a href="CDLA-Permissive-2.0.txt">CDLA-Permissive-2.0</a>。案例改编与评分不表示经过原数据集作者审核。</p></footer>
+</main>
+<div id="load-error" role="alert" hidden></div>
+<script src="app.js?v=report-v2-20261120"></script>
+</body>
+</html>
