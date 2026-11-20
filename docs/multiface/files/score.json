@@ -1,81 +1,107 @@
 {
-  "label": "post_hoc_uncalibrated_linear_composite_v1",
-  "model": "gpt-6.1-sol",
-  "effort": "xhigh",
-  "utc": "2026-11-17T15:34:49.312925+00:00",
-  "weights": {
-    "PSNR": 15,
-    "SSIM": 15,
-    "LPIPS": 15,
-    "JOD": 15,
-    "AV_sync": 40
-  },
-  "normalization": {
-    "PSNR": "clip(PSNR_dB / 40, 0, 1); 40dB is an uncalibrated chosen full-score anchor",
-    "SSIM": "clip(SSIM, 0, 1)",
-    "LPIPS": "clip(1-LPIPS_alex, 0, 1)",
-    "JOD": "clip(JOD / 10, 0, 1)",
-    "AV_sync": "clip((D0_frozen - D0_submitted)/(D0_frozen - D0_reference),0,1), with D0=SyncNet zero-lag distance"
-  },
-  "aggregation": "Normalize and weight per view, then equally average T1 and T2; round only for display",
-  "visual_region": "entire frame, 668x1024, all104frames,30fps; not supplementary face-region metrics",
-  "limitations": [
-    "All numerical normalization choices are post-hoc, uncalibrated, and not a published standard or an accuracy percentage.",
-    "PSNR 40dB anchor and linear 1-LPIPS/JOD mappings are conventions, not expert-validated quality scales.",
-    "AV normalization uses reference100 and frozen-mouth0; no claim of phoneme-level accuracy."
-  ],
-  "input_sha256": {
-    "visual_result": "869a55a9026b5d51a086166d0dcf8a158b1e1804f90a6341e58b3100b5aa6bc8",
-    "av_result": "68f4e9e7ed01f956a87461219d17e2abc4bfb95eb53f8c9ed726eca593948a89"
-  },
-  "views": {
-    "T1": {
-      "normalized": {
-        "PSNR": 0.49763075532434,
-        "SSIM": 0.5922260475431577,
-        "LPIPS": 0.6957792525108044,
-        "JOD": 0.36870226860046384,
-        "AV_sync": 0.8234264416651407
-      },
-      "weighted": {
-        "PSNR": 7.4644613298651,
-        "SSIM": 8.883390713147366,
-        "LPIPS": 10.436688787662066,
-        "JOD": 5.530534029006958,
-        "AV_sync": 32.937057666605625
-      },
-      "visual_subtotal": 32.31507485968149,
-      "AV_subtotal": 32.937057666605625,
-      "total": 65.25213252628711
+  "model": "gpt-6.2-sol",
+  "reasoning_effort": "xhigh",
+  "framework": "Codex",
+  "visual": 30.182023881376725,
+  "scene_element_fidelity": 13.903846153846153,
+  "av_sync": 9.354198767814164,
+  "total": 53.44006880303704,
+  "maximum": 100,
+  "regions": {
+    "C1": {
+      "name": "眼",
+      "maximum": 5,
+      "subcheck_ids": [
+        "C1.1",
+        "C1.2",
+        "C1.3",
+        "C1.4",
+        "C1.5"
+      ],
+      "score": 1.2403846153846154
     },
-    "T2": {
-      "normalized": {
-        "PSNR": 0.5136207819639617,
-        "SSIM": 0.6110570167323325,
-        "LPIPS": 0.6717406932551127,
-        "JOD": 0.36905612945556643,
-        "AV_sync": 0.92636684901751
-      },
-      "weighted": {
-        "PSNR": 7.704311729459425,
-        "SSIM": 9.165855250984988,
-        "LPIPS": 10.076110398826689,
-        "JOD": 5.535841941833496,
-        "AV_sync": 37.0546739607004
-      },
-      "visual_subtotal": 32.4821193211046,
-      "AV_subtotal": 37.0546739607004,
-      "total": 69.53679328180499
+    "C2": {
+      "name": "耳",
+      "maximum": 5,
+      "subcheck_ids": [
+        "C2.1",
+        "C2.2",
+        "C2.3",
+        "C2.4",
+        "C2.5"
+      ],
+      "score": 2.3461538461538463
+    },
+    "C3": {
+      "name": "鼻",
+      "maximum": 5,
+      "subcheck_ids": [
+        "C3.1",
+        "C3.2",
+        "C3.3",
+        "C3.4",
+        "C3.5"
+      ],
+      "score": 1.0
+    },
+    "C4": {
+      "name": "口",
+      "maximum": 5,
+      "subcheck_ids": [
+        "C4.1",
+        "C4.2",
+        "C4.4",
+        "C4.5"
+      ],
+      "score": 3.4615384615384617
+    },
+    "C5": {
+      "name": "眉",
+      "maximum": 5,
+      "subcheck_ids": [
+        "C5.1",
+        "C5.2",
+        "C5.3",
+        "C5.4",
+        "C5.5"
+      ],
+      "score": 1.6923076923076923
+    },
+    "C6": {
+      "name": "脸部轮廓完整性",
+      "maximum": 5,
+      "subcheck_ids": [
+        "C6.1",
+        "C6.2",
+        "C6.3",
+        "C6.4",
+        "C6.5"
+      ],
+      "score": 2.9711538461538463
+    },
+    "C7": {
+      "name": "肩部",
+      "maximum": 5,
+      "subcheck_ids": [
+        "C7.1",
+        "C7.2",
+        "C7.3",
+        "C7.4",
+        "C7.5"
+      ],
+      "score": 1.0769230769230769
+    },
+    "C8": {
+      "name": "背景",
+      "maximum": 5,
+      "subcheck_ids": [
+        "C8.1",
+        "C8.2",
+        "C8.3",
+        "C8.4",
+        "C8.5"
+      ],
+      "score": 0.11538461538461539
     }
-  },
-  "scores": {
-    "PSNR": 7.584386529662263,
-    "SSIM": 9.024622982066177,
-    "LPIPS": 10.256399593244378,
-    "JOD": 5.533187985420227,
-    "AV_sync": 34.99586581365301
-  },
-  "visual_subtotal": 32.39859709039305,
-  "AV_subtotal": 34.99586581365301,
-  "total": 67.39446290404605
+  }
 }

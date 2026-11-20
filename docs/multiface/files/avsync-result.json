@@ -1,6 +1,6 @@
 {
   "implementation_commit": "907c0b579c2e2d83f0eae1b2ac9e720cde4e5623",
-  "protocol_sha256": "1d6d785618c3a83d7446b7c3fd6b6c105907329b45510a5d547ad08bbfcf2521",
+  "protocol_sha256": "f6669dcd6cb993f525cb85d5a8f196d5c5c9a98bc961b84e9109087f00c84347",
   "versions": {
     "torch": "2.5.1+cpu",
     "numpy": "2.2.6",
@@ -148,135 +148,135 @@
     "T1_submitted": {
       "offset_frames": 0,
       "offset_ms": 0,
-      "LSE_D": 7.249087333679199,
-      "LSE_C": 5.537744522094727,
-      "zero_lag_distance": 7.249087333679199,
+      "LSE_D": 6.5702738761901855,
+      "LSE_C": 6.584527492523193,
+      "zero_lag_distance": 6.5702738761901855,
       "offset_on_search_boundary": false,
       "feature_windows": 81,
       "curve": [
         {
           "offset_ms": 600,
-          "distance": 13.85281753540039
+          "distance": 14.43714714050293
         },
         {
           "offset_ms": 560,
-          "distance": 13.712163925170898
+          "distance": 14.233039855957031
         },
         {
           "offset_ms": 520,
-          "distance": 13.844637870788574
+          "distance": 14.366174697875977
         },
         {
           "offset_ms": 480,
-          "distance": 14.079218864440918
+          "distance": 14.520347595214844
         },
         {
           "offset_ms": 440,
-          "distance": 14.174970626831055
+          "distance": 14.44984245300293
         },
         {
           "offset_ms": 400,
-          "distance": 13.975414276123047
+          "distance": 14.101404190063477
         },
         {
           "offset_ms": 360,
-          "distance": 13.314468383789062
+          "distance": 13.446102142333984
         },
         {
           "offset_ms": 320,
-          "distance": 12.45934009552002
+          "distance": 12.64303970336914
         },
         {
           "offset_ms": 280,
-          "distance": 12.025789260864258
+          "distance": 12.203804969787598
         },
         {
           "offset_ms": 240,
-          "distance": 12.064752578735352
+          "distance": 12.164389610290527
         },
         {
           "offset_ms": 200,
-          "distance": 12.165331840515137
+          "distance": 12.27100658416748
         },
         {
           "offset_ms": 160,
-          "distance": 12.343727111816406
+          "distance": 12.348945617675781
         },
         {
           "offset_ms": 120,
-          "distance": 11.877484321594238
+          "distance": 11.690125465393066
         },
         {
           "offset_ms": 80,
-          "distance": 10.515386581420898
+          "distance": 10.059199333190918
         },
         {
           "offset_ms": 40,
-          "distance": 8.41019344329834
+          "distance": 7.797037124633789
         },
         {
           "offset_ms": 0,
-          "distance": 7.249087333679199
+          "distance": 6.5702738761901855
         },
         {
           "offset_ms": -40,
-          "distance": 8.586854934692383
+          "distance": 8.035395622253418
         },
         {
           "offset_ms": -80,
-          "distance": 10.459456443786621
+          "distance": 10.12771987915039
         },
         {
           "offset_ms": -120,
-          "distance": 11.679292678833008
+          "distance": 11.506062507629395
         },
         {
           "offset_ms": -160,
-          "distance": 12.169160842895508
+          "distance": 12.102063179016113
         },
         {
           "offset_ms": -200,
-          "distance": 12.299647331237793
+          "distance": 12.344282150268555
         },
         {
           "offset_ms": -240,
-          "distance": 12.462396621704102
+          "distance": 12.66908073425293
         },
         {
           "offset_ms": -280,
-          "distance": 12.786831855773926
+          "distance": 13.154801368713379
         },
         {
           "offset_ms": -320,
-          "distance": 13.346851348876953
+          "distance": 13.803643226623535
         },
         {
           "offset_ms": -360,
-          "distance": 14.059468269348145
+          "distance": 14.564587593078613
         },
         {
           "offset_ms": -400,
-          "distance": 14.597051620483398
+          "distance": 15.152509689331055
         },
         {
           "offset_ms": -440,
-          "distance": 14.77760124206543
+          "distance": 15.396414756774902
         },
         {
           "offset_ms": -480,
-          "distance": 14.667656898498535
+          "distance": 15.334914207458496
         },
         {
           "offset_ms": -520,
-          "distance": 14.523823738098145
+          "distance": 15.131240844726562
         },
         {
           "offset_ms": -560,
-          "distance": 14.512190818786621
+          "distance": 14.991387367248535
         },
         {
           "offset_ms": -600,
-          "distance": 14.629683494567871
+          "distance": 15.12841510772705
         }
       ],
       "status": "measured",
@@ -422,135 +422,135 @@
     "T2_submitted": {
       "offset_frames": 0,
       "offset_ms": 0,
-      "LSE_D": 7.842170715332031,
-      "LSE_C": 5.149008750915527,
-      "zero_lag_distance": 7.842170715332031,
+      "LSE_D": 7.762233257293701,
+      "LSE_C": 5.570188045501709,
+      "zero_lag_distance": 7.762233257293701,
       "offset_on_search_boundary": false,
       "feature_windows": 81,
       "curve": [
         {
           "offset_ms": 600,
-          "distance": 14.117199897766113
+          "distance": 14.60409164428711
         },
         {
           "offset_ms": 560,
-          "distance": 13.7503662109375
+          "distance": 14.244421005249023
         },
         {
           "offset_ms": 520,
-          "distance": 13.718463897705078
+          "distance": 14.153398513793945
         },
         {
           "offset_ms": 480,
-          "distance": 13.876914024353027
+          "distance": 14.178285598754883
         },
         {
           "offset_ms": 440,
-          "distance": 13.887310981750488
+          "distance": 14.150455474853516
         },
         {
           "offset_ms": 400,
-          "distance": 13.57249641418457
+          "distance": 13.921337127685547
         },
         {
           "offset_ms": 360,
-          "distance": 12.991179466247559
+          "distance": 13.33242130279541
         },
         {
           "offset_ms": 320,
-          "distance": 12.325602531433105
+          "distance": 12.575691223144531
         },
         {
           "offset_ms": 280,
-          "distance": 11.969286918640137
+          "distance": 12.251379013061523
         },
         {
           "offset_ms": 240,
-          "distance": 11.963150978088379
+          "distance": 12.278619766235352
         },
         {
           "offset_ms": 200,
-          "distance": 12.154273986816406
+          "distance": 12.433572769165039
         },
         {
           "offset_ms": 160,
-          "distance": 12.216869354248047
+          "distance": 12.485382080078125
         },
         {
           "offset_ms": 120,
-          "distance": 11.666738510131836
+          "distance": 11.966046333312988
         },
         {
           "offset_ms": 80,
-          "distance": 10.312203407287598
+          "distance": 10.637426376342773
         },
         {
           "offset_ms": 40,
-          "distance": 8.512423515319824
+          "distance": 8.750412940979004
         },
         {
           "offset_ms": 0,
-          "distance": 7.842170715332031
+          "distance": 7.762233257293701
         },
         {
           "offset_ms": -40,
-          "distance": 9.238296508789062
+          "distance": 9.100313186645508
         },
         {
           "offset_ms": -80,
-          "distance": 11.026361465454102
+          "distance": 10.867741584777832
         },
         {
           "offset_ms": -120,
-          "distance": 12.159449577331543
+          "distance": 12.080883979797363
         },
         {
           "offset_ms": -160,
-          "distance": 12.600472450256348
+          "distance": 12.693787574768066
         },
         {
           "offset_ms": -200,
-          "distance": 12.704145431518555
+          "distance": 12.951029777526855
         },
         {
           "offset_ms": -240,
-          "distance": 12.946930885314941
+          "distance": 13.315850257873535
         },
         {
           "offset_ms": -280,
-          "distance": 13.390281677246094
+          "distance": 13.752518653869629
         },
         {
           "offset_ms": -320,
-          "distance": 13.895824432373047
+          "distance": 14.261693000793457
         },
         {
           "offset_ms": -360,
-          "distance": 14.395452499389648
+          "distance": 14.865570068359375
         },
         {
           "offset_ms": -400,
-          "distance": 14.748826026916504
+          "distance": 15.271120071411133
         },
         {
           "offset_ms": -440,
-          "distance": 14.914522171020508
+          "distance": 15.380288124084473
         },
         {
           "offset_ms": -480,
-          "distance": 14.856152534484863
+          "distance": 15.245259284973145
         },
         {
           "offset_ms": -520,
-          "distance": 14.664381980895996
+          "distance": 15.038288116455078
         },
         {
           "offset_ms": -560,
-          "distance": 14.619586944580078
+          "distance": 14.955413818359375
         },
         {
           "offset_ms": -600,
-          "distance": 14.853824615478516
+          "distance": 15.07603645324707
         }
       ],
       "status": "measured",
@@ -2233,16 +2233,16 @@
     "T1": {
       "reference_shift_controls_passed": true,
       "offset_difference_from_reference_ms": 0,
-      "LSE_D_difference_from_reference": 1.097041130065918,
-      "LSE_C_difference_from_reference": -1.4406452178955078,
+      "LSE_D_difference_from_reference": 0.4182276725769043,
+      "LSE_C_difference_from_reference": -0.393862247467041,
       "status": "reference_calibrated_raw_measurement",
       "no_calibrated_pass_threshold": true
     },
     "T2": {
       "reference_shift_controls_passed": true,
       "offset_difference_from_reference_ms": 0,
-      "LSE_D_difference_from_reference": 0.49930524826049805,
-      "LSE_C_difference_from_reference": -1.1052308082580566,
+      "LSE_D_difference_from_reference": 0.41936779022216797,
+      "LSE_C_difference_from_reference": -0.684051513671875,
       "status": "reference_calibrated_raw_measurement",
       "no_calibrated_pass_threshold": true
     }

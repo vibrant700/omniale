@@ -1,48 +1,21 @@
-# gpt-6.1-sol xhigh：标准图像与视频指标重评
-
-本次针对已经完成的同一封存提交计算标准指标，未重跑agent，未改动交付。该结果与旧的自定义70.26/100是不同评测协议，不再汇成百分制。
-
-## 整帧结果
-
-| 目标视角 | PSNR ↑ (dB) | SSIM ↑ | LPIPS-Alex ↓ | JOD ↑ |
-|---|---:|---:|---:|---:|
-| T1 | 19.9052 | 0.592226 | 0.304221 | 3.687023 |
-| T2 | 20.5448 | 0.611057 | 0.328259 | 3.690561 |
-| 平均 | 20.2250 | 0.601642 | 0.316240 | 3.688792 |
-
-## 人脸扫描表面区域补充结果
-
-此区域由隐藏扫描网格三角形投影覆盖生成，不是旧评分的凸包，也不是精确人像alpha或共同可见性分割。可用于减少背景和肩部对指标的影响，但不能把该区域结果当作嘴部专项指标。
-
-| 目标视角 | 区域PSNR ↑ (dB) | 区域SSIM ↑ | 区域LPIPS-Alex ↓ |
-|---|---:|---:|---:|
-| T1 | 23.1471 | 0.725765 | 0.290408 |
-| T2 | 24.6073 | 0.729210 | 0.319329 |
-| 平均 | 23.8772 | 0.727488 | 0.304868 |
-
-## 实施条件
-
-- 两视角各104帧，668×1024，真实30fps；参考直接取原始无损PNG，以Pillow BICUBIC固定缩放到交付尺寸。预测从封存MP4实际解码，不对参考做视频编码。
-- 固定逐帧对应，不做画面配准、颜色拟合、裁切或时间搜索。所有图像按sRGB编码值计算。
-- PSNR：scikit-image峰值255；逐帧dB算术平均。SSIM：RGB三通道，Gaussian sigma=1.5、11像素窗口、population covariance。它与旧自实现均匀窗口的SSIM不同，数值不可混同。
-- LPIPS：作者官方lpips包0.1.4，AlexNet ImageNet权重，v0.1 learned weights；整帧为标准scalar输出，输入[0,1]并normalize=True。区域补充项使用空间距离图，黑色遮掉固定参考区域外像素，再在该参考区域求平均，方法与整帧标量不同。
-- JOD：官方FovVideoVDP/pyfvvdp1.2.2，整段104帧一次评估，standard_fhd显示模型、非中心凹模式、replicate时间边界、无热图、不做全屏缩放，使用实际30fps。
-- JOD显示参数："FovVideoVDP v1.2.2, 37.84 [pix/deg], Lpeak=200, Lblack=0.5979 [cd/m^2], non-foveated, (standard_fhd)"
-- JOD是全参考时空感知质量，不是独立的口型正确率。相同视频的JOD为10；这里不设未经校准的合格阈值，也不把它换算为百分制。
-- 使用CPU；本机无独立GPU。环境和权重哈希见environment.json、result.json及final_checks.json；大数组和模型缓存放在protocol.json所列的D盘临时目录。
-
-## 自检与限制
-
-相同图像SSIM=1、LPIPS=0；相同8帧视频JOD=10；黑屏图像对照SSIM约0.0676、LPIPS约0.7497。最终封存提交的全部文件哈希、原题面和原冻结评分器均再次核验未变；协议和准备的参考数组哈希已核验。每视角CSV含104条逐帧记录。
-
-这是对已有提交的事后补充测量，采用标准指标但并非完整复现NeRSemble或其他论文的协议。数据、分辨率、帧率、掩码和LPIPS网络/版本不同，不能拿这些数值直接与论文表格排名。整帧结果含未建模的肩部、背景和灯点差异；区域补充结果帮助区分这种影响。仍未测三维几何误差、语义口型同步或新语音生成。重影、轮廓和局部变形可从comparison_and_mask.jpg及原视频对照观察。
-
-## 文件
-
-- protocol.json：本次评测条件、输入与实现哈希。
-- result.json：全部原始数值、环境版本和权重哈希。
-- T1_per_frame.csv、T2_per_frame.csv：逐帧图像指标。
-- comparison_and_mask.jpg：各视角首帧真值、扫描表面掩码和提交对照。
-- evaluate.py：可复现入口，先--prepare，再不带参数运行。
-
-参考实现：[LPIPS](https://github.com/richzhang/PerceptualSimilarity)、[FovVideoVDP/JOD](https://github.com/gfxdisp/FovVideoVDP)、[scikit-image](https://scikit-image.org/docs/0.25.x/api/skimage.metrics.html)、[NeRSemble官方评测](https://github.com/tobias-kirschstein/nersemble#32-evaluation)。
+gpt-6.2-sol xhigh + Codex
+{
+  "T1": {
+    "PSNR_dB": 20.953529505725896,
+    "SSIM": 0.7705523616352552,
+    "LPIPS_alex": 0.28986477106809616,
+    "surface_PSNR_dB": 24.776240013570863,
+    "surface_SSIM_map_mean": 0.7447665916130151,
+    "surface_LPIPS_alex_map_mean": 0.2864536429994482,
+    "JOD": 3.920902729034424
+  },
+  "T2": {
+    "PSNR_dB": 21.623595708027462,
+    "SSIM": 0.7643123408312058,
+    "LPIPS_alex": 0.2817809100334461,
+    "surface_PSNR_dB": 25.822692140571462,
+    "surface_SSIM_map_mean": 0.7474516197223751,
+    "surface_LPIPS_alex_map_mean": 0.2640505990712474,
+    "JOD": 4.0938639640808105
+  }
+}
