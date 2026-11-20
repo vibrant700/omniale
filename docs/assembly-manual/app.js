@@ -111,8 +111,9 @@
     for (const row of document.querySelectorAll('#systems-table tr')) row.classList.toggle('active', row.dataset.system === selected);
     for (const button of document.querySelectorAll('[data-select-system]')) { const active = button.dataset.selectSystem === selected; button.setAttribute('aria-pressed',String(active)); button.textContent = active ? '查看当前结果 ↓' : '查看交付与评分 ↓'; }
     $('system-status').textContent = `${system.label} · ${system.result.scoreDisplay} /100`;
+    const effortVerified = meta.allRequestsExplicitEffort ?? (meta.reasoningEffort === 'max' ? meta.allRequestsExplicitMax : meta.allRequestsExplicitXhigh);
     $('run-config').innerHTML = [
-      ['运行框架',`${meta.framework} ${meta.codexVersion}`],['推理强度',`${meta.reasoningEffort} · ${meta.requestCount}次请求${meta.allRequestsExplicitXhigh ? '逐条确认' : '记录'}`],['总运行时间',duration(meta.elapsedSeconds)],['工具调用',`${meta.toolCalls}次（含${meta.asrCalls}次本地ASR）`]
+      ['运行框架',`${meta.framework} ${meta.codexVersion}`],['推理强度',`${meta.reasoningEffort} · ${meta.requestCount}次请求${effortVerified ? '逐条确认' : '记录'}`],['总运行时间',duration(meta.elapsedSeconds)],['工具与转写',`原生工具${meta.toolCalls}次；本地ASR${meta.asrCalls}次`]
     ].map(([key,value]) => `<div><dt>${escape(key)}</dt><dd>${escape(value)}</dd></div>`).join('') + `<div class="run-note">音频工具：${escape(meta.audioTool)}；${meta.nativeAudio ? '使用原生音频输入' : '无原生音频输入'}。${meta.timeLimit == null ? '无总答题时限' : `总时限${duration(meta.timeLimit)}`}，${meta.toolLimit == null ? '无工具次数上限' : `工具上限${meta.toolLimit}次`}。运行时间包含模型与工具，不含评分。</div>`;
     $('delivery-title').textContent = `${system.label} · ${delivery.pages}页实际手册`;
     $('delivery-description').textContent = `${delivery.screenshotsCount}张原截图＋${delivery.annotationsCount}份SVG标注源；PDF、Word和完整交付均可下载。`;

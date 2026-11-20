@@ -164,6 +164,192 @@
           ]
         }
       ]
+    },
+    "deepseek41flash-max": {
+      "meta": {
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "max",
+        "framework": "Codex CLI",
+        "codexVersion": "0.142.4",
+        "elapsedSeconds": 5296.14,
+        "elapsedLabel": "88分16秒",
+        "toolCalls": 412,
+        "asrCalls": 672,
+        "reasoningRequests": 210,
+        "allRequestsExplicitEffort": true,
+        "allRequestsExplicitMax": true,
+        "audioTool": "本地 whisper.cpp base.en",
+        "nativeAudio": false,
+        "externalModelDuringSolving": false,
+        "timeLimit": null,
+        "submissionPages": 21,
+        "sourceScreenshots": 26,
+        "editableAnnotations": 25,
+        "sealedSubmission": true,
+        "traceNote": "以下为真实工具轨迹节选；itemId对应原始运行记录，命令及输出逐条核对，步骤按工作内容组织。原始日志不公开。"
+      },
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "读题并分段浏览录像",
+          "summary": "读取委托与十题问题，检查录像时长和音视频流；生成带时间标记的画面联系表，再查看关键片段。",
+          "evidence": [
+            {
+              "itemId": "item_3",
+              "type": "command_execution",
+              "command": "cat candidate/TASK.md"
+            },
+            {
+              "itemId": "item_4",
+              "type": "command_execution",
+              "command": "cat candidate/questions.md"
+            },
+            {
+              "itemId": "item_9",
+              "type": "command_execution",
+              "command": "ffprobe -v error -show_format -show_streams -of json candidate/recording.mp4",
+              "outputSnippet": "\"duration\": \"1110.953000\""
+            },
+            {
+              "itemId": "item_25",
+              "type": "command_execution",
+              "command": "ffmpeg -hide_banner -loglevel error -i candidate/recording.mp4",
+              "outputSnippet": "contact_00_10.jpg"
+            }
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "处理音频并多次分段转写",
+          "summary": "先按60秒分段转写，再尝试滤波、降噪、变调和更短片段；转写中存在重复与误识别，累计调用本地Whisper 672次。自动转写不作为事实真值。",
+          "evidence": [
+            {
+              "itemId": "item_37",
+              "type": "command_execution",
+              "command": "python scratch/mcp_transcribe_batch.py 60",
+              "outputSnippet": "Next, please take the side pieces and connect them to the bottom."
+            },
+            {
+              "itemId": "item_41",
+              "type": "command_execution",
+              "command": "ffmpeg -hide_banner -loglevel error -ss 480 -t 180 -i candidate/recording.mp4 -vn -ac 1 -ar 16000 -af \"highpass=f=90,lowpass=f=6500,afftdn=nr=18:nf=-32,acompressor=threshold=-24dB:ratio=3:attack=8:release=120,alimiter=limit=0.95\" scratch/voice_480_660.wav -y"
+            },
+            {
+              "itemId": "item_56",
+              "type": "command_execution",
+              "command": "ffmpeg -hide_banner -loglevel error -i candidate/recording.mp4 -vn -ac 1 -ar 16000 -af \"rubberband=pitch=0.90\" scratch/recording_pitch090.wav -y"
+            },
+            {
+              "itemId": "item_59",
+              "type": "command_execution",
+              "command": "python scratch/mcp_transcribe_batch.py",
+              "outputSnippet": "I'm going to add some of the other ones."
+            }
+          ]
+        },
+        {
+          "id": "step-3",
+          "title": "写入并修订十题回答",
+          "summary": "写入Q01至Q10结论、源时间和对应观察，检查十题标题与证据表；随后继续修订个别回答。结构检查不等于内容正确。",
+          "evidence": [
+            {
+              "itemId": "item_143",
+              "type": "file_change",
+              "files": [
+                "submission/answers.md"
+              ],
+              "outputSnippet": "已写入文件"
+            },
+            {
+              "itemId": "item_178",
+              "type": "command_execution",
+              "command": "submission/answers.md",
+              "outputSnippet": "Q headings: 10\nTables: 10"
+            },
+            {
+              "itemId": "item_210",
+              "type": "file_change",
+              "files": [
+                "submission/answers.md"
+              ],
+              "outputSnippet": "已写入文件"
+            }
+          ]
+        },
+        {
+          "id": "step-4",
+          "title": "制作Word手册与SVG标注",
+          "summary": "提取截图，编写标注和手册生成脚本，输出可编辑Word正文及25份SVG标注。生成工具返回字体缓存警告。",
+          "evidence": [
+            {
+              "itemId": "item_149",
+              "type": "file_change",
+              "files": [
+                "scratch/build_annotations.py"
+              ],
+              "outputSnippet": "已写入文件"
+            },
+            {
+              "itemId": "item_159",
+              "type": "file_change",
+              "files": [
+                "scratch/build_manual.py"
+              ],
+              "outputSnippet": "已写入文件"
+            },
+            {
+              "itemId": "item_157",
+              "type": "file_change",
+              "files": [
+                "submission/annotations/README.md"
+              ],
+              "outputSnippet": "已写入文件"
+            },
+            {
+              "itemId": "item_202",
+              "type": "command_execution",
+              "command": "python scratch/build_annotations.py\npython scratch/build_manual.py",
+              "outputSnippet": "Built 25 editable SVG annotations and PNG renders."
+            },
+            {
+              "itemId": "item_202",
+              "type": "command_execution",
+              "command": "python scratch/build_annotations.py",
+              "outputSnippet": "Fontconfig error: No writable cache directories"
+            }
+          ]
+        },
+        {
+          "id": "step-5",
+          "title": "导出21页PDF并检查交付",
+          "summary": "通过LibreOffice导出PDF、提取文字并渲染页面；检查Word结构、PDF页数、截图与SVG配对。封存交付为21页手册、26张原截图和25份SVG标注，封面截图未配SVG。",
+          "evidence": [
+            {
+              "itemId": "item_211",
+              "type": "command_execution",
+              "command": "--headless --convert-to pdf --outdir submission submission/manual.docx",
+              "outputSnippet": "pages 21 chars 8372 replacement 0"
+            },
+            {
+              "itemId": "item_212",
+              "type": "command_execution",
+              "command": "pdftoppm -jpeg -r 120 -f 16 -l 17 submission/manual.pdf scratch/final_page"
+            },
+            {
+              "itemId": "item_214",
+              "type": "command_execution",
+              "command": "root=Path('submission')",
+              "outputSnippet": "screenshots 26 svgs 25\nmissing_svg_for_shot ['cover_final_cart']\nmissing_shot_for_svg []\nbad_screenshots []\nsvg_xml OK"
+            },
+            {
+              "itemId": "item_216",
+              "type": "command_execution",
+              "command": "pdf=PdfReader('submission/manual.pdf')",
+              "outputSnippet": "docx_zip_test None\ndocx_media 26\ndocx_paragraphs 185 tables 38 images 26\npdf_pages 21 encrypted False\npdf_text_chars 8372 replacement_chars 0"
+            }
+          ]
+        }
+      ]
     }
   }
 }

@@ -6,17 +6,33 @@
 
 ## 当前公开结果
 
-当前页面只展示 **GPT-6.2-Sol · xhigh + Codex，60.88／100**。
+当前页面展示 **GPT-6.2-Sol · xhigh + Codex，60.88／100** 与 **DeepSeek v4.1 Flash · max + Codex，31.25／100**，可在同页切换查看各自的实际交付与评分。默认展示保留为 Sol。
 
-| 项目 | 结果 |
-|---|---:|
-| 十题回答 | 39.375／50 |
-| 时间与结论证据 | 14／20 |
-| 手册质量 | 7.5／30 |
-| 原始总分 | 60.875／100 |
-| 展示总分 | 60.88／100 |
+| 项目 | GPT-6.2-Sol xhigh | DeepSeek v4.1 Flash max |
+|---|---:|---:|
+| 十题回答 | 39.375／50 | 23.75／50 |
+| 时间与结论证据 | 14／20 | 7.5／20 |
+| 手册质量 | 7.5／30 | 0／30 |
+| M02 关键问题覆盖度 | 0／7.5（6单位） | 0／7.5（6单位） |
+| M04 操作可执行性 | 2.5／7.5（2单位） | 0／7.5（10单位） |
+| M07 标注教学价值 | 2.5／7.5（2单位） | 0／7.5（14单位） |
+| M08 过程表达清晰度 | 2.5／7.5（2单位） | 0／7.5（6单位） |
+| 原始总分 | 60.875／100 | 31.25／100 |
+| 展示总分 | 60.88／100 | 31.25／100 |
 
-受测框架为 Official Codex CLI 0.142.4；单个连续任务运行55分11秒，235次工具调用、73次本地 Whisper 调用。78次模型请求均验证为显式 xhigh。未设置人为总时长或工具调用次数限制；本地 Whisper base.en 辅助理解音频，无原生音频输入。封存交付为8页手册、29张原截图和29份SVG标注。
+DeepSeek 的四个手册维度均因累计错误单位达到4及以上而计0分，没有使用关键错误（critical）归零。
+
+| 运行基本情况 | GPT-6.2-Sol xhigh | DeepSeek v4.1 Flash max |
+|---|---:|---:|
+| 连续任务用时 | 55分11秒（3310.66秒） | 88分16秒（5296.14秒） |
+| 工具调用 | 235 | 412 |
+| 本地 Whisper 调用 | 73 | 672 |
+| 模型请求与推理强度 | 78次，全部显式 xhigh | 210次，全部显式 max |
+| PDF手册页数 | 8 | 21 |
+| 原截图 | 29 | 26 |
+| 可编辑SVG标注 | 29 | 25 |
+
+两次运行均使用 Official Codex CLI 0.142.4，未设置人为总时长或工具调用次数限制；本地 Whisper base.en 辅助理解音频，无原生音频输入，求解期间未调用外部模型。运行统计和实际交付按各自封存记录列出。
 
 评分采用 `2.4-four-dimensions`：回答50分，时间与结论证据20分，手册30分。手册包含关键问题覆盖度、操作可执行性、标注教学价值、过程表达清晰度四维，各7.5分；先记录独立错误、严重性与唯一归属，再按错误单位换算0／1／2／3等级和权重。主评为 GPT-6.1-Sol high；Gemini 3.1 Pro Preview 对源音频的听音观察作辅助，事实真值以原数据集标注为准。可编辑、正常导出与基本可读性单独检查，不占30分。
 
@@ -24,13 +40,13 @@
 
 发布文件位于 `docs/assembly-manual/`。当前布局名为 report-v2，页面URL不变。页面按委托、输入资料、评分规则、受测结果与实际交付组织；交付、十题评分和手册错误清单在同一结果区域内查看。
 
-- `index.html`、`case.css`、`app.js`：当前展示界面与交互。`report-v2-20261120` 是资源缓存版本标记。
+- `index.html`、`case.css`、`app.js`：当前展示界面与交互。`report-v2-deepseek-20261120` 是资源缓存版本标记。
 - `data-v2.json`：当前内容与评分数据，`schemaVersion` 为2。顶层包含 `source`、`scoring`、`defaultSystem` 和 `systems`；目前 `defaultSystem` 为 `sol62-xhigh`。
 - `systems[systemId]`：独立模型结果，含 `meta`、`result`、`qa`、`manual`、`delivery` 与 `deliveryChecks`。`qa` 包含逐题回答、C1–C4裁定和两项证据分；`manual` 包含四维结果与去重错误依据；`delivery` 引用实际交付和页面图像。
 - `execution-v2.json`：真实执行节选，按同样的 `systems[systemId]` 键组织运行统计和步骤。每条节选保留原始 `itemId`，不公开未审核的原始运行日志。
 - `TASK.zh-CN.md`、`questions.md`、`answers-template.md`：公开委托与模板。`SCORING.zh-CN.md` 为完整评分说明。
 - `public-task.zip`：题面、问题、空白模板、录像下载说明及来源许可，不含标答、评分材料或大体积录像。
-- `results/sol62-xhigh/`：原始 `manual.pdf`、`manual.docx`、`answers.md`、`editable-delivery.zip`，以及 `pages/` 页面预览和 `review/` 评分用图组。
+- `results/sol62-xhigh/` 与 `results/deepseek41flash-max/`：分别保存各模型原始 `manual.pdf`、`manual.docx`、`answers.md`、`editable-delivery.zip`，以及 `pages/` 页面预览和 `review/` 评分用图组。
 
 `docs/assembly-manual/` 中的数据是公开展示的权威来源，不在 `cases/` 内重复存放另一份公开数据。当前界面源文件位于本目录的 `report-v2-template/{index.html,case.css,app.js}`；`build_report_v2.py` 用于恢复界面，并验证已发布的两个v2数据文件及下载资产哈希。
 
