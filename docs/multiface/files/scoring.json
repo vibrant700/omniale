@@ -240,8 +240,14 @@
       "maximum": 1
     }
   ],
-  "aggregation": "pass fraction per observable frame; equal mean of two evaluable views; multiply subcheck weight; sum within dimensions",
+  "aggregation": "For each subcheck and view, pass / (pass + fail); exclude unobservable (n) and uncertain (u) judgments. Average evaluable views equally, multiply subcheck weight, and sum within dimensions.",
   "judge_model": "gpt-6.1-sol",
   "judge_effort": "xhigh",
-  "protocol": "reference-based model visual judgments; no claimed exact pixel/IoU measurements"
+  "protocol": "reference-based model visual judgments; no claimed exact pixel/IoU measurements",
+  "total_score": "visual + scene_element_fidelity + av_sync",
+  "engineering_validation": {
+    "affects_total_score": false,
+    "is_eligibility_gate": false,
+    "reporting": "Reported separately in model delivery notes and analysis; original engineering observations remain unchanged."
+  }
 }

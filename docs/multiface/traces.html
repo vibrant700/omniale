@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="OmniALE 多视角动态场景重建：任务、素材、评分标准、真实模型交付与失败分析。"><meta name="theme-color" content="#f4f3ee"><link rel="icon" href="data:,"><title>关键执行证据 · OmniALE</title><link rel="stylesheet" href="scene.css?v=scene-sol62-3"><script defer src="scene.js?v=scene-sol62-2"></script></head>
-<body class="case-page"><a class="skip" href="#main">跳至正文</a><main id="main" class="document"><nav class="site-return"><a href="index.html">← 返回场景重建案例</a></nav><h1>关键执行证据</h1><p class="lead">gpt-6.2-sol · xhigh · Codex。以下节选实际执行中的对外说明及工具输出。</p><section class="trace-entry" id="item_12"><h2>item_12</h2><p>素材是同一段近景人像，正面与两侧原机位的夹角较大。我会用三个标定视图共同约束脸部几何，再把同步原图投影到同一张动态网格上，保留口型、眼神和原始光色。</p></section><section class="trace-entry" id="item_18"><h2>item_18</h2><p>轮廓和三角定位已给出鼻尖、嘴唇、下巴的深度范围。现在我把这些约束做成逐帧变形的网格，并测试三路原图在脸颊、眼角和耳侧的融合。</p></section><section class="trace-entry" id="item_20"><h2>item_20</h2><p>接下来把网格和纹理接进 Blender：几何用逐帧形态键，原声留在项目里，五台相机按标定建立，方便直接切换和检查。</p></section><section class="trace-entry" id="item_28"><h2>item_28</h2><p>两个机位的首帧已渲染出来，脸部视差符合标定方向。预览也暴露了肩部取样拉伸，我会修正领口和肩侧的纹理，然后检查张嘴幅度较大的帧。</p></section><section class="trace-entry" id="item_40"><h2>item_40</h2><p>两侧素材的亮点无法从现有视角可靠地定位，我会保留暗场，不把亮点猜放进目标画面。正面素材里能辨认出的椅背会作为独立几何加入工程。</p></section><section class="trace-entry" id="item_50"><h2>item_50</h2><p>标定核验通过：两台目标相机的测试点投影与原始参数相差不到 0.002 像素。纹理还在逐帧生成，我会同时整理重开、重建和重渲染的命令。</p></section><section class="trace-entry" id="item_61"><h2>item_61</h2><p>104 帧的几何和纹理已生成。现在把它们写入最终工程，检查 Blender 四处取景时用的是同一份动画，然后开始两台目标机位的全段渲染。</p></section><section class="trace-entry" id="item_69"><h2>item_69</h2><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;cat scratch/check.log&#x27;</code></pre><h3>工具输出</h3><pre><code>00:01.873  blend            | Read blend: &quot;/workspace/submission/scene.blend&quot;
+<body class="case-page"><a class="skip" href="#main">跳至正文</a><main id="main" class="document"><nav class="site-return"><a href="index.html">← 返回场景重建案例</a></nav><h1>关键执行证据</h1><p class="lead">以下为各模型实际执行中的说明与工具记录节选。</p><nav class="section-nav" aria-label="模型执行证据"><a href="#sol62-xhigh">gpt-6.2-sol</a><a href="#astra62-xhigh">gpt-6.2-astra</a><a href="#ds4pro-max">deepseek-v4-pro</a></nav><h2 id="sol62-xhigh">gpt-6.2-sol · xhigh · Codex</h2><section class="trace-entry" id="item_12"><h2>item_12</h2><p>素材是同一段近景人像，正面与两侧原机位的夹角较大。我会用三个标定视图共同约束脸部几何，再把同步原图投影到同一张动态网格上，保留口型、眼神和原始光色。</p></section><section class="trace-entry" id="item_18"><h2>item_18</h2><p>轮廓和三角定位已给出鼻尖、嘴唇、下巴的深度范围。现在我把这些约束做成逐帧变形的网格，并测试三路原图在脸颊、眼角和耳侧的融合。</p></section><section class="trace-entry" id="item_20"><h2>item_20</h2><p>接下来把网格和纹理接进 Blender：几何用逐帧形态键，原声留在项目里，五台相机按标定建立，方便直接切换和检查。</p></section><section class="trace-entry" id="item_28"><h2>item_28</h2><p>两个机位的首帧已渲染出来，脸部视差符合标定方向。预览也暴露了肩部取样拉伸，我会修正领口和肩侧的纹理，然后检查张嘴幅度较大的帧。</p></section><section class="trace-entry" id="item_40"><h2>item_40</h2><p>两侧素材的亮点无法从现有视角可靠地定位，我会保留暗场，不把亮点猜放进目标画面。正面素材里能辨认出的椅背会作为独立几何加入工程。</p></section><section class="trace-entry" id="item_50"><h2>item_50</h2><p>标定核验通过：两台目标相机的测试点投影与原始参数相差不到 0.002 像素。纹理还在逐帧生成，我会同时整理重开、重建和重渲染的命令。</p></section><section class="trace-entry" id="item_61"><h2>item_61</h2><p>104 帧的几何和纹理已生成。现在把它们写入最终工程，检查 Blender 四处取景时用的是同一份动画，然后开始两台目标机位的全段渲染。</p></section><section class="trace-entry" id="item_69"><h2>item_69</h2><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;cat scratch/check.log&#x27;</code></pre><h3>工具输出</h3><pre><code>00:01.873  blend            | Read blend: &quot;/workspace/submission/scene.blend&quot;
 I1 maximum projected pixel error: 0.00109
 I2 maximum projected pixel error: 0.00030
 I3 maximum projected pixel error: 0.00148
@@ -12,4 +12,214 @@ Blender 5.3.0 (hash 02f0899d78e3 built 2026-11-10 01:31:18)
 Blender quit
 </code></pre></section><section class="trace-entry" id="item_77"><h2>item_77</h2><p>已抽查几处闭嘴和张嘴帧，两台机位都保留了口型变化。后半段仍在渲染；接下来我会用解码结果核对成片帧数和原声起点。</p></section><section class="trace-entry" id="item_91"><h2>item_91</h2><p>已交付至 `submission/`：[T1.mp4](/workspace/submission/T1.mp4)、[T2.mp4](/workspace/submission/T2.mp4) 和同一份可编辑的 [Blender 工程](/workspace/submission/scene.blend)。资源、构建脚本和重渲染命令见 [README.md](/workspace/submission/README.md)。
 
-两支成片均已解码核验：668×1024、30 fps、104 帧，采用 H.264/AAC，原声从第 0 秒对齐。工程也已在独立目录重开并重渲染，抽查帧与编码前的同帧逐像素一致。素材未覆盖的后脑、部分领口和口腔几何为近似重建。</p></section><footer class="case-footer"><p class="footer-title">素材与许可</p><p>素材来自 Meta <a href="https://github.com/facebookresearch/multiface">Multiface</a>，序列 <code>SEN_a_good_morrow_to_you_my_boy</code>。原素材及衍生媒体遵循 <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>。</p><div class="footer-links"><a href="inputs.html">输入材料</a><a href="https://github.com/vibrant700/omniale/tree/main/cases/multiface/sol62-xhigh">制作源码 ↗</a><a href="../index.html">返回案例汇总</a></div></footer></main></body></html>
+两支成片均已解码核验：668×1024、30 fps、104 帧，采用 H.264/AAC，原声从第 0 秒对齐。工程也已在独立目录重开并重渲染，抽查帧与编码前的同帧逐像素一致。素材未覆盖的后脑、部分领口和口腔几何为近似重建。</p></section><h2 id="astra62-xhigh">gpt-6.2-astra · xhigh · Codex</h2><section class="trace-entry" id="astra62-xhigh-item_13"><h3>核对标定并求解共享人物表面</h3><p>读取三路图像和五台相机标定，计算相机中心及投影；结合跨视角对应点、轮廓和局部纹理相关性，细化头颈肩表面。</p><details><summary>item_13 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &quot;python - &lt;&lt;&#x27;PY&#x27;
+import numpy as np,json
+for c in json.load(open(&#x27;candidate/cameras.json&#x27;))[&#x27;cameras&#x27;]:
+ M=np.array(c[&#x27;world_to_camera&#x27;]);K=np.array(c[&#x27;K&#x27;]);print(c[&#x27;view_id&#x27;],c[&#x27;width&#x27;],c[&#x27;height&#x27;],np.round(-M[:,:3].T@M[:,3],1),&#x27;dir&#x27;,M[2,:3], &#x27;\\n&#x27;,K)
+PY&quot;</code></pre><h3>工具输出</h3><pre><code>I1 1334 2048 [1069.7 -137.1  836.1] dir [-0.971899    0.1266115   0.19844863]
+ [[7.6947360e+03 0.0000000e+00 8.4094543e+02]
+ [0.0000000e+00 7.6948800e+03 9.8010760e+02]
+ [0.0000000e+00 0.0000000e+00 1.0000000e+00]]
+I2 1334 2048 [0. 0. 0.] dir [0. 0. 1.]
+ [[7.7361045e+03 0.0000000e+00 6.2239465e+02]
+ [0.0000000e+00 7.7352666e+03 9.4342440e+02]
+ [0.0000000e+00 0.0000000e+00 1.0000000e+00]]
+I3 1334 2048 [-1016.9  -154.7   635.7] dir [0.9171675  0.14448647 0.37138584]
+ [[7.6731670e+03 0.0000000e+00 6.4563403e+02]
+ [0.0000000e+00 7.6715815e+03 1.0109865e+03]
+ [0.0000000e+00 0.0000000e+00 1.0000000e+00]]
+T1 1334 2048 [ 781.9 -170.8  303.8] dir [-0.7090767   0.158917    0.68699026]
+ [[7.713868e+03 0.000000e+00 8.033897e+02]
+ [0.000000e+00 7.713425e+03 9.448870e+02]
+ [0.000000e+00 0.000000e+00 1.000000e+00]]
+T2 1334 2048 [-782.2   16.6  323.6] dir [ 0.7414218  -0.00400117  0.67102736]
+ [[7.734624e+03 0.000000e+00 6.602456e+02]
+ [0.000000e+00 7.733216e+03 9.980302e+02]
+ [0.000000e+00 0.000000e+00 1.000000e+00]]
+</code></pre></div></details></section><section class="trace-entry" id="astra62-xhigh-item_57"><h3>估计三路光流并恢复逐帧位移</h3><p>分别跟踪三路输入，将光流按投影导数及可见性联合转换为三维位移；保存104帧动态人物网格，并对唇间开合做局部调整。</p><details><summary>item_57 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;OPENBLAS_NUM_THREADS=1 python scratch/track.py&#x27;</code></pre><h3>工具输出</h3><pre><code>tracked 1
+tracked 0
+tracked 2
+</code></pre></div></details></section><section class="trace-entry" id="astra62-xhigh-item_83"><h3>从同一Blender工程渲染两个机位</h3><p>把三路同步纹理序列投影到共享曲面，建立头枕和背景灯的近似几何；切换T1、T2逐帧渲染，再封装原声。</p><details><summary>item_83 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;blender -b submission/scene.blend -t 4 --python-exit-code 1 -P submission/build.py -- --render T1 T2 &gt; scratch/render.log 2&gt;&amp;1&#x27;</code></pre><h3>工具输出</h3><pre><code>（输出写入模型运行目录的日志文件，命令退出码0）</code></pre></div></details></section><section class="trace-entry" id="astra62-xhigh-item_106"><h3>重开工程并核验资源与视频</h3><p>重新打开工程，检查105,408顶点、104个形态键、相对纹理与声音路径，并确认两支视频都是104帧、30fps。</p><details><summary>item_106 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &quot;blender -b submission/scene.blend -t 1 --python-expr \&quot;import bpy,os; s=bpy.context.scene; obj=s.objects[&#x27;Performer | head, neck and shoulders&#x27;];print(&#x27;keys&#x27;,len(obj.data.shape_keys.key_blocks),&#x27;verts&#x27;,len(obj.data.vertices),&#x27;shaders&#x27;,len(bpy.data.node_groups),&#x27;frames&#x27;,s.frame_start,s.frame_end); print([(im.filepath,os.path.isfile(bpy.path.abspath(im.filepath))) for im in bpy.data.images if im.filepath]);print([(so.filepath,os.path.isfile(bpy.path.abspath(so.filepath))) for so in bpy.data.sounds]);print([(o.name,o.users_collection[0].name) for o in bpy.data.objects if o.type==&#x27;CAMERA&#x27;]);s.frame_set(104);print(&#x27;last key time&#x27;,obj.data.shape_keys.eval_time,obj.data.shape_keys.key_blocks[-1].frame)\&quot;&quot;</code></pre><h3>工具输出</h3><pre><code>Failed to create secure directory (//.config/pulse): No such file or directory
+00:03.965  blend            | Read blend: &quot;/workspace/submission/scene.blend&quot;
+keys 104 verts 105408 shaders 3 frames 1 104
+[(&#x27;//assets/coverage.jpg&#x27;, True), (&#x27;//assets/I1/0001.jpg&#x27;, True), (&#x27;//assets/I2/0001.jpg&#x27;, True), (&#x27;//assets/I3/0001.jpg&#x27;, True)]
+[(&#x27;//assets/speech.wav&#x27;, True)]
+[(&#x27;I1&#x27;, &#x27;03 | Acquisition cameras&#x27;), (&#x27;I2&#x27;, &#x27;03 | Acquisition cameras&#x27;), (&#x27;I3&#x27;, &#x27;03 | Acquisition cameras&#x27;), (&#x27;T1&#x27;, &#x27;03 | Acquisition cameras&#x27;), (&#x27;T2&#x27;, &#x27;03 | Acquisition cameras&#x27;)]
+last key time 1030.000244140625 1030.000244140625
+Blender 5.3.0 (hash 02f0899d78e3 built 2026-11-10 01:31:18)
+
+Blender quit
+</code></pre></div></details></section><h2 id="ds4pro-max">deepseek-v4-pro · max · Codex</h2><section class="trace-entry" id="ds4pro-max-item_54"><h3>用代码读取图像和相机标定</h3><p>本次模型接口仅接收文本，不支持原生视觉；全部原始媒体仍作为文件提供。模型通过Python读取图像尺寸、像素统计和标定，未引入额外视觉模型。</p><details><summary>item_54 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &quot;cd /workspace &amp;&amp; python3 -c \&quot;
+import sys; sys.path.insert(0, &#x27;scratch&#x27;)
+from build import load_cameras, _build_ray_grid
+import numpy as np
+
+cams = load_cameras(&#x27;candidate/cameras.json&#x27;)
+print(&#x27;Cameras loaded:&#x27;, list(cams.keys()))
+
+# Test ray grid for T1
+tcam = cams[&#x27;T1&#x27;]
+dirs = _build_ray_grid(tcam)
+print(f&#x27;T1 ray grid: {dirs.shape}, min={dirs.min():.4f}, max={dirs.max():.4f}&#x27;)
+
+# Check that ray directions are unit vectors
+norms = np.linalg.norm(dirs, axis=-1)
+print(f&#x27;T1 ray norms: mean={norms.mean():.6f}, std={norms.std():.6f}&#x27;)
+
+# Spot check a few pixels
+for r,c in [(0,0), (512,334), (1023,667)]:
+    print(f&#x27;  T1 pixel ({c},{r}): dir={dirs[r,c,:].round(4)}&#x27;)
+\&quot;&quot;</code></pre><h3>工具输出</h3><pre><code>Cameras loaded: [&#x27;I1&#x27;, &#x27;I2&#x27;, &#x27;I3&#x27;, &#x27;T1&#x27;, &#x27;T2&#x27;]
+T1 ray grid: (1024, 668, 3), min=-0.7818, max=0.7464
+T1 ray norms: mean=1.000000, std=0.000000
+  T1 pixel (0,0): dir=[-0.7817  0.0325  0.6228]
+  T1 pixel (334,512): dir=[-0.7205  0.1681  0.6728]
+  T1 pixel (667,1023): dir=[-0.6418  0.2994  0.706 ]
+</code></pre></div></details></section><section class="trace-entry" id="ds4pro-max-item_56"><h3>用球面代理计算目标视角</h3><p>从目标机位逐像素发射射线，与球面代理求交，再投影回三路输入并按表面朝向和视线相似度混合颜色；背景使用I2平面重投影。</p><details><summary>item_56 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &quot;cd /workspace &amp;&amp; python3 -c \&quot;
+import sys; sys.path.insert(0, &#x27;scratch&#x27;)
+from build import load_cameras, _build_ray_grid, _intersect_sphere, _project_to_camera
+import numpy as np
+
+cams = load_cameras(&#x27;candidate/cameras.json&#x27;)
+
+# Test sphere intersection for T1
+tcam = cams[&#x27;T1&#x27;]
+dirs = _build_ray_grid(tcam)
+origins = np.broadcast_to(tcam[&#x27;C&#x27;], (1024, 668, 3)).copy()
+
+center = np.array([0.0, 0.0, 1050.0])
+radius = 90.0
+
+t_vals, hit = _intersect_sphere(origins, dirs, center, radius)
+print(f&#x27;Hit count: {hit.sum()} / {hit.size} ({100*hit.sum()/hit.size:.1f}%)&#x27;)
+print(f&#x27;T range: [{t_vals[hit].min():.1f}, {t_vals[hit].max():.1f}]&#x27;)
+
+# Check if the sphere is in the right place by looking at projected pixels
+flat_pts = (origins + dirs * t_vals[..., None]).reshape(-1, 3)
+flat_hit = hit.ravel()
+pts_hit = flat_pts[flat_hit]
+
+print(f&#x27;3D points on sphere: mean={pts_hit.mean(axis=0).round(1)}, std={pts_hit.std(axis=0).round(1)}&#x27;)
+print(f&#x27;  min={pts_hit.min(axis=0).round(1)}&#x27;)
+print(f&#x27;  max={pts_hit.max(axis=0).round(1)}&#x27;)
+
+# Project hit points into I2 to see if they&#x27;re in frame
+u, v, z, valid = _project_to_camera(pts_hit, cams[&#x27;I2&#x27;])
+print(f&#x27;I2 projections: u=[{np.nanmin(u):.0f},{np.nanmax(u):.0f}], v=[{np.nanmin(v):.0f},{np.nanmax(v):.0f}]&#x27;)
+print(f&#x27;  I2 image: {cams[\\\&quot;I2\\\&quot;][\\\&quot;w\\\&quot;]}x{cams[\\\&quot;I2\\\&quot;][\\\&quot;h\\\&quot;]}&#x27;)
+print(f&#x27;  Valid (front+in frame): {valid.sum()}/{len(valid)}&#x27;)
+\&quot;&quot;</code></pre><h3>工具输出</h3><pre><code>Hit count: 314836 / 684032 (46.0%)
+T range: [1004.2, 1090.4]
+3D points on sphere: mean=[  45.   -10.1 1005.6], std=[33.  42.8 32.9]
+  min=[-57. -90. 960.]
+  max=[  90.    87.  1107.6]
+I2 projections: u=[173,1288], v=[278,1594]
+  I2 image: 1334x2048
+  Valid (front+in frame): 314836/314836
+</code></pre></div></details></section><section class="trace-entry" id="ds4pro-max-item_109"><h3>生成视频并另存静态代理工程</h3><p>Python逐帧生成T1、T2画面，同时用Blender保存头部球体、躯干代理和五台相机。视频生成没有通过该Blender工程的渲染入口。</p><details><summary>item_109 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;cd /workspace/submission &amp;&amp; timeout 900 python3 -u build.py 2&gt;&amp;1&#x27;</code></pre><h3>工具输出</h3><pre><code>═══ Loading camera calibration ═══
+  I1: C=[1069.7 -137.1  836.1]
+  I2: C=[0. 0. 0.]
+  I3: C=[-1016.9  -154.7   635.7]
+  T1: C=[ 781.9 -170.8  303.8]
+  T2: C=[-782.2   16.6  323.6]
+
+═══ Creating Blender scene ═══
+Creating Blender scene ...
+Failed to create secure directory (//.config/pulse): No such file or directory
+/workspace/scratch/_blender_setup.py:31: DeprecationWarning: &#x27;Material.use_nodes&#x27; is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+  -&gt; /workspace/submission/scene.blend
+
+═══ Rendering T1 ═══
+Rendering T1 (104 frames) …
+/workspace/submission/build.py:351: RuntimeWarning: invalid value encountered in divide
+  normal /= np.maximum(n_norm, 1e-8)
+/workspace/submission/build.py:357: RuntimeWarning: invalid value encountered in divide
+  to_cam /= np.maximum(to_cam_norm, 1e-8)
+  T1 frame 1/104
+  T1 frame 10/104
+  T1 frame 20/104
+  T1 frame 30/104
+  T1 frame 40/104
+  T1 frame 50/104
+  T1 frame 60/104
+  T1 frame 70/104
+  T1 frame 80/104
+  T1 frame 90/104
+  T1 frame 100/104
+  T1 done → /workspace/scratch/frames_T1
+
+═══ Rendering T2 ═══
+Rendering T2 (104 frames) …
+  T2 frame 1/104
+  T2 frame 10/104
+  T2 frame 20/104
+  T2 frame 30/104
+  T2 frame 40/104
+  T2 frame 50/104
+  T2 frame 60/104
+  T2 frame 70/104
+  T2 frame 80/104
+  T2 frame 90/104
+  T2 frame 100/104
+  T2 done → /workspace/scratch/frames_T2
+
+═══ Encoding videos ═══
+Encoding T1.mp4 …
+  → /workspace/submission/T1.mp4
+Encoding T2.mp4 …
+  → /workspace/submission/T2.mp4
+
+═══ Copying assets ═══
+
+═══ Writing README ═══
+README → /workspace/submission/README.md
+
+═══ Done ═══
+  /workspace/submission/scene.blend
+  /workspace/submission/T1.mp4
+  /workspace/submission/T2.mp4
+  /workspace/submission/README.md
+</code></pre></div></details></section><section class="trace-entry" id="ds4pro-max-item_126"><h3>修正封装截帧并确认104帧交付</h3><p>初次封装只有103帧，模型移除导致提前结束的参数后重新编码；最终两支视频均为104帧、30fps，保留48kHz单声道原声。</p><details><summary>item_126 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &quot;cd /workspace/submission &amp;&amp; python3 -u -c \&quot;
+import subprocess, os
+
+for vid in [&#x27;T1&#x27;, &#x27;T2&#x27;]:
+    frames_dir = f&#x27;/workspace/scratch/frames_{vid}&#x27;
+    audio_path = &#x27;/workspace/candidate/speech.wav&#x27;
+    out_path = f&#x27;/workspace/submission/{vid}.mp4&#x27;
+
+    cmd = [
+        &#x27;ffmpeg&#x27;, &#x27;-y&#x27;,
+        &#x27;-framerate&#x27;, &#x27;30&#x27;,
+        &#x27;-i&#x27;, os.path.join(frames_dir, &#x27;%04d.png&#x27;),
+        &#x27;-i&#x27;, audio_path,
+        &#x27;-c:v&#x27;, &#x27;libx264&#x27;,
+        &#x27;-preset&#x27;, &#x27;medium&#x27;,
+        &#x27;-crf&#x27;, &#x27;18&#x27;,
+        &#x27;-pix_fmt&#x27;, &#x27;yuv420p&#x27;,
+        &#x27;-c:a&#x27;, &#x27;aac&#x27;,
+        &#x27;-b:a&#x27;, &#x27;192k&#x27;,
+        &#x27;-frames:v&#x27;, &#x27;104&#x27;,
+        &#x27;-map&#x27;, &#x27;0:v:0&#x27;,
+        &#x27;-map&#x27;, &#x27;1:a:0&#x27;,
+        out_path,
+    ]
+    print(f&#x27;Encoding {vid}.mp4 ...&#x27;)
+    subprocess.run(cmd, check=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+    print(f&#x27;  -&gt; done&#x27;)
+\&quot; 2&gt;&amp;1
+# Verify frame count
+echo &#x27;---&#x27;
+for vid in T1 T2; do
+    count=&quot;&#x27;$(ffprobe -v quiet -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of default=noprint_wrappers=1 /workspace/submission/$vid.mp4)
+    dur=$(ffprobe -v quiet -show_entries stream=duration -of default=noprint_wrappers=1 /workspace/submission/$vid.mp4 2&gt;&amp;1 | head -2)
+    echo &quot;$vid: $count, $dur&quot;
+done&#x27;</code></pre><h3>工具输出</h3><pre><code>  -&gt; done
+Encoding T2.mp4 ...
+  -&gt; done
+---
+T1: nb_read_frames=104, duration=3.466667
+duration=3.466000
+T2: nb_read_frames=104, duration=3.466667
+duration=3.466000
+</code></pre></div></details></section><footer class="case-footer"><p class="footer-title">素材与许可</p><p>素材来自 Meta <a href="https://github.com/facebookresearch/multiface">Multiface</a>，序列 <code>SEN_a_good_morrow_to_you_my_boy</code>。原素材及衍生媒体遵循 <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>。</p><div class="footer-links"><a href="inputs.html">输入材料</a><a href="https://github.com/vibrant700/omniale/tree/main/cases/multiface">案例源码 ↗</a><a href="../index.html">返回案例汇总</a></div></footer></main></body></html>

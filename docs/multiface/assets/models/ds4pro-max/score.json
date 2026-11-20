@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "model_id": "ds4pro-max",
+  "model": "deepseek-v4-pro",
+  "reasoning": "max",
+  "framework": "Codex",
+  "scores": {
+    "visual": 24.485984226235164,
+    "elements": 8.24959935897436,
+    "sync": 9.100401305285967,
+    "total": 41.83598489049549
+  },
+  "score_maxima": {
+    "visual": 50,
+    "elements": 40,
+    "sync": 10,
+    "total": 100
+  },
+  "score_status": "final",
+  "total_policy": "sum_visual_elements_sync; engineering findings reported separately without a total-score veto",
+  "runtime": {
+    "seconds": 2622.72,
+    "tool_calls": 84,
+    "cpu": 4,
+    "memory_gib": 8,
+    "gpu": false,
+    "codex": "0.142.4"
+  },
+  "regions": [
+    {
+      "id": "C1",
+      "name": "眼",
+      "score": 0.24519230769230768,
+      "maximum": 5
+    },
+    {
+      "id": "C2",
+      "name": "耳",
+      "score": 2.7051282051282053,
+      "maximum": 5
+    },
+    {
+      "id": "C3",
+      "name": "鼻",
+      "score": 0.0,
+      "maximum": 5
+    },
+    {
+      "id": "C4",
+      "name": "口",
+      "score": 1.4002403846153846,
+      "maximum": 5
+    },
+    {
+      "id": "C5",
+      "name": "眉",
+      "score": 2.230769230769231,
+      "maximum": 5
+    },
+    {
+      "id": "C6",
+      "name": "脸部轮廓完整性",
+      "score": 1.514423076923077,
+      "maximum": 5
+    },
+    {
+      "id": "C7",
+      "name": "肩部",
+      "score": 0.15384615384615385,
+      "maximum": 5
+    },
+    {
+      "id": "C8",
+      "name": "背景",
+      "score": 0.0,
+      "maximum": 5
+    }
+  ],
+  "metrics": {
+    "T1": {
+      "PSNR_dB": 18.958768836320367,
+      "SSIM": 0.6239964326915577,
+      "LPIPS_alex": 0.476068936001796,
+      "surface_PSNR_dB": 20.71188930560656,
+      "surface_SSIM_map_mean": 0.6199473207701687,
+      "surface_LPIPS_alex_map_mean": 0.4541891461703581,
+      "JOD": 2.7062649726867676
+    },
+    "T2": {
+      "PSNR_dB": 19.656040916354513,
+      "SSIM": 0.65631666555716,
+      "LPIPS_alex": 0.4361655064500295,
+      "surface_PSNR_dB": 21.50950728951834,
+      "surface_SSIM_map_mean": 0.631265442486597,
+      "surface_LPIPS_alex_map_mean": 0.43723819206069786,
+      "JOD": 3.1368207931518555
+    },
+    "mean": {
+      "PSNR_dB": 19.30740487633744,
+      "SSIM": 0.6401565491243588,
+      "LPIPS_alex": 0.45611722122591275,
+      "surface_PSNR_dB": 21.11069829756245,
+      "surface_SSIM_map_mean": 0.6256063816283828,
+      "surface_LPIPS_alex_map_mean": 0.445713669115528,
+      "JOD": 2.9215428829193115
+    }
+  },
+  "scene_elements": {
+    "judge_model": "gpt-6.1-sol",
+    "judge_effort": "xhigh",
+    "frames": 208,
+    "active_subchecks": 39,
+    "excluded_uncertain_labels": 11,
+    "policy": "Exclude uncertain and unobservable frame labels from each subcheck denominator; score applicable evidence only."
+  },
+  "sync": {
+    "T1": {
+      "offset_ms": 0,
+      "LSE_D": 7.269876956939697,
+      "LSE_C": 6.1395392417907715,
+      "feature_windows": 81
+    },
+    "T2": {
+      "offset_ms": 0,
+      "LSE_D": 6.748553276062012,
+      "LSE_C": 5.494009017944336,
+      "feature_windows": 81
+    }
+  },
+  "engineering": {
+    "video_specs_passed": true,
+    "project_rerender_consistent": false,
+    "render_comparisons": [
+      {
+        "view": "T1",
+        "frame_zero_based": 7,
+        "PSNR_vs_delivery": 14.721835997400362
+      },
+      {
+        "view": "T1",
+        "frame_zero_based": 56,
+        "PSNR_vs_delivery": 14.70127800597445
+      },
+      {
+        "view": "T1",
+        "frame_zero_based": 96,
+        "PSNR_vs_delivery": 14.74859642958505
+      },
+      {
+        "view": "T2",
+        "frame_zero_based": 7,
+        "PSNR_vs_delivery": 14.941614769002582
+      },
+      {
+        "view": "T2",
+        "frame_zero_based": 56,
+        "PSNR_vs_delivery": 14.927287971273959
+      },
+      {
+        "view": "T2",
+        "frame_zero_based": 96,
+        "PSNR_vs_delivery": 14.939572841364669
+      }
+    ],
+    "summary": "已交付两支有声视频、Python生成入口与静态Blender代理工程；代理工程重渲染与交付成片不一致，原包保留外部符号链接。"
+  },
+  "input_capability": {
+    "native_vision": false,
+    "external_vision_model_assistance": false,
+    "media_available_as_files": true
+  }
+}
