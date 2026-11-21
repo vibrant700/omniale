@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="OmniALE 多视角动态场景重建：任务、素材、评分标准、真实模型交付与失败分析。"><meta name="theme-color" content="#f4f3ee"><link rel="icon" href="data:,"><title>关键执行证据 · OmniALE</title><link rel="stylesheet" href="scene.css?v=scene-sol62-3"><script defer src="scene.js?v=scene-sol62-2"></script></head>
-<body class="case-page"><a class="skip" href="#main">跳至正文</a><main id="main" class="document"><nav class="site-return"><a href="index.html">← 返回场景重建案例</a></nav><h1>关键执行证据</h1><p class="lead">以下为各模型实际执行中的说明与工具记录节选。</p><nav class="section-nav" aria-label="模型执行证据"><a href="#sol62-xhigh">gpt-6.2-sol</a><a href="#astra62-xhigh">gpt-6.2-astra</a><a href="#ds4pro-max">deepseek-v4-pro</a></nav><h2 id="sol62-xhigh">gpt-6.2-sol · xhigh · Codex</h2><section class="trace-entry" id="item_12"><h2>item_12</h2><p>素材是同一段近景人像，正面与两侧原机位的夹角较大。我会用三个标定视图共同约束脸部几何，再把同步原图投影到同一张动态网格上，保留口型、眼神和原始光色。</p></section><section class="trace-entry" id="item_18"><h2>item_18</h2><p>轮廓和三角定位已给出鼻尖、嘴唇、下巴的深度范围。现在我把这些约束做成逐帧变形的网格，并测试三路原图在脸颊、眼角和耳侧的融合。</p></section><section class="trace-entry" id="item_20"><h2>item_20</h2><p>接下来把网格和纹理接进 Blender：几何用逐帧形态键，原声留在项目里，五台相机按标定建立，方便直接切换和检查。</p></section><section class="trace-entry" id="item_28"><h2>item_28</h2><p>两个机位的首帧已渲染出来，脸部视差符合标定方向。预览也暴露了肩部取样拉伸，我会修正领口和肩侧的纹理，然后检查张嘴幅度较大的帧。</p></section><section class="trace-entry" id="item_40"><h2>item_40</h2><p>两侧素材的亮点无法从现有视角可靠地定位，我会保留暗场，不把亮点猜放进目标画面。正面素材里能辨认出的椅背会作为独立几何加入工程。</p></section><section class="trace-entry" id="item_50"><h2>item_50</h2><p>标定核验通过：两台目标相机的测试点投影与原始参数相差不到 0.002 像素。纹理还在逐帧生成，我会同时整理重开、重建和重渲染的命令。</p></section><section class="trace-entry" id="item_61"><h2>item_61</h2><p>104 帧的几何和纹理已生成。现在把它们写入最终工程，检查 Blender 四处取景时用的是同一份动画，然后开始两台目标机位的全段渲染。</p></section><section class="trace-entry" id="item_69"><h2>item_69</h2><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;cat scratch/check.log&#x27;</code></pre><h3>工具输出</h3><pre><code>00:01.873  blend            | Read blend: &quot;/workspace/submission/scene.blend&quot;
+<body class="case-page"><a class="skip" href="#main">跳至正文</a><main id="main" class="document"><nav class="site-return"><a href="index.html">← 返回场景重建案例</a></nav><h1>关键执行证据</h1><p class="lead">以下为各模型实际执行中的说明与工具记录节选。</p><nav class="section-nav" aria-label="模型执行证据"><a href="#sol62-xhigh">gpt-6.2-sol</a><a href="#astra62-xhigh">gpt-6.2-astra</a><a href="#ds4pro-max">deepseek-v4-pro</a><a href="#astra6-xhigh">gpt-6-astra</a></nav><h2 id="sol62-xhigh">gpt-6.2-sol · xhigh · Codex</h2><section class="trace-entry" id="item_12"><h2>item_12</h2><p>素材是同一段近景人像，正面与两侧原机位的夹角较大。我会用三个标定视图共同约束脸部几何，再把同步原图投影到同一张动态网格上，保留口型、眼神和原始光色。</p></section><section class="trace-entry" id="item_18"><h2>item_18</h2><p>轮廓和三角定位已给出鼻尖、嘴唇、下巴的深度范围。现在我把这些约束做成逐帧变形的网格，并测试三路原图在脸颊、眼角和耳侧的融合。</p></section><section class="trace-entry" id="item_20"><h2>item_20</h2><p>接下来把网格和纹理接进 Blender：几何用逐帧形态键，原声留在项目里，五台相机按标定建立，方便直接切换和检查。</p></section><section class="trace-entry" id="item_28"><h2>item_28</h2><p>两个机位的首帧已渲染出来，脸部视差符合标定方向。预览也暴露了肩部取样拉伸，我会修正领口和肩侧的纹理，然后检查张嘴幅度较大的帧。</p></section><section class="trace-entry" id="item_40"><h2>item_40</h2><p>两侧素材的亮点无法从现有视角可靠地定位，我会保留暗场，不把亮点猜放进目标画面。正面素材里能辨认出的椅背会作为独立几何加入工程。</p></section><section class="trace-entry" id="item_50"><h2>item_50</h2><p>标定核验通过：两台目标相机的测试点投影与原始参数相差不到 0.002 像素。纹理还在逐帧生成，我会同时整理重开、重建和重渲染的命令。</p></section><section class="trace-entry" id="item_61"><h2>item_61</h2><p>104 帧的几何和纹理已生成。现在把它们写入最终工程，检查 Blender 四处取景时用的是同一份动画，然后开始两台目标机位的全段渲染。</p></section><section class="trace-entry" id="item_69"><h2>item_69</h2><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;cat scratch/check.log&#x27;</code></pre><h3>工具输出</h3><pre><code>00:01.873  blend            | Read blend: &quot;/workspace/submission/scene.blend&quot;
 I1 maximum projected pixel error: 0.00109
 I2 maximum projected pixel error: 0.00030
 I3 maximum projected pixel error: 0.00148
@@ -222,4 +222,394 @@ T1: nb_read_frames=104, duration=3.466667
 duration=3.466000
 T2: nb_read_frames=104, duration=3.466667
 duration=3.466000
+</code></pre></div></details></section><h2 id="astra6-xhigh">gpt-6-astra · xhigh · Codex</h2><section class="trace-entry" id="astra6-xhigh-item_19"><h3>核对三路输入与五台相机标定</h3><p>读取输入图像与标定，计算I1、I2、I3和两个目标机位的相机中心，核对坐标单位与投影方向。</p><details><summary>item_19 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;python scratch/inspect_inputs.py&#x27;</code></pre><h3>工具输出</h3><pre><code>I1 center [1069.6983688  -137.12535739  836.13188383]
+I2 center [0. 0. 0.]
+I3 center [-1016.93300321  -154.71210168   635.72796633]
+T1 center [ 781.89732279 -170.75482176  303.80207359]
+T2 center [-782.22146765   16.56844565  323.63165237]
+</code></pre></div></details></section><section class="trace-entry" id="astra6-xhigh-item_61"><h3>恢复104帧共享动态表面</h3><p>用前景轮廓、圆柱参数化的多视角光度匹配与五官三角测量约束表面；逐帧细化几何，再进行空间平滑和三帧时间滤波。</p><details><summary>item_61 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;python -u scratch/batch_geometry.py&#x27;</code></pre><h3>工具输出</h3><p class="note">以下为工具输出末段节选。</p><pre><code>
+FRAME_COMPLETE 38 seconds 168
+FRAME_COMPLETE 39 seconds 168
+FRAME_COMPLETE 41 seconds 168
+FRAME_COMPLETE 40 seconds 168
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 42 seconds 185
+FRAME_COMPLETE 45 seconds 185
+FRAME_COMPLETE 43 seconds 185
+FRAME_COMPLETE 44 seconds 185
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 46 seconds 204
+FRAME_COMPLETE 48 seconds 204
+FRAME_COMPLETE 49 seconds 204
+FRAME_COMPLETE 47 seconds 204
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 50 seconds 225
+FRAME_COMPLETE 51 seconds 226
+FRAME_COMPLETE 53 seconds 226
+FRAME_COMPLETE 52 seconds 226
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 54 seconds 246
+FRAME_COMPLETE 56 seconds 246
+FRAME_COMPLETE 55 seconds 246
+FRAME_COMPLETE 57 seconds 246
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 58 seconds 265
+FRAME_COMPLETE 60 seconds 265
+FRAME_COMPLETE 61 seconds 265
+FRAME_COMPLETE 59 seconds 265
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 62 seconds 284
+FRAME_COMPLETE 63 seconds 284
+FRAME_COMPLETE 65 seconds 284
+FRAME_COMPLETE 64 seconds 284
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 66 seconds 302
+FRAME_COMPLETE 67 seconds 302
+FRAME_COMPLETE 69 seconds 302
+FRAME_COMPLETE 68 seconds 302
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 70 seconds 320
+FRAME_COMPLETE 72 seconds 321
+FRAME_COMPLETE 71 seconds 321
+FRAME_COMPLETE 73 seconds 321
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 74 seconds 338
+FRAME_COMPLETE 77 seconds 338
+FRAME_COMPLETE 76 seconds 338
+FRAME_COMPLETE 75 seconds 338
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 78 seconds 356
+FRAME_COMPLETE 80 seconds 356
+FRAME_COMPLETE 81 seconds 356
+FRAME_COMPLETE 79 seconds 356
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 82 seconds 373
+FRAME_COMPLETE 83 seconds 374
+FRAME_COMPLETE 85 seconds 374
+FRAME_COMPLETE 84 seconds 374
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 86 seconds 391
+FRAME_COMPLETE 88 seconds 392
+FRAME_COMPLETE 87 seconds 392
+FRAME_COMPLETE 89 seconds 392
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 90 seconds 409
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 91 seconds 409
+FRAME_COMPLETE 92 seconds 409
+FRAME_COMPLETE 93 seconds 410
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+FRAME_COMPLETE 94 seconds 426
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 95 seconds 427
+FRAME_COMPLETE 96 seconds 427
+FRAME_COMPLETE 97 seconds 427
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 98 seconds 444
+sweep 20 21
+FRAME_COMPLETE 101 seconds 444
+FRAME_COMPLETE 100 seconds 444
+FRAME_COMPLETE 99 seconds 445
+sweep 0 21
+sweep 0 21
+sweep 0 21
+sweep 20 21
+sweep 20 21
+sweep 20 21
+FRAME_COMPLETE 102 seconds 459
+FRAME_COMPLETE 104 seconds 459
+FRAME_COMPLETE 103 seconds 459
+ANIMATION_READY 463.76128482818604
+</code></pre></div></details></section><section class="trace-entry" id="astra6-xhigh-item_91"><h3>烘焙共享UV外观序列</h3><p>根据可见性对三路标定投影进行线性颜色融合，生成104张2048×2048纹理；两个目标机位使用同一外观和动态人物网格。</p><details><summary>item_91 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;python -u scratch/bake_atlas.py --workers 3&#x27;</code></pre><h3>工具输出</h3><pre><code>ATLAS_COMPLETE 1 0
+ATLAS_COMPLETE 4 14
+ATLAS_COMPLETE 2 14
+ATLAS_COMPLETE 3 14
+ATLAS_COMPLETE 5 28
+ATLAS_COMPLETE 7 28
+ATLAS_COMPLETE 6 28
+ATLAS_COMPLETE 9 43
+ATLAS_COMPLETE 8 43
+ATLAS_COMPLETE 10 43
+ATLAS_COMPLETE 13 70
+ATLAS_COMPLETE 11 70
+ATLAS_COMPLETE 12 70
+ATLAS_COMPLETE 16 99
+ATLAS_COMPLETE 14 99
+ATLAS_COMPLETE 15 99
+ATLAS_COMPLETE 18 116
+ATLAS_COMPLETE 17 116
+ATLAS_COMPLETE 19 116
+ATLAS_COMPLETE 20 136
+ATLAS_COMPLETE 22 137
+ATLAS_COMPLETE 21 137
+ATLAS_COMPLETE 23 163
+ATLAS_COMPLETE 25 164
+ATLAS_COMPLETE 24 164
+ATLAS_COMPLETE 26 180
+ATLAS_COMPLETE 27 180
+ATLAS_COMPLETE 28 180
+ATLAS_COMPLETE 29 198
+ATLAS_COMPLETE 30 198
+ATLAS_COMPLETE 31 198
+ATLAS_COMPLETE 34 213
+ATLAS_COMPLETE 32 213
+ATLAS_COMPLETE 33 213
+ATLAS_COMPLETE 35 236
+ATLAS_COMPLETE 37 236
+ATLAS_COMPLETE 36 236
+ATLAS_COMPLETE 38 252
+ATLAS_COMPLETE 40 252
+ATLAS_COMPLETE 39 252
+ATLAS_COMPLETE 42 288
+ATLAS_COMPLETE 41 288
+ATLAS_COMPLETE 43 289
+ATLAS_COMPLETE 44 304
+ATLAS_COMPLETE 46 304
+ATLAS_COMPLETE 45 304
+ATLAS_COMPLETE 47 322
+ATLAS_COMPLETE 48 322
+ATLAS_COMPLETE 49 322
+ATLAS_COMPLETE 50 343
+ATLAS_COMPLETE 51 343
+ATLAS_COMPLETE 52 343
+ATLAS_COMPLETE 53 357
+ATLAS_COMPLETE 54 357
+ATLAS_COMPLETE 55 358
+ATLAS_COMPLETE 58 383
+ATLAS_COMPLETE 56 384
+ATLAS_COMPLETE 57 384
+ATLAS_COMPLETE 60 400
+ATLAS_COMPLETE 61 400
+ATLAS_COMPLETE 59 400
+ATLAS_COMPLETE 62 418
+ATLAS_COMPLETE 63 418
+ATLAS_COMPLETE 64 418
+ATLAS_COMPLETE 67 438
+ATLAS_COMPLETE 65 438
+ATLAS_COMPLETE 66 438
+ATLAS_COMPLETE 70 459
+ATLAS_COMPLETE 69 459
+ATLAS_COMPLETE 68 460
+ATLAS_COMPLETE 71 477
+ATLAS_COMPLETE 72 477
+ATLAS_COMPLETE 73 478
+ATLAS_COMPLETE 75 492
+ATLAS_COMPLETE 74 492
+ATLAS_COMPLETE 76 492
+ATLAS_COMPLETE 79 516
+ATLAS_COMPLETE 78 516
+ATLAS_COMPLETE 77 516
+ATLAS_COMPLETE 82 537
+ATLAS_COMPLETE 81 538
+ATLAS_COMPLETE 80 538
+ATLAS_COMPLETE 83 554
+ATLAS_COMPLETE 84 555
+ATLAS_COMPLETE 85 555
+ATLAS_COMPLETE 86 576
+ATLAS_COMPLETE 87 576
+ATLAS_COMPLETE 88 576
+ATLAS_COMPLETE 89 593
+ATLAS_COMPLETE 90 593
+ATLAS_COMPLETE 91 593
+ATLAS_COMPLETE 92 615
+ATLAS_COMPLETE 93 615
+ATLAS_COMPLETE 94 615
+ATLAS_COMPLETE 96 638
+ATLAS_COMPLETE 95 638
+ATLAS_COMPLETE 97 638
+ATLAS_COMPLETE 99 652
+ATLAS_COMPLETE 98 653
+ATLAS_COMPLETE 100 653
+ATLAS_COMPLETE 101 670
+ATLAS_COMPLETE 103 671
+ATLAS_COMPLETE 102 671
+ATLAS_COMPLETE 104 682
+</code></pre></div></details></section><section class="trace-entry" id="astra6-xhigh-item_100"><h3>从共享三维工程渲染两个机位</h3><p>把动态表面保存为104个原生形态键，建立T1、T2场景共享的几何、材质和动画，分别渲染104帧并合入原声。</p><details><summary>item_100 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;python -u scratch/finish_render.py&#x27;</code></pre><h3>工具输出</h3><p class="note">以下为工具输出末段节选。</p><pre><code>ender           | Saved: &#x27;/workspace/scratch/final_render/T2/0072.png&#x27;
+RENDERED T2 72/104
+05:53.492  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0073.png&#x27;
+RENDERED T2 73/104
+05:55.098  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0074.png&#x27;
+RENDERED T2 74/104
+05:56.459  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0075.png&#x27;
+RENDERED T2 75/104
+05:57.994  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0076.png&#x27;
+RENDERED T2 76/104
+06:00.054  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0077.png&#x27;
+RENDERED T2 77/104
+06:01.752  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0078.png&#x27;
+RENDERED T2 78/104
+06:03.244  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0079.png&#x27;
+RENDERED T2 79/104
+06:04.692  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0080.png&#x27;
+RENDERED T2 80/104
+06:06.846  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0081.png&#x27;
+RENDERED T2 81/104
+06:08.489  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0082.png&#x27;
+RENDERED T2 82/104
+06:10.162  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0083.png&#x27;
+RENDERED T2 83/104
+06:11.905  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0084.png&#x27;
+RENDERED T2 84/104
+06:13.329  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0085.png&#x27;
+RENDERED T2 85/104
+06:15.404  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0086.png&#x27;
+RENDERED T2 86/104
+06:17.272  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0087.png&#x27;
+RENDERED T2 87/104
+06:18.685  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0088.png&#x27;
+RENDERED T2 88/104
+06:20.193  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0089.png&#x27;
+RENDERED T2 89/104
+06:22.052  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0090.png&#x27;
+RENDERED T2 90/104
+06:24.618  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0091.png&#x27;
+RENDERED T2 91/104
+06:27.073  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0092.png&#x27;
+RENDERED T2 92/104
+06:29.179  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0093.png&#x27;
+RENDERED T2 93/104
+06:30.765  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0094.png&#x27;
+RENDERED T2 94/104
+06:32.880  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0095.png&#x27;
+RENDERED T2 95/104
+06:34.545  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0096.png&#x27;
+RENDERED T2 96/104
+06:36.914  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0097.png&#x27;
+RENDERED T2 97/104
+06:38.607  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0098.png&#x27;
+RENDERED T2 98/104
+06:40.669  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0099.png&#x27;
+RENDERED T2 99/104
+06:42.158  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0100.png&#x27;
+RENDERED T2 100/104
+06:43.544  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0101.png&#x27;
+RENDERED T2 101/104
+06:45.114  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0102.png&#x27;
+RENDERED T2 102/104
+06:46.634  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0103.png&#x27;
+RENDERED T2 103/104
+06:48.192  render           | Saved: &#x27;/workspace/scratch/final_render/T2/0104.png&#x27;
+RENDERED T2 104/104
+[aist#1:0/pcm_s16le @ 0x570a1fd48a00] Guessed Channel Layout: mono
+Blender 5.3.0 (hash 02f0899d78e3 built 2026-11-10 01:31:18)
+
+Blender quit
+</code></pre></div></details></section><section class="trace-entry" id="astra6-xhigh-item_117"><h3>迁移工程并检查双机位重渲染</h3><p>将交付复制到独立目录，检查重新构建、资源相对路径及工程重开；模型本地第52帧双机位重渲染与对应无损帧逐像素相同。</p><details><summary>item_117 · 工具命令与输出</summary><div class="detail-body"><h3>工具命令</h3><pre><code>/usr/bin/bash -lc &#x27;python scratch/validate_relocation.py&#x27;</code></pre><h3>工具输出</h3><pre><code>{
+  &quot;separate_directory_reopen&quot;: true,
+  &quot;automatic_script_execution_disabled&quot;: true,
+  &quot;rebuild_from_bundled_assets&quot;: true,
+  &quot;frame&quot;: 52,
+  &quot;pixel_comparison&quot;: {
+    &quot;T1&quot;: {
+      &quot;max_absolute_difference&quot;: 0,
+      &quot;mean_absolute_difference&quot;: 0.0
+    },
+    &quot;T2&quot;: {
+      &quot;max_absolute_difference&quot;: 0,
+      &quot;mean_absolute_difference&quot;: 0.0
+    }
+  }
+}
 </code></pre></div></details></section><footer class="case-footer"><p class="footer-title">素材与许可</p><p>素材来自 Meta <a href="https://github.com/facebookresearch/multiface">Multiface</a>，序列 <code>SEN_a_good_morrow_to_you_my_boy</code>。原素材及衍生媒体遵循 <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>。</p><div class="footer-links"><a href="inputs.html">输入材料</a><a href="https://github.com/vibrant700/omniale/tree/main/cases/multiface">案例源码 ↗</a><a href="../index.html">返回案例汇总</a></div></footer></main></body></html>
