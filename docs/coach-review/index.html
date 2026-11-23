@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="OmniALE benchmark 案例：同步五路 KPL 选手视角，估算英雄伤害并制作双榜复盘大屏。">
   <title>AG 五人第一视角战术大屏 · OmniALE</title>
-  <link rel="stylesheet" href="case.css?v=kpl-3">
+  <link rel="stylesheet" href="case.css?v=kpl-4">
 </head>
 <body>
   <a class="skip" href="#main">跳至正文</a>
@@ -26,7 +26,7 @@
     </nav>
 
     <section id="task">
-      <div class="section-heading"><h2>任务定义</h2></div>
+      <div class="section-heading"><h2>任务定义</h2><a href="task-package.zip" download>下载题包（ZIP） ↗</a></div>
       <dl class="task-list">
         <div><dt>输入</dt><dd>五路选手第一视角录像，有原声，保留至水晶告破。素材保留各自的播放起点和时间偏移。</dd></div>
         <div><dt>委托</dt><dd>以轩染录像的播放时间为基准同步五路。在同屏大屏叠加累计输出与累计承伤两张榜，随交战更新点数、队内占比与排名。</dd></div>
@@ -153,6 +153,420 @@
           <p>成片质量分为上述三项之和。</p>
         </div>
       </details>
+
+      <div id="scoring-materials">
+        <h3>测试与评分文件</h3>
+        <details class="scoring-file">
+          <summary>测试模型提示词</summary>
+          <div class="details-body">
+            <p><a href="scoring/prompt.txt" download>下载 prompt.txt</a></p>
+            <pre tabindex="0" aria-label="测试模型提示词"><code>请完成 candidate/task.md。输入文件在 candidate/，中间文件可存放在 scratch/。</code></pre>
+          </div>
+        </details>
+        <details class="scoring-file">
+          <summary>Codex 启动脚本</summary>
+          <div class="details-body">
+            <p><a href="scoring/bootstrap.py" download>下载 bootstrap.py</a></p>
+            <pre tabindex="0" aria-label="Codex 启动脚本"><code>"""Container entrypoint: launch the official Codex CLI, without host config."""
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+
+def main():
+    gateway = os.environ['BENCH_GATEWAY']
+    config = f'''model = "{os.environ['BENCH_MODEL']}"
+model_provider = "nju_bench"
+model_catalog_json = "/runtime/model_catalog.json"
+approval_policy = "never"
+web_search = "disabled"
+[model_providers.nju_bench]
+name = "NJU benchmark gateway"
+base_url = "{gateway}/v1"
+env_key = "BENCH_LOCAL_TOKEN"
+wire_api = "responses"
+supports_websockets = false
+[mcp_servers.fixed_media]
+command = "python"
+args = ["/runtime/media_mcp.py"]
+env_vars = ["BENCH_GATEWAY", "BENCH_LOCAL_TOKEN"]
+startup_timeout_sec = 30
+tool_timeout_sec = 210
+'''
+    # Container-local empty home; never loads the host user's Codex files.
+    if os.environ.get('BENCH_REASONING_EFFORT'):
+        effort = os.environ['BENCH_REASONING_EFFORT']
+        if effort not in ['low','medium','high','xhigh','max']:
+            raise ValueError('Invalid explicit reasoning effort')
+        config = f'model_reasoning_effort = "{effort}"\n' + config
+    persist = os.environ.get('BENCH_PERSIST_SESSION') == '1'
+    home = Path('/workspace/scratch/.codex-home' if persist else '/tmp/codex-home')
+    os.environ['CODEX_HOME'] = str(home)
+    os.environ['HOME'] = '/tmp'
+    home.mkdir(parents=True, exist_ok=True)
+    (home / 'config.toml').write_text(config, encoding='utf-8')
+    prompt = Path('/runtime/prompt.txt').read_text(encoding='utf-8')
+    argv = ['/opt/codex', 'exec', '--skip-git-repo-check', '--ephemeral', '--json',
+            '--color', 'never', '--dangerously-bypass-approvals-and-sandbox',
+            '--cd', '/workspace', '--model', os.environ['BENCH_MODEL'],
+            '--output-last-message', '/workspace/scratch/codex_final_message.txt', '-']
+    if persist:
+        argv.remove('--ephemeral')
+    if os.environ.get('BENCH_RESUME_THREAD'):
+        argv = ['/opt/codex', 'exec', 'resume', '--skip-git-repo-check', '--json',
+                '--dangerously-bypass-approvals-and-sandbox', '--model', os.environ['BENCH_MODEL'],
+                '--output-last-message', '/workspace/scratch/codex_final_message.txt',
+                os.environ['BENCH_RESUME_THREAD'], '-']
+    # Bypass is ONLY inside the externally isolated read-only-root container.
+    return subprocess.run(argv, input=prompt.encode('utf-8')).returncode
+
+
+if __name__ == '__main__':
+    sys.exit(main())
+</code></pre>
+          </div>
+        </details>
+        <details class="scoring-file">
+          <summary>评分脚本</summary>
+          <div class="details-body">
+            <p><a href="scoring/evaluate.py" download>下载 evaluate.py</a></p>
+            <pre tabindex="0" aria-label="评分脚本"><code>"""Grade the AG five-view dashboard and its cumulative damage timeline."""
+
+import argparse
+import bisect
+import hashlib
+import json
+import subprocess
+import sys
+from decimal import Decimal
+from pathlib import Path
+
+
+CASE = Path(__file__).resolve().parent
+METRICS = ("damage_dealt", "damage_taken")
+
+
+def load(path):
+    return json.loads(path.read_text(encoding="utf-8"), parse_float=Decimal)
+
+
+def integer(value, minimum=0, maximum=None):
+    return type(value) is int and minimum &lt;= value and (maximum is None or value &lt;= maximum)
+
+
+def number(value):
+    if type(value) not in (int, Decimal) or not Decimal(value).is_finite():
+        raise ValueError("Expected a finite number")
+    return Decimal(value)
+
+
+def check_snapshot(snapshot, players):
+    if not isinstance(snapshot, dict) or set(snapshot) != set(players):
+        raise ValueError("Each snapshot must identify all five players exactly once")
+    for player in players:
+        row = snapshot[player]
+        if not isinstance(row, dict) or set(row) != set(METRICS):
+            raise ValueError(f"{player} must supply both damage fields")
+        if not all(integer(value) for value in row.values()):
+            raise ValueError(f"{player} has a noninteger or negative value")
+
+
+def read_timeline(path, rules):
+    data = load(path)
+    players = rules["players"]
+    points = data["points"]
+    if not isinstance(points, list) or not points:
+        raise ValueError("points must be a nonempty list")
+    timestamps, snapshots = [], []
+    for point in points:
+        timestamp = number(point["t_s"])
+        if timestamp &lt; 0 or timestamp &gt;= rules["source_duration_s"]:
+            raise ValueError("timestamp is outside the video")
+        if timestamps and timestamp &lt;= timestamps[-1]:
+            raise ValueError("timestamps must be strictly increasing")
+        snapshot = point["players"]
+        check_snapshot(snapshot, players)
+        if snapshots and any(snapshot[p][m] &lt; snapshots[-1][p][m] for p in players for m in METRICS):
+            raise ValueError("cumulative damage decreases")
+        timestamps.append(timestamp)
+        snapshots.append(snapshot)
+    if timestamps[0] != 0 or any(snapshots[0][p][m] for p in players for m in METRICS):
+        raise ValueError("The first state must start at zero seconds with zero damage")
+    check_snapshot(data["final"], players)
+    if snapshots[-1] != data["final"]:
+        raise ValueError("final differs from the last state")
+    return timestamps, snapshots
+
+
+def timeline_at(timeline, timestamp):
+    timestamps, snapshots = timeline
+    index = max(0, bisect.bisect_right(timestamps, timestamp) - 1)
+    return snapshots[index]
+
+
+def expected_board(snapshot, players, metric):
+    team = sum(snapshot[player][metric] for player in players)
+    ordered = sorted(players, key=lambda player: -snapshot[player][metric])
+    return [
+        (player, snapshot[player][metric], Decimal(100 * snapshot[player][metric]) / team if team else Decimal(0))
+        for player in ordered
+    ]
+
+
+def board_matches(observed, expected):
+    if not isinstance(observed, list) or len(observed) != len(expected):
+        return False
+    try:
+        return all(
+            row["player"] == player and integer(row["value"]) and row["value"] == value
+            and abs(number(row["share_pct"]) - share) &lt;= Decimal("0.05000001")
+            for row, (player, value, share) in zip(observed, expected)
+        )
+    except (KeyError, TypeError, ValueError):
+        return False
+
+
+def grade_final(snapshot, rules):
+    results = {}
+    for player in rules["players"]:
+        results[player] = {}
+        for metric in METRICS:
+            actual = rules["reference"][player][metric]
+            estimate = snapshot[player].get(metric) if snapshot else None
+            numerator = 100 * abs(estimate - actual) if estimate is not None else None
+            points = next(
+                (points for edge, points in rules["damage_bands"] if numerator &lt;= edge * actual), 0
+            ) if numerator is not None else 0
+            results[player][metric] = {
+                "estimate": estimate, "reference": actual, "points": points,
+                "relative_error_pct": round(numerator / actual, 4) if numerator is not None else None,
+            }
+    return results
+
+
+def playable(path, ffprobe, ffmpeg, rules):
+    if not path.is_file():
+        return "dashboard.mp4 is missing"
+    try:
+        probe = subprocess.check_output([
+            ffprobe, "-v", "error", "-show_entries", "stream=codec_type:format=duration",
+            "-of", "json", str(path),
+        ], stderr=subprocess.STDOUT)
+        info = json.loads(probe)
+        types = {stream["codec_type"] for stream in info["streams"]}
+        duration = Decimal(info["format"]["duration"])
+        if "video" not in types:
+            return "dashboard has no video stream"
+        if abs(duration - rules["source_duration_s"]) &gt; rules["duration_tolerance_s"]:
+            return "dashboard duration is outside the allowed range"
+        subprocess.run([
+            ffmpeg, "-v", "error", "-xerror", "-i", str(path),
+            "-map", "0:v:0", "-map", "0:a:0?", "-fps_mode", "passthrough",
+            "-enc_time_base:v", "demux", "-f", "null", "-",
+        ], check=True, capture_output=True)
+    except (subprocess.CalledProcessError, ValueError, KeyError, ArithmeticError):
+        return "dashboard probing or decoding failed"
+    return None
+
+
+def grade_alignment(samples, rules):
+    anchors = rules["alignment_checks"]
+    players = set(rules["players"])
+    if not isinstance(samples, list) or len(samples) != len(anchors):
+        raise ValueError("Expected one clock measurement per sync anchor")
+
+    results = []
+    for sample, anchor in zip(samples, anchors):
+        try:
+            if not isinstance(sample, dict) or set(sample) != players:
+                raise ValueError("All five clocks are required")
+            timestamps = [number(value) for value in sample.values()]
+            if any(value &lt; 0 or value &gt;= rules["source_duration_s"] for value in timestamps):
+                raise ValueError("Clock transition is outside the video")
+        except ValueError:
+            spread = None
+        else:
+            spread = max(timestamps) - min(timestamps)
+        points = 0
+        if spread is not None:
+            points = int(spread &lt;= Decimal("1.5")) + int(spread &lt;= Decimal("0.5"))
+        results.append({
+            "phase": anchor["phase"],
+            "match_clock": anchor["match_clock"],
+            "max_offset_s": float(spread) if spread is not None else None,
+            "points": points,
+        })
+    return results
+
+
+def grade_inspection(inspection, timeline, rules):
+    alignment_checks = grade_alignment(inspection["clock_transition_s"], rules)
+    terminal = {}
+    if timeline:
+        final_snapshot = timeline[1][-1]
+        final_time = rules["terminal_sample_s"]
+        if timeline_at(timeline, final_time) == final_snapshot:
+            terminal = {
+                metric: board_matches(
+                    inspection["terminal_boards"].get(metric),
+                    expected_board(final_snapshot, rules["players"], metric),
+                )
+                for metric in METRICS
+            }
+
+    limits = {"layout": 4, "motion": 3, "audio_readability": 3}
+    visual = inspection["visual"]
+    if any(not integer(visual[key], 0, cap) for key, cap in limits.items()):
+        raise ValueError("Visual ratings are outside the published ranges")
+    return {
+        "alignment": sum(sample["points"] for sample in alignment_checks),
+        "alignment_checks": alignment_checks,
+        "terminal_boards_match": terminal,
+        "visual": sum(visual[key] for key in limits),
+        "visual_breakdown": {key: visual[key] for key in limits},
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("submission", type=Path)
+    parser.add_argument("--inspection", type=Path)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--ffprobe", default="ffprobe")
+    parser.add_argument("--ffmpeg", default="ffmpeg")
+    args = parser.parse_args()
+    rules = load(CASE / "grade/reference.json")
+    video = args.submission / "dashboard.mp4"
+    error = playable(video, args.ffprobe, args.ffmpeg, rules)
+    errors = {"dashboard": error} if error else {}
+    timeline = None
+    try:
+        timeline = read_timeline(args.submission / "timeline.json", rules)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        errors["timeline"] = str(exc)
+    if error:
+        observed = {"alignment": 0, "visual": 0}
+        timeline = None
+    elif args.inspection:
+        inspection = load(args.inspection)
+        with video.open("rb") as reader:
+            digest = hashlib.file_digest(reader, "sha256").hexdigest()
+        if inspection["video_sha256"].lower() != digest:
+            raise ValueError("Inspection belongs to a different video")
+        observed = grade_inspection(inspection, timeline, rules)
+
+    else:
+        observed = None
+
+    if timeline and observed is not None:
+        terminal = observed["terminal_boards_match"]
+        displayed = {
+            player: {
+                metric: timeline[1][-1][player][metric]
+                for metric in METRICS if terminal.get(metric)
+            }
+            for player in rules["players"]
+        }
+    else:
+        displayed = timeline[1][-1] if timeline else None
+
+    damage = grade_final(displayed, rules)
+    damage_points = {
+        metric: sum(row[metric]["points"] for row in damage.values())
+        for metric in METRICS
+    }
+    total = None if observed is None else sum(damage_points.values()) + observed["alignment"] + observed["visual"]
+    result = {
+        "status": "awaiting_video_inspection" if total is None else "graded",
+        "total_points": total, "maximum_points": 100,
+        "terminal_damage_points": sum(damage_points.values()), "terminal_damage": damage,
+        "output_points": damage_points["damage_dealt"], "damage_taken_points": damage_points["damage_taken"],
+        "inspection": observed, "gate_errors": errors,
+    }
+    output = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
+    if args.output:
+        args.output.write_text(output, encoding="utf-8")
+    sys.stdout.buffer.write(output.encode("utf-8"))
+
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+          </div>
+        </details>
+        <details class="scoring-file">
+          <summary>评分配置</summary>
+          <div class="details-body">
+            <p><a href="scoring/grade/reference.json" download>下载 reference.json</a></p>
+            <pre tabindex="0" aria-label="评分配置"><code>{
+  "players": ["xuanran", "zhongyi", "changsheng", "yinuo", "dashuai"],
+  "official_source": "https://www.bilibili.com/video/BV1tyH76XEgz/?p=1&amp;t=2020",
+  "reference": {
+    "xuanran": {"damage_dealt": 58000, "damage_taken": 55700},
+    "zhongyi": {"damage_dealt": 53100, "damage_taken": 95700},
+    "changsheng": {"damage_dealt": 66000, "damage_taken": 50900},
+    "yinuo": {"damage_dealt": 129600, "damage_taken": 68100},
+    "dashuai": {"damage_dealt": 27600, "damage_taken": 61100}
+  },
+  "approximate_source_pts_offset_s": {
+    "xuanran": 0,
+    "zhongyi": -1.633,
+    "changsheng": -0.033,
+    "yinuo": 0.2,
+    "dashuai": -4.133
+  },
+  "source_duration_s": 1023.622563,
+  "duration_tolerance_s": 0.25,
+  "damage_bands": [[5, 8], [10, 6], [15, 5], [20, 3], [30, 2]],
+  "alignment_checks": [
+    {"phase": "开局", "match_clock": "00:14", "approximate_video_s": 17},
+    {"phase": "前期河道交战", "match_clock": "02:00", "approximate_video_s": 123},
+    {"phase": "中期龙区团战", "match_clock": "10:43", "approximate_video_s": 646},
+    {"phase": "后期龙区团战", "match_clock": "16:29", "approximate_video_s": 992},
+    {"phase": "推水晶前", "match_clock": "16:55", "approximate_video_s": 1018}
+  ],
+  "terminal_sample_s": 1023.25
+}
+</code></pre>
+          </div>
+        </details>
+        <details class="scoring-file">
+          <summary>运行与评分说明</summary>
+          <div class="details-body">
+            <p><a href="scoring/run-notes.md" download>下载 run-notes.md</a></p>
+            <pre tabindex="0" aria-label="运行与评分说明"><code># 测试与评分运行说明
+
+## Agent 测试
+
+受测模型为 gpt-6.2-astra，推理强度为 xhigh，使用官方 Codex CLI 0.142.4。运行从空会话开始。
+
+在隔离工作区中挂载只读 candidate/，内含题面和五路录像。scratch/ 和 submission/ 可写。把 prompt.txt 原样交给 Codex。成片和时间轴分别保存在 submission/dashboard.mp4 与 submission/timeline.json。
+
+原始启动脚本 bootstrap.py 依赖本次的容器环境。容器内 Codex 在 /opt/codex，启动资源在 /runtime，模型经 BENCH_GATEWAY 提供的 Responses 接口访问。BENCH_LOCAL_TOKEN 在运行时注入。原环境还提供 FFmpeg、ffprobe、Python、NumPy、Pillow 和中文字体。
+
+## 评分
+
+将 evaluate.py 与 grade/reference.json 按下载路径放在同一目录结构中。使用 Python 3.11+、FFmpeg 和 ffprobe，在 evaluate.py 所在目录运行：
+
+    python evaluate.py submission --inspection inspection.json --output score.json
+
+inspection.json 记录原始成片 SHA‑256、五路跳秒帧的时间戳、片尾两张榜的读数和三个成片质量分项。脚本校验记录与待评分成片的哈希，再计算终场输出、终场承伤、同步和成片质量的得分。直接运行 evaluate.py submission 可先查看数值预评。
+
+### inspection.json 字段
+
+- video_sha256 是原始成片的 SHA‑256。
+- clock_transition_s 是五个同步抽查点的数组，按照 grade/reference.json 的顺序记录。每项以 xuanran、zhongyi、changsheng、yinuo、dashuai 为键，值为成片中的秒数。缺失的机位使用 null。
+- terminal_boards 以 damage_dealt 和 damage_taken 为键。每个榜单按画面从上到下记录五行，每行包含 player、value 和 share_pct。
+- visual 的 layout、motion、audio_readability 分别对应布局与信息避让、动态榜流畅度、音轨处理与可读性。
+
+## 文件来源
+
+prompt.txt、bootstrap.py、evaluate.py 与 grade/reference.json 均取自本次测评的归档，文件字节与运行记录中保存的哈希一致。网页预览经过转码，评分基于原始提交文件。
+</code></pre>
+          </div>
+        </details>
+      </div>
     </section>
 
     <section id="results">

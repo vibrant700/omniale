@@ -1,0 +1,29 @@
+{
+  "players": ["xuanran", "zhongyi", "changsheng", "yinuo", "dashuai"],
+  "official_source": "https://www.bilibili.com/video/BV1tyH76XEgz/?p=1&t=2020",
+  "reference": {
+    "xuanran": {"damage_dealt": 58000, "damage_taken": 55700},
+    "zhongyi": {"damage_dealt": 53100, "damage_taken": 95700},
+    "changsheng": {"damage_dealt": 66000, "damage_taken": 50900},
+    "yinuo": {"damage_dealt": 129600, "damage_taken": 68100},
+    "dashuai": {"damage_dealt": 27600, "damage_taken": 61100}
+  },
+  "approximate_source_pts_offset_s": {
+    "xuanran": 0,
+    "zhongyi": -1.633,
+    "changsheng": -0.033,
+    "yinuo": 0.2,
+    "dashuai": -4.133
+  },
+  "source_duration_s": 1023.622563,
+  "duration_tolerance_s": 0.25,
+  "damage_bands": [[5, 8], [10, 6], [15, 5], [20, 3], [30, 2]],
+  "alignment_checks": [
+    {"phase": "开局", "match_clock": "00:14", "approximate_video_s": 17},
+    {"phase": "前期河道交战", "match_clock": "02:00", "approximate_video_s": 123},
+    {"phase": "中期龙区团战", "match_clock": "10:43", "approximate_video_s": 646},
+    {"phase": "后期龙区团战", "match_clock": "16:29", "approximate_video_s": 992},
+    {"phase": "推水晶前", "match_clock": "16:55", "approximate_video_s": 1018}
+  ],
+  "terminal_sample_s": 1023.25
+}
