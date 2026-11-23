@@ -111,14 +111,3 @@ footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 
   text-align: left;
   white-space: normal;
 }
-
-.scoring-file > summary { color: var(--accent); }
-.scoring-file pre {
-  max-height: 25rem;
-  margin: 9px 0 0;
-  padding: 12px;
-  overflow: auto;
-  background: var(--background);
-  border-radius: 4px;
-  white-space: pre-wrap;
-}
