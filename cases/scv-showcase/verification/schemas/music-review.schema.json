@@ -254,5 +254,6 @@
         }
       }
     }
-  ]
+  ],
+  "$comment": "Assistant-authored suggested output schema for new reviews; not the original Antigravity Gemini request or response format."
 }

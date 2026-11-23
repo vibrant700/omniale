@@ -53,10 +53,12 @@
   "audio_visual": {
     "music_prompt": "prompts/music-review.md",
     "sfx_prompt": "prompts/sfx-review.md",
-    "context": "Two independent review contexts; no model identity, existing score or execution history",
+    "suggested_review_context": "For new reviews: two independent contexts; no model identity, existing score or execution history",
     "published_judge_display": "Gemini 4 Neon",
     "published_judge_identity_source": "Case author confirmation",
-    "review_prompt_status": "Standardized review prompts; not claimed to be exact original Neon request logs"
+    "original_evaluation_environment": "Antigravity, reported by case author",
+    "original_prompt_provided": false,
+    "review_prompt_status": "Assistant-authored suggested templates and output schemas; original Antigravity Gemini prompts were not provided"
   },
   "frozen_evaluator_sha256": {
     "evaluate_asset.py": "0fcbd671f44d637dfe5d0320d9b3348cef1e03618de65f6e4e4b2609818829a2",

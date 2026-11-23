@@ -103,33 +103,33 @@
     },
     {
       "path": "prompts/dynamic-review.md",
-      "bytes": 2384,
-      "sha256": "2d4efb32111205154ceaaaa030531dc080972d189feed88b06253a62850b7a75"
+      "bytes": 2493,
+      "sha256": "a50ba32e3f8aa3d3c44eca16a07f39873616f54d7a1549185e5897cd3942fed2"
     },
     {
       "path": "prompts/music-review.md",
-      "bytes": 6923,
-      "sha256": "8fd20e80c4c4ff95207617b3944089db2ab7bfe18dbc7d4c0bf85ae9a8b83258"
+      "bytes": 7067,
+      "sha256": "fefad09adfbf5167061a493f861e90709e508698153e61ddb4a742f72d99973f"
     },
     {
       "path": "prompts/README.md",
-      "bytes": 1478,
-      "sha256": "c153e65de0a862804da52892f72184a560839907534dc73acb71f5ff62c2ba05"
+      "bytes": 1706,
+      "sha256": "919d2e49e5e64d085e73ef27286dbb5c78f59e5c05203b3bcb92882f0a2c22bd"
     },
     {
       "path": "prompts/sfx-review.md",
-      "bytes": 7456,
-      "sha256": "3db48c480f9b08d0aa06e241fe68c3509b831351eaae68839e3d052a85d6e8c4"
+      "bytes": 7600,
+      "sha256": "6ee0d99271ee7fa53c800cf97329424d6f7f484abf134c4198a27459b9a7164f"
     },
     {
       "path": "PROTOCOL.json",
-      "bytes": 2966,
-      "sha256": "13c6f4911dd2cfbd6d45decb51175ceb4b62d65928cc317315eedb5daf9229c5"
+      "bytes": 3146,
+      "sha256": "c532abfcafdb4cc8629e8e2cd29e3f49a0aaa72a3832c998c7cfd80a585722a9"
     },
     {
       "path": "README.md",
-      "bytes": 7044,
-      "sha256": "1ba9e4dc620d0ee56bbcb1642742942ce91ab22b643c99c0d54b99ee61264370"
+      "bytes": 7309,
+      "sha256": "e80b67e33036195b21fcb12fedd25cd742b99a833049b584d80c95f9f1ba4b01"
     },
     {
       "path": "requirements.txt",
@@ -143,8 +143,8 @@
     },
     {
       "path": "results/av-provenance.json",
-      "bytes": 438,
-      "sha256": "cb8e6105b693ae0ad0d508b9754d2f93bd42a6d3215252080199f3a5b5bcfb27"
+      "bytes": 590,
+      "sha256": "992f32a03f2d4bf44fac2a1caf8fcc121659e683b71884da3b78d616106110d1"
     },
     {
       "path": "results/dynamic-evidence.md",
@@ -183,18 +183,18 @@
     },
     {
       "path": "schemas/dynamic-review.schema.json",
-      "bytes": 4401,
-      "sha256": "43a494f50fe56a3cfaa91701749941b6c0715d88de339cc253981a33a8bf703c"
+      "bytes": 4543,
+      "sha256": "68ae1e487a8c52409c55e29a317d8a9507f8c9d4b9ffed7dc2bc121851df6a82"
     },
     {
       "path": "schemas/music-review.schema.json",
-      "bytes": 5968,
-      "sha256": "7ea556f7045087a56dc977d117a4ff0830bc7e8728b896ad7ee34f55e7c6ca73"
+      "bytes": 6110,
+      "sha256": "aae3a7c26f6ba470e56f83e00f7b286fcd473da6be4f8e2beda05e1e4087f39a"
     },
     {
       "path": "schemas/sfx-review.schema.json",
-      "bytes": 5713,
-      "sha256": "636457552bec04d558014d8091d858eb84eae044a61a3d35eb53528a56c86f9a"
+      "bytes": 5855,
+      "sha256": "3165d9cd7cecebe352c4685d6224cb388ac48e59bb60a84a28d719b0603d2c1e"
     },
     {
       "path": "SCORING.md",

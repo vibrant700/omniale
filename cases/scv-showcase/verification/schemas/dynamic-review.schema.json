@@ -186,5 +186,6 @@
     "criteria"
   ],
   "additionalProperties": true,
-  "description": "每项score=max(0,10−5×independent_error_count)，三项加总；Schema不替代跨字段及媒体证据检查。"
+  "description": "每项score=max(0,10−5×independent_error_count)，三项加总；Schema不替代跨字段及媒体证据检查。",
+  "$comment": "Assistant-authored suggested output schema for new reviews; not the original Antigravity Gemini request or response format."
 }
