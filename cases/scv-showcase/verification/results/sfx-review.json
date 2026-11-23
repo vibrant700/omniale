@@ -1,0 +1,281 @@
+{
+  "record_type": "accepted_report_transcription",
+  "assessment_status": "complete",
+  "provenance": "由已接受的音画报告转录为结构化记录；不是独立保存的原始 Gemini API 响应。",
+  "judge_display": "Gemini 4 Neon",
+  "judge_identity_source": "委托人提供",
+  "media": {
+    "file": "showcase.mp4",
+    "duration_s": 18.25,
+    "fps": 24,
+    "frame_count": 438
+  },
+  "confirmed_events": [
+    {
+      "candidate_id": "candidate-01",
+      "confirmed_type": "hit",
+      "source_asset": "hit.wav",
+      "effective_interval_s": [
+        0.03,
+        0.47000000000000003
+      ],
+      "audio_anchor_s": 0.045,
+      "visual_anchor_s": 0.0,
+      "visual_interval_s": null,
+      "audio_minus_visual_ms": 45.0,
+      "heard_description": "清脆金属撞击，锚定开场显现。",
+      "visual_description": "PL. 01 总览标题和机甲开场亮相"
+    },
+    {
+      "candidate_id": "candidate-04",
+      "confirmed_type": "whoosh",
+      "source_asset": "whoosh.wav",
+      "effective_interval_s": [
+        3.433333333333333,
+        4.543333333333333
+      ],
+      "audio_anchor_s": 3.958333333333333,
+      "visual_anchor_s": 4.0,
+      "visual_interval_s": [
+        3.958333333333333,
+        4.0
+      ],
+      "audio_minus_visual_ms": -41.66666666666696,
+      "heard_description": "扫风声与图形扫屏运动对应。",
+      "visual_description": "斜切黑红横幅自左向右扫屏，PL. 01 → PL. 02"
+    },
+    {
+      "candidate_id": "candidate-08",
+      "confirmed_type": "hit",
+      "source_asset": "hit.wav",
+      "effective_interval_s": [
+        6.988333333333333,
+        7.428333333333333
+      ],
+      "audio_anchor_s": 7.003333333333333,
+      "visual_anchor_s": 7.0,
+      "visual_interval_s": null,
+      "audio_minus_visual_ms": 3.333333333332966,
+      "heard_description": "撞击声与切换落点对应。",
+      "visual_description": "座舱 → 机械爪的干脆硬切，PL. 02 → PL. 03"
+    },
+    {
+      "candidate_id": "candidate-11",
+      "confirmed_type": "whoosh",
+      "source_asset": "whoosh.wav",
+      "effective_interval_s": [
+        9.433333333333334,
+        10.543333333333333
+      ],
+      "audio_anchor_s": 9.958333333333334,
+      "visual_anchor_s": 10.0,
+      "visual_interval_s": [
+        9.958333333333332,
+        10.0
+      ],
+      "audio_minus_visual_ms": -41.666666666666075,
+      "heard_description": "扫风声与第二次图形扫屏运动对应。",
+      "visual_description": "斜切黑红横幅自左向右扫屏，PL. 03 → PL. 04"
+    },
+    {
+      "candidate_id": "candidate-12",
+      "confirmed_type": "drop",
+      "source_asset": "drop.wav",
+      "effective_interval_s": [
+        13.641666666666667,
+        15.321666666666667
+      ],
+      "audio_anchor_s": 13.721666666666668,
+      "visual_anchor_s": 13.75,
+      "visual_interval_s": null,
+      "audio_minus_visual_ms": -28.333333333332433,
+      "heard_description": "低频重落承接铺垫，配合视觉重心变化。",
+      "visual_description": "由暗转明硬切至 PL. 05 整机定妆，与音乐高潮对应"
+    }
+  ],
+  "candidate_resolution": {
+    "total": 18,
+    "confirmed_sfx": 5,
+    "bgm_only": 13,
+    "additional_events": 0,
+    "basis": "接受报告记载：5处高置信度候选确认音效，其余13处为BGM鼓点/贝斯瞬态；完整成片查漏未报告额外音效。"
+  },
+  "items": [
+    {
+      "id": "S1",
+      "criterion": "whoosh语义对应",
+      "score": 1,
+      "evidence_candidate_ids": [
+        "candidate-04",
+        "candidate-11"
+      ],
+      "reason": "两处扫风声对应斜切图形扫屏转场。",
+      "evidence": [
+        {
+          "source_start_s": 3.433333333333333,
+          "source_end_s": 4.543333333333333,
+          "candidate_ids": [
+            "candidate-04"
+          ],
+          "heard_description": "扫风声与图形扫屏运动对应。",
+          "visual_description": "斜切黑红横幅自左向右扫屏，PL. 01 → PL. 02",
+          "reason": "两处扫风声对应斜切图形扫屏转场。"
+        },
+        {
+          "source_start_s": 9.433333333333334,
+          "source_end_s": 10.543333333333333,
+          "candidate_ids": [
+            "candidate-11"
+          ],
+          "heard_description": "扫风声与第二次图形扫屏运动对应。",
+          "visual_description": "斜切黑红横幅自左向右扫屏，PL. 03 → PL. 04",
+          "reason": "两处扫风声对应斜切图形扫屏转场。"
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "criterion": "hit语义对应",
+      "score": 1,
+      "evidence_candidate_ids": [
+        "candidate-01",
+        "candidate-08"
+      ],
+      "reason": "开场亮相与座舱到机械爪硬切均有清楚撞击落点。",
+      "evidence": [
+        {
+          "source_start_s": 0.03,
+          "source_end_s": 0.47000000000000003,
+          "candidate_ids": [
+            "candidate-01"
+          ],
+          "heard_description": "清脆金属撞击，锚定开场显现。",
+          "visual_description": "PL. 01 总览标题和机甲开场亮相",
+          "reason": "开场亮相与座舱到机械爪硬切均有清楚撞击落点。"
+        },
+        {
+          "source_start_s": 6.988333333333333,
+          "source_end_s": 7.428333333333333,
+          "candidate_ids": [
+            "candidate-08"
+          ],
+          "heard_description": "撞击声与切换落点对应。",
+          "visual_description": "座舱 → 机械爪的干脆硬切，PL. 02 → PL. 03",
+          "reason": "开场亮相与座舱到机械爪硬切均有清楚撞击落点。"
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "criterion": "drop语义对应",
+      "score": 1,
+      "evidence_candidate_ids": [
+        "candidate-12"
+      ],
+      "reason": "低频重落对应铺垫结束和由暗转明整机亮相。",
+      "evidence": [
+        {
+          "source_start_s": 13.641666666666667,
+          "source_end_s": 15.321666666666667,
+          "candidate_ids": [
+            "candidate-12"
+          ],
+          "heard_description": "低频重落承接铺垫，配合视觉重心变化。",
+          "visual_description": "由暗转明硬切至 PL. 05 整机定妆，与音乐高潮对应",
+          "reason": "低频重落对应铺垫结束和由暗转明整机亮相。"
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "criterion": "主要音效感知对齐",
+      "score": 1,
+      "evidence_candidate_ids": [
+        "candidate-01",
+        "candidate-04",
+        "candidate-08",
+        "candidate-11",
+        "candidate-12"
+      ],
+      "reason": "接受报告核对原生帧与音频锚点，时差约在−42至+45ms内；此数值是证据，不是预设自动通过阈值。",
+      "evidence": [
+        {
+          "source_start_s": 0.03,
+          "source_end_s": 0.47000000000000003,
+          "candidate_ids": [
+            "candidate-01"
+          ],
+          "heard_description": "清脆金属撞击，锚定开场显现。",
+          "visual_description": "PL. 01 总览标题和机甲开场亮相",
+          "reason": "接受报告核对原生帧与音频锚点，时差约在−42至+45ms内；此数值是证据，不是预设自动通过阈值。"
+        },
+        {
+          "source_start_s": 3.433333333333333,
+          "source_end_s": 4.543333333333333,
+          "candidate_ids": [
+            "candidate-04"
+          ],
+          "heard_description": "扫风声与图形扫屏运动对应。",
+          "visual_description": "斜切黑红横幅自左向右扫屏，PL. 01 → PL. 02",
+          "reason": "接受报告核对原生帧与音频锚点，时差约在−42至+45ms内；此数值是证据，不是预设自动通过阈值。"
+        },
+        {
+          "source_start_s": 6.988333333333333,
+          "source_end_s": 7.428333333333333,
+          "candidate_ids": [
+            "candidate-08"
+          ],
+          "heard_description": "撞击声与切换落点对应。",
+          "visual_description": "座舱 → 机械爪的干脆硬切，PL. 02 → PL. 03",
+          "reason": "接受报告核对原生帧与音频锚点，时差约在−42至+45ms内；此数值是证据，不是预设自动通过阈值。"
+        },
+        {
+          "source_start_s": 9.433333333333334,
+          "source_end_s": 10.543333333333333,
+          "candidate_ids": [
+            "candidate-11"
+          ],
+          "heard_description": "扫风声与第二次图形扫屏运动对应。",
+          "visual_description": "斜切黑红横幅自左向右扫屏，PL. 03 → PL. 04",
+          "reason": "接受报告核对原生帧与音频锚点，时差约在−42至+45ms内；此数值是证据，不是预设自动通过阈值。"
+        },
+        {
+          "source_start_s": 13.641666666666667,
+          "source_end_s": 15.321666666666667,
+          "candidate_ids": [
+            "candidate-12"
+          ],
+          "heard_description": "低频重落承接铺垫，配合视觉重心变化。",
+          "visual_description": "由暗转明硬切至 PL. 05 整机定妆，与音乐高潮对应",
+          "reason": "接受报告核对原生帧与音频锚点，时差约在−42至+45ms内；此数值是证据，不是预设自动通过阈值。"
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "criterion": "混音可辨与层次",
+      "score": 1,
+      "reason": "接受报告听辨三类音效均清晰可辨、层次平衡；混音峰值0.884且无削波，电平检查仅作辅助。",
+      "evidence": [
+        {
+          "source_start_s": 0.0,
+          "source_end_s": 18.25,
+          "candidate_ids": [
+            "candidate-01",
+            "candidate-04",
+            "candidate-08",
+            "candidate-11",
+            "candidate-12"
+          ],
+          "heard_description": "接受报告记载：最终立体声混音中的whoosh、hit、drop均清晰可辨、与BGM层次平衡，无削波失真（峰值0.884）。",
+          "visual_description": "完整18.25秒成片；此项评价最终混音的可辨度与层次，不以视觉切换代替听辨。",
+          "reason": "接受报告听辨三类音效均清晰可辨、层次平衡；混音峰值0.884且无削波，电平检查仅作辅助。"
+        }
+      ]
+    }
+  ],
+  "sfx_score": 5,
+  "sfx_score_max": 5,
+  "score": 5,
+  "maximum": 5
+}

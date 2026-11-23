@@ -1,0 +1,15 @@
+{
+  "protocol_version": "scv-showcase-verification-v1",
+  "dimension": "music or sfx or dynamic",
+  "model_id": "",
+  "model_version_or_snapshot": "",
+  "provider": "",
+  "reviewed_at_utc": "",
+  "prompt": {"file": "", "sha256": ""},
+  "media": [{"label": "", "file": "", "sha256": ""}],
+  "request_settings": {"temperature": null, "seed": null, "reasoning_effort": null},
+  "video_sampling": {"fps": null, "resolution": null, "source_time_mapping": ""},
+  "audio_decode": {"sample_rate_hz": null, "channels": null, "codec": ""},
+  "raw_response_file": "",
+  "normalized_result_file": ""
+}

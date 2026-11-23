@@ -1,0 +1,2 @@
+# Package hashes must stay valid in checkouts on every platform.
+* -text whitespace=cr-at-eol

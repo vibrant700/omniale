@@ -1,0 +1,149 @@
+{
+  "formula": "sum(max(0,10 - 5 * independent_error_count)) across three criteria",
+  "counting_rule": "Same-shot same-region persistent or recurrent defects merge into one event. Different shots or distinct spatial regions can be separate. Do not deduct per frame or per recurrence. D1 uses detached fragments, D2 simultaneous identifiable duplicates, D3 requires separate temporal change evidence; no additional synonymous categories.",
+  "dynamic_score": 0,
+  "dynamic_maximum": 30,
+  "assessment_status": "complete",
+  "scope": "浮片、部件重影、显隐连续性专项诊断；各处数为足以确定封顶扣分的已确认下界，不是完整缺陷普查。",
+  "media": {
+    "file": "showcase.mp4",
+    "duration_s": 18.25,
+    "fps": 24,
+    "frame_count": 438,
+    "frame_indexing": "zero_based"
+  },
+  "criteria": [
+    {
+      "id": "D1",
+      "criterion": "无游离浮片",
+      "events": [
+        {
+          "event_id": "D1-A",
+          "shot": "背部",
+          "region": "画面左肩内侧空隙",
+          "frames_zero_based": [
+            292,
+            293
+          ],
+          "seconds": [
+            12.166666666666666,
+            12.208333333333334
+          ],
+          "description": "孤立红片，与主体轮廓断开"
+        },
+        {
+          "event_id": "D1-B",
+          "shot": "背部",
+          "region": "双竖箱上方",
+          "frames_zero_based": [
+            312,
+            313,
+            314
+          ],
+          "seconds": [
+            13.0,
+            13.041666666666666,
+            13.083333333333334
+          ],
+          "description": "竖箱上方游离的红色顶片；与左肩空隙是不同部位"
+        }
+      ],
+      "maximum": 10,
+      "confirmed_event_count": 2,
+      "count_is_lower_bound": true,
+      "deduction_per_event": 5,
+      "score": 0,
+      "independent_error_count": 2
+    },
+    {
+      "id": "D2",
+      "criterion": "无部件重影",
+      "events": [
+        {
+          "event_id": "D2-A",
+          "shot": "座舱",
+          "region": "肩甲和肩部",
+          "frames_zero_based": [
+            150,
+            151
+          ],
+          "seconds": [
+            6.25,
+            6.291666666666667
+          ],
+          "description": "同部件同时出现错位重复轮廓；本镜头同部位反复出现合并一次"
+        },
+        {
+          "event_id": "D2-B",
+          "shot": "背部",
+          "region": "两肩附近",
+          "frames_zero_based": [
+            313,
+            314
+          ],
+          "seconds": [
+            13.041666666666666,
+            13.083333333333334
+          ],
+          "description": "另一镜头里的半透明重复部件；不按左右各自增加计数"
+        }
+      ],
+      "maximum": 10,
+      "confirmed_event_count": 2,
+      "count_is_lower_bound": true,
+      "deduction_per_event": 5,
+      "score": 0,
+      "independent_error_count": 2
+    },
+    {
+      "id": "D3",
+      "criterion": "显隐变化连续",
+      "events": [
+        {
+          "event_id": "D3-A",
+          "shot": "座舱",
+          "region": "画面左肩甲附近",
+          "frames_zero_based": [
+            150,
+            152,
+            154,
+            155
+          ],
+          "seconds": [
+            6.25,
+            6.333333333333333,
+            6.416666666666667,
+            6.458333333333333
+          ],
+          "description": "副本明显—减弱—再次增强；同镜头同部位只计一次"
+        },
+        {
+          "event_id": "D3-B",
+          "shot": "背部",
+          "region": "画面右肩附近",
+          "frames_zero_based": [
+            315,
+            316,
+            318,
+            319
+          ],
+          "seconds": [
+            13.125,
+            13.166666666666666,
+            13.25,
+            13.291666666666666
+          ],
+          "description": "副本明显—减弱—再次增强；属于与座舱不同镜头的另一处"
+        }
+      ],
+      "maximum": 10,
+      "confirmed_event_count": 2,
+      "count_is_lower_bound": true,
+      "deduction_per_event": 5,
+      "score": 0,
+      "independent_error_count": 2
+    }
+  ],
+  "score": 0,
+  "maximum": 30
+}

@@ -1,0 +1,80 @@
+{
+  "protocol_version": "scv-showcase-verification-v1",
+  "asset_capture": {
+    "blender": "5.3.0",
+    "renderer": "Cycles",
+    "samples": 16,
+    "resolution": [
+      1280,
+      1280
+    ],
+    "color_management": "AgX",
+    "reference_pngs": "Exact input PNGs; never resample"
+  },
+  "geometry": {
+    "sample_count_per_merged_mesh": 50000,
+    "random_seed": 20261122,
+    "threshold_reference_bbox_diagonal_fraction": 0.005,
+    "distance_target": "Entire opposite evaluated triangle mesh",
+    "visibility": "First intersection from at least one of the six orthographic directions",
+    "registration": "None"
+  },
+  "image": {
+    "alpha_mask_threshold": 0.5,
+    "region": "Reference/submission foreground union",
+    "background": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "SSIM": {
+      "sigma": 1.5,
+      "gaussian_weights": true,
+      "window": 11,
+      "use_sample_covariance": false
+    },
+    "LPIPS": {
+      "net": "alex",
+      "version": "0.1",
+      "spatial": true,
+      "spatial_averaging": "foreground union; diagnostic variant"
+    }
+  },
+  "dynamic": {
+    "criteria": [
+      "D1",
+      "D2",
+      "D3"
+    ],
+    "initial_points_each": 10,
+    "deduction_per_independent_error": 5,
+    "floor_each": 0
+  },
+  "audio_visual": {
+    "music_prompt": "prompts/music-review.md",
+    "sfx_prompt": "prompts/sfx-review.md",
+    "context": "Two independent review contexts; no model identity, existing score or execution history",
+    "published_judge_display": "Gemini 4 Neon",
+    "published_judge_identity_source": "Case author confirmation",
+    "review_prompt_status": "Standardized review prompts; not claimed to be exact original Neon request logs"
+  },
+  "frozen_evaluator_sha256": {
+    "evaluate_asset.py": "0fcbd671f44d637dfe5d0320d9b3348cef1e03618de65f6e4e4b2609818829a2",
+    "capture_asset_blender.py": "2b412aec39e788eb2fe9693909a7d419858c5cf1afef8babab152a6156f8e237",
+    "surface_metrics_blender.py": "611fe687604c7efbc5cd814fad7840ef72202d232de8e4b46286dba8af33caa4",
+    "localize_showcase_sfx_v3.py": "67a7c588d7c138227aae1716551ba41a51efd82d5a9b8c1672588e053a867af4"
+  },
+  "portability_changes": [
+    "Required filesystem/tool paths are CLI parameters",
+    "Image calculations extracted into a portable module; diagnostic collage drawing omitted",
+    "Fixed scoring formula and completed-review aggregation provided separately",
+    "No credential-dependent API runner included"
+  ],
+  "validation": {
+    "image_metric_parity": "All six published views and controls match the frozen image metric result exactly",
+    "blender_capture_script": "Byte-identical to frozen capture implementation",
+    "geometric_computation": "Frozen computation functions preserved; portability-only entrypoints",
+    "fresh_render": "Not required for validating the port; recomputation command is provided"
+  },
+  "python_version": "3.12.14"
+}

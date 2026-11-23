@@ -1,0 +1,30 @@
+{
+  "all_checks_pass": true,
+  "checks": [
+    {
+      "window_id": "window-01",
+      "expected_frames": 278,
+      "encoded_frames": 278,
+      "frame_rate": "24/1",
+      "expected_duration_seconds": 11.583333333333334,
+      "encoded_duration_seconds": 11.583333,
+      "original_trim_pcm_sha256": "SHA256=62cf817d5dbb3659219ac5e8fac8b7b660027356e5a6cc03ce27613e74d8bb22",
+      "flac_decoded_pcm_sha256": "SHA256=62cf817d5dbb3659219ac5e8fac8b7b660027356e5a6cc03ce27613e74d8bb22",
+      "lossless_audio_sample_identity": true,
+      "frame_count_identity": true
+    },
+    {
+      "window_id": "window-02",
+      "expected_frames": 135,
+      "encoded_frames": 135,
+      "frame_rate": "24/1",
+      "expected_duration_seconds": 5.625,
+      "encoded_duration_seconds": 5.625,
+      "original_trim_pcm_sha256": "SHA256=a3dede5f0bb8d6207e9f18324cef3785c061a680328d969e135150e51820d78b",
+      "flac_decoded_pcm_sha256": "SHA256=a3dede5f0bb8d6207e9f18324cef3785c061a680328d969e135150e51820d78b",
+      "lossless_audio_sample_identity": true,
+      "frame_count_identity": true
+    }
+  ],
+  "note": "FLAC decoded PCM24 is SHA256-identical to the exact sample slice of the original final mix. MP4 audio is AAC192k encoding of that same slice."
+}

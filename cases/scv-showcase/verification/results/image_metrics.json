@@ -1,0 +1,179 @@
+{
+  "status": "raw_metrics",
+  "views": {
+    "textured": {
+      "front": {
+        "silhouette_IoU": 0.7569163831193056,
+        "foreground_union_SSIM": 0.17160427570343018,
+        "foreground_union_LPIPS_alex_spatial": 0.5642096996307373,
+        "foreground_union_RGB_MSE": 0.06671188771724701,
+        "reference_foreground_pixels": 602828,
+        "submission_foreground_pixels": 569803,
+        "foreground_union_pixels": 667437,
+        "foreground_intersection_pixels": 505194
+      },
+      "back": {
+        "silhouette_IoU": 0.7568728097577493,
+        "foreground_union_SSIM": 0.1788753867149353,
+        "foreground_union_LPIPS_alex_spatial": 0.5810562968254089,
+        "foreground_union_RGB_MSE": 0.07254336774349213,
+        "reference_foreground_pixels": 602825,
+        "submission_foreground_pixels": 569798,
+        "foreground_union_pixels": 667449,
+        "foreground_intersection_pixels": 505174
+      },
+      "left": {
+        "silhouette_IoU": 0.7071520704991281,
+        "foreground_union_SSIM": 0.1964908093214035,
+        "foreground_union_LPIPS_alex_spatial": 0.6060770750045776,
+        "foreground_union_RGB_MSE": 0.06025761738419533,
+        "reference_foreground_pixels": 456446,
+        "submission_foreground_pixels": 370746,
+        "foreground_union_pixels": 484545,
+        "foreground_intersection_pixels": 342647
+      },
+      "right": {
+        "silhouette_IoU": 0.7072285252553605,
+        "foreground_union_SSIM": 0.20487429201602936,
+        "foreground_union_LPIPS_alex_spatial": 0.5877730250358582,
+        "foreground_union_RGB_MSE": 0.06378041952848434,
+        "reference_foreground_pixels": 456429,
+        "submission_foreground_pixels": 370742,
+        "foreground_union_pixels": 484511,
+        "foreground_intersection_pixels": 342660
+      },
+      "top": {
+        "silhouette_IoU": 0.7983138875740704,
+        "foreground_union_SSIM": 0.18732020258903503,
+        "foreground_union_LPIPS_alex_spatial": 0.5826494097709656,
+        "foreground_union_RGB_MSE": 0.06118009239435196,
+        "reference_foreground_pixels": 557367,
+        "submission_foreground_pixels": 548213,
+        "foreground_union_pixels": 614787,
+        "foreground_intersection_pixels": 490793
+      },
+      "bottom": {
+        "silhouette_IoU": 0.7983597064258386,
+        "foreground_union_SSIM": 0.2107294201850891,
+        "foreground_union_LPIPS_alex_spatial": 0.612421452999115,
+        "foreground_union_RGB_MSE": 0.0643136277794838,
+        "reference_foreground_pixels": 557375,
+        "submission_foreground_pixels": 548199,
+        "foreground_union_pixels": 614768,
+        "foreground_intersection_pixels": 490806
+      }
+    },
+    "clay": {
+      "front": {
+        "silhouette_IoU": 0.749449651433571,
+        "foreground_union_SSIM": 0.5329315662384033,
+        "foreground_union_LPIPS_alex_spatial": 0.533156156539917,
+        "foreground_union_RGB_MSE": 0.03315777704119682,
+        "reference_foreground_pixels": 611917,
+        "submission_foreground_pixels": 569803,
+        "foreground_union_pixels": 675481,
+        "foreground_intersection_pixels": 506239
+      },
+      "back": {
+        "silhouette_IoU": 0.7494289322253952,
+        "foreground_union_SSIM": 0.5353608727455139,
+        "foreground_union_LPIPS_alex_spatial": 0.5597914457321167,
+        "foreground_union_RGB_MSE": 0.0305897518992424,
+        "reference_foreground_pixels": 611922,
+        "submission_foreground_pixels": 569798,
+        "foreground_union_pixels": 675489,
+        "foreground_intersection_pixels": 506231
+      },
+      "left": {
+        "silhouette_IoU": 0.7070788571145568,
+        "foreground_union_SSIM": 0.5957092642784119,
+        "foreground_union_LPIPS_alex_spatial": 0.5487322211265564,
+        "foreground_union_RGB_MSE": 0.028959166258573532,
+        "reference_foreground_pixels": 456501,
+        "submission_foreground_pixels": 370746,
+        "foreground_union_pixels": 484598,
+        "foreground_intersection_pixels": 342649
+      },
+      "right": {
+        "silhouette_IoU": 0.7071596764906792,
+        "foreground_union_SSIM": 0.5314953923225403,
+        "foreground_union_LPIPS_alex_spatial": 0.5420194268226624,
+        "foreground_union_RGB_MSE": 0.02398866042494774,
+        "reference_foreground_pixels": 456481,
+        "submission_foreground_pixels": 370742,
+        "foreground_union_pixels": 484561,
+        "foreground_intersection_pixels": 342662
+      },
+      "top": {
+        "silhouette_IoU": 0.7983854570770039,
+        "foreground_union_SSIM": 0.6493781208992004,
+        "foreground_union_LPIPS_alex_spatial": 0.5268842577934265,
+        "foreground_union_RGB_MSE": 0.02624616213142872,
+        "reference_foreground_pixels": 557411,
+        "submission_foreground_pixels": 548213,
+        "foreground_union_pixels": 614787,
+        "foreground_intersection_pixels": 490837
+      },
+      "bottom": {
+        "silhouette_IoU": 0.7984280248809307,
+        "foreground_union_SSIM": 0.6883136630058289,
+        "foreground_union_LPIPS_alex_spatial": 0.5157427191734314,
+        "foreground_union_RGB_MSE": 0.01833394356071949,
+        "reference_foreground_pixels": 557417,
+        "submission_foreground_pixels": 548199,
+        "foreground_union_pixels": 614768,
+        "foreground_intersection_pixels": 490848
+      }
+    }
+  },
+  "alignment": "Supplied cameras and world coordinates; no image registration",
+  "region": "Union of reference and candidate alpha>=0.5 masks on the fixed full-resolution canvas. RGB composited over common neutral 0.5 gray.",
+  "SSIM": "Gaussian sigma1.5, 11x11 window, population covariance, channel mean; spatial values averaged in union mask.",
+  "LPIPS": "Official AlexNet v0.1 spatial map at original input resolution, union-mask weighted; diagnostic variant, not standard whole-image LPIPS.",
+  "reference": "Original provided reference PNGs, unchanged and not resampled.",
+  "versions": {
+    "numpy": "2.2.6",
+    "Pillow": "13.0.0",
+    "scipy": "1.18.1",
+    "scikit-image": "0.25.2",
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu",
+    "lpips": "0.1.4"
+  },
+  "mean": {
+    "textured": {
+      "silhouette_IoU": 0.7541405637719087,
+      "foreground_union_SSIM": 0.19164906442165375,
+      "foreground_union_LPIPS_alex_spatial": 0.5890311598777771,
+      "foreground_union_RGB_MSE": 0.06479783542454243
+    },
+    "clay": {
+      "silhouette_IoU": 0.7516550998703563,
+      "foreground_union_SSIM": 0.5888648132483164,
+      "foreground_union_LPIPS_alex_spatial": 0.5377210378646851,
+      "foreground_union_RGB_MSE": 0.026879243552684784
+    }
+  },
+  "controls": {
+    "identical_image": {
+      "silhouette_IoU": 1.0,
+      "foreground_union_SSIM": 1.0,
+      "foreground_union_LPIPS_alex_spatial": 0.0,
+      "foreground_union_RGB_MSE": 0.0,
+      "reference_foreground_pixels": 602828,
+      "submission_foreground_pixels": 602828,
+      "foreground_union_pixels": 602828,
+      "foreground_intersection_pixels": 602828
+    },
+    "transparent_empty_submission": {
+      "silhouette_IoU": 0.0,
+      "foreground_union_SSIM": 0.24197900295257568,
+      "foreground_union_LPIPS_alex_spatial": 0.9994311332702637,
+      "foreground_union_RGB_MSE": 0.08082543313503265,
+      "reference_foreground_pixels": 602828,
+      "submission_foreground_pixels": 0,
+      "foreground_union_pixels": 602828,
+      "foreground_intersection_pixels": 0
+    }
+  }
+}

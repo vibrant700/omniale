@@ -1,0 +1,107 @@
+{
+  "status": "raw_metrics",
+  "alignment": "Fixed input coordinates; no ICP or registration",
+  "method": "Triangle-area weighted random surface sampling; BVH nearest/nearby triangle candidates followed by float64 point-to-triangle distance recomputation. Both directions.",
+  "BVH_float32_candidate_distance_margin_reference_diagonal_fraction": 0.001,
+  "sample_count_per_mesh": 50000,
+  "random_seed": 20261122,
+  "reference_bounding_box_diagonal": 3.1830249832953164,
+  "all_surface": {
+    "mean_reference_to_submission": 0.025822673794751526,
+    "mean_submission_to_reference": 0.020260650781955287,
+    "symmetric_chamfer_l1": 0.023041662288353408,
+    "symmetric_chamfer_l1_divided_by_reference_diagonal": 0.007238919709797212,
+    "symmetric_mean_squared_distance": 0.001275381942008828,
+    "reference_to_submission_distance_percentiles": [
+      0.014659774410698684,
+      0.0658215075153854,
+      0.09213701690621877,
+      0.14127868648755132
+    ],
+    "submission_to_reference_distance_percentiles": [
+      0.012116845117771977,
+      0.050286924594826456,
+      0.07056837916137038,
+      0.11149525592264378
+    ],
+    "fscore_by_reference_diagonal_fraction": {
+      "0.005": {
+        "threshold_world_units": 0.01591512491647658,
+        "precision": 0.59138,
+        "recall": 0.52496,
+        "fscore": 0.5561940713402727
+      },
+      "0.01": {
+        "threshold_world_units": 0.03183024983295316,
+        "precision": 0.80292,
+        "recall": 0.72838,
+        "fscore": 0.7638357860641285
+      },
+      "0.02": {
+        "threshold_world_units": 0.06366049966590633,
+        "precision": 0.93632,
+        "recall": 0.8938,
+        "fscore": 0.9145660568705878
+      },
+      "0.05": {
+        "threshold_world_units": 0.15915124916476583,
+        "precision": 0.99964,
+        "recall": 0.99442,
+        "fscore": 0.9970231676077951
+      }
+    }
+  },
+  "reference_visible_sample_fraction": 0.3926,
+  "submission_visible_sample_fraction": 0.3424,
+  "six_input_view_visible_samples": {
+    "mean_reference_to_submission": 0.03238151741539037,
+    "mean_submission_to_reference": 0.02576916496749289,
+    "symmetric_chamfer_l1": 0.02907534119144163,
+    "symmetric_chamfer_l1_divided_by_reference_diagonal": 0.009134499837114242,
+    "symmetric_mean_squared_distance": 0.001949914320397515,
+    "reference_to_submission_distance_percentiles": [
+      0.018326809224784288,
+      0.08567500469422709,
+      0.11350559005253595,
+      0.16455585916930524
+    ],
+    "submission_to_reference_distance_percentiles": [
+      0.014958094138601188,
+      0.06580919424234351,
+      0.08851325319646818,
+      0.12938715646777096
+    ],
+    "fscore_by_reference_diagonal_fraction": {
+      "0.005": {
+        "threshold_world_units": 0.01591512491647658,
+        "precision": 0.5182242990654206,
+        "recall": 0.4648497198166072,
+        "fscore": 0.49008806172432645
+      },
+      "0.01": {
+        "threshold_world_units": 0.03183024983295316,
+        "precision": 0.7219042056074766,
+        "recall": 0.6543046357615894,
+        "fscore": 0.6864441705444441
+      },
+      "0.02": {
+        "threshold_world_units": 0.06366049966590633,
+        "precision": 0.8918808411214953,
+        "recall": 0.8400407539480387,
+        "fscore": 0.8651849556474085
+      },
+      "0.05": {
+        "threshold_world_units": 0.15915124916476583,
+        "precision": 0.9989485981308411,
+        "recall": 0.9873153336729495,
+        "fscore": 0.9930978987168199
+      }
+    }
+  },
+  "control_reference_self_distance_max": 1.4107565017387864e-16,
+  "visibility_method": "A sampled surface point must be the first BVH intersection from at least one input orthographic direction. Filters tested sample points only; nearest target uses entire mesh.",
+  "limitations": [
+    "Whole-surface numbers include reference-hidden surfaces and are diagnostic, not a fair standalone score.",
+    "Visible-sample metrics also do not resolve every ambiguity in occluded geometry. Thresholds are reported at several scales, not selected after seeing a result."
+  ]
+}

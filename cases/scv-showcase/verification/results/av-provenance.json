@@ -1,0 +1,12 @@
+{
+  "record_type": "accepted_evaluation",
+  "judge_display": "Gemini 4 Neon",
+  "judge_identity_source": "委托人直接说明",
+  "music_result": "music-review.json",
+  "sfx_result": "sfx-review.json",
+  "music_score": 5,
+  "sfx_score": 5,
+  "audio_visual_score": 10,
+  "audio_visual_maximum": 10,
+  "prompt_version": "本包提供标准复核提示词v1，供新评审使用；不声称与原评分调用逐字相同。"
+}

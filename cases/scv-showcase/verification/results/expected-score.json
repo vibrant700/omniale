@@ -1,0 +1,23 @@
+{
+  "protocol_version": "scv-showcase-verification-v1",
+  "model": "gpt-6.2-astra",
+  "framework": "Codex",
+  "reasoning_effort": "xhigh",
+  "scores": {
+    "structure": 18.66342938244353,
+    "appearance": 9.03926856815815,
+    "dynamic": 0,
+    "music": 5,
+    "sfx": 5,
+    "total": 37.702697950601674
+  },
+  "weights": {
+    "structure": 30,
+    "appearance": 30,
+    "dynamic": 30,
+    "music": 5,
+    "sfx": 5
+  },
+  "engineering_gate": "passed",
+  "audio_visual_judge": "Gemini 4 Neon"
+}

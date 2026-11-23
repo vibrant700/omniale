@@ -1,0 +1,955 @@
+{
+  "scope": "controlled arbitrary audio-only insertions, unrelated to final project positions",
+  "insert_recovery": [
+    {
+      "source": "whoosh.wav",
+      "inserted_asset_start_seconds": 2.13,
+      "gain": 0.22,
+      "nearest_candidate_start_seconds": 2.13,
+      "absolute_error_seconds": 0.0,
+      "metrics": {
+        "original_mix_ncc": 0.6163721578486387,
+        "bgm_residual_ncc": 0.9999995714555618,
+        "positive_template_gain_in_residual": 0.21999977493173475,
+        "incremental_mix_variance_explained": 0.3792415542270112,
+        "residual_energy_fraction_of_mix": 0.37924189592090923,
+        "residual_variance_explained": 0.999999099008043,
+        "waveform_confidence": "high",
+        "ranking_score": 0.6466442562567748
+      }
+    },
+    {
+      "source": "hit.wav",
+      "inserted_asset_start_seconds": 6.37,
+      "gain": 0.22,
+      "nearest_candidate_start_seconds": 6.37,
+      "absolute_error_seconds": 0.0,
+      "metrics": {
+        "original_mix_ncc": 0.5238819625954395,
+        "bgm_residual_ncc": 0.9996533683732508,
+        "positive_template_gain_in_residual": 0.21972418725292325,
+        "incremental_mix_variance_explained": 0.23406935665542883,
+        "residual_energy_fraction_of_mix": 0.2342343103579852,
+        "residual_variance_explained": 0.9992957748064139,
+        "waveform_confidence": "high",
+        "ranking_score": 0.5098335434771697
+      }
+    },
+    {
+      "source": "drop.wav",
+      "inserted_asset_start_seconds": 10.61,
+      "gain": 0.22,
+      "nearest_candidate_start_seconds": 10.610000000000001,
+      "absolute_error_seconds": 1.7763568394002505e-15,
+      "metrics": {
+        "original_mix_ncc": 0.5285408182483671,
+        "bgm_residual_ncc": 0.9999874632798603,
+        "positive_template_gain_in_residual": 0.21999161938741826,
+        "incremental_mix_variance_explained": 0.2832512742147622,
+        "residual_energy_fraction_of_mix": 0.2832583798235105,
+        "residual_variance_explained": 0.9999749147447898,
+        "waveform_confidence": "high",
+        "ranking_score": 0.5586339294204238
+      }
+    }
+  ],
+  "pure_bgm_candidates": [
+    {
+      "possible_type": "drop",
+      "source_asset": "drop.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.1,
+        1.78
+      ],
+      "estimated_asset_start_seconds": 0.7575000000000001,
+      "effective_interval_seconds": [
+        0.8575,
+        2.5375
+      ],
+      "onset_seconds": 0.8575,
+      "energy_peak_seconds": 0.9425000000000001,
+      "alignment_anchor_seconds": 0.9375,
+      "asset_duration_seconds": 1.9,
+      "metrics": {
+        "original_mix_ncc": 0.2801285513980566,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 3.908773610894276e-16,
+        "incremental_mix_variance_explained": 2.8700658233749417e-30,
+        "residual_energy_fraction_of_mix": 1.4463003950136507e-28,
+        "residual_variance_explained": 1.1492668175448332e-08,
+        "waveform_confidence": "low",
+        "ranking_score": 0.01400642756990283
+      },
+      "candidate_id": "candidate-01",
+      "hypothesized_type": "drop",
+      "file_start": 0.7575000000000001,
+      "anchor": 0.9375,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.2801285513980566,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "drop",
+      "source_asset": "drop.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.1,
+        1.78
+      ],
+      "estimated_asset_start_seconds": 1.7574999999999998,
+      "effective_interval_seconds": [
+        1.8575,
+        3.5374999999999996
+      ],
+      "onset_seconds": 1.8575,
+      "energy_peak_seconds": 1.9425,
+      "alignment_anchor_seconds": 1.9374999999999998,
+      "asset_duration_seconds": 1.9,
+      "metrics": {
+        "original_mix_ncc": 0.2800976773413382,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 1.0135025243482442e-15,
+        "incremental_mix_variance_explained": 1.9274319729254846e-29,
+        "residual_energy_fraction_of_mix": 1.8758690018295767e-28,
+        "residual_variance_explained": 7.726617738959318e-08,
+        "waveform_confidence": "low",
+        "ranking_score": 0.014004883867066912
+      },
+      "candidate_id": "candidate-02",
+      "hypothesized_type": "drop",
+      "file_start": 1.7574999999999998,
+      "anchor": 1.9374999999999998,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.2800976773413382,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "drop",
+      "source_asset": "drop.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.1,
+        1.78
+      ],
+      "estimated_asset_start_seconds": 2.7575,
+      "effective_interval_seconds": [
+        2.8575,
+        4.5375
+      ],
+      "onset_seconds": 2.8575,
+      "energy_peak_seconds": 2.9425,
+      "alignment_anchor_seconds": 2.9375,
+      "asset_duration_seconds": 1.9,
+      "metrics": {
+        "original_mix_ncc": 0.2279524143508714,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 7.315979692974609e-16,
+        "incremental_mix_variance_explained": 6.651575404526501e-30,
+        "residual_energy_fraction_of_mix": 4.4491962763750405e-29,
+        "residual_variance_explained": 4.0261036336983764e-08,
+        "waveform_confidence": "low",
+        "ranking_score": 0.01139762071754357
+      },
+      "candidate_id": "candidate-03",
+      "hypothesized_type": "drop",
+      "file_start": 2.7575,
+      "anchor": 2.9375,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.2279524143508714,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "drop",
+      "source_asset": "drop.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.1,
+        1.78
+      ],
+      "estimated_asset_start_seconds": 3.7575833333333333,
+      "effective_interval_seconds": [
+        3.8575833333333334,
+        5.537583333333333
+      ],
+      "onset_seconds": 3.8575833333333334,
+      "energy_peak_seconds": 3.9425833333333333,
+      "alignment_anchor_seconds": 3.9375833333333334,
+      "asset_duration_seconds": 1.9,
+      "metrics": {
+        "original_mix_ncc": 0.22110844463028717,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 1.145738728983514e-16,
+        "incremental_mix_variance_explained": 9.896194367853477e-32,
+        "residual_energy_fraction_of_mix": 2.3004508913701314e-29,
+        "residual_variance_explained": 9.87441035716669e-10,
+        "waveform_confidence": "low",
+        "ranking_score": 0.011055422231514359
+      },
+      "candidate_id": "candidate-04",
+      "hypothesized_type": "drop",
+      "file_start": 3.7575833333333333,
+      "anchor": 3.9375833333333334,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.22110844463028717,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "drop",
+      "source_asset": "drop.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.1,
+        1.78
+      ],
+      "estimated_asset_start_seconds": 4.2575,
+      "effective_interval_seconds": [
+        4.3575,
+        6.0375000000000005
+      ],
+      "onset_seconds": 4.3575,
+      "energy_peak_seconds": 4.4425,
+      "alignment_anchor_seconds": 4.4375,
+      "asset_duration_seconds": 1.9,
+      "metrics": {
+        "original_mix_ncc": 0.2209742487356181,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 3.620285473036018e-29,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.011048712436780905
+      },
+      "candidate_id": "candidate-05",
+      "hypothesized_type": "drop",
+      "file_start": 4.2575,
+      "anchor": 4.4375,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.2209742487356181,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "drop",
+      "source_asset": "drop.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.1,
+        1.78
+      ],
+      "estimated_asset_start_seconds": 4.7575,
+      "effective_interval_seconds": [
+        4.8575,
+        6.5375000000000005
+      ],
+      "onset_seconds": 4.8575,
+      "energy_peak_seconds": 4.9425,
+      "alignment_anchor_seconds": 4.9375,
+      "asset_duration_seconds": 1.9,
+      "metrics": {
+        "original_mix_ncc": 0.21956763881796618,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 4.9852305419729985e-29,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.01097838194089831
+      },
+      "candidate_id": "candidate-06",
+      "hypothesized_type": "drop",
+      "file_start": 4.7575,
+      "anchor": 4.9375,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.21956763881796618,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "hit",
+      "source_asset": "hit.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.03,
+        0.47000000000000003
+      ],
+      "estimated_asset_start_seconds": 5.974083333333333,
+      "effective_interval_seconds": [
+        6.004083333333333,
+        6.4440833333333325
+      ],
+      "onset_seconds": 6.009083333333333,
+      "energy_peak_seconds": 6.019083333333333,
+      "alignment_anchor_seconds": 6.019083333333333,
+      "asset_duration_seconds": 1.05,
+      "metrics": {
+        "original_mix_ncc": 0.6102370620815747,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 4.695437672107947e-29,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.030511853104078737
+      },
+      "candidate_id": "candidate-07",
+      "hypothesized_type": "hit",
+      "file_start": 5.974083333333333,
+      "anchor": 6.019083333333333,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.6102370620815747,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video.",
+        "Percussive BGM can create false hit matches; residual contribution is supporting evidence only."
+      ]
+    },
+    {
+      "possible_type": "hit",
+      "source_asset": "hit.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.03,
+        0.47000000000000003
+      ],
+      "estimated_asset_start_seconds": 6.474083333333333,
+      "effective_interval_seconds": [
+        6.504083333333333,
+        6.9440833333333325
+      ],
+      "onset_seconds": 6.509083333333333,
+      "energy_peak_seconds": 6.519083333333333,
+      "alignment_anchor_seconds": 6.519083333333333,
+      "asset_duration_seconds": 1.05,
+      "metrics": {
+        "original_mix_ncc": 0.607574610041112,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 6.638819632533233e-29,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.0303787305020556
+      },
+      "candidate_id": "candidate-08",
+      "hypothesized_type": "hit",
+      "file_start": 6.474083333333333,
+      "anchor": 6.519083333333333,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.607574610041112,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video.",
+        "Percussive BGM can create false hit matches; residual contribution is supporting evidence only."
+      ]
+    },
+    {
+      "possible_type": "hit",
+      "source_asset": "hit.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.03,
+        0.47000000000000003
+      ],
+      "estimated_asset_start_seconds": 6.974083333333333,
+      "effective_interval_seconds": [
+        7.004083333333333,
+        7.4440833333333325
+      ],
+      "onset_seconds": 7.009083333333333,
+      "energy_peak_seconds": 7.019083333333333,
+      "alignment_anchor_seconds": 7.019083333333333,
+      "asset_duration_seconds": 1.05,
+      "metrics": {
+        "original_mix_ncc": 0.6255920823243232,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 1.935138891745087e-28,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.03127960411621616
+      },
+      "candidate_id": "candidate-09",
+      "hypothesized_type": "hit",
+      "file_start": 6.974083333333333,
+      "anchor": 7.019083333333333,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.6255920823243232,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video.",
+        "Percussive BGM can create false hit matches; residual contribution is supporting evidence only."
+      ]
+    },
+    {
+      "possible_type": "hit",
+      "source_asset": "hit.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.03,
+        0.47000000000000003
+      ],
+      "estimated_asset_start_seconds": 7.474083333333333,
+      "effective_interval_seconds": [
+        7.504083333333333,
+        7.9440833333333325
+      ],
+      "onset_seconds": 7.509083333333333,
+      "energy_peak_seconds": 7.519083333333333,
+      "alignment_anchor_seconds": 7.519083333333333,
+      "asset_duration_seconds": 1.05,
+      "metrics": {
+        "original_mix_ncc": 0.6038298304799644,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 3.926762929942695e-28,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.03019149152399822
+      },
+      "candidate_id": "candidate-10",
+      "hypothesized_type": "hit",
+      "file_start": 7.474083333333333,
+      "anchor": 7.519083333333333,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.6038298304799644,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video.",
+        "Percussive BGM can create false hit matches; residual contribution is supporting evidence only."
+      ]
+    },
+    {
+      "possible_type": "whoosh",
+      "source_asset": "whoosh.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": true,
+      "template_source_interval_seconds": [
+        0.1,
+        1.21
+      ],
+      "estimated_asset_start_seconds": 8.804583333333333,
+      "effective_interval_seconds": [
+        8.904583333333333,
+        10.014583333333334
+      ],
+      "onset_seconds": 8.904583333333333,
+      "energy_peak_seconds": 9.429583333333333,
+      "alignment_anchor_seconds": 9.429583333333333,
+      "asset_duration_seconds": 1.32,
+      "metrics": {
+        "original_mix_ncc": 0.00634218464672995,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 5.725294561095776e-28,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.0003171092323364975
+      },
+      "candidate_id": "candidate-11",
+      "hypothesized_type": "whoosh",
+      "file_start": 8.804583333333333,
+      "anchor": 9.429583333333333,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.00634218464672995,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "drop",
+      "source_asset": "drop.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.1,
+        1.78
+      ],
+      "estimated_asset_start_seconds": 9.757333333333333,
+      "effective_interval_seconds": [
+        9.857333333333333,
+        11.537333333333333
+      ],
+      "onset_seconds": 9.857333333333333,
+      "energy_peak_seconds": 9.942333333333334,
+      "alignment_anchor_seconds": 9.937333333333333,
+      "asset_duration_seconds": 1.9,
+      "metrics": {
+        "original_mix_ncc": 0.2258545351584897,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 1.8446027830055666e-28,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.011292726757924485
+      },
+      "candidate_id": "candidate-12",
+      "hypothesized_type": "drop",
+      "file_start": 9.757333333333333,
+      "anchor": 9.937333333333333,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.2258545351584897,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "hit",
+      "source_asset": "hit.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.03,
+        0.47000000000000003
+      ],
+      "estimated_asset_start_seconds": 9.974166666666667,
+      "effective_interval_seconds": [
+        10.004166666666666,
+        10.444166666666668
+      ],
+      "onset_seconds": 10.009166666666667,
+      "energy_peak_seconds": 10.019166666666667,
+      "alignment_anchor_seconds": 10.019166666666667,
+      "asset_duration_seconds": 1.05,
+      "metrics": {
+        "original_mix_ncc": 0.6151684031519032,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 2.771544463868946e-28,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.030758420157595164
+      },
+      "candidate_id": "candidate-13",
+      "hypothesized_type": "hit",
+      "file_start": 9.974166666666667,
+      "anchor": 10.019166666666667,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.6151684031519032,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video.",
+        "Percussive BGM can create false hit matches; residual contribution is supporting evidence only."
+      ]
+    },
+    {
+      "possible_type": "drop",
+      "source_asset": "drop.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.1,
+        1.78
+      ],
+      "estimated_asset_start_seconds": 10.257416666666668,
+      "effective_interval_seconds": [
+        10.357416666666667,
+        12.037416666666667
+      ],
+      "onset_seconds": 10.357416666666667,
+      "energy_peak_seconds": 10.442416666666668,
+      "alignment_anchor_seconds": 10.437416666666667,
+      "asset_duration_seconds": 1.9,
+      "metrics": {
+        "original_mix_ncc": 0.22495089513043726,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 1.0431037713671585e-28,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.011247544756521864
+      },
+      "candidate_id": "candidate-14",
+      "hypothesized_type": "drop",
+      "file_start": 10.257416666666668,
+      "anchor": 10.437416666666667,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.22495089513043726,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "hit",
+      "source_asset": "hit.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.03,
+        0.47000000000000003
+      ],
+      "estimated_asset_start_seconds": 10.974250000000001,
+      "effective_interval_seconds": [
+        11.00425,
+        11.444250000000002
+      ],
+      "onset_seconds": 11.009250000000002,
+      "energy_peak_seconds": 11.019250000000001,
+      "alignment_anchor_seconds": 11.019250000000001,
+      "asset_duration_seconds": 1.05,
+      "metrics": {
+        "original_mix_ncc": 0.6152404904544445,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 1.0145584899820896e-28,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.030762024522722226
+      },
+      "candidate_id": "candidate-15",
+      "hypothesized_type": "hit",
+      "file_start": 10.974250000000001,
+      "anchor": 11.019250000000001,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.6152404904544445,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video.",
+        "Percussive BGM can create false hit matches; residual contribution is supporting evidence only."
+      ]
+    },
+    {
+      "possible_type": "whoosh",
+      "source_asset": "whoosh.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": true,
+      "template_source_interval_seconds": [
+        0.1,
+        1.21
+      ],
+      "estimated_asset_start_seconds": 13.051083333333334,
+      "effective_interval_seconds": [
+        13.151083333333334,
+        14.261083333333335
+      ],
+      "onset_seconds": 13.151083333333334,
+      "energy_peak_seconds": 13.676083333333334,
+      "alignment_anchor_seconds": 13.676083333333334,
+      "asset_duration_seconds": 1.32,
+      "metrics": {
+        "original_mix_ncc": 0.006083441669209089,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 7.983241338242221e-31,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.0003041720834604545
+      },
+      "candidate_id": "candidate-16",
+      "hypothesized_type": "whoosh",
+      "file_start": 13.051083333333334,
+      "anchor": 13.676083333333334,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.006083441669209089,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "hit",
+      "source_asset": "hit.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.03,
+        0.47000000000000003
+      ],
+      "estimated_asset_start_seconds": 13.849083333333335,
+      "effective_interval_seconds": [
+        13.879083333333334,
+        14.319083333333335
+      ],
+      "onset_seconds": 13.884083333333335,
+      "energy_peak_seconds": 13.894083333333334,
+      "alignment_anchor_seconds": 13.894083333333334,
+      "asset_duration_seconds": 1.05,
+      "metrics": {
+        "original_mix_ncc": 0.6028369462548151,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 1.1146246479536579e-30,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.030141847312740756
+      },
+      "candidate_id": "candidate-17",
+      "hypothesized_type": "hit",
+      "file_start": 13.849083333333335,
+      "anchor": 13.894083333333334,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.6028369462548151,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video.",
+        "Percussive BGM can create false hit matches; residual contribution is supporting evidence only."
+      ]
+    },
+    {
+      "possible_type": "whoosh",
+      "source_asset": "whoosh.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "bgm_residual"
+      ],
+      "below_threshold_fallback": true,
+      "template_source_interval_seconds": [
+        0.1,
+        1.21
+      ],
+      "estimated_asset_start_seconds": 13.790000000000001,
+      "effective_interval_seconds": [
+        13.89,
+        15.0
+      ],
+      "onset_seconds": 13.89,
+      "energy_peak_seconds": 14.415000000000001,
+      "alignment_anchor_seconds": 14.415000000000001,
+      "asset_duration_seconds": 1.32,
+      "metrics": {
+        "original_mix_ncc": -0.001656544238296162,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 2.5636298493827253e-18,
+        "incremental_mix_variance_explained": 1.956222916024213e-35,
+        "residual_energy_fraction_of_mix": 2.7637865753279427e-29,
+        "residual_variance_explained": 1.7430873022867614e-13,
+        "waveform_confidence": "low",
+        "ranking_score": 0.0
+      },
+      "candidate_id": "candidate-18",
+      "hypothesized_type": "whoosh",
+      "file_start": 13.790000000000001,
+      "anchor": 14.415000000000001,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": -0.001656544238296162,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video."
+      ]
+    },
+    {
+      "possible_type": "hit",
+      "source_asset": "hit.wav",
+      "hypothesis_only": true,
+      "retrieval_views": [
+        "original_mix"
+      ],
+      "below_threshold_fallback": false,
+      "template_source_interval_seconds": [
+        0.03,
+        0.47000000000000003
+      ],
+      "estimated_asset_start_seconds": 14.31775,
+      "effective_interval_seconds": [
+        14.34775,
+        14.78775
+      ],
+      "onset_seconds": 14.35275,
+      "energy_peak_seconds": 14.36275,
+      "alignment_anchor_seconds": 14.36275,
+      "asset_duration_seconds": 1.05,
+      "metrics": {
+        "original_mix_ncc": 0.6081771296905348,
+        "bgm_residual_ncc": 0.0,
+        "positive_template_gain_in_residual": 0.0,
+        "incremental_mix_variance_explained": 0.0,
+        "residual_energy_fraction_of_mix": 1.599421551156501e-29,
+        "residual_variance_explained": 0.0,
+        "waveform_confidence": "low",
+        "ranking_score": 0.030408856484526743
+      },
+      "candidate_id": "candidate-19",
+      "hypothesized_type": "hit",
+      "file_start": 14.31775,
+      "anchor": 14.36275,
+      "confidence": "low",
+      "correlation": {
+        "original_mix": 0.6081771296905348,
+        "bgm_residual": 0.0
+      },
+      "cautions": [
+        "Waveform search hypothesis; not a confirmed use or audible semantic match.",
+        "Weak or music-confounded support; inspect original mix and full video.",
+        "Percussive BGM can create false hit matches; residual contribution is supporting evidence only."
+      ]
+    }
+  ],
+  "pure_bgm_summary": {
+    "whoosh.wav": {
+      "raw_retrieved_peaks": 4,
+      "same_source_near_duplicates_suppressed": 0,
+      "candidates_before_cap": 3,
+      "candidates_emitted": 3,
+      "capped": false,
+      "max_original_mix_ncc": 0.00634218464672995,
+      "max_residual_ncc": 0.0,
+      "absence_conclusion_allowed": false
+    },
+    "hit.wav": {
+      "raw_retrieved_peaks": 34,
+      "same_source_near_duplicates_suppressed": 4,
+      "candidates_before_cap": 30,
+      "candidates_emitted": 8,
+      "capped": true,
+      "max_original_mix_ncc": 0.6255920823243232,
+      "max_residual_ncc": 0.0,
+      "absence_conclusion_allowed": false
+    },
+    "drop.wav": {
+      "raw_retrieved_peaks": 23,
+      "same_source_near_duplicates_suppressed": 0,
+      "candidates_before_cap": 23,
+      "candidates_emitted": 8,
+      "capped": true,
+      "max_original_mix_ncc": 0.2801285513980566,
+      "max_residual_ncc": 0.0,
+      "absence_conclusion_allowed": false
+    }
+  },
+  "pure_bgm_high_or_medium_candidates": 0,
+  "note": "Low confidence raw-BGM retrievals are reported as false candidate controls; thresholds not retuned after controls."
+}

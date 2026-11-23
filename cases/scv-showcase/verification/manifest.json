@@ -1,0 +1,246 @@
+{
+  "protocol_version": "scv-showcase-verification-v1",
+  "files": [
+    {
+      "path": "ASSET-SOURCE.md",
+      "bytes": 437,
+      "sha256": "7455cec1fe0d082d9b24bac79d3b2feb92864071457be2f38b275c84b144cdd4"
+    },
+    {
+      "path": "AUDIO-LICENSE.txt",
+      "bytes": 443,
+      "sha256": "4f5f1c03b76e439d3e4451614f5c679da3acd64619ab7d5edf7d273ee1ed8e2d"
+    },
+    {
+      "path": "config/cameras.json",
+      "bytes": 7636,
+      "sha256": "819f56fe472846463c7899bd185aa9ab27bb50e8ab117a9f596b24ab308253a4"
+    },
+    {
+      "path": "config/reference-model.json",
+      "bytes": 1459,
+      "sha256": "74abae2c0d55fd585937604e7cc5126f86974127c63ef22d02133205acf560f3"
+    },
+    {
+      "path": "config/resources.json",
+      "bytes": 3644,
+      "sha256": "92a6503ff9c2f78ee4d51284562c1102d585a045f69fd45af5ba31358b9ecd34"
+    },
+    {
+      "path": "config/review-record.template.json",
+      "bytes": 590,
+      "sha256": "e074681a7f2d2062c6e90ee95e00516b4d95a965f85abe0781911e944b5385f2"
+    },
+    {
+      "path": "config/scene_setup.json",
+      "bytes": 2379,
+      "sha256": "492be8b314c3e525e03b496539614af3df9887e8c29f25d1fcbc1316c17322e4"
+    },
+    {
+      "path": "config/sfx-method.frozen.json",
+      "bytes": 2520,
+      "sha256": "2bf2d883e212cc4db25e379dd818be7d69d4149660d6d419a3937853f8c702f9"
+    },
+    {
+      "path": "config/sfx-source-annotations.json",
+      "bytes": 673,
+      "sha256": "f92952259fae7536ede8d06bd4bafd5f37eb2fbed7798c8bd323dee9296bd7e7"
+    },
+    {
+      "path": "evidence/dynamic-defect-evidence.jpg",
+      "bytes": 332642,
+      "sha256": "e8945a92470a81eefed53bdf1109c23d1df9c17e440699c563addfef521e2372"
+    },
+    {
+      "path": "evidence/sfx/bgm-alignment.json",
+      "bytes": 64560,
+      "sha256": "69ea564bf353256ff92dd564bc7220f4c578ed23c13d333cdd158935b7130252"
+    },
+    {
+      "path": "evidence/sfx/candidates.json",
+      "bytes": 37884,
+      "sha256": "27ca87463a8132f2b8f34d48a341475e97fb7d72d6482c705a935f87208b72e0"
+    },
+    {
+      "path": "evidence/sfx/controls.json",
+      "bytes": 33716,
+      "sha256": "0ff1bd560326f5a1865190f10f4fcf481ae510d7195bde9c967d82c6caa784c2"
+    },
+    {
+      "path": "evidence/sfx/judge-media/window-01.flac",
+      "bytes": 2237092,
+      "sha256": "4539aa389bbbef32601b393aa2480f3a701e7c1a1403dcc7e24aa42f2cee51e9"
+    },
+    {
+      "path": "evidence/sfx/judge-media/window-01.mp4",
+      "bytes": 2878685,
+      "sha256": "b89157f0c55fb0a2d60a2d1b26a93dff7ad0895cddabe1eeb9d2680ad3a87eee"
+    },
+    {
+      "path": "evidence/sfx/judge-media/window-02.flac",
+      "bytes": 1102140,
+      "sha256": "1c9068c93d5f912e98c7682f3d523f1c56a59d75c22edc881c1c7d39bb60336c"
+    },
+    {
+      "path": "evidence/sfx/judge-media/window-02.mp4",
+      "bytes": 1219941,
+      "sha256": "b087234f5ecc70640a8172ef729078e126e717944949159803e200385a4a6684"
+    },
+    {
+      "path": "evidence/sfx/judge-windows.json",
+      "bytes": 10121,
+      "sha256": "0132883d42c1d4b29ebda89f1b48f4fc3ef8f22a7191a83750e7100523071788"
+    },
+    {
+      "path": "evidence/sfx/media-validation.json",
+      "bytes": 1276,
+      "sha256": "07ae750666a55d4e82fa729ed34d4882f4ed06281e0464f9e92b5feb758ec326"
+    },
+    {
+      "path": "evidence/sfx/README.md",
+      "bytes": 2783,
+      "sha256": "31bcdcab4b407eafa2e5884cbd905de16b2b85fe7d49bb1f64a7266b21eb1fc6"
+    },
+    {
+      "path": "prompts/dynamic-review.md",
+      "bytes": 2384,
+      "sha256": "2d4efb32111205154ceaaaa030531dc080972d189feed88b06253a62850b7a75"
+    },
+    {
+      "path": "prompts/music-review.md",
+      "bytes": 6923,
+      "sha256": "8fd20e80c4c4ff95207617b3944089db2ab7bfe18dbc7d4c0bf85ae9a8b83258"
+    },
+    {
+      "path": "prompts/README.md",
+      "bytes": 1478,
+      "sha256": "c153e65de0a862804da52892f72184a560839907534dc73acb71f5ff62c2ba05"
+    },
+    {
+      "path": "prompts/sfx-review.md",
+      "bytes": 7456,
+      "sha256": "3db48c480f9b08d0aa06e241fe68c3509b831351eaae68839e3d052a85d6e8c4"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 2966,
+      "sha256": "13c6f4911dd2cfbd6d45decb51175ceb4b62d65928cc317315eedb5daf9229c5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7044,
+      "sha256": "1ba9e4dc620d0ee56bbcb1642742942ce91ab22b643c99c0d54b99ee61264370"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 188,
+      "sha256": "9eb6be67f5a2eb3f65283d69ed3672f96f7a3ff8c67b348bf556d82e16e1b103"
+    },
+    {
+      "path": "results/av-evidence.md",
+      "bytes": 5693,
+      "sha256": "40d29775a00e8fb1789a11c245c7280f13a53107c3cef06c5d0c2f230cc68afd"
+    },
+    {
+      "path": "results/av-provenance.json",
+      "bytes": 438,
+      "sha256": "cb8e6105b693ae0ad0d508b9754d2f93bd42a6d3215252080199f3a5b5bcfb27"
+    },
+    {
+      "path": "results/dynamic-evidence.md",
+      "bytes": 1348,
+      "sha256": "0218befad66d7c9bc0f721aa79499194fb57a15c1a16131371309496e8bfcf15"
+    },
+    {
+      "path": "results/dynamic-review.json",
+      "bytes": 4375,
+      "sha256": "a0b30af1960eb6124f6f98d7745595702c320b6ccfe1f6136ca9419d00af7de8"
+    },
+    {
+      "path": "results/expected-score.json",
+      "bytes": 518,
+      "sha256": "2b10b4d4eca39f9d393e652dd081f5ea92dd6fc01f017d5a0f1ffac50fad8fce"
+    },
+    {
+      "path": "results/image_metrics.json",
+      "bytes": 7568,
+      "sha256": "eeacd4089c4b6f1ae8d77a37e9cd646495291cc76b1093b3c75d850e9ebbd743"
+    },
+    {
+      "path": "results/music-review.json",
+      "bytes": 10393,
+      "sha256": "df34100635416fb166ffd4a368f15807bb6cbf2e1cc23b0a53364e7d05042b9a"
+    },
+    {
+      "path": "results/sfx-review.json",
+      "bytes": 10686,
+      "sha256": "cd2f5c346246fc4c75ef9f1f1ad082d1cdc8b4cd819eb93041efe8e0caa71085"
+    },
+    {
+      "path": "results/surface_metrics.json",
+      "bytes": 4175,
+      "sha256": "9015ce50fec71296cea485e762aeb5af1d370d635b661e2abb0d53a790087ce4"
+    },
+    {
+      "path": "schemas/dynamic-review.schema.json",
+      "bytes": 4401,
+      "sha256": "43a494f50fe56a3cfaa91701749941b6c0715d88de339cc253981a33a8bf703c"
+    },
+    {
+      "path": "schemas/music-review.schema.json",
+      "bytes": 5968,
+      "sha256": "7ea556f7045087a56dc977d117a4ff0830bc7e8728b896ad7ee34f55e7c6ca73"
+    },
+    {
+      "path": "schemas/sfx-review.schema.json",
+      "bytes": 5713,
+      "sha256": "636457552bec04d558014d8091d858eb84eae044a61a3d35eb53528a56c86f9a"
+    },
+    {
+      "path": "SCORING.md",
+      "bytes": 11139,
+      "sha256": "74e118db5a767a9e6685f6cd06f563ad2be36a4c919922d3c7acfd443931a3d6"
+    },
+    {
+      "path": "scripts/aggregate_score.py",
+      "bytes": 6335,
+      "sha256": "67bb1fe8c2e89dfa3dd2cc846c372446098d1aecca906859838c9705a466fee5"
+    },
+    {
+      "path": "scripts/capture_asset_blender.py",
+      "bytes": 10859,
+      "sha256": "2b412aec39e788eb2fe9693909a7d419858c5cf1afef8babab152a6156f8e237"
+    },
+    {
+      "path": "scripts/check_integrity.py",
+      "bytes": 835,
+      "sha256": "68e01b570ca8c27c87856736164e795b513e700404a50c0898bfc90fa58675dd"
+    },
+    {
+      "path": "scripts/evaluate_asset.py",
+      "bytes": 6953,
+      "sha256": "d6c60aae2309a6f47b6a20d58e404554f5b81d5d640f0afc4c9ad4affb83cfa6"
+    },
+    {
+      "path": "scripts/evaluate_images.py",
+      "bytes": 6157,
+      "sha256": "5a9e1cc88c034b86f134da3e086a6ee50286fffc167a314746ecf12142fa04a4"
+    },
+    {
+      "path": "scripts/fetch_resources.py",
+      "bytes": 3788,
+      "sha256": "86ce36ba29a7b3dd01e4bebbba6f16217ce741afcc10564bdbc92722c7efa663"
+    },
+    {
+      "path": "scripts/localize_sfx.py",
+      "bytes": 28040,
+      "sha256": "1fbbb95a1c2804f798c7e15ae780793d5609e9380788dc88f7b355dae6b6bbd9"
+    },
+    {
+      "path": "scripts/surface_metrics_blender.py",
+      "bytes": 7166,
+      "sha256": "576ce67831e5868ac903fbe83f28131f48b1ff082ae8685137c8f903edd2c0fd"
+    }
+  ],
+  "manifest_excludes_itself": true
+}

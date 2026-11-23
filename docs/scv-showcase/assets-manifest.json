@@ -294,6 +294,12 @@
     "sha256": "492be8b314c3e525e03b496539614af3df9887e8c29f25d1fcbc1316c17322e4"
   },
   {
+    "path": "assets/scoring-verification-v1.zip",
+    "mime": "application/zip",
+    "bytes": 7831584,
+    "sha256": "6cd692fa514d1553b2e272dd5807081039366110b1f72c778bffb292702354a3"
+  },
+  {
     "path": "assets/showcase.mp4",
     "mime": "video/mp4",
     "bytes": 11308217,

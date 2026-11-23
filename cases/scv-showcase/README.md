@@ -5,6 +5,7 @@
 - 展示页：https://vibrant700.github.io/omniale/scv-showcase/
 - 题面：[TASK.md](./TASK.md)
 - 计分说明：[SCORING.md](./SCORING.md)
+- 评分复核：[使用说明与源码](./verification/README.md) · [下载复核包](../../docs/scv-showcase/assets/scoring-verification-v1.zip)
 - 公开输入包：[agent-input.zip](../../docs/scv-showcase/assets/agent-input.zip)
 - 模型交付与成绩：[results.json](../../docs/scv-showcase/results.json)
 

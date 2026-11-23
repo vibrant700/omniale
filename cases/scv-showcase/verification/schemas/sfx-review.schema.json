@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sfx-review.schema.json",
+  "title": "sfx independent review",
+  "type": "object",
+  "properties": {
+    "record_type": {
+      "type": "string"
+    },
+    "assessment_status": {
+      "type": "string"
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 5
+    },
+    "maximum": {
+      "const": 5
+    },
+    "sfx_score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 5
+    },
+    "items": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "enum": [
+              "S1",
+              "S2",
+              "S3",
+              "S4",
+              "S5"
+            ]
+          },
+          "score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "enum": [
+              0,
+              1,
+              null
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "reason": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_start_s": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "source_end_s": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "candidate_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "heard_description": {
+                  "type": "string"
+                },
+                "visual_description": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_start_s",
+                "source_end_s",
+                "candidate_ids",
+                "heard_description",
+                "visual_description",
+                "reason"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "id",
+          "score"
+        ],
+        "additionalProperties": true
+      },
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "S1"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "S2"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "S3"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "S4"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "S5"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    },
+    "assessed_item_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "known_score_sum": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    }
+  },
+  "required": [
+    "assessment_status",
+    "score",
+    "maximum",
+    "items",
+    "sfx_score"
+  ],
+  "additionalProperties": true,
+  "description": "五项id唯一。完整评分时score=sum(items.score)，且与sfx_score相同；任一未知则score=null。Schema检查类型与结构，跨字段加和须另外检查。接受结果可带来源元数据；新评审须按提示词提供完整观察和证据。",
+  "allOf": [
+    {
+      "if": {
+        "not": {
+          "required": [
+            "record_type"
+          ]
+        }
+      },
+      "then": {
+        "required": [
+          "observation",
+          "candidate_checks",
+          "additional_events"
+        ],
+        "properties": {
+          "items": {
+            "items": {
+              "required": [
+                "id",
+                "score",
+                "confidence",
+                "evidence"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

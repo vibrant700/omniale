@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "resources": [
+    {
+      "path": "agent-input.zip",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/agent-input.zip",
+      "bytes": 17051118,
+      "sha256": "51d376650b1bd7ab9854c1d99f6337f1ae7c74c79c35392ccd008b0b9abc2e8d",
+      "groups": [
+        "images",
+        "asset",
+        "av"
+      ]
+    },
+    {
+      "path": "submission/asset.blend",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/asset.blend",
+      "bytes": 2593421,
+      "sha256": "98e83d87ea0e51223eb79f677821e424cb885df7c989713f06865c4907b90c89",
+      "groups": [
+        "asset"
+      ]
+    },
+    {
+      "path": "submission/showcase.mp4",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/showcase.mp4",
+      "bytes": 11308217,
+      "sha256": "06618c9f295dd2b56bc0255e3ee9c6e21e679c8da3ae054a8404c8daac47f309",
+      "groups": [
+        "av"
+      ]
+    },
+    {
+      "path": "submission/canonical_capture/textured/front.png",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/reconstruction/front.png",
+      "bytes": 1622105,
+      "sha256": "bde58d019ca801ea63133e1e6fbb944dd6b926db247e528c94eac14fd6db9b82",
+      "groups": [
+        "images"
+      ]
+    },
+    {
+      "path": "submission/canonical_capture/textured/back.png",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/reconstruction/back.png",
+      "bytes": 1623757,
+      "sha256": "b42710b0ae994a53a6ab743d3de5f7208809edbecb33b51444c66b54b338b03e",
+      "groups": [
+        "images"
+      ]
+    },
+    {
+      "path": "submission/canonical_capture/textured/left.png",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/reconstruction/left.png",
+      "bytes": 1300153,
+      "sha256": "3684442c9329dc628d435664faeb4278b20d6848f91f22228bc625c37347e9d2",
+      "groups": [
+        "images"
+      ]
+    },
+    {
+      "path": "submission/canonical_capture/textured/right.png",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/reconstruction/right.png",
+      "bytes": 1252037,
+      "sha256": "bf3e90a5fe9f82570b25e367d4be0ac168c28655b20b1b5881ec778b9e9e035f",
+      "groups": [
+        "images"
+      ]
+    },
+    {
+      "path": "submission/canonical_capture/textured/top.png",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/reconstruction/top.png",
+      "bytes": 1580169,
+      "sha256": "6a945d46aa556ca10bbf64ce7bd119cb92c62f828e2dc0dc7146dbcaaa3262d5",
+      "groups": [
+        "images"
+      ]
+    },
+    {
+      "path": "submission/canonical_capture/textured/bottom.png",
+      "url": "https://vibrant700.github.io/omniale/scv-showcase/assets/reconstruction/bottom.png",
+      "bytes": 1530609,
+      "sha256": "0fe60279df58d7747131f0a2f0b03c6697b2290777f77ae3c218ee04fd2f23be",
+      "groups": [
+        "images"
+      ]
+    },
+    {
+      "path": "reference/reference-asset.blend",
+      "url": "https://github.com/vibrant700/omniale/releases/download/scv-showcase-reference-v1/reference-asset.blend",
+      "bytes": 297195583,
+      "sha256": "1b6b49ca858d39f8df675f1c16fc6096600685fe0cf9625291c43db00e7d53b4",
+      "groups": [
+        "asset"
+      ]
+    },
+    {
+      "path": "model-cache/hub/checkpoints/alexnet-owt-7be5be79.pth",
+      "url": "https://download.pytorch.org/models/alexnet-owt-7be5be79.pth",
+      "bytes": 244408911,
+      "sha256": "7be5be791159472b1fbf3c69796f7cb30dca7ad8466c2df70058c37116cdee02",
+      "groups": [
+        "weights"
+      ]
+    }
+  ]
+}

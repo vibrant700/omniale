@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "music-review.schema.json",
+  "title": "music independent review",
+  "type": "object",
+  "properties": {
+    "record_type": {
+      "type": "string"
+    },
+    "assessment_status": {
+      "type": "string"
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 5
+    },
+    "maximum": {
+      "const": 5
+    },
+    "music_score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 5
+    },
+    "items": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "enum": [
+              "M1",
+              "M2",
+              "M3",
+              "M4",
+              "M5"
+            ]
+          },
+          "score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "enum": [
+              0,
+              1,
+              null
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "reason": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "final_start_s": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "final_end_s": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "source_bgm_start_s": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "source_bgm_end_s": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "bgm_heard": {
+                  "type": "string"
+                },
+                "visual_observed": {
+                  "type": "string"
+                },
+                "bgm_vs_added_transients_certainty": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "final_start_s",
+                "final_end_s",
+                "bgm_heard",
+                "visual_observed",
+                "reason"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "id",
+          "score"
+        ],
+        "additionalProperties": true
+      },
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "M1"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "M2"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "M3"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "M4"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": "M5"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    },
+    "assessed_item_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "known_score_sum": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    }
+  },
+  "required": [
+    "assessment_status",
+    "score",
+    "maximum",
+    "items",
+    "music_score"
+  ],
+  "additionalProperties": true,
+  "description": "五项id唯一。完整评分时score=sum(items.score)，且与music_score相同；任一未知则score=null。Schema检查类型与结构，跨字段加和须另外检查。接受结果可带来源元数据；新评审须按提示词提供完整观察和证据。",
+  "allOf": [
+    {
+      "if": {
+        "not": {
+          "required": [
+            "record_type"
+          ]
+        }
+      },
+      "then": {
+        "required": [
+          "media_access",
+          "music_observation"
+        ],
+        "properties": {
+          "items": {
+            "items": {
+              "required": [
+                "id",
+                "score",
+                "confidence",
+                "evidence"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

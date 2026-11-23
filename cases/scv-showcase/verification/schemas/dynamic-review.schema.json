@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dynamic-review.schema.json",
+  "title": "Dynamic defect review",
+  "type": "object",
+  "properties": {
+    "assessment_status": {
+      "type": "string"
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 30
+    },
+    "maximum": {
+      "const": 30
+    },
+    "dynamic_score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 30
+    },
+    "dynamic_maximum": {
+      "const": 30
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "enum": [
+              "D1",
+              "D2",
+              "D3"
+            ]
+          },
+          "criterion": {
+            "type": "string"
+          },
+          "independent_error_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "count_is_lower_bound": {
+            "type": "boolean"
+          },
+          "maximum": {
+            "const": 10
+          },
+          "deduction_per_event": {
+            "const": 5
+          },
+          "score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "enum": [
+              0,
+              5,
+              10,
+              null
+            ]
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "event_id": {
+                  "type": "string"
+                },
+                "shot": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "frames_zero_based": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "seconds": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "event_id",
+                "shot",
+                "region",
+                "frames_zero_based",
+                "seconds",
+                "description"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "id",
+          "criterion",
+          "independent_error_count",
+          "maximum",
+          "deduction_per_event",
+          "score",
+          "events"
+        ],
+        "additionalProperties": true
+      },
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "id": {
+                "const": "D1"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "properties": {
+              "id": {
+                "const": "D2"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        {
+          "contains": {
+            "properties": {
+              "id": {
+                "const": "D3"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        }
+      ]
+    }
+  },
+  "required": [
+    "assessment_status",
+    "score",
+    "maximum",
+    "dynamic_score",
+    "dynamic_maximum",
+    "criteria"
+  ],
+  "additionalProperties": true,
+  "description": "每项score=max(0,10−5×independent_error_count)，三项加总；Schema不替代跨字段及媒体证据检查。"
+}
