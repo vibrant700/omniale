@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="OmniALE benchmark 案例：同步五路 KPL 选手视角，估算英雄伤害并制作双榜复盘大屏。">
   <title>AG 五人第一视角战术大屏 · OmniALE</title>
-  <link rel="stylesheet" href="case.css?v=kpl-1">
+  <link rel="stylesheet" href="case.css?v=kpl-2">
 </head>
 <body>
   <a class="skip" href="#main">跳至正文</a>
@@ -21,12 +21,12 @@
       <a href="#task">任务定义</a>
       <a href="#scoring">评分标准</a>
       <a href="#results">测试结果</a>
-      <a href="#execution">执行过程</a>
+      <a href="#execution">agent执行过程</a>
       <a href="#analysis">失分分析</a>
     </nav>
 
     <section id="task">
-      <div class="section-heading"><h2>任务定义</h2><a href="task.md">完整题面 ↗</a></div>
+      <div class="section-heading"><h2>任务定义</h2></div>
       <dl class="task-list">
         <div><dt>输入</dt><dd>五路选手第一视角录像，有原声，保留至水晶告破。素材保留各自的播放起点和时间偏移。</dd></div>
         <div><dt>委托</dt><dd>以轩染录像的播放时间为基准同步五路。在同屏大屏叠加累计输出与累计承伤两张榜，随交战更新点数、队内占比与排名。</dd></div>
@@ -43,23 +43,104 @@
           <p class="caption">以上链接指向源录像分 P。题包中的五个文件分别裁到水晶告破。</p>
         </div>
       </details>
+      <details class="task-original">
+        <summary>任务委托原文</summary>
+        <div class="details-body brief">
+          <h3>制作 AG 五人第一视角「战术大屏」复盘视频</h3>
+          <p>我们正在制作一期《王者荣耀》2026 KPL 年度总决赛（成都 AG 超玩会 vs 济南 RW 侠，第一局）的 AG 全队视角复盘视频。附件提供了 AG 五名选手本局截至水晶告破的第一视角录像。</p>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="选手第一视角录像文件">
+            <table>
+              <thead><tr><th scope="col">文件名</th><th scope="col">选手和英雄</th></tr></thead>
+              <tbody>
+                <tr><td><code>xuanran.mp4</code></td><td>轩染（夏洛特）</td></tr>
+                <tr><td><code>zhongyi.mp4</code></td><td>钟意（大司命）</td></tr>
+                <tr><td><code>changsheng.mp4</code></td><td>长生（不知火舞）</td></tr>
+                <tr><td><code>yinuo.mp4</code></td><td>一诺（艾琳）</td></tr>
+                <tr><td><code>dashuai.mp4</code></td><td>大帅（盾山）</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>请将这五路第一视角合成为一个同屏同步的监控大屏，以 <code>xuanran.mp4</code> 的播放时间为成片和数据的共同时间基准，完整保留对局至水晶告破，并标明各路画面所属选手。</p>
+          <p>请在大屏中叠加实时更新的<strong>全队对敌方英雄累计输出排行榜</strong>和<strong>承受敌方英雄累计伤害排行榜</strong>，用动态条形图展示五名选手的累计数值（整数点数）、队内占比（精确到 0.1%）及实时排名变化。</p>
+          <h4>交付物</h4>
+          <ul>
+            <li><code>submission/dashboard.mp4</code>：可发布的复盘大屏成片。</li>
+            <li><code>submission/timeline.json</code>：驱动大屏渲染的累计时间轴与终场汇总，格式如下：
+              <ul>
+                <li>根对象包含 <code>points</code> 和 <code>final</code>。</li>
+                <li><code>points</code> 为按时间递增排列的记录数组；每条记录包含 <code>t_s</code>（相对时间基准的秒数）和 <code>players</code>。</li>
+                <li><code>players</code> 以上表五个文件名主干（<code>xuanran</code>、<code>zhongyi</code>、<code>changsheng</code>、<code>yinuo</code>、<code>dashuai</code>）为键，每人包含 <code>damage_dealt</code> 和 <code>damage_taken</code> 两个非负整数。</li>
+                <li><code>final</code> 为终场时五名选手的 <code>players</code> 对象。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+      <div class="task-notes">
+        <h3>本题难点</h3>
+        <ol>
+          <li><strong>伤害跳字能看见，逐帧读准很难。</strong>团战中输出和承伤跳字一闪而过，跨帧飘动并相互重叠，还混杂着小兵、野怪、防御塔和回血数字。一诺（艾琳）这样的高频远程输出尤其容易漏算。粗抽帧会错过短暂跳字，只量血条也会漏掉与回血同时发生的伤害。</li>
+          <li><strong>同一笔伤害可能出现在多路画面里。</strong>同一波团战会出现在多个队友的屏幕上，选手阵亡后还会切到队友观战视角。需要识别出手者和受击者，对跨视角的同一笔伤害去重，并把观战画面中的伤害计入实际参与的选手。</li>
+          <li><strong>五路原片的播放时间有偏移。</strong>不同录像的片头相差几秒。Agent 需要对齐局内时钟，再选择同步音轨，避免多路原声混合后出现回声。</li>
+          <li><strong>五人的伤害量级不同，误差会传到双榜。</strong>本局官方输出约从 2.7 万跨到 12.9 万。沿用同一个经验比例容易估错，任何一人的误差都会影响队内占比，也可能改变排名。最后还要把五路画面和两张动态榜合成为 1080p 成片。</li>
+        </ol>
+        <h3>可解释性</h3>
+        <ol>
+          <li><strong>画面有跳字，单人单项误差在 ±5% 内可得满分。</strong>输出和承伤都有可观察的跳字。视频压缩、团战遮挡和官方 0.1K 的显示精度都会影响估算。片尾榜单与时间轴一致后，估算值与官方显示值的偏差在 ±5% 内，该项得 8 分。</li>
+          <li><strong>每个分项都有对应的核验对象。</strong>80 分对应 KPL 官方赛后统计的 10 个终场数值，10 分对应五个关键时刻的五路时钟帧差，10 分对应成片的布局避让、动态榜流畅度、音轨与可读性。</li>
+        </ol>
+      </div>
     </section>
 
     <section id="scoring">
       <div class="section-heading"><h2>评分标准</h2></div>
       <div class="score-formula"><strong>满分 100</strong><span>终场输出 40 ＋ 终场承伤 40 ＋ 五路同步 10 ＋ 成片质量 10</span></div>
-      <h3>终场输出与承伤</h3>
-      <p>两项各由五名选手各 8 分组成。片尾双榜须与时间轴终值一致，终场得分按提交值与官方赛后统计显示值的绝对相对误差计算。 <a href="https://www.bilibili.com/video/BV1tyH76XEgz/?p=1&amp;t=2020">官方赛后统计 ↗</a></p>
+
+      <h3>终场输出与承伤 · 各 40 分</h3>
+      <ol class="rubric-steps">
+        <li><strong>核对片尾双榜。</strong>在成片第 1023.25 秒读取两榜的五人点数、顺序和队内占比，分别与 <code>timeline.json</code> 的 <code>final</code> 核对。名次按点数降序排列，同分按题面选手顺序。队内占比为个人点数 ÷ 五人同项点数之和 × 100%，分母为零时为 0%，允许显示到 0.1% 产生的舍入误差。整张榜通过核对后，该项进入误差评分。</li>
+        <li><strong>逐人计算绝对相对误差。</strong>取提交点数与官方点数之差的绝对值，除以官方点数，再乘以 100%。官方以 0.1K 显示，按显示值换算为点数。 <a href="https://www.bilibili.com/video/BV1tyH76XEgz/?p=1&amp;t=2020">官方赛后统计 ↗</a></li>
+        <li><strong>分档后相加。</strong>五人的输出分相加得到终场输出分，五人的承伤分相加得到终场承伤分。</li>
+      </ol>
       <div class="table-wrap" tabindex="0" role="region" aria-label="伤害评分分档">
         <table class="bands">
           <thead><tr><th scope="row">相对误差</th><th scope="col">≤5%</th><th scope="col">(5%, 10%]</th><th scope="col">(10%, 15%]</th><th scope="col">(15%, 20%]</th><th scope="col">(20%, 30%]</th><th scope="col">&gt;30% 或缺失</th></tr></thead>
           <tbody><tr><th scope="row">单人单项</th><td>8</td><td>6</td><td>5</td><td>3</td><td>2</td><td>0</td></tr></tbody>
         </table>
       </div>
-      <h3>五路同步</h3>
-      <p>在五个比赛阶段，记录各路局内时钟跳到指定读数的帧。最早与最晚相差 ≤0.5 秒得 2 分，超过 0.5 秒且 ≤1.5 秒得 1 分，超过 1.5 秒或画面缺失得 0 分。</p>
-      <h3>成片质量</h3>
-      <p>布局与信息避让 4 分，动态排行榜流畅度 3 分，音轨处理与可读性 3 分。</p>
+
+      <h3>五路同步 · 10 分</h3>
+      <p>抽查开局、前期、中期、后期交战和推水晶前。每次记录五路局内时钟首次跳到指定读数的成片时间戳，用最晚的时间戳减去最早的时间戳，得到该点的最大时差。五个抽查点各 2 分，得分相加。</p>
+      <dl class="rubric-rows">
+        <div><dt>2 分</dt><dd>最大时差 ≤0.5 秒。</dd></div>
+        <div><dt>1 分</dt><dd>最大时差 &gt;0.5 秒且 ≤1.5 秒。</dd></div>
+        <div><dt>0 分</dt><dd>最大时差 &gt;1.5 秒，或任一路缺失、黑屏、时钟跳秒帧无法辨认。</dd></div>
+      </dl>
+
+      <h3>成片质量 · 10 分</h3>
+      <h4>布局与信息避让 · 0–4 分</h4>
+      <dl class="rubric-rows">
+        <div><dt>4 分</dt><dd>五路画面与双榜分区清晰、位置稳定，避开关键游戏界面。</dd></div>
+        <div><dt>3 分</dt><dd>整体清晰，有局部留白或小幅遮挡。</dd></div>
+        <div><dt>2 分</dt><dd>多处拥挤，画面和榜单仍可分辨。</dd></div>
+        <div><dt>1 分</dt><dd>多数区域难以同时看清。</dd></div>
+        <div><dt>0 分</dt><dd>画面或榜单无法使用。</dd></div>
+      </dl>
+      <h4>动态排行榜流畅度 · 0–3 分</h4>
+      <p>三个条件各计 1 分，满足几项就得几分。</p>
+      <ul class="rubric-steps">
+        <li>条形图随数值变化平滑伸缩。</li>
+        <li>名次变化时，选手的行位置过渡清楚，换位前后容易跟踪。</li>
+        <li>累计点数及时按提交时间轴刷新。</li>
+      </ul>
+      <h4>音轨处理与可读性 · 0–3 分</h4>
+      <dl class="rubric-rows">
+        <div><dt>3 分</dt><dd>原声同步、清晰且无混音回声，点数与百分比在正常观看尺寸下可直接读出。</dd></div>
+        <div><dt>2 分</dt><dd>音轨与榜单均可用，有轻微听感或可读性问题。</dd></div>
+        <div><dt>1 分</dt><dd>音轨与榜单中只有一项可用。</dd></div>
+        <div><dt>0 分</dt><dd>音轨和榜单均无法使用。</dd></div>
+      </dl>
+      <p>成片质量分为上述三项之和。</p>
     </section>
 
     <section id="results">
@@ -112,7 +193,7 @@
     </section>
 
     <section id="execution">
-      <div class="section-heading"><h2>执行过程</h2></div>
+      <div class="section-heading"><h2>agent执行过程</h2></div>
       <ol class="steps">
         <li><h3>对齐局内时钟</h3><p>从五路录像抽取时钟区域，匹配跳秒位置，估计各路相对轩染录像的时间偏移。</p></li>
         <li><h3>追踪血条并分配伤害</h3><p>每秒采样 5 帧，通过英雄名牌跨机位合并血条记录，利用千血刻度把血条变化换算成点数。参考锁定目标、距离及命中特效，将敌方损血分配给可能出手的选手。</p></li>

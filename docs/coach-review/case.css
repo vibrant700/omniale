@@ -88,3 +88,17 @@ footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+.task-original summary {
+  padding: 13px 15px;
+  color: var(--accent);
+  font-weight: 500;
+}
+.brief { padding: 15px clamp(12px, 3vw, 24px); }
+.brief > h3 { margin-top: 0; }
+.brief .table-wrap { width: fit-content; max-width: 100%; margin: 12px 0; }
+.brief th, .brief td { text-align: left; }
+.brief ul, .rubric-steps, .task-notes ol { margin: 8px 0; padding-inline-start: 1.5em; }
+.task-notes li + li, .rubric-steps li + li { margin-top: 6px; }
+.brief h4, #scoring h4 { margin: 15px 0 5px; font-size: 15px; }
+.rubric-rows { margin: 7px 0 14px; }
+.rubric-rows > div { display: grid; grid-template-columns: 3em minmax(0, 1fr); gap: 7px; padding: 4px 0; }
