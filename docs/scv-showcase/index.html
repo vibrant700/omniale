@@ -77,35 +77,78 @@
     </section>
 
     <section class="section" id="scoring" aria-labelledby="scoring-title">
-      <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2></div>
-      <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">结构 30 ＋ 外观 30 ＋ 动态 30 ＋ 音画 10</p><p>结构与外观采用统一条件计算，动态逐项检查成片，音画由 Gemini 4 Neon 评分。工程完整性作为交付门槛，不另加分。</p></div>
+      <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2><a class="heading-link" href="scoring-method.md" download>下载计算说明 ↓</a></div>
+      <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">结构 30 ＋ 外观 30 ＋ 动态 30 ＋ 音画 10</p><p>几何与图像由固定脚本计算；动态按原生成片逐处扣分；音乐与音效由 Gemini 4 Neon 听看判定。工程可用性作为交付门槛，不计分。</p></div>
 
-      <div class="criterion">
-        <h3><span class="criterion-no">1.</span> 结构还原 <span class="points">/ 30</span></h3>
-        <p>同时比较三维表面的位置与六方向二维剪影。前者检查表面是否落在正确空间位置，后者检查各视角的整体轮廓；剪影接近并不代表内部结构完整。</p>
-        <div class="formula"><p>结构分 ＝ 15 × F-score@0.5% ＋ 15 × 六视图平均 IoU</p></div>
-        <details><summary>几何指标与检查口径</summary><div class="detail-body"><ul><li><strong>F-score@0.5%</strong>：以参考资产包围盒对角线的 0.5% 为距离阈值，计算双向表面匹配的精确率与召回率，再取调和平均。</li><li><strong>六视图平均 IoU</strong>：逐机位计算前景剪影的交集面积 ÷ 并集面积，再对六个方向等权平均。</li><li>资产遵循给定坐标约定，与参考使用同一组相机；指标均在 [0, 1] 范围内。</li></ul></div></details>
+      <div class="reference-resource" id="scoring-reference">
+        <h3>比较对象与参考工程</h3>
+        <p><code>reference-asset.blend</code> 是原始 GLB 导入 Blender、统一坐标与尺寸后的参考工程；<code>asset.blend</code> 是 agent 交付的重建资产。评分从两份工程提取几何，并在相同条件下渲染，比较的是表面与图像。</p>
+        <div class="reference-actions"><a class="download-button" href="https://github.com/vibrant700/omniale/releases/download/scv-showcase-reference-v1/reference-asset.blend" download>下载参考工程 reference-asset.blend ↓ <span>297.2 MB · Blender 5.3</span></a><a href="assets/asset.blend" download>下载重建资产 asset.blend ↓</a><a href="assets/reference-model.json">参考文件信息 ↗</a></div>
+        <p class="note">参考工程仅供评分复核，未提供给被测 agent，也不在题面输入 ZIP 中。六张题面参考图由该工程生成。</p>
+        <details><summary>参考来源、坐标与文件校验</summary><div class="detail-body"><ol class="method-steps"><li>原始 SCV 模型（GLB）导入 Blender，保留独立几何、UV 与材质，生成规范化参考工程。</li><li>包围盒中心移到原点，统一缩放使最长边为 2；规范化尺寸为 2.000 × 1.845 × 1.652 个场景单位，非米或厘米。+Z 向上，机甲朝 −Y，自身左侧为 +X。</li><li>添加六方向正交相机和统一灯光，贴图打包进工程。参考与提交均按世界坐标提取求值三角网格，不要求物体名、拓扑或顶点编号相同，不对提交做 ICP、旋转配准或缩放拟合。</li></ol><p class="checksum"><strong>SHA-256</strong><code>1b6b49ca858d39f8df675f1c16fc6096600685fe0cf9625291c43db00e7d53b4</code></p><p class="note">参考来源：JohnMesplay / SCV，CC BY 4.0；修改包括坐标规范化、相机、灯光与六向渲染。大文件由同一 GitHub 仓库的 Release 提供。</p></div></details>
       </div>
 
       <div class="criterion">
-        <h3><span class="criterion-no">2.</span> 外观还原 <span class="points">/ 30</span></h3>
-        <p>比较配色、纹理、材质和局部视觉细节。六个机位使用统一灯光与渲染条件，不做图像配准，并在参考与重建的前景并集上比较。</p>
-        <div class="formula"><p>外观分 ＝ 15 × [ SSIM ＋ (1 − LPIPS) ]</p></div>
-        <details><summary>图像指标与检查口径</summary><div class="detail-body"><ul><li><strong>SSIM</strong> 比较图像局部结构、亮度与对比度，数值越高越接近。</li><li><strong>LPIPS</strong> 衡量感知特征距离，数值越低越接近。</li><li>六机位等权平均；代入公式前，将 SSIM、LPIPS 分别截断到 [0, 1]。</li><li>固定机位、灯光和前景范围，使外观比较与展示片自行设计的舞台效果分开。</li></ul></div></details>
+        <h3><span class="criterion-no">1.</span> 结构还原 <span class="points">/ 30</span></h3>
+        <p>三维 F1 检查表面在空间中的位置，二维 IoU 检查六个机位的剪影重合。两者各占 15 分。</p>
+        <div class="formula"><p>结构分 ＝ 15 × 可见表面 F1@0.5% ＋ 15 × 六视图平均 IoU</p></div>
+        <details><summary>F1：比较对象、采样、距离容差与公式 · 15 分</summary><div class="detail-body">
+          <ol class="method-steps"><li><strong>提取表面。</strong>从参考与提交工程提取 Blender 求值后的可渲染三角网格，应用物体／实例世界变换后合并。曲线生成的实际网格表面也参与比较。</li><li><strong>面积均匀采样。</strong>每侧合并网格总共采样 50,000 点，随机种子为 20261122。先按三角形面积选择三角面，再在面内均匀取点。</li><li><strong>筛选可见点。</strong>沿六个输入正交机位方向做射线检查；至少在一个方向上属于首次相交表面的点才保留。</li><li><strong>算双向距离。</strong>每个保留点求到对方完整三角表面的最短距离，使用 BVH 邻近候选及 float64 点到三角形计算，不采用最近顶点或点编号配对。</li><li><strong>判断命中。</strong>计算参考模型包围盒对角线 D，以 τ＝0.005D 作为统一距离阈值；距离 ≤ τ 为命中。</li></ol>
+          <pre class="math-block"><code>P ＝ 提交可见点中距离参考表面 ≤ τ 的点数 ÷ 提交可见点数
+R ＝ 参考可见点中距离提交表面 ≤ τ 的点数 ÷ 参考可见点数
+F1 ＝ 2 × P × R ÷ (P ＋ R)；P ＋ R 为 0 时 F1 取 0
+三维表面分 ＝ 15 × F1</code></pre>
+          <p>P 衡量提交可见表面中有多少接近参考，R 衡量参考可见表面有多少被提交覆盖；调和平均要求两者同时较高，不依赖顶点编号或拓扑一致。</p>
+        </div></details>
+        <details><summary>IoU：六个机位如何计算轮廓重合 · 15 分</summary><div class="detail-body">
+          <p>使用题面六张 1280 × 1280 的参考 PNG，与提交工程按同相机渲染的六张 PNG。每张图以 <code>alpha ≥ 0.5</code> 得到前景剪影 A、B。</p>
+          <pre class="math-block"><code>单机位 IoU ＝ |A ∩ B| ÷ |A ∪ B|
+平均 IoU ＝ 六个机位 IoU 之和 ÷ 6
+轮廓分 ＝ 15 × 平均 IoU</code></pre>
+          <p>每个机位等权，不按各视图前景面积再次加权。六视图平均轮廓分与三维表面分相加，得到结构还原分。</p>
+        </div></details>
+      </div>
+
+      <div class="criterion">
+        <h3><span class="criterion-no">2.</span> 外观忠实度 <span class="points">/ 30</span></h3>
+        <p>在固定六机位上比较带材质图像，SSIM 与 LPIPS 各占 15 分；展示片自行设计的灯光和镜头不进入这部分计算。</p>
+        <div class="formula"><p>外观分 ＝ 15 × [ clip(平均 SSIM, 0, 1) ＋ 1 − clip(平均 LPIPS, 0, 1) ]</p></div>
+        <details><summary>统一渲染条件与前景比较区域</summary><div class="detail-body">
+          <ol class="method-steps"><li>提交资产采用 <a href="assets/cameras.json">同一组六机位</a>和 <a href="assets/scene_setup.json">灯光／渲染配置</a>，Blender 5.3、Cycles 16 samples、AgX、1280 × 1280 RGBA；不缩放原参考图，不做图像配准。</li><li>每张参考与提交 RGB 归一到 [0, 1]，按各自原 alpha 合成到中性 0.5 灰背景：<code>C＝RGB × alpha＋0.5 × (1−alpha)</code>。</li><li>比较区域 U 为双方 <code>alpha ≥ 0.5</code> 前景的并集。先在完整合成图上生成空间指标图，再仅对 U 内的位置平均，使多余和缺失部位都进入比较。</li></ol>
+        </div></details>
+        <details><summary>SSIM 与 LPIPS 的空间图、平均方式与得分 · 各 15 分</summary><div class="detail-body">
+          <h4>SSIM：局部结构、亮度与对比度</h4><p>Gaussian 加权窗口 11 × 11，σ＝1.5，数据范围 L＝1，使用总体协方差。每位置三个 RGB 通道先求平均，再取前景并集 U 内的空间均值，得到该机位 SSIM，最后对六机位等权平均。</p>
+          <pre class="math-block"><code>SSIM(x,y) ＝ [(2μxμy＋C1)(2σxy＋C2)] ÷ [(μx²＋μy²＋C1)(σx²＋σy²＋C2)]
+C1＝(0.01L)²，C2＝(0.03L)²；本项 L＝1
+SSIM 分 ＝ 15 × clip(六机位平均 SSIM, 0, 1)</code></pre>
+          <h4>LPIPS：感知特征距离</h4><p>使用 AlexNet、LPIPS v0.1、<code>spatial=True</code>，输入按模型要求归一化；取得原图分辨率上的空间距离图，先平均 U 内位置，再对六机位等权平均。这是前景掩膜平均的空间 LPIPS 变体；距离越低越接近参考。</p>
+          <pre class="math-block"><code>LPIPSᵥ ＝ 机位 v 的 LPIPS 空间图在 U 内的均值
+LPIPS 分 ＝ 15 × [1 − clip(六机位平均 LPIPS, 0, 1)]</code></pre>
+          <p>先分别对 SSIM、LPIPS 取六视图均值，再将两个均值截断到 [0, 1] 代入计分。白模渲染只辅助观察几何；本项使用带材质的彩色图像。</p>
+        </div></details>
       </div>
 
       <div class="criterion">
         <h3><span class="criterion-no">3.</span> 动态画面完整性 <span class="points">/ 30</span></h3>
-        <p>浮片、重影、显隐三个维度各 10 分。每个独立错误扣 5 分，单项最低 0 分；同一镜头、同一部位连续或反复出现的同类问题合并为一次。</p>
-        <div class="formula"><p>每项得分 ＝ max(0, 10 − 5 × 独立错误数)</p></div>
-        <details><summary>三项动态检查</summary><div class="detail-body"><dl class="compact-dl"><div><dt>浮片</dt><dd>部件、表面碎片或贴片是否脱离主体、悬浮在不合理位置。</dd></div><div><dt>重影</dt><dd>同一部位是否出现重复轮廓、叠层影像或不合理的双重表面。</dd></div><div><dt>显隐</dt><dd>部件或表面是否在连续画面中突然出现、消失，或发生不连续的可见性跳变。</dd></div></dl><p class="note">正常遮挡、明确的部件动作、运动模糊及设计的转场不作为缺陷扣分。</p></div></details>
+        <p>根据最终 <code>showcase.mp4</code> 及原生帧序列核对。无游离浮片、无部件重影、显隐变化连续各 10 分，每处独立错误扣 5 分，单项最低 0 分。</p>
+        <div class="formula"><p>动态分 ＝ Σ max(0, 10 − 5 × 该类独立错误处数)</p></div>
+        <details><summary>三项错误如何界定、合并与扣分</summary><div class="detail-body">
+          <dl class="compact-dl"><div><dt>浮片</dt><dd>非转场、非明确拆解动画中出现与主体断开的孤立装甲／纹理碎片，须有连续原生帧支持；细小编码噪点不算。</dd></div><div><dt>重影</dt><dd>同一可辨部件同时出现错位轮廓或半透明副本；合理反射、正常运动模糊、转场叠化不算。</dd></div><div><dt>显隐</dt><dd>连续镜头里，局部表面无正常遮挡、部件动作或转场原因反复出现、减弱、再增强；必须有时间序列，不能从单张重影图直接判定。</dd></div></dl>
+          <p><strong>计数单位：</strong>同镜头、同部位连续或反复出现的同类问题合并一处；不逐帧、逐次闪现扣分。不同镜头或不同空间部位可以分别记录。三类使用不同观察条件，不额外把“闪烁、透明度跳变、忽隐忽现”拆成多个扣分项。</p>
+          <p>每项无错误得 10 分，一处独立错误得 5 分，两处及以上得 0 分。各项相加得到动态画面完整性分，错误位置及帧序列在结果证据中列示。</p>
+        </div></details>
       </div>
 
       <div class="criterion">
         <h3><span class="criterion-no">4.</span> 音画匹配 <span class="points">/ 10</span></h3>
-        <p>音乐与音效各 5 分，每个检查项 1 分。音乐组织通过完整独立听看成片判断；音效使用脚本对齐配乐以定位候选，再结合原声定点核查。候选位置只用于辅助定位。</p>
-        <details><summary>音乐 5 项与音效 5 项</summary><div class="detail-body audio-checks"><div><h4>音乐 · 每项 1 分</h4><ol><li>乐句组织</li><li>能量呼应</li><li>节奏发展</li><li>选段衔接</li><li>首尾完整</li></ol></div><div><h4>音效 · 每项 1 分</h4><ol><li>whoosh 语义</li><li>hit 语义</li><li>drop 语义</li><li>感知对齐</li><li>最终混音可辨</li></ol></div></div></details>
+        <p>音乐编排评完整展示与配乐的组织关系，音效对应评具体声音与具体视觉事件。两项各 5 个检查，每项满足得 1 分、不满足得 0 分，分别相加；评委为 Gemini 4 Neon。</p>
+        <details><summary>音乐编排：五个检查条件 · 5 分</summary><div class="detail-body"><ol class="scoring-checks"><li><strong>乐句／段落组织：</strong>展示段落与实际 BGM 的乐句或段落组织有明确关联。</li><li><strong>能量呼应：</strong>BGM 的强弱、密度和配器变化与运镜、灯光、景别或展示重心相协调。</li><li><strong>节奏发展：</strong>展示随音乐发展推进；可通过连续运镜、内容揭示和灯光实现，不要求每拍切镜。</li><li><strong>选段衔接：</strong>音乐选段、延续或拼接连贯，没有突兀跳拍或节奏断裂；不要求必须拼接。</li><li><strong>首尾完整：</strong>音乐的进入、结束与画面的开端和收束合理配合。</li></ol><p>评委在独立完整上下文中听看成片及同源最终混音，对照原始 BGM；逐项记录时间、听到的 BGM 特征、对应画面及理由，不把外贴音效瞬态代替 BGM 的乐句或能量变化。五项得分相加，音乐编排最高 5 分。</p></div></details>
+        <details><summary>音效对应：脚本定位、定点听看与五项计分 · 5 分</summary><div class="detail-body"><ol class="method-steps"><li><strong>定位候选：</strong>先对齐最终混音与原始 BGM，拟合局部增益，在原始混音及 BGM 残差上匹配 whoosh、hit、drop，输出候选类型、有效区间、锚点及置信度。残差只用于定位。</li><li><strong>带上下文核查：</strong>将候选区间及前后约 1 秒合成原声核查窗口，保留源时间映射；评委对照原始音效，先确认实际可闻的声音，再判断视觉事件、语义和感知同步。相邻窗口可合并，完整成片另作查漏。</li><li><strong>复核时差：</strong>已确认音效的有效锚点与对应原生帧视觉锚点相减，记录 Δt＝音频锚点−视觉锚点，正值表示声音较晚。whoosh 同时考察运动区间；不以文件起点或最近切镜自动判分。</li></ol>
+          <div class="table-scroll"><table><thead><tr><th>检查项</th><th>满足得 1 分的条件</th></tr></thead><tbody><tr><th>S1 · whoosh</th><td>已确认的扫风声与实际运动／转场语义相符。</td></tr><tr><th>S2 · hit</th><td>已确认的撞击声对应显现、停顿、切换等明确视觉落点。</td></tr><tr><th>S3 · drop</th><td>已确认的低频重落对应视觉重心或能量转折。</td></tr><tr><th>S4 · 对齐</th><td>主要音效的听觉有效点／区间与对应视觉事件在感知上同步，并记录时间证据。</td></tr><tr><th>S5 · 可辨与层次</th><td>三类音效在最终混音中均可辨认、层次适当，不被音乐掩盖或破坏观看。</td></tr></tbody></table></div>
+          <p>候选不是确认使用次数，未检出不自动判缺失；必须回到原始最终混音。脚本的单声道峰值或无越界样本只作电平检查，不代替混音可闻度判断。五项得分相加，音效对应最高 5 分。</p>
+        </div></details>
       </div>
+      <details class="engineering-method"><summary>工程可用性门槛如何检查 · 不计分</summary><div class="detail-body"><p>检查 <code>asset.blend</code> 能独立打开且含真实可编辑几何；搬移交付目录后，所用贴图、库与音频资源仍可解析；规范机位能渲染；成片画面和音轨完整解码；修改相机及音频后，实际重新输出片段。通过门槛不增加质量分。</p></div></details>
     </section>
 
     <section class="section" id="results" aria-labelledby="results-title">
@@ -115,7 +158,7 @@
         <table class="score-table"><caption class="sr-only">SCV 机甲资产重建与展示片制作评分</caption><thead><tr><th scope="col">模型 / 框架</th><th scope="col">结构 / 30</th><th scope="col">外观 / 30</th><th scope="col">动态 / 30</th><th scope="col">音乐 / 5</th><th scope="col">音效 / 5</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62"><th scope="row">Astra 6.2 <span class="model-detail">xhigh · Codex</span></th><td>18.66</td><td>9.04</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">37.70</strong></td></tr></tbody></table>
       </div>
       <p><strong>工程交付通过门槛检查。</strong>主要轮廓可辨，但细部与材质还原不足；成片中的三类动态问题各出现至少两处独立错误，动态部分为 0 分。</p>
-      <details><summary>分项数值与计分</summary><div class="detail-body"><dl class="calculation-list"><div><dt>结构</dt><dd>F-score@0.5% = <span class="numeric">0.4900880617</span>，六视图平均 IoU = <span class="numeric">0.7541405638</span><br>15 × (0.4900880617 + 0.7541405638) = <strong>18.66 / 30</strong></dd></div><div><dt>外观</dt><dd>SSIM = <span class="numeric">0.1916490644</span>，LPIPS = <span class="numeric">0.5890311599</span><br>15 × (0.1916490644 + 1 − 0.5890311599) = <strong>9.04 / 30</strong></dd></div><div><dt>动态</dt><dd>浮片 0 / 10，重影 0 / 10，显隐 0 / 10。</dd></div><div><dt>音画</dt><dd>音乐五项各 1 分，音效五项各 1 分，共 <strong>10 / 10</strong>。</dd></div></dl><p class="note">展示值保留两位小数；总分由未四舍五入的各项数值相加后取两位小数。</p></div></details>
+
 
       <h3>实际交付成片</h3>
       <figure class="showcase-media"><video id="showcase-video" controls playsinline preload="metadata" poster="assets/poster.jpg" width="1280" height="720" src="assets/showcase.mp4">浏览器不支持视频播放。<a href="assets/showcase.mp4">下载成片</a></video><figcaption>1280 × 720 · 24 fps · 438 帧 · 18.25 秒 · 有声</figcaption></figure>

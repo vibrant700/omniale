@@ -77,5 +77,7 @@
         "audio_channels": 2
       }
     }
-  ]
+  ],
+  "scoring_method": "scoring-method.md",
+  "scoring_reference": "assets/reference-model.json"
 }

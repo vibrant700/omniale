@@ -255,3 +255,15 @@ body.dialog-open { overflow: hidden; }
 
 .mobile-score{display:none}
 @media(max-width:600px){.mobile-score{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;font-size:12px}.mobile-score strong{font-size:24px;color:var(--accent);font-variant-numeric:tabular-nums}.mobile-score small{font-size:12px;font-weight:400;color:var(--muted)}}
+
+/* Detailed scoring remains inside the casebook's collapsible reading flow. */
+.reference-resource{margin:0 0 28px;padding:18px 20px;background:var(--paper);border:1px solid var(--line);border-radius:5px}
+.reference-resource h3{margin:0 0 10px}.reference-resource>.note{margin-top:13px}
+.reference-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-top:16px;font-size:13px}
+.download-button{display:inline-flex;flex-direction:column;gap:3px;padding:10px 15px;border:1px solid #9ab8b4;background:var(--pale);text-decoration:none;font-weight:600}.download-button span{font-size:11px;font-weight:400;color:var(--muted)}
+.checksum{margin-top:14px}.checksum strong{font-size:12px}.checksum code{display:block;word-break:break-all;font-size:11px;margin-top:4px;color:var(--muted)}
+.method-steps,.scoring-checks{padding-left:23px;margin:0 0 12px}.method-steps li+li,.scoring-checks li+li{margin-top:10px}
+.math-block{margin:12px 0 14px;font-size:12px;line-height:1.9}.detail-body h4{margin:15px 0 7px}.detail-body h4:first-child{margin-top:0}
+.metric-table{font-variant-numeric:tabular-nums}.metric-table td{text-align:right;white-space:nowrap}.metric-table thead th:not(:first-child){text-align:right}
+.method-events{min-width:620px}.method-events td:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}.engineering-method{margin-top:27px}
+@media(max-width:600px){.reference-resource{padding:15px 13px}.reference-actions{align-items:flex-start;flex-direction:column;gap:12px}.download-button{max-width:100%;overflow-wrap:anywhere}.reference-resource h3{font-size:16px}.math-block{font-size:11px}.metric-table th,.metric-table td{font-size:11px;padding:9px}}
