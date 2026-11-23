@@ -87,6 +87,9 @@ details[open] > summary { border-bottom: 1px solid var(--line); }
 pre { margin: 0; padding: 17px 20px; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; font: 12px/1.9 Consolas, "Liberation Mono", monospace; }
 pre code { font: inherit; }
 .task-brief { margin-top: 22px; }
+.task-context { margin-top: 24px; }
+.task-context ul { margin: 0; padding-left: 22px; }
+.task-context li + li { margin-top: 12px; }
 .total-score { border-left: 3px solid var(--accent); padding: 18px 22px; background: var(--pale); margin-bottom: 24px; }
 .total-score h3 { margin: 0 0 7px; font-size: 15px; }
 .total-equation { font-size: 21px; font-weight: 600; line-height: 1.7; }
