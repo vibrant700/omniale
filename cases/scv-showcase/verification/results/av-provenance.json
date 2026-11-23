@@ -9,6 +9,14 @@
   "audio_visual_score": 10,
   "audio_visual_maximum": 10,
   "evaluation_environment": "Antigravity（反重力），由案例作者说明",
-  "original_prompt_provided": false,
-  "prompt_version": "本包提示词与Schema由助手根据评分规则整理，仅为新复核的建议模板；不是原反重力评测调用记录。"
+  "prompt_version": "音乐使用作者提供的原提示词；音效单独原提示词未收录，助手建议模板与原件分别标注。",
+  "original_music_prompt_provided": true,
+  "separate_original_sfx_prompt_provided": false,
+  "original_full_context_provided": false,
+  "original_api_request_provided": false,
+  "original_music_prompt": "../original-av/prompts/music-frozen-prompt.md",
+  "original_sfx_rubric": "../original-av/prompts/AV-MATCH-RUBRIC-v1.md",
+  "original_result_directory": "../original-av/results/",
+  "original_export_manifest": "../original-av/source-manifest.json",
+  "source_boundary": "作者提供的导出说明记录了会话读取与写入步骤；包内未含完整会话或接口原始请求。"
 }

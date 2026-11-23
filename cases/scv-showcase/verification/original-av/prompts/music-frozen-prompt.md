@@ -1,11 +1,7 @@
-# 音乐编排：建议评审模板 v1
-
-来源：助手根据评分规则整理；非案例作者在反重力中使用的原始 Gemini 提示词。以下内容仅供新复核参考。
-
 你是独立的音画音乐编排评委。只评下面的“音乐编排”5分，不评音效，也不要推测其他评分。你没有任何先前评分、制作说明、时间线或候选时刻。按所附原始媒体实际完整听看判断，不预设应得分或扣分。
 
 附件及其用途：
-1. FINAL_VIDEO：唯一待评成片，须从头到尾观看全部画面并聆听其最终混音。按原生帧率保留可核验的画面；读取实际媒体元数据，不预设时长。
+1. FINAL_VIDEO：唯一待评成片，须从头到尾观看全部画面并聆听其最终混音。videoMetadata fps=8。
 2. FINAL_MIX：从该成片解码所得的完整音轨，无损封装；时间0与成片时间0相同，只用来帮助聆听，不是额外声轨或另一版本。
 3. REFERENCE_BGM：原始背景音乐完整音源，仅帮助辨别成片中的BGM、乐句/段落与选段。它不是成片最终混音。不要把原音源存在但成片未使用的内容当成成片编排证据。
 
@@ -27,7 +23,7 @@ M5 音乐和展示首尾完整：判断成片音乐开头与结尾是否与展�
 - 若能够可靠识别成片段落对应的原BGM时间，填写source_bgm_start_s/end_s；不能可靠识别则为null，不要编造定位。
 - 至少观察成片开头、中段、结尾，每条可列多个证据。单个条目的关键证据不能只靠原BGM，要回到成片听看。
 
-只输出一个JSON对象，不要Markdown。必须符合下面的固定结构；items数组恰好含M1-M5五项（id唯一），不得增加音效或其他维度：
+只输出一个JSON对象，不要Markdown。必须符合下面的固定结构；items恰好含M1-M5，不得增加音效或其他维度：
 {
   "assessment_status": "complete 或 partial 或 unavailable",
   "media_access": {
@@ -38,91 +34,28 @@ M5 音乐和展示首尾完整：判断成片音乐开头与结尾是否与展�
     "complete_video_observed": true,
     "complete_final_mix_listened": true,
     "complete_reference_bgm_listened": true,
-    "observed_video_duration_s": null,
-    "limitations": [
-      "如有真实访问/辨别局限则写明，没有则空数组"
-    ]
+    "observed_video_duration_s": 18.26,
+    "limitations": ["如有真实访问/辨别局限则写明，没有则空数组"]
   },
   "music_observation": {
     "bgm_description": "成片中实际听到的BGM描述",
-    "selected_reference_region": {
-      "source_bgm_start_s": null,
-      "source_bgm_end_s": null,
-      "confidence": 0.0,
-      "reason": "定位依据或不可可靠定位原因"
-    },
+    "selected_reference_region": {"source_bgm_start_s": null, "source_bgm_end_s": null, "confidence": 0.0, "reason": "定位依据或不可可靠定位原因"},
     "development_timeline": [
-      {
-        "final_start_s": 0.0,
-        "final_end_s": 1.0,
-        "bgm_heard": "具体BGM变化/特征",
-        "visual_observed": "具体画面变化/特征",
-        "bgm_vs_added_transients_certainty": "辨别依据/不确定性"
-      }
+      {"final_start_s": 0.0, "final_end_s": 1.0, "bgm_heard": "具体BGM变化/特征", "visual_observed": "具体画面变化/特征", "bgm_vs_added_transients_certainty": "辨别依据/不确定性"}
     ]
   },
-  "items": [
-    {
-      "id": "M1",
-      "criterion": "乐句/段落组织",
-      "score": null,
-      "confidence": 0.0,
-      "evidence": [
-        {
-          "final_start_s": 0.0,
-          "final_end_s": 1.0,
-          "source_bgm_start_s": null,
-          "source_bgm_end_s": null,
-          "bgm_heard": "具体所听BGM变化/特征",
-          "visual_observed": "同期具体画面变化/特征",
-          "bgm_vs_added_transients_certainty": "辨别依据/不确定性",
-          "reason": "该证据为何支持本项得分"
-        }
-      ],
-      "reason": "整项理由及局限"
-    },
-    {
-      "id": "M2",
-      "criterion": "音乐能量与展示强弱呼应",
-      "score": null,
-      "confidence": 0.0,
-      "evidence": [],
-      "reason": ""
-    },
-    {
-      "id": "M3",
-      "criterion": "展示节奏随音乐发展",
-      "score": null,
-      "confidence": 0.0,
-      "evidence": [],
-      "reason": ""
-    },
-    {
-      "id": "M4",
-      "criterion": "配乐选段/拼接与衔接连贯",
-      "score": null,
-      "confidence": 0.0,
-      "evidence": [],
-      "reason": ""
-    },
-    {
-      "id": "M5",
-      "criterion": "音乐和展示首尾完整",
-      "score": null,
-      "confidence": 0.0,
-      "evidence": [],
-      "reason": ""
-    }
-  ],
+  "items": {
+    "M1": {"criterion": "乐句/段落组织", "score": null, "confidence": 0.0, "evidence": [{"final_start_s": 0.0, "final_end_s": 1.0, "source_bgm_start_s": null, "source_bgm_end_s": null, "bgm_heard": "具体所听BGM变化/特征", "visual_observed": "同期具体画面变化/特征", "bgm_vs_added_transients_certainty": "辨别依据/不确定性", "reason": "该证据为何支持本项得分"}], "reason": "整项理由及局限"},
+    "M2": {"criterion": "音乐能量与展示强弱呼应", "score": null, "confidence": 0.0, "evidence": [], "reason": ""},
+    "M3": {"criterion": "展示节奏随音乐发展", "score": null, "confidence": 0.0, "evidence": [], "reason": ""},
+    "M4": {"criterion": "配乐选段/拼接与衔接连贯", "score": null, "confidence": 0.0, "evidence": [], "reason": ""},
+    "M5": {"criterion": "音乐和展示首尾完整", "score": null, "confidence": 0.0, "evidence": [], "reason": ""}
+  },
   "assessed_item_count": 0,
   "known_score_sum": 0,
   "music_score": null,
   "music_score_max": 5,
-  "summary": "基于实际媒体的简短结论，保留局限",
-  "score": null,
-  "maximum": 5
+  "summary": "基于实际媒体的简短结论，保留局限"
 }
 
 M2-M5的evidence与M1使用完全相同的结构且不得为空。所有时间单位为秒，final时间不得超出成片。assessed_item_count是非null条目数，known_score_sum只相加已判定条目；仅当五项均可判定时music_score才为0-5整数总分，否则必须null。confidence为0-1数字。media_access的布尔值应按真实访问情况填写，示例中的true不是预设答案。
-
-统一字段 score 与 music_score 相同，maximum=5；不可完整判定时二者均为null。

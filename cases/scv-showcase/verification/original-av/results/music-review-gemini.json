@@ -1,0 +1,180 @@
+{
+  "assessment_status": "complete",
+  "media_access": {
+    "final_video_frames_accessed": true,
+    "final_video_audio_accessed": true,
+    "final_mix_audio_accessed": true,
+    "reference_bgm_audio_accessed": true,
+    "complete_video_observed": true,
+    "complete_final_mix_listened": true,
+    "complete_reference_bgm_listened": true,
+    "observed_video_duration_s": 18.25,
+    "limitations": []
+  },
+  "music_observation": {
+    "bgm_description": "成片完整连续使用了参考配乐 industrial_pulse.wav 中从 4.000s（鼓点与电子律动正式进入的重拍）到 22.250s（主高潮段落末尾）的 18.25s 选段，未做中段拼接，结尾约 17.5s–18.25s 随画面淡黑平滑淡出。",
+    "selected_reference_region": {
+      "source_bgm_start_s": 4.0,
+      "source_bgm_end_s": 22.25,
+      "confidence": 0.98,
+      "reason": "直接对照聆听 FINAL_MIX 与 REFERENCE_BGM，成片 0.0s 对应原曲 4.0s 鼓点律动进入处，成片 10.0s–13.75s 对应原曲 14.0s–17.75s 上行铺垫段，成片 13.75s 对应原曲 17.75s 主高潮落点，与脚本全局对齐 offset=-4.000s（NCC 0.92391）完全一致。"
+    },
+    "development_timeline": [
+      {
+        "final_start_s": 0.0,
+        "final_end_s": 4.0,
+        "bgm_heard": "原曲 4.0s–8.0s 稳定的开场电子底鼓与贝斯律动乐句。",
+        "visual_observed": "PL. 01（01 GENERAL ARRANGEMENT），左栏蓝图信息＋右侧 SCV 全身平稳环绕展示。",
+        "bgm_vs_added_transients_certainty": "高；开头 0.045s 有一声外贴 hit 瞬态，3.43s–4.54s 有外贴 whoosh，均已对照原曲剥离，不影响对 BGM 律动乐句的辨识。"
+      },
+      {
+        "final_start_s": 4.0,
+        "final_end_s": 10.0,
+        "bgm_heard": "原曲 8.0s–14.0s 律动延续并逐步叠加高频打击乐与合成器旋律层，织体略增密。",
+        "visual_observed": "4.0s–7.0s 切入 PL. 02（Pilot cell 座舱近景），7.0s–10.0s 切入 PL. 03（Extraction fork 机械爪近景），均保持平滑运镜观察细节。",
+        "bgm_vs_added_transients_certainty": "高；7.003s 外贴 hit 与 9.958s 外贴 whoosh 已对照原曲区分，BGM 自身织体推进清晰可辨。"
+      },
+      {
+        "final_start_s": 10.0,
+        "final_end_s": 13.75,
+        "bgm_heard": "原曲 14.0s–17.75s 明显的上行铺垫（riser）与密集滚奏加速，能量持续抬升至 13.75s 爆发前夕。",
+        "visual_observed": "PL. 04（04 POWER GROUP / Induction plant），画面转为高对比度深色栏与背部动力组近景环绕，视觉张力随铺垫积累。",
+        "bgm_vs_added_transients_certainty": "高；该段中后部无额外音效干扰，完全为原曲自身的 riser 能量推进。"
+      },
+      {
+        "final_start_s": 13.75,
+        "final_end_s": 18.25,
+        "bgm_heard": "原曲 17.75s–22.25s 主高潮段落爆发，节拍更强劲、合成器织体饱满；约 17.5s–18.25s 平滑淡出。",
+        "visual_observed": "13.75s 切换为明亮浅色版面的 PL. 05（05 ASSEMBLY COMPLETE / Material record），展示完整机甲四分之三全景与材质色卡，末尾同步淡黑收束。",
+        "bgm_vs_added_transients_certainty": "高；13.72s 处叠加了外贴 drop 音效，但 13.75s 之后 BGM 自身进入高能主段的特征对照原曲 17.75s–22.25s 明确可辨。"
+      }
+    ]
+  },
+  "items": {
+    "M1": {
+      "criterion": "乐句/段落组织",
+      "score": 1,
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "final_start_s": 0.0,
+          "final_end_s": 4.0,
+          "source_bgm_start_s": 4.0,
+          "source_bgm_end_s": 8.0,
+          "bgm_heard": "原曲 4.0s–8.0s 完整的 4 秒开场律动乐句。",
+          "visual_observed": "PL. 01 全身总览与正面蓝图介绍，恰好占满 4 秒乐句。",
+          "bgm_vs_added_transients_certainty": "高；对照原曲确认 4.0s 为完整乐句边界。",
+          "reason": "开场展示章回与 BGM 首乐句结构精确对应。"
+        },
+        {
+          "final_start_s": 10.0,
+          "final_end_s": 18.25,
+          "source_bgm_start_s": 14.0,
+          "source_bgm_end_s": 22.25,
+          "bgm_heard": "原曲 14.0s–17.75s 铺垫段进入 17.75s–22.25s 高潮主段。",
+          "visual_observed": "PL. 04 背部动力组对应铺垫段，13.75s 高潮落点切入 PL. 05 整机定妆与材质总览。",
+          "bgm_vs_added_transients_certainty": "高；原曲 17.75s 自身存在明确段落转折，非仅靠外贴 drop 制造。",
+          "reason": "展示了从总览→局部→铺垫→整机亮相的清晰章回结构，与原曲段落高度吻合。"
+        }
+      ],
+      "reason": "五个展示板块的划分与 BGM 实际乐句、铺垫段及高潮段落结构存在明确对应。"
+    },
+    "M2": {
+      "criterion": "音乐能量与展示强弱呼应",
+      "score": 1,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "final_start_s": 10.0,
+          "final_end_s": 13.75,
+          "source_bgm_start_s": 14.0,
+          "source_bgm_end_s": 17.75,
+          "bgm_heard": "BGM 上行音效与密集鼓点推动能量持续升高。",
+          "visual_observed": "切换到深色高对比度的背部推进器特写（PL. 04），视觉情绪收紧积蓄。",
+          "bgm_vs_added_transients_certainty": "高；此段上行能量完全来自原曲。",
+          "reason": "视觉氛围和景别组织配合了音乐能量的爬升。"
+        },
+        {
+          "final_start_s": 13.75,
+          "final_end_s": 18.25,
+          "source_bgm_start_s": 17.75,
+          "source_bgm_end_s": 22.25,
+          "bgm_heard": "13.75s BGM 能量释放进入饱满高潮段，17.5s 后平滑衰减淡出。",
+          "visual_observed": "13.75s 由暗转明切换至浅色背景的整机英雄视角（PL. 05），末尾同步渐暗淡黑。",
+          "bgm_vs_added_transients_certainty": "高；虽有外贴 drop 叠加，但 BGM 自身的能量释放与收束清晰可辨。",
+          "reason": "音乐高潮爆发对应视觉明暗反差与全貌亮相，结尾衰减对应画面淡出，强弱呼应明确。"
+        }
+      ],
+      "reason": "开场平稳、中段近景推进、铺垫收紧、高潮由暗转明全貌释放及末尾淡出，均与 BGM 能量走势协调。"
+    },
+    "M3": {
+      "criterion": "展示节奏随音乐发展",
+      "score": 1,
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "final_start_s": 0.0,
+          "final_end_s": 13.75,
+          "source_bgm_start_s": 4.0,
+          "source_bgm_end_s": 17.75,
+          "bgm_heard": "前 4 秒稳定律动、随后 6 秒织体微增、最后 3.75 秒上行铺垫加速。",
+          "visual_observed": "镜头时长由 4.0s（总览）→ 3.0s（座舱）→ 3.0s（机械爪）→ 3.75s（背部动力组）逐层推进，单镜内运镜平稳可读，无盲目碎切。",
+          "bgm_vs_added_transients_certainty": "高；节奏推进建立在原曲段落与律动之上。",
+          "reason": "展示节奏随着音乐的展开由总览自然推进至局部细节与铺垫，再进入 4.5s 的整机定妆收尾。"
+        }
+      ],
+      "reason": "画面章回切换与镜头推进紧随音乐发展，同时保证了每个部件有足够停留时间供阅读。"
+    },
+    "M4": {
+      "criterion": "配乐选段/拼接与衔接连贯",
+      "score": 1,
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "final_start_s": 0.0,
+          "final_end_s": 18.25,
+          "source_bgm_start_s": 4.0,
+          "source_bgm_end_s": 22.25,
+          "bgm_heard": "连续截取原曲 4.0s–22.25s，跳过前 4 秒低频环境铺底直接从律动重拍切入，全片无中段硬拼、跳拍或节奏断裂。",
+          "visual_observed": "全片五个板块在连续律动下衔接自然。",
+          "bgm_vs_added_transients_certainty": "高；完整对照原曲无拼接痕迹。",
+          "reason": "选段起止得当且全片连续流畅，无任何突兀的节奏中断。"
+        }
+      ],
+      "reason": "连续单一选段跳过冗长前奏、直入律动并覆盖完整高潮，衔接自然连贯。"
+    },
+    "M5": {
+      "criterion": "音乐和展示首尾完整",
+      "score": 1,
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "final_start_s": 0.0,
+          "final_end_s": 1.0,
+          "source_bgm_start_s": 4.0,
+          "source_bgm_end_s": 5.0,
+          "bgm_heard": "从原曲 4.0s 明确重拍起音，无截断残音。",
+          "visual_observed": "0.0s 同步展示 PL. 01 总览标题与机甲全貌，开端利落。",
+          "bgm_vs_added_transients_certainty": "高。",
+          "reason": "开端音画同步落于重拍，起势完整。"
+        },
+        {
+          "final_start_s": 17.4,
+          "final_end_s": 18.25,
+          "source_bgm_start_s": 21.4,
+          "source_bgm_end_s": 22.25,
+          "bgm_heard": "高潮段乐句行进至末尾平稳淡出，无硬切咔哒声或长静音尾巴。",
+          "visual_observed": "PL. 05 整机定妆画面在约 17.6s–18.25s 同步平滑淡黑收束。",
+          "bgm_vs_added_transients_certainty": "高。",
+          "reason": "音画同步淡出收束，首尾完整。"
+        }
+      ],
+      "reason": "开头落于明确重拍，结尾音画同步平滑淡出，整体收放完整。"
+    }
+  },
+  "assessed_item_count": 5,
+  "known_score_sum": 5,
+  "music_score": 5,
+  "music_score_max": 5,
+  "summary": "成片连续选用原 BGM 4.0s–22.25s 区间，乐句组织、铺垫至高潮的能量起伏、章回节奏推进、选段连贯性及首尾淡出均与画面展示高度协调，音乐编排 5 项全部通过（5/5）。"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "accepted_by_user",
+  "accepted_utc": "2026-11-23T08:52:10.735630+00:00",
+  "judge_model": "gemini-4-neon",
+  "judge_model_display": "Gemini 4 Neon",
+  "model_identity_source": "Direct user statement in the current chat",
+  "music_score": 5,
+  "sfx_score": 5,
+  "audio_visual_score": 10,
+  "audio_visual_maximum": 10,
+  "report": "AV-REVIEW-v3-REPORT.md",
+  "music_review": "music/music-review-gemini.json",
+  "aggregate_score": 37.702697950601674,
+  "aggregate_maximum": 100,
+  "authorization": "User explicitly instructed accepting the supplied evaluation as correct and identified Gemini 4 Neon as its judge.",
+  "provenance_note": "This acceptance records the user-provided evaluation. It does not change or relabel the earlier blocked API attempts or Gemini 3.1 raw responses."
+}

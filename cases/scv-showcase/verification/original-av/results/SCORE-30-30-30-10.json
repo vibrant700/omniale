@@ -1,0 +1,85 @@
+{
+  "revision": "30-30-30-10-v3-user-neon",
+  "created_utc": "2026-11-23T03:57:07.399402+00:00",
+  "status": "user_accepted_external_judge_result",
+  "weights_authorized_by_user": [
+    30,
+    30,
+    30,
+    10
+  ],
+  "parts": [
+    {
+      "name": "精细结构还原",
+      "weight": 30,
+      "raw_values": {
+        "Fscore_at_0_5percent": 0.49008806172432645,
+        "six_view_silhouette_IoU": 0.7541405637719087
+      },
+      "formula": "15 * Fscore_at_0_5percent + 15 * IoU",
+      "score": 18.66342938244353
+    },
+    {
+      "name": "外观忠实度",
+      "weight": 30,
+      "raw_values": {
+        "SSIM": 0.19164906442165375,
+        "LPIPS": 0.5890311598777771
+      },
+      "formula": "15 * (clip(SSIM,0,1) + 1 - clip(LPIPS,0,1))",
+      "score": 9.03926856815815
+    },
+    {
+      "name": "动态画面完整性",
+      "weight": 30,
+      "formula": "sum(max(0,10 - 5 * independent_error_count)) across three criteria",
+      "score": 0,
+      "evidence": "evaluation/dynamic-stability-v1/deduction-result-v2.json"
+    },
+    {
+      "name": "音画匹配",
+      "weight": 10,
+      "subparts": [
+        {
+          "name": "音乐编排",
+          "weight": 5,
+          "score": 5
+        },
+        {
+          "name": "音效对应",
+          "weight": 5,
+          "score": 5
+        }
+      ],
+      "score": 10,
+      "status": "user_accepted",
+      "judge_model": "gemini-4-neon",
+      "review": "evaluation/gemini-av-review-v3/AV-REVIEW-v3-REPORT.md",
+      "independently_verified": false,
+      "music_review": "evaluation/gemini-av-review-v3/music/music-review-gemini.json",
+      "provenance": "user-provided evaluation; model identity confirmed by user",
+      "acceptance": "evaluation/gemini-av-review-v3/USER-ACCEPTANCE.json"
+    }
+  ],
+  "known_subtotal": 37.702697950601674,
+  "evaluated_maximum": 100,
+  "pending_maximum": 0,
+  "total_score": 37.702697950601674,
+  "maximum": 100,
+  "judge_model": "gemini-4-neon",
+  "judge_requirements": "Actual joint video and audio input with source BGM/SFX; anonymized candidate and no solver identity/reasoning or other dimension scores. Waveform/frame measurements assist timing; model judgment alone is not millisecond-accurate.",
+  "engineering_gate": {
+    "passed": true,
+    "weight": 0
+  },
+  "limitations": [
+    "Linear convenience mapping, not expert-calibrated perceptual quality.",
+    "Dynamic checks selected after inspecting this output; total is a diagnostic score under this revision, not a previously frozen benchmark result.",
+    "Image appearance metrics also respond to geometric and shading differences; they do not isolate texture quality."
+  ],
+  "updated_utc": "2026-11-23T08:52:10.735630+00:00",
+  "static_and_dynamic_subtotal": 27.702697950601678,
+  "independently_verified_total_score": null,
+  "score_interpretation": "Current accepted score using the user-confirmed Gemini 4 Neon v3 audiovisual evaluation. Earlier model runs and audit records are retained separately.",
+  "judge_model_source": "User reports this v3 evaluation was performed with Gemini 4 Neon and explicitly accepts the supplied result."
+}

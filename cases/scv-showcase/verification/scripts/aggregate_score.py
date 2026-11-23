@@ -24,6 +24,9 @@ def binary_review(review, prefix):
     if review.get('assessment_status') != 'complete':
         raise ValueError(f'{prefix}: only complete reviews can be aggregated')
     items = review['items']
+    # The supplied original music result uses a keyed object; normalized records use an array.
+    if isinstance(items, dict):
+        items = [{**item, 'id': key} for key, item in items.items()]
     expected = {prefix + str(i) for i in range(1, 6)}
     if len(items) != 5 or {item['id'] for item in items} != expected:
         raise ValueError(f'{prefix}: expected five distinct criterion IDs')
@@ -35,7 +38,8 @@ def binary_review(review, prefix):
         if not item.get('evidence') or not (item.get('reason') or any(e.get('reason') for e in item['evidence'])):
             raise ValueError(f"{item['id']}: evidence and reasoning are required")
         total += value
-    close(number(review['score'], prefix + ' total', 0, 5), total, prefix)
+    reported_total = review.get('score', review.get('music_score' if prefix == 'M' else 'sfx_score'))
+    close(number(reported_total, prefix + ' total', 0, 5), total, prefix)
     return total
 
 

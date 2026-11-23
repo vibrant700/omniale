@@ -1,0 +1,47 @@
+{
+  "source_archive_file": "scv-av-review-v3-original-files.zip",
+  "source_archive_sha256": "4a1f602ca46d6c886b789eee52b0f55c5baa4decadf5e7944d365c08536b76ac",
+  "source_manifest_paths": "Local absolute source paths omitted from public index; original payload files are byte-identical",
+  "files": [
+    {
+      "file": "prompts/music-frozen-prompt.md",
+      "bytes": 6155,
+      "sha256": "8f21027d17e1ab04c177dde1c9ace3a454fc59ab60b091e844e59ac018802eba"
+    },
+    {
+      "file": "prompts/AV-MATCH-RUBRIC-v1.md",
+      "bytes": 2353,
+      "sha256": "72285c62debea125274b3ba22786fb14f17fc1f14d75cbd58e91630628e682a4"
+    },
+    {
+      "file": "results/music-review-gemini.json",
+      "bytes": 9798,
+      "sha256": "278c93417a029e6457b8cb0aaff3efb725c816ac3f537d79991514859dcbab38"
+    },
+    {
+      "file": "results/AV-REVIEW-v3-REPORT.md",
+      "bytes": 5687,
+      "sha256": "761b5f46c6bdfb775a0961ecef648de8639f1cb54dd4c417539fa85528b80cb0"
+    },
+    {
+      "file": "results/SCORE-30-30-30-10.md",
+      "bytes": 1037,
+      "sha256": "4199a54474a223a32e7d8335f118977da19fdd50700195548b72c3a905e6c448"
+    },
+    {
+      "file": "results/SCORE-30-30-30-10.json",
+      "bytes": 3215,
+      "sha256": "1aeda94cee2de1b620134d3f07ff494057816e770bb0d6aa403a52eed2698ce8"
+    },
+    {
+      "file": "results/USER-ACCEPTANCE.json",
+      "bytes": 816,
+      "sha256": "5bcf9bfb93d504ef0bf91a1a2b332fcfc16322792b153392d31572bfa4bae95d"
+    },
+    {
+      "file": "EXPORT-README.md",
+      "bytes": 1115,
+      "sha256": "7659abdefab00821666e4b4646a512a0fa1e27510f1512bfef5911f2674e211f"
+    }
+  ]
+}
