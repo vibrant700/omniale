@@ -102,3 +102,12 @@ footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 
 .brief h4, #scoring h4 { margin: 15px 0 5px; font-size: 15px; }
 .rubric-rows { margin: 7px 0 14px; }
 .rubric-rows > div { display: grid; grid-template-columns: 3em minmax(0, 1fr); gap: 7px; padding: 4px 0; }
+
+.rubric-detail > summary { color: var(--accent); }
+.rubric-detail .details-body > :first-child { margin-top: 0; }
+.result-note { margin-bottom: 8px; font-size: 13px; color: var(--muted); }
+.quality-results th:last-child, .quality-results td:last-child {
+  min-width: 220px;
+  text-align: left;
+  white-space: normal;
+}
