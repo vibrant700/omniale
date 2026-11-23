@@ -1,0 +1,81 @@
+{
+  "models": [
+    {
+      "case": "scv-showcase",
+      "model": "gpt-6.2-astra",
+      "model_display": "Astra 6.2",
+      "framework": "Codex",
+      "reasoning_effort": "xhigh",
+      "scores": {
+        "structure": 18.66342938244353,
+        "appearance": 9.03926856815815,
+        "dynamic": 0,
+        "music": 5,
+        "sfx": 5,
+        "total": 37.702697950601674
+      },
+      "weights": {
+        "structure": 30,
+        "appearance": 30,
+        "dynamic": 30,
+        "music": 5,
+        "sfx": 5
+      },
+      "raw_metrics": {
+        "F1_tolerance_reference_diagonal_0_5_percent": 0.49008806172432645,
+        "six_view_silhouette_IoU": 0.7541405637719087,
+        "foreground_union_SSIM": 0.19164906442165375,
+        "foreground_union_LPIPS_alex_spatial": 0.5890311598777771
+      },
+      "dynamic_criteria": [
+        {
+          "name": "无游离浮片",
+          "maximum": 10,
+          "deduction_per_error": 5,
+          "confirmed_error_count_lower_bound": 2,
+          "score": 0
+        },
+        {
+          "name": "无部件重影",
+          "maximum": 10,
+          "deduction_per_error": 5,
+          "confirmed_error_count_lower_bound": 2,
+          "score": 0
+        },
+        {
+          "name": "显隐变化连续",
+          "maximum": 10,
+          "deduction_per_error": 5,
+          "confirmed_error_count_lower_bound": 2,
+          "score": 0
+        }
+      ],
+      "audio_visual_judge": "Gemini 4 Neon",
+      "engineering_gate": "passed",
+      "engineering_weight": 0,
+      "runtime": {
+        "elapsed_seconds": 2339.89,
+        "tool_calls": 269,
+        "responses": 101,
+        "time_limit_seconds": null,
+        "tool_call_limit": null,
+        "cpu": 4,
+        "memory_gib": 8,
+        "gpu": false
+      },
+      "delivery": {
+        "video": "assets/showcase.mp4",
+        "poster": "assets/poster.jpg",
+        "asset": "assets/asset.blend",
+        "archive": "assets/delivery.zip",
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "video_frame_count": 438,
+        "video_duration_seconds": 18.25,
+        "audio_sample_rate": 48000,
+        "audio_channels": 2
+      }
+    }
+  ]
+}

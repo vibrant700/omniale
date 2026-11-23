@@ -1,0 +1,5 @@
+Original audio for the SCV asset-showcase task.
+
+The music and sound effects were newly synthesized from elementary waveforms and deterministic random noise for this task. No third-party recordings, samples or melodies were imported. To the extent copyright applies, these audio files are dedicated under CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/ .
+
+Files: industrial_pulse.wav, whoosh.wav, hit.wav, drop.wav.

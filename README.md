@@ -4,6 +4,7 @@
 
 - 案例目录：https://vibrant700.github.io/omniale/
 - 采样率与混叠：https://vibrant700.github.io/omniale/sampling/
+- SCV 机甲资产重建与展示片：https://vibrant700.github.io/omniale/scv-showcase/
 
 GitHub Pages发布目录为main分支的/docs。每个Case使用独立子目录，在docs/index.html维护入口。页面使用原生HTML/CSS/JavaScript，无构建依赖。本地预览：python -m http.server 8765 --directory docs。
 
