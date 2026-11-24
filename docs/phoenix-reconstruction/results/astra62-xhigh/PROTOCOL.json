@@ -1,0 +1,82 @@
+{
+  "revision": "phoenix-ten-frames-geometry-appearance-v1",
+  "freeze_before_solver": true,
+  "frames": [
+    0,
+    11,
+    22,
+    33,
+    44,
+    55,
+    66,
+    77,
+    88,
+    99
+  ],
+  "fps": 30,
+  "weights": {
+    "geometry_F1": 22.5,
+    "geometry_IoU": 22.5,
+    "appearance_SSIM": 22.5,
+    "appearance_LPIPS": 22.5,
+    "audio_unscored": 10
+  },
+  "primary_F1_tolerance_diagonal_fraction": 0.005,
+  "diagnostic_F1_tolerance_fractions": [
+    0.005,
+    0.01,
+    0.02,
+    0.05
+  ],
+  "reference_animation_union_bounds": [
+    [
+      -2.000000476837158,
+      -1.7671644687652588,
+      -1.7122282981872559
+    ],
+    [
+      2.000000476837158,
+      1.767164945602417,
+      1.7122282981872559
+    ]
+  ],
+  "reference_diagonal": 6.341797459641304,
+  "F1_surface_sample_count_per_mesh": 50000,
+  "surface_seed": 20261124,
+  "alpha_threshold": 0.5,
+  "alpha_geometry": "Subdivide each UV-mapped triangle into 4x4 microtriangles, remove centroids with material alpha<0.5; a finer-reference check reports sensitivity. Opaque materials retain all surface.",
+  "surface_visibility": "Retain sample points visible to at least one supplied input camera I1/I2/I3 by BVH ray test; nearest distance is to the entire other alpha-valid mesh.",
+  "geometry_objects": "All render-enabled evaluated mesh objects; no normalization or ICP. Enumerate object identities in report.",
+  "silhouette_views": [
+    "I1",
+    "I2",
+    "I3",
+    "T1"
+  ],
+  "silhouette": "Actual material alpha, alpha>=0.5. Render with common calibrated cameras and world; disable compositing and motion blur for masks.",
+  "appearance_source": "Actual delivered T1.mp4 decoded at original dimensions; compare with original target RGBA PNG composited over #202630.",
+  "appearance_crop": [
+    280,
+    77,
+    908,
+    659
+  ],
+  "appearance_region": "Union of reference alpha>=0.5 and candidate silhouette from the submitted 3D scene; include candidate non-background pixels from actual video. Full canvas used for any foreground outside fixed crop.",
+  "SSIM": "Gaussian sigma1.5, population covariance, RGB mean; spatial map mean over foreground union.",
+  "LPIPS": "AlexNet v0.1 spatial=True, normalize=True; mean spatial output over foreground union; diagnostic foreground-weighted variant rather than ordinary full-image LPIPS.",
+  "aggregation": "Mean over exactly 10 frames; IoU mean over 4 fixed cameras then 10 frames.",
+  "score_formula": "22.5*F1 +22.5*IoU +22.5*clip(SSIM,0,1) +22.5*clip(1-LPIPS,0,1). Report subtotal /90, audio null; not a full /100 score.",
+  "missing_submission": "Missing required native scene is an engineering failure; only genuinely measurable components get scores.",
+  "controls": [
+    "reference vs self",
+    "transparent empty image silhouette=0",
+    "shifted geometry decreases F1",
+    "decoded video full decode and timestamps"
+  ],
+  "reference_scene_sha256": "90eca3c6a13d2ac3e7b37fe95a41007524064707719e06543e7ca8ea9abf1913",
+  "limitations": [
+    "Thresholds and linear mappings inherit earlier asset-showcase conventions, not expert calibrated professional quality cutoffs.",
+    "Ten frames may miss inter-frame faults.",
+    "Alpha microtriangle approximation sensitivity is reported."
+  ]
+}

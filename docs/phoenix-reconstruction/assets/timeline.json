@@ -1,0 +1,614 @@
+{
+  "schema": "phoenix-timeline-v1",
+  "fps": 30,
+  "fps_base": 1,
+  "frame_count": 100,
+  "duration_s": 3.3333333333333335,
+  "animation_source_range_s": [
+    0,
+    3.3333332538604736
+  ],
+  "endpoint_policy": "Sample t=i/30 for i=0..99. The endpoint at t=100/30 is excluded to avoid a duplicate terminal sample.",
+  "frames": [
+    {
+      "index": 0,
+      "blender_frame": 0,
+      "time_s": 0.0,
+      "file": "0000.png"
+    },
+    {
+      "index": 1,
+      "blender_frame": 1,
+      "time_s": 0.03333333333333333,
+      "file": "0001.png"
+    },
+    {
+      "index": 2,
+      "blender_frame": 2,
+      "time_s": 0.06666666666666667,
+      "file": "0002.png"
+    },
+    {
+      "index": 3,
+      "blender_frame": 3,
+      "time_s": 0.1,
+      "file": "0003.png"
+    },
+    {
+      "index": 4,
+      "blender_frame": 4,
+      "time_s": 0.13333333333333333,
+      "file": "0004.png"
+    },
+    {
+      "index": 5,
+      "blender_frame": 5,
+      "time_s": 0.16666666666666666,
+      "file": "0005.png"
+    },
+    {
+      "index": 6,
+      "blender_frame": 6,
+      "time_s": 0.2,
+      "file": "0006.png"
+    },
+    {
+      "index": 7,
+      "blender_frame": 7,
+      "time_s": 0.23333333333333334,
+      "file": "0007.png"
+    },
+    {
+      "index": 8,
+      "blender_frame": 8,
+      "time_s": 0.26666666666666666,
+      "file": "0008.png"
+    },
+    {
+      "index": 9,
+      "blender_frame": 9,
+      "time_s": 0.3,
+      "file": "0009.png"
+    },
+    {
+      "index": 10,
+      "blender_frame": 10,
+      "time_s": 0.3333333333333333,
+      "file": "0010.png"
+    },
+    {
+      "index": 11,
+      "blender_frame": 11,
+      "time_s": 0.36666666666666664,
+      "file": "0011.png"
+    },
+    {
+      "index": 12,
+      "blender_frame": 12,
+      "time_s": 0.4,
+      "file": "0012.png"
+    },
+    {
+      "index": 13,
+      "blender_frame": 13,
+      "time_s": 0.43333333333333335,
+      "file": "0013.png"
+    },
+    {
+      "index": 14,
+      "blender_frame": 14,
+      "time_s": 0.4666666666666667,
+      "file": "0014.png"
+    },
+    {
+      "index": 15,
+      "blender_frame": 15,
+      "time_s": 0.5,
+      "file": "0015.png"
+    },
+    {
+      "index": 16,
+      "blender_frame": 16,
+      "time_s": 0.5333333333333333,
+      "file": "0016.png"
+    },
+    {
+      "index": 17,
+      "blender_frame": 17,
+      "time_s": 0.5666666666666667,
+      "file": "0017.png"
+    },
+    {
+      "index": 18,
+      "blender_frame": 18,
+      "time_s": 0.6,
+      "file": "0018.png"
+    },
+    {
+      "index": 19,
+      "blender_frame": 19,
+      "time_s": 0.6333333333333333,
+      "file": "0019.png"
+    },
+    {
+      "index": 20,
+      "blender_frame": 20,
+      "time_s": 0.6666666666666666,
+      "file": "0020.png"
+    },
+    {
+      "index": 21,
+      "blender_frame": 21,
+      "time_s": 0.7,
+      "file": "0021.png"
+    },
+    {
+      "index": 22,
+      "blender_frame": 22,
+      "time_s": 0.7333333333333333,
+      "file": "0022.png"
+    },
+    {
+      "index": 23,
+      "blender_frame": 23,
+      "time_s": 0.7666666666666667,
+      "file": "0023.png"
+    },
+    {
+      "index": 24,
+      "blender_frame": 24,
+      "time_s": 0.8,
+      "file": "0024.png"
+    },
+    {
+      "index": 25,
+      "blender_frame": 25,
+      "time_s": 0.8333333333333334,
+      "file": "0025.png"
+    },
+    {
+      "index": 26,
+      "blender_frame": 26,
+      "time_s": 0.8666666666666667,
+      "file": "0026.png"
+    },
+    {
+      "index": 27,
+      "blender_frame": 27,
+      "time_s": 0.9,
+      "file": "0027.png"
+    },
+    {
+      "index": 28,
+      "blender_frame": 28,
+      "time_s": 0.9333333333333333,
+      "file": "0028.png"
+    },
+    {
+      "index": 29,
+      "blender_frame": 29,
+      "time_s": 0.9666666666666667,
+      "file": "0029.png"
+    },
+    {
+      "index": 30,
+      "blender_frame": 30,
+      "time_s": 1.0,
+      "file": "0030.png"
+    },
+    {
+      "index": 31,
+      "blender_frame": 31,
+      "time_s": 1.0333333333333334,
+      "file": "0031.png"
+    },
+    {
+      "index": 32,
+      "blender_frame": 32,
+      "time_s": 1.0666666666666667,
+      "file": "0032.png"
+    },
+    {
+      "index": 33,
+      "blender_frame": 33,
+      "time_s": 1.1,
+      "file": "0033.png"
+    },
+    {
+      "index": 34,
+      "blender_frame": 34,
+      "time_s": 1.1333333333333333,
+      "file": "0034.png"
+    },
+    {
+      "index": 35,
+      "blender_frame": 35,
+      "time_s": 1.1666666666666667,
+      "file": "0035.png"
+    },
+    {
+      "index": 36,
+      "blender_frame": 36,
+      "time_s": 1.2,
+      "file": "0036.png"
+    },
+    {
+      "index": 37,
+      "blender_frame": 37,
+      "time_s": 1.2333333333333334,
+      "file": "0037.png"
+    },
+    {
+      "index": 38,
+      "blender_frame": 38,
+      "time_s": 1.2666666666666666,
+      "file": "0038.png"
+    },
+    {
+      "index": 39,
+      "blender_frame": 39,
+      "time_s": 1.3,
+      "file": "0039.png"
+    },
+    {
+      "index": 40,
+      "blender_frame": 40,
+      "time_s": 1.3333333333333333,
+      "file": "0040.png"
+    },
+    {
+      "index": 41,
+      "blender_frame": 41,
+      "time_s": 1.3666666666666667,
+      "file": "0041.png"
+    },
+    {
+      "index": 42,
+      "blender_frame": 42,
+      "time_s": 1.4,
+      "file": "0042.png"
+    },
+    {
+      "index": 43,
+      "blender_frame": 43,
+      "time_s": 1.4333333333333333,
+      "file": "0043.png"
+    },
+    {
+      "index": 44,
+      "blender_frame": 44,
+      "time_s": 1.4666666666666666,
+      "file": "0044.png"
+    },
+    {
+      "index": 45,
+      "blender_frame": 45,
+      "time_s": 1.5,
+      "file": "0045.png"
+    },
+    {
+      "index": 46,
+      "blender_frame": 46,
+      "time_s": 1.5333333333333334,
+      "file": "0046.png"
+    },
+    {
+      "index": 47,
+      "blender_frame": 47,
+      "time_s": 1.5666666666666667,
+      "file": "0047.png"
+    },
+    {
+      "index": 48,
+      "blender_frame": 48,
+      "time_s": 1.6,
+      "file": "0048.png"
+    },
+    {
+      "index": 49,
+      "blender_frame": 49,
+      "time_s": 1.6333333333333333,
+      "file": "0049.png"
+    },
+    {
+      "index": 50,
+      "blender_frame": 50,
+      "time_s": 1.6666666666666667,
+      "file": "0050.png"
+    },
+    {
+      "index": 51,
+      "blender_frame": 51,
+      "time_s": 1.7,
+      "file": "0051.png"
+    },
+    {
+      "index": 52,
+      "blender_frame": 52,
+      "time_s": 1.7333333333333334,
+      "file": "0052.png"
+    },
+    {
+      "index": 53,
+      "blender_frame": 53,
+      "time_s": 1.7666666666666666,
+      "file": "0053.png"
+    },
+    {
+      "index": 54,
+      "blender_frame": 54,
+      "time_s": 1.8,
+      "file": "0054.png"
+    },
+    {
+      "index": 55,
+      "blender_frame": 55,
+      "time_s": 1.8333333333333333,
+      "file": "0055.png"
+    },
+    {
+      "index": 56,
+      "blender_frame": 56,
+      "time_s": 1.8666666666666667,
+      "file": "0056.png"
+    },
+    {
+      "index": 57,
+      "blender_frame": 57,
+      "time_s": 1.9,
+      "file": "0057.png"
+    },
+    {
+      "index": 58,
+      "blender_frame": 58,
+      "time_s": 1.9333333333333333,
+      "file": "0058.png"
+    },
+    {
+      "index": 59,
+      "blender_frame": 59,
+      "time_s": 1.9666666666666666,
+      "file": "0059.png"
+    },
+    {
+      "index": 60,
+      "blender_frame": 60,
+      "time_s": 2.0,
+      "file": "0060.png"
+    },
+    {
+      "index": 61,
+      "blender_frame": 61,
+      "time_s": 2.033333333333333,
+      "file": "0061.png"
+    },
+    {
+      "index": 62,
+      "blender_frame": 62,
+      "time_s": 2.066666666666667,
+      "file": "0062.png"
+    },
+    {
+      "index": 63,
+      "blender_frame": 63,
+      "time_s": 2.1,
+      "file": "0063.png"
+    },
+    {
+      "index": 64,
+      "blender_frame": 64,
+      "time_s": 2.1333333333333333,
+      "file": "0064.png"
+    },
+    {
+      "index": 65,
+      "blender_frame": 65,
+      "time_s": 2.1666666666666665,
+      "file": "0065.png"
+    },
+    {
+      "index": 66,
+      "blender_frame": 66,
+      "time_s": 2.2,
+      "file": "0066.png"
+    },
+    {
+      "index": 67,
+      "blender_frame": 67,
+      "time_s": 2.2333333333333334,
+      "file": "0067.png"
+    },
+    {
+      "index": 68,
+      "blender_frame": 68,
+      "time_s": 2.2666666666666666,
+      "file": "0068.png"
+    },
+    {
+      "index": 69,
+      "blender_frame": 69,
+      "time_s": 2.3,
+      "file": "0069.png"
+    },
+    {
+      "index": 70,
+      "blender_frame": 70,
+      "time_s": 2.3333333333333335,
+      "file": "0070.png"
+    },
+    {
+      "index": 71,
+      "blender_frame": 71,
+      "time_s": 2.3666666666666667,
+      "file": "0071.png"
+    },
+    {
+      "index": 72,
+      "blender_frame": 72,
+      "time_s": 2.4,
+      "file": "0072.png"
+    },
+    {
+      "index": 73,
+      "blender_frame": 73,
+      "time_s": 2.433333333333333,
+      "file": "0073.png"
+    },
+    {
+      "index": 74,
+      "blender_frame": 74,
+      "time_s": 2.466666666666667,
+      "file": "0074.png"
+    },
+    {
+      "index": 75,
+      "blender_frame": 75,
+      "time_s": 2.5,
+      "file": "0075.png"
+    },
+    {
+      "index": 76,
+      "blender_frame": 76,
+      "time_s": 2.533333333333333,
+      "file": "0076.png"
+    },
+    {
+      "index": 77,
+      "blender_frame": 77,
+      "time_s": 2.566666666666667,
+      "file": "0077.png"
+    },
+    {
+      "index": 78,
+      "blender_frame": 78,
+      "time_s": 2.6,
+      "file": "0078.png"
+    },
+    {
+      "index": 79,
+      "blender_frame": 79,
+      "time_s": 2.6333333333333333,
+      "file": "0079.png"
+    },
+    {
+      "index": 80,
+      "blender_frame": 80,
+      "time_s": 2.6666666666666665,
+      "file": "0080.png"
+    },
+    {
+      "index": 81,
+      "blender_frame": 81,
+      "time_s": 2.7,
+      "file": "0081.png"
+    },
+    {
+      "index": 82,
+      "blender_frame": 82,
+      "time_s": 2.7333333333333334,
+      "file": "0082.png"
+    },
+    {
+      "index": 83,
+      "blender_frame": 83,
+      "time_s": 2.7666666666666666,
+      "file": "0083.png"
+    },
+    {
+      "index": 84,
+      "blender_frame": 84,
+      "time_s": 2.8,
+      "file": "0084.png"
+    },
+    {
+      "index": 85,
+      "blender_frame": 85,
+      "time_s": 2.8333333333333335,
+      "file": "0085.png"
+    },
+    {
+      "index": 86,
+      "blender_frame": 86,
+      "time_s": 2.8666666666666667,
+      "file": "0086.png"
+    },
+    {
+      "index": 87,
+      "blender_frame": 87,
+      "time_s": 2.9,
+      "file": "0087.png"
+    },
+    {
+      "index": 88,
+      "blender_frame": 88,
+      "time_s": 2.933333333333333,
+      "file": "0088.png"
+    },
+    {
+      "index": 89,
+      "blender_frame": 89,
+      "time_s": 2.966666666666667,
+      "file": "0089.png"
+    },
+    {
+      "index": 90,
+      "blender_frame": 90,
+      "time_s": 3.0,
+      "file": "0090.png"
+    },
+    {
+      "index": 91,
+      "blender_frame": 91,
+      "time_s": 3.033333333333333,
+      "file": "0091.png"
+    },
+    {
+      "index": 92,
+      "blender_frame": 92,
+      "time_s": 3.066666666666667,
+      "file": "0092.png"
+    },
+    {
+      "index": 93,
+      "blender_frame": 93,
+      "time_s": 3.1,
+      "file": "0093.png"
+    },
+    {
+      "index": 94,
+      "blender_frame": 94,
+      "time_s": 3.1333333333333333,
+      "file": "0094.png"
+    },
+    {
+      "index": 95,
+      "blender_frame": 95,
+      "time_s": 3.1666666666666665,
+      "file": "0095.png"
+    },
+    {
+      "index": 96,
+      "blender_frame": 96,
+      "time_s": 3.2,
+      "file": "0096.png"
+    },
+    {
+      "index": 97,
+      "blender_frame": 97,
+      "time_s": 3.2333333333333334,
+      "file": "0097.png"
+    },
+    {
+      "index": 98,
+      "blender_frame": 98,
+      "time_s": 3.2666666666666666,
+      "file": "0098.png"
+    },
+    {
+      "index": 99,
+      "blender_frame": 99,
+      "time_s": 3.3,
+      "file": "0099.png"
+    }
+  ]
+}

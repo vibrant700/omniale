@@ -1,0 +1,156 @@
+{
+  "status": "scored",
+  "requested_model": "gemini-4-neon",
+  "media_access": {
+    "final_audio_heard": true,
+    "all_100_ordered_frames_seen": true,
+    "original_mp4_directly_viewed": true,
+    "source_audio_heard": [
+      "air_long.wav",
+      "air_low.wav",
+      "feather_rustle.wav",
+      "sweep_broad.wav",
+      "sweep_light.wav"
+    ],
+    "limitations": []
+  },
+  "observed_events": [
+    {
+      "time_range_s": [0.0, 0.2],
+      "audible_event": "柔和气流底噪渐入，准备进入主扫翼",
+      "visible_motion": "双翼位于高点并开始向前蓄力准备下拍（frames 0-6）",
+      "alignment": "match"
+    },
+    {
+      "time_range_s": [0.23, 0.47],
+      "audible_event": "第一次宽厚扫翼主声达到峰值并伴随轻微羽片摩擦质感",
+      "visible_motion": "双翼快速向下扫过水平位并下探至最低点，尾羽随之抬展（frames 7-14）",
+      "alignment": "match"
+    },
+    {
+      "time_range_s": [0.5, 0.8],
+      "audible_event": "主声回落，转为较轻的气流与柔和回程扫风",
+      "visible_motion": "双翼从低点上举回收至高点（frames 15-24）",
+      "alignment": "match"
+    },
+    {
+      "time_range_s": [1.07, 1.3],
+      "audible_event": "第二次宽厚扫翼主声达到峰值，强弱轮廓与第一次高度接近",
+      "visible_motion": "第二周期主力下拍（frames 32-39）",
+      "alignment": "match"
+    },
+    {
+      "time_range_s": [1.33, 1.63],
+      "audible_event": "较轻的气流回程声与细微羽片声过渡",
+      "visible_motion": "第二周期双翼回升至高点（frames 40-49）",
+      "alignment": "match"
+    },
+    {
+      "time_range_s": [1.9, 2.13],
+      "audible_event": "第三次宽厚扫翼主声达到峰值，节奏与音色延续前两拍",
+      "visible_motion": "第三周期主力下拍（frames 57-64）",
+      "alignment": "match"
+    },
+    {
+      "time_range_s": [2.17, 2.47],
+      "audible_event": "柔和回程气流声承接",
+      "visible_motion": "第三周期双翼上举回位（frames 65-74）",
+      "alignment": "match"
+    },
+    {
+      "time_range_s": [2.73, 2.97],
+      "audible_event": "第四次宽厚扫翼主声达到峰值",
+      "visible_motion": "第四周期主力下拍（frames 82-89）",
+      "alignment": "match"
+    },
+    {
+      "time_range_s": [3.0, 3.33],
+      "audible_event": "回程气流声平稳衰减收尾，无突兀切断或爆音",
+      "visible_motion": "第四周期双翼回升至片尾高点（frames 90-99）",
+      "alignment": "match"
+    }
+  ],
+  "items": [
+    {
+      "id": "A1",
+      "score": 2,
+      "reason": "从提供的程序合成音效库中组合了宽厚扫翼、低频气流底噪与轻度羽片质感，声音体量与幻想凤凰的大幅展翼动作连贯相称。",
+      "evidence": [
+        {
+          "time_range_s": [0.23, 0.47],
+          "observation": "主力下拍配合宽厚低中频扫风与细微羽片摩擦，质感合理。"
+        },
+        {
+          "time_range_s": [1.33, 1.63],
+          "observation": "回程阶段转为较轻的高频气流声，与翅膀收举动作相符。"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "score": 2,
+      "reason": "四个完整振翅周期的主扫翼峰值均与画面实际下拍阶段感知同步自然，上举回程对应较轻气流声，全程无明显提前、滞后或错位。",
+      "evidence": [
+        {
+          "time_range_s": [0.23, 0.43],
+          "observation": "首次下拍过水平位至最低点与第一声主扫翼峰值同步。"
+        },
+        {
+          "time_range_s": [1.07, 1.27],
+          "observation": "第二次下拍与第二声主扫翼峰值对齐。"
+        },
+        {
+          "time_range_s": [1.9, 2.1],
+          "observation": "第三次下拍与第三声主扫翼峰值对齐。"
+        },
+        {
+          "time_range_s": [2.73, 2.93],
+          "observation": "第四次下拍与第四声主扫翼峰值对齐。"
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "score": 1,
+      "reason": "单次振翅内部有明确的下拍渐强与回程减弱呼应，但四次周期重复的包络形状、强弱与音色过于规整统一，听感略显机械。",
+      "evidence": [
+        {
+          "time_range_s": [0.23, 2.97],
+          "observation": "四次主扫翼以固定约 0.83s 节拍几乎等力度重复，虽与周期动作呼应但缺乏有机起伏。"
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "score": 2,
+      "reason": "持续气流层自然衔接各次振翅，片内无断裂、爆音或明显拼接缝，首尾起落平稳自然。",
+      "evidence": [
+        {
+          "time_range_s": [0.0, 0.2],
+          "observation": "片头柔和渐入，无爆音或生硬切入。"
+        },
+        {
+          "time_range_s": [3.0, 3.33],
+          "observation": "片尾随最后一次回程自然淡出，无突兀截断。"
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "score": 2,
+      "reason": "整体电平与动态平衡合适，主扫翼、气流底噪与羽片细节清晰可辨，无明显削波、失真或频段遮蔽。",
+      "evidence": [
+        {
+          "time_range_s": [0.2, 3.1],
+          "observation": "四次主声峰值干净无失真，底噪气流与高频细节层次分明。"
+        }
+      ]
+    }
+  ],
+  "total": 9,
+  "confidence": "high",
+  "limitations": [
+    "提供的五段源音效均为程序合成的噪声类扫风/摩擦素材，质感上限受素材库本身制约。",
+    "画面本身为 4 次完全周期循环动作，因此听感上的机械重复性部分源自视觉周期本身与编排微差不足的叠加。"
+  ]
+}

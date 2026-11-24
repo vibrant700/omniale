@@ -1,0 +1,655 @@
+{
+  "protocol": "phoenix-ten-frames-geometry-appearance-v1",
+  "reference_diagonal": 6.341797459641304,
+  "primary_tolerance_fraction": 0.005,
+  "frames": {
+    "0": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 39205,
+      "submission_visible_samples": 33804,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.32526,
+          "recall": 0.32878,
+          "f1": 0.32701052779646506
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.60652,
+          "recall": 0.60786,
+          "f1": 0.6071892606926992
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.904,
+          "recall": 0.89882,
+          "f1": 0.901402558214353
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.99928,
+          "recall": 0.99408,
+          "f1": 0.9966732174820402
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.2950834220802272,
+          "recall": 0.3324065807932662,
+          "f1": 0.3126350091102239
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.5793693054076441,
+          "recall": 0.6165285040173447,
+          "f1": 0.5973715953343716
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.8982960596379127,
+          "recall": 0.9112868256599923,
+          "f1": 0.9047448131181332
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9992900248491303,
+          "recall": 0.9937763040428517,
+          "f1": 0.996525537726125
+        }
+      },
+      "mean_visible_reference_to_submission": 0.06168220464416714,
+      "mean_visible_submission_to_reference": 0.0643929016360035,
+      "controls": {
+        "reference_self_max_distance": 2.1230886204648414e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.049
+      }
+    },
+    "11": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 37221,
+      "submission_visible_samples": 28554,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.28672,
+          "recall": 0.25968,
+          "f1": 0.27253092825768666
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.50426,
+          "recall": 0.4521,
+          "f1": 0.4767575933748797
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.77428,
+          "recall": 0.74972,
+          "f1": 0.7618021018372704
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.99792,
+          "recall": 0.99188,
+          "f1": 0.9948908328475223
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.21587168172585278,
+          "recall": 0.21874748126057872,
+          "f1": 0.21730006716013034
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.41293689150381735,
+          "recall": 0.3910964240616856,
+          "f1": 0.4017200245407848
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.6944386075506058,
+          "recall": 0.6957362779076328,
+          "f1": 0.695086837068503
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9967079918750438,
+          "recall": 0.989092179146181,
+          "f1": 0.9928854816737391
+        }
+      },
+      "mean_visible_reference_to_submission": 0.09603250744823763,
+      "mean_visible_submission_to_reference": 0.09521283263850748,
+      "controls": {
+        "reference_self_max_distance": 5.367004405343323e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.053
+      }
+    },
+    "22": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 40363,
+      "submission_visible_samples": 30062,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.29576,
+          "recall": 0.2928,
+          "f1": 0.29427255674867475
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.50552,
+          "recall": 0.47576,
+          "f1": 0.4901887233001794
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.72852,
+          "recall": 0.72434,
+          "f1": 0.7264239868948144
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.94222,
+          "recall": 0.94976,
+          "f1": 0.9459749756339919
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.23202049098529706,
+          "recall": 0.273864678046726,
+          "f1": 0.25121201787953334
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.4268844388264254,
+          "recall": 0.447389936327825,
+          "f1": 0.436896716484909
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.6881112367773269,
+          "recall": 0.6952159155662364,
+          "f1": 0.6916453315863963
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9303439558246291,
+          "recall": 0.9392265193370166,
+          "f1": 0.9347641364948783
+        }
+      },
+      "mean_visible_reference_to_submission": 0.10782896487419188,
+      "mean_visible_submission_to_reference": 0.11199768094370702,
+      "controls": {
+        "reference_self_max_distance": 4.0781296206660045e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.055
+      }
+    },
+    "33": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 38085,
+      "submission_visible_samples": 28370,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.27668,
+          "recall": 0.26716,
+          "f1": 0.271836675492792
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.47694,
+          "recall": 0.44434,
+          "f1": 0.46006321552622437
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.7252,
+          "recall": 0.74912,
+          "f1": 0.7369659558304845
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.99058,
+          "recall": 0.9901,
+          "f1": 0.9903399418381567
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.20405357772294677,
+          "recall": 0.24516213732440592,
+          "f1": 0.22272689742377358
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.37701797673598875,
+          "recall": 0.41339109885781805,
+          "f1": 0.3943676268518364
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.6357772294677476,
+          "recall": 0.7204936326637784,
+          "f1": 0.6754896214524851
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9844201621431089,
+          "recall": 0.9870027569909413,
+          "f1": 0.98570976794721
+        }
+      },
+      "mean_visible_reference_to_submission": 0.09471304943374627,
+      "mean_visible_submission_to_reference": 0.10922273669206996,
+      "controls": {
+        "reference_self_max_distance": 2.1722786414102302e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.109
+      }
+    },
+    "44": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 37346,
+      "submission_visible_samples": 30640,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.28128,
+          "recall": 0.25568,
+          "f1": 0.2678697497020262
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.46702,
+          "recall": 0.41174,
+          "f1": 0.4376412554053439
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.6605,
+          "recall": 0.63782,
+          "f1": 0.6489619046151951
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9533,
+          "recall": 0.92062,
+          "f1": 0.936675040556694
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.17803524804177545,
+          "recall": 0.22725325336046698,
+          "f1": 0.19965574740141057
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.3422976501305483,
+          "recall": 0.36488512826005465,
+          "f1": 0.35323066620837296
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.5427219321148825,
+          "recall": 0.5846944786590264,
+          "f1": 0.562926908145507
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9255548302872063,
+          "recall": 0.8954372623574145,
+          "f1": 0.910246987608198
+        }
+      },
+      "mean_visible_reference_to_submission": 0.14384822108648496,
+      "mean_visible_submission_to_reference": 0.13861190972590767,
+      "controls": {
+        "reference_self_max_distance": 1.503200905972335e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.12
+      }
+    },
+    "55": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 40122,
+      "submission_visible_samples": 33876,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.296,
+          "recall": 0.30508,
+          "f1": 0.3004714181140613
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.55872,
+          "recall": 0.53724,
+          "f1": 0.5477695039964962
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.83564,
+          "recall": 0.82036,
+          "f1": 0.8279295053140097
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.98128,
+          "recall": 0.99578,
+          "f1": 0.9884768276127179
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.24453890660054317,
+          "recall": 0.29225861123573105,
+          "f1": 0.26627768892916953
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.49273822174991144,
+          "recall": 0.5342704750510942,
+          "f1": 0.5126645658019491
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.80431573975676,
+          "recall": 0.8248841034843727,
+          "f1": 0.8144700856191125
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9749675286338411,
+          "recall": 0.9963610986491201,
+          "f1": 0.9855482282684828
+        }
+      },
+      "mean_visible_reference_to_submission": 0.07483860104490697,
+      "mean_visible_submission_to_reference": 0.0858276274074471,
+      "controls": {
+        "reference_self_max_distance": 2.9848851568203827e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.031
+      }
+    },
+    "66": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 36927,
+      "submission_visible_samples": 32382,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.33376,
+          "recall": 0.31444,
+          "f1": 0.3238120777537797
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.58156,
+          "recall": 0.54544,
+          "f1": 0.5629211826086956
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.8336,
+          "recall": 0.80108,
+          "f1": 0.8170165267820002
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.99546,
+          "recall": 0.99908,
+          "f1": 0.9972667149317637
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.2551726267679575,
+          "recall": 0.2892463509085493,
+          "f1": 0.27114319731975767
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.4928355259094559,
+          "recall": 0.510926964010074,
+          "f1": 0.5017182083172148
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.787690692359953,
+          "recall": 0.7770736859208709,
+          "f1": 0.7823461706742161
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.993514915693904,
+          "recall": 0.9987542990223955,
+          "f1": 0.9961277179434411
+        }
+      },
+      "mean_visible_reference_to_submission": 0.08013050769684918,
+      "mean_visible_submission_to_reference": 0.08211846664207749,
+      "controls": {
+        "reference_self_max_distance": 1.4057727071303816e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.056
+      }
+    },
+    "77": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 38595,
+      "submission_visible_samples": 32677,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.33662,
+          "recall": 0.32788,
+          "f1": 0.33219252249811887
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.5848,
+          "recall": 0.57484,
+          "f1": 0.5797772274154048
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.85772,
+          "recall": 0.85018,
+          "f1": 0.8539333562854969
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.99306,
+          "recall": 0.99544,
+          "f1": 0.9942485757103343
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.2974875294549683,
+          "recall": 0.33374789480502653,
+          "f1": 0.31457625117518717
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.5372586222725464,
+          "recall": 0.5940924990283716,
+          "f1": 0.5642480243682737
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.8278605747161613,
+          "recall": 0.8729369089260267,
+          "f1": 0.8498014114730245
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9901765767971356,
+          "recall": 0.9949475320637389,
+          "f1": 0.9925563212840677
+        }
+      },
+      "mean_visible_reference_to_submission": 0.06564658996797325,
+      "mean_visible_submission_to_reference": 0.0761433190115113,
+      "controls": {
+        "reference_self_max_distance": 2.907636087456922e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.039
+      }
+    },
+    "88": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 37630,
+      "submission_visible_samples": 31334,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.26168,
+          "recall": 0.2421,
+          "f1": 0.2515095001786494
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.4611,
+          "recall": 0.43466,
+          "f1": 0.4474897874430651
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.70018,
+          "recall": 0.72574,
+          "f1": 0.7127309150583483
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.99798,
+          "recall": 0.9983,
+          "f1": 0.9981399743522952
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.19518733643965022,
+          "recall": 0.19598724422003722,
+          "f1": 0.19558647246936814
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.3603753111635923,
+          "recall": 0.3652404996013819,
+          "f1": 0.36279159505808123
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.6158166847513883,
+          "recall": 0.6726547967047568,
+          "f1": 0.6429820959959546
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.996776664326291,
+          "recall": 0.9977411639649216,
+          "f1": 0.9972586809414856
+        }
+      },
+      "mean_visible_reference_to_submission": 0.09986446821350702,
+      "mean_visible_submission_to_reference": 0.10770102872998713,
+      "controls": {
+        "reference_self_max_distance": 2.5156055016850587e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.027
+      }
+    },
+    "99": {
+      "reference_triangles": 60487,
+      "submission_triangles": 106384,
+      "reference_visible_samples": 39565,
+      "submission_visible_samples": 33260,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.32458,
+          "recall": 0.32522,
+          "f1": 0.3248996848261004
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.61274,
+          "recall": 0.61634,
+          "f1": 0.6145347277638559
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.88816,
+          "recall": 0.8918,
+          "f1": 0.8899762781186094
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.99452,
+          "recall": 0.99458,
+          "f1": 0.9945499990950681
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03170898729820652,
+          "precision": 0.28123872519543,
+          "recall": 0.32826993554909645,
+          "f1": 0.3029398075526622
+        },
+        "0.01": {
+          "tolerance": 0.06341797459641305,
+          "precision": 0.5688214070956104,
+          "recall": 0.6245166182231771,
+          "f1": 0.5953693153076247
+        },
+        "0.02": {
+          "tolerance": 0.1268359491928261,
+          "precision": 0.8794046903187012,
+          "recall": 0.8987488942246935,
+          "f1": 0.8889715712637909
+        },
+        "0.05": {
+          "tolerance": 0.31708987298206526,
+          "precision": 0.9936861094407697,
+          "recall": 0.9946670036648553,
+          "f1": 0.9941763146054762
+        }
+      },
+      "mean_visible_reference_to_submission": 0.06209189390837374,
+      "mean_visible_submission_to_reference": 0.0690182102715945,
+      "controls": {
+        "reference_self_max_distance": 2.631876157010993e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.047
+      }
+    }
+  },
+  "alignment": "Fixed coordinates and time; no registration",
+  "mean_F1": 0.25540531564212166,
+  "mean_F1_diagnostic": {
+    "0.005": 0.25540531564212166,
+    "0.01": 0.4720378338273418,
+    "0.02": 0.7508464846397123,
+    "0.05": 0.9785799174493102
+  }
+}

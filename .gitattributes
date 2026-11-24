@@ -1,0 +1,2 @@
+# Preserve the audited bytes and SHA-256 manifest of the Phoenix case.
+docs/phoenix-reconstruction/** -text whitespace=cr-at-eol
