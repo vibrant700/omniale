@@ -1,0 +1,34 @@
+<div class="result-head"><div><p class="eyebrow">GPT-6.2-ASTRA · XHIGH · CODEX</p><h3>Astra 6.2 + Codex</h3><p>新上下文独立制作 · 官方 Codex CLI 0.142.4</p></div></div>
+    <div class="video-grid">
+      <figure><video id="candidate-video" controls playsinline preload="metadata" poster="results/astra62-xhigh/poster.jpg" src="results/astra62-xhigh/T1.mp4" aria-label="Astra 实际交付 T1 有声成片">浏览器不支持视频，<a href="results/astra62-xhigh/T1.mp4">下载成片</a>。</video><figcaption><strong>Astra · T1 实际交付</strong><span>有声 · 100 帧 · 原文件</span></figcaption></figure>
+      <figure><video id="reference-video" controls playsinline preload="metadata" poster="assets/evaluation/reference-poster.jpg" src="assets/evaluation/T1-reference.mp4" aria-label="评测端 T1 参考视频">浏览器不支持视频，<a href="assets/evaluation/T1-reference.mp4">下载参考</a>。</video><figcaption><strong>评测端 · T1 参考</strong><span>仅供结果对照 · 未提供给 agent</span></figcaption></figure>
+    </div>
+    <div class="inline-links"><a href="results/astra62-xhigh/delivery.zip" download>完整原始交付 · 5.2 MB ↓</a><a href="results/astra62-xhigh/scene.blend" download>scene.blend ↓</a><a href="results/astra62-xhigh/T1.mp4" download>T1.mp4 ↓</a><a href="results/astra62-xhigh/README.md">交付说明 ↗</a></div>
+    <details class="metric-detail"><summary>分项评分与原始指标</summary><div class="detail-body">
+    <div class="table-wrap"><table class="score-table"><caption>Astra 实际评分</caption><thead><tr><th>维度</th><th>原始指标</th><th>得分</th><th>满分</th></tr></thead><tbody>
+      <tr><td rowspan="2">三维几何</td><td>表面 F1 · 0.255405</td><td>5.75</td><td>22.5</td></tr>
+      <tr><td>四机位 IoU · 0.524481</td><td>11.80</td><td>22.5</td></tr>
+      <tr class="subtotal"><td>几何小计</td><td></td><td>17.55</td><td>45</td></tr>
+      <tr><td rowspan="2">成片外观</td><td>前景 SSIM · 0.067733</td><td>1.52</td><td>22.5</td></tr>
+      <tr><td>前景空间 LPIPS · 0.505997</td><td>11.12</td><td>22.5</td></tr>
+      <tr class="subtotal"><td>外观小计</td><td></td><td>12.64</td><td>45</td></tr>
+      <tr><td>音效设计与同步</td><td>Gemini 4 Neon · 五项评审</td><td>9.00</td><td>10</td></tr>
+      <tr class="total-row"><td>总分</td><td>使用完整精度汇总</td><td>39.19</td><td>100</td></tr>
+    </tbody></table></div>
+    </div></details>
+    <div class="json-downloads" id="astra-score-files"><h3>本次评分 JSON</h3><p>几何与外观来自固定脚本；音效采用委托方提供并确认的 Gemini 4 Neon 评审结果。以下文件保留原始数值与逐项依据。</p><div class="download-grid">
+      <a href="results/astra62-xhigh/score.json" download><strong>score.json ↓</strong><span>总分、分项、模型与评委来源</span></a>
+      <a href="results/astra62-xhigh/geometry_metrics.json" download><strong>geometry_metrics.json ↓</strong><span>十帧表面距离、精确率、召回率与 F1</span></a>
+      <a href="results/astra62-xhigh/image_metrics.json" download><strong>image_metrics.json ↓</strong><span>40 个 IoU 与十帧 SSIM、LPIPS</span></a>
+      <a href="results/astra62-xhigh/gemini-neon-audio/audio-score.json" download><strong>audio-score.json ↓</strong><span>Gemini 4 Neon 原始音效评审 · 9/10</span></a>
+      <a href="results/astra62-xhigh/PROTOCOL.json" download><strong>PROTOCOL.json ↓</strong><span>前 90 分的固定参数与计算协议</span></a>
+      <a href="results/astra62-xhigh/evaluation-sampling.json" download><strong>evaluation-sampling.json ↓</strong><span>抽样帧号与时间轴</span></a>
+    </div></div>
+    <details><summary>音效逐项结果 · 9 / 10</summary><div class="detail-body"><div class="table-wrap"><table><thead><tr><th>项目</th><th>得分</th><th>评审结论</th></tr></thead><tbody>
+      <tr><td>A1 · 选材与音色</td><td>2/2</td><td>扫翼、气流和羽片层次与角色动作相称。</td></tr>
+      <tr><td>A2 · 动作同步</td><td>2/2</td><td>四次下拍与主扫翼声自然对齐。</td></tr>
+      <tr><td>A3 · 包络与强弱</td><td>1/2</td><td>单次振翅有强弱，四次包络与力度重复，听感略显机械。</td></tr>
+      <tr><td>A4 · 衔接与首尾</td><td>2/2</td><td>气流连续，首尾起落平稳。</td></tr>
+      <tr><td>A5 · 混音质量</td><td>2/2</td><td>电平与层次合适，无明显失真。</td></tr>
+    </tbody></table></div><p class="note">以上为原始音效评审结论的摘要，完整时间依据见上方 audio-score.json。</p></div></details>
+    <details><summary>工程与渲染核验 · 通过</summary><div class="detail-body"><p>在本地独立重新打开工程，贴图内嵌、声音相对路径可解析。检测到 67 根骨骼、338 个蒙皮网格对象，十个抽样时刻具有不同的蒙皮姿态；T1 相机矩阵最大元素误差为 1.64 × 10⁻⁷。</p><p>原生 CUDA 渲染连续输出 0–99 帧。成片解码确认 100 帧、30 fps、1280 × 720，包含音轨。GPU 遥测记录到使用，峰值利用率 55%、显存 2,439 MiB。</p><p class="inline-links"><a href="results/astra62-xhigh/render-route-audit.json">渲染路线 JSON ↗</a><a href="results/astra62-xhigh/geometry-self-control.json">几何自对照 JSON ↗</a><a href="results/astra62-xhigh/alpha-sensitivity.json">透明边缘细分敏感性 JSON ↗</a></p></div></details>

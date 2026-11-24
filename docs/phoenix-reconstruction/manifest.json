@@ -3,8 +3,8 @@
   "files": [
     {
       "file": "app.js",
-      "bytes": 4694,
-      "sha256": "fe490b87dfd692d96075c7ac4695f3e6e4d7e28b9f5f313a6672a3bbfa12a6d3"
+      "bytes": 5215,
+      "sha256": "0cecb20d102af6dbae0f62e97cd937c3cce08950f475c2d1256294dd79469bf3"
     },
     {
       "file": "assets/agent-input.zip",
@@ -50,66 +50,6 @@
       "file": "assets/cameras.json",
       "bytes": 6081,
       "sha256": "1e6f10f68b402753fd52d861e12b75a4c9278d0a66f367a9fbfadeaa60338599"
-    },
-    {
-      "file": "assets/evaluation/comparison-sheet.jpg",
-      "bytes": 328772,
-      "sha256": "014624ed1895de7c00d75d3d8d86be9a8cb5af7cdfb890924e0ea6812e67713a"
-    },
-    {
-      "file": "assets/evaluation/frame-00.webp",
-      "bytes": 52572,
-      "sha256": "5c91a3c9f30c74713411729f5b293c4a758a420f69e9a3869f81f8f0a784eca2"
-    },
-    {
-      "file": "assets/evaluation/frame-11.webp",
-      "bytes": 51506,
-      "sha256": "35a6a13965dcec53888d8757d38d09d4f0fad73d3645cd8656196d28c194c323"
-    },
-    {
-      "file": "assets/evaluation/frame-22.webp",
-      "bytes": 45578,
-      "sha256": "524188db86b419134495af3d35e2fa6fb5f49b8d449332c61229b4c98ed0327b"
-    },
-    {
-      "file": "assets/evaluation/frame-33.webp",
-      "bytes": 50492,
-      "sha256": "bc1c75c0b5fa35b278d1bb6d5504c2a8661b29ff7f01bf430cac03070f96bf04"
-    },
-    {
-      "file": "assets/evaluation/frame-44.webp",
-      "bytes": 49726,
-      "sha256": "54a090f6d95de8b0c8fb08f462e36a97da45c7a7a378a4b95a1d9559b01d7bed"
-    },
-    {
-      "file": "assets/evaluation/frame-55.webp",
-      "bytes": 53756,
-      "sha256": "656fe094802100e82fa55fbc64412e8ac181bd360b820a8b2a6432f79c7e0582"
-    },
-    {
-      "file": "assets/evaluation/frame-66.webp",
-      "bytes": 53704,
-      "sha256": "ecb1cb12d9ae625b1338eebe81afdc18840c6619adb890ae1209f4ee71908213"
-    },
-    {
-      "file": "assets/evaluation/frame-77.webp",
-      "bytes": 51460,
-      "sha256": "56fc9c7eb7dd9cb30ddb5975e57603e885e89a3c6733089d64eda5e4a981ee1e"
-    },
-    {
-      "file": "assets/evaluation/frame-88.webp",
-      "bytes": 54462,
-      "sha256": "8706fd04e58f9841a3ebf38eb86bdab7617064082a72a1d70b3782d63c3e3008"
-    },
-    {
-      "file": "assets/evaluation/frame-99.webp",
-      "bytes": 52756,
-      "sha256": "4346de8cd5fe78b14731ba1eece2457cbb85e9275d2ff51d595d3cf9e3134cda"
-    },
-    {
-      "file": "assets/evaluation/frame-data.json",
-      "bytes": 3337,
-      "sha256": "78dd0d87e2544c5905ec7523471256081fd9471a0f51c71d056a60d507b81909"
     },
     {
       "file": "assets/evaluation/reference-poster.jpg",
@@ -178,13 +118,73 @@
     },
     {
       "file": "index.html",
-      "bytes": 24507,
-      "sha256": "ce8f88c04d88d5e4a5be4916edae475539c7394527698ff71240c77b76e31374"
+      "bytes": 28332,
+      "sha256": "b1efd996c4ae8bc3a858cd7d5d90e77611db82ebadf676fda9e7a9d12c83d684"
     },
     {
       "file": "results/astra62-xhigh/alpha-sensitivity.json",
       "bytes": 6062,
       "sha256": "e8986d784d352ef2cf6f4b45473658f26678ede1b216342ad4969784ddd8efef"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/comparison-sheet.jpg",
+      "bytes": 328772,
+      "sha256": "014624ed1895de7c00d75d3d8d86be9a8cb5af7cdfb890924e0ea6812e67713a"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-00.webp",
+      "bytes": 52572,
+      "sha256": "5c91a3c9f30c74713411729f5b293c4a758a420f69e9a3869f81f8f0a784eca2"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-11.webp",
+      "bytes": 51506,
+      "sha256": "35a6a13965dcec53888d8757d38d09d4f0fad73d3645cd8656196d28c194c323"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-22.webp",
+      "bytes": 45578,
+      "sha256": "524188db86b419134495af3d35e2fa6fb5f49b8d449332c61229b4c98ed0327b"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-33.webp",
+      "bytes": 50492,
+      "sha256": "bc1c75c0b5fa35b278d1bb6d5504c2a8661b29ff7f01bf430cac03070f96bf04"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-44.webp",
+      "bytes": 49726,
+      "sha256": "54a090f6d95de8b0c8fb08f462e36a97da45c7a7a378a4b95a1d9559b01d7bed"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-55.webp",
+      "bytes": 53756,
+      "sha256": "656fe094802100e82fa55fbc64412e8ac181bd360b820a8b2a6432f79c7e0582"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-66.webp",
+      "bytes": 53704,
+      "sha256": "ecb1cb12d9ae625b1338eebe81afdc18840c6619adb890ae1209f4ee71908213"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-77.webp",
+      "bytes": 51460,
+      "sha256": "56fc9c7eb7dd9cb30ddb5975e57603e885e89a3c6733089d64eda5e4a981ee1e"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-88.webp",
+      "bytes": 54462,
+      "sha256": "8706fd04e58f9841a3ebf38eb86bdab7617064082a72a1d70b3782d63c3e3008"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-99.webp",
+      "bytes": 52756,
+      "sha256": "4346de8cd5fe78b14731ba1eece2457cbb85e9275d2ff51d595d3cf9e3134cda"
+    },
+    {
+      "file": "results/astra62-xhigh/comparison/frame-data.json",
+      "bytes": 4627,
+      "sha256": "1a64afecf5b48b690b95eaaf6765cda2ec74b4b439cee661c4cb9ac1795003aa"
     },
     {
       "file": "results/astra62-xhigh/delivery.zip",
@@ -253,8 +253,8 @@
     },
     {
       "file": "style.css",
-      "bytes": 9865,
-      "sha256": "85ee3edc968fa41c2d474f4aff6f9104a108e6f334ccb631cda87b34e67bea2a"
+      "bytes": 11496,
+      "sha256": "bd4733e80b64508045cf6d05b0e60e78f71fc3ab19d25eb9532ef0188ed55646"
     }
   ]
 }

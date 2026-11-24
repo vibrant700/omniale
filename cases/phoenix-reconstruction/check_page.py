@@ -20,7 +20,9 @@ class Links(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         row = dict(attrs)
-        if 'id' in row: self.ids.add(row['id'])
+        if 'id' in row:
+            assert row['id'] not in self.ids, f'Duplicate ID: {row["id"]}'
+            self.ids.add(row['id'])
         for key in ['src', 'href', 'poster']:
             if row.get(key): self.refs.append(row[key])
 
@@ -74,6 +76,13 @@ def main():
         page.wait_for_function("document.querySelector('#frame-metrics').textContent.includes('I1')")
         assert page.locator('#scoring').get_by_text('例如', exact=False).count() == 0
         assert page.locator('#astra-score-files a[download]').count() == 6
+        assert page.locator('#task-context li').count() == 6
+        assert page.locator('#task-context h3').all_text_contents() == ['难点', '可解性']
+        assert page.evaluate("document.querySelector('#task-context').previousElementSibling.matches('details')")
+        assert page.locator('#task-context li').nth(5).inner_text().startswith('针对本题目标机位的重建，三个参考机位的覆盖是充分的')
+        assert page.locator('.leaderboard tbody tr').count() == 1
+        assert page.locator('.leaderboard tbody tr td').all_text_contents() == ['xhigh', 'Codex', '17.55', '12.64', '9.00', '39.19']
+        assert page.locator('#model-select').input_value() == 'astra62-xhigh'
         for button in page.locator('[data-frame]').all():
             button.click()
             frame = int(button.get_attribute('data-frame'))
@@ -99,7 +108,18 @@ def main():
                   new Promise((_, fail) => setTimeout(() => fail(new Error('media timeout: '+m.src)), 12000))
                 ]);
                 await m.play();
-                await new Promise(resolve => setTimeout(resolve, 180));
+                await new Promise((resolve, reject) => {
+                    if (m.currentTime > 0) return resolve();
+                    const timer = setTimeout(() => reject(new Error('Playback did not advance: '+m.src)), 4000);
+                    const advanced = () => {
+                        if (m.currentTime > 0) {
+                            clearTimeout(timer);
+                            m.removeEventListener('timeupdate', advanced);
+                            resolve();
+                        }
+                    };
+                    m.addEventListener('timeupdate', advanced);
+                });
                 const result = {file: new URL(m.src).pathname, duration:m.duration, advanced:m.currentTime > 0,
                   width:m.videoWidth || null, height:m.videoHeight || null};
                 m.pause(); m.currentTime = 0;
@@ -121,6 +141,50 @@ def main():
         page.goto(args.url.rsplit('phoenix-reconstruction/', 1)[0], wait_until='networkidle')
         assert page.locator('a.case-card[href="phoenix-reconstruction/"]').count() == 1
         assert '06 CASES' in page.inner_text('body')
+        # Exercise two independent model states in a browser-only fixture. Never publish it.
+        page.goto(args.url, wait_until='networkidle')
+        fixture = page.evaluate('''base => {
+            for (const original of [...document.querySelectorAll('[data-model-panel]')]) {
+                const clone = original.cloneNode(true);
+                clone.dataset.modelPanel = 'fixture-second';
+                clone.id = original.id === 'model-astra62-xhigh' ? 'model-fixture-second' : original.id + '-qa';
+                for (const element of clone.querySelectorAll('[id]')) element.id += '-qa';
+                const inspector = clone.querySelector('[data-frame-inspector]');
+                if (inspector) {
+                    inspector.dataset.modelId = 'fixture-second';
+                    inspector.dataset.label = 'Browser fixture';
+                    inspector.dataset.frameRoot = 'results/fixture-second/comparison/';
+                }
+                original.parentElement.append(clone);
+            }
+            const option = document.createElement('option');
+            option.value = 'fixture-second'; option.textContent = 'Browser fixture';
+            document.querySelector('#model-select').append(option);
+            const baseElement = document.createElement('base'); baseElement.href = base;
+            document.head.prepend(baseElement);
+            return '<!doctype html>' + document.documentElement.outerHTML;
+        }''', args.url)
+        fixture_url = args.url + 'model-switch-fixture.html'
+        page.route('**/model-switch-fixture.html', lambda route: route.fulfill(body=fixture, content_type='text/html'))
+        page.route('**/results/fixture-second/comparison/*', lambda route: route.fulfill(
+            path=str(site / 'results/astra62-xhigh/comparison' / Path(urlsplit(route.request.url).path).name)))
+        page.goto(fixture_url, wait_until='networkidle')
+        page.select_option('#model-select', 'fixture-second')
+        assert page.locator('[data-model-panel="fixture-second"]:visible').count() == 3
+        assert page.locator('[data-model-panel="astra62-xhigh"]:visible').count() == 0
+        second = page.locator('[data-model-panel="fixture-second"] [data-frame-inspector]')
+        second.locator('[data-frame="55"]').click()
+        assert '帧 55' in second.locator('[data-frame-title]').inner_text()
+        assert 'fixture-second/comparison/frame-55.webp' in second.locator('[data-frame-image]').get_attribute('src')
+        page.select_option('#model-select', 'astra62-xhigh')
+        first = page.locator('[data-model-panel="astra62-xhigh"] [data-frame-inspector]')
+        first.locator('[data-frame="22"]').click()
+        page.select_option('#model-select', 'fixture-second')
+        assert '帧 55' in second.locator('[data-frame-title]').inner_text()
+        page.evaluate("location.hash = 'model-astra62-xhigh'")
+        page.wait_for_function("document.querySelector('#model-select').value === 'astra62-xhigh'")
+        assert '帧 22' in first.locator('[data-frame-title]').inner_text()
+        report['multiple_model_selection'] = 'pass: independent panels, frame assets, frame state, hash navigation'
         assert not bad, bad
         assert not report['console_errors'], report['console_errors']
         browser.close()

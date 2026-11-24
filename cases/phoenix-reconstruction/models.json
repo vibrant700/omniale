@@ -1,0 +1,12 @@
+[
+  {
+    "id": "astra62-xhigh",
+    "label": "Astra 6.2",
+    "model": "gpt-6.2-astra",
+    "effort": "xhigh",
+    "framework": "Codex",
+    "date": "2026.11.24",
+    "run": "astra62-xhigh-codex-gpu01",
+    "delivery_archive": "astra62-xhigh-codex-phoenix-delivery.zip"
+  }
+]
