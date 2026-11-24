@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="从六方向参考图重建 SCV 机甲，并制作有声资产展示片：任务、评分、Astra 6.2 与 Codex 的实际结果及失败分析。">
+  <meta name="description" content="从六方向参考图重建 SCV 机甲，并制作有声资产展示片：任务、评分、Astra 6.2 与 Codex 的 GPU 从头实验、实际交付及评分。">
   <link rel="icon" href="data:,">
   <title>SCV 机甲资产重建与展示片制作 · OmniALE</title>
   <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@
     <header class="case-head">
       <h1>SCV 机甲资产重建与展示片制作</h1>
       <p class="lead">从六方向彩色参考图重建可编辑的机甲资产，再用指定配乐与转场音效，制作一条有声 3D 作品集展示片。</p>
-      <div class="meta-row"><span class="tag">六向参考图＋配乐与音效</span><span class="tag">3D 重建 · 材质 · 镜头 · 音画</span><span class="tag">Astra 6.2 · xhigh · Codex</span></div>
+      <div class="meta-row"><span class="tag">六向参考图＋配乐与音效</span><span class="tag">3D 重建 · 材质 · 镜头 · 音画</span><span class="tag">Astra 6.2 · xhigh · Codex</span><span class="tag">RTX 4090 D · CUDA</span></div>
     </header>
 
     <nav class="section-nav" aria-label="章节">
@@ -78,20 +78,20 @@
         <h3>难点</h3>
         <ul>
           <li><strong>模型够复杂，拼轮廓糊弄不过去</strong>：SCV 机甲有 10 万多个点，带镂空座舱、散热片、机械爪和背部管线，还有做旧掉漆和金属质感，光靠六视图抠轮廓、投影贴图根本还原不出来。</li>
-          <li><strong>动态出片一转就露馅</strong>：除了建静态模型，还要运镜拍成展示视频。为了省时间，模型用“少渲染几帧再补中间帧”的偷懒办法，结果镜头一动就出现飘红片、重影和画面闪变，直接扣光动态分。</li>
+          <li><strong>完整出片仍要还原关键细节</strong>：除了建模，还要通过运镜展示各个部件。整体轮廓接近并不等于还原了工具、装配、局部造型与表面标识，这些细节需要直接对照参考检查。</li>
           <li><strong>自己听懂纯音乐和音效来踩点</strong>：没有文字时间表，只给纯电音和三个音效，模型得自己听出铺垫和高潮，把扫屏、硬切、明暗切换跟音效严丝合缝对上，同时交出的 Blender 工程必须能二次修改和重导。</li>
         </ul>
         <h3>可解性</h3>
         <ul>
-          <li><strong>输入参考和目标交付全都在 Blender 同一个三维体系里</strong>：参考六视图本身就是由 Blender 场景直接渲染出来的，不是让 Blender 去硬模仿实拍真人视频，不存在工具本身的画质或物理上限。只要模型建准、材质做对、正常在 Blender 里渲染，理论上完全可以复原到高分甚至满分。</li>
+          <li><strong>参考与交付使用相同的三维工具体系</strong>：六视图由 Blender 场景渲染，输入还提供统一的相机、坐标和灯光配置，可在相同条件下直接比较重建结果。GPU 可用于加速渲染，建模、材质与镜头方案仍由智能体自行决定。</li>
         </ul>
       </div>
     </section>
 
     <section class="section" id="scoring" aria-labelledby="scoring-title">
-      <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2><a class="heading-link" href="assets/scoring-verification-v1.zip" download>下载评分复核包 ↓</a></div>
-      <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">结构 30 ＋ 外观 30 ＋ 动态 30 ＋ 音画 10</p><p>几何与图像由固定脚本计算；动态按原生成片逐处扣分；音乐与音效由 Gemini 4 Neon 听看判定。工程可用性作为交付门槛，不计分。</p></div>
-      <p class="note verification-note">复核包包含指标脚本、固定参数、音乐评审原提示词、音画规则、原始结果及媒体证据；音效另附建议复核模板，并明确来源。<a href="scoring-method.md" download>计算说明 ↓</a> · <a href="https://github.com/vibrant700/omniale/tree/main/cases/scv-showcase/verification">查看源码 ↗</a></p>
+      <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2><a class="heading-link" href="assets/scoring-verification-v2.zip" download>下载评分复核包 ↓</a></div>
+      <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">结构 30 ＋ 外观 30 ＋ 关键细节 30 ＋ 音画 10</p><p>几何与图像由固定脚本计算；关键细节、音乐与音效由 Gemini 4 Neon 对照参考及成片评定。工程可用性作为交付门槛，不计分。</p></div>
+      <p class="note verification-note">复核包包含本轮评分规则、固定指标脚本与参数、公开评审结果和汇总脚本。成片、重建六视图及参考图在本页直接查看。<a href="scoring-method.md" download>计算说明 ↓</a> · <a href="https://github.com/vibrant700/omniale/tree/main/cases/scv-showcase/verification-v2">查看源码 ↗</a></p>
 
       <div class="reference-resource" id="scoring-reference">
         <h3>比较对象与参考工程</h3>
@@ -142,13 +142,12 @@ LPIPS 分 ＝ 15 × [1 − clip(六机位平均 LPIPS, 0, 1)]</code></pre>
       </div>
 
       <div class="criterion">
-        <h3><span class="criterion-no">3.</span> 动态画面完整性 <span class="points">/ 30</span></h3>
-        <p>根据最终 <code>showcase.mp4</code> 及原生帧序列核对。无游离浮片、无部件重影、显隐变化连续各 10 分，每处独立错误扣 5 分，单项最低 0 分。</p>
-        <div class="formula"><p>动态分 ＝ Σ max(0, 10 − 5 × 该类独立错误处数)</p></div>
-        <details><summary>三项错误如何界定、合并与扣分</summary><div class="detail-body">
-          <dl class="compact-dl"><div><dt>浮片</dt><dd>非转场、非明确拆解动画中出现与主体断开的孤立装甲／纹理碎片，须有连续原生帧支持；细小编码噪点不算。</dd></div><div><dt>重影</dt><dd>同一可辨部件同时出现错位轮廓或半透明副本；合理反射、正常运动模糊、转场叠化不算。</dd></div><div><dt>显隐</dt><dd>连续镜头里，局部表面无正常遮挡、部件动作或转场原因反复出现、减弱、再增强；必须有时间序列，不能从单张重影图直接判定。</dd></div></dl>
-          <p><strong>计数单位：</strong>同镜头、同部位连续或反复出现的同类问题合并一处；不逐帧、逐次闪现扣分。不同镜头或不同空间部位可以分别记录。三类使用不同观察条件，不额外把“闪烁、透明度跳变、忽隐忽现”拆成多个扣分项。</p>
-          <p>每项无错误得 10 分，一处独立错误得 5 分，两处及以上得 0 分。各项相加得到动态画面完整性分，错误位置及帧序列在结果证据中列示。</p>
+        <h3><span class="criterion-no">3.</span> 关键细节还原 <span class="points">/ 30</span></h3>
+        <p>由 Gemini 4 Neon 自行对照参考图、最终成片与提交资产的统一六视图寻找明确错误。部件与装配、造型特征、材质与表面细节各 10 分。</p>
+        <div class="formula"><p>细节分 ＝ Σ max(0, 10 − 5 × 该项独立明确错误处数)</p></div>
+        <details><summary>三项检查范围与扣分规则</summary><div class="detail-body">
+          <dl class="compact-dl"><div><dt>部件与装配还原 · 10 分</dt><dd>检查关键部件是否存在、类型与数量是否正确，以及安装位置、层级和连接关系是否对应参考。</dd></div><div><dt>造型特征还原 · 10 分</dt><dd>检查部件的轮廓形状、弯折、开口、凹槽和边缘结构等造型特征是否对应参考。不测宽厚、长短比例；观看角度或遮挡造成的差异不能直接判为造型错误。</dd></div><div><dt>材质与表面细节还原 · 10 分</dt><dd>检查配色分区、金属或漆层观感、粗糙度与反射特征、掉漆和划痕分布、图案标识是否对应参考。灯光、曝光和观看角度造成的变化不能直接判为材质错误。</dd></div></dl>
+          <p>每发现一处独立明确错误扣 5 分，单项最低 0 分；证据不足不扣。每处须给出参考区域、成片时间或帧号及可见差异。同一问题跨镜头只计一次，不跨维度重复扣分；成对部件的同一错误合并计数。</p>
         </div></details>
       </div>
 
@@ -166,18 +165,22 @@ LPIPS 分 ＝ 15 × [1 − clip(六机位平均 LPIPS, 0, 1)]</code></pre>
 
     <section class="section" id="results" aria-labelledby="results-title">
       <div class="section-heading"><h2 id="results-title"><span class="sec-no">03</span>测试结果</h2></div>
-      <div class="mobile-score"><span>Astra 6.2 · xhigh · Codex</span><strong>37.70 <small>/ 100</small></strong></div>
+      <div class="mobile-score"><span>Astra 6.2 · xhigh · Codex</span><strong>39.14 <small>/ 100</small></strong></div>
       <div class="table-scroll" tabindex="0" role="region" aria-label="模型评分表，可横向滚动">
-        <table class="score-table"><caption class="sr-only">SCV 机甲资产重建与展示片制作评分</caption><thead><tr><th scope="col">模型 / 框架</th><th scope="col">结构 / 30</th><th scope="col">外观 / 30</th><th scope="col">动态 / 30</th><th scope="col">音乐 / 5</th><th scope="col">音效 / 5</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62"><th scope="row">Astra 6.2 <span class="model-detail">xhigh · Codex</span></th><td>18.66</td><td>9.04</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">37.70</strong></td></tr></tbody></table>
+        <table class="score-table"><caption class="sr-only">SCV 机甲资产重建与展示片制作评分</caption><thead><tr><th scope="col">模型 / 框架</th><th scope="col">结构 / 30</th><th scope="col">外观 / 30</th><th scope="col">关键细节 / 30</th><th scope="col">音乐 / 5</th><th scope="col">音效 / 5</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62"><th scope="row">Astra 6.2 <span class="model-detail">xhigh · Codex · RTX 4090 D</span></th><td>19.85</td><td>9.29</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">39.14</strong></td></tr></tbody></table>
       </div>
-      <p><strong>工程交付通过门槛检查。</strong>主要轮廓可辨，但细部与材质还原不足；成片中的三类动态问题各出现至少两处独立错误，动态部分为 0 分。</p>
+      <p><strong>总分 39.14 / 100。</strong>完成 648 帧 CUDA／Cycles 渲染与有声展示；结构 19.85 分、外观 9.29 分。关键部件、造型及表面细节存在明确还原错误，三项均为 0 分；音乐编排与音效对应各得 5 分。</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="关键细节分项得分"><table><thead><tr><th>关键细节维度</th><th>确认错误数</th><th>得分</th></tr></thead><tbody><tr><th>部件与装配还原</th><td>4 处</td><td>0 / 10</td></tr><tr><th>造型特征还原</th><td>3 处</td><td>0 / 10</td></tr><tr><th>材质与表面细节还原</th><td>3 处</td><td>0 / 10</td></tr></tbody></table></div>
+      <p class="note">结构与外观保留未舍入分数汇总，总分显示两位小数。资产独立打开、资源解析、统一六视图渲染与成片完整解码检查通过。</p>
+      <p class="inline-links"><a href="results.json">完整评分数据 ↗</a><a href="review/detail-restoration-review.json">关键细节评审 ↗</a><a href="review/music-review.json">音乐评审 ↗</a><a href="review/sfx-review.json">音效评审 ↗</a></p>
 
 
       <h3>实际交付成片</h3>
-      <figure class="showcase-media"><video id="showcase-video" controls playsinline preload="metadata" poster="assets/poster.jpg" width="1280" height="720" src="assets/showcase.mp4">浏览器不支持视频播放。<a href="assets/showcase.mp4">下载成片</a></video><figcaption>1280 × 720 · 24 fps · 438 帧 · 18.25 秒 · 有声</figcaption></figure>
+      <figure class="showcase-media"><video id="showcase-video" controls playsinline preload="metadata" poster="assets/poster.jpg" width="1600" height="900" src="assets/showcase.mp4">浏览器不支持视频播放。<a href="assets/showcase.mp4">下载成片</a></video><figcaption>1600 × 900 · 24 fps · 648 帧 · 27 秒 · 有声</figcaption></figure>
       <div class="links delivery-links"><a href="assets/asset.blend" download>下载机甲资产 .blend ↓</a><a href="assets/delivery.zip" download>下载完整交付 ZIP ↓</a><a href="assets/showcase.mp4" download>下载成片 MP4 ↓</a><a href="assets/delivery-README.md">交付说明 ↗</a></div>
       <h3>运行信息</h3>
-      <dl class="runtime-list"><div><dt>模型与框架</dt><dd>Astra 6.2 · xhigh · Codex</dd></div><div><dt>运行耗时</dt><dd>38 分 59.89 秒 <span class="note">（2339.89 秒，约 39 分钟）</span></dd></div><div><dt>工具调用</dt><dd>269 次</dd></div><div><dt>模型响应</dt><dd>101 次</dd></div></dl>
+      <dl class="runtime-list"><div><dt>模型与框架</dt><dd>Astra 6.2 · xhigh · Codex</dd></div><div><dt>运行耗时</dt><dd>42 分 31 秒 <span class="note">（2551.12 秒）</span></dd></div><div><dt>工具调用</dt><dd>152 次</dd></div><div><dt>模型响应</dt><dd>71 次</dd></div><div><dt>运行环境</dt><dd>Linux · 4 核 CPU · 8 GiB 主机内存预算 · RTX 4090 D（24 GB）</dd></div><div><dt>工具版本</dt><dd>官方 Codex CLI 0.142.4 · Blender 5.3.0 · Cycles CUDA</dd></div></dl>
+      <p class="note">从空工程与全新上下文独立完成，输入未包含旧工程、成片或评分反馈；未设置总时长或工具调用次数上限。</p>
     </section>
 
     <section class="section" id="execution" aria-labelledby="execution-title">
@@ -185,18 +188,19 @@ LPIPS 分 ＝ 15 × [1 − clip(六机位平均 LPIPS, 0, 1)]</code></pre>
       <ol class="steps">
         <li><span class="step-no" aria-hidden="true">1</span><div><h3>六向观察</h3><p>对照正、背、左右、顶、底六张参考，整理主体比例、座舱、双臂工具、腿足与背部的空间关系。</p></div></li>
         <li><span class="step-no" aria-hidden="true">2</span><div><h3>Blender 分件程序建模与材质</h3><p>以程序生成机体和部件，组织可编辑资产，并构建红色装甲、金属边框、深色机械结构及表面磨损材质。</p></div></li>
-        <li><span class="step-no" aria-hidden="true">3</span><div><h3>五镜头与灯光舞台</h3><p>以开场全景、座舱、工具、背部、收尾全景组织展示，在专门设计的灯光舞台上呈现整体与局部。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">3</span><div><h3>六组镜头与灯光舞台</h3><p>依次展示整机、工具、座舱、背部、腿足与整机总成，在摄影棚灯光下组织整体与部件特写。</p></div></li>
         <li><span class="step-no" aria-hidden="true">4</span><div><h3>配乐选段、分轨音效与图版</h3><p>选取指定配乐片段，编排 whoosh、hit、drop 音效，并将镜头、视觉转场与展示图版纳入成片结构。</p></div></li>
-        <li><span class="step-no" aria-hidden="true">5</span><div><h3>缓存重投影加速与 VSE 导出</h3><p>通过缓存与重投影生成展示画面，再在 Blender 视频序列编辑器中合成画面、配乐与音效，输出有声视频。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">5</span><div><h3>CUDA 完整渲染与 VSE 导出</h3><p>自主选择 Cycles CUDA 与 GPU 降噪，完整渲染 648 帧，再由 Blender 视频序列编辑器合成图版、转场和声音，输出 27 秒展示片。</p></div></li>
         <li><span class="step-no" aria-hidden="true">6</span><div><h3>交付工程</h3><p>提交独立资产、成片、展示制作工程与资源，以及修改镜头、音频和重新导出的说明。</p></div></li>
       </ol>
       <h3>成片镜头组织</h3>
-      <ol class="shot-timeline" aria-label="五个镜头的时间范围">
-        <li><button type="button" data-seek="0"><span class="shot-time">0–4.00 s</span><strong>开场全景</strong><span>整体形象</span></button></li>
-        <li><button type="button" data-seek="4"><span class="shot-time">4.00–7.00 s</span><strong>座舱</strong><span>主体细节</span></button></li>
-        <li><button type="button" data-seek="7"><span class="shot-time">7.00–10.00 s</span><strong>工具</strong><span>机械部件</span></button></li>
-        <li><button type="button" data-seek="10"><span class="shot-time">10.00–13.75 s</span><strong>背部</strong><span>背面结构</span></button></li>
-        <li><button type="button" data-seek="13.75"><span class="shot-time">13.75–18.25 s</span><strong>收尾全景</strong><span>回到整体</span></button></li>
+      <ol class="shot-timeline" aria-label="六组镜头的时间范围">
+        <li><button type="button" data-seek="0.000000"><span class="shot-time">0–4.00 s</span><strong>整机登记照</strong><span>开场全景</span></button></li>
+        <li><button type="button" data-seek="4.000000"><span class="shot-time">4.00–8.00 s</span><strong>三爪工具</strong><span>工具特写</span></button></li>
+        <li><button type="button" data-seek="8.000000"><span class="shot-time">8.00–12.00 s</span><strong>驾驶舱</strong><span>座舱特写</span></button></li>
+        <li><button type="button" data-seek="12.000000"><span class="shot-time">12.00–15.79 s</span><strong>背部动力舱</strong><span>背面结构</span></button></li>
+        <li><button type="button" data-seek="15.791667"><span class="shot-time">15.79–19.54 s</span><strong>腿足机构</strong><span>低机位细节</span></button></li>
+        <li><button type="button" data-seek="19.541667"><span class="shot-time">19.54–27.00 s</span><strong>整机与片尾</strong><span>总成与署名</span></button></li>
       </ol>
       <p class="note">点击时间段可定位到上方成片中的对应镜头。</p>
     </section>
@@ -217,13 +221,19 @@ LPIPS 分 ＝ 15 × [1 − clip(六机位平均 LPIPS, 0, 1)]</code></pre>
         <figure class="comparison-figure"><a id="comparison-zoom" class="image-zoom" href="assets/comparison/front.webp" data-zoom data-title="正面 · 参考与重建对照"><img id="comparison-image" src="assets/comparison/front.webp" alt="正面并排对照：左侧为输入参考图，右侧为重建图" width="1280" height="688" loading="lazy" decoding="async"></a><figcaption><span id="comparison-caption">正面 · 左：输入参考；右：统一机位与灯光下的重建。</span><span class="comparison-links"><a id="comparison-reference" href="assets/reference/front.png">参考原图 ↗</a><a id="comparison-reconstruction" href="assets/reconstruction/front.png">重建原图 ↗</a></span></figcaption></figure>
       </div>
       <p class="inline-links"><a href="assets/comparison/six-views.webp" data-zoom data-title="全部六机位 · 参考与重建对照">查看六机位总览 ↗</a></p>
-      <ul class="findings-list"><li><strong>座舱：</strong>内部机械层次与装甲开口的形态被简化，细小支架和连接件未充分还原。</li><li><strong>腿足：</strong>轮廓大体对应，但足部、关节与装甲之间的层次和局部比例存在差异。</li><li><strong>管线与表面：</strong>管线路径、连接关系以及磨损纹理与参考不一致，拉低外观相似度。</li></ul>
+      <ul class="findings-list"><li><strong>部件：</strong>肩侧工具挂载、驾驶舱操纵装置与背部圆口内部结构出现缺失或错替。</li><li><strong>造型：</strong>工具、腰间垂片和背部中央舱体的辨识特征与参考不一致。</li><li><strong>表面：</strong>徽标、文字编号与座舱顶罩纹理未忠实还原。</li></ul>
 
-      <h3>动态：浮片、重影与显隐的三类可观察缺陷</h3>
-      <p>缓存重投影成片中，可见脱离主体的碎片、同一部件的重复轮廓，以及相邻帧之间的可见性跳变。以下列出可在成片中直接核查的代表片段。</p>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="动态错误证据表，可横向滚动"><table class="defect-table"><thead><tr><th scope="col">维度</th><th scope="col">代表时间</th><th scope="col">可见现象</th><th scope="col">得分</th></tr></thead><tbody><tr><th scope="row">浮片</th><td><button class="time-link" type="button" data-seek="12.166667">12.167 s</button> / <button class="time-link" type="button" data-seek="13.083333">13.083 s</button></td><td>背部与装甲附近有脱离主体的碎片或贴片。</td><td>0 / 10</td></tr><tr><th scope="row">重影</th><td><button class="time-link" type="button" data-seek="6.25">6.250 s</button> / <button class="time-link" type="button" data-seek="13.083333">13.083 s</button></td><td>座舱镜头的肩甲、背部镜头的肩周出现错位副本。</td><td>0 / 10</td></tr><tr><th scope="row">显隐</th><td><button class="time-link" type="button" data-seek="13.125">13.125 s</button> → <button class="time-link" type="button" data-seek="13.166667">13.167 s</button> → <button class="time-link" type="button" data-seek="13.291667">13.292 s</button></td><td>连续画面中的部件轮廓、表面覆盖发生突变。</td><td>0 / 10</td></tr></tbody></table></div>
-      <figure class="evidence-figure"><a class="image-zoom" href="assets/evidence/dynamic-defect-evidence.jpg" data-zoom data-title="动态缺陷 · 成片定点证据"><img src="assets/evidence/dynamic-defect-evidence.jpg" alt="成片动态缺陷证据：上排为浮片，中排为重复轮廓，下排为连续帧显隐变化；各图标注对应时间和帧号" width="1500" height="1110" loading="lazy" decoding="async"></a><figcaption>成片定点证据。点击可放大；帧号从 0 开始，时间按 24 fps 换算。</figcaption></figure>
-      <p class="note">每个维度各有至少两处独立错误，均扣至 0 分。上表展示代表片段；同镜头、同部位的连续或反复问题按一次合并计算。</p>
+      <h3>关键细节：部件、造型与表面还原不足</h3>
+      <p>Gemini 4 Neon 对照参考、成片与统一六视图，确认部件与装配 4 处、造型特征 3 处、材质与表面细节 3 处独立错误。每处扣 5 分，三项均扣至 0 分。</p>
+      <details class="detail-evidence"><summary>部件与装配还原 · 4 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="部件与装配还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="20.0">20.00 s</button><span class="note"> · 帧 480</span></td><td>肩侧工具挂载被统一短杆架替代，原参考的非对称工具组未还原。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>驾驶舱中央操纵杆柱缺失，被扁平仪表箱替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="14.0">14.00 s</button><span class="note"> · 帧 336</span></td><td>背部双圆口内部被改写为外露径向叶轮。</td></tr><tr><td><button class="time-link" type="button" data-seek="18.0">18.00 s</button><span class="note"> · 帧 432</span></td><td>腿后缸体下方的喇叭形喷嘴缺失或错替。</td></tr></tbody></table></div></div></details>
+      <details class="detail-evidence"><summary>造型特征还原 · 3 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="造型特征还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="6.0">6.00 s</button><span class="note"> · 帧 144</span></td><td>三爪钳瓣的弧弯轮廓、根部凹口与中心轴头形状被改写。</td></tr><tr><td><button class="time-link" type="button" data-seek="2.5">2.50 s</button><span class="note"> · 帧 60</span></td><td>腰间垂片的撕裂边缘和开口被整齐三角形轮廓替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="14.0">14.00 s</button><span class="note"> · 帧 336</span></td><td>背部中央舱体的圆弧护罩与切面球罩被棱角盒体替代。</td></tr></tbody></table></div></div></details>
+      <details class="detail-evidence"><summary>材质与表面细节还原 · 3 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="材质与表面细节还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="2.5">2.50 s</button><span class="note"> · 帧 60</span></td><td>腰间红圈内的徽标图案被改写。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>机身原有文字标识遗漏，并新增自编编号。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>座舱橙色顶罩缺少参考中的六边形蜂窝网格纹理。</td></tr></tbody></table></div></div></details>
+      <figure class="evidence-figure"><a class="image-zoom" href="assets/evidence/detail-restoration.jpg" data-zoom data-title="关键细节 · 参考与重建对照"><img src="assets/evidence/detail-restoration.jpg" alt="同一正面机位下，肩侧挂载、工具造型和腰间徽标的参考与重建局部对照" width="1400" height="1200" loading="lazy" decoding="async"></a><figcaption>局部对照均来自同一固定机位的原图裁剪。左：输入参考；右：提交资产统一机位渲染。点击可放大。</figcaption></figure>
+      <p class="inline-links"><a href="review/detail-restoration-review.json">查看各处参考区域、成片定位与归属说明 ↗</a></p>
+
+      <h3>音画：音乐编排与音效对应均得满分</h3>
+      <p>Gemini 4 Neon 依据完整成片、原始混音、原配乐及三个原音效评定：音乐编排五项均满足，得 5 / 5；音效语义、感知同步与混音层次五项均满足，得 5 / 5。</p>
+      <dl class="compact-dl"><div><dt>音乐编排 · 5 / 5</dt><dd>乐句与段落组织、能量呼应、展示节奏、选段衔接、首尾完整五项通过。</dd></div><div><dt>音效对应 · 5 / 5</dt><dd>确认 2 处 whoosh、3 处 hit、1 处 drop；主要音效与转场、视觉落点及整机揭示相符，三类音效均可辨。</dd></div></dl>
     </section>
 
     <footer class="case-footer">

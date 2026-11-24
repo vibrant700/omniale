@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从六方向参考图重建 SCV 机甲，并制作有声资产展示片：任务、评分、Astra 6.2 与 Codex 的 GPU 从头实验、实际交付及评分。">
+  <link rel="icon" href="data:,">
+  <title>SCV 机甲资产重建与展示片制作 · OmniALE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至正文</a>
+  <main id="main" class="case-main">
+    <nav class="site-return" aria-label="返回导航"><a href="../index.html">← 返回案例汇总</a></nav>
+    <header class="case-head">
+      <h1>SCV 机甲资产重建与展示片制作</h1>
+      <p class="lead">从六方向彩色参考图重建可编辑的机甲资产，再用指定配乐与转场音效，制作一条有声 3D 作品集展示片。</p>
+      <div class="meta-row"><span class="tag">六向参考图＋配乐与音效</span><span class="tag">3D 重建 · 材质 · 镜头 · 音画</span><span class="tag">Astra 6.2 · xhigh · Codex</span><span class="tag">RTX 4090 D · CUDA</span></div>
+    </header>
+
+    <nav class="section-nav" aria-label="章节">
+      <a href="#task">一、任务定义</a><a href="#scoring">二、评分标准</a><a href="#results">三、测试结果</a><a href="#execution">四、执行过程</a><a href="#analysis">五、失败分析</a>
+    </nav>
+
+    <section class="section" id="task" aria-labelledby="task-title">
+      <div class="section-heading"><h2 id="task-title"><span class="sec-no">01</span>任务定义</h2><a class="heading-link" href="assets/agent-input.zip" download>下载全部输入 ↓</a></div>
+      <div class="reference-grid" aria-label="六方向输入参考图">
+        <figure><a class="image-zoom" href="assets/reference/front.png" data-zoom data-title="正面 · 输入参考图"><img src="assets/reference/front-thumb.webp" alt="SCV 机甲正面彩色参考图" width="640" height="640" decoding="async"></a><figcaption><span>正面</span><a href="assets/reference/front.png" download>PNG ↓</a></figcaption></figure>
+        <figure><a class="image-zoom" href="assets/reference/back.png" data-zoom data-title="背面 · 输入参考图"><img src="assets/reference/back-thumb.webp" alt="SCV 机甲背面彩色参考图" width="640" height="640" decoding="async"></a><figcaption><span>背面</span><a href="assets/reference/back.png" download>PNG ↓</a></figcaption></figure>
+        <figure><a class="image-zoom" href="assets/reference/left.png" data-zoom data-title="机甲左侧 · 输入参考图"><img src="assets/reference/left-thumb.webp" alt="SCV 机甲左侧彩色参考图" width="640" height="640" decoding="async"></a><figcaption><span>机甲左侧</span><a href="assets/reference/left.png" download>PNG ↓</a></figcaption></figure>
+        <figure><a class="image-zoom" href="assets/reference/right.png" data-zoom data-title="机甲右侧 · 输入参考图"><img src="assets/reference/right-thumb.webp" alt="SCV 机甲右侧彩色参考图" width="640" height="640" loading="lazy" decoding="async"></a><figcaption><span>机甲右侧</span><a href="assets/reference/right.png" download>PNG ↓</a></figcaption></figure>
+        <figure><a class="image-zoom" href="assets/reference/top.png" data-zoom data-title="顶面 · 输入参考图"><img src="assets/reference/top-thumb.webp" alt="SCV 机甲顶面彩色参考图" width="640" height="640" loading="lazy" decoding="async"></a><figcaption><span>顶面</span><a href="assets/reference/top.png" download>PNG ↓</a></figcaption></figure>
+        <figure><a class="image-zoom" href="assets/reference/bottom.png" data-zoom data-title="底面 · 输入参考图"><img src="assets/reference/bottom-thumb.webp" alt="SCV 机甲底面彩色参考图" width="640" height="640" loading="lazy" decoding="async"></a><figcaption><span>底面</span><a href="assets/reference/bottom.png" download>PNG ↓</a></figcaption></figure>
+      </div>
+      <p class="note media-note">六张彩色正交参考图。点击图片可放大；方向遵循附件中的机甲坐标约定。</p>
+
+      <dl class="task-files">
+        <div><dt>题目背景</dt><dd>为一款 SCV 机甲资产制作作品集展示。参考素材具有复杂的座舱、双臂工具、腿足、背部与管线结构，需要从多视角图像中恢复成可复用的三维资产。</dd></div>
+        <div><dt>需要做的事</dt><dd>使用 Blender 从零建模，完成材质与贴图；保持造型、比例、结构、配色及材质特征，并自行设计镜头、展示动画和声音，让整体形象与关键部件都能被清楚看见。</dd></div>
+        <div><dt>提供的文件</dt><dd>六向参考图、<a href="assets/cameras.json">相机参数与坐标约定</a>、<a href="assets/scene_setup.json">灯光及渲染配置</a>，以及下方指定配乐和三种转场音效。展示片的镜头与灯光可自行设计。</dd></div>
+        <div><dt>要求交付</dt><dd><code>asset.blend</code>、横屏有声 <code>showcase.mp4</code>、可修改镜头与音频并重新输出的制作工程及资源，以及说明版本、使用方式、导出方式和署名的 <code>README.md</code>。</dd></div>
+      </dl>
+
+      <h3>指定配乐与转场音效</h3>
+      <div class="audio-grid">
+        <figure><figcaption><strong>industrial_pulse</strong><span>配乐 · 可按展示需要选段</span></figcaption><audio controls preload="metadata" aria-label="试听配乐 industrial_pulse" src="assets/audio/industrial_pulse.mp3">浏览器不支持音频播放。<a href="assets/audio/industrial_pulse.mp3">下载配乐</a></audio></figure>
+        <figure><figcaption><strong>whoosh</strong><span>转场音效</span></figcaption><audio controls preload="metadata" aria-label="试听转场音效 whoosh" src="assets/audio/whoosh.mp3">浏览器不支持音频播放。<a href="assets/audio/whoosh.mp3">下载 whoosh</a></audio></figure>
+        <figure><figcaption><strong>hit</strong><span>转场音效</span></figcaption><audio controls preload="metadata" aria-label="试听转场音效 hit" src="assets/audio/hit.mp3">浏览器不支持音频播放。<a href="assets/audio/hit.mp3">下载 hit</a></audio></figure>
+        <figure><figcaption><strong>drop</strong><span>转场音效</span></figcaption><audio controls preload="metadata" aria-label="试听转场音效 drop" src="assets/audio/drop.mp3">浏览器不支持音频播放。<a href="assets/audio/drop.mp3">下载 drop</a></audio></figure>
+      </div>
+      <p class="note">播放器使用适合网页试听的 MP3；输入包保留题目指定的 WAV 原文件。</p>
+
+      <details class="task-brief"><summary>任务委托原文</summary><div class="detail-body"><p class="inline-links"><a href="assets/TASK.md" download>下载 TASK.md ↓</a></p><pre tabindex="0" aria-label="任务委托原文"><code># SCV 机甲资产重建与展示片制作
+
+我们准备为一款机甲资产制作作品集展示。请根据附件六方向参考图，使用 Blender 从零重建 SCV 机甲，完成材质与贴图，再使用指定配乐和转场音效制作一条有声 3D 资产展示视频。
+
+重建资产应保持参考中的造型、比例、结构、配色及材质特征。展示片需要让观众看清机甲的整体形象和关键部件细节，并通过镜头组织、展示动画及声音形成完整的观看体验。镜头和视觉风格由你设计。
+
+使用 `audio/industrial_pulse.wav` 作为配乐，并结合提供的 `whoosh.wav`、`hit.wav`、`drop.wav` 安排视觉转场与声音，让剪辑及画面变化配合音乐节奏和音效。可以按展示需要选取配乐片段，自行安排成片时长。
+
+提供的材料：
+
+- `reference/`：正面、背面、机甲左侧、机甲右侧、顶面和底面六张彩色参考图。
+- `cameras.json`：参考图的相机参数与坐标约定。
+- `scene_setup.json`：参考图使用的灯光及渲染配置；展示片的镜头和灯光可自行设计。
+- `audio/`：指定配乐、三种转场音效和来源说明。
+- `ASSET-SOURCE.md`：角色参考素材的来源与署名信息。
+
+请按附件坐标约定组织重建资产，将以下内容交付至 `submission/`：
+
+- `asset.blend`：可单独复用、编辑的机甲资产，包含材质和所需资源。
+- `showcase.mp4`：适合在作品集网页播放的横屏有声展示片。
+- 展示制作工程及所需资源，使客户能够修改镜头和音频后重新输出；如使用制作或导出脚本，请一并提供。
+- `README.md`：说明 Blender 版本、各交付物的用途、工程打开方式、成片重新输出方式及素材署名。
+</code></pre></div></details>
+      <div class="task-context">
+        <h3>难点</h3>
+        <ul>
+          <li><strong>模型够复杂，拼轮廓糊弄不过去</strong>：SCV 机甲有 10 万多个点，带镂空座舱、散热片、机械爪和背部管线，还有做旧掉漆和金属质感，光靠六视图抠轮廓、投影贴图根本还原不出来。</li>
+          <li><strong>完整出片仍要还原关键细节</strong>：除了建模，还要通过运镜展示各个部件。整体轮廓接近并不等于还原了工具、装配、局部造型与表面标识，这些细节需要直接对照参考检查。</li>
+          <li><strong>自己听懂纯音乐和音效来踩点</strong>：没有文字时间表，只给纯电音和三个音效，模型得自己听出铺垫和高潮，把扫屏、硬切、明暗切换跟音效严丝合缝对上，同时交出的 Blender 工程必须能二次修改和重导。</li>
+        </ul>
+        <h3>可解性</h3>
+        <ul>
+          <li><strong>参考与交付使用相同的三维工具体系</strong>：六视图由 Blender 场景渲染，输入还提供统一的相机、坐标和灯光配置，可在相同条件下直接比较重建结果。GPU 可用于加速渲染，建模、材质与镜头方案仍由智能体自行决定。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="scoring" aria-labelledby="scoring-title">
+      <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2><a class="heading-link" href="assets/scoring-verification-v2.zip" download>下载评分复核包 ↓</a></div>
+      <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">结构 30 ＋ 外观 30 ＋ 关键细节 30 ＋ 音画 10</p><p>几何与图像由固定脚本计算；关键细节、音乐与音效由 Gemini 4 Neon 对照参考及成片评定。工程可用性作为交付门槛，不计分。</p></div>
+      <p class="note verification-note">复核包包含本轮评分规则、固定指标脚本与参数、公开评审结果和汇总脚本。成片、重建六视图及参考图在本页直接查看。<a href="scoring-method.md" download>计算说明 ↓</a> · <a href="https://github.com/vibrant700/omniale/tree/main/cases/scv-showcase/verification-v2">查看源码 ↗</a></p>
+
+      <div class="reference-resource" id="scoring-reference">
+        <h3>比较对象与参考工程</h3>
+        <p><code>reference-asset.blend</code> 是原始 GLB 导入 Blender、统一坐标与尺寸后的参考工程；<code>asset.blend</code> 是 agent 交付的重建资产。评分从两份工程提取几何，并在相同条件下渲染，比较的是表面与图像。</p>
+        <div class="reference-actions"><a class="download-button" href="https://github.com/vibrant700/omniale/releases/download/scv-showcase-reference-v1/reference-asset.blend" download>下载参考工程 reference-asset.blend ↓ <span>297.2 MB · Blender 5.3</span></a><a href="assets/asset.blend" download>下载重建资产 asset.blend ↓</a><a href="assets/reference-model.json">参考文件信息 ↗</a></div>
+        <p class="note">参考工程仅供评分复核，未提供给被测 agent，也不在题面输入 ZIP 中。六张题面参考图由该工程生成。</p>
+        <details><summary>参考来源、坐标与文件校验</summary><div class="detail-body"><ol class="method-steps"><li>原始 SCV 模型（GLB）导入 Blender，保留独立几何、UV 与材质，生成规范化参考工程。</li><li>包围盒中心移到原点，统一缩放使最长边为 2；规范化尺寸为 2.000 × 1.845 × 1.652 个场景单位，非米或厘米。+Z 向上，机甲朝 −Y，自身左侧为 +X。</li><li>添加六方向正交相机和统一灯光，贴图打包进工程。参考与提交均按世界坐标提取求值三角网格，不要求物体名、拓扑或顶点编号相同，不对提交做 ICP、旋转配准或缩放拟合。</li></ol><p class="checksum"><strong>SHA-256</strong><code>1b6b49ca858d39f8df675f1c16fc6096600685fe0cf9625291c43db00e7d53b4</code></p><p class="note">参考来源：JohnMesplay / SCV，CC BY 4.0；修改包括坐标规范化、相机、灯光与六向渲染。大文件由同一 GitHub 仓库的 Release 提供。</p></div></details>
+      </div>
+
+      <div class="criterion">
+        <h3><span class="criterion-no">1.</span> 结构还原 <span class="points">/ 30</span></h3>
+        <p>三维 F1 检查表面在空间中的位置，二维 IoU 检查六个机位的剪影重合。两者各占 15 分。</p>
+        <div class="formula"><p>结构分 ＝ 15 × 可见表面 F1@0.5% ＋ 15 × 六视图平均 IoU</p></div>
+        <details><summary>F1：比较对象、采样、距离容差与公式 · 15 分</summary><div class="detail-body">
+          <ol class="method-steps"><li><strong>提取表面。</strong>从参考与提交工程提取 Blender 求值后的可渲染三角网格，应用物体／实例世界变换后合并。曲线生成的实际网格表面也参与比较。</li><li><strong>面积均匀采样。</strong>每侧合并网格总共采样 50,000 点，随机种子为 20261122。先按三角形面积选择三角面，再在面内均匀取点。</li><li><strong>筛选可见点。</strong>沿六个输入正交机位方向做射线检查；至少在一个方向上属于首次相交表面的点才保留。</li><li><strong>算双向距离。</strong>每个保留点求到对方完整三角表面的最短距离，使用 BVH 邻近候选及 float64 点到三角形计算，不采用最近顶点或点编号配对。</li><li><strong>判断命中。</strong>计算参考模型包围盒对角线 D，以 τ＝0.005D 作为统一距离阈值；距离 ≤ τ 为命中。</li></ol>
+          <pre class="math-block"><code>P ＝ 提交可见点中距离参考表面 ≤ τ 的点数 ÷ 提交可见点数
+R ＝ 参考可见点中距离提交表面 ≤ τ 的点数 ÷ 参考可见点数
+F1 ＝ 2 × P × R ÷ (P ＋ R)；P ＋ R 为 0 时 F1 取 0
+三维表面分 ＝ 15 × F1</code></pre>
+          <p>P 衡量提交可见表面中有多少接近参考，R 衡量参考可见表面有多少被提交覆盖；调和平均要求两者同时较高，不依赖顶点编号或拓扑一致。</p>
+        </div></details>
+        <details><summary>IoU：六个机位如何计算轮廓重合 · 15 分</summary><div class="detail-body">
+          <p>使用题面六张 1280 × 1280 的参考 PNG，与提交工程按同相机渲染的六张 PNG。每张图以 <code>alpha ≥ 0.5</code> 得到前景剪影 A、B。</p>
+          <pre class="math-block"><code>单机位 IoU ＝ |A ∩ B| ÷ |A ∪ B|
+平均 IoU ＝ 六个机位 IoU 之和 ÷ 6
+轮廓分 ＝ 15 × 平均 IoU</code></pre>
+          <p>每个机位等权，不按各视图前景面积再次加权。六视图平均轮廓分与三维表面分相加，得到结构还原分。</p>
+        </div></details>
+      </div>
+
+      <div class="criterion">
+        <h3><span class="criterion-no">2.</span> 外观忠实度 <span class="points">/ 30</span></h3>
+        <p>在固定六机位上比较带材质图像，SSIM 与 LPIPS 各占 15 分；展示片自行设计的灯光和镜头不进入这部分计算。</p>
+        <div class="formula"><p>外观分 ＝ 15 × [ clip(平均 SSIM, 0, 1) ＋ 1 − clip(平均 LPIPS, 0, 1) ]</p></div>
+        <details><summary>统一渲染条件与前景比较区域</summary><div class="detail-body">
+          <ol class="method-steps"><li>提交资产采用 <a href="assets/cameras.json">同一组六机位</a>和 <a href="assets/scene_setup.json">灯光／渲染配置</a>，Blender 5.3、Cycles 16 samples、AgX、1280 × 1280 RGBA；不缩放原参考图，不做图像配准。</li><li>每张参考与提交 RGB 归一到 [0, 1]，按各自原 alpha 合成到中性 0.5 灰背景：<code>C＝RGB × alpha＋0.5 × (1−alpha)</code>。</li><li>比较区域 U 为双方 <code>alpha ≥ 0.5</code> 前景的并集。先在完整合成图上生成空间指标图，再仅对 U 内的位置平均，使多余和缺失部位都进入比较。</li></ol>
+        </div></details>
+        <details><summary>SSIM 与 LPIPS 的空间图、平均方式与得分 · 各 15 分</summary><div class="detail-body">
+          <h4>SSIM：局部结构、亮度与对比度</h4><p>Gaussian 加权窗口 11 × 11，σ＝1.5，数据范围 L＝1，使用总体协方差。每位置三个 RGB 通道先求平均，再取前景并集 U 内的空间均值，得到该机位 SSIM，最后对六机位等权平均。</p>
+          <pre class="math-block"><code>SSIM(x,y) ＝ [(2μxμy＋C1)(2σxy＋C2)] ÷ [(μx²＋μy²＋C1)(σx²＋σy²＋C2)]
+C1＝(0.01L)²，C2＝(0.03L)²；本项 L＝1
+SSIM 分 ＝ 15 × clip(六机位平均 SSIM, 0, 1)</code></pre>
+          <h4>LPIPS：感知特征距离</h4><p>使用 AlexNet、LPIPS v0.1、<code>spatial=True</code>，输入按模型要求归一化；取得原图分辨率上的空间距离图，先平均 U 内位置，再对六机位等权平均。这是前景掩膜平均的空间 LPIPS 变体；距离越低越接近参考。</p>
+          <pre class="math-block"><code>LPIPSᵥ ＝ 机位 v 的 LPIPS 空间图在 U 内的均值
+LPIPS 分 ＝ 15 × [1 − clip(六机位平均 LPIPS, 0, 1)]</code></pre>
+          <p>先分别对 SSIM、LPIPS 取六视图均值，再将两个均值截断到 [0, 1] 代入计分。白模渲染只辅助观察几何；本项使用带材质的彩色图像。</p>
+        </div></details>
+      </div>
+
+      <div class="criterion">
+        <h3><span class="criterion-no">3.</span> 关键细节还原 <span class="points">/ 30</span></h3>
+        <p>由 Gemini 4 Neon 自行对照参考图、最终成片与提交资产的统一六视图寻找明确错误。部件与装配、造型特征、材质与表面细节各 10 分。</p>
+        <div class="formula"><p>细节分 ＝ Σ max(0, 10 − 5 × 该项独立明确错误处数)</p></div>
+        <details><summary>三项检查范围与扣分规则</summary><div class="detail-body">
+          <dl class="compact-dl"><div><dt>部件与装配还原 · 10 分</dt><dd>检查关键部件是否存在、类型与数量是否正确，以及安装位置、层级和连接关系是否对应参考。</dd></div><div><dt>造型特征还原 · 10 分</dt><dd>检查部件的轮廓形状、弯折、开口、凹槽和边缘结构等造型特征是否对应参考。不测宽厚、长短比例；观看角度或遮挡造成的差异不能直接判为造型错误。</dd></div><div><dt>材质与表面细节还原 · 10 分</dt><dd>检查配色分区、金属或漆层观感、粗糙度与反射特征、掉漆和划痕分布、图案标识是否对应参考。灯光、曝光和观看角度造成的变化不能直接判为材质错误。</dd></div></dl>
+          <p>每发现一处独立明确错误扣 5 分，单项最低 0 分；证据不足不扣。每处须给出参考区域、成片时间或帧号及可见差异。同一问题跨镜头只计一次，不跨维度重复扣分；成对部件的同一错误合并计数。</p>
+        </div></details>
+      </div>
+
+      <div class="criterion">
+        <h3><span class="criterion-no">4.</span> 音画匹配 <span class="points">/ 10</span></h3>
+        <p>音乐编排评完整展示与配乐的组织关系，音效对应评具体声音与具体视觉事件。两项各 5 个检查，每项满足得 1 分、不满足得 0 分，分别相加；评委为 Gemini 4 Neon。</p>
+        <details><summary>音乐编排：五个检查条件 · 5 分</summary><div class="detail-body"><ol class="scoring-checks"><li><strong>乐句／段落组织：</strong>展示段落与实际 BGM 的乐句或段落组织有明确关联。</li><li><strong>能量呼应：</strong>BGM 的强弱、密度和配器变化与运镜、灯光、景别或展示重心相协调。</li><li><strong>节奏发展：</strong>展示随音乐发展推进；可通过连续运镜、内容揭示和灯光实现，不要求每拍切镜。</li><li><strong>选段衔接：</strong>音乐选段、延续或拼接连贯，没有突兀跳拍或节奏断裂；不要求必须拼接。</li><li><strong>首尾完整：</strong>音乐的进入、结束与画面的开端和收束合理配合。</li></ol><p>评委在独立完整上下文中听看成片及同源最终混音，对照原始 BGM；逐项记录时间、听到的 BGM 特征、对应画面及理由，不把外贴音效瞬态代替 BGM 的乐句或能量变化。五项得分相加，音乐编排最高 5 分。</p></div></details>
+        <details><summary>音效对应：脚本定位、定点听看与五项计分 · 5 分</summary><div class="detail-body"><ol class="method-steps"><li><strong>定位候选：</strong>先对齐最终混音与原始 BGM，拟合局部增益，在原始混音及 BGM 残差上匹配 whoosh、hit、drop，输出候选类型、有效区间、锚点及置信度。残差只用于定位。</li><li><strong>带上下文核查：</strong>将候选区间及前后约 1 秒合成原声核查窗口，保留源时间映射；评委对照原始音效，先确认实际可闻的声音，再判断视觉事件、语义和感知同步。相邻窗口可合并，完整成片另作查漏。</li><li><strong>复核时差：</strong>已确认音效的有效锚点与对应原生帧视觉锚点相减，记录 Δt＝音频锚点−视觉锚点，正值表示声音较晚。whoosh 同时考察运动区间；不以文件起点或最近切镜自动判分。</li></ol>
+          <div class="table-scroll"><table><thead><tr><th>检查项</th><th>满足得 1 分的条件</th></tr></thead><tbody><tr><th>S1 · whoosh</th><td>已确认的扫风声与实际运动／转场语义相符。</td></tr><tr><th>S2 · hit</th><td>已确认的撞击声对应显现、停顿、切换等明确视觉落点。</td></tr><tr><th>S3 · drop</th><td>已确认的低频重落对应视觉重心或能量转折。</td></tr><tr><th>S4 · 对齐</th><td>主要音效的听觉有效点／区间与对应视觉事件在感知上同步，并记录时间证据。</td></tr><tr><th>S5 · 可辨与层次</th><td>三类音效在最终混音中均可辨认、层次适当，不被音乐掩盖或破坏观看。</td></tr></tbody></table></div>
+          <p>候选不是确认使用次数，未检出不自动判缺失；必须回到原始最终混音。脚本的单声道峰值或无越界样本只作电平检查，不代替混音可闻度判断。五项得分相加，音效对应最高 5 分。</p>
+        </div></details>
+      </div>
+      <details class="engineering-method"><summary>工程可用性门槛如何检查 · 不计分</summary><div class="detail-body"><p>检查 <code>asset.blend</code> 能独立打开且含真实可编辑几何；搬移交付目录后，所用贴图、库与音频资源仍可解析；规范机位能渲染；成片画面和音轨完整解码；修改相机及音频后，实际重新输出片段。通过门槛不增加质量分。</p></div></details>
+    </section>
+
+    <section class="section" id="results" aria-labelledby="results-title">
+      <div class="section-heading"><h2 id="results-title"><span class="sec-no">03</span>测试结果</h2></div>
+      <div class="mobile-score"><span>Astra 6.2 · xhigh · Codex</span><strong>39.14 <small>/ 100</small></strong></div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="模型评分表，可横向滚动">
+        <table class="score-table"><caption class="sr-only">SCV 机甲资产重建与展示片制作评分</caption><thead><tr><th scope="col">模型 / 框架</th><th scope="col">结构 / 30</th><th scope="col">外观 / 30</th><th scope="col">关键细节 / 30</th><th scope="col">音乐 / 5</th><th scope="col">音效 / 5</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62"><th scope="row">Astra 6.2 <span class="model-detail">xhigh · Codex · RTX 4090 D</span></th><td>19.85</td><td>9.29</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">39.14</strong></td></tr></tbody></table>
+      </div>
+      <p><strong>总分 39.14 / 100。</strong>完成 648 帧 CUDA／Cycles 渲染与有声展示；结构 19.85 分、外观 9.29 分。关键部件、造型及表面细节存在明确还原错误，三项均为 0 分；音乐编排与音效对应各得 5 分。</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="关键细节分项得分"><table><thead><tr><th>关键细节维度</th><th>确认错误数</th><th>得分</th></tr></thead><tbody><tr><th>部件与装配还原</th><td>4 处</td><td>0 / 10</td></tr><tr><th>造型特征还原</th><td>3 处</td><td>0 / 10</td></tr><tr><th>材质与表面细节还原</th><td>3 处</td><td>0 / 10</td></tr></tbody></table></div>
+      <p class="note">结构与外观保留未舍入分数汇总，总分显示两位小数。资产独立打开、资源解析、统一六视图渲染与成片完整解码检查通过。</p>
+      <p class="inline-links"><a href="results.json">完整评分数据 ↗</a><a href="review/detail-restoration-review.json">关键细节评审 ↗</a><a href="review/music-review.json">音乐评审 ↗</a><a href="review/sfx-review.json">音效评审 ↗</a></p>
+
+
+      <h3>实际交付成片</h3>
+      <figure class="showcase-media"><video id="showcase-video" controls playsinline preload="metadata" poster="assets/poster.jpg" width="1600" height="900" src="assets/showcase.mp4">浏览器不支持视频播放。<a href="assets/showcase.mp4">下载成片</a></video><figcaption>1600 × 900 · 24 fps · 648 帧 · 27 秒 · 有声</figcaption></figure>
+      <div class="links delivery-links"><a href="assets/asset.blend" download>下载机甲资产 .blend ↓</a><a href="assets/delivery.zip" download>下载完整交付 ZIP ↓</a><a href="assets/showcase.mp4" download>下载成片 MP4 ↓</a><a href="assets/delivery-README.md">交付说明 ↗</a></div>
+      <h3>运行信息</h3>
+      <dl class="runtime-list"><div><dt>模型与框架</dt><dd>Astra 6.2 · xhigh · Codex</dd></div><div><dt>运行耗时</dt><dd>42 分 31 秒 <span class="note">（2551.12 秒）</span></dd></div><div><dt>工具调用</dt><dd>152 次</dd></div><div><dt>模型响应</dt><dd>71 次</dd></div><div><dt>运行环境</dt><dd>Linux · 4 核 CPU · 8 GiB 主机内存预算 · RTX 4090 D（24 GB）</dd></div><div><dt>工具版本</dt><dd>官方 Codex CLI 0.142.4 · Blender 5.3.0 · Cycles CUDA</dd></div></dl>
+      <p class="note">从空工程与全新上下文独立完成，输入未包含旧工程、成片或评分反馈；未设置总时长或工具调用次数上限。</p>
+    </section>
+
+    <section class="section" id="execution" aria-labelledby="execution-title">
+      <div class="section-heading"><h2 id="execution-title"><span class="sec-no">04</span>执行过程</h2></div>
+      <ol class="steps">
+        <li><span class="step-no" aria-hidden="true">1</span><div><h3>六向观察</h3><p>对照正、背、左右、顶、底六张参考，整理主体比例、座舱、双臂工具、腿足与背部的空间关系。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">2</span><div><h3>Blender 分件程序建模与材质</h3><p>以程序生成机体和部件，组织可编辑资产，并构建红色装甲、金属边框、深色机械结构及表面磨损材质。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">3</span><div><h3>六组镜头与灯光舞台</h3><p>依次展示整机、工具、座舱、背部、腿足与整机总成，在摄影棚灯光下组织整体与部件特写。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">4</span><div><h3>配乐选段、分轨音效与图版</h3><p>选取指定配乐片段，编排 whoosh、hit、drop 音效，并将镜头、视觉转场与展示图版纳入成片结构。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">5</span><div><h3>CUDA 完整渲染与 VSE 导出</h3><p>自主选择 Cycles CUDA 与 GPU 降噪，完整渲染 648 帧，再由 Blender 视频序列编辑器合成图版、转场和声音，输出 27 秒展示片。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">6</span><div><h3>交付工程</h3><p>提交独立资产、成片、展示制作工程与资源，以及修改镜头、音频和重新导出的说明。</p></div></li>
+      </ol>
+      <h3>成片镜头组织</h3>
+      <ol class="shot-timeline" aria-label="六组镜头的时间范围">
+        <li><button type="button" data-seek="0.000000"><span class="shot-time">0–4.00 s</span><strong>整机登记照</strong><span>开场全景</span></button></li>
+        <li><button type="button" data-seek="4.000000"><span class="shot-time">4.00–8.00 s</span><strong>三爪工具</strong><span>工具特写</span></button></li>
+        <li><button type="button" data-seek="8.000000"><span class="shot-time">8.00–12.00 s</span><strong>驾驶舱</strong><span>座舱特写</span></button></li>
+        <li><button type="button" data-seek="12.000000"><span class="shot-time">12.00–15.79 s</span><strong>背部动力舱</strong><span>背面结构</span></button></li>
+        <li><button type="button" data-seek="15.791667"><span class="shot-time">15.79–19.54 s</span><strong>腿足机构</strong><span>低机位细节</span></button></li>
+        <li><button type="button" data-seek="19.541667"><span class="shot-time">19.54–27.00 s</span><strong>整机与片尾</strong><span>总成与署名</span></button></li>
+      </ol>
+      <p class="note">点击时间段可定位到上方成片中的对应镜头。</p>
+    </section>
+
+    <section class="section" id="analysis" aria-labelledby="analysis-title">
+      <div class="section-heading"><h2 id="analysis-title"><span class="sec-no">05</span>失败分析</h2></div>
+      <h3 class="first-subheading">结构与外观：整体接近，细部有明显偏差</h3>
+      <p>重建恢复了红色重装机甲、中央座舱和双臂工具的主要识别特征，但座舱内部、腿足层次及管线连接被简化。固定机位对照显示，大轮廓的接近仍不足以恢复内部层次与三维细节。</p>
+      <div class="comparison-tabs" role="tablist" aria-label="切换对照机位">
+        <button type="button" id="view-front" role="tab" aria-selected="true" aria-controls="comparison-panel" tabindex="0" data-view="front">正面</button>
+        <button type="button" id="view-back" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="back">背面</button>
+        <button type="button" id="view-left" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="left">机甲左侧</button>
+        <button type="button" id="view-right" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="right">机甲右侧</button>
+        <button type="button" id="view-top" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="top">顶面</button>
+        <button type="button" id="view-bottom" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="bottom">底面</button>
+      </div>
+      <div id="comparison-panel" role="tabpanel" aria-labelledby="view-front" tabindex="0">
+        <figure class="comparison-figure"><a id="comparison-zoom" class="image-zoom" href="assets/comparison/front.webp" data-zoom data-title="正面 · 参考与重建对照"><img id="comparison-image" src="assets/comparison/front.webp" alt="正面并排对照：左侧为输入参考图，右侧为重建图" width="1280" height="688" loading="lazy" decoding="async"></a><figcaption><span id="comparison-caption">正面 · 左：输入参考；右：统一机位与灯光下的重建。</span><span class="comparison-links"><a id="comparison-reference" href="assets/reference/front.png">参考原图 ↗</a><a id="comparison-reconstruction" href="assets/reconstruction/front.png">重建原图 ↗</a></span></figcaption></figure>
+      </div>
+      <p class="inline-links"><a href="assets/comparison/six-views.webp" data-zoom data-title="全部六机位 · 参考与重建对照">查看六机位总览 ↗</a></p>
+      <ul class="findings-list"><li><strong>部件：</strong>肩侧工具挂载、驾驶舱操纵装置与背部圆口内部结构出现缺失或错替。</li><li><strong>造型：</strong>工具、腰间垂片和背部中央舱体的辨识特征与参考不一致。</li><li><strong>表面：</strong>徽标、文字编号与座舱顶罩纹理未忠实还原。</li></ul>
+
+      <h3>关键细节：部件、造型与表面还原不足</h3>
+      <p>Gemini 4 Neon 对照参考、成片与统一六视图，确认部件与装配 4 处、造型特征 3 处、材质与表面细节 3 处独立错误。每处扣 5 分，三项均扣至 0 分。</p>
+      <details class="detail-evidence"><summary>部件与装配还原 · 4 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="部件与装配还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="20.0">20.00 s</button><span class="note"> · 帧 480</span></td><td>肩侧工具挂载被统一短杆架替代，原参考的非对称工具组未还原。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>驾驶舱中央操纵杆柱缺失，被扁平仪表箱替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="14.0">14.00 s</button><span class="note"> · 帧 336</span></td><td>背部双圆口内部被改写为外露径向叶轮。</td></tr><tr><td><button class="time-link" type="button" data-seek="18.0">18.00 s</button><span class="note"> · 帧 432</span></td><td>腿后缸体下方的喇叭形喷嘴缺失或错替。</td></tr></tbody></table></div></div></details>
+      <details class="detail-evidence"><summary>造型特征还原 · 3 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="造型特征还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="6.0">6.00 s</button><span class="note"> · 帧 144</span></td><td>三爪钳瓣的弧弯轮廓、根部凹口与中心轴头形状被改写。</td></tr><tr><td><button class="time-link" type="button" data-seek="2.5">2.50 s</button><span class="note"> · 帧 60</span></td><td>腰间垂片的撕裂边缘和开口被整齐三角形轮廓替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="14.0">14.00 s</button><span class="note"> · 帧 336</span></td><td>背部中央舱体的圆弧护罩与切面球罩被棱角盒体替代。</td></tr></tbody></table></div></div></details>
+      <details class="detail-evidence"><summary>材质与表面细节还原 · 3 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="材质与表面细节还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="2.5">2.50 s</button><span class="note"> · 帧 60</span></td><td>腰间红圈内的徽标图案被改写。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>机身原有文字标识遗漏，并新增自编编号。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>座舱橙色顶罩缺少参考中的六边形蜂窝网格纹理。</td></tr></tbody></table></div></div></details>
+      <figure class="evidence-figure"><a class="image-zoom" href="assets/evidence/detail-restoration.jpg" data-zoom data-title="关键细节 · 参考与重建对照"><img src="assets/evidence/detail-restoration.jpg" alt="同一正面机位下，肩侧挂载、工具造型和腰间徽标的参考与重建局部对照" width="1400" height="1200" loading="lazy" decoding="async"></a><figcaption>局部对照均来自同一固定机位的原图裁剪。左：输入参考；右：提交资产统一机位渲染。点击可放大。</figcaption></figure>
+      <p class="inline-links"><a href="review/detail-restoration-review.json">查看各处参考区域、成片定位与归属说明 ↗</a></p>
+
+      <h3>音画：音乐编排与音效对应均得满分</h3>
+      <p>Gemini 4 Neon 依据完整成片、原始混音、原配乐及三个原音效评定：音乐编排五项均满足，得 5 / 5；音效语义、感知同步与混音层次五项均满足，得 5 / 5。</p>
+      <dl class="compact-dl"><div><dt>音乐编排 · 5 / 5</dt><dd>乐句与段落组织、能量呼应、展示节奏、选段衔接、首尾完整五项通过。</dd></div><div><dt>音效对应 · 5 / 5</dt><dd>确认 2 处 whoosh、3 处 hit、1 处 drop；主要音效与转场、视觉落点及整机揭示相符，三类音效均可辨。</dd></div></dl>
+    </section>
+
+    <footer class="case-footer">
+      <p>参考模型：<a href="https://sketchfab.com/3d-models/scv-a310221f274b4189901f165731939ec1">SCV</a>，作者 JohnMesplay，许可 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。六向参考图包含坐标规范化、相机与灯光设置及视角渲染等修改。</p>
+      <p>配乐与音效由基础波形和确定性噪声合成，按 <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> 提供。</p>
+      <div class="footer-links"><a href="assets/ASSET-SOURCE.md">模型来源说明</a><a href="assets/audio/LICENSE.txt">音频来源说明</a><a href="https://github.com/vibrant700/omniale">OmniALE · GitHub ↗</a><a href="#main">回到顶部 ↑</a></div>
+    </footer>
+  </main>
+  <dialog id="image-dialog" class="image-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header"><h2 id="dialog-title">图片预览</h2><form method="dialog"><button type="submit" class="dialog-close" aria-label="关闭图片预览">关闭 <span aria-hidden="true">×</span></button></form></div>
+    <div class="dialog-body"><img id="dialog-image" src="data:," alt=""><a id="dialog-original" href="#">打开原图 ↗</a></div>
+  </dialog>
+  <p id="player-status" class="sr-only" role="status" aria-live="polite"></p>
+</body>
+</html>

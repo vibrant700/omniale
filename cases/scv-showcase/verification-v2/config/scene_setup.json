@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "blender_version": "5.3.0",
+  "render": {
+    "engine": "CYCLES",
+    "samples": 16,
+    "use_denoising": true,
+    "resolution": [
+      1280,
+      1280
+    ],
+    "resolution_percentage": 100,
+    "pixel_aspect": [
+      1,
+      1
+    ],
+    "file_format": "PNG",
+    "color_mode": "RGBA",
+    "color_depth": "8",
+    "film_transparent": true
+  },
+  "color_management": {
+    "view_transform": "AgX",
+    "look": "None",
+    "exposure": 0,
+    "gamma": 1,
+    "display_device": "sRGB"
+  },
+  "world": {
+    "background_color": [
+      0.16,
+      0.18,
+      0.22,
+      1
+    ],
+    "strength": 0.65
+  },
+  "lights": [
+    {
+      "name": "Studio softbox 1",
+      "type": "AREA",
+      "shape": "DISK",
+      "location": [
+        -4,
+        -6,
+        7
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        0,
+        1
+      ],
+      "energy": 1400,
+      "size": 4,
+      "color": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Studio softbox 2",
+      "type": "AREA",
+      "shape": "DISK",
+      "location": [
+        5,
+        -3,
+        4
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        0,
+        1
+      ],
+      "energy": 1000,
+      "size": 4,
+      "color": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Studio softbox 3",
+      "type": "AREA",
+      "shape": "DISK",
+      "location": [
+        1,
+        5,
+        6
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        0,
+        1
+      ],
+      "energy": 1600,
+      "size": 4,
+      "color": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Studio softbox 4",
+      "type": "AREA",
+      "shape": "DISK",
+      "location": [
+        0,
+        0,
+        -5
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "energy": 600,
+      "size": 4,
+      "color": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "material_note": "资产材质由制作者根据参考图自行制作；展示片可自行设计灯光与镜头。"
+}

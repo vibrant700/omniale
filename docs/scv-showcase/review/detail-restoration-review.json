@@ -1,0 +1,129 @@
+{
+  "rubric_version": "DETAIL-RESTORATION-RUBRIC-v2",
+  "judge_model": "Gemini 4 Neon",
+  "assessment_status": "complete",
+  "total_score": 0,
+  "maximum": 30,
+  "dimensions": [
+    {
+      "id": "D1",
+      "name": "部件与装配还原",
+      "maximum": 10,
+      "deduction_per_error": 5,
+      "confirmed_error_count": 4,
+      "score": 0,
+      "deductions": [
+        {
+          "part": "左右肩甲外侧挂载工具包（成对部件合并计1处）",
+          "reference_view_and_region": "reference/left.png（左肩甲外侧：两只红标圆筒罐、斜插木柄锤及底部竖置圆筒）；reference/right.png（右肩甲外侧：大型开口扳手、卸扣/金属杆及底部横置卷包）；reference/front.png 与 reference/top.png 亦清晰显示左右非对称工具挂载",
+          "video_frame_zero_based": 480,
+          "video_timestamp_s": 20.0,
+          "canonical_view_confirmation": "canonical_capture/textured/left.png、right.png、front.png、top.png 确认左右肩甲外侧完全对称镜像，所有原始工具（圆筒罐、木柄锤、开口扳手、横置卷包）均缺失，被统一替换为3根平行细杆与Y形支架，非遮挡或视角原因",
+          "visible_difference": "参考模型左右肩甲外侧分别绑扎不同种类的维修工具与储物卷包；提交视频（frame_0060/2.5000s、frame_0480/20.0000s、frame_0528/22.0000s）及统一视图中，左右两侧均被错替为完全相同的三根平行金属短杆架，原始工具部件全部缺失",
+          "dimension_rationale": "属于关键部件缺失与类型错替（评“有没有、是什么”），归属 D1；左右两侧被错替为同一通用杆架，按规则合并计1处，且不在 D2/D3 对肩甲挂载件重复扣分"
+        },
+        {
+          "part": "驾驶舱中央操纵杆柱",
+          "reference_view_and_region": "reference/front.png（驾驶舱正中座椅前方：直立式红/金属双握把中央操纵杆柱及下方脚踏组件）",
+          "video_frame_zero_based": 240,
+          "video_timestamp_s": 10.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png 确认驾驶舱正中座椅前方完全缺失直立操纵杆柱，仅在座垫前缘装配一只扁平黑色仪表箱",
+          "visible_difference": "参考驾驶舱内有醒目的中央双握把操纵杆柱；提交视频驾驶舱正面特写（frame_0240/10.0000s）中该操纵杆柱完全缺失，被改写为座椅前缘的扁平仪表箱与靠背双肩带",
+          "dimension_rationale": "属于驾驶舱关键部件缺失与错替（评“有没有、是什么、怎么装”），归属 D1；不在 D2/D3 对舱内操纵装置重复扣分"
+        },
+        {
+          "part": "背部双喷口内部芯体组件（左右成对合并计1处）",
+          "reference_view_and_region": "reference/back.png（背部左右两只主圆筒喷口内部：深色环形内腔包裹浅色平滑圆形中心芯体，无外露扇叶）",
+          "video_frame_zero_based": 336,
+          "video_timestamp_s": 14.0,
+          "canonical_view_confirmation": "canonical_capture/textured/back.png 确认背部左右两只圆筒内部均装配为多片外露径向风扇叶轮与小圆轴心，非光影误差",
+          "visible_difference": "参考背部双圆筒为平滑圆芯喷口结构；提交视频背部特写（frame_0336/14.0000s）中左右两处均被错替为多片外露径向涡轮风扇叶轮",
+          "dimension_rationale": "属于部件类型错替（喷口平滑圆芯被替换为风扇叶轮，评“是什么”），左右成对部件同一错改合并计1处，归属 D1；不在 D2/D3 对双喷口重复扣分"
+        },
+        {
+          "part": "双腿后方倾斜缸体下侧成对喇叭形喷嘴（左右成对合并计1处）",
+          "reference_view_and_region": "reference/left.png、reference/right.png、reference/bottom.png（左右腿后方倾斜油缸下侧各装配两只向下张开的锥形喇叭口喷嘴，口缘带短刺）",
+          "video_frame_zero_based": 432,
+          "video_timestamp_s": 18.0,
+          "canonical_view_confirmation": "canonical_capture/textured/left.png、right.png、bottom.png 确认每条腿下侧的两只锥形喇叭口喷嘴均缺失，仅保留两段细小平头圆柱短块",
+          "visible_difference": "参考双腿后方倾斜缸体下方装有明显的双喇叭形锥口喷嘴；提交视频腿部行走机构特写（frame_0432/18.0000s）中，该处仅剩细小平头深色短柱，喇叭形喷嘴部件缺失",
+          "dimension_rationale": "属于部件缺失/错替（评“有没有、是什么”），左右腿对称一致合并计1处，归属 D1；不在 D2/D3 重复扣分"
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "name": "造型特征还原",
+      "maximum": 10,
+      "deduction_per_error": 5,
+      "confirmed_error_count": 3,
+      "score": 0,
+      "deductions": [
+        {
+          "part": "右臂三爪钳瓣及中心轴头轮廓",
+          "reference_view_and_region": "reference/front.png（画面左侧右臂前端）、reference/right.png、reference/top.png（画面右侧）、reference/bottom.png（画面左侧）— 三片钳瓣为宽阔弧弯铲/花瓣形轮廓，根部有弧形内凹豁口，外缘弧弯收头，中心为平头短柱",
+          "video_frame_zero_based": 144,
+          "video_timestamp_s": 6.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png、right.png、top.png、bottom.png 确认三片钳瓣均为直边锐角三角形尖刺造型，根部弧形凹口消失，中心轴头被改写为细长阶梯圆锥尖",
+          "visible_difference": "参考右臂三爪为带根部弧形凹口与圆弧外缘的宽瓣铲形结构；提交视频右臂特写（frame_0144/6.0000s）中三片钳瓣变成笔直收敛的三角形尖刀刺，中心亦拉出阶梯锥尖",
+          "dimension_rationale": "部件存在且三爪数量一致，但明确的轮廓形状、弧弯与根部凹口结构被彻底改写（非宽厚长短比例判据），归属 D2"
+        },
+        {
+          "part": "裆部垂挂战旗轮廓与边缘结构",
+          "reference_view_and_region": "reference/front.png、reference/back.png（裆部正中垂挂的深色布帘：边缘呈不规则撕裂锯齿状，布面带破洞开口与软质垂坠褶皱）",
+          "video_frame_zero_based": 60,
+          "video_timestamp_s": 2.5,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png、back.png 确认该部件被改写为两侧边缘笔直平滑、底部尖锐收尖的刚性倒三角形尖板，所有锯齿撕裂边缘与布面破洞均消失",
+          "visible_difference": "参考裆部为破损撕裂、带破洞与布褶的软质战旗；提交视频（frame_0060/2.5000s、frame_0528/22.0000s）中呈现为光滑坚硬的几何倒三角锥板，无任何撕裂边缘与破洞特征",
+          "dimension_rationale": "部件安装位置正确，但明确的边缘结构、开口破洞与轮廓特征被完全改写，归属 D2；其正面徽标图案错误独立计入 D3，互不重复"
+        },
+        {
+          "part": "背部上方中央传感器舱外壳造型",
+          "reference_view_and_region": "reference/back.png、reference/left.png、reference/right.png、reference/top.png（背部双排气管之间：圆弧盔形红色护罩包裹多边形切面球状暗色罩体）",
+          "video_frame_zero_based": 336,
+          "video_timestamp_s": 14.0,
+          "canonical_view_confirmation": "canonical_capture/textured/back.png、left.png、right.png、top.png 确认该舱体被改写为向后平直延伸的折面棱角六/八角棱柱盒，后端为平直暗色八角面，圆弧盔罩与球面切面结构完全消失",
+          "visible_difference": "参考背部中央舱体为圆润弧形护罩配多面体球罩；提交视频背部特写（frame_0336/14.0000s）中呈现为方正生硬的棱角多面体长盒",
+          "dimension_rationale": "部件位置与装配层级对应参考，但整体轮廓形状与曲面/切面结构被改写，归属 D2"
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "name": "材质与表面细节还原",
+      "maximum": 10,
+      "deduction_per_error": 5,
+      "confirmed_error_count": 3,
+      "score": 0,
+      "deductions": [
+        {
+          "part": "裆部战旗正面红色徽标图案",
+          "reference_view_and_region": "reference/front.png（裆部深色战旗正面中央：红色圆环内印有红色屈臂肌肉手臂剪影标识）",
+          "video_frame_zero_based": 60,
+          "video_timestamp_s": 2.5,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png 确认红色圆环内的屈臂手臂剪影图案被替换为对称红色“V”形折线符号",
+          "visible_difference": "参考战旗徽标为经典红圈屈臂剪影；提交视频（frame_0060/2.5000s、frame_0528/22.0000s）中该圆环内部图案被错改为对称的“V”形折线标志",
+          "dimension_rationale": "属于明确的印刷图案与标识错误（评“表面是什么样”），归属 D3；与 D2 对战旗几何轮廓的扣分相互独立"
+        },
+        {
+          "part": "机身胸甲与双臂文字编号及标语标识（系统性错改合并计1处）",
+          "reference_view_and_region": "reference/front.png（座舱两侧红色胸甲无文字编号）；reference/right.png 与 reference/top.png（右臂顶梁印有白色标语“NO MATTER THE COST”，顶部座舱后方印有“Bobby-Joe”）；reference/left.png（左臂外侧印有白色战绩标记阵列）",
+          "video_frame_zero_based": 240,
+          "video_timestamp_s": 10.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png、right.png、left.png、top.png 确认胸甲新增白色“HX / R”“HX / L”，右臂顶面新增“GR / 03”，左臂顶面新增“J-02”，同时参考原有的“NO MATTER THE COST”“Bobby-Joe”与左臂战绩标记全部缺失",
+          "visible_difference": "提交视频驾驶舱特写（frame_0240/10.0000s）清晰显示两侧胸甲多出编造文字“HX / R”“HX / L”；右臂特写（frame_0144/6.0000s）显示右臂顶面改为“GR / 03”且缺失“NO MATTER THE COST”；左臂（frame_0528/22.0000s）改为“J-02”",
+          "dimension_rationale": "属于明确的印刷文字与标识错改/遗漏，归属 D3；按机身文字标识系统性错误合并计1处，不逐字重复扣分"
+        },
+        {
+          "part": "驾驶舱橙色顶罩表面纹理与材质特征",
+          "reference_view_and_region": "reference/left.png、reference/right.png、reference/top.png（驾驶舱上方半透明橙黄色顶罩表面布满清晰的六边形蜂窝网格纹理）",
+          "video_frame_zero_based": 240,
+          "video_timestamp_s": 10.0,
+          "canonical_view_confirmation": "canonical_capture/textured/left.png、right.png、top.png 确认橙黄色顶罩表面为普通斑驳漆面/纯色材质，完全缺失六边形蜂窝网格纹理特征",
+          "visible_difference": "参考橙色顶罩具有标志性的半透明六边形蜂窝网格表面细节；提交视频（frame_0240/10.0000s、frame_0480/20.0000s）中顶罩表面仅见平涂斑驳黄褐色与生硬白色星形边界，无任何六边形蜂窝纹理",
+          "dimension_rationale": "属于表面纹理图案与材质细节缺失（非灯光曝光或观看角度造成），归属 D3"
+        }
+      ]
+    }
+  ]
+}

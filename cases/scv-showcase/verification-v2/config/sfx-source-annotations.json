@@ -1,0 +1,32 @@
+{
+  "whoosh.wav": {
+    "duration_seconds": 1.32,
+    "effective_interval_seconds": [
+      0.1,
+      1.21
+    ],
+    "onset_seconds": 0.1,
+    "peak_seconds": 0.625,
+    "alignment_anchor_seconds": 0.625
+  },
+  "hit.wav": {
+    "duration_seconds": 1.05,
+    "effective_interval_seconds": [
+      0.03,
+      0.47000000000000003
+    ],
+    "onset_seconds": 0.035,
+    "peak_seconds": 0.045,
+    "alignment_anchor_seconds": 0.045
+  },
+  "drop.wav": {
+    "duration_seconds": 1.9,
+    "effective_interval_seconds": [
+      0.1,
+      1.78
+    ],
+    "onset_seconds": 0.1,
+    "peak_seconds": 0.185,
+    "alignment_anchor_seconds": 0.18
+  }
+}

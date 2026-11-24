@@ -1,80 +1,107 @@
 {
+  "protocol_version": "scv-showcase-detail-v2",
   "models": [
     {
       "case": "scv-showcase",
+      "experiment": "astra62-xhigh-gpu-fresh01",
       "model": "gpt-6.2-astra",
       "model_display": "Astra 6.2",
       "framework": "Codex",
       "reasoning_effort": "xhigh",
       "scores": {
-        "structure": 18.66342938244353,
-        "appearance": 9.03926856815815,
-        "dynamic": 0,
+        "structure": 19.84557234593521,
+        "appearance": 9.294605590403082,
+        "detail_restoration": 0,
         "music": 5,
         "sfx": 5,
-        "total": 37.702697950601674
+        "total": 39.14017793633829
       },
       "weights": {
         "structure": 30,
         "appearance": 30,
-        "dynamic": 30,
+        "detail_restoration": 30,
         "music": 5,
         "sfx": 5
       },
       "raw_metrics": {
-        "F1_tolerance_reference_diagonal_0_5_percent": 0.49008806172432645,
-        "six_view_silhouette_IoU": 0.7541405637719087,
-        "foreground_union_SSIM": 0.19164906442165375,
-        "foreground_union_LPIPS_alex_spatial": 0.5890311598777771
+        "F1_tolerance_reference_diagonal_0_5_percent": 0.5310640609497829,
+        "six_view_silhouette_IoU": 0.7919740954458977,
+        "foreground_union_SSIM": 0.18457126865784326,
+        "foreground_union_LPIPS_alex_spatial": 0.5649308959643046
       },
-      "dynamic_criteria": [
+      "detail_criteria": [
         {
-          "name": "无游离浮片",
+          "id": "D1",
+          "name": "部件与装配还原",
           "maximum": 10,
           "deduction_per_error": 5,
-          "confirmed_error_count_lower_bound": 2,
+          "confirmed_error_count": 4,
           "score": 0
         },
         {
-          "name": "无部件重影",
+          "id": "D2",
+          "name": "造型特征还原",
           "maximum": 10,
           "deduction_per_error": 5,
-          "confirmed_error_count_lower_bound": 2,
+          "confirmed_error_count": 3,
           "score": 0
         },
         {
-          "name": "显隐变化连续",
+          "id": "D3",
+          "name": "材质与表面细节还原",
           "maximum": 10,
           "deduction_per_error": 5,
-          "confirmed_error_count_lower_bound": 2,
+          "confirmed_error_count": 3,
           "score": 0
         }
       ],
+      "detail_judge": "Gemini 4 Neon",
       "audio_visual_judge": "Gemini 4 Neon",
-      "engineering_gate": "passed",
+      "engineering_gate": {
+        "passed": true,
+        "has_renderable_mesh": true,
+        "resources_resolved_in_relocated_copy": true,
+        "canonical_views_rendered": 6,
+        "engineering_is_not_a_scored_component": true,
+        "note": "Automated reopen/resource/render checks. Editability and camera-facing impostors are reviewed separately using the asset audit and clay views."
+      },
       "engineering_weight": 0,
       "runtime": {
-        "elapsed_seconds": 2339.89,
-        "tool_calls": 269,
-        "responses": 101,
+        "elapsed_seconds": 2551.12,
+        "tool_calls": 152,
+        "responses": 71,
         "time_limit_seconds": null,
         "tool_call_limit": null,
         "cpu": 4,
         "memory_gib": 8,
-        "gpu": false
+        "gpu": "RTX 4090 D, 24 GB",
+        "platform": "Linux",
+        "codex_version": "0.142.4",
+        "blender_version": "5.3.0"
+      },
+      "fresh_context": true,
+      "starts_from_empty_workspace": true,
+      "prior_outputs_or_feedback_provided": false,
+      "render_route": {
+        "backend": "Cycles CUDA",
+        "samples": 24,
+        "gpu_denoising": true,
+        "native_3d_frames": 648,
+        "sparse_reprojection_or_video_interpolation": false
       },
       "delivery": {
         "video": "assets/showcase.mp4",
         "poster": "assets/poster.jpg",
         "asset": "assets/asset.blend",
         "archive": "assets/delivery.zip",
-        "width": 1280,
-        "height": 720,
+        "width": 1600,
+        "height": 900,
         "fps": 24,
-        "video_frame_count": 438,
-        "video_duration_seconds": 18.25,
+        "video_frame_count": 648,
+        "video_duration_seconds": 27.0,
         "audio_sample_rate": 48000,
-        "audio_channels": 2
+        "audio_channels": 2,
+        "video_sha256": "04d31fd8dde1cf130f87d91594424234d9c8f4cd90745536e5a52c4de8147a75"
       }
     }
   ],
