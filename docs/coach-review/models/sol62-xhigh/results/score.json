@@ -1,0 +1,125 @@
+{
+  "status": "graded",
+  "total_points": 19,
+  "maximum_points": 100,
+  "terminal_damage_points": 0,
+  "terminal_damage": {
+    "xuanran": {
+      "damage_dealt": {
+        "estimate": null,
+        "reference": 58000,
+        "points": 0,
+        "relative_error_pct": null
+      },
+      "damage_taken": {
+        "estimate": null,
+        "reference": 55700,
+        "points": 0,
+        "relative_error_pct": null
+      }
+    },
+    "zhongyi": {
+      "damage_dealt": {
+        "estimate": null,
+        "reference": 53100,
+        "points": 0,
+        "relative_error_pct": null
+      },
+      "damage_taken": {
+        "estimate": null,
+        "reference": 95700,
+        "points": 0,
+        "relative_error_pct": null
+      }
+    },
+    "changsheng": {
+      "damage_dealt": {
+        "estimate": null,
+        "reference": 66000,
+        "points": 0,
+        "relative_error_pct": null
+      },
+      "damage_taken": {
+        "estimate": null,
+        "reference": 50900,
+        "points": 0,
+        "relative_error_pct": null
+      }
+    },
+    "yinuo": {
+      "damage_dealt": {
+        "estimate": null,
+        "reference": 129600,
+        "points": 0,
+        "relative_error_pct": null
+      },
+      "damage_taken": {
+        "estimate": null,
+        "reference": 68100,
+        "points": 0,
+        "relative_error_pct": null
+      }
+    },
+    "dashuai": {
+      "damage_dealt": {
+        "estimate": null,
+        "reference": 27600,
+        "points": 0,
+        "relative_error_pct": null
+      },
+      "damage_taken": {
+        "estimate": null,
+        "reference": 61100,
+        "points": 0,
+        "relative_error_pct": null
+      }
+    }
+  },
+  "output_points": 0,
+  "damage_taken_points": 0,
+  "inspection": {
+    "alignment": 10,
+    "alignment_checks": [
+      {
+        "phase": "开局",
+        "match_clock": "00:14",
+        "max_offset_s": 0.0668,
+        "points": 2
+      },
+      {
+        "phase": "前期河道交战",
+        "match_clock": "02:00",
+        "max_offset_s": 0.1001,
+        "points": 2
+      },
+      {
+        "phase": "中期龙区团战",
+        "match_clock": "10:43",
+        "max_offset_s": 0.2669,
+        "points": 2
+      },
+      {
+        "phase": "后期龙区团战",
+        "match_clock": "16:29",
+        "max_offset_s": 0.1669,
+        "points": 2
+      },
+      {
+        "phase": "推水晶前",
+        "match_clock": "16:55",
+        "max_offset_s": 0.2002,
+        "points": 2
+      }
+    ],
+    "terminal_boards_match": {},
+    "visual": 9,
+    "visual_breakdown": {
+      "layout": 4,
+      "motion": 2,
+      "audio_readability": 3
+    }
+  },
+  "gate_errors": {
+    "timeline": "timestamp is outside the video"
+  }
+}

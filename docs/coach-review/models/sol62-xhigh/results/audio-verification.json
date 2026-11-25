@@ -1,0 +1,23 @@
+{
+  "method": "Decoded mono 8 kHz waveforms of the Xuanran source and sealed output, aligned by playback time. Three five-second samples.",
+  "samples": [
+    {
+      "start_s": 10,
+      "duration_s": 5,
+      "pearson_correlation": 0.9997674967641503,
+      "rms_ratio": 0.9961445857649938
+    },
+    {
+      "start_s": 640,
+      "duration_s": 5,
+      "pearson_correlation": 0.9997868051940959,
+      "rms_ratio": 0.9963391014742755
+    },
+    {
+      "start_s": 1000,
+      "duration_s": 5,
+      "pearson_correlation": 0.9999608937548592,
+      "rms_ratio": 0.9988313544066694
+    }
+  ]
+}

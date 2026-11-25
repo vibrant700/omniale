@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="OmniALE benchmark 案例：同步五路 KPL 选手视角，估算英雄伤害并制作双榜复盘大屏。">
   <title>AG 五人第一视角战术大屏 · OmniALE</title>
-  <link rel="stylesheet" href="case.css?v=kpl-5">
+  <link rel="stylesheet" href="case.css?v=kpl-6">
 </head>
 <body>
   <a class="skip" href="#main">跳至正文</a>
@@ -100,6 +100,7 @@
         <summary>终场输出与承伤 · 各 40 分</summary>
         <div class="details-body">
           <ol class="rubric-steps">
+            <li><strong>验证交付与时间轴。</strong>成片须能完整解码，时长与轩染原片相差不超过 0.25 秒。时间轴包含五人两项非负整数；首条从 0 秒、零累计开始，时间严格递增且小于原片时长 1023.622563 秒，各项累计不递减，末条与 <code>final</code> 一致。成片不通过则本题得 0 分；时间轴不通过则输出与承伤均为 0 分。</li>
             <li><strong>核对片尾双榜。</strong>在成片第 1023.25 秒读取两榜的五人点数、顺序和队内占比，分别与 <code>timeline.json</code> 的 <code>final</code> 核对。名次按点数降序排列，同分按题面选手顺序。队内占比为个人点数 ÷ 五人同项点数之和 × 100%，分母为零时为 0%，允许显示到 0.1% 产生的舍入误差。整张榜通过核对后，该项进入误差评分。</li>
             <li><strong>逐人计算绝对相对误差。</strong>取提交点数与官方点数之差的绝对值，除以官方点数，再乘以 100%。官方以 0.1K 显示，按显示值换算为点数。 <a href="https://www.bilibili.com/video/BV1tyH76XEgz/?p=1&amp;t=2020">官方赛后统计 ↗</a></li>
             <li><strong>分档后相加。</strong>五人的输出分相加得到终场输出分，五人的承伤分相加得到终场承伤分。</li>
@@ -156,13 +157,18 @@
     </section>
 
     <section id="results">
-      <div class="section-heading"><h2>测试结果</h2><a href="timeline.json" download>下载提交时间轴 ↗</a></div>
+      <div class="section-heading"><h2>测试结果</h2></div>
+      <p class="result-note">两轮使用同一题面、五路原片和评分标准，均从独立上下文开始，执行框架为 Codex CLI 0.142.4。原始交付均为 1080p，以下为保留交付音轨的完整 720p 网页预览。</p>
       <div class="table-wrap" tabindex="0" role="region" aria-label="测试结果">
         <table class="results">
-          <thead><tr><th scope="col">受测系统</th><th scope="col">输出 / 40</th><th scope="col">承伤 / 40</th><th scope="col">同步 / 10</th><th scope="col">成片 / 10</th><th scope="col">总分 / 100</th></tr></thead>
-          <tbody><tr><th scope="row">GPT‑6.2 Astra xhigh + Codex</th><td>11</td><td>2</td><td>10</td><td>8</td><td class="total">31</td></tr></tbody>
+          <thead><tr><th scope="col">受测系统</th><th scope="col">输出 / 40</th><th scope="col">承伤 / 40</th><th scope="col">同步 / 10</th><th scope="col">成片 / 10</th><th scope="col">总分 / 100</th><th scope="col">实耗时</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="#astra-results">GPT‑6.2 Astra xhigh + Codex</a></th><td>11</td><td>2</td><td>10</td><td>8</td><td class="total">31</td><td>1 小时 3 分 53 秒</td></tr>
+            <tr><th scope="row"><a href="#sol62-results">GPT‑6.2 Sol xhigh + Codex</a></th><td>0</td><td>0</td><td>10</td><td>9</td><td class="total">19</td><td>3 小时 35 分 35 秒</td></tr>
+          </tbody>
         </table>
       </div>
+      <div class="section-heading model-heading"><h3 id="astra-results">GPT‑6.2 Astra xhigh</h3><a href="timeline.json" download>下载 Astra 时间轴 ↗</a></div>
       <dl class="facts">
         <div><dt>运行用时</dt><dd>1 小时 3 分 53 秒</dd></div>
         <div><dt>执行框架</dt><dd>Codex CLI 0.142.4</dd></div>
@@ -221,24 +227,98 @@
           </div>
         </div>
       </details>
+
+      <div class="section-heading model-heading"><h3 id="sol62-results">GPT‑6.2 Sol xhigh</h3><a href="models/sol62-xhigh/timeline.json" download>下载 Sol 时间轴 ↗</a></div>
+      <dl class="facts">
+        <div><dt>运行用时</dt><dd>3 小时 35 分 35 秒</dd></div>
+        <div><dt>执行框架</dt><dd>Codex CLI 0.142.4</dd></div>
+        <div><dt>时间轴</dt><dd>20 个时间点 · 19 条伤害样本</dd></div>
+      </dl>
+      <p class="result-note">Sol 将伤害统计限定为“已核实片段”，榜单显示样本小计与样本占比，未完成题目要求的全场累计。输出与承伤均得 0 分。 <a href="models/sol62-xhigh/results/score.json" download>下载本轮评分结果（JSON）</a></p>
+      <figure id="sol62-delivery" class="delivery">
+        <video controls playsinline preload="none" poster="models/sol62-xhigh/media/dashboard.jpg" src="models/sol62-xhigh/media/dashboard.mp4" aria-label="GPT‑6.2 Sol 的五路同屏复盘视频"></video>
+        <figcaption>Sol 原始交付的整局预览 · 17 分 03 秒 · 网页预览 720p · 轩染单路原声</figcaption>
+      </figure>
+      <details>
+        <summary>逐选手样本小计与得分</summary>
+        <div class="details-body">
+          <p class="result-note">下表展示模型实际记录的片段小计；“未收录”对应画面上的破折号及 JSON 中的 0。完整双榜的五人终场值未交付。 <a href="models/sol62-xhigh/results/terminal-boards.png">片尾双榜截图 ↗</a></p>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Sol 逐选手伤害样本小计">
+            <table class="player-results">
+              <thead><tr><th scope="col">选手</th><th scope="col">输出小计 / 官方</th><th scope="col">输出分 / 8</th><th scope="col">承伤小计 / 官方</th><th scope="col">承伤分 / 8</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">轩染</th><td>未收录 / 58,000</td><td>0</td><td>154 / 55,700</td><td>0</td></tr>
+                <tr><th scope="row">钟意</th><td>1,452 / 53,100</td><td>0</td><td>1,308 / 95,700</td><td>0</td></tr>
+                <tr><th scope="row">长生</th><td>5,797 / 66,000</td><td>0</td><td>未收录 / 50,900</td><td>0</td></tr>
+                <tr><th scope="row">一诺</th><td>1,561 / 129,600</td><td>0</td><td>217 / 68,100</td><td>0</td></tr>
+                <tr><th scope="row">大帅</th><td>536 / 27,600</td><td>0</td><td>未收录 / 61,100</td><td>0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+      <details id="sol62-sync-results">
+        <summary>五路时钟抽查 · 10 / 10</summary>
+        <div class="details-body">
+          <p class="result-note">遇到特效遮挡，以最后一次旧读数与第一次清晰新读数夹定跳秒区间。记录时差和区间端点的最坏时差均处于 0.5 秒档内。 <a href="models/sol62-xhigh/results/sync.json" download>下载逐机位同步记录（JSON）</a></p>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Sol 五路时钟抽查结果">
+            <table class="sync-results">
+              <thead><tr><th scope="col">阶段</th><th scope="col">局内钟</th><th scope="col">记录时差 / 秒</th><th scope="col">区间最坏时差 / 秒</th><th scope="col">得分 / 2</th><th scope="col">证据</th></tr></thead>
+              <tbody><tr><th scope="row">开局</th><td>00:14</td><td>0.0668</td><td>0.1001</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-17.png">查看帧 ↗</a></td></tr>
+                <tr><th scope="row">前期河道交战</th><td>02:00</td><td>0.1001</td><td>0.1335</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-123.png">查看帧 ↗</a></td></tr>
+                <tr><th scope="row">中期龙区团战</th><td>10:43</td><td>0.2669</td><td>0.3003</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-646.png">查看帧 ↗</a></td></tr>
+                <tr><th scope="row">后期龙区团战</th><td>16:29</td><td>0.1669</td><td>0.2002</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-992.png">查看帧 ↗</a></td></tr>
+                <tr><th scope="row">推水晶前</th><td>16:55</td><td>0.2002</td><td>0.2336</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-1018.png">查看帧 ↗</a></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+      <details id="sol62-video-quality-results">
+        <summary>成片质量评分 · 9 / 10</summary>
+        <div class="details-body">
+          <p class="result-note"><a href="models/sol62-xhigh/results/video-quality.json" download>下载成片评分记录（JSON）</a></p>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Sol 成片质量评分结果">
+            <table class="quality-results">
+              <thead><tr><th scope="col">评分项</th><th scope="col">得分 / 满分</th><th scope="col">给分依据</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">布局与信息避让</th><td>4 / 4</td><td>五路标识与双榜分区清晰、稳定，关键游戏界面与榜单文字可读。 <a href="models/sol62-xhigh/media/dashboard.jpg">截图 ↗</a></td></tr>
+                <tr><th scope="row">动态排行榜流畅度</th><td>2 / 3</td><td>条形长度有过渡，点数随时间轴刷新；名次变化时行位置直接跳变，换位项失 1 分。 <a href="models/sol62-xhigh/results/motion-overtake.png">连续帧 ↗</a></td></tr>
+                <tr><th scope="row">音轨处理与可读性</th><td>3 / 3</td><td>轩染单路原声，三段抽样波形与原片的相关系数均高于 0.9997。已显示点数、占比及缺失标记可读。 <a href="models/sol62-xhigh/results/terminal-boards.png">截图 ↗</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
     </section>
 
     <section id="execution">
       <div class="section-heading"><h2>agent执行过程</h2></div>
+      <h3>GPT‑6.2 Astra xhigh</h3>
       <ol class="steps">
         <li><h3>对齐局内时钟</h3><p>从五路录像抽取时钟区域，匹配跳秒位置，估计各路相对轩染录像的时间偏移。</p></li>
         <li><h3>追踪血条并分配伤害</h3><p>每秒采样 5 帧，通过英雄名牌跨机位合并血条记录，利用千血刻度把血条变化换算成点数。参考锁定目标、距离及命中特效，将敌方损血分配给可能出手的选手。</p></li>
         <li><h3>渲染战术大屏</h3><p>将估算写入累计时间轴，由同一数据驱动双榜与队伍伤害增量图，再合成五路画面和轩染原声。</p></li>
       </ol>
+      <h3>GPT‑6.2 Sol xhigh</h3>
+      <ol class="steps">
+        <li><h3>核对时钟与音轨</h3><p>抽取各路时钟、首尾画面和音轨，计算相对轩染的固定偏移，区分选手视角与末尾转播镜头。</p></li>
+        <li><h3>逐条读取伤害样本</h3><p>放大查看开局、对线和团战中的伤害跳字，只记录能够辨认点数并归因于敌方英雄的片段，最终收录 19 条事件及其录像时间。</p></li>
+        <li><h3>生成片段小计双榜</h3><p>将事件写入 20 个时间点，以已收录点数计算占比；未收录的选手在画面上显示破折号。交付中注明“伤害统计未达到全场覆盖”。</p></li>
+        <li><h3>合成与抽检</h3><p>输出 1080p 五路大屏与轩染单路原声。对选手接入和片尾定格作标记，并抽检片头、团战和水晶告破画面。</p></li>
+      </ol>
     </section>
 
     <section id="analysis">
       <div class="section-heading"><h2>失分分析</h2></div>
-      <h3>十项伤害总量均低估</h3>
+      <h3>Astra：十项伤害总量均低估</h3>
       <p>最大偏差来自一诺的输出，模型估算 <strong>46,988</strong> 点，官方为 <strong>129,600</strong> 点，低估 <strong>63.74%</strong>。模型的终场输出榜将一诺排在第二，官方排在第一。</p>
       <p>估算脚本对血条读数做平滑，忽略低于血条长度 2.5% 的净掉血，并用距离等线索分配伤害。持续小额命中、同期回血和远程攻击都可能被漏计。这里的官方参考提供终场总量，赛中数值由模型估算。</p>
-      <h3>双榜换位直接跳变</h3>
-      <p>布局避让 <strong>4/4</strong>，音轨与可读性 <strong>3/3</strong>。条形长度和排名直接切换，动态排行榜流畅度得 <strong>1/3</strong>。</p>
+      <h3>Sol：用样本小计替代全场累计</h3>
+      <p>只记录 19 条伤害事件，输出和承伤均未达到全场覆盖。长生的输出小计为 <strong>5,797</strong> 点，官显终值为 <strong>66,000</strong> 点；其余选手也只有零散样本或未收录。样本占比不能满足全场队内占比要求，终场输出与承伤均得 <strong>0/40</strong>。</p>
+      <h3>Sol：时间轴末点超出原片时长</h3>
+      <p>末条时间为 <code>1023.623</code> 秒，原片基准为 <code>1023.622563</code> 秒，超出 <code>0.000437</code> 秒，未通过严格边界检查。即使单独将声明的小计与官显终值比较，也没有任何单项进入 30% 以内的得分区间。</p>
+      <h3>两套交付的名次换位都直接跳变</h3>
+      <p>Astra 的条形长度和行位置均直接切换，流畅度得 <strong>1/3</strong>；Sol 的条长已有过渡，但行位置仍直接跳变，流畅度得 <strong>2/3</strong>。两者布局避让均为 <strong>4/4</strong>，音轨与可读性均为 <strong>3/3</strong>。</p>
     </section>
     <footer><a href="../">← 返回案例汇总</a><a href="#main">回到顶部 ↑</a></footer>
   </main>

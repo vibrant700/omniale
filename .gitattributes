@@ -1,2 +1,5 @@
 # Preserve the audited bytes and SHA-256 manifest of the Phoenix case.
 docs/phoenix-reconstruction/** -text whitespace=cr-at-eol
+
+# Preserve the original Sol timeline and audited publication bytes.
+docs/coach-review/models/sol62-xhigh/** -text whitespace=cr-at-eol

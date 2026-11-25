@@ -111,3 +111,13 @@ footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 
   text-align: left;
   white-space: normal;
 }
+
+.model-heading { margin-top: 29px; padding-top: 21px; border-top: 1px solid var(--line); }
+.model-heading h3 { margin: 0; font-size: 20px; }
+
+@media (max-width: 640px) {
+  .quality-results { table-layout: fixed; }
+  .quality-results th:first-child { width: 29%; white-space: normal; }
+  .quality-results th:nth-child(2) { width: 23%; white-space: normal; }
+  .quality-results th:last-child, .quality-results td:last-child { min-width: 0; overflow-wrap: anywhere; }
+}
