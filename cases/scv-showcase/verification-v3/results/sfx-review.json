@@ -1,0 +1,291 @@
+{
+  "judge_model": "Gemini 4 Neon",
+  "assessment_status": "complete",
+  "score": 5,
+  "maximum": 5,
+  "items": [
+    {
+      "id": "S1",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 3.4333,
+          "source_end_s": 4.5433,
+          "candidate_ids": [
+            "candidate-03"
+          ],
+          "heard_description": "Clear airy filtered-noise whoosh swelling into a peak around 3.96–4.0s.",
+          "visual_description": "Cut from FIG. 01 (full SCV general arrangement) into FIG. 02 (Grapple cassette close-up) at ~4.0s.",
+          "reason": "Whoosh semantically matches the camera/shot transition from the opening overview into the first detail study."
+        },
+        {
+          "source_start_s": 11.4333,
+          "source_end_s": 12.5433,
+          "candidate_ids": [
+            "candidate-09"
+          ],
+          "heard_description": "Distinct airy whoosh sweeping cleanly across ~11.4–12.5s and peaking around ~12.0s.",
+          "visual_description": "Cut from FIG. 03 (front Open station cockpit view) to FIG. 04 (rear Twin impellers view) at ~12.0s.",
+          "reason": "Whoosh semantically motivates the front-to-rear spatial jump between detail angles."
+        }
+      ],
+      "reason": "Both confirmed whoosh events (candidate-03 at ~4.0s and candidate-09 at ~12.0s) correspond naturally to major shot transitions, with no misplaced or unmotivated whooshes."
+    },
+    {
+      "id": "S2",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 3.9883,
+          "source_end_s": 4.4283,
+          "candidate_ids": [
+            "candidate-05"
+          ],
+          "heard_description": "Crisp percussive hit transient right at ~4.00s.",
+          "visual_description": "Hard cut into FIG. 02 (Grapple cassette) with caption card reveal at ~4.0s.",
+          "reason": "Hit punctuates the first detail cut and graphic card reveal."
+        },
+        {
+          "source_start_s": 7.9883,
+          "source_end_s": 8.4283,
+          "candidate_ids": [
+            "candidate-08"
+          ],
+          "heard_description": "Sharp percussive hit impact right at ~8.00s.",
+          "visual_description": "Hard cut from FIG. 02 to FIG. 03 (Open station) with caption card reveal at ~8.0s.",
+          "reason": "Hit cleanly accents the cut and new section title appearance."
+        },
+        {
+          "source_start_s": 15.78,
+          "source_end_s": 16.22,
+          "candidate_ids": [
+            "candidate-11"
+          ],
+          "heard_description": "Punchy percussive hit impact right at ~15.80s.",
+          "visual_description": "Hard cut from FIG. 04 to FIG. 05 (Walking gear) with caption card reveal at ~15.8s.",
+          "reason": "Hit cleanly punctuates the transition to the walking gear detail shot."
+        }
+      ],
+      "reason": "All three confirmed hit events (candidate-05, candidate-08, candidate-11) correspond directly to hard cuts and figure caption reveals, with no erroneous hit placements."
+    },
+    {
+      "id": "S3",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 19.475,
+          "source_end_s": 21.155,
+          "candidate_ids": [
+            "candidate-15"
+          ],
+          "heard_description": "Deep, weighty downward sub-bass drop boom hitting at ~19.55s with a smooth resonant decay.",
+          "visual_description": "Brief dark dip from the tight FIG. 05 leg close-up breaks open at ~19.5s into the wide, heroic FIG. 06 (Complete chassis) full-vehicle reveal.",
+          "reason": "The sub-bass drop directly underscores the showcase's primary visual scale and energy expansion into the full-chassis hero reveal."
+        }
+      ],
+      "reason": "The confirmed drop (candidate-15 at ~19.55s) has a strong, textbook semantic correspondence with the climactic shift from a dark-dipped close-up to the wide full-chassis reveal."
+    },
+    {
+      "id": "S4",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 3.4333,
+          "source_end_s": 4.5433,
+          "candidate_ids": [
+            "candidate-03",
+            "candidate-05"
+          ],
+          "heard_description": "Whoosh swells across ~3.4–4.5s peaking near ~3.96s, immediately met by the hit transient at ~4.00s (script anchors 3.958s / 4.003s).",
+          "visual_description": "Observed visual cut from FIG. 01 to FIG. 02 and caption reveal occur right at ~4.0s.",
+          "reason": "Both the whoosh swell peak and the hit transient align tightly in perception with the ~4.0s cut."
+        },
+        {
+          "source_start_s": 7.9883,
+          "source_end_s": 8.4283,
+          "candidate_ids": [
+            "candidate-08"
+          ],
+          "heard_description": "Hit transient lands at ~8.00s (script anchor 8.003s).",
+          "visual_description": "Observed visual cut from FIG. 02 to FIG. 03 occurs right at ~8.0s.",
+          "reason": "Perceptually frame-accurate alignment between hit attack and visual cut."
+        },
+        {
+          "source_start_s": 11.4333,
+          "source_end_s": 12.5433,
+          "candidate_ids": [
+            "candidate-09"
+          ],
+          "heard_description": "Whoosh sweeps across ~11.4–12.5s peaking near ~11.96s (script anchor 11.958s).",
+          "visual_description": "Observed visual cut from FIG. 03 to FIG. 04 occurs right at ~12.0s.",
+          "reason": "Whoosh peak aligns smoothly with the front-to-rear cut."
+        },
+        {
+          "source_start_s": 15.78,
+          "source_end_s": 16.22,
+          "candidate_ids": [
+            "candidate-11"
+          ],
+          "heard_description": "Hit transient lands at ~15.80s (script anchor 15.795s).",
+          "visual_description": "Observed visual cut from FIG. 04 to FIG. 05 occurs right at ~15.8s.",
+          "reason": "Perceptually tight synchronization between hit impact and visual cut."
+        },
+        {
+          "source_start_s": 19.475,
+          "source_end_s": 21.155,
+          "candidate_ids": [
+            "candidate-15"
+          ],
+          "heard_description": "Sub-bass drop lands at ~19.55s (script anchor 19.555s) and decays through ~21.1s.",
+          "visual_description": "Observed dark-dip transition opens into FIG. 06 (Complete chassis) right around ~19.5s.",
+          "reason": "Perceptually aligned with the climactic reveal cut and opening hero rotation."
+        }
+      ],
+      "reason": "All six confirmed SFX events (two whooshes, three hits, one drop) are perceptually well-aligned with their observed visual cuts and reveals."
+    },
+    {
+      "id": "S5",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 3.4333,
+          "source_end_s": 12.5433,
+          "candidate_ids": [
+            "candidate-03",
+            "candidate-09"
+          ],
+          "heard_description": "Both confirmed whooshes are clearly audible in the final stereo mix with airy presence and clean headroom against the BGM.",
+          "visual_description": "Shot transitions at ~4.0s (FIG. 01→02) and ~12.0s (FIG. 03→04).",
+          "reason": "Whoosh layer is distinct, unmasked, and well-proportioned."
+        },
+        {
+          "source_start_s": 3.9883,
+          "source_end_s": 16.22,
+          "candidate_ids": [
+            "candidate-05",
+            "candidate-08",
+            "candidate-11"
+          ],
+          "heard_description": "All three confirmed hits cut cleanly through the industrial_pulse BGM with crisp attack and balanced loudness without clipping.",
+          "visual_description": "Detail-shot cuts at ~4.0s, ~8.0s, and ~15.8s.",
+          "reason": "Hit layer is clearly recognizable and properly leveled above the BGM percussion."
+        },
+        {
+          "source_start_s": 19.475,
+          "source_end_s": 21.155,
+          "candidate_ids": [
+            "candidate-15"
+          ],
+          "heard_description": "The sub-bass drop has full, unmistakable low-end weight and smooth decay alongside the BGM drop without muddiness or distortion.",
+          "visual_description": "Climactic reveal of FIG. 06 (Complete chassis) at ~19.5s.",
+          "reason": "Drop layer is clearly audible and well-integrated into the mix hierarchy."
+        }
+      ],
+      "reason": "All three SFX types (whoosh, hit, drop) are clearly recognizable in the original final mix with appropriate dynamic layering and no masking or harshness issues."
+    }
+  ],
+  "confirmed_events": [
+    {
+      "candidate_id": "candidate-03",
+      "confirmation": "sfx",
+      "observed_type": "whoosh",
+      "source_start_s": 3.4333,
+      "source_end_s": 4.5433,
+      "heard_description": "Distinct, airy filtered-noise whoosh matching reference whoosh.wav, swelling smoothly into a peak right around 3.96–4.0s and decaying cleanly into the new beat.",
+      "visual_description": "Transition from FIG. 01 (full SCV general arrangement) cutting sharply at ~4.0s into FIG. 02 (Grapple cassette close-up) with the lower-left caption card appearing.",
+      "visual_anchor_source_s": 4.0,
+      "visual_interval_source_s": [
+        3.5,
+        4.4
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "Clearly audible whoosh SFX that naturally bridges the cut from the opening wide shot into the first detail shot."
+    },
+    {
+      "candidate_id": "candidate-05",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 3.9883,
+      "source_end_s": 4.4283,
+      "heard_description": "Crisp, weighty percussive impact matching reference hit.wav with a sharp transient attack right at ~4.00s, clearly standing out above the BGM groove entry.",
+      "visual_description": "Hard cut from FIG. 01 to FIG. 02 (Grapple cassette) at ~4.0s accompanied by the bottom-left FIG. 02 title card reveal.",
+      "visual_anchor_source_s": 4.0,
+      "visual_interval_source_s": [
+        4.0,
+        4.2
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "Confirmed hit SFX landing squarely on the cut and FIG. 02 caption reveal."
+    },
+    {
+      "candidate_id": "candidate-08",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 7.9883,
+      "source_end_s": 8.4283,
+      "heard_description": "Clear, sharp metallic/percussive impact matching reference hit.wav right at ~8.00s, distinct from the BGM beat.",
+      "visual_description": "Hard cut from FIG. 02 (Grapple cassette) to FIG. 03 (Open station cockpit front close-up) at ~8.0s with the FIG. 03 caption card appearing.",
+      "visual_anchor_source_s": 8.0,
+      "visual_interval_source_s": [
+        8.0,
+        8.2
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "Confirmed hit SFX perceptually locked to the hard cut and FIG. 03 reveal."
+    },
+    {
+      "candidate_id": "candidate-09",
+      "confirmation": "sfx",
+      "observed_type": "whoosh",
+      "source_start_s": 11.4333,
+      "source_end_s": 12.5433,
+      "heard_description": "Unmistakable airy whoosh sweep matching reference whoosh.wav, rising smoothly into a peak right around ~11.96–12.0s and trailing off cleanly.",
+      "visual_description": "Cut at ~12.0s from FIG. 03 (Open station front view) to FIG. 04 (Twin impellers rear view) with the FIG. 04 caption card appearing.",
+      "visual_anchor_source_s": 12.0,
+      "visual_interval_source_s": [
+        11.5,
+        12.4
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "Clearly audible whoosh SFX providing a smooth kinetic bridge across the front-to-rear cut to FIG. 04."
+    },
+    {
+      "candidate_id": "candidate-11",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 15.78,
+      "source_end_s": 16.22,
+      "heard_description": "Punchy, clearly recognizable impact matching reference hit.wav right at ~15.80s, cleanly separated from the BGM groove.",
+      "visual_description": "Hard cut from FIG. 04 (Twin impellers) to FIG. 05 (Walking gear low side view of legs/recoil cylinders) at ~15.8s with the FIG. 05 caption card fading in.",
+      "visual_anchor_source_s": 15.8,
+      "visual_interval_source_s": [
+        15.8,
+        16.0
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "Confirmed hit SFX landing squarely on the cut to FIG. 05."
+    },
+    {
+      "candidate_id": "candidate-15",
+      "confirmation": "sfx",
+      "observed_type": "drop",
+      "source_start_s": 19.475,
+      "source_end_s": 21.155,
+      "heard_description": "Unmistakable, deep, weighty sub-bass downward pitch-drop boom matching reference drop.wav, hitting right at ~19.55s with a clean resonant low-end tail.",
+      "visual_description": "After the brief dark dip from the tight FIG. 05 foot close-up, the frame bursts open at ~19.5s into the wide, heroic FIG. 06 (Complete chassis / Front three-quarter study) full-SCV turnaround reveal.",
+      "visual_anchor_source_s": 19.5,
+      "visual_interval_source_s": [
+        19.5,
+        21.0
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "Confirmed drop SFX strongly aligned with the major visual scale/energy expansion into the full-chassis hero reveal."
+    }
+  ]
+}

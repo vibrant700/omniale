@@ -89,9 +89,9 @@
     </section>
 
     <section class="section" id="scoring" aria-labelledby="scoring-title">
-      <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2><a class="heading-link" href="assets/scoring-verification-v2.zip" download>下载评分复核包 ↓</a></div>
+      <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2><a class="heading-link" href="assets/scoring-verification-v3.zip" download>下载评分复核包 ↓</a></div>
       <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">结构 30 ＋ 外观 30 ＋ 关键细节 30 ＋ 音画 10</p><p>几何与图像由固定脚本计算；关键细节、音乐与音效由 Gemini 4 Neon 对照参考及成片评定。工程可用性作为交付门槛，不计分。</p></div>
-      <p class="note verification-note">复核包包含本轮评分规则、固定指标脚本与参数、公开评审结果和汇总脚本。成片、重建六视图及参考图在本页直接查看。<a href="scoring-method.md" download>计算说明 ↓</a> · <a href="https://github.com/vibrant700/omniale/tree/main/cases/scv-showcase/verification-v2">查看源码 ↗</a></p>
+      <p class="note verification-note">复核包包含本轮评分规则、固定指标脚本与参数、公开评审结果和汇总脚本。成片、重建六视图及参考图在本页直接查看。<a href="scoring-method.md" download>计算说明 ↓</a> · <a href="https://github.com/vibrant700/omniale/tree/main/cases/scv-showcase/verification-v3">查看源码 ↗</a></p>
 
       <div class="reference-resource" id="scoring-reference">
         <h3>比较对象与参考工程</h3>
@@ -124,20 +124,18 @@ F1 ＝ 2 × P × R ÷ (P ＋ R)；P ＋ R 为 0 时 F1 取 0
 
       <div class="criterion">
         <h3><span class="criterion-no">2.</span> 外观忠实度 <span class="points">/ 30</span></h3>
-        <p>在固定六机位上比较带材质图像，SSIM 与 LPIPS 各占 15 分；展示片自行设计的灯光和镜头不进入这部分计算。</p>
-        <div class="formula"><p>外观分 ＝ 15 × [ clip(平均 SSIM, 0, 1) ＋ 1 − clip(平均 LPIPS, 0, 1) ]</p></div>
+        <p>在固定六机位上比较带材质图像，六视图平均 SSIM 换算为 30 分；展示片自行设计的灯光和镜头不进入这部分计算。</p>
+        <div class="formula"><p>外观分 ＝ 30 × clip(六视图平均 SSIM, 0, 1)</p></div>
+        <p class="note">这是本案例约定的计分换算，不代表外观还原百分比或正确率。</p>
         <details><summary>统一渲染条件与前景比较区域</summary><div class="detail-body">
           <ol class="method-steps"><li>提交资产采用 <a href="assets/cameras.json">同一组六机位</a>和 <a href="assets/scene_setup.json">灯光／渲染配置</a>，Blender 5.3、Cycles 16 samples、AgX、1280 × 1280 RGBA；不缩放原参考图，不做图像配准。</li><li>每张参考与提交 RGB 归一到 [0, 1]，按各自原 alpha 合成到中性 0.5 灰背景：<code>C＝RGB × alpha＋0.5 × (1−alpha)</code>。</li><li>比较区域 U 为双方 <code>alpha ≥ 0.5</code> 前景的并集。先在完整合成图上生成空间指标图，再仅对 U 内的位置平均，使多余和缺失部位都进入比较。</li></ol>
         </div></details>
-        <details><summary>SSIM 与 LPIPS 的空间图、平均方式与得分 · 各 15 分</summary><div class="detail-body">
+        <details><summary>SSIM 的空间图、平均方式与得分 · 30 分</summary><div class="detail-body">
           <h4>SSIM：局部结构、亮度与对比度</h4><p>Gaussian 加权窗口 11 × 11，σ＝1.5，数据范围 L＝1，使用总体协方差。每位置三个 RGB 通道先求平均，再取前景并集 U 内的空间均值，得到该机位 SSIM，最后对六机位等权平均。</p>
           <pre class="math-block"><code>SSIM(x,y) ＝ [(2μxμy＋C1)(2σxy＋C2)] ÷ [(μx²＋μy²＋C1)(σx²＋σy²＋C2)]
 C1＝(0.01L)²，C2＝(0.03L)²；本项 L＝1
-SSIM 分 ＝ 15 × clip(六机位平均 SSIM, 0, 1)</code></pre>
-          <h4>LPIPS：感知特征距离</h4><p>使用 AlexNet、LPIPS v0.1、<code>spatial=True</code>，输入按模型要求归一化；取得原图分辨率上的空间距离图，先平均 U 内位置，再对六机位等权平均。这是前景掩膜平均的空间 LPIPS 变体；距离越低越接近参考。</p>
-          <pre class="math-block"><code>LPIPSᵥ ＝ 机位 v 的 LPIPS 空间图在 U 内的均值
-LPIPS 分 ＝ 15 × [1 − clip(六机位平均 LPIPS, 0, 1)]</code></pre>
-          <p>先分别对 SSIM、LPIPS 取六视图均值，再将两个均值截断到 [0, 1] 代入计分。白模渲染只辅助观察几何；本项使用带材质的彩色图像。</p>
+外观分 ＝ 30 × clip(六机位平均 SSIM, 0, 1)</code></pre>
+          <p>先对六机位等权平均，再将均值截断到 [0, 1] 并乘以 30。这是本案例约定的计分映射，不是外观还原百分比、正确率或经过专家标定的主观质量分。白模只辅助观察几何，本项使用带材质的彩色图像。</p>
         </div></details>
       </div>
 
@@ -165,11 +163,11 @@ LPIPS 分 ＝ 15 × [1 − clip(六机位平均 LPIPS, 0, 1)]</code></pre>
 
     <section class="section" id="results" aria-labelledby="results-title">
       <div class="section-heading"><h2 id="results-title"><span class="sec-no">03</span>测试结果</h2></div>
-      <div class="mobile-score"><span>Astra 6.2 · xhigh · Codex</span><strong>39.14 <small>/ 100</small></strong></div>
+      <div class="mobile-score"><span>Astra 6.2 · xhigh · Codex</span><strong>35.38 <small>/ 100</small></strong></div>
       <div class="table-scroll" tabindex="0" role="region" aria-label="模型评分表，可横向滚动">
-        <table class="score-table"><caption class="sr-only">SCV 机甲资产重建与展示片制作评分</caption><thead><tr><th scope="col">模型 / 框架</th><th scope="col">结构 / 30</th><th scope="col">外观 / 30</th><th scope="col">关键细节 / 30</th><th scope="col">音乐 / 5</th><th scope="col">音效 / 5</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62"><th scope="row">Astra 6.2 <span class="model-detail">xhigh · Codex · RTX 4090 D</span></th><td>19.85</td><td>9.29</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">39.14</strong></td></tr></tbody></table>
+        <table class="score-table"><caption class="sr-only">SCV 机甲资产重建与展示片制作评分</caption><thead><tr><th scope="col">模型 / 框架</th><th scope="col">结构 / 30</th><th scope="col">外观 / 30</th><th scope="col">关键细节 / 30</th><th scope="col">音乐 / 5</th><th scope="col">音效 / 5</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62"><th scope="row">Astra 6.2 <span class="model-detail">xhigh · Codex · RTX 4090 D</span></th><td>19.85</td><td>5.54</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">35.38</strong></td></tr></tbody></table>
       </div>
-      <p><strong>总分 39.14 / 100。</strong>完成 648 帧 CUDA／Cycles 渲染与有声展示；结构 19.85 分、外观 9.29 分。关键部件、造型及表面细节存在明确还原错误，三项均为 0 分；音乐编排与音效对应各得 5 分。</p>
+      <p><strong>总分 35.38 / 100。</strong>完成 648 帧 CUDA／Cycles 渲染与有声展示；结构 19.85 分、外观 5.54 分。关键部件、造型及表面细节存在明确还原错误，三项均为 0 分；音乐编排与音效对应各得 5 分。</p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="关键细节分项得分"><table><thead><tr><th>关键细节维度</th><th>确认错误数</th><th>得分</th></tr></thead><tbody><tr><th>部件与装配还原</th><td>4 处</td><td>0 / 10</td></tr><tr><th>造型特征还原</th><td>3 处</td><td>0 / 10</td></tr><tr><th>材质与表面细节还原</th><td>3 处</td><td>0 / 10</td></tr></tbody></table></div>
       <p class="note">结构与外观保留未舍入分数汇总，总分显示两位小数。资产独立打开、资源解析、统一六视图渲染与成片完整解码检查通过。</p>
       <p class="inline-links"><a href="results.json">完整评分数据 ↗</a><a href="review/detail-restoration-review.json">关键细节评审 ↗</a><a href="review/music-review.json">音乐评审 ↗</a><a href="review/sfx-review.json">音效评审 ↗</a></p>

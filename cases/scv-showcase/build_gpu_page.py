@@ -60,9 +60,19 @@ def bundle(folder, archive):
         raise ValueError(f'{archive.name} exceeds the GitHub single-file limit')
 
 
+def strip_legacy_distance(value):
+    if isinstance(value, dict):
+        return {key: strip_legacy_distance(item) for key, item in value.items()
+                if 'lpips' not in key.lower() and key.lower() not in {'torch', 'torchvision'}}
+    if isinstance(value, list):
+        return [strip_legacy_distance(item) for item in value]
+    return value
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run', required=True, type=Path)
+    parser.add_argument('--scores-only', action='store_true', help='Update scores/package/template while retaining identical delivery media')
     args = parser.parse_args()
     run = args.run.resolve()
     delivery = run / 'remote-delivery'
@@ -83,42 +93,43 @@ def main():
         assert review['score'] == sum(item['score'] for item in review['items'])
 
     assets = SITE / 'assets'
-    for filename in ['asset.blend', 'showcase.mp4']:
-        shutil.copy2(delivery / filename, assets / filename)
-    assert sha(assets / 'showcase.mp4') == experiment['video_checks']['sha256']
-    shutil.copy2(delivery / 'README.md', assets / 'delivery-README.md')
-    shutil.copy2(run / 'analysis/video-grounded-review/frames/frame_0480.jpg', assets / 'poster.jpg')
-    bundle(delivery, assets / 'delivery.zip')
+    if not args.scores_only:
+        for filename in ['asset.blend', 'showcase.mp4']:
+            shutil.copy2(delivery / filename, assets / filename)
+        assert sha(assets / 'showcase.mp4') == experiment['video_checks']['sha256']
+        shutil.copy2(delivery / 'README.md', assets / 'delivery-README.md')
+        shutil.copy2(run / 'analysis/video-grounded-review/frames/frame_0480.jpg', assets / 'poster.jpg')
+        bundle(delivery, assets / 'delivery.zip')
 
-    for view, label in VIEWS.items():
-        reconstruction = assets / f'reconstruction/{view}.png'
-        shutil.copy2(metrics / f'canonical_capture/textured/{view}.png', reconstruction)
-        canvas = Image.new('RGB', (1280, 688), '#f4f3ee')
-        draw = ImageDraw.Draw(canvas)
-        draw.text((20, 10), f'{label} · 输入参考', font=font(20), fill='#172c32')
-        draw.text((660, 10), f'{label} · GPU 重建', font=font(20), fill='#172c32')
-        for x, image in [(0, flattened(assets / f'reference/{view}.png')), (640, flattened(reconstruction))]:
-            canvas.paste(image.resize((640, 640), Image.Resampling.LANCZOS), (x, 48))
-        canvas.save(assets / f'comparison/{view}.webp', quality=90)
-    overview = Image.new('RGB', (1280, 1032), '#f4f3ee')
-    for index, view in enumerate(VIEWS):
-        with Image.open(assets / f'comparison/{view}.webp') as pair:
-            overview.paste(pair.resize((640, 344)), ((index % 2) * 640, (index // 2) * 344))
-    overview.save(assets / 'comparison/six-views.webp', quality=90)
+        for view, label in VIEWS.items():
+            reconstruction = assets / f'reconstruction/{view}.png'
+            shutil.copy2(metrics / f'canonical_capture/textured/{view}.png', reconstruction)
+            canvas = Image.new('RGB', (1280, 688), '#f4f3ee')
+            draw = ImageDraw.Draw(canvas)
+            draw.text((20, 10), f'{label} · 输入参考', font=font(20), fill='#172c32')
+            draw.text((660, 10), f'{label} · GPU 重建', font=font(20), fill='#172c32')
+            for x, image in [(0, flattened(assets / f'reference/{view}.png')), (640, flattened(reconstruction))]:
+                canvas.paste(image.resize((640, 640), Image.Resampling.LANCZOS), (x, 48))
+            canvas.save(assets / f'comparison/{view}.webp', quality=90)
+        overview = Image.new('RGB', (1280, 1032), '#f4f3ee')
+        for index, view in enumerate(VIEWS):
+            with Image.open(assets / f'comparison/{view}.webp') as pair:
+                overview.paste(pair.resize((640, 344)), ((index % 2) * 640, (index // 2) * 344))
+        overview.save(assets / 'comparison/six-views.webp', quality=90)
 
-    evidence = Image.new('RGB', (1400, 1200), '#f4f3ee')
-    draw = ImageDraw.Draw(evidence)
-    rows = [('肩侧工具挂载', (150, 170, 390, 590)), ('三爪工具造型', (75, 710, 390, 1010)), ('腰间图案标识', (540, 700, 745, 980))]
-    ref = flattened(assets / 'reference/front.png')
-    result = flattened(assets / 'reconstruction/front.png')
-    for index, (label, crop) in enumerate(rows):
-        y = index * 400
-        draw.text((22, y + 12), label, font=font(26), fill='#172c32')
-        for x, image, heading in [(20, ref, '输入参考'), (720, result, 'GPU 重建')]:
-            draw.text((x, y + 52), heading, font=font(20), fill='#166f68')
-            image = ImageOps.contain(image.crop(crop), (660, 300), Image.Resampling.LANCZOS)
-            evidence.paste(image, (x + (660-image.width)//2, y+90+(300-image.height)//2))
-    evidence.save(assets / 'evidence/detail-restoration.jpg', quality=94)
+        evidence = Image.new('RGB', (1400, 1200), '#f4f3ee')
+        draw = ImageDraw.Draw(evidence)
+        rows = [('肩侧工具挂载', (150, 170, 390, 590)), ('三爪工具造型', (75, 710, 390, 1010)), ('腰间图案标识', (540, 700, 745, 980))]
+        ref = flattened(assets / 'reference/front.png')
+        result = flattened(assets / 'reconstruction/front.png')
+        for index, (label, crop) in enumerate(rows):
+            y = index * 400
+            draw.text((22, y + 12), label, font=font(26), fill='#172c32')
+            for x, image, heading in [(20, ref, '输入参考'), (720, result, 'GPU 重建')]:
+                draw.text((x, y + 52), heading, font=font(20), fill='#166f68')
+                image = ImageOps.contain(image.crop(crop), (660, 300), Image.Resampling.LANCZOS)
+                evidence.paste(image, (x + (660-image.width)//2, y+90+(300-image.height)//2))
+        evidence.save(assets / 'evidence/detail-restoration.jpg', quality=94)
 
     # Publish reviewed scoring fields, never request/response envelopes or private host metadata.
     public_detail = {key: detail[key] for key in ['rubric_version', 'judge_model', 'assessment_status', 'total_score', 'maximum', 'dimensions']}
@@ -131,13 +142,13 @@ def main():
     for filename, data in [('detail-restoration-review.json', public_detail), ('music-review.json', public_music), ('sfx-review.json', public_sfx)]:
         write(SITE / 'review' / filename, data)
 
-    scores = {'structure': static['new_scores']['structure_30'], 'appearance': static['new_scores']['appearance_30'], 'detail_restoration': detail['total_score'], 'music': music['score'], 'sfx': sfx['score']}
+    scores = {'structure': static['new_scores']['structure_30'], 'appearance': 30 * min(1, max(0, static['raw_image_means']['foreground_union_SSIM'])), 'detail_restoration': detail['total_score'], 'music': music['score'], 'sfx': sfx['score']}
     scores['total'] = sum(scores.values())
     model = {
         'case': 'scv-showcase', 'experiment': experiment['experiment'], 'model': experiment['model'],
         'model_display': 'Astra 6.2', 'framework': 'Codex', 'reasoning_effort': 'xhigh',
         'scores': scores, 'weights': {'structure': 30, 'appearance': 30, 'detail_restoration': 30, 'music': 5, 'sfx': 5},
-        'raw_metrics': {'F1_tolerance_reference_diagonal_0_5_percent': static['raw_visible_F1']['fscore'], 'six_view_silhouette_IoU': static['raw_image_means']['silhouette_IoU'], 'foreground_union_SSIM': static['raw_image_means']['foreground_union_SSIM'], 'foreground_union_LPIPS_alex_spatial': static['raw_image_means']['foreground_union_LPIPS_alex_spatial']},
+        'raw_metrics': {'F1_tolerance_reference_diagonal_0_5_percent': static['raw_visible_F1']['fscore'], 'six_view_silhouette_IoU': static['raw_image_means']['silhouette_IoU'], 'foreground_union_SSIM': static['raw_image_means']['foreground_union_SSIM']},
         'detail_criteria': [{k: d[k] for k in ['id', 'name', 'maximum', 'deduction_per_error', 'confirmed_error_count', 'score']} for d in detail['dimensions']],
         'detail_judge': detail['judge_model'], 'audio_visual_judge': music['judge_model'],
         'engineering_gate': static['automatic_engineering_gate'], 'engineering_weight': 0,
@@ -146,23 +157,15 @@ def main():
         'render_route': {'backend': 'Cycles CUDA', 'samples': 24, 'gpu_denoising': True, 'native_3d_frames': 648, 'sparse_reprojection_or_video_interpolation': False},
         'delivery': {'video': 'assets/showcase.mp4', 'poster': 'assets/poster.jpg', 'asset': 'assets/asset.blend', 'archive': 'assets/delivery.zip', 'width': 1600, 'height': 900, 'fps': 24, 'video_frame_count': 648, 'video_duration_seconds': 27.0, 'audio_sample_rate': 48000, 'audio_channels': 2, 'video_sha256': sha(assets/'showcase.mp4')}
     }
-    write(SITE / 'results.json', {'protocol_version': 'scv-showcase-detail-v2', 'models': [model], 'scoring_method': 'scoring-method.md', 'scoring_reference': 'assets/reference-model.json'})
+    write(SITE / 'results.json', {'protocol_version': 'scv-showcase-ssim-v3', 'models': [model], 'scoring_method': 'scoring-method.md', 'scoring_reference': 'assets/reference-model.json'})
 
-    package = HERE / 'verification-v2'
+    package = HERE / 'verification-v3'
     package.mkdir(exist_ok=True)
     shutil.copy2(HERE / 'SCORING.md', package / 'SCORING.md')
     package_scoring = package / 'SCORING.md'
     package_scoring.write_text(package_scoring.read_text(encoding='utf-8').replace('../../docs/scv-showcase/', 'https://vibrant700.github.io/omniale/scv-showcase/'), encoding='utf-8')
-    for filename in ['surface_metrics_blender.py', 'capture_asset_blender.py', 'evaluate_images.py', 'evaluate_asset.py', 'localize_sfx.py']:
-        destination = package / 'scripts' / filename
-        destination.parent.mkdir(exist_ok=True)
-        shutil.copy2(HERE / 'verification/scripts' / filename, destination)
-    shutil.copytree(HERE / 'verification/config', package / 'config', dirs_exist_ok=True)
-    # Omit the historical review template, which describes the old dynamic criteria.
-    (package / 'config/review-record.template.json').unlink(missing_ok=True)
-    shutil.copy2(HERE / 'verification/requirements.txt', package / 'requirements.txt')
     for filename in ['surface_metrics.json', 'image_metrics.json']:
-        data = read(metrics / filename)
+        data = strip_legacy_distance(read(metrics / filename))
         if filename == 'surface_metrics.json':
             # Full evaluator output includes machine-local file paths. Keep numeric metric fields only.
             data = {'fscore': static['raw_visible_F1']['fscore'], 'precision': static['raw_visible_F1']['precision'], 'recall': static['raw_visible_F1']['recall'], 'threshold_world_units': static['raw_visible_F1']['threshold_world_units']}
@@ -170,7 +173,7 @@ def main():
     for path in (SITE / 'review').glob('*.json'):
         shutil.copy2(path, package / 'results' / path.name)
     write(package / 'results/expected-score.json', {'scores': scores})
-    bundle(package, assets / 'scoring-verification-v2.zip')
+    bundle(package, assets / 'scoring-verification-v3.zip')
     shutil.copy2(HERE / 'gpu-page.html', SITE / 'index.html')
 
     manifest = []

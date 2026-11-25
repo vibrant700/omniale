@@ -1,0 +1,40 @@
+{
+  "file": "reference-asset.blend",
+  "role": "Normalized scoring reference; not provided as agent input",
+  "download_url": "https://github.com/vibrant700/omniale/releases/download/scv-showcase-reference-v1/reference-asset.blend",
+  "release_url": "https://github.com/vibrant700/omniale/releases/tag/scv-showcase-reference-v1",
+  "bytes": 297195583,
+  "sha256": "1b6b49ca858d39f8df675f1c16fc6096600685fe0cf9625291c43db00e7d53b4",
+  "blender_version": "5.3.0",
+  "source": {
+    "format": "GLB 2",
+    "author": "JohnMesplay",
+    "title": "SCV",
+    "url": "https://sketchfab.com/3d-models/scv-a310221f274b4189901f165731939ec1",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "normalization": {
+    "bbox_center": [
+      0,
+      0,
+      0
+    ],
+    "max_dimension": 2,
+    "units": "arbitrary scene units",
+    "axes": "+Z up; faces -Y; mech left +X",
+    "dimensions": [
+      2.0,
+      1.844525694847107,
+      1.6520817279815674
+    ]
+  },
+  "geometry": {
+    "vertices": 104790,
+    "triangles": 140061,
+    "reference_bounding_box_diagonal": 3.1830249832953164
+  },
+  "changes": "Imported from original GLB; normalized translation and uniform scale; six orthographic cameras and studio lighting added; original textures packed.",
+  "reference_renders": "Same asset generated the six PNG input reference views.",
+  "included_in_agent_input_zip": false
+}

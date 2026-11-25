@@ -1,5 +1,5 @@
 {
-  "protocol_version": "scv-showcase-detail-v2",
+  "protocol_version": "scv-showcase-ssim-v3",
   "models": [
     {
       "case": "scv-showcase",
@@ -10,11 +10,11 @@
       "reasoning_effort": "xhigh",
       "scores": {
         "structure": 19.84557234593521,
-        "appearance": 9.294605590403082,
+        "appearance": 5.537138059735298,
         "detail_restoration": 0,
         "music": 5,
         "sfx": 5,
-        "total": 39.14017793633829
+        "total": 35.38271040567051
       },
       "weights": {
         "structure": 30,
@@ -26,8 +26,7 @@
       "raw_metrics": {
         "F1_tolerance_reference_diagonal_0_5_percent": 0.5310640609497829,
         "six_view_silhouette_IoU": 0.7919740954458977,
-        "foreground_union_SSIM": 0.18457126865784326,
-        "foreground_union_LPIPS_alex_spatial": 0.5649308959643046
+        "foreground_union_SSIM": 0.18457126865784326
       },
       "detail_criteria": [
         {

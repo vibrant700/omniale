@@ -1,0 +1,98 @@
+{
+  "status": "raw_metrics",
+  "views": {
+    "textured": {
+      "front": {
+        "silhouette_IoU": 0.8061609296206972,
+        "foreground_union_SSIM": 0.18528296053409576,
+        "foreground_union_RGB_MSE": 0.05787571147084236,
+        "reference_foreground_pixels": 602828,
+        "submission_foreground_pixels": 550478,
+        "foreground_union_pixels": 638540,
+        "foreground_intersection_pixels": 514766
+      },
+      "back": {
+        "silhouette_IoU": 0.8062357383483186,
+        "foreground_union_SSIM": 0.16980917751789093,
+        "foreground_union_RGB_MSE": 0.0723075121641159,
+        "reference_foreground_pixels": 602825,
+        "submission_foreground_pixels": 550480,
+        "foreground_union_pixels": 638513,
+        "foreground_intersection_pixels": 514792
+      },
+      "left": {
+        "silhouette_IoU": 0.7741020424535773,
+        "foreground_union_SSIM": 0.17647278308868408,
+        "foreground_union_RGB_MSE": 0.07058851420879364,
+        "reference_foreground_pixels": 456446,
+        "submission_foreground_pixels": 406000,
+        "foreground_union_pixels": 486131,
+        "foreground_intersection_pixels": 376315
+      },
+      "right": {
+        "silhouette_IoU": 0.7740071504095646,
+        "foreground_union_SSIM": 0.20074480772018433,
+        "foreground_union_RGB_MSE": 0.06296634674072266,
+        "reference_foreground_pixels": 456429,
+        "submission_foreground_pixels": 405962,
+        "foreground_union_pixels": 486126,
+        "foreground_intersection_pixels": 376265
+      },
+      "top": {
+        "silhouette_IoU": 0.7956732791763468,
+        "foreground_union_SSIM": 0.18068906664848328,
+        "foreground_union_RGB_MSE": 0.06306497752666473,
+        "reference_foreground_pixels": 557367,
+        "submission_foreground_pixels": 488399,
+        "foreground_union_pixels": 582381,
+        "foreground_intersection_pixels": 463385
+      },
+      "bottom": {
+        "silhouette_IoU": 0.7956654326668818,
+        "foreground_union_SSIM": 0.19442881643772125,
+        "foreground_union_RGB_MSE": 0.07009240984916687,
+        "reference_foreground_pixels": 557375,
+        "submission_foreground_pixels": 488399,
+        "foreground_union_pixels": 582388,
+        "foreground_intersection_pixels": 463386
+      }
+    }
+  },
+  "alignment": "Supplied cameras and world coordinates; no image registration",
+  "region": "Union of reference and candidate alpha>=0.5 masks on the fixed full-resolution canvas. RGB composited over common neutral 0.5 gray.",
+  "SSIM": "Gaussian sigma1.5, 11x11 window, population covariance, channel mean; spatial values averaged in union mask.",
+  "reference": "Original provided reference PNGs, unchanged and not resampled.",
+  "versions": {
+    "numpy": "2.2.6",
+    "Pillow": "13.0.0",
+    "scipy": "1.18.1",
+    "scikit-image": "0.25.2"
+  },
+  "mean": {
+    "textured": {
+      "silhouette_IoU": 0.7919740954458977,
+      "foreground_union_SSIM": 0.18457126865784326,
+      "foreground_union_RGB_MSE": 0.06614924532671769
+    }
+  },
+  "controls": {
+    "identical_image": {
+      "silhouette_IoU": 1.0,
+      "foreground_union_SSIM": 1.0,
+      "foreground_union_RGB_MSE": 0.0,
+      "reference_foreground_pixels": 602828,
+      "submission_foreground_pixels": 602828,
+      "foreground_union_pixels": 602828,
+      "foreground_intersection_pixels": 602828
+    },
+    "transparent_empty_submission": {
+      "silhouette_IoU": 0.0,
+      "foreground_union_SSIM": 0.24197900295257568,
+      "foreground_union_RGB_MSE": 0.08082543313503265,
+      "reference_foreground_pixels": 602828,
+      "submission_foreground_pixels": 0,
+      "foreground_union_pixels": 602828,
+      "foreground_intersection_pixels": 0
+    }
+  }
+}

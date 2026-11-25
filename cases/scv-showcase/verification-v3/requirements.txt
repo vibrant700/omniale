@@ -1,0 +1,5 @@
+# Frozen versions for unchanged SSIM and geometric metrics.
+numpy==2.2.6
+Pillow==13.0.0
+scipy==1.18.1
+scikit-image==0.25.2

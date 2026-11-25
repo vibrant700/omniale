@@ -1,0 +1,47 @@
+{
+  "version": "sfx-candidate-localizer-v3.0",
+  "input_boundary": "sealed_submission/showcase.mp4; agent-input/audio/*.wav; private/audio-events.json source SFX duration/effective interval/onset/peak/anchor and BGM duration only",
+  "analysis_rate_hz": 12000,
+  "music_alignment": {
+    "query_seconds": 2.5,
+    "query_hop_seconds": 1.0,
+    "query_peak_ncc_floor": 0.45,
+    "query_peaks_max": 4,
+    "query_peak_separation_seconds": 0.2,
+    "offset_cluster_tolerance_seconds": 0.035,
+    "minimum_query_support": 2,
+    "selection": "highest positive global overlap NCC squared times overlap fraction; retain all supported offset aliases",
+    "gain": "per-channel-independent mono LS; local 0.8s LS, 0.6s median, 0.15s Gaussian smoothing, clipped 0..4*global positive gain"
+  },
+  "sfx_retrieval": {
+    "views": [
+      "original_mix",
+      "bgm_residual"
+    ],
+    "template": "annotated source effective interval; unchanged rate and positive waveform correlation",
+    "ncc_floor": 0.16,
+    "peak_separation_seconds": 0.2,
+    "same_source_dedup_seconds": 0.3,
+    "max_candidates_per_source": 8,
+    "fallback": "if no retrieved peak, retain best two nonadjacent peaks as below-threshold hypotheses",
+    "ranking": "residual NCC * sqrt(max(incremental mix variance explained,0)) + 0.05*raw NCC",
+    "high_confidence": "residual NCC>=0.50 and incremental mix variance explained>=0.010",
+    "medium_confidence": "residual NCC>=0.25 and incremental mix variance explained>=0.002",
+    "meaning": "confidence describes waveform identity evidence only, never semantic fit, audibility or confirmed use count"
+  },
+  "review_media": {
+    "padding_seconds": 1.0,
+    "frame_rate": 24,
+    "frame_start": "floor((effective onset-1s)*24), clamped at zero",
+    "frame_end": "ceil((effective end+1s)*24), clamped at final video frame count",
+    "merge_gap_seconds": 0.2,
+    "video_size_max": [
+      960,
+      540
+    ],
+    "video_codec": "libx264 CRF21; original mix AAC192k; no audio gain, remix or residual",
+    "exact_audio_sidecar": "FLAC derived from decoded original stereo PCM48k, exact sample trim"
+  },
+  "controls": "pure BGM and a separate synthetic mixture of the 3 supplied SFX inserted at fixed arbitrary times; same retrieval and gain subtraction; controls are not engineering truth",
+  "interpretation": "All results are search hypotheses. Missed or capped matches are uncertainty, not absence. Full final video remains fallback judge input."
+}
