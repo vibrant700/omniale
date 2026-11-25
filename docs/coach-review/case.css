@@ -115,6 +115,23 @@ footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 
 .model-heading { margin-top: 29px; padding-top: 21px; border-top: 1px solid var(--line); }
 .model-heading h3 { margin: 0; font-size: 20px; }
 
+[hidden] { display: none !important; }
+.model-switcher { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 18px; }
+.model-switcher button {
+  padding: 9px 15px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper);
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.model-switcher button:hover { border-color: var(--accent); color: var(--accent); }
+.model-switcher button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+[data-model-panel] > h3:first-child { margin-top: 0; }
+.model-switcher ~ [data-model-panel] > .model-heading { margin-top: 0; padding-top: 0; border-top: 0; }
+
 @media (max-width: 640px) {
   .quality-results { table-layout: fixed; }
   .quality-results th:first-child { width: 29%; white-space: normal; }

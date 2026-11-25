@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="OmniALE benchmark 案例：同步五路 KPL 选手视角，估算英雄伤害并制作双榜复盘大屏。">
   <title>AG 五人第一视角战术大屏 · OmniALE</title>
-  <link rel="stylesheet" href="case.css?v=kpl-6">
+  <link rel="stylesheet" href="case.css?v=kpl-7">
+  <script src="case.js?v=kpl-1" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至正文</a>
@@ -168,6 +169,11 @@
           </tbody>
         </table>
       </div>
+      <div class="model-switcher" role="group" aria-label="交付展示模型" hidden>
+        <button type="button" data-model-switch="astra" aria-pressed="true">GPT‑6.2 Astra xhigh</button>
+        <button type="button" data-model-switch="sol62" aria-pressed="false">GPT‑6.2 Sol xhigh</button>
+      </div>
+      <div data-model-panel="astra">
       <div class="section-heading model-heading"><h3 id="astra-results">GPT‑6.2 Astra xhigh</h3><a href="timeline.json" download>下载 Astra 时间轴 ↗</a></div>
       <dl class="facts">
         <div><dt>运行用时</dt><dd>1 小时 3 分 53 秒</dd></div>
@@ -228,6 +234,8 @@
         </div>
       </details>
 
+      </div>
+      <div data-model-panel="sol62">
       <div class="section-heading model-heading"><h3 id="sol62-results">GPT‑6.2 Sol xhigh</h3><a href="models/sol62-xhigh/timeline.json" download>下载 Sol 时间轴 ↗</a></div>
       <dl class="facts">
         <div><dt>运行用时</dt><dd>3 小时 35 分 35 秒</dd></div>
@@ -289,16 +297,24 @@
           </div>
         </div>
       </details>
+      </div>
     </section>
 
     <section id="execution">
       <div class="section-heading"><h2>agent执行过程</h2></div>
+      <div class="model-switcher" role="group" aria-label="执行过程模型" hidden>
+        <button type="button" data-model-switch="astra" aria-pressed="true">GPT‑6.2 Astra xhigh</button>
+        <button type="button" data-model-switch="sol62" aria-pressed="false">GPT‑6.2 Sol xhigh</button>
+      </div>
+      <div data-model-panel="astra">
       <h3>GPT‑6.2 Astra xhigh</h3>
       <ol class="steps">
         <li><h3>对齐局内时钟</h3><p>从五路录像抽取时钟区域，匹配跳秒位置，估计各路相对轩染录像的时间偏移。</p></li>
         <li><h3>追踪血条并分配伤害</h3><p>每秒采样 5 帧，通过英雄名牌跨机位合并血条记录，利用千血刻度把血条变化换算成点数。参考锁定目标、距离及命中特效，将敌方损血分配给可能出手的选手。</p></li>
         <li><h3>渲染战术大屏</h3><p>将估算写入累计时间轴，由同一数据驱动双榜与队伍伤害增量图，再合成五路画面和轩染原声。</p></li>
       </ol>
+      </div>
+      <div data-model-panel="sol62">
       <h3>GPT‑6.2 Sol xhigh</h3>
       <ol class="steps">
         <li><h3>核对时钟与音轨</h3><p>抽取各路时钟、首尾画面和音轨，计算相对轩染的固定偏移，区分选手视角与末尾转播镜头。</p></li>
@@ -306,19 +322,30 @@
         <li><h3>生成片段小计双榜</h3><p>将事件写入 20 个时间点，以已收录点数计算占比；未收录的选手在画面上显示破折号。交付中注明“伤害统计未达到全场覆盖”。</p></li>
         <li><h3>合成与抽检</h3><p>输出 1080p 五路大屏与轩染单路原声。对选手接入和片尾定格作标记，并抽检片头、团战和水晶告破画面。</p></li>
       </ol>
+      </div>
     </section>
 
     <section id="analysis">
       <div class="section-heading"><h2>失分分析</h2></div>
+      <div class="model-switcher" role="group" aria-label="失分分析模型" hidden>
+        <button type="button" data-model-switch="astra" aria-pressed="true">GPT‑6.2 Astra xhigh</button>
+        <button type="button" data-model-switch="sol62" aria-pressed="false">GPT‑6.2 Sol xhigh</button>
+      </div>
+      <div data-model-panel="astra">
       <h3>Astra：十项伤害总量均低估</h3>
       <p>最大偏差来自一诺的输出，模型估算 <strong>46,988</strong> 点，官方为 <strong>129,600</strong> 点，低估 <strong>63.74%</strong>。模型的终场输出榜将一诺排在第二，官方排在第一。</p>
       <p>估算脚本对血条读数做平滑，忽略低于血条长度 2.5% 的净掉血，并用距离等线索分配伤害。持续小额命中、同期回血和远程攻击都可能被漏计。这里的官方参考提供终场总量，赛中数值由模型估算。</p>
+      <h3>Astra：条长与名次直接跳变</h3>
+      <p>条形长度和行位置均直接切换，动态排行榜流畅度得 <strong>1/3</strong>。布局避让 <strong>4/4</strong>，音轨与可读性 <strong>3/3</strong>。</p>
+      </div>
+      <div data-model-panel="sol62">
       <h3>Sol：用样本小计替代全场累计</h3>
       <p>只记录 19 条伤害事件，输出和承伤均未达到全场覆盖。长生的输出小计为 <strong>5,797</strong> 点，官显终值为 <strong>66,000</strong> 点；其余选手也只有零散样本或未收录。样本占比不能满足全场队内占比要求，终场输出与承伤均得 <strong>0/40</strong>。</p>
       <h3>Sol：时间轴末点超出原片时长</h3>
       <p>末条时间为 <code>1023.623</code> 秒，原片基准为 <code>1023.622563</code> 秒，超出 <code>0.000437</code> 秒，未通过严格边界检查。即使单独将声明的小计与官显终值比较，也没有任何单项进入 30% 以内的得分区间。</p>
-      <h3>两套交付的名次换位都直接跳变</h3>
-      <p>Astra 的条形长度和行位置均直接切换，流畅度得 <strong>1/3</strong>；Sol 的条长已有过渡，但行位置仍直接跳变，流畅度得 <strong>2/3</strong>。两者布局避让均为 <strong>4/4</strong>，音轨与可读性均为 <strong>3/3</strong>。</p>
+      <h3>Sol：名次换位仍直接跳变</h3>
+      <p>条形长度已有过渡，但行位置仍直接跳变，动态排行榜流畅度得 <strong>2/3</strong>。布局避让 <strong>4/4</strong>，音轨与可读性 <strong>3/3</strong>。</p>
+      </div>
     </section>
     <footer><a href="../">← 返回案例汇总</a><a href="#main">回到顶部 ↑</a></footer>
   </main>
