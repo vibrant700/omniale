@@ -57,7 +57,9 @@ def main():
     score = json.loads((site / 'results/astra62-xhigh/score.json').read_text(encoding='utf-8'))
     audio = json.loads((site / 'results/astra62-xhigh/gemini-neon-audio/audio-score.json').read_text(encoding='utf-8'))
     assert score['scores']['audio'] == audio['total'] == 9
-    assert round(score['scores']['full_total_100'], 2) == 39.19
+    assert round(score['scores']['full_total_100'], 2) == 34.43
+    assert score['maxima'] == {'view_coverage': 30, 'geometry': 30, 'appearance': 30, 'audio': 10, 'non_audio_subtotal': 90, 'full_total_100': 100}
+    assert 'LPIPS' not in (site / 'index.html').read_text(encoding='utf-8')
     with zipfile.ZipFile(site / 'assets/agent-input.zip') as z:
         assert len(z.namelist()) == 15
         assert not any(n.endswith(('.png', '.glb', '.blend')) for n in z.namelist())
@@ -81,7 +83,7 @@ def main():
         assert page.evaluate("document.querySelector('#task-context').previousElementSibling.matches('details')")
         assert page.locator('#task-context li').nth(5).inner_text().startswith('针对本题目标机位的重建，三个参考机位的覆盖是充分的')
         assert page.locator('.leaderboard tbody tr').count() == 1
-        assert page.locator('.leaderboard tbody tr td').all_text_contents() == ['xhigh', 'Codex', '17.55', '12.64', '9.00', '39.19']
+        assert page.locator('.leaderboard tbody tr td').all_text_contents() == ['xhigh', 'Codex', '15.73', '7.66', '2.03', '9.00', '34.43']
         assert page.locator('#model-select').input_value() == 'astra62-xhigh'
         for button in page.locator('[data-frame]').all():
             button.click()

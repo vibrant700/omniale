@@ -54,7 +54,7 @@ document.querySelectorAll('[data-frame-inspector]').forEach(inspector => {
     link.dataset.title = `${label} · 帧 ${number} · 左参考，右交付`;
     const row = metrics.find(value => value.frame === frame);
     find('metrics').textContent = row
-      ? `表面 F1 ${row.F1.toFixed(4)} · IoU I1 ${row.IoU.I1.toFixed(4)} / I2 ${row.IoU.I2.toFixed(4)} / I3 ${row.IoU.I3.toFixed(4)} / T1 ${row.IoU.T1.toFixed(4)} · T1 SSIM ${row.SSIM.toFixed(4)} · T1 LPIPS ${row.LPIPS.toFixed(4)}`
+      ? `表面 F1 ${row.F1.toFixed(4)} · 轮廓 IoU I1 ${row.IoU.I1.toFixed(4)} / I2 ${row.IoU.I2.toFixed(4)} / I3 ${row.IoU.I3.toFixed(4)} / T1 ${row.IoU.T1.toFixed(4)} · T1 RGB SSIM ${row.SSIM.toFixed(4)}`
       : '逐帧指标见当前模型实际评分区的 JSON。';
     find('observation').textContent = row?.observation || '本帧的对应指标见当前模型评分文件。';
   }

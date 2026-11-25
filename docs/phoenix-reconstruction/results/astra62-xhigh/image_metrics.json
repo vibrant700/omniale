@@ -22,7 +22,6 @@
         "candidate_pixels": 33323,
         "appearance": {
           "SSIM": 0.06411457061767578,
-          "LPIPS": 0.43927350640296936,
           "pixels": 44311
         }
       }
@@ -49,7 +48,6 @@
         "candidate_pixels": 31104,
         "appearance": {
           "SSIM": 0.07378948479890823,
-          "LPIPS": 0.5045557618141174,
           "pixels": 47289
         }
       }
@@ -76,7 +74,6 @@
         "candidate_pixels": 25906,
         "appearance": {
           "SSIM": 0.07507006824016571,
-          "LPIPS": 0.544291079044342,
           "pixels": 40601
         }
       }
@@ -103,7 +100,6 @@
         "candidate_pixels": 30481,
         "appearance": {
           "SSIM": 0.06289071589708328,
-          "LPIPS": 0.5565700531005859,
           "pixels": 47890
         }
       }
@@ -130,7 +126,6 @@
         "candidate_pixels": 31139,
         "appearance": {
           "SSIM": 0.06385864317417145,
-          "LPIPS": 0.548740565776825,
           "pixels": 45978
         }
       }
@@ -157,7 +152,6 @@
         "candidate_pixels": 33644,
         "appearance": {
           "SSIM": 0.06971832364797592,
-          "LPIPS": 0.5174041390419006,
           "pixels": 47949
         }
       }
@@ -184,7 +178,6 @@
         "candidate_pixels": 35770,
         "appearance": {
           "SSIM": 0.07155223935842514,
-          "LPIPS": 0.49090495705604553,
           "pixels": 49627
         }
       }
@@ -211,7 +204,6 @@
         "candidate_pixels": 32610,
         "appearance": {
           "SSIM": 0.07331452518701553,
-          "LPIPS": 0.4647434651851654,
           "pixels": 43857
         }
       }
@@ -238,7 +230,6 @@
         "candidate_pixels": 37964,
         "appearance": {
           "SSIM": 0.0630306601524353,
-          "LPIPS": 0.5492292642593384,
           "pixels": 52123
         }
       }
@@ -265,7 +256,6 @@
         "candidate_pixels": 33218,
         "appearance": {
           "SSIM": 0.059990257024765015,
-          "LPIPS": 0.44425544142723083,
           "pixels": 45141
         }
       }
@@ -274,9 +264,6 @@
   "versions": {
     "numpy": "2.2.6",
     "Pillow": "13.0.0",
-    "torch": "2.5.1+cpu",
-    "torchvision": "0.20.1+cpu",
-    "lpips": "0.1.4",
     "scikit-image": "0.25.2"
   },
   "video": {
@@ -292,22 +279,26 @@
     908,
     659
   ],
-  "LPIPS_variant": "AlexNet v0.1 spatial map averaged over foreground union",
   "audio_scored": false,
   "controls": {
     "identical_reference": {
       "SSIM": 1.0,
-      "LPIPS": 0.0,
       "pixels": 44311
     },
     "blank_candidate": {
       "SSIM": 0.2163020372390747,
-      "LPIPS": 0.9741696119308472,
       "pixels": 44311
     },
     "empty_candidate_IoU": 0
   },
   "mean_IoU": 0.5244814869406896,
   "mean_SSIM": 0.06773294880986214,
-  "mean_LPIPS": 0.505996823310852
+  "published_metrics": [
+    "silhouette_IoU",
+    "RGB_foreground_SSIM"
+  ],
+  "provenance": {
+    "source_sha256": "4f90af56a76141d589db417294d41498aa7e7f763e09842a454b28d962a87c0c",
+    "description": "IoU and SSIM retained from original measurements; only current metrics published."
+  }
 }

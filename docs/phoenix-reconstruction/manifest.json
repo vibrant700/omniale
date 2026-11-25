@@ -3,8 +3,8 @@
   "files": [
     {
       "file": "app.js",
-      "bytes": 5215,
-      "sha256": "0cecb20d102af6dbae0f62e97cd937c3cce08950f475c2d1256294dd79469bf3"
+      "bytes": 5190,
+      "sha256": "892326800cf12c93c041a1ee06c661c941da8aa2a9e3cba6910c6da210ab10b0"
     },
     {
       "file": "assets/agent-input.zip",
@@ -118,8 +118,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 28332,
-      "sha256": "b1efd996c4ae8bc3a858cd7d5d90e77611db82ebadf676fda9e7a9d12c83d684"
+      "bytes": 28098,
+      "sha256": "b17623ebd5e6596a50ca6e21ac9a8a83cf5918e03e2e10e15cef9554c81ae1ba"
     },
     {
       "file": "results/astra62-xhigh/alpha-sensitivity.json",
@@ -183,8 +183,8 @@
     },
     {
       "file": "results/astra62-xhigh/comparison/frame-data.json",
-      "bytes": 4627,
-      "sha256": "1a64afecf5b48b690b95eaaf6765cda2ec74b4b439cee661c4cb9ac1795003aa"
+      "bytes": 4286,
+      "sha256": "70ec8ab02e8fde7d713b33c3cb0f6a7b92fbf84ae6a230863833bec48a2e5c68"
     },
     {
       "file": "results/astra62-xhigh/delivery.zip",
@@ -213,8 +213,8 @@
     },
     {
       "file": "results/astra62-xhigh/image_metrics.json",
-      "bytes": 7888,
-      "sha256": "4f90af56a76141d589db417294d41498aa7e7f763e09842a454b28d962a87c0c"
+      "bytes": 7534,
+      "sha256": "6f3a5c0fb9b3f77cf9d2f5bc25cc9fd8e1cbaadde3dda93b747ad40633687b1b"
     },
     {
       "file": "results/astra62-xhigh/poster.jpg",
@@ -223,8 +223,8 @@
     },
     {
       "file": "results/astra62-xhigh/PROTOCOL.json",
-      "bytes": 3301,
-      "sha256": "7ff63aa6900a29e22d9937fbb5c0e3ecc59a7c1208f7292642415d2044bd6810"
+      "bytes": 4031,
+      "sha256": "ffbffd6e86bd29dc78be44900c26816bbb4ce23a689bfe87231c446ea59033bf"
     },
     {
       "file": "results/astra62-xhigh/README.md",
@@ -243,8 +243,8 @@
     },
     {
       "file": "results/astra62-xhigh/score.json",
-      "bytes": 5167,
-      "sha256": "c08849762e51b3a012a2842681657b58d5d2da56ef47120a9e30e6244e4a65e7"
+      "bytes": 5992,
+      "sha256": "bc30b487372a933111f098e0143f4589630879a00a0fd51141e089baca54e1c1"
     },
     {
       "file": "results/astra62-xhigh/T1.mp4",

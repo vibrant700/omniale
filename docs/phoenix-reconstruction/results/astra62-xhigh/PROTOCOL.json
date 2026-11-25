@@ -1,6 +1,6 @@
 {
-  "revision": "phoenix-ten-frames-geometry-appearance-v1",
-  "freeze_before_solver": true,
+  "revision": "phoenix-ten-frames-iou-f1-ssim-audio-v2",
+  "freeze_before_solver": false,
   "frames": [
     0,
     11,
@@ -15,11 +15,10 @@
   ],
   "fps": 30,
   "weights": {
-    "geometry_F1": 22.5,
-    "geometry_IoU": 22.5,
-    "appearance_SSIM": 22.5,
-    "appearance_LPIPS": 22.5,
-    "audio_unscored": 10
+    "view_coverage": 30,
+    "geometry": 30,
+    "appearance": 30,
+    "audio": 10
   },
   "primary_F1_tolerance_diagonal_fraction": 0.005,
   "diagnostic_F1_tolerance_fractions": [
@@ -63,9 +62,8 @@
   ],
   "appearance_region": "Union of reference alpha>=0.5 and candidate silhouette from the submitted 3D scene; include candidate non-background pixels from actual video. Full canvas used for any foreground outside fixed crop.",
   "SSIM": "Gaussian sigma1.5, population covariance, RGB mean; spatial map mean over foreground union.",
-  "LPIPS": "AlexNet v0.1 spatial=True, normalize=True; mean spatial output over foreground union; diagnostic foreground-weighted variant rather than ordinary full-image LPIPS.",
   "aggregation": "Mean over exactly 10 frames; IoU mean over 4 fixed cameras then 10 frames.",
-  "score_formula": "22.5*F1 +22.5*IoU +22.5*clip(SSIM,0,1) +22.5*clip(1-LPIPS,0,1). Report subtotal /90, audio null; not a full /100 score.",
+  "score_formula": "30*mean_IoU + 30*mean_F1 + 30*clip(mean_SSIM,0,1) + audio",
   "missing_submission": "Missing required native scene is an engineering failure; only genuinely measurable components get scores.",
   "controls": [
     "reference vs self",
@@ -78,5 +76,21 @@
     "Thresholds and linear mappings inherit earlier asset-showcase conventions, not expert calibrated professional quality cutoffs.",
     "Ten frames may miss inter-frame faults.",
     "Alpha microtriangle approximation sensitivity is reported."
-  ]
+  ],
+  "measurement_protocol": "phoenix-ten-frames-geometry-appearance-v1",
+  "measurement_settings_frozen_before_solver": true,
+  "audio": "Five criteria scored 0/1/2; accepted supplied Gemini 4 Neon review, summed /10.",
+  "provenance": {
+    "revision": "phoenix-ten-frames-iou-f1-ssim-audio-v2",
+    "revision_date": "2026-11-25",
+    "measurement_reused": true,
+    "source_files_sha256": {
+      "score.json": "c08849762e51b3a012a2842681657b58d5d2da56ef47120a9e30e6244e4a65e7",
+      "PROTOCOL.json": "7ff63aa6900a29e22d9937fbb5c0e3ecc59a7c1208f7292642415d2044bd6810",
+      "geometry_metrics.json": "04b37e0ebf5b9cea03725c6e907d97dcddeac961507babf18d6d50b92ea7893f",
+      "image_metrics.json": "4f90af56a76141d589db417294d41498aa7e7f763e09842a454b28d962a87c0c",
+      "gemini-neon-audio/audio-score.json": "a5a59d4e15bd4f2cfb8c395967f6a4ac1add4a83de575531aa44cc46ee3cd43b"
+    },
+    "description": "User-approved reweighting of existing fixed-frame measurements; no new solver run or measurement."
+  }
 }

@@ -14,35 +14,9 @@
     88,
     99
   ],
-  "raw": {
-    "F1_at_0.5pct_reference_diagonal": 0.25540531564212166,
-    "IoU": 0.5244814869406896,
-    "SSIM": 0.06773294880986214,
-    "LPIPS_alex_spatial_foreground_union": 0.505996823310852
-  },
-  "scores": {
-    "geometry": 17.547453058113256,
-    "appearance": 12.639062823727727,
-    "non_audio_subtotal": 30.186515881840982,
-    "audio": 9,
-    "full_total_100": 39.18651588184098
-  },
-  "maxima": {
-    "geometry": 45,
-    "appearance": 45,
-    "non_audio_subtotal": 90,
-    "audio": 10
-  },
-  "components": {
-    "surface_F1": 5.746619601947737,
-    "silhouette_IoU": 11.800833456165517,
-    "SSIM": 1.523991348221898,
-    "LPIPS": 11.115071475505829
-  },
   "elapsed_seconds": 2710.76,
   "tool_calls": 139,
   "audio_evaluated": true,
-  "interpretation": "Diagnostic score under the frozen metric conventions; thresholds and linear mapping not expert calibrated.",
   "engineering": {
     "independent_local_reopen": true,
     "resources_standalone_resolved": true,
@@ -164,5 +138,47 @@
         ]
       }
     ]
+  },
+  "protocol": "phoenix-ten-frames-iou-f1-ssim-audio-v2",
+  "raw": {
+    "F1_at_0.5pct_reference_diagonal": 0.25540531564212166,
+    "IoU": 0.5244814869406896,
+    "SSIM": 0.06773294880986214
+  },
+  "scores": {
+    "view_coverage": 15.73444460822069,
+    "geometry": 7.662159469263649,
+    "appearance": 2.031988464295864,
+    "audio": 9,
+    "non_audio_subtotal": 25.428592541780205,
+    "full_total_100": 34.428592541780205
+  },
+  "maxima": {
+    "view_coverage": 30,
+    "geometry": 30,
+    "appearance": 30,
+    "audio": 10,
+    "non_audio_subtotal": 90,
+    "full_total_100": 100
+  },
+  "components": {
+    "silhouette_IoU": 15.73444460822069,
+    "surface_F1": 7.662159469263649,
+    "SSIM": 2.031988464295864,
+    "audio": 9
+  },
+  "score_formula": "30*mean_IoU + 30*mean_F1 + 30*clip(mean_SSIM,0,1) + audio",
+  "provenance": {
+    "revision": "phoenix-ten-frames-iou-f1-ssim-audio-v2",
+    "revision_date": "2026-11-25",
+    "measurement_reused": true,
+    "source_files_sha256": {
+      "score.json": "c08849762e51b3a012a2842681657b58d5d2da56ef47120a9e30e6244e4a65e7",
+      "PROTOCOL.json": "7ff63aa6900a29e22d9937fbb5c0e3ecc59a7c1208f7292642415d2044bd6810",
+      "geometry_metrics.json": "04b37e0ebf5b9cea03725c6e907d97dcddeac961507babf18d6d50b92ea7893f",
+      "image_metrics.json": "4f90af56a76141d589db417294d41498aa7e7f763e09842a454b28d962a87c0c",
+      "gemini-neon-audio/audio-score.json": "a5a59d4e15bd4f2cfb8c395967f6a4ac1add4a83de575531aa44cc46ee3cd43b"
+    },
+    "description": "User-approved reweighting of existing fixed-frame measurements; no new solver run or measurement."
   }
 }

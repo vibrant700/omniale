@@ -9,6 +9,7 @@ import shutil
 import zipfile
 
 from PIL import Image
+from scoring import make_reports
 
 FRAMES = list(range(0, 100, 11))
 SLUG = 'phoenix-reconstruction'
@@ -68,18 +69,21 @@ def main():
         evaluation = run / 'evaluation'
         dest = f'results/{mid}'
         content = here / 'models' / mid
-        score = json.loads((evaluation / 'score.json').read_text(encoding='utf-8'))
-        metric = json.loads((evaluation / 'image_metrics.json').read_text(encoding='utf-8'))
+        reports = make_reports(evaluation)
+        score = reports['score.json']
+        metric = reports['image_metrics.json']
         geom = json.loads((evaluation / 'geometry_metrics.json').read_text(encoding='utf-8'))
         assert score['frames'] == FRAMES
         assert score['model'] == model['model'] and score['effort'] == model['effort']
         scores = score['scores']
-        assert all(isinstance(scores[k], (int, float)) for k in ['geometry', 'appearance', 'audio', 'full_total_100'])
-        assert abs(scores['geometry'] + scores['appearance'] + scores['audio'] - scores['full_total_100']) < 1e-9
+        assert all(isinstance(scores[k], (int, float)) for k in ['view_coverage', 'geometry', 'appearance', 'audio', 'full_total_100'])
+        assert abs(sum(scores[k] for k in ['view_coverage', 'geometry', 'appearance', 'audio']) - scores['full_total_100']) < 1e-9
         for name in ['T1.mp4', 'scene.blend', 'README.md']:
             copy(run / 'remote-delivery' / name, f'{dest}/{name}')
         copy(run / model['delivery_archive'], f'{dest}/delivery.zip')
-        for name in ['score.json', 'geometry_metrics.json', 'image_metrics.json', 'PROTOCOL.json',
+        for name, data in reports.items():
+            write_json(f'{dest}/{name}', data)
+        for name in ['geometry_metrics.json',
                      'evaluation-sampling.json', 'render-route-audit.json', 'geometry-self-control.json',
                      'alpha-sensitivity.json', 'gemini-neon-audio/audio-score.json']:
             copy(evaluation / name, f'{dest}/{name}')
@@ -103,7 +107,7 @@ def main():
         label = f"{model['label']} · {model['effort']} · {model['framework']}"
         rows.append(f'<tr data-result-model="{mid}"><th scope="row"><a href="#model-{mid}" data-select-model="{mid}">{esc(model["label"])}</a></th>'
                     f'<td>{esc(model["effort"])}</td><td>{esc(model["framework"])}</td>'
-                    f'<td>{scores["geometry"]:.2f}</td><td>{scores["appearance"]:.2f}</td><td>{scores["audio"]:.2f}</td>'
+                    f'<td>{scores["view_coverage"]:.2f}</td><td>{scores["geometry"]:.2f}</td><td>{scores["appearance"]:.2f}</td><td>{scores["audio"]:.2f}</td>'
                     f'<td><strong class="score-value">{scores["full_total_100"]:.2f}</strong></td></tr>')
         options.append(f'<option value="{mid}">{esc(label)}</option>')
         for name in REPORTS:

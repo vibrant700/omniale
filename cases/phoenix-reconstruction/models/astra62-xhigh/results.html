@@ -6,20 +6,17 @@
     <div class="inline-links"><a href="results/astra62-xhigh/delivery.zip" download>完整原始交付 · 5.2 MB ↓</a><a href="results/astra62-xhigh/scene.blend" download>scene.blend ↓</a><a href="results/astra62-xhigh/T1.mp4" download>T1.mp4 ↓</a><a href="results/astra62-xhigh/README.md">交付说明 ↗</a></div>
     <details class="metric-detail"><summary>分项评分与原始指标</summary><div class="detail-body">
     <div class="table-wrap"><table class="score-table"><caption>Astra 实际评分</caption><thead><tr><th>维度</th><th>原始指标</th><th>得分</th><th>满分</th></tr></thead><tbody>
-      <tr><td rowspan="2">三维几何</td><td>表面 F1 · 0.255405</td><td>5.75</td><td>22.5</td></tr>
-      <tr><td>四机位 IoU · 0.524481</td><td>11.80</td><td>22.5</td></tr>
-      <tr class="subtotal"><td>几何小计</td><td></td><td>17.55</td><td>45</td></tr>
-      <tr><td rowspan="2">成片外观</td><td>前景 SSIM · 0.067733</td><td>1.52</td><td>22.5</td></tr>
-      <tr><td>前景空间 LPIPS · 0.505997</td><td>11.12</td><td>22.5</td></tr>
-      <tr class="subtotal"><td>外观小计</td><td></td><td>12.64</td><td>45</td></tr>
+      <tr><td>机位二维覆盖度</td><td>四机位轮廓 IoU · 0.524481</td><td>15.73</td><td>30</td></tr>
+      <tr><td>三维几何 F1</td><td>表面 F1 · 0.255405</td><td>7.66</td><td>30</td></tr>
+      <tr><td>成片外观</td><td>前景 RGB SSIM · 0.067733</td><td>2.03</td><td>30</td></tr>
       <tr><td>音效设计与同步</td><td>Gemini 4 Neon · 五项评审</td><td>9.00</td><td>10</td></tr>
-      <tr class="total-row"><td>总分</td><td>使用完整精度汇总</td><td>39.19</td><td>100</td></tr>
+      <tr class="total-row"><td>总分</td><td>使用完整精度汇总</td><td>34.43</td><td>100</td></tr>
     </tbody></table></div>
     </div></details>
     <div class="json-downloads" id="astra-score-files"><h3>本次评分 JSON</h3><p>几何与外观来自固定脚本；音效采用委托方提供并确认的 Gemini 4 Neon 评审结果。以下文件保留原始数值与逐项依据。</p><div class="download-grid">
       <a href="results/astra62-xhigh/score.json" download><strong>score.json ↓</strong><span>总分、分项、模型与评委来源</span></a>
       <a href="results/astra62-xhigh/geometry_metrics.json" download><strong>geometry_metrics.json ↓</strong><span>十帧表面距离、精确率、召回率与 F1</span></a>
-      <a href="results/astra62-xhigh/image_metrics.json" download><strong>image_metrics.json ↓</strong><span>40 个 IoU 与十帧 SSIM、LPIPS</span></a>
+      <a href="results/astra62-xhigh/image_metrics.json" download><strong>image_metrics.json ↓</strong><span>40 个轮廓 IoU 与十帧 RGB SSIM</span></a>
       <a href="results/astra62-xhigh/gemini-neon-audio/audio-score.json" download><strong>audio-score.json ↓</strong><span>Gemini 4 Neon 原始音效评审 · 9/10</span></a>
       <a href="results/astra62-xhigh/PROTOCOL.json" download><strong>PROTOCOL.json ↓</strong><span>前 90 分的固定参数与计算协议</span></a>
       <a href="results/astra62-xhigh/evaluation-sampling.json" download><strong>evaluation-sampling.json ↓</strong><span>抽样帧号与时间轴</span></a>

@@ -64,25 +64,27 @@
 
   <section class="section" id="scoring" aria-labelledby="scoring-title">
     <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2></div>
-    <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">三维几何 45 ＋ 成片外观 45 ＋ 音效设计与同步 10</p><p>几何与外观由固定脚本计算，音效由 Gemini 4 Neon 评审。工程可用性单独核验，不计入分数。</p></div>
+    <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">机位二维覆盖度 30 ＋ 三维几何 F1 30 ＋ 成片外观 30 ＋ 音效设计与同步 10</p><p>机位二维覆盖度、三维几何与外观由固定脚本计算，音效由 Gemini 4 Neon 评审。工程可用性单独核验，不计入分数。</p></div>
     <p class="note media-note">视觉评分固定抽取零基帧 0、11、22、33、44、55、66、77、88、99，时间为帧号 ÷ 30。各帧等权；坐标、尺寸和时间固定，不做 ICP、重新缩放、图像配准或时间平移。</p>
-    <details open><summary>三维几何 · 45 分</summary><div class="detail-body">
-      <h4>表面 F1 · 22.5 分</h4>
+    <details open><summary>三维几何 F1 · 30 分</summary><div class="detail-body">
+      <h4>三维表面距离与 F1</h4>
       <p>在参考工程与交付工程的十个对应姿态，提取世界坐标下经过骨骼和修改器计算的网格。透明材质按 UV 将三角形细分为 4 × 4 微三角形，保留中心点透明度 α ≥ 0.5 的部分；不透明表面完整保留。每份合并表面按面积采样 50,000 点，参考与候选的随机种子分别为 20261124＋帧号、20271124＋帧号。</p>
       <p>通过 I1、I2、I3 的透视投影与 BVH 首次相交测试，保留至少一个输入机位可见的样本；可见性误差阈值为参考包围盒对角线的 10⁻⁴。样本到另一份完整有效表面的最近距离由 Blender BVH 计算。以参考全动画联合包围盒对角线 D 为固定尺度，距离容差 τ＝0.005D。</p>
       <p>精确率 P 为候选可见样本到参考表面距离不超过 τ 的比例；召回率 R 为参考可见样本到候选表面距离不超过 τ 的比例。每帧计算 F1＝2PR/(P＋R)，再对十帧取均值。</p>
-      <p class="equation">表面得分＝22.5 × mean₁₀(F1)</p>
-      <h4>四机位轮廓 IoU · 22.5 分</h4>
+      <p class="equation">三维几何得分＝30 × mean₁₀(F1)</p>
+    </div></details>
+    <details><summary>机位二维覆盖度 · 30 分</summary><div class="detail-body">
+      <h4>四机位轮廓 IoU</h4>
       <p>评测端打开交付的 <code>scene.blend</code>，按固定相机 I1、I2、I3、T1 各补渲染十帧。使用 Cycles 64 采样、固定种子 17，关闭降噪、运动模糊、合成与序列编辑输出；以 α ≥ 0.5 得到前景掩膜，与参考原始 RGBA 帧比较。每对掩膜计算交集面积 ÷ 并集面积，四个机位、十个时刻的 40 个 IoU 等权平均。</p>
-      <p class="equation">轮廓得分＝22.5 × mean₄₀(IoU)</p>
+      <p class="equation">机位二维覆盖度得分＝30 × mean₄₀(IoU)</p>
+      <p>覆盖度指对应机位下候选与参考前景轮廓的交并比。</p>
       <p>四个机位用于评测三维工程；要求交付的成片只有 T1。</p>
     </div></details>
-    <details><summary>成片外观 · 45 分</summary><div class="detail-body">
+    <details><summary>成片外观 · 30 分</summary><div class="detail-body">
       <p>直接解码实际交付的 <code>T1.mp4</code>，抽取同一组十帧，与参考 T1 原始 RGBA 帧合成到背景色 <code>#202630</code> 后比较。外观指标使用实际成片，不以工程重新渲染的画面代替。</p>
       <p>比较区域为参考 α ≥ 0.5、交付工程 T1 补渲染 α ≥ 0.5、以及成片像素与背景的任一 RGB 通道偏差大于 8/255 三者的并集。固定裁切框为 [280, 77, 908, 659)，由参考前景联合范围外扩 24 像素确定；有前景落在框外时改用完整画布。</p>
-      <h4>SSIM · 22.5 分</h4><p>使用高斯窗口 σ＝1.5、总体协方差、RGB 三通道空间相似度图，在前景并集上取均值，再对十帧等权平均。</p>
-      <h4>LPIPS · 22.5 分</h4><p>使用 AlexNet、LPIPS v0.1，设置 <code>spatial=True</code> 与 <code>normalize=True</code>。将感知距离空间图在同一前景并集上取均值，再对十帧平均。此处采用前景加权空间版本。</p>
-      <p class="equation">外观得分＝22.5 × clip(mean₁₀ SSIM, 0, 1)<br>＋22.5 × clip(1 − mean₁₀ LPIPS, 0, 1)</p>
+      <h4>RGB SSIM</h4><p>使用高斯窗口 σ＝1.5、总体协方差，分别计算 RGB 三通道空间相似度图后对通道取平均，在前景并集上取均值，再对十帧等权平均。</p>
+      <p class="equation">外观得分＝30 × clip(mean₁₀ SSIM, 0, 1)</p>
       <p class="note">clip 将数值截断至指定区间；计算使用未四舍五入的指标。固定阈值与线性映射用于本案例的诊断评分，未经专家质量分界校准。</p>
     </div></details>
     <details><summary>音效设计与同步 · 10 分</summary><div class="detail-body">
@@ -101,7 +103,7 @@
   <section class="section" id="results" aria-labelledby="results-title">
     <div class="section-heading"><h2 id="results-title"><span class="sec-no">03</span>测试结果</h2></div>
     <div class="table-wrap leaderboard-wrap" tabindex="0" role="region" aria-label="模型评分表，可横向滚动">
-      <table class="leaderboard"><caption>各模型实际测试结果</caption><thead><tr><th scope="col">模型</th><th scope="col">推理强度</th><th scope="col">框架</th><th scope="col">几何 / 45</th><th scope="col">外观 / 45</th><th scope="col">音效 / 10</th><th scope="col">总分 / 100</th></tr></thead><tbody><!--MODEL_ROWS--></tbody></table>
+      <table class="leaderboard"><caption>各模型实际测试结果</caption><thead><tr><th scope="col">模型</th><th scope="col">推理强度</th><th scope="col">框架</th><th scope="col">机位二维覆盖度 / 30</th><th scope="col">三维几何 F1 / 30</th><th scope="col">外观 SSIM / 30</th><th scope="col">音效 / 10</th><th scope="col">总分 / 100</th></tr></thead><tbody><!--MODEL_ROWS--></tbody></table>
     </div>
     <div class="model-control"><label for="model-select">查看模型结果</label><select id="model-select"><!--MODEL_OPTIONS--></select><span class="note" data-model-summary>成片、评分文件、执行过程与分析随模型切换。</span></div>
     <!--MODEL_RESULTS-->

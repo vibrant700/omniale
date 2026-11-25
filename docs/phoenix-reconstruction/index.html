@@ -84,25 +84,27 @@
 
   <section class="section" id="scoring" aria-labelledby="scoring-title">
     <div class="section-heading"><h2 id="scoring-title"><span class="sec-no">02</span>评分标准</h2></div>
-    <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">三维几何 45 ＋ 成片外观 45 ＋ 音效设计与同步 10</p><p>几何与外观由固定脚本计算，音效由 Gemini 4 Neon 评审。工程可用性单独核验，不计入分数。</p></div>
+    <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">机位二维覆盖度 30 ＋ 三维几何 F1 30 ＋ 成片外观 30 ＋ 音效设计与同步 10</p><p>机位二维覆盖度、三维几何与外观由固定脚本计算，音效由 Gemini 4 Neon 评审。工程可用性单独核验，不计入分数。</p></div>
     <p class="note media-note">视觉评分固定抽取零基帧 0、11、22、33、44、55、66、77、88、99，时间为帧号 ÷ 30。各帧等权；坐标、尺寸和时间固定，不做 ICP、重新缩放、图像配准或时间平移。</p>
-    <details open><summary>三维几何 · 45 分</summary><div class="detail-body">
-      <h4>表面 F1 · 22.5 分</h4>
+    <details open><summary>三维几何 F1 · 30 分</summary><div class="detail-body">
+      <h4>三维表面距离与 F1</h4>
       <p>在参考工程与交付工程的十个对应姿态，提取世界坐标下经过骨骼和修改器计算的网格。透明材质按 UV 将三角形细分为 4 × 4 微三角形，保留中心点透明度 α ≥ 0.5 的部分；不透明表面完整保留。每份合并表面按面积采样 50,000 点，参考与候选的随机种子分别为 20261124＋帧号、20271124＋帧号。</p>
       <p>通过 I1、I2、I3 的透视投影与 BVH 首次相交测试，保留至少一个输入机位可见的样本；可见性误差阈值为参考包围盒对角线的 10⁻⁴。样本到另一份完整有效表面的最近距离由 Blender BVH 计算。以参考全动画联合包围盒对角线 D 为固定尺度，距离容差 τ＝0.005D。</p>
       <p>精确率 P 为候选可见样本到参考表面距离不超过 τ 的比例；召回率 R 为参考可见样本到候选表面距离不超过 τ 的比例。每帧计算 F1＝2PR/(P＋R)，再对十帧取均值。</p>
-      <p class="equation">表面得分＝22.5 × mean₁₀(F1)</p>
-      <h4>四机位轮廓 IoU · 22.5 分</h4>
+      <p class="equation">三维几何得分＝30 × mean₁₀(F1)</p>
+    </div></details>
+    <details><summary>机位二维覆盖度 · 30 分</summary><div class="detail-body">
+      <h4>四机位轮廓 IoU</h4>
       <p>评测端打开交付的 <code>scene.blend</code>，按固定相机 I1、I2、I3、T1 各补渲染十帧。使用 Cycles 64 采样、固定种子 17，关闭降噪、运动模糊、合成与序列编辑输出；以 α ≥ 0.5 得到前景掩膜，与参考原始 RGBA 帧比较。每对掩膜计算交集面积 ÷ 并集面积，四个机位、十个时刻的 40 个 IoU 等权平均。</p>
-      <p class="equation">轮廓得分＝22.5 × mean₄₀(IoU)</p>
+      <p class="equation">机位二维覆盖度得分＝30 × mean₄₀(IoU)</p>
+      <p>覆盖度指对应机位下候选与参考前景轮廓的交并比。</p>
       <p>四个机位用于评测三维工程；要求交付的成片只有 T1。</p>
     </div></details>
-    <details><summary>成片外观 · 45 分</summary><div class="detail-body">
+    <details><summary>成片外观 · 30 分</summary><div class="detail-body">
       <p>直接解码实际交付的 <code>T1.mp4</code>，抽取同一组十帧，与参考 T1 原始 RGBA 帧合成到背景色 <code>#202630</code> 后比较。外观指标使用实际成片，不以工程重新渲染的画面代替。</p>
       <p>比较区域为参考 α ≥ 0.5、交付工程 T1 补渲染 α ≥ 0.5、以及成片像素与背景的任一 RGB 通道偏差大于 8/255 三者的并集。固定裁切框为 [280, 77, 908, 659)，由参考前景联合范围外扩 24 像素确定；有前景落在框外时改用完整画布。</p>
-      <h4>SSIM · 22.5 分</h4><p>使用高斯窗口 σ＝1.5、总体协方差、RGB 三通道空间相似度图，在前景并集上取均值，再对十帧等权平均。</p>
-      <h4>LPIPS · 22.5 分</h4><p>使用 AlexNet、LPIPS v0.1，设置 <code>spatial=True</code> 与 <code>normalize=True</code>。将感知距离空间图在同一前景并集上取均值，再对十帧平均。此处采用前景加权空间版本。</p>
-      <p class="equation">外观得分＝22.5 × clip(mean₁₀ SSIM, 0, 1)<br>＋22.5 × clip(1 − mean₁₀ LPIPS, 0, 1)</p>
+      <h4>RGB SSIM</h4><p>使用高斯窗口 σ＝1.5、总体协方差，分别计算 RGB 三通道空间相似度图后对通道取平均，在前景并集上取均值，再对十帧等权平均。</p>
+      <p class="equation">外观得分＝30 × clip(mean₁₀ SSIM, 0, 1)</p>
       <p class="note">clip 将数值截断至指定区间；计算使用未四舍五入的指标。固定阈值与线性映射用于本案例的诊断评分，未经专家质量分界校准。</p>
     </div></details>
     <details><summary>音效设计与同步 · 10 分</summary><div class="detail-body">
@@ -121,7 +123,7 @@
   <section class="section" id="results" aria-labelledby="results-title">
     <div class="section-heading"><h2 id="results-title"><span class="sec-no">03</span>测试结果</h2></div>
     <div class="table-wrap leaderboard-wrap" tabindex="0" role="region" aria-label="模型评分表，可横向滚动">
-      <table class="leaderboard"><caption>各模型实际测试结果</caption><thead><tr><th scope="col">模型</th><th scope="col">推理强度</th><th scope="col">框架</th><th scope="col">几何 / 45</th><th scope="col">外观 / 45</th><th scope="col">音效 / 10</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62-xhigh"><th scope="row"><a href="#model-astra62-xhigh" data-select-model="astra62-xhigh">Astra 6.2</a></th><td>xhigh</td><td>Codex</td><td>17.55</td><td>12.64</td><td>9.00</td><td><strong class="score-value">39.19</strong></td></tr></tbody></table>
+      <table class="leaderboard"><caption>各模型实际测试结果</caption><thead><tr><th scope="col">模型</th><th scope="col">推理强度</th><th scope="col">框架</th><th scope="col">机位二维覆盖度 / 30</th><th scope="col">三维几何 F1 / 30</th><th scope="col">外观 SSIM / 30</th><th scope="col">音效 / 10</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62-xhigh"><th scope="row"><a href="#model-astra62-xhigh" data-select-model="astra62-xhigh">Astra 6.2</a></th><td>xhigh</td><td>Codex</td><td>15.73</td><td>7.66</td><td>2.03</td><td>9.00</td><td><strong class="score-value">34.43</strong></td></tr></tbody></table>
     </div>
     <div class="model-control"><label for="model-select">查看模型结果</label><select id="model-select"><option value="astra62-xhigh">Astra 6.2 · xhigh · Codex</option></select><span class="note" data-model-summary>成片、评分文件、执行过程与分析随模型切换。</span></div>
     <article class="model-panel" id="model-astra62-xhigh" data-model-panel="astra62-xhigh" aria-label="Astra 6.2 · xhigh · Codex">
@@ -133,20 +135,17 @@
     <div class="inline-links"><a href="results/astra62-xhigh/delivery.zip" download>完整原始交付 · 5.2 MB ↓</a><a href="results/astra62-xhigh/scene.blend" download>scene.blend ↓</a><a href="results/astra62-xhigh/T1.mp4" download>T1.mp4 ↓</a><a href="results/astra62-xhigh/README.md">交付说明 ↗</a></div>
     <details class="metric-detail"><summary>分项评分与原始指标</summary><div class="detail-body">
     <div class="table-wrap"><table class="score-table"><caption>Astra 实际评分</caption><thead><tr><th>维度</th><th>原始指标</th><th>得分</th><th>满分</th></tr></thead><tbody>
-      <tr><td rowspan="2">三维几何</td><td>表面 F1 · 0.255405</td><td>5.75</td><td>22.5</td></tr>
-      <tr><td>四机位 IoU · 0.524481</td><td>11.80</td><td>22.5</td></tr>
-      <tr class="subtotal"><td>几何小计</td><td></td><td>17.55</td><td>45</td></tr>
-      <tr><td rowspan="2">成片外观</td><td>前景 SSIM · 0.067733</td><td>1.52</td><td>22.5</td></tr>
-      <tr><td>前景空间 LPIPS · 0.505997</td><td>11.12</td><td>22.5</td></tr>
-      <tr class="subtotal"><td>外观小计</td><td></td><td>12.64</td><td>45</td></tr>
+      <tr><td>机位二维覆盖度</td><td>四机位轮廓 IoU · 0.524481</td><td>15.73</td><td>30</td></tr>
+      <tr><td>三维几何 F1</td><td>表面 F1 · 0.255405</td><td>7.66</td><td>30</td></tr>
+      <tr><td>成片外观</td><td>前景 RGB SSIM · 0.067733</td><td>2.03</td><td>30</td></tr>
       <tr><td>音效设计与同步</td><td>Gemini 4 Neon · 五项评审</td><td>9.00</td><td>10</td></tr>
-      <tr class="total-row"><td>总分</td><td>使用完整精度汇总</td><td>39.19</td><td>100</td></tr>
+      <tr class="total-row"><td>总分</td><td>使用完整精度汇总</td><td>34.43</td><td>100</td></tr>
     </tbody></table></div>
     </div></details>
     <div class="json-downloads" id="astra-score-files"><h3>本次评分 JSON</h3><p>几何与外观来自固定脚本；音效采用委托方提供并确认的 Gemini 4 Neon 评审结果。以下文件保留原始数值与逐项依据。</p><div class="download-grid">
       <a href="results/astra62-xhigh/score.json" download><strong>score.json ↓</strong><span>总分、分项、模型与评委来源</span></a>
       <a href="results/astra62-xhigh/geometry_metrics.json" download><strong>geometry_metrics.json ↓</strong><span>十帧表面距离、精确率、召回率与 F1</span></a>
-      <a href="results/astra62-xhigh/image_metrics.json" download><strong>image_metrics.json ↓</strong><span>40 个 IoU 与十帧 SSIM、LPIPS</span></a>
+      <a href="results/astra62-xhigh/image_metrics.json" download><strong>image_metrics.json ↓</strong><span>40 个轮廓 IoU 与十帧 RGB SSIM</span></a>
       <a href="results/astra62-xhigh/gemini-neon-audio/audio-score.json" download><strong>audio-score.json ↓</strong><span>Gemini 4 Neon 原始音效评审 · 9/10</span></a>
       <a href="results/astra62-xhigh/PROTOCOL.json" download><strong>PROTOCOL.json ↓</strong><span>前 90 分的固定参数与计算协议</span></a>
       <a href="results/astra62-xhigh/evaluation-sampling.json" download><strong>evaluation-sampling.json ↓</strong><span>抽样帧号与时间轴</span></a>
@@ -188,11 +187,11 @@
       <div class="frame-buttons" role="group" aria-label="选择评分帧"><button type="button" data-frame="0" aria-pressed="true">00</button><button type="button" data-frame="11" aria-pressed="false">11</button><button type="button" data-frame="22" aria-pressed="false">22</button><button type="button" data-frame="33" aria-pressed="false">33</button><button type="button" data-frame="44" aria-pressed="false">44</button><button type="button" data-frame="55" aria-pressed="false">55</button><button type="button" data-frame="66" aria-pressed="false">66</button><button type="button" data-frame="77" aria-pressed="false">77</button><button type="button" data-frame="88" aria-pressed="false">88</button><button type="button" data-frame="99" aria-pressed="false">99</button></div>
       <a id="frame-link" data-frame-link class="image-zoom" href="results/astra62-xhigh/comparison/frame-00.webp" data-zoom data-title="帧 00 · 左参考，右交付"><img id="frame-image" data-frame-image src="results/astra62-xhigh/comparison/frame-00.webp" alt="帧 0：左侧参考凤凰，右侧 Astra 重建凤凰，同时间同尺度比较" width="1256" height="582" loading="lazy"></a>
       <p class="note media-note">两侧使用相同显示裁切与尺度；评分在上文规定的区域计算。可点击放大，选帧按钮支持左右方向键。</p>
-      <p id="frame-metrics" data-frame-metrics class="metric-strip" aria-live="polite">表面 F1 0.3126 · 四机位平均 IoU 0.5992 · T1 SSIM 0.0641 · T1 LPIPS 0.4393</p>
+      <p id="frame-metrics" data-frame-metrics class="metric-strip" aria-live="polite">表面 F1 0.3126 · 四机位平均 IoU 0.5992 · T1 SSIM 0.0641</p>
       <p id="frame-observation" data-frame-observation class="frame-observation">抬翼姿态大体建立，翼面厚度、躯干覆羽与眼斑长尾的形状和位置仍有偏差。</p>
       <noscript><p>全部十帧可通过上方“十帧总览”查看，逐帧指标见实际评分区的 JSON。</p></noscript>
     </div>
-    <div class="findings-grid"><article><span class="finding-number">01 / 几何与姿态</span><h3>形象接近，表面仍未对齐</h3><p>F1 为 0.2554，四机位轮廓 IoU 为 0.5245。低翼与回收阶段，翼尖方向、翼面弯曲和尾羽展开差异更明显；骨骼数量与可编辑性本身不抵消形体误差。</p></article><article><span class="finding-number">02 / 成片外观</span><h3>色彩建立，细部与受光有偏差</h3><p>重建保留绿色身体与彩色飞羽，但参考的细碎覆羽、翼面深浅层次和尾羽布局没有完整恢复。前景 SSIM 为 0.0677，前景空间 LPIPS 为 0.5060。</p></article><article><span class="finding-number">03 / 声音制作</span><h3>同步完成，重复感仍在</h3><p>Gemini 4 Neon 给予音效 9/10：扫翼重心与交付动作同步、混音清楚；四次扑翼声音的包络与强弱过于统一，扣除 1 分。</p></article></div>
+    <div class="findings-grid"><article><span class="finding-number">01 / 几何与姿态</span><h3>形象接近，表面仍未对齐</h3><p>F1 为 0.2554，四机位轮廓 IoU 为 0.5245。低翼与回收阶段，翼尖方向、翼面弯曲和尾羽展开差异更明显；骨骼数量与可编辑性本身不抵消形体误差。</p></article><article><span class="finding-number">02 / 成片外观</span><h3>色彩建立，细部与受光有偏差</h3><p>重建保留绿色身体与彩色飞羽，但参考的细碎覆羽、翼面深浅层次和尾羽布局没有完整恢复。前景 RGB SSIM 为 0.0677。</p></article><article><span class="finding-number">03 / 声音制作</span><h3>同步完成，重复感仍在</h3><p>Gemini 4 Neon 给予音效 9/10：扫翼重心与交付动作同步、混音清楚；四次扑翼声音的包络与强弱过于统一，扣除 1 分。</p></article></div>
 
 </article>
   </section>
