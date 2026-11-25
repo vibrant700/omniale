@@ -1,0 +1,493 @@
+{
+  "judge_model": "Gemini 4 Neon",
+  "assessment_status": "complete",
+  "score": 5,
+  "maximum": 5,
+  "items": [
+    {
+      "id": "S1",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 3.475,
+          "source_end_s": 4.585,
+          "candidate_ids": [
+            "candidate-03"
+          ],
+          "heard_description": "清晰气流扫频呼啸，约4.0秒达峰。",
+          "visual_description": "由全景建立镜头切至 01 PILOT WELL 驾驶舱特写。",
+          "reason": "whoosh 准确服务于景别切换转场。"
+        },
+        {
+          "source_start_s": 8.4333,
+          "source_end_s": 9.5433,
+          "candidate_ids": [
+            "candidate-08"
+          ],
+          "heard_description": "清晰气流扫频呼啸，约9.0秒达峰。",
+          "visual_description": "由 02 EXCAVATION TOOL 切至 03 TWIN CLAMP。",
+          "reason": "whoosh 合理对应左右机械臂模块的视角切换。"
+        },
+        {
+          "source_start_s": 13.3083,
+          "source_end_s": 16.2933,
+          "candidate_ids": [
+            "candidate-12",
+            "candidate-13"
+          ],
+          "heard_description": "约13.83秒与15.71秒两处连续清晰的 whoosh 扫频。",
+          "visual_description": "分别对应切入 05 LOAD FRAME 下肢特写与 06 TOP REGISTER 俯视全景。",
+          "reason": "两次 whoosh 均准确对应实际镜头转场。"
+        },
+        {
+          "source_start_s": 22.475,
+          "source_end_s": 27.46,
+          "candidate_ids": [
+            "candidate-18",
+            "candidate-19"
+          ],
+          "heard_description": "约23.0秒与26.88秒两处清晰的 whoosh 扫频。",
+          "visual_description": "分别对应由全机甲环绕切回英雄镜头，以及由英雄镜头切至深色 SCV-07 落版页。",
+          "reason": "后半段所有确认 whoosh 均与转场动作语义契合。"
+        }
+      ],
+      "reason": "最终混音中确认的 6 处 whoosh（candidate-03、08、12、13、18、19）全部对应明确的镜头切换或视角转场，无误用，语义对应充分成立。"
+    },
+    {
+      "id": "S2",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 4.03,
+          "source_end_s": 6.97,
+          "candidate_ids": [
+            "candidate-05",
+            "candidate-07"
+          ],
+          "heard_description": "约4.04秒与6.54秒两处清脆电子金属撞击声。",
+          "visual_description": "分别对应切入 01 PILOT WELL 与 02 EXCAVATION TOOL 及其左下角标题显现。",
+          "reason": "前段主要模块切镜均配有清晰的 hit 落点。"
+        },
+        {
+          "source_start_s": 11.155,
+          "source_end_s": 18.095,
+          "candidate_ids": [
+            "candidate-09",
+            "candidate-14"
+          ],
+          "heard_description": "约11.17秒与17.67秒两处清脆 hit。",
+          "visual_description": "分别对应切入 04 POWER PACK 与 07 FRONT REGISTER。",
+          "reason": "中段核心模块与正面视图切换均具明确视觉落点。"
+        },
+        {
+          "source_start_s": 26.9883,
+          "source_end_s": 27.4283,
+          "candidate_ids": [
+            "candidate-22"
+          ],
+          "heard_description": "约27.00秒清脆突出的电子金属 hit。",
+          "visual_description": "深色 SCV-07 最终落版页切出定格。",
+          "reason": "片尾落版定音语义明确。虽有两处镜头中段随拍触发的 hit（candidate-11 约12.04秒、candidate-17 约19.55秒）缺乏对应视觉落点，但 5/7 主要结构性 hit 均与切镜和落版显现形成清晰合理的语义对应。"
+        }
+      ],
+      "reason": "7 处确认 hit 中有 5 处主要结构性 hit（candidate-05、07、09、14、22）准确对应镜头切换、模块标题显现与最终落版定格，整体语义对应成立；另有 2 处（candidate-11、candidate-17）落在平稳镜头中段缺少明确视觉事件，作为次要瑕疵记录。"
+    },
+    {
+      "id": "S3",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 0.1,
+          "source_end_s": 1.78,
+          "candidate_ids": [
+            "candidate-01"
+          ],
+          "heard_description": "开场约0.18秒浑厚次低音下潜重击。",
+          "visual_description": "片头 SCV-07 机甲全貌与主标题首次确立呈现。",
+          "reason": "以低频重量确立开篇视觉出场重心。"
+        },
+        {
+          "source_start_s": 18.85,
+          "source_end_s": 20.53,
+          "candidate_ids": [
+            "candidate-15"
+          ],
+          "heard_description": "约18.93秒强劲深沉的次低音 drop。",
+          "visual_description": "由静态感较强的正面标准视图切入高速 360 度 FULL CHASSIS 全机甲环绕检视。",
+          "reason": "drop 精准对应全片最显著的视觉能量与动态跃升。"
+        },
+        {
+          "source_start_s": 26.4333,
+          "source_end_s": 28.1133,
+          "candidate_ids": [
+            "candidate-20"
+          ],
+          "heard_description": "约26.51秒起音、延续至28.1秒的深沉低频 drop。",
+          "visual_description": "英雄展示镜头收束并切入深色 SCV-07 落版页。",
+          "reason": "配合片尾能量收束与落版重心转换。"
+        }
+      ],
+      "reason": "最终混音中确认的 3 处 drop（candidate-01、15、20）均位于开篇确立、高潮环绕切入与片尾落版收束等关键视觉重心或能量变化节点，语义对应合理。"
+    },
+    {
+      "id": "S4",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 3.475,
+          "source_end_s": 9.5433,
+          "candidate_ids": [
+            "candidate-03",
+            "candidate-05",
+            "candidate-07",
+            "candidate-08"
+          ],
+          "heard_description": "约4.0秒 whoosh+hit、约6.54秒 hit、约9.0秒 whoosh 峰值与瞬态均清晰利落。",
+          "visual_description": "分别于约4.0秒、6.54秒、9.0秒切入 01 PILOT WELL、02 EXCAVATION TOOL 与 03 TWIN CLAMP。",
+          "reason": "前段主要转场与切镜音效听觉有效点与画面切换在感知上紧密对齐。"
+        },
+        {
+          "source_start_s": 11.155,
+          "source_end_s": 23.585,
+          "candidate_ids": [
+            "candidate-09",
+            "candidate-12",
+            "candidate-13",
+            "candidate-14",
+            "candidate-15",
+            "candidate-18"
+          ],
+          "heard_description": "约11.17秒 hit、13.83秒 whoosh、15.71秒 whoosh、17.67秒 hit、18.93秒 drop、23.0秒 whoosh 均与视觉节点呼应。",
+          "visual_description": "依次对应切入动力包、下肢悬挂、俯视图、正面视图、全机甲高速环绕及英雄回归镜头。",
+          "reason": "中后段核心转场与高潮切入点均保持良好的视听感知同步。"
+        },
+        {
+          "source_start_s": 26.35,
+          "source_end_s": 28.1133,
+          "candidate_ids": [
+            "candidate-19",
+            "candidate-20",
+            "candidate-22"
+          ],
+          "heard_description": "约26.88秒 whoosh 扫频与27.00秒 hit 紧贴落版切出；candidate-20 的 drop 起音约在26.51秒。",
+          "visual_description": "约26.9–27.0秒切至深色 SCV-07 落版页。",
+          "reason": "片尾 whoosh 与 hit 精准对齐落版切换；虽 candidate-20 提前约0.4秒起音且中段存在两处无视觉落点的 hit（candidate-11、17），但全片绝大多数主要音效在感知上与视觉事件对齐良好。"
+        }
+      ],
+      "reason": "全片绝大多数主要已确认音效（全部 6 处 whoosh、5 处核心切镜/落版 hit 及开场与高潮 2 处 drop）的听觉有效点/区间均与对应视觉事件在感知上对齐良好；仅片尾 drop（candidate-20）起音略早约0.4秒及两处镜头中段 hit 缺少视觉锚点。"
+    },
+    {
+      "id": "S5",
+      "score": 1,
+      "evidence": [
+        {
+          "source_start_s": 0.1,
+          "source_end_s": 23.585,
+          "candidate_ids": [
+            "candidate-01",
+            "candidate-03",
+            "candidate-05",
+            "candidate-07",
+            "candidate-08",
+            "candidate-09",
+            "candidate-12",
+            "candidate-13",
+            "candidate-14",
+            "candidate-15",
+            "candidate-18"
+          ],
+          "heard_description": "在 FINAL_MIX 与 window-01 原声混音中，whoosh 的高频气流扫频、hit 的中高频清脆撞击、drop 的次低频下潜均能轻易与原配乐区分，未被配乐掩蔽，也未出现削波或压过音乐的突兀感。",
+          "visual_description": "覆盖开场、各模块特写、全景与 360 度环绕展示段。",
+          "reason": "三类音效在主体段落中可闻度清晰且混音层次平衡。"
+        },
+        {
+          "source_start_s": 26.35,
+          "source_end_s": 28.1133,
+          "candidate_ids": [
+            "candidate-19",
+            "candidate-20",
+            "candidate-22"
+          ],
+          "heard_description": "在 window-02 片尾段，drop 的深沉低频、whoosh 的扫频过渡与 hit 的清脆定音虽紧凑叠层，但三者各自质感仍清晰可辨。",
+          "visual_description": "英雄展示镜头切至深色 SCV-07 落版页收尾。",
+          "reason": "收尾叠层处仍保持良好的可辨认度与动态层次。"
+        }
+      ],
+      "reason": "经直接聆听最终混音并与四条参考音频对照，whoosh、hit、drop 三类音效在成片混音中均可清晰辨认，频段分离与音量层次适当，无明显掩蔽或失衡。"
+    }
+  ],
+  "confirmed_events": [
+    {
+      "candidate_id": "candidate-01",
+      "confirmation": "sfx",
+      "observed_type": "drop",
+      "source_start_s": 0.1,
+      "source_end_s": 1.78,
+      "heard_description": "开篇即出现浑厚下潜的低频次低音重击与较长尾音，与参考 drop 音色一致，在开场脉动底鼓配乐之下清晰可辨。",
+      "visual_description": "全片开场建立镜头，画面呈现红色 SCV-07 机甲四分之三全貌与左侧 SCV / 07 MOBILE SERVICE CHASSIS 主标题，转盘缓慢旋转。",
+      "visual_anchor_source_s": 0.18,
+      "visual_interval_source_s": [
+        0.0,
+        1.8
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "开场重低音落点为整片建立视觉重量与出场气势，听觉起音与开篇画面显现感知对齐。"
+    },
+    {
+      "candidate_id": "candidate-03",
+      "confirmation": "sfx",
+      "observed_type": "whoosh",
+      "source_start_s": 3.475,
+      "source_end_s": 4.585,
+      "heard_description": "清晰可闻的气流扫频呼啸声，能量由弱渐强在约4.0秒处达到峰值后自然衰减，与参考 whoosh 一致。",
+      "visual_description": "约4.0秒处由远景建立镜头切至驾驶舱特写（01 PILOT WELL / CANOPY / CONTROLS），镜头由全景推切至局部模块展示。",
+      "visual_anchor_source_s": 4.0,
+      "visual_interval_source_s": [
+        3.5,
+        4.6
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "whoosh 扫频区间自然跨越远景到特写的转场，峰值与约4.0秒切镜感知高度对齐。"
+    },
+    {
+      "candidate_id": "candidate-05",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 4.03,
+      "source_end_s": 4.47,
+      "heard_description": "约4.04秒处出现干脆利落的电子金属感短促撞击声，与参考 hit 一致，在配乐之上清晰突出。",
+      "visual_description": "约4.0秒切入 01 PILOT WELL 驾驶舱特写，左下角模块编号与标题同步显现。",
+      "visual_anchor_source_s": 4.0,
+      "visual_interval_source_s": [
+        4.0,
+        4.5
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "hit 瞬态紧贴切镜与模块标题落点，语义与时序对齐良好。"
+    },
+    {
+      "candidate_id": "candidate-07",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 6.53,
+      "source_end_s": 6.97,
+      "heard_description": "约6.54秒处清晰可闻一声干脆短促的金属/电子撞击瞬态，与参考 hit 高度吻合。",
+      "visual_description": "约6.5秒硬切至右臂机械爪特写，左下角切换显示 02 EXCAVATION TOOL。",
+      "visual_anchor_source_s": 6.54,
+      "visual_interval_source_s": [
+        6.5,
+        7.0
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "hit 有效落点与硬切新模块镜头及字幕切换同步，语义和感知对齐均成立。"
+    },
+    {
+      "candidate_id": "candidate-08",
+      "confirmation": "sfx",
+      "observed_type": "whoosh",
+      "source_start_s": 8.4333,
+      "source_end_s": 9.5433,
+      "heard_description": "清晰的气流呼啸扫频，从约8.4秒起势并在约9.0秒达到能量峰值，随后衰减，与参考 whoosh 一致。",
+      "visual_description": "约9.0秒处从右臂挖掘爪切至左臂双钳特写（03 TWIN CLAMP / LEFT-SIDE ARTICULATION）。",
+      "visual_anchor_source_s": 9.0,
+      "visual_interval_source_s": [
+        8.4,
+        9.5
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "whoosh 贯穿两个机械臂模块特写的转场，听觉峰值与切镜位置感知同步。"
+    },
+    {
+      "candidate_id": "candidate-09",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 11.155,
+      "source_end_s": 11.595,
+      "heard_description": "约11.17秒处出现清晰锐利的短促电子金属撞击声，在配乐之上易于辨认。",
+      "visual_description": "约11.2秒切至背部双喷口动力包特写（04 POWER PACK / PAIRED NACELLES）。",
+      "visual_anchor_source_s": 11.17,
+      "visual_interval_source_s": [
+        11.1,
+        11.6
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "hit 准确落在切至背部动力包镜头与新标签出现的瞬间。"
+    },
+    {
+      "candidate_id": "candidate-11",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 12.03,
+      "source_end_s": 12.47,
+      "heard_description": "约12.04秒处清晰听到一声与参考 hit 相同的短促电子金属撞击声，明显区别于原配乐鼓点。",
+      "visual_description": "仍处于 04 POWER PACK 背部特写镜头中段，画面仅为平稳持续运镜，12.04秒处无切镜、无字幕弹出、无停顿或灯光突变。",
+      "visual_anchor_source_s": null,
+      "visual_interval_source_s": [
+        11.2,
+        13.8
+      ],
+      "semantic_match": false,
+      "perceptual_alignment": false,
+      "reason": "该 hit 在混音中真实可闻，但落在平稳镜头中段，缺乏对应的视觉落点或突变事件，更像是随音乐节拍触发。"
+    },
+    {
+      "candidate_id": "candidate-12",
+      "confirmation": "sfx",
+      "observed_type": "whoosh",
+      "source_start_s": 13.3083,
+      "source_end_s": 14.4183,
+      "heard_description": "清晰可辨的空气感扫频呼啸，约13.83秒达到中心峰值，与参考 whoosh 一致。",
+      "visual_description": "约13.8秒由背部动力包切至下肢液压悬挂特写（05 LOAD FRAME / SUSPENSION & TOE SHIELDS）。",
+      "visual_anchor_source_s": 13.83,
+      "visual_interval_source_s": [
+        13.3,
+        14.4
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "whoosh 平滑衔接背部到下肢模块的切镜转场，峰值与切点感知一致。"
+    },
+    {
+      "candidate_id": "candidate-13",
+      "confirmation": "sfx",
+      "observed_type": "whoosh",
+      "source_start_s": 15.1833,
+      "source_end_s": 16.2933,
+      "heard_description": "清晰的气流扫频呼啸声，约15.71秒达峰，在配乐渐强段之前层次分明。",
+      "visual_description": "约15.7秒由下肢悬挂特写切至垂直俯视全景（06 TOP REGISTER / ASYMMETRIC TOOL LAYOUT）。",
+      "visual_anchor_source_s": 15.71,
+      "visual_interval_source_s": [
+        15.2,
+        16.3
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "whoosh 准确配合从近景局部到俯视全景的大幅度视角切换。"
+    },
+    {
+      "candidate_id": "candidate-14",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 17.655,
+      "source_end_s": 18.095,
+      "heard_description": "约17.67秒处出现清晰清脆的电子金属撞击瞬态，在配乐滚奏渐强背景中依然可辨。",
+      "visual_description": "约17.7秒由俯视图切至正面标准对称视角（07 FRONT REGISTER / SYMMETRY & PROFILE）。",
+      "visual_anchor_source_s": 17.67,
+      "visual_interval_source_s": [
+        17.6,
+        18.1
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "hit 准确落在切入正面标准视图与标题切换的视觉落点上。"
+    },
+    {
+      "candidate_id": "candidate-15",
+      "confirmation": "sfx",
+      "observed_type": "drop",
+      "source_start_s": 18.85,
+      "source_end_s": 20.53,
+      "heard_description": "约18.93秒处爆发厚重深沉的次低音下潜冲击与长尾共鸣，与参考 drop 完全一致，在配乐高潮切入点非常突出。",
+      "visual_description": "约18.9–19.0秒由静态感较强的正面视图切入高速 360 度环绕全机甲检视镜头（FULL CHASSIS / INSPECTION PASS），画面动态能量显著跃升。",
+      "visual_anchor_source_s": 18.95,
+      "visual_interval_source_s": [
+        18.9,
+        20.5
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "drop 重击与全片最显著的视觉能量跃升（切入全机甲高速环绕检视）在语义与时序上高度契合。"
+    },
+    {
+      "candidate_id": "candidate-17",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 19.53,
+      "source_end_s": 19.97,
+      "heard_description": "约19.55秒处清晰听到一声短促电子金属撞击声，与参考 hit 一致。",
+      "visual_description": "处于 FULL CHASSIS 360度连续环绕镜头中段（距18.95秒切镜已过约0.6秒），画面正在匀速旋转，19.55秒无切镜、停顿或新文字显现。",
+      "visual_anchor_source_s": null,
+      "visual_interval_source_s": [
+        19.0,
+        23.0
+      ],
+      "semantic_match": false,
+      "perceptual_alignment": false,
+      "reason": "混音中真实可闻的 hit，但落在连续环绕运动中途，缺少明确对应的视觉落点事件。"
+    },
+    {
+      "candidate_id": "candidate-18",
+      "confirmation": "sfx",
+      "observed_type": "whoosh",
+      "source_start_s": 22.475,
+      "source_end_s": 23.585,
+      "heard_description": "清晰宽广的气流扫频呼啸，约23.0秒达峰并自然收尾，与参考 whoosh 一致。",
+      "visual_description": "约23.0秒由全机甲环绕检视切回稳重英雄四分之三视角，并浮现大字 SCV / 07 FIELD UNIT ASSET RECORD。",
+      "visual_anchor_source_s": 23.0,
+      "visual_interval_source_s": [
+        22.5,
+        23.6
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "whoosh 自然过渡从高速环绕切回英雄展示镜头，峰值与切镜感知同步。"
+    },
+    {
+      "candidate_id": "candidate-19",
+      "confirmation": "sfx",
+      "observed_type": "whoosh",
+      "source_start_s": 26.35,
+      "source_end_s": 27.46,
+      "heard_description": "在 window-02 约1.0–2.1秒（原片约26.35–27.46秒）可听出气流呼啸扫频，虽与相邻 drop 和 hit 叠层，但扫频过渡感仍清晰可辨。",
+      "visual_description": "原片约26.9秒（window-02 约1.55秒）由英雄展示画面切换至深色片尾信息卡（SCV-07 / MOBILE SERVICE CHASSIS）。",
+      "visual_anchor_source_s": 26.9,
+      "visual_interval_source_s": [
+        26.35,
+        27.46
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "whoosh 扫频跨越末尾英雄镜头向深色落版页的转场，峰值贴近切镜时刻。"
+    },
+    {
+      "candidate_id": "candidate-20",
+      "confirmation": "sfx",
+      "observed_type": "drop",
+      "source_start_s": 26.4333,
+      "source_end_s": 28.1133,
+      "heard_description": "在 window-02 约1.10–2.78秒（原片约26.43–28.11秒）清晰可闻厚重深沉的次低音 drop，冲击点在约26.51秒，尾音厚实延展至落版页停留期间。",
+      "visual_description": "原片约26.51秒仍处于英雄展示镜头末尾，约0.4秒后（约26.9–27.0秒）切入深色 SCV-07 落版页并定格收尾。",
+      "visual_anchor_source_s": 26.9,
+      "visual_interval_source_s": [
+        26.5,
+        28.1
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": false,
+      "reason": "语义上承接片尾收束与落版重心变化，但主低频冲击点约提前0.4秒落在切至落版页之前，视觉切点略晚于 drop 听觉落点。"
+    },
+    {
+      "candidate_id": "candidate-22",
+      "confirmation": "sfx",
+      "observed_type": "hit",
+      "source_start_s": 26.9883,
+      "source_end_s": 27.4283,
+      "heard_description": "在 window-02 约1.67秒（原片约27.00秒）出现非常清晰突出的电子金属撞击声，与参考 hit 一致。",
+      "visual_description": "原片约26.9–27.0秒切出深色底 SCV-07 落版标题页并定格。",
+      "visual_anchor_source_s": 27.0,
+      "visual_interval_source_s": [
+        26.9,
+        27.4
+      ],
+      "semantic_match": true,
+      "perceptual_alignment": true,
+      "reason": "清脆 hit 精准定音于最终落版标题页显现，语义与感知对齐非常清晰。"
+    }
+  ]
+}

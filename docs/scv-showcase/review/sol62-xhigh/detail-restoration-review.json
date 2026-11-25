@@ -1,0 +1,138 @@
+{
+  "rubric_version": "DETAIL-RESTORATION-RUBRIC-v2",
+  "judge_model": "Gemini 4 Neon",
+  "assessment_status": "complete",
+  "total_score": 0,
+  "maximum": 30,
+  "dimensions": [
+    {
+      "id": "D1",
+      "name": "部件与装配还原",
+      "maximum": 10,
+      "deduction_per_error": 5,
+      "confirmed_error_count": 3,
+      "score": 0,
+      "deductions": [
+        {
+          "part": "驾驶舱内部中央操纵立柱与双握把中控总成",
+          "reference_view_and_region": "reference/front.png 正中驾驶舱内部，座椅正前方",
+          "video_frame_zero_based": 120,
+          "video_timestamp_s": 5.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png 清晰确认驾驶舱座椅正前方完全空置，中央操纵立柱、双握把及下方脚部护架总成缺失，仅保留空座椅与前缘红色方块台面。",
+          "visible_difference": "参考图驾驶舱内座椅前方装配有醒目的红灰双握把立柱式操纵台与下方腿部/脚踏支架；成片 PILOT WELL 特写及统一正面视图中该中央操纵总成整体缺失。",
+          "dimension_rationale": "属于关键功能部件缺失（评“有没有”），归入 D1 部件与装配还原。"
+        },
+        {
+          "part": "左右肩甲外侧绑带挂载工具与装备（左肩红罐与木柄锤、右肩开口扳手与卷筒包）",
+          "reference_view_and_region": "reference/left.png 左肩甲外侧整片区域；reference/right.png 右肩甲外侧整片区域",
+          "video_frame_zero_based": 528,
+          "video_timestamp_s": 22.0,
+          "canonical_view_confirmation": "canonical_capture/textured/left.png 与 right.png 确认左肩甲外侧并排红色双罐、斜插木柄锤及底部红罐全部缺失，被替换为抽象黑管与圆钮；右肩甲顶部开口扳手及底部黑色卷筒包亦缺失，仅余简化黑色条状件。",
+          "visible_difference": "参考图左右肩甲外侧分别绑缚具象工具与补给件（左肩为两枚红色圆柱罐、木柄锤和底部红罐，右肩为大型开口扳手和底部黑色卷筒包）；成片旋转检视镜头与统一左右视图中这些具象挂载部件全部丢失或被抽象管条替代（成对肩甲外挂系统同类错替合并计 1 处）。",
+          "dimension_rationale": "属于关键挂载部件缺失与错替（评“有没有、是什么”），按左右成对同类错误合并计一次，归入 D1 部件与装配还原。"
+        },
+        {
+          "part": "胸部进气塔与双膝护甲等处金属尖刺装饰件",
+          "reference_view_and_region": "reference/front.png 上中胸部双进气塔顶部及外侧、下部双膝护甲外侧；reference/left.png 与 reference/right.png 膝甲及胸侧",
+          "video_frame_zero_based": 432,
+          "video_timestamp_s": 18.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png、left.png 与 right.png 确认胸部进气塔顶部/侧面及双膝护甲均光滑平整，所有外伸金属尖刺件完全不存在。",
+          "visible_difference": "参考图在胸部双进气塔顶缘与侧缘、双膝护甲及前臂局部装配有多枚尖锐外伸的金属尖刺；成片正面定帧及各角度镜头中整机尖刺部件全部缺失。",
+          "dimension_rationale": "属于成组特征性外装部件整体缺失（评“有没有”），归入 D1 部件与装配还原。"
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "name": "造型特征还原",
+      "maximum": 10,
+      "deduction_per_error": 5,
+      "confirmed_error_count": 4,
+      "score": 0,
+      "deductions": [
+        {
+          "part": "右臂三瓣挖掘爪刃片",
+          "reference_view_and_region": "reference/front.png 画面左侧右臂末端；reference/right.png 与 reference/top.png 右臂三瓣爪部",
+          "video_frame_zero_based": 168,
+          "video_timestamp_s": 7.0,
+          "canonical_view_confirmation": "canonical_capture/textured/right.png、top.png 与 front.png 确认三片爪刃均为笔直收尖的扁平三角形尖刺，与参考图宽铲形弯折轮廓完全不同。",
+          "visible_difference": "参考图右臂三瓣挖掘爪为宽阔的铲状/弧形桨叶轮廓，根部外扩弯曲、顶端呈圆钝弧切；成片 EXCAVATION TOOL 特写中三片刃片被改写为笔直锐利的尖头三角长刺，宽铲轮廓与根部弯折特征消失。",
+          "dimension_rationale": "三瓣爪部件本身存在且数量正确，但刃片轮廓形状与边缘弯折被明显改写，归入 D2 造型特征还原。"
+        },
+        {
+          "part": "左臂双刃夹钳/剪刃",
+          "reference_view_and_region": "reference/left.png 左臂前端夹剪刃部；reference/front.png 画面右侧与 reference/top.png 画面左侧",
+          "video_frame_zero_based": 240,
+          "video_timestamp_s": 10.0,
+          "canonical_view_confirmation": "canonical_capture/textured/left.png、front.png 与 top.png 确认左臂前端被改写为一对左右水平对开、内缘带规则方形锯齿的细直夹齿。",
+          "visible_difference": "参考图左臂前端为上下咬合的宽阔实心弧面剪刃结构，刃身宽厚且带有不规则凹槽与弧形尖端；成片 TWIN CLAMP 特写中改写为两根细直、左右平开、内侧排列规则方齿的梳齿状夹爪，开合结构与刃片造型特征明显偏离参考。",
+          "dimension_rationale": "左臂末端工具仍为双刃夹持结构，但刃体轮廓、齿槽形态及开合边缘结构被彻底改写，归入 D2 造型特征还原。"
+        },
+        {
+          "part": "胯部垂挂战旗（轮廓与破损开口结构）",
+          "reference_view_and_region": "reference/front.png 中下部双腿之间垂挂布帘；reference/back.png 中下部",
+          "video_frame_zero_based": 432,
+          "video_timestamp_s": 18.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png 与 back.png 确认胯部战旗呈对称平滑的倒三角窄旗造型，两侧边缘笔直无大缺口，旗面亦无贯穿破洞。",
+          "visible_difference": "参考图胯部战旗整体较宽、下摆呈多处参差撕裂的锯齿状残破轮廓，且旗面中下部有明显贯穿镂空破洞；成片 FRONT REGISTER 镜头中战旗被改写为边缘顺滑规整的对称 V 形尖旗，撕裂缺口与镂空破洞特征消失。",
+          "dimension_rationale": "战旗部件存在且装配位置正确，但外形轮廓、残破边缘及贯穿开口结构被显著改写，归入 D2 造型特征还原。"
+        },
+        {
+          "part": "驾驶舱顶部遮阳罩/护盖",
+          "reference_view_and_region": "reference/front.png 中上部驾驶舱顶罩；reference/left.png 与 reference/right.png 驾驶舱前上方",
+          "video_frame_zero_based": 120,
+          "video_timestamp_s": 5.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png、left.png 与 right.png 确认驾驶舱顶罩为平滑半圆柱形拱顶，前缘呈圆弧开口，缺失参考图的折面硬朗轮廓与矩形外框结构。",
+          "visible_difference": "参考图驾驶舱顶罩为多折面斜切硬边罩体，顶缘平直并带有外置金属框架结构；成片 PILOT WELL 特写中顶罩被改写为圆润光滑的拱形圆筒罩，折面棱线与前缘开口形状明显改变。",
+          "dimension_rationale": "驾驶舱顶罩部件存在且位置对应，但罩体折面轮廓与开口边缘形状被改写，归入 D2 造型特征还原。"
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "name": "材质与表面细节还原",
+      "maximum": 10,
+      "deduction_per_error": 5,
+      "confirmed_error_count": 4,
+      "score": 0,
+      "deductions": [
+        {
+          "part": "驾驶舱遮阳罩顶面印刷图案与半透蜂窝质感",
+          "reference_view_and_region": "reference/top.png 中上方驾驶舱遮阳罩顶面；reference/front.png 中上部遮阳罩表面",
+          "video_frame_zero_based": 120,
+          "video_timestamp_s": 5.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png 与 top.png 确认遮阳罩顶面印有向下白色箭头盾形标，材质呈不透明土黄漆面，无白色五角星及琥珀色蜂窝网格质感。",
+          "visible_difference": "参考图遮阳罩表面为带蜂窝六边形纹理的琥珀色半透罩面，顶面印有白色五角星；成片 PILOT WELL 及 TOP REGISTER 镜头中图案被错改为向下白色箭头标志，且表面蜂窝纹理消失。",
+          "dimension_rationale": "属于明确的印刷图案错改与表面材质纹理缺失，与灯光曝光无关，归入 D3 材质与表面细节还原。"
+        },
+        {
+          "part": "胯部战旗印刷徽标图案",
+          "reference_view_and_region": "reference/front.png 中下部双腿之间战旗正面图案",
+          "video_frame_zero_based": 432,
+          "video_timestamp_s": 18.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png 确认战旗正面印刷的为红色椭圆框内向下 V 形折线图标，而非参考图的肌肉手臂图案。",
+          "visible_difference": "参考图黑色战旗正面印有红色圆环包裹的弯曲肌肉手臂徽标；成片 FRONT REGISTER 与 HERO 镜头中该图案被错改为红圈内的向下 V 形折线图标。",
+          "dimension_rationale": "属于表面印刷徽标图案错误，与几何轮廓改写及灯光变化独立，归入 D3 材质与表面细节还原。"
+        },
+        {
+          "part": "机身正面、前臂及顶部喷涂文字与编号贴花",
+          "reference_view_and_region": "reference/front.png 胸甲与大腿前甲；reference/right.png 与 reference/top.png 右前臂上缘（NO MATTER THE COST）及顶部中脊（Bobby-Joe）",
+          "video_frame_zero_based": 168,
+          "video_timestamp_s": 7.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png、right.png 与 top.png 确认胸甲、双大腿前甲与右前臂新增了参考图不存在的“07”、“SCV 07”、“LIFT POINT / FIELD SYSTEMS / NO STEP / 07”及条形码贴花，同时参考图原有的“Bobby-Joe”与“NO MATTER THE COST”文字完全缺失。",
+          "visible_difference": "成片 PILOT WELL、EXCAVATION TOOL 与 FRONT REGISTER 镜头中出现大量虚构工业编号贴花（07、SCV 07、LIFT POINT 与条形码），而参考图标志性的“Bobby-Joe”和“NO MATTER THE COST”喷涂字样均未还原。",
+          "dimension_rationale": "属于表面印刷标识与文字涂装的系统性错改与缺失，不受灯光曝光影响，归入 D3 材质与表面细节还原。"
+        },
+        {
+          "part": "红色装甲表面掉漆露底与深划痕战损细节",
+          "reference_view_and_region": "reference/front.png 双大腿前甲、胸甲边缘；reference/left.png 与 reference/right.png 前臂及机身红漆面",
+          "video_frame_zero_based": 432,
+          "video_timestamp_s": 18.0,
+          "canonical_view_confirmation": "canonical_capture/textured/front.png、left.png 与 right.png 确认全身红漆面均匀平滑，仅带轻微柔和斑驳，缺乏参考图大面积高对比银色露底掉漆与深斜划痕。",
+          "visible_difference": "参考图红色装甲边缘遍布锐利的银色金属露底掉漆，双大腿护甲与前臂存在醒目的斜向深划痕与重度战损磨损；成片各近景与正视图中红漆表面整体平滑洁净，特征性掉漆与划痕分布显著缺失。",
+          "dimension_rationale": "属于漆面掉漆、划痕分布与金属露底磨损细节未还原，经统一视图确认非光照曝光导致，归入 D3 材质与表面细节还原。"
+        }
+      ]
+    }
+  ]
+}

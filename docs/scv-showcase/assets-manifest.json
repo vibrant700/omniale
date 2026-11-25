@@ -162,6 +162,126 @@
     "sha256": "ff4cbab02f6e9bbad52cccf2aed8cd3cef522a91114196c411e83eb980c1f0ec"
   },
   {
+    "path": "assets/models/sol62-xhigh/asset.blend",
+    "mime": "application/octet-stream",
+    "bytes": 1574568,
+    "sha256": "da6f2b2a88d20f70223e238ca86d14e6bcc01a524cffecb94311a00e426ba901"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/comparison/back.webp",
+    "mime": "application/octet-stream",
+    "bytes": 115506,
+    "sha256": "8f38678fd985df8d7430b3a3aeecb02f57beb746d50e990ed6fd3cdad288234d"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/comparison/bottom.webp",
+    "mime": "application/octet-stream",
+    "bytes": 93890,
+    "sha256": "64e368f23ec5ff0211237bb5da869cab44f2317cc78de167a7a413d328018824"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/comparison/front.webp",
+    "mime": "application/octet-stream",
+    "bytes": 109194,
+    "sha256": "f148f37e957ff46573b5b94d4ec7888df740344c5fc7b3d3c4a148158c2a1508"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/comparison/left.webp",
+    "mime": "application/octet-stream",
+    "bytes": 90692,
+    "sha256": "0a288c58a4f5e68bbc51f73e8d0d6b993a92e30e2ffada783e87b01897c257f6"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/comparison/right.webp",
+    "mime": "application/octet-stream",
+    "bytes": 83964,
+    "sha256": "67e5785d10340398678dbdf08b7e09bfe03eea02a2b4eb959a410bcd63268e06"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/comparison/six-views.webp",
+    "mime": "application/octet-stream",
+    "bytes": 200670,
+    "sha256": "c70679b6133a1229d7beccf22120e3b2068c0a917e0c1fa76c14c544dd8c6260"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/comparison/top.webp",
+    "mime": "application/octet-stream",
+    "bytes": 101938,
+    "sha256": "7554e11bc276644baa71ca632240496de7faeb9a9db175b9a9127b6d1eb08620"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/delivery-README.md",
+    "mime": "text/markdown",
+    "bytes": 5386,
+    "sha256": "6918b9511434b7afd6f026a14328cb87dda0ee74e1c706db674b07a9ed097aba"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/delivery.zip",
+    "mime": "application/x-zip-compressed",
+    "bytes": 40670162,
+    "sha256": "f42b8ea5841f306dc698941ea876bb9031212fd5f3b4a6e4bfa64e220eae3c06"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/evidence/detail-restoration.jpg",
+    "mime": "image/jpeg",
+    "bytes": 179818,
+    "sha256": "03636f5953a4bd467075f1aed55d99f405c9fc1f6e8cd6b3fa7e704332d40b58"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/poster.jpg",
+    "mime": "image/jpeg",
+    "bytes": 240384,
+    "sha256": "3fbb0901f0a7732e0da7cafa9aeff81f25ec6dd3c51f75b0637abea44424b1c0"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/reconstruction/back.png",
+    "mime": "image/png",
+    "bytes": 1564264,
+    "sha256": "c01f64cc2290573cdbf0eacf7a02989e3a89cd42f3da40813f58835f59f4e119"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/reconstruction/bottom.png",
+    "mime": "image/png",
+    "bytes": 1414597,
+    "sha256": "ce8a4bcf0ba8703839dd10d371c4522857cedc49397c87318d452395fa55ff7d"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/reconstruction/front.png",
+    "mime": "image/png",
+    "bytes": 1542036,
+    "sha256": "7c2c00529b8b0935b24da0c75ca2d6732559f7ca5d54c0c35697852360c1a866"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/reconstruction/left.png",
+    "mime": "image/png",
+    "bytes": 1353190,
+    "sha256": "7c90dffc617c2953247ef09d41d8a030eda503af19cfebdda30a36490dfb037f"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/reconstruction/right.png",
+    "mime": "image/png",
+    "bytes": 1290658,
+    "sha256": "accce28110d644be8ce89af9c1fba970552e4777deb49b2d13ed5c49f69f5f6c"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/reconstruction/top.png",
+    "mime": "image/png",
+    "bytes": 1500931,
+    "sha256": "67e262bcafcc5b0994c9eff81485b30458c351509467cc822e51ca6687a4b653"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/showcase.blend",
+    "mime": "application/octet-stream",
+    "bytes": 2204355,
+    "sha256": "81441bdc5ccb58fc378d4194492984db6ebe8dcb6409020e3188f44567feac79"
+  },
+  {
+    "path": "assets/models/sol62-xhigh/showcase.mp4",
+    "mime": "video/mp4",
+    "bytes": 27975932,
+    "sha256": "0adc214751fade6a539e73e5fcb4ab6b45b247e033d7bf02d9f4e1686190b05c"
+  },
+  {
     "path": "assets/poster.jpg",
     "mime": "image/jpeg",
     "bytes": 155315,
@@ -308,8 +428,8 @@
   {
     "path": "assets/scoring-verification-v3.zip",
     "mime": "application/x-zip-compressed",
-    "bytes": 43675,
-    "sha256": "203c9a430e4cacf575acf6d99a830f5e0316e15f76703ef3d1525f4be148cdbe"
+    "bytes": 55841,
+    "sha256": "1ea2be9108b7785b21f716161ce72dd192c1e7b2f59789870b41aac9848d2ba8"
   },
   {
     "path": "assets/showcase.mp4",

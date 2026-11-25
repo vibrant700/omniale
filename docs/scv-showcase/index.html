@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="从六方向参考图重建 SCV 机甲，并制作有声资产展示片：任务、评分、Astra 6.2 与 Codex 的 GPU 从头实验、实际交付及评分。">
+  <meta name="description" content="从六方向参考图重建 SCV 机甲，并制作有声资产展示片：任务、评分、Astra 6.2、Sol 6.2 与 Codex 的 GPU 独立实验、交付与评分。">
   <link rel="icon" href="data:,">
   <title>SCV 机甲资产重建与展示片制作 · OmniALE</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=sol-comparison-v1">
+  <script src="app.js?v=sol-comparison-v1" defer></script>
+  <link rel="stylesheet" href="comparison.css?v=sol-comparison-v1">
 </head>
 <body>
   <a class="skip" href="#main">跳至正文</a>
@@ -16,11 +17,11 @@
     <header class="case-head">
       <h1>SCV 机甲资产重建与展示片制作</h1>
       <p class="lead">从六方向彩色参考图重建可编辑的机甲资产，再用指定配乐与转场音效，制作一条有声 3D 作品集展示片。</p>
-      <div class="meta-row"><span class="tag">六向参考图＋配乐与音效</span><span class="tag">3D 重建 · 材质 · 镜头 · 音画</span><span class="tag">Astra 6.2 · xhigh · Codex</span><span class="tag">RTX 4090 D · CUDA</span></div>
+      <div class="meta-row"><span class="tag">六向参考图＋配乐与音效</span><span class="tag">3D 重建 · 材质 · 镜头 · 音画</span><span class="tag">Astra 6.2 / Sol 6.2 · xhigh · Codex</span><span class="tag">RTX 4090 D · CUDA</span></div>
     </header>
 
     <nav class="section-nav" aria-label="章节">
-      <a href="#task">一、任务定义</a><a href="#scoring">二、评分标准</a><a href="#results">三、测试结果</a><a href="#execution">四、执行过程</a><a href="#analysis">五、失败分析</a>
+      <a href="#task">一、任务定义</a><a href="#scoring">二、评分标准</a><a href="#results">三、测试结果与交付</a><a href="#execution">四、执行过程</a><a href="#analysis">五、失败分析</a>
     </nav>
 
     <section class="section" id="task" aria-labelledby="task-title">
@@ -96,7 +97,7 @@
       <div class="reference-resource" id="scoring-reference">
         <h3>比较对象与参考工程</h3>
         <p><code>reference-asset.blend</code> 是原始 GLB 导入 Blender、统一坐标与尺寸后的参考工程；<code>asset.blend</code> 是 agent 交付的重建资产。评分从两份工程提取几何，并在相同条件下渲染，比较的是表面与图像。</p>
-        <div class="reference-actions"><a class="download-button" href="https://github.com/vibrant700/omniale/releases/download/scv-showcase-reference-v1/reference-asset.blend" download>下载参考工程 reference-asset.blend ↓ <span>297.2 MB · Blender 5.3</span></a><a href="assets/asset.blend" download>下载重建资产 asset.blend ↓</a><a href="assets/reference-model.json">参考文件信息 ↗</a></div>
+        <div class="reference-actions"><a class="download-button" href="https://github.com/vibrant700/omniale/releases/download/scv-showcase-reference-v1/reference-asset.blend" download>下载参考工程 reference-asset.blend ↓ <span>297.2 MB · Blender 5.3</span></a><a data-selected-asset href="assets/asset.blend" download>下载重建资产 asset.blend ↓</a><a href="assets/reference-model.json">参考文件信息 ↗</a></div>
         <p class="note">参考工程仅供评分复核，未提供给被测 agent，也不在题面输入 ZIP 中。六张题面参考图由该工程生成。</p>
         <details><summary>参考来源、坐标与文件校验</summary><div class="detail-body"><ol class="method-steps"><li>原始 SCV 模型（GLB）导入 Blender，保留独立几何、UV 与材质，生成规范化参考工程。</li><li>包围盒中心移到原点，统一缩放使最长边为 2；规范化尺寸为 2.000 × 1.845 × 1.652 个场景单位，非米或厘米。+Z 向上，机甲朝 −Y，自身左侧为 +X。</li><li>添加六方向正交相机和统一灯光，贴图打包进工程。参考与提交均按世界坐标提取求值三角网格，不要求物体名、拓扑或顶点编号相同，不对提交做 ICP、旋转配准或缩放拟合。</li></ol><p class="checksum"><strong>SHA-256</strong><code>1b6b49ca858d39f8df675f1c16fc6096600685fe0cf9625291c43db00e7d53b4</code></p><p class="note">参考来源：JohnMesplay / SCV，CC BY 4.0；修改包括坐标规范化、相机、灯光与六向渲染。大文件由同一 GitHub 仓库的 Release 提供。</p></div></details>
       </div>
@@ -163,26 +164,31 @@ C1＝(0.01L)²，C2＝(0.03L)²；本项 L＝1
 
     <section class="section" id="results" aria-labelledby="results-title">
       <div class="section-heading"><h2 id="results-title"><span class="sec-no">03</span>测试结果</h2></div>
-      <div class="mobile-score"><span>Astra 6.2 · xhigh · Codex</span><strong>35.38 <small>/ 100</small></strong></div>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="模型评分表，可横向滚动">
-        <table class="score-table"><caption class="sr-only">SCV 机甲资产重建与展示片制作评分</caption><thead><tr><th scope="col">模型 / 框架</th><th scope="col">结构 / 30</th><th scope="col">外观 / 30</th><th scope="col">关键细节 / 30</th><th scope="col">音乐 / 5</th><th scope="col">音效 / 5</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62"><th scope="row">Astra 6.2 <span class="model-detail">xhigh · Codex · RTX 4090 D</span></th><td>19.85</td><td>5.54</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">35.38</strong></td></tr></tbody></table>
-      </div>
-      <p><strong>总分 35.38 / 100。</strong>完成 648 帧 CUDA／Cycles 渲染与有声展示；结构 19.85 分、外观 5.54 分。关键部件、造型及表面细节存在明确还原错误，三项均为 0 分；音乐编排与音效对应各得 5 分。</p>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="关键细节分项得分"><table><thead><tr><th>关键细节维度</th><th>确认错误数</th><th>得分</th></tr></thead><tbody><tr><th>部件与装配还原</th><td>4 处</td><td>0 / 10</td></tr><tr><th>造型特征还原</th><td>3 处</td><td>0 / 10</td></tr><tr><th>材质与表面细节还原</th><td>3 处</td><td>0 / 10</td></tr></tbody></table></div>
-      <p class="note">结构与外观保留未舍入分数汇总，总分显示两位小数。资产独立打开、资源解析、统一六视图渲染与成片完整解码检查通过。</p>
+      <div class="model-score-cards" aria-label="两模型总分"><button type="button" class="model-score-card" data-select-model="astra62-xhigh" aria-pressed="true"><span>Astra 6.2<small>xhigh · Codex</small></span><strong>35.38<small>/ 100</small></strong></button><button type="button" class="model-score-card" data-select-model="sol62-xhigh" aria-pressed="false"><span>Sol 6.2<small>xhigh · Codex</small></span><strong>32.90<small>/ 100</small></strong></button></div>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="两模型评分表，可横向滚动"><table class="score-table"><caption class="sr-only">SCV两模型成绩，点击模型名称切换实际交付与分析</caption><thead><tr><th scope="col">模型 / 框架</th><th scope="col">结构 / 30</th><th scope="col">外观 / 30</th><th scope="col">关键细节 / 30</th><th scope="col">音乐 / 5</th><th scope="col">音效 / 5</th><th scope="col">总分 / 100</th></tr></thead><tbody><tr data-result-model="astra62-xhigh" data-selected="true"><th scope="row"><button type="button" class="model-score-button" data-select-model="astra62-xhigh" aria-pressed="true">Astra 6.2</button><span class="model-detail">xhigh · Codex · RTX 4090 D</span></th><td>19.85</td><td>5.54</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">35.38</strong></td></tr><tr data-result-model="sol62-xhigh" data-selected="false"><th scope="row"><button type="button" class="model-score-button" data-select-model="sol62-xhigh" aria-pressed="false">Sol 6.2</button><span class="model-detail">xhigh · Codex · RTX 4090 D</span></th><td>16.78</td><td>6.12</td><td>0.00</td><td>5.00</td><td>5.00</td><td><strong class="score-value">32.90</strong></td></tr></tbody></table></div>
+      <p class="note">两次独立GPU实验采用同一套现行评分规则。点击模型名称或下方选项，切换该模型的成片、交付、过程及失败分析；本表始终展示两者成绩。</p>
+    </section>
+    <div class="model-switcher" id="model-switcher">
+      <span class="switcher-label">查看交付与分析</span>
+      <div class="model-tabs" role="tablist" aria-label="选择展示模型"><button type="button" id="model-tab-astra62-xhigh" role="tab" aria-selected="true" aria-controls="model-results-panel model-execution-panel model-analysis-panel" tabindex="0" data-select-model="astra62-xhigh">Astra 6.2<span>35.38 / 100</span></button><button type="button" id="model-tab-sol62-xhigh" role="tab" aria-selected="false" aria-controls="model-results-panel model-execution-panel model-analysis-panel" tabindex="-1" data-select-model="sol62-xhigh">Sol 6.2<span>32.90 / 100</span></button></div>
+    </div>
+    <section class="section" id="delivery" aria-labelledby="delivery-title">
+      <div class="section-heading"><h2 id="delivery-title">实际交付与裁定</h2><span class="selected-model-label" data-model-name>Astra 6.2</span></div>
+      <div id="model-results-panel" role="tabpanel" aria-labelledby="model-tab-astra62-xhigh" data-model-section="results">
+      <p><strong>Astra 6.2 · 总分 35.38 / 100。</strong>完成 648 帧 CUDA／Cycles 渲染与有声展示；结构 19.85 分、外观 5.54 分。关键细节三项均为 0 分；音乐编排与音效对应各得 5 分。</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Astra 6.2关键细节分项得分"><table><thead><tr><th>关键细节维度</th><th>确认错误数</th><th>得分</th></tr></thead><tbody><tr><th>部件与装配还原</th><td>4 处</td><td>0 / 10</td></tr><tr><th>造型特征还原</th><td>3 处</td><td>0 / 10</td></tr><tr><th>材质与表面细节还原</th><td>3 处</td><td>0 / 10</td></tr></tbody></table></div>
+      <p class="note">分数按未舍入值汇总，显示两位小数。资产独立打开、搬移后资源解析、统一六视图渲染与成片完整解码检查通过。</p>
       <p class="inline-links"><a href="results.json">完整评分数据 ↗</a><a href="review/detail-restoration-review.json">关键细节评审 ↗</a><a href="review/music-review.json">音乐评审 ↗</a><a href="review/sfx-review.json">音效评审 ↗</a></p>
-
-
-      <h3>实际交付成片</h3>
-      <figure class="showcase-media"><video id="showcase-video" controls playsinline preload="metadata" poster="assets/poster.jpg" width="1600" height="900" src="assets/showcase.mp4">浏览器不支持视频播放。<a href="assets/showcase.mp4">下载成片</a></video><figcaption>1600 × 900 · 24 fps · 648 帧 · 27 秒 · 有声</figcaption></figure>
+      <h3>Astra 6.2 的实际交付成片</h3>
+      <figure class="showcase-media"><video id="showcase-video" controls playsinline preload="metadata" poster="assets/poster.jpg" width="1600" height="900" src="assets/showcase.mp4">浏览器不支持视频播放。<a href="assets/showcase.mp4">下载成片</a></video><figcaption>Astra 6.2 · 1600 × 900 · 24 fps · 648 帧 · 27 秒 · 有声</figcaption></figure>
       <div class="links delivery-links"><a href="assets/asset.blend" download>下载机甲资产 .blend ↓</a><a href="assets/delivery.zip" download>下载完整交付 ZIP ↓</a><a href="assets/showcase.mp4" download>下载成片 MP4 ↓</a><a href="assets/delivery-README.md">交付说明 ↗</a></div>
       <h3>运行信息</h3>
-      <dl class="runtime-list"><div><dt>模型与框架</dt><dd>Astra 6.2 · xhigh · Codex</dd></div><div><dt>运行耗时</dt><dd>42 分 31 秒 <span class="note">（2551.12 秒）</span></dd></div><div><dt>工具调用</dt><dd>152 次</dd></div><div><dt>模型响应</dt><dd>71 次</dd></div><div><dt>运行环境</dt><dd>Linux · 4 核 CPU · 8 GiB 主机内存预算 · RTX 4090 D（24 GB）</dd></div><div><dt>工具版本</dt><dd>官方 Codex CLI 0.142.4 · Blender 5.3.0 · Cycles CUDA</dd></div></dl>
-      <p class="note">从空工程与全新上下文独立完成，输入未包含旧工程、成片或评分反馈；未设置总时长或工具调用次数上限。</p>
+      <dl class="runtime-list"><div><dt>模型与框架</dt><dd>Astra 6.2 · xhigh · 官方 Codex</dd></div><div><dt>运行耗时</dt><dd>42 分 31.12 秒</dd></div><div><dt>工具调用</dt><dd>152 次</dd></div><div><dt>模型响应</dt><dd>71 次</dd></div><div><dt>运行环境</dt><dd>Linux · 4 核 CPU · 8 GiB 主机内存预算 · RTX 4090 D（24 GB）</dd></div><div><dt>工具版本</dt><dd>官方 Codex CLI 0.142.4 · Blender 5.3.0 · Cycles CUDA</dd></div></dl>
+      <p class="note">从空工程与全新上下文独立完成，未提供旧工程、成片、评分或缺陷反馈；未设置总时长或工具调用次数上限。</p>
+</div>
     </section>
 
-    <section class="section" id="execution" aria-labelledby="execution-title">
-      <div class="section-heading"><h2 id="execution-title"><span class="sec-no">04</span>执行过程</h2></div>
+    <section class="section" id="execution" aria-labelledby="execution-title"><div class="section-heading"><h2 id="execution-title"><span class="sec-no">04</span>执行过程</h2><span class="selected-model-label" data-model-name>Astra 6.2</span></div><div id="model-execution-panel" role="tabpanel" aria-labelledby="model-tab-astra62-xhigh" data-model-section="execution">
       <ol class="steps">
         <li><span class="step-no" aria-hidden="true">1</span><div><h3>六向观察</h3><p>对照正、背、左右、顶、底六张参考，整理主体比例、座舱、双臂工具、腿足与背部的空间关系。</p></div></li>
         <li><span class="step-no" aria-hidden="true">2</span><div><h3>Blender 分件程序建模与材质</h3><p>以程序生成机体和部件，组织可编辑资产，并构建红色装甲、金属边框、深色机械结构及表面磨损材质。</p></div></li>
@@ -201,10 +207,9 @@ C1＝(0.01L)²，C2＝(0.03L)²；本项 L＝1
         <li><button type="button" data-seek="19.541667"><span class="shot-time">19.54–27.00 s</span><strong>整机与片尾</strong><span>总成与署名</span></button></li>
       </ol>
       <p class="note">点击时间段可定位到上方成片中的对应镜头。</p>
-    </section>
+</div></section>
 
-    <section class="section" id="analysis" aria-labelledby="analysis-title">
-      <div class="section-heading"><h2 id="analysis-title"><span class="sec-no">05</span>失败分析</h2></div>
+    <section class="section" id="analysis" aria-labelledby="analysis-title"><div class="section-heading"><h2 id="analysis-title"><span class="sec-no">05</span>失败分析</h2><span class="selected-model-label" data-model-name>Astra 6.2</span></div><div id="model-analysis-panel" role="tabpanel" aria-labelledby="model-tab-astra62-xhigh" data-model-section="analysis">
       <h3 class="first-subheading">结构与外观：整体接近，细部有明显偏差</h3>
       <p>重建恢复了红色重装机甲、中央座舱和双臂工具的主要识别特征，但座舱内部、腿足层次及管线连接被简化。固定机位对照显示，大轮廓的接近仍不足以恢复内部层次与三维细节。</p>
       <div class="comparison-tabs" role="tablist" aria-label="切换对照机位">
@@ -232,7 +237,7 @@ C1＝(0.01L)²，C2＝(0.03L)²；本项 L＝1
       <h3>音画：音乐编排与音效对应均得满分</h3>
       <p>Gemini 4 Neon 依据完整成片、原始混音、原配乐及三个原音效评定：音乐编排五项均满足，得 5 / 5；音效语义、感知同步与混音层次五项均满足，得 5 / 5。</p>
       <dl class="compact-dl"><div><dt>音乐编排 · 5 / 5</dt><dd>乐句与段落组织、能量呼应、展示节奏、选段衔接、首尾完整五项通过。</dd></div><div><dt>音效对应 · 5 / 5</dt><dd>确认 2 处 whoosh、3 处 hit、1 处 drop；主要音效与转场、视觉落点及整机揭示相符，三类音效均可辨。</dd></div></dl>
-    </section>
+</div></section>
 
     <footer class="case-footer">
       <p>参考模型：<a href="https://sketchfab.com/3d-models/scv-a310221f274b4189901f165731939ec1">SCV</a>，作者 JohnMesplay，许可 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。六向参考图包含坐标规范化、相机与灯光设置及视角渲染等修改。</p>
@@ -240,10 +245,105 @@ C1＝(0.01L)²，C2＝(0.03L)²；本项 L＝1
       <div class="footer-links"><a href="assets/ASSET-SOURCE.md">模型来源说明</a><a href="assets/audio/LICENSE.txt">音频来源说明</a><a href="https://github.com/vibrant700/omniale">OmniALE · GitHub ↗</a><a href="#main">回到顶部 ↑</a></div>
     </footer>
   </main>
+<template data-model-template="astra62-xhigh" data-section="results">
+      <p><strong>Astra 6.2 · 总分 35.38 / 100。</strong>完成 648 帧 CUDA／Cycles 渲染与有声展示；结构 19.85 分、外观 5.54 分。关键细节三项均为 0 分；音乐编排与音效对应各得 5 分。</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Astra 6.2关键细节分项得分"><table><thead><tr><th>关键细节维度</th><th>确认错误数</th><th>得分</th></tr></thead><tbody><tr><th>部件与装配还原</th><td>4 处</td><td>0 / 10</td></tr><tr><th>造型特征还原</th><td>3 处</td><td>0 / 10</td></tr><tr><th>材质与表面细节还原</th><td>3 处</td><td>0 / 10</td></tr></tbody></table></div>
+      <p class="note">分数按未舍入值汇总，显示两位小数。资产独立打开、搬移后资源解析、统一六视图渲染与成片完整解码检查通过。</p>
+      <p class="inline-links"><a href="results.json">完整评分数据 ↗</a><a href="review/detail-restoration-review.json">关键细节评审 ↗</a><a href="review/music-review.json">音乐评审 ↗</a><a href="review/sfx-review.json">音效评审 ↗</a></p>
+      <h3>Astra 6.2 的实际交付成片</h3>
+      <figure class="showcase-media"><video id="showcase-video" controls playsinline preload="metadata" poster="assets/poster.jpg" width="1600" height="900" src="assets/showcase.mp4">浏览器不支持视频播放。<a href="assets/showcase.mp4">下载成片</a></video><figcaption>Astra 6.2 · 1600 × 900 · 24 fps · 648 帧 · 27 秒 · 有声</figcaption></figure>
+      <div class="links delivery-links"><a href="assets/asset.blend" download>下载机甲资产 .blend ↓</a><a href="assets/delivery.zip" download>下载完整交付 ZIP ↓</a><a href="assets/showcase.mp4" download>下载成片 MP4 ↓</a><a href="assets/delivery-README.md">交付说明 ↗</a></div>
+      <h3>运行信息</h3>
+      <dl class="runtime-list"><div><dt>模型与框架</dt><dd>Astra 6.2 · xhigh · 官方 Codex</dd></div><div><dt>运行耗时</dt><dd>42 分 31.12 秒</dd></div><div><dt>工具调用</dt><dd>152 次</dd></div><div><dt>模型响应</dt><dd>71 次</dd></div><div><dt>运行环境</dt><dd>Linux · 4 核 CPU · 8 GiB 主机内存预算 · RTX 4090 D（24 GB）</dd></div><div><dt>工具版本</dt><dd>官方 Codex CLI 0.142.4 · Blender 5.3.0 · Cycles CUDA</dd></div></dl>
+      <p class="note">从空工程与全新上下文独立完成，未提供旧工程、成片、评分或缺陷反馈；未设置总时长或工具调用次数上限。</p>
+</template>
+<template data-model-template="astra62-xhigh" data-section="execution">
+      <ol class="steps">
+        <li><span class="step-no" aria-hidden="true">1</span><div><h3>六向观察</h3><p>对照正、背、左右、顶、底六张参考，整理主体比例、座舱、双臂工具、腿足与背部的空间关系。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">2</span><div><h3>Blender 分件程序建模与材质</h3><p>以程序生成机体和部件，组织可编辑资产，并构建红色装甲、金属边框、深色机械结构及表面磨损材质。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">3</span><div><h3>六组镜头与灯光舞台</h3><p>依次展示整机、工具、座舱、背部、腿足与整机总成，在摄影棚灯光下组织整体与部件特写。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">4</span><div><h3>配乐选段、分轨音效与图版</h3><p>选取指定配乐片段，编排 whoosh、hit、drop 音效，并将镜头、视觉转场与展示图版纳入成片结构。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">5</span><div><h3>CUDA 完整渲染与 VSE 导出</h3><p>自主选择 Cycles CUDA 与 GPU 降噪，完整渲染 648 帧，再由 Blender 视频序列编辑器合成图版、转场和声音，输出 27 秒展示片。</p></div></li>
+        <li><span class="step-no" aria-hidden="true">6</span><div><h3>交付工程</h3><p>提交独立资产、成片、展示制作工程与资源，以及修改镜头、音频和重新导出的说明。</p></div></li>
+      </ol>
+      <h3>成片镜头组织</h3>
+      <ol class="shot-timeline" aria-label="六组镜头的时间范围">
+        <li><button type="button" data-seek="0.000000"><span class="shot-time">0–4.00 s</span><strong>整机登记照</strong><span>开场全景</span></button></li>
+        <li><button type="button" data-seek="4.000000"><span class="shot-time">4.00–8.00 s</span><strong>三爪工具</strong><span>工具特写</span></button></li>
+        <li><button type="button" data-seek="8.000000"><span class="shot-time">8.00–12.00 s</span><strong>驾驶舱</strong><span>座舱特写</span></button></li>
+        <li><button type="button" data-seek="12.000000"><span class="shot-time">12.00–15.79 s</span><strong>背部动力舱</strong><span>背面结构</span></button></li>
+        <li><button type="button" data-seek="15.791667"><span class="shot-time">15.79–19.54 s</span><strong>腿足机构</strong><span>低机位细节</span></button></li>
+        <li><button type="button" data-seek="19.541667"><span class="shot-time">19.54–27.00 s</span><strong>整机与片尾</strong><span>总成与署名</span></button></li>
+      </ol>
+      <p class="note">点击时间段可定位到上方成片中的对应镜头。</p>
+</template>
+<template data-model-template="astra62-xhigh" data-section="analysis">
+      <h3 class="first-subheading">结构与外观：整体接近，细部有明显偏差</h3>
+      <p>重建恢复了红色重装机甲、中央座舱和双臂工具的主要识别特征，但座舱内部、腿足层次及管线连接被简化。固定机位对照显示，大轮廓的接近仍不足以恢复内部层次与三维细节。</p>
+      <div class="comparison-tabs" role="tablist" aria-label="切换对照机位">
+        <button type="button" id="view-front" role="tab" aria-selected="true" aria-controls="comparison-panel" tabindex="0" data-view="front">正面</button>
+        <button type="button" id="view-back" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="back">背面</button>
+        <button type="button" id="view-left" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="left">机甲左侧</button>
+        <button type="button" id="view-right" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="right">机甲右侧</button>
+        <button type="button" id="view-top" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="top">顶面</button>
+        <button type="button" id="view-bottom" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="bottom">底面</button>
+      </div>
+      <div id="comparison-panel" role="tabpanel" aria-labelledby="view-front" tabindex="0">
+        <figure class="comparison-figure"><a id="comparison-zoom" class="image-zoom" href="assets/comparison/front.webp" data-zoom data-title="正面 · 参考与重建对照"><img id="comparison-image" src="assets/comparison/front.webp" alt="正面并排对照：左侧为输入参考图，右侧为重建图" width="1280" height="688" loading="lazy" decoding="async"></a><figcaption><span id="comparison-caption">正面 · 左：输入参考；右：统一机位与灯光下的重建。</span><span class="comparison-links"><a id="comparison-reference" href="assets/reference/front.png">参考原图 ↗</a><a id="comparison-reconstruction" href="assets/reconstruction/front.png">重建原图 ↗</a></span></figcaption></figure>
+      </div>
+      <p class="inline-links"><a href="assets/comparison/six-views.webp" data-zoom data-title="全部六机位 · 参考与重建对照">查看六机位总览 ↗</a></p>
+      <ul class="findings-list"><li><strong>部件：</strong>肩侧工具挂载、驾驶舱操纵装置与背部圆口内部结构出现缺失或错替。</li><li><strong>造型：</strong>工具、腰间垂片和背部中央舱体的辨识特征与参考不一致。</li><li><strong>表面：</strong>徽标、文字编号与座舱顶罩纹理未忠实还原。</li></ul>
+
+      <h3>关键细节：部件、造型与表面还原不足</h3>
+      <p>Gemini 4 Neon 对照参考、成片与统一六视图，确认部件与装配 4 处、造型特征 3 处、材质与表面细节 3 处独立错误。每处扣 5 分，三项均扣至 0 分。</p>
+      <details class="detail-evidence"><summary>部件与装配还原 · 4 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="部件与装配还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="20.0">20.00 s</button><span class="note"> · 帧 480</span></td><td>肩侧工具挂载被统一短杆架替代，原参考的非对称工具组未还原。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>驾驶舱中央操纵杆柱缺失，被扁平仪表箱替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="14.0">14.00 s</button><span class="note"> · 帧 336</span></td><td>背部双圆口内部被改写为外露径向叶轮。</td></tr><tr><td><button class="time-link" type="button" data-seek="18.0">18.00 s</button><span class="note"> · 帧 432</span></td><td>腿后缸体下方的喇叭形喷嘴缺失或错替。</td></tr></tbody></table></div></div></details>
+      <details class="detail-evidence"><summary>造型特征还原 · 3 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="造型特征还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="6.0">6.00 s</button><span class="note"> · 帧 144</span></td><td>三爪钳瓣的弧弯轮廓、根部凹口与中心轴头形状被改写。</td></tr><tr><td><button class="time-link" type="button" data-seek="2.5">2.50 s</button><span class="note"> · 帧 60</span></td><td>腰间垂片的撕裂边缘和开口被整齐三角形轮廓替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="14.0">14.00 s</button><span class="note"> · 帧 336</span></td><td>背部中央舱体的圆弧护罩与切面球罩被棱角盒体替代。</td></tr></tbody></table></div></div></details>
+      <details class="detail-evidence"><summary>材质与表面细节还原 · 3 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="材质与表面细节还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="2.5">2.50 s</button><span class="note"> · 帧 60</span></td><td>腰间红圈内的徽标图案被改写。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>机身原有文字标识遗漏，并新增自编编号。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>座舱橙色顶罩缺少参考中的六边形蜂窝网格纹理。</td></tr></tbody></table></div></div></details>
+      <figure class="evidence-figure"><a class="image-zoom" href="assets/evidence/detail-restoration.jpg" data-zoom data-title="关键细节 · 参考与重建对照"><img src="assets/evidence/detail-restoration.jpg" alt="同一正面机位下，肩侧挂载、工具造型和腰间徽标的参考与重建局部对照" width="1400" height="1200" loading="lazy" decoding="async"></a><figcaption>局部对照均来自同一固定机位的原图裁剪。左：输入参考；右：提交资产统一机位渲染。点击可放大。</figcaption></figure>
+      <p class="inline-links"><a href="review/detail-restoration-review.json">查看各处参考区域、成片定位与归属说明 ↗</a></p>
+
+      <h3>音画：音乐编排与音效对应均得满分</h3>
+      <p>Gemini 4 Neon 依据完整成片、原始混音、原配乐及三个原音效评定：音乐编排五项均满足，得 5 / 5；音效语义、感知同步与混音层次五项均满足，得 5 / 5。</p>
+      <dl class="compact-dl"><div><dt>音乐编排 · 5 / 5</dt><dd>乐句与段落组织、能量呼应、展示节奏、选段衔接、首尾完整五项通过。</dd></div><div><dt>音效对应 · 5 / 5</dt><dd>确认 2 处 whoosh、3 处 hit、1 处 drop；主要音效与转场、视觉落点及整机揭示相符，三类音效均可辨。</dd></div></dl>
+</template>
+<template data-model-template="sol62-xhigh" data-section="results">
+      <p><strong>Sol 6.2 · 总分 32.90 / 100。</strong>完成 686 帧 CUDA／Cycles 渲染与有声展示；结构 16.78 分、外观 6.12 分。关键细节三项均为 0 分；音乐编排与音效对应各得 5 分。</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Sol 6.2关键细节分项得分"><table><thead><tr><th>关键细节维度</th><th>确认错误数</th><th>得分</th></tr></thead><tbody><tr><th>部件与装配还原</th><td>3 处</td><td>0 / 10</td></tr><tr><th>造型特征还原</th><td>4 处</td><td>0 / 10</td></tr><tr><th>材质与表面细节还原</th><td>4 处</td><td>0 / 10</td></tr></tbody></table></div>
+      <p class="note">分数按未舍入值汇总，显示两位小数。资产独立打开、搬移后资源解析、统一六视图渲染与成片完整解码检查通过。</p>
+      <p class="inline-links"><a href="results.json">完整评分数据 ↗</a><a href="review/sol62-xhigh/detail-restoration-review.json">关键细节评审 ↗</a><a href="review/sol62-xhigh/music-review.json">音乐评审 ↗</a><a href="review/sol62-xhigh/sfx-review.json">音效评审 ↗</a></p>
+      <h3>Sol 6.2 的实际交付成片</h3>
+      <figure class="showcase-media"><video id="showcase-video" controls playsinline preload="metadata" poster="assets/models/sol62-xhigh/poster.jpg" width="1920" height="1080" src="assets/models/sol62-xhigh/showcase.mp4">浏览器不支持视频播放。<a href="assets/models/sol62-xhigh/showcase.mp4">下载成片</a></video><figcaption>Sol 6.2 · 1920 × 1080 · 24 fps · 686 帧 · 28.58 秒 · 有声</figcaption></figure>
+      <div class="links delivery-links"><a href="assets/models/sol62-xhigh/asset.blend" download>下载机甲资产 .blend ↓</a><a href="assets/models/sol62-xhigh/showcase.blend" download>下载展示工程 .blend ↓</a><a href="assets/models/sol62-xhigh/delivery.zip" download>下载完整交付 ZIP ↓</a><a href="assets/models/sol62-xhigh/showcase.mp4" download>下载成片 MP4 ↓</a><a href="assets/models/sol62-xhigh/delivery-README.md">交付说明 ↗</a></div>
+      <h3>运行信息</h3>
+      <dl class="runtime-list"><div><dt>模型与框架</dt><dd>Sol 6.2 · xhigh · 官方 Codex</dd></div><div><dt>运行耗时</dt><dd>37 分 15.80 秒</dd></div><div><dt>工具调用</dt><dd>194 次</dd></div><div><dt>模型响应</dt><dd>112 次</dd></div><div><dt>运行环境</dt><dd>Linux · 4 核 CPU · 8 GiB 主机内存预算 · RTX 4090 D（24 GB）</dd></div><div><dt>工具版本</dt><dd>官方 Codex CLI 0.142.4 · Blender 5.3.0 · Cycles CUDA</dd></div></dl>
+      <p class="note">从空工程与全新上下文独立完成，未提供旧工程、成片、评分或缺陷反馈；未设置总时长或工具调用次数上限。</p>
+</template>
+<template data-model-template="sol62-xhigh" data-section="execution"><ol class="steps"><li><span class="step-no" aria-hidden="true">1</span><div><h3>六向观察与程序建模</h3><p>根据原始六张参考图编写主体、腿部、双臂与管线脚本；分别组织可编辑部件，生成自制贴花与程序材质。</p></div></li><li><span class="step-no" aria-hidden="true">2</span><div><h3>正交预览与局部修正</h3><p>使用参考机位检查模型，自行修正曲线包围盒导致的尺寸问题，并补充背部圆腔、腿部活塞及夹爪护框。</p></div></li><li><span class="step-no" aria-hidden="true">3</span><div><h3>多镜头展示与图形</h3><p>构建独立的画面场景与剪辑混音场景，安排座舱、双臂、背部、腿足、顶视、正视、环绕和片尾镜头。</p></div></li><li><span class="step-no" aria-hidden="true">4</span><div><h3>CUDA 与 GPU 降噪</h3><p>对比短段渲染，选择 CUDA 与 GPU 降噪。复用短测的前 6 张原生图，续渲第 7–686 帧，再编码 1080p 成片。</p></div></li><li><span class="step-no" aria-hidden="true">5</span><div><h3>配乐与三类音效混音</h3><p>在 Blender 剪辑场景中编排原配乐、whoosh、hit 与 drop，并设置音量变化；最终成片为 48 kHz 立体声。</p></div></li><li><span class="step-no" aria-hidden="true">6</span><div><h3>交付与复用检查</h3><p>交付独立资产、展示工程、成片、封面及源码，完成资源搬移检查与短段重导出，最后完整解码成片。</p></div></li></ol><h3>成片镜头组织</h3><ol class="shot-timeline shot-timeline--long" aria-label="Sol十一组镜头的时间范围"><li><button type="button" data-seek="0.000000000"><span class="shot-time">0.00–4.00 s</span><strong>开场全景</strong></button></li><li><button type="button" data-seek="4.000000000"><span class="shot-time">4.00–6.50 s</span><strong>驾驶舱</strong></button></li><li><button type="button" data-seek="6.500000000"><span class="shot-time">6.50–9.00 s</span><strong>三爪工具</strong></button></li><li><button type="button" data-seek="9.000000000"><span class="shot-time">9.00–12.00 s</span><strong>双刃夹钳</strong></button></li><li><button type="button" data-seek="12.000000000"><span class="shot-time">12.00–13.88 s</span><strong>背部动力包</strong></button></li><li><button type="button" data-seek="13.875000000"><span class="shot-time">13.88–15.75 s</span><strong>腿足机构</strong></button></li><li><button type="button" data-seek="15.750000000"><span class="shot-time">15.75–17.62 s</span><strong>顶视检视</strong></button></li><li><button type="button" data-seek="17.625000000"><span class="shot-time">17.62–19.50 s</span><strong>正视检视</strong></button></li><li><button type="button" data-seek="19.500000000"><span class="shot-time">19.50–23.04 s</span><strong>整机环绕</strong></button></li><li><button type="button" data-seek="23.041666667"><span class="shot-time">23.04–26.96 s</span><strong>收尾全景</strong></button></li><li><button type="button" data-seek="26.958333333"><span class="shot-time">26.96–28.58 s</span><strong>片尾署名</strong></button></li></ol><p class="note">点击时间段可定位到所选模型成片中的对应镜头。</p></template>
+<template data-model-template="sol62-xhigh" data-section="analysis"><h3 class="first-subheading">Sol 6.2：完成整机展示，局部结构与造型还原不足</h3>
+      <p>Sol 恢复了红色机甲、开放座舱和双侧工具的总体形象，并交付完整镜头与声音。固定六视图仍显示驾驶舱装配、两套工具造型及图案标识与参考存在明显差异。</p>
+      <div class="comparison-tabs" role="tablist" aria-label="切换对照机位">
+        <button type="button" id="view-front" role="tab" aria-selected="true" aria-controls="comparison-panel" tabindex="0" data-view="front">正面</button>
+        <button type="button" id="view-back" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="back">背面</button>
+        <button type="button" id="view-left" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="left">机甲左侧</button>
+        <button type="button" id="view-right" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="right">机甲右侧</button>
+        <button type="button" id="view-top" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="top">顶面</button>
+        <button type="button" id="view-bottom" role="tab" aria-selected="false" aria-controls="comparison-panel" tabindex="-1" data-view="bottom">底面</button>
+      </div>
+      <div id="comparison-panel" role="tabpanel" aria-labelledby="view-front" tabindex="0">
+        <figure class="comparison-figure"><a id="comparison-zoom" class="image-zoom" href="assets/models/sol62-xhigh/comparison/front.webp" data-zoom data-title="正面 · 参考与重建对照"><img id="comparison-image" src="assets/models/sol62-xhigh/comparison/front.webp" alt="正面并排对照：左侧为输入参考图，右侧为重建图" width="1280" height="688" loading="lazy" decoding="async"></a><figcaption><span id="comparison-caption">正面 · 左：输入参考；右：统一机位与灯光下的重建。</span><span class="comparison-links"><a id="comparison-reference" href="assets/reference/front.png">参考原图 ↗</a><a id="comparison-reconstruction" href="assets/models/sol62-xhigh/reconstruction/front.png">重建原图 ↗</a></span></figcaption></figure>
+      </div>
+      <p class="inline-links"><a href="assets/models/sol62-xhigh/comparison/six-views.webp" data-zoom data-title="全部六机位 · 参考与重建对照">查看六机位总览 ↗</a></p>
+<ul class="findings-list"><li><strong>部件：</strong>中央操纵总成、肩侧具体挂载工具及外伸尖刺件缺失。</li><li><strong>造型：</strong>三爪工具、双刃夹钳、腰间垂片和座舱顶罩的形状特征被改写。</li><li><strong>表面：</strong>罩面图案与质感、腰间徽标、文字编号和装甲磨损未忠实还原。</li></ul>
+      <h3>关键细节：三项均扣至 0 分</h3><p>Gemini 4 Neon 分别确认部件与装配 3 处、造型特征 4 处、材质与表面细节 4 处独立明确错误，按每处扣 5 分、单项最低 0 分计算。</p>
+<details class="detail-evidence"><summary>部件与装配还原 · 3 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="Sol 部件与装配还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="5.0">5.00 s</button><span class="note"> · 帧 120</span></td><td>驾驶舱中央操纵立柱与双握把中控总成缺失。</td></tr><tr><td><button class="time-link" type="button" data-seek="22.0">22.00 s</button><span class="note"> · 帧 528</span></td><td>肩侧具体工具与补给装备被抽象管条替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="18.0">18.00 s</button><span class="note"> · 帧 432</span></td><td>胸部与膝甲等处的外伸金属尖刺件整体缺失。</td></tr></tbody></table></div></div></details><details class="detail-evidence"><summary>造型特征还原 · 4 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="Sol 造型特征还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="7.0">7.00 s</button><span class="note"> · 帧 168</span></td><td>三爪钳瓣的弧形铲状轮廓被直尖三角形改写。</td></tr><tr><td><button class="time-link" type="button" data-seek="10.0">10.00 s</button><span class="note"> · 帧 240</span></td><td>左臂夹剪刃被规则方齿的平开夹爪替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="18.0">18.00 s</button><span class="note"> · 帧 432</span></td><td>腰间战旗的撕裂边缘与开口被平滑尖旗替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="5.0">5.00 s</button><span class="note"> · 帧 120</span></td><td>座舱顶罩的折面轮廓与开口边缘被圆拱造型改写。</td></tr></tbody></table></div></div></details><details class="detail-evidence"><summary>材质与表面细节还原 · 4 处错误 · 0 / 10</summary><div class="detail-body"><div class="table-scroll" tabindex="0" role="region" aria-label="Sol 材质与表面细节还原证据"><table class="detail-evidence-table"><thead><tr><th>成片定位</th><th>确认差异</th></tr></thead><tbody><tr><td><button class="time-link" type="button" data-seek="5.0">5.00 s</button><span class="note"> · 帧 120</span></td><td>顶罩图案、蜂窝纹理与半透明罩面质感未还原。</td></tr><tr><td><button class="time-link" type="button" data-seek="18.0">18.00 s</button><span class="note"> · 帧 432</span></td><td>腰间手臂徽标被 V 形折线图案替代。</td></tr><tr><td><button class="time-link" type="button" data-seek="7.0">7.00 s</button><span class="note"> · 帧 168</span></td><td>机身新增自编编号与条码，原有喷涂文字遗漏。</td></tr><tr><td><button class="time-link" type="button" data-seek="18.0">18.00 s</button><span class="note"> · 帧 432</span></td><td>红色装甲的银色露底掉漆与深划痕分布未还原。</td></tr></tbody></table></div></div></details><figure class="evidence-figure"><a class="image-zoom" href="assets/models/sol62-xhigh/evidence/detail-restoration.jpg" data-zoom data-title="Sol 关键细节 · 参考与重建对照"><img src="assets/models/sol62-xhigh/evidence/detail-restoration.jpg" alt="Sol驾驶舱、三爪工具和腰间徽标的参考与重建局部对照" width="1400" height="1200" loading="lazy" decoding="async"></a><figcaption>同一固定机位的原图裁剪。左：输入参考；右：Sol 提交资产统一机位渲染。</figcaption></figure>
+      <p class="inline-links"><a href="review/sol62-xhigh/detail-restoration-review.json">查看全部扣分位置与归属说明 ↗</a></p>
+      <h3>音画：音乐编排与音效对应各得 5 分</h3><p>Gemini 4 Neon 独立听看本片，音乐编排 M1–M5 与音效对应 S1–S5 均通过。确认 6 处 whoosh、7 处 hit、3 处 drop；评分来自本片实际最终混音与参考音源。</p>
+      <p class="inline-links"><a href="review/sol62-xhigh/music-review.json">音乐评审 ↗</a><a href="review/sol62-xhigh/sfx-review.json">音效逐项裁定 ↗</a></p></template>
   <dialog id="image-dialog" class="image-dialog" aria-labelledby="dialog-title">
     <div class="dialog-header"><h2 id="dialog-title">图片预览</h2><form method="dialog"><button type="submit" class="dialog-close" aria-label="关闭图片预览">关闭 <span aria-hidden="true">×</span></button></form></div>
     <div class="dialog-body"><img id="dialog-image" src="data:," alt=""><a id="dialog-original" href="#">打开原图 ↗</a></div>
   </dialog>
+<script type="application/json" id="model-metadata">{"astra62-xhigh": {"name": "Astra 6.2", "assetsRoot": "assets", "asset": "assets/asset.blend"}, "sol62-xhigh": {"name": "Sol 6.2", "assetsRoot": "assets/models/sol62-xhigh", "asset": "assets/models/sol62-xhigh/asset.blend"}}</script>
   <p id="player-status" class="sr-only" role="status" aria-live="polite"></p>
 </body>
 </html>

@@ -100,10 +100,130 @@
         "video_duration_seconds": 27.0,
         "audio_sample_rate": 48000,
         "audio_channels": 2,
-        "video_sha256": "04d31fd8dde1cf130f87d91594424234d9c8f4cd90745536e5a52c4de8147a75"
+        "video_sha256": "04d31fd8dde1cf130f87d91594424234d9c8f4cd90745536e5a52c4de8147a75",
+        "readme": "assets/delivery-README.md"
+      },
+      "id": "astra62-xhigh",
+      "assets_root": "assets",
+      "review_root": "review"
+    },
+    {
+      "id": "sol62-xhigh",
+      "case": "scv-showcase",
+      "experiment": "sol62-xhigh-gpu-fresh01",
+      "model": "gpt-6.2-sol",
+      "model_display": "Sol 6.2",
+      "framework": "Codex",
+      "reasoning_effort": "xhigh",
+      "scores": {
+        "structure": 16.782173376812036,
+        "appearance": 6.116219237446785,
+        "detail_restoration": 0,
+        "music": 5,
+        "sfx": 5,
+        "total": 32.898392614258825
+      },
+      "weights": {
+        "structure": 30,
+        "appearance": 30,
+        "detail_restoration": 30,
+        "music": 5,
+        "sfx": 5
+      },
+      "raw_metrics": {
+        "F1_tolerance_reference_diagonal_0_5_percent": 0.3840170991961296,
+        "six_view_silhouette_IoU": 0.7347944592580062,
+        "foreground_union_SSIM": 0.2038739745815595
+      },
+      "detail_criteria": [
+        {
+          "id": "D1",
+          "name": "部件与装配还原",
+          "maximum": 10,
+          "deduction_per_error": 5,
+          "confirmed_error_count": 3,
+          "score": 0
+        },
+        {
+          "id": "D2",
+          "name": "造型特征还原",
+          "maximum": 10,
+          "deduction_per_error": 5,
+          "confirmed_error_count": 4,
+          "score": 0
+        },
+        {
+          "id": "D3",
+          "name": "材质与表面细节还原",
+          "maximum": 10,
+          "deduction_per_error": 5,
+          "confirmed_error_count": 4,
+          "score": 0
+        }
+      ],
+      "detail_judge": "Gemini 4 Neon",
+      "audio_visual_judge": "Gemini 4 Neon",
+      "engineering_gate": {
+        "passed": true,
+        "has_renderable_mesh": true,
+        "resources_resolved_in_relocated_copy": true,
+        "canonical_views_rendered": 6,
+        "engineering_is_not_a_scored_component": true,
+        "note": "Automated reopen/resource/render checks. Editability and camera-facing impostors are reviewed separately using the asset audit and clay views."
+      },
+      "engineering_weight": 0,
+      "runtime": {
+        "elapsed_seconds": 2235.8,
+        "tool_calls": 194,
+        "responses": 112,
+        "time_limit_seconds": null,
+        "tool_call_limit": null,
+        "cpu": 4,
+        "memory_gib": 8,
+        "gpu": "RTX 4090 D, 24 GB",
+        "platform": "Linux",
+        "codex_version": "0.142.4",
+        "blender_version": "5.3.0"
+      },
+      "fresh_context": true,
+      "starts_from_empty_workspace": true,
+      "prior_outputs_or_feedback_provided": false,
+      "render_route": {
+        "backend": "Cycles CUDA",
+        "samples": 18,
+        "gpu_denoising": true,
+        "native_3d_frames": 686,
+        "native_test_frames_reused": [
+          1,
+          6
+        ],
+        "continued_production_frames": [
+          7,
+          686
+        ],
+        "sparse_reprojection_or_video_interpolation": false
+      },
+      "assets_root": "assets/models/sol62-xhigh",
+      "review_root": "review/sol62-xhigh",
+      "delivery": {
+        "video": "assets/models/sol62-xhigh/showcase.mp4",
+        "poster": "assets/models/sol62-xhigh/poster.jpg",
+        "asset": "assets/models/sol62-xhigh/asset.blend",
+        "project": "assets/models/sol62-xhigh/showcase.blend",
+        "archive": "assets/models/sol62-xhigh/delivery.zip",
+        "readme": "assets/models/sol62-xhigh/delivery-README.md",
+        "width": 1920,
+        "height": 1080,
+        "fps": 24,
+        "video_frame_count": 686,
+        "video_duration_seconds": 28.583333333333332,
+        "audio_sample_rate": 48000,
+        "audio_channels": 2,
+        "video_sha256": "0adc214751fade6a539e73e5fcb4ab6b45b247e033d7bf02d9f4e1686190b05c"
       }
     }
   ],
   "scoring_method": "scoring-method.md",
-  "scoring_reference": "assets/reference-model.json"
+  "scoring_reference": "assets/reference-model.json",
+  "default_model": "astra62-xhigh"
 }

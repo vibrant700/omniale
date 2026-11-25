@@ -3,13 +3,19 @@
 This checks arithmetic and record consistency; it does not judge images or audio.
 Run: python cases/scv-showcase/verification-v3/scripts/aggregate_score.py
 """
+import argparse
 import json
 import math
 from pathlib import Path
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--model', choices=['astra62-xhigh', 'sol62-xhigh'], default='astra62-xhigh')
+    args = parser.parse_args()
     base = Path(__file__).resolve().parents[1] / 'results'
+    if args.model != 'astra62-xhigh':
+        base = base / args.model
     load = lambda name: json.loads((base / name).read_text(encoding='utf-8'))
     surface = load('surface_metrics.json')
     images = load('image_metrics.json')
@@ -42,7 +48,7 @@ def main():
     expected = load('expected-score.json')['scores']
     for key, value in scores.items():
         assert math.isclose(value, expected[key], rel_tol=1e-10, abs_tol=1e-10), key
-    print(json.dumps({'scoring_version': 'scv-showcase-ssim-v3', 'scores': scores, 'display_total': f'{scores["total"]:.2f}'}, ensure_ascii=False, indent=2))
+    print(json.dumps({'model': args.model, 'scoring_version': 'scv-showcase-ssim-v3', 'scores': scores, 'display_total': f'{scores["total"]:.2f}'}, ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':

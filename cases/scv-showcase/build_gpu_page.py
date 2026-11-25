@@ -74,6 +74,9 @@ def main():
     parser.add_argument('--run', required=True, type=Path)
     parser.add_argument('--scores-only', action='store_true', help='Update scores/package/template while retaining identical delivery media')
     args = parser.parse_args()
+    published = SITE / 'results.json'
+    if published.exists() and len(read(published).get('models', [])) > 1:
+        parser.error('The page now contains multiple models. Use build_comparison_page.py to preserve both results.')
     run = args.run.resolve()
     delivery = run / 'remote-delivery'
     metrics = run / 'evaluation/static60/metrics'

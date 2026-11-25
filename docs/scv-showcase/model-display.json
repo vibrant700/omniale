@@ -1,0 +1,15 @@
+{
+  "default_model": "astra62-xhigh",
+  "models": {
+    "astra62-xhigh": {
+      "name": "Astra 6.2",
+      "assetsRoot": "assets",
+      "asset": "assets/asset.blend"
+    },
+    "sol62-xhigh": {
+      "name": "Sol 6.2",
+      "assetsRoot": "assets/models/sol62-xhigh",
+      "asset": "assets/models/sol62-xhigh/asset.blend"
+    }
+  }
+}
