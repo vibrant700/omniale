@@ -1,682 +1,129 @@
 {
-  "schema_version": 1,
-  "default_model": "sol62-xhigh",
+  "schema_version": 2,
+  "scoring_policy_id": "multiface-checklist-v2",
   "models": [
     {
-      "id": "sol62-xhigh",
-      "name": "gpt-6.2-sol",
-      "reasoning": "xhigh",
-      "framework": "Codex",
-      "scores": {
-        "visual": 30.182023881376725,
-        "elements": 13.903846153846153,
-        "sync": 9.354198767814164,
-        "total": 53.44006880303704
-      },
-      "runtime": {
-        "seconds": 1379.72,
-        "tool_calls": 103,
-        "cpu": 4,
-        "memory_gib": 8,
-        "gpu": false,
-        "codex": "0.142.4"
-      },
-      "regions": [
-        {
-          "id": "C1",
-          "name": "眼",
-          "score": 1.2403846153846154,
-          "maximum": 5
-        },
-        {
-          "id": "C2",
-          "name": "耳",
-          "score": 2.3461538461538463,
-          "maximum": 5
-        },
-        {
-          "id": "C3",
-          "name": "鼻",
-          "score": 1.0,
-          "maximum": 5
-        },
-        {
-          "id": "C4",
-          "name": "口",
-          "score": 3.4615384615384617,
-          "maximum": 5
-        },
-        {
-          "id": "C5",
-          "name": "眉",
-          "score": 1.6923076923076923,
-          "maximum": 5
-        },
-        {
-          "id": "C6",
-          "name": "脸部轮廓完整性",
-          "score": 2.9711538461538463,
-          "maximum": 5
-        },
-        {
-          "id": "C7",
-          "name": "肩部",
-          "score": 1.0769230769230769,
-          "maximum": 5
-        },
-        {
-          "id": "C8",
-          "name": "背景",
-          "score": 0.11538461538461539,
-          "maximum": 5
-        }
-      ],
-      "metrics": {
-        "T1": {
-          "PSNR_dB": 20.953529505725896,
-          "SSIM": 0.7705523616352552,
-          "LPIPS_alex": 0.28986477106809616,
-          "surface_PSNR_dB": 24.776240013570863,
-          "surface_SSIM_map_mean": 0.7447665916130151,
-          "surface_LPIPS_alex_map_mean": 0.2864536429994482,
-          "JOD": 3.920902729034424
-        },
-        "T2": {
-          "PSNR_dB": 21.623595708027462,
-          "SSIM": 0.7643123408312058,
-          "LPIPS_alex": 0.2817809100334461,
-          "surface_PSNR_dB": 25.822692140571462,
-          "surface_SSIM_map_mean": 0.7474516197223751,
-          "surface_LPIPS_alex_map_mean": 0.2640505990712474,
-          "JOD": 4.0938639640808105
-        },
-        "mean": {
-          "PSNR_dB": 21.28856260687668,
-          "SSIM": 0.7674323512332305,
-          "LPIPS_alex": 0.2858228405507711,
-          "surface_PSNR_dB": 25.299466077071163,
-          "surface_SSIM_map_mean": 0.7461091056676951,
-          "surface_LPIPS_alex_map_mean": 0.2752521210353478,
-          "JOD": 4.007383346557617
-        }
-      },
-      "views": {
-        "T1": {
-          "video": "assets/models/sol62-xhigh/T1.mp4",
-          "poster": "assets/models/sol62-xhigh/T1-poster.jpg"
-        },
-        "T2": {
-          "video": "assets/models/sol62-xhigh/T2.mp4",
-          "poster": "assets/models/sol62-xhigh/T2-poster.jpg"
-        }
-      },
-      "delivery": {
-        "url": "https://github.com/vibrant700/omniale/releases/download/multiface-scene-sol62-xhigh-v2/multiface-scene-sol62-xhigh.zip",
-        "sha256": "4a24a721474d6fe0642882aa93ff1eea4bbbbe9f9c51df0b3874e8b7744082a5",
-        "bytes": 109448467,
-        "readme": "files/submission-readme.txt",
-        "summary": "已交付动态三维工程、两支有声视频及可复现入口；工程独立重开与六帧重渲染通过。"
-      },
-      "steps": [
-        {
-          "title": "读取三路素材与五台相机标定",
-          "text": "先确认输入分辨率、帧时间与相机投影约定，选取跨视角可对应的面部特征，并从轮廓约束初始三维形状。",
-          "trace": "item_12"
-        },
-        {
-          "title": "三角定位并构建共享动态曲面",
-          "text": "从标定视角三角定位鼻尖、嘴角与下巴等特征，拟合连续头颈肩表面；逐帧生成几何变化，并把三路像素投影到同一UV序列。",
-          "trace": "item_18"
-        },
-        {
-          "title": "试渲染目标机位，调整肩部与场景",
-          "text": "先做单帧原型，查看两个指定机位的投影、接缝和肩部取景；加入近似椅背几何。对无法可靠定位的背景亮点，模型选择不补画。",
-          "trace": "item_40"
-        },
-        {
-          "title": "建立104帧动画并渲染两支视频",
-          "text": "将同步几何和纹理写入同一Blender工程，以104个形态键保存动画，再从T1、T2分别渲染并合入原声。",
-          "trace": "item_61"
-        },
-        {
-          "title": "检查工程、依赖与原声后交付",
-          "text": "检查相机投影、形态键、纹理序列及相对音频路径，交付工程、资源与重建入口。独立验收另行重开工程，从两机位各重渲染三帧。",
-          "trace": "item_69"
-        }
-      ],
-      "findings": [
-        {
-          "title": "鼻部几何与眼部外观仍存在明显偏差",
-          "text": "鼻部得到1.00／5分，眼部1.24／5分。鼻梁和鼻尖的突出程度不足，眼裂形状、可见范围与部分开合状态也与原片不同。",
-          "detail": "共享网格提供了三维深度，但稀疏特征和轮廓约束没有充分确定局部形状；投影纹理可以保留颜色，仍无法补偿错误的表面几何。",
-          "image": "assets/models/sol62-xhigh/T2-comparison.jpg",
-          "caption": "T2，第30帧（1.00秒）。左为原片，右为实际重建成片。"
-        },
-        {
-          "title": "肩部与背景的恢复弱于人物表面的连续性",
-          "text": "脸部轮廓完整性得到2.97／5分，肩部1.08／5分、背景0.12／5分。成片有连续人物表面，但衣领范围、肩线和颜色分布偏离参考，背景主要亮点未恢复。",
-          "detail": "本题要求重建镜头覆盖的完整场景。工程中有肩部和近似椅背，并不意味着它们在目标画面中的范围、位置和外观已经对应原片。",
-          "image": "assets/models/sol62-xhigh/T1-comparison.jpg",
-          "caption": "T1，第30帧（1.00秒）。注意肩部覆盖范围及原片中的背景亮点。"
-        },
-        {
-          "title": "整体音画对齐较好，不能替代视觉还原",
-          "text": "音画同步得到9.35／10分，两个目标机位的最佳整体偏移均为0毫秒；视觉保真度为30.18／50分，场景要素还原度为13.90／40分。",
-          "detail": "0毫秒是40毫秒采样网格上的整体偏移结果，不能证明每个说话时刻的唇形都正确。同步项衡量嘴部与实际语音的匹配，唇形与开合变化还由场景要素单独评价。"
-        },
-        {
-          "title": "可重开的工程已经交付，局部还原仍是瓶颈",
-          "text": "交付包含50,944顶点的人物网格、104个形态键和两台目标相机；工程独立重开及六帧重渲染通过。",
-          "detail": "复渲染与成片同帧的PSNR为42.33–42.59 dB，表明交付视频可由工程复现；这项核查验证工程与成片的一致性，不代替对原片的重建质量评分。"
-        }
-      ],
-      "score_url": "files/score.json"
-    },
-    {
-      "id": "astra62-xhigh",
+      "id": "astra62-xhigh-gpu-fresh01",
       "name": "gpt-6.2-astra",
       "reasoning": "xhigh",
       "framework": "Codex",
-      "scores": {
-        "visual": 30.802211684998323,
-        "elements": 14.975011335751628,
-        "sync": 9.668402035189965,
-        "total": 55.445625055939914
-      },
-      "runtime": {
-        "seconds": 3019.97,
-        "tool_calls": 142,
-        "cpu": 4,
-        "memory_gib": 8,
-        "gpu": false,
-        "codex": "0.142.4"
-      },
-      "regions": [
+      "dimensions": [
         {
           "id": "C1",
           "name": "眼",
-          "score": 1.5164835164835164,
-          "maximum": 5
+          "maximum": 10,
+          "score": 5.438186813186813
         },
         {
           "id": "C2",
           "name": "耳",
-          "score": 2.3846153846153846,
-          "maximum": 5
+          "maximum": 10,
+          "score": 8
         },
         {
           "id": "C3",
           "name": "鼻",
-          "score": 1.1923076923076923,
-          "maximum": 5
+          "maximum": 10,
+          "score": 2.6153846153846154
         },
         {
           "id": "C4",
           "name": "口",
-          "score": 3.3816047423450337,
-          "maximum": 5
+          "maximum": 10,
+          "score": 6.694711538461538
         },
         {
           "id": "C5",
           "name": "眉",
-          "score": 2.5384615384615383,
-          "maximum": 5
+          "maximum": 10,
+          "score": 5.634615384615385
         },
         {
           "id": "C6",
           "name": "脸部轮廓完整性",
-          "score": 2.9230769230769234,
-          "maximum": 5
+          "maximum": 10,
+          "score": 5.980769230769231
         },
         {
           "id": "C7",
           "name": "肩部",
-          "score": 1.0384615384615385,
-          "maximum": 5
+          "maximum": 10,
+          "score": 2.4326923076923075
         },
         {
           "id": "C8",
           "name": "背景",
-          "score": 0.0,
-          "maximum": 5
+          "maximum": 10,
+          "score": 0.15384615384615385
         }
       ],
-      "metrics": {
-        "T1": {
-          "PSNR_dB": 20.91086426203217,
-          "SSIM": 0.7588183394560073,
-          "LPIPS_alex": 0.2952076592124425,
-          "surface_PSNR_dB": 25.460288679990203,
-          "surface_SSIM_map_mean": 0.743878101295568,
-          "surface_LPIPS_alex_map_mean": 0.27175921515413864,
-          "JOD": 4.157459259033203
-        },
-        "T2": {
-          "PSNR_dB": 21.820792759040582,
-          "SSIM": 0.7672710800892913,
-          "LPIPS_alex": 0.2401179174104562,
-          "surface_PSNR_dB": 26.36239624085312,
-          "surface_SSIM_map_mean": 0.7515196672774346,
-          "surface_LPIPS_alex_map_mean": 0.22683386022998495,
-          "JOD": 4.535526752471924
-        },
-        "mean": {
-          "PSNR_dB": 21.365828510536375,
-          "SSIM": 0.7630447097726494,
-          "LPIPS_alex": 0.26766278831144935,
-          "surface_PSNR_dB": 25.91134246042166,
-          "surface_SSIM_map_mean": 0.7476988842865013,
-          "surface_LPIPS_alex_map_mean": 0.24929653769206178,
-          "JOD": 4.3464930057525635
-        }
-      },
-      "views": {
-        "T1": {
-          "video": "assets/models/astra62-xhigh/T1.mp4",
-          "poster": "assets/models/astra62-xhigh/T1-poster.jpg"
-        },
-        "T2": {
-          "video": "assets/models/astra62-xhigh/T2.mp4",
-          "poster": "assets/models/astra62-xhigh/T2-poster.jpg"
-        }
-      },
-      "delivery": {
-        "url": "https://github.com/vibrant700/omniale/releases/download/multiface-scene-astra62-xhigh-v1/multiface-scene-astra62-xhigh-original.zip",
-        "sha256": "f4cf0b1f6ac741f2bb124ec01fd41628f131d5962eaf6c3527fde1fe9331341f",
-        "bytes": 298838071,
-        "readme": "assets/models/astra62-xhigh/submission-readme.txt",
-        "summary": "已交付动态三维工程、两支有声视频及重建入口；工程可独立重开，六帧重渲染与交付视频一致。"
-      },
-      "steps": [
-        {
-          "title": "核对标定并求解共享人物表面",
-          "text": "读取三路图像和五台相机标定，计算相机中心及投影；结合跨视角对应点、轮廓和局部纹理相关性，细化头颈肩表面。",
-          "trace": "astra62-xhigh-item_13"
-        },
-        {
-          "title": "估计三路光流并恢复逐帧位移",
-          "text": "分别跟踪三路输入，将光流按投影导数及可见性联合转换为三维位移；保存104帧动态人物网格，并对唇间开合做局部调整。",
-          "trace": "astra62-xhigh-item_57"
-        },
-        {
-          "title": "从同一Blender工程渲染两个机位",
-          "text": "把三路同步纹理序列投影到共享曲面，建立头枕和背景灯的近似几何；切换T1、T2逐帧渲染，再封装原声。",
-          "trace": "astra62-xhigh-item_83"
-        },
-        {
-          "title": "重开工程并核验资源与视频",
-          "text": "重新打开工程，检查105,408顶点、104个形态键、相对纹理与声音路径，并确认两支视频都是104帧、30fps。",
-          "trace": "astra62-xhigh-item_106"
-        }
-      ],
-      "findings": [
-        {
-          "title": "眼裂与鼻部轮廓偏差仍然明显",
-          "text": "眼部1.52／5分、鼻部1.19／5分。近侧眼裂偏圆、偏长，鼻尖比原片更尖扁，鼻梁至鼻尖的转折和鼻孔显露范围也有偏差。",
-          "detail": "共享表面保留了肤色和相当多的局部纹理，但目标视角中的轮廓仍由几何决定。已有投影纹理无法消除眼角位置、鼻尖体积及遮挡关系的错误。",
-          "image": "assets/models/astra62-xhigh/T2-comparison.jpg",
-          "caption": "T2，帧索引30（从0计，1.00秒）。左为原片，右为实际交付成片。"
-        },
-        {
-          "title": "肩部覆盖范围与背景亮点未对应原片",
-          "text": "肩部1.04／5分、背景0.00／5分。T1左下肩线抬高，头颈肩比例有偏差；原片中清楚可见的背景亮点没有出现在对应位置。",
-          "detail": "工程包含头枕和灯点对象，仍需在目标画面中恢复正确的位置、范围与遮挡。对象存在本身不等于完整场景已被还原。",
-          "image": "assets/models/astra62-xhigh/T1-comparison.jpg",
-          "caption": "T1，帧索引30（从0计，1.00秒）。注意肩线高度、头部轮廓及背景亮点。"
-        },
-        {
-          "title": "整体同步较好，局部口眼还原仍有限",
-          "text": "音画同步9.67／10分，T1、T2最佳整体偏移均为0毫秒；口部3.38／5分，视觉保真度30.80／50分。",
-          "detail": "0毫秒是40毫秒采样网格上的整体偏移结果，不能证明每个时刻的唇形、眼睑和表情都与原片一致。"
-        },
-        {
-          "title": "动态工程可以复现成片",
-          "text": "主人物网格含105,408顶点和104个形态键。独立重开工程后，从两机位各重渲染三帧，与交付视频对应帧的PSNR为41.87–42.21 dB。",
-          "detail": "这项核查说明工程与成片的一致性。工程质量作为交付说明单独记录，正式总分仍由视觉50分、场景要素40分、音画同步10分相加。"
-        }
-      ],
-      "score_url": "assets/models/astra62-xhigh/score.json"
-    },
-    {
-      "id": "ds4pro-max",
-      "name": "deepseek-v4-pro",
-      "reasoning": "max",
-      "framework": "Codex",
-      "scores": {
-        "visual": 24.485984226235164,
-        "elements": 8.24959935897436,
-        "sync": 9.100401305285967,
-        "total": 41.83598489049549
-      },
       "runtime": {
-        "seconds": 2622.72,
-        "tool_calls": 84,
+        "seconds": 2841.74,
+        "tool_calls": 154,
+        "responses": 79,
+        "gpu": "RTX 4090 D",
         "cpu": 4,
-        "memory_gib": 8,
-        "gpu": false,
-        "codex": "0.142.4"
-      },
-      "regions": [
-        {
-          "id": "C1",
-          "name": "眼",
-          "score": 0.24519230769230768,
-          "maximum": 5
-        },
-        {
-          "id": "C2",
-          "name": "耳",
-          "score": 2.7051282051282053,
-          "maximum": 5
-        },
-        {
-          "id": "C3",
-          "name": "鼻",
-          "score": 0.0,
-          "maximum": 5
-        },
-        {
-          "id": "C4",
-          "name": "口",
-          "score": 1.4002403846153846,
-          "maximum": 5
-        },
-        {
-          "id": "C5",
-          "name": "眉",
-          "score": 2.230769230769231,
-          "maximum": 5
-        },
-        {
-          "id": "C6",
-          "name": "脸部轮廓完整性",
-          "score": 1.514423076923077,
-          "maximum": 5
-        },
-        {
-          "id": "C7",
-          "name": "肩部",
-          "score": 0.15384615384615385,
-          "maximum": 5
-        },
-        {
-          "id": "C8",
-          "name": "背景",
-          "score": 0.0,
-          "maximum": 5
-        }
-      ],
-      "metrics": {
-        "T1": {
-          "PSNR_dB": 18.958768836320367,
-          "SSIM": 0.6239964326915577,
-          "LPIPS_alex": 0.476068936001796,
-          "surface_PSNR_dB": 20.71188930560656,
-          "surface_SSIM_map_mean": 0.6199473207701687,
-          "surface_LPIPS_alex_map_mean": 0.4541891461703581,
-          "JOD": 2.7062649726867676
-        },
-        "T2": {
-          "PSNR_dB": 19.656040916354513,
-          "SSIM": 0.65631666555716,
-          "LPIPS_alex": 0.4361655064500295,
-          "surface_PSNR_dB": 21.50950728951834,
-          "surface_SSIM_map_mean": 0.631265442486597,
-          "surface_LPIPS_alex_map_mean": 0.43723819206069786,
-          "JOD": 3.1368207931518555
-        },
-        "mean": {
-          "PSNR_dB": 19.30740487633744,
-          "SSIM": 0.6401565491243588,
-          "LPIPS_alex": 0.45611722122591275,
-          "surface_PSNR_dB": 21.11069829756245,
-          "surface_SSIM_map_mean": 0.6256063816283828,
-          "surface_LPIPS_alex_map_mean": 0.445713669115528,
-          "JOD": 2.9215428829193115
-        }
+        "memory_gib": 8
       },
       "views": {
         "T1": {
-          "video": "assets/models/ds4pro-max/T1.mp4",
-          "poster": "assets/models/ds4pro-max/T1-poster.jpg"
+          "video": "assets/models/astra62-xhigh-gpu-fresh01/T1.mp4",
+          "poster": "assets/models/astra62-xhigh-gpu-fresh01/T1-poster.jpg"
         },
         "T2": {
-          "video": "assets/models/ds4pro-max/T2.mp4",
-          "poster": "assets/models/ds4pro-max/T2-poster.jpg"
+          "video": "assets/models/astra62-xhigh-gpu-fresh01/T2.mp4",
+          "poster": "assets/models/astra62-xhigh-gpu-fresh01/T2-poster.jpg"
         }
       },
       "delivery": {
-        "url": "https://github.com/vibrant700/omniale/releases/download/multiface-scene-ds4pro-max-v1/multiface-scene-ds4pro-max-original.tar",
-        "sha256": "d2c2a454e6064a7d1307a8d957a3c6f95163c2acb058eef6695f999f8513572e",
-        "bytes": 2355200,
-        "readme": "assets/models/ds4pro-max/submission-readme.txt",
-        "summary": "已交付两支有声视频、Python生成入口与静态Blender代理工程；代理工程重渲染与交付成片不一致，原包保留外部符号链接。"
+        "url": "https://github.com/vibrant700/omniale/releases/tag/multiface-scene-astra62-xhigh-gpu-fresh01-v2",
+        "sha256": "6d96ff7663e4ec9d860e3ce092ba1f79394be04acc24bf7abe44fb21c07cce8d",
+        "bytes": 258091190
       },
       "steps": [
         {
-          "title": "用代码读取图像和相机标定",
-          "text": "本次模型接口仅接收文本，不支持原生视觉；全部原始媒体仍作为文件提供。模型通过Python读取图像尺寸、像素统计和标定，未引入额外视觉模型。",
-          "trace": "ds4pro-max-item_54"
+          "title": "读取三路同步素材与相机标定",
+          "text": "从空工程开始，使用原始322份输入文件及原声。三路输入画面可见，目标机位仅提供标定，求解时不提供目标参考画面。"
         },
         {
-          "title": "用球面代理计算目标视角",
-          "text": "从目标机位逐像素发射射线，与球面代理求交，再投影回三路输入并按表面朝向和视线相似度混合颜色；背景使用I2平面重投影。",
-          "trace": "ds4pro-max-item_56"
+          "title": "恢复共享表面与逐帧运动",
+          "text": "用多视角前景轮廓约束头颈体积，以跨视图纹理匹配细化基准表面；三路稠密光流结合一致性、遮挡和轮廓约束求解逐帧位移。"
         },
         {
-          "title": "生成视频并另存静态代理工程",
-          "text": "Python逐帧生成T1、T2画面，同时用Blender保存头部球体、躯干代理和五台相机。视频生成没有通过该Blender工程的渲染入口。",
-          "trace": "ds4pro-max-item_109"
+          "title": "烘焙外观并建立可编辑工程",
+          "text": "同期三路颜色经深度测试和入射角加权，形成104张共享UV图集；将几何位移存入104个形态键，建立人物、布景和五台相机。"
         },
         {
-          "title": "修正封装截帧并确认104帧交付",
-          "text": "初次封装只有103帧，模型移除导致提前结束的参数后重新编码；最终两支视频均为104帧、30fps，保留48kHz单声道原声。",
-          "trace": "ds4pro-max-item_126"
+          "title": "使用CUDA完整渲染两机位",
+          "text": "实际生产日志记录T1、T2各保存104帧。Cycles使用4采样、无降噪；GPU峰值显存4001 MiB。画面没有插帧、变速或裁掉首尾。"
+        },
+        {
+          "title": "合入原声并交付原始工程",
+          "text": "以原声编码AAC，交付两支668×1024、30fps、104帧的有声视频，以及scene.blend、build.py、README与资源。119份原始交付逐项通过SHA-256核对。"
         }
       ],
       "findings": [
         {
-          "title": "多视图混合出现重复五官与断裂边界",
-          "text": "眼部0.25／5分、鼻部0.00／5分、口部1.40／5分。成片有错开的眼裂、鼻部和唇部轮廓，额面与口周出现明显接缝及异常亮色区域。",
-          "detail": "球面代理没有贴合真实脸部形状，三路投影在错误的表面位置相遇。按角度混合颜色能生成有动态纹理的画面，却不能自动得到正确的鼻部遮挡和单一连续五官。",
-          "image": "assets/models/ds4pro-max/T1-comparison.jpg",
-          "caption": "T1，帧索引30（从0计，1.00秒）。左为原片，右为实际交付成片；可见重复轮廓和球面边界。"
+          "title": "眼部与鼻部的局部形状偏离参考",
+          "text": "眼部5.44／10分，鼻部2.62／10分。眼裂与可见范围、鼻梁及鼻翼形状仍有差异；鼻部“形状与比例”在两个机位均未通过。",
+          "detail": "逐帧判决指出，部分眼裂更短、更圆，鼻梁下段和鼻尖偏圆、鼻翼外展。共享投影纹理保留了肤色，仍不能弥补局部形状与遮挡关系的偏差。",
+          "image": "T2-comparison.jpg",
+          "caption": "T2，帧索引30（1.00秒）。左为参考，右为本次GPU交付。"
         },
         {
-          "title": "头肩比例、轮廓与背景均有明显偏差",
-          "text": "脸部轮廓完整性1.51／5分、肩部0.15／5分、背景0.00／5分。面部呈球状外扩，颈部拉长，肩部大面积拉伸；主要背景亮点缺失。",
-          "detail": "背景平面重投影还带入了横向条带与额外背景结构。T2脸颊和鼻侧的大块错位边界进一步表明，输入纹理的细节并未转化为准确的新视角结构。",
-          "image": "assets/models/ds4pro-max/T2-comparison.jpg",
-          "caption": "T2，帧索引30（从0计，1.00秒）。注意脸颊接缝、头肩比例及缺失的背景亮点。"
+          "title": "肩线与背景亮点没有准确恢复",
+          "text": "肩部2.43／10分，背景0.15／10分。肩部覆盖范围、倾斜和头肩比例偏离参考，主要背景亮点缺失。",
+          "detail": "头颈肩表面连续并不等于画面布局正确。T1中肩部抬高或覆盖过多黑底，T2部分肩外缘提前收回；参考中主要亮点的数量、排列与遮挡也未得到保留。",
+          "image": "T1-comparison.jpg",
+          "caption": "T1，帧索引30（1.00秒）。注意肩线、覆盖范围和背景亮点。"
         },
         {
-          "title": "整体音画同步仍取得较高分",
-          "text": "音画同步9.10／10分，T1、T2最佳整体偏移均为0毫秒；视觉保真度24.49／50分，场景要素8.25／40分。",
-          "detail": "模型逐帧使用同一时刻的输入图像并合入原声，因此整体同步可以较好。0毫秒来自40毫秒采样网格，并不代表重复或变形的嘴部已经正确还原。"
-        },
-        {
-          "title": "静态Blender代理无法复现交付视频",
-          "text": "工程只有3,010顶点的HeadProxy和64顶点的TorsoProxy，没有形态键或几何动画。六帧工程重渲染与成片的PSNR仅14.70–14.94 dB。",
-          "detail": "build.py通过Python重投影生成视频，scene.blend另存静态代理。原包的三路帧和声音采用指向运行目录的符号链接，迁移后不能直接视为自包含工程。工程核查单独记录，总分按三项媒体评分相加。"
+          "title": "工程具有真实逐帧几何与共享外观",
+          "text": "独立重开工程确认人物网格含44,544顶点、104个形态键；跨帧几何变化成立，贴图依赖齐全。两支视频均由Cycles渲染104帧，完整解码与规格检查通过。",
+          "detail": "形态键与共享UV外观描述这段表演，口内和眼部主要依赖浅表几何与逐帧观测外观。它们不是可独立驱动的牙齿、眼球或面部骨骼；工程核查独立列示，不参与计分。"
         }
       ],
-      "score_url": "assets/models/ds4pro-max/score.json"
-    },
-    {
-      "id": "astra6-xhigh",
-      "name": "gpt-6-astra",
-      "reasoning": "xhigh",
-      "framework": "Codex",
-      "scores": {
-        "visual": 32.2478494883251,
-        "elements": 17.83974358974359,
-        "sync": 8.76388285238657,
-        "total": 58.851475930455265
-      },
-      "runtime": {
-        "seconds": 6899.22,
-        "tool_calls": 185,
-        "cpu": 4,
-        "memory_gib": 8,
-        "gpu": false,
-        "codex": "0.142.4",
-        "context_window_tokens": 272000
-      },
-      "regions": [
-        {
-          "id": "C1",
-          "name": "眼",
-          "score": 1.7019230769230769,
-          "maximum": 5
-        },
-        {
-          "id": "C2",
-          "name": "耳",
-          "score": 3.7051282051282053,
-          "maximum": 5
-        },
-        {
-          "id": "C3",
-          "name": "鼻",
-          "score": 2.0384615384615383,
-          "maximum": 5
-        },
-        {
-          "id": "C4",
-          "name": "口",
-          "score": 3.894230769230769,
-          "maximum": 5
-        },
-        {
-          "id": "C5",
-          "name": "眉",
-          "score": 3.1923076923076925,
-          "maximum": 5
-        },
-        {
-          "id": "C6",
-          "name": "脸部轮廓完整性",
-          "score": 2.8461538461538463,
-          "maximum": 5
-        },
-        {
-          "id": "C7",
-          "name": "肩部",
-          "score": 0.4230769230769231,
-          "maximum": 5
-        },
-        {
-          "id": "C8",
-          "name": "背景",
-          "score": 0.038461538461538464,
-          "maximum": 5
-        }
-      ],
-      "metrics": {
-        "T1": {
-          "PSNR_dB": 21.206475484266285,
-          "SSIM": 0.7884301780078629,
-          "LPIPS_alex": 0.2467127456687964,
-          "surface_PSNR_dB": 27.51971011613332,
-          "surface_SSIM_map_mean": 0.7971801919093652,
-          "surface_LPIPS_alex_map_mean": 0.2295790837531611,
-          "JOD": 4.568252086639404
-        },
-        "T2": {
-          "PSNR_dB": 21.47192244364501,
-          "SSIM": 0.8125403176169077,
-          "LPIPS_alex": 0.20347562317664808,
-          "surface_PSNR_dB": 28.790020052318212,
-          "surface_SSIM_map_mean": 0.8300650767141688,
-          "surface_LPIPS_alex_map_mean": 0.1667927216785687,
-          "JOD": 4.850886344909668
-        },
-        "mean": {
-          "PSNR_dB": 21.339198963955646,
-          "SSIM": 0.8004852478123853,
-          "LPIPS_alex": 0.22509418442272222,
-          "surface_PSNR_dB": 28.15486508422577,
-          "surface_SSIM_map_mean": 0.813622634311767,
-          "surface_LPIPS_alex_map_mean": 0.1981859027158649,
-          "JOD": 4.709569215774536
-        }
-      },
-      "views": {
-        "T1": {
-          "video": "assets/models/astra6-xhigh/T1.mp4",
-          "poster": "assets/models/astra6-xhigh/T1-poster.jpg"
-        },
-        "T2": {
-          "video": "assets/models/astra6-xhigh/T2.mp4",
-          "poster": "assets/models/astra6-xhigh/T2-poster.jpg"
-        }
-      },
-      "delivery": {
-        "url": "https://github.com/vibrant700/omniale/releases/download/multiface-scene-astra6-xhigh-v1/multiface-scene-astra6-xhigh-original.zip",
-        "sha256": "22b8ebb9ad83ca985665cbb581f80398ebc9c71d0d68cacab24c41ac81aad9a3",
-        "bytes": 200243779,
-        "readme": "assets/models/astra6-xhigh/submission-readme.txt",
-        "summary": "已交付共享动态三维工程、两支有声视频及自包含重建入口；工程独立重开和六帧重渲染通过。"
-      },
-      "steps": [
-        {
-          "title": "核对三路输入与五台相机标定",
-          "text": "读取输入图像与标定，计算I1、I2、I3和两个目标机位的相机中心，核对坐标单位与投影方向。",
-          "trace": "astra6-xhigh-item_19"
-        },
-        {
-          "title": "恢复104帧共享动态表面",
-          "text": "用前景轮廓、圆柱参数化的多视角光度匹配与五官三角测量约束表面；逐帧细化几何，再进行空间平滑和三帧时间滤波。",
-          "trace": "astra6-xhigh-item_61"
-        },
-        {
-          "title": "烘焙共享UV外观序列",
-          "text": "根据可见性对三路标定投影进行线性颜色融合，生成104张2048×2048纹理；两个目标机位使用同一外观和动态人物网格。",
-          "trace": "astra6-xhigh-item_91"
-        },
-        {
-          "title": "从共享三维工程渲染两个机位",
-          "text": "把动态表面保存为104个原生形态键，建立T1、T2场景共享的几何、材质和动画，分别渲染104帧并合入原声。",
-          "trace": "astra6-xhigh-item_100"
-        },
-        {
-          "title": "迁移工程并检查双机位重渲染",
-          "text": "将交付复制到独立目录，检查重新构建、资源相对路径及工程重开；模型本地第52帧双机位重渲染与对应无损帧逐像素相同。",
-          "trace": "astra6-xhigh-item_117"
-        }
-      ],
-      "findings": [
-        {
-          "title": "嘴部与耳部相对完整，眼鼻轮廓仍有偏差",
-          "text": "口部3.89／5分、耳部3.71／5分，眼部1.70／5分、鼻部2.04／5分。近侧眼裂偏长，眼角与眼睑轮廓不同；鼻背至鼻尖的转折、鼻翼及鼻孔显露范围仍未完全对应。",
-          "detail": "共享表面保留了较连续的肤色、嘴部和耳部外观，但投影纹理无法独立纠正局部几何及遮挡。眼睛、牙齿和口腔主要记录在逐帧纹理中，没有独立解剖网格。",
-          "image": "assets/models/astra6-xhigh/T2-comparison.jpg",
-          "caption": "T2，帧索引30（从0计，1.00秒）。左为原片，右为实际交付成片。"
-        },
-        {
-          "title": "肩部覆盖不足，主要背景亮点缺失",
-          "text": "肩部0.42／5分、背景0.04／5分。T1原片左下大面积肩部在成片中主要变为黑底，只保留靠近颈根的少量表面；上下两处背景亮点没有恢复。",
-          "detail": "交付用黑色背景和独立头枕代理近似环境，并未重建无法跨视角定位的灯点。即使人物网格连续，目标镜头中实际可见的肩部、背景及遮挡关系仍需完整恢复。",
-          "image": "assets/models/astra6-xhigh/T1-comparison.jpg",
-          "caption": "T1，帧索引30（从0计，1.00秒）。注意左下肩部覆盖范围与两处背景亮点。"
-        },
-        {
-          "title": "整体偏移为零，同步分仍反映匹配差异",
-          "text": "音画同步8.76／10分，T1、T2最佳整体偏移均为0毫秒；视觉保真度32.25／50分、场景要素17.84／40分。",
-          "detail": "0毫秒来自40毫秒采样网格，只描述最佳整体偏移。同步还受到嘴部外观与实际语音匹配程度的影响，不能据此推断每个时刻的唇形都准确。"
-        },
-        {
-          "title": "原生动态工程可独立重开并复现成片",
-          "text": "人物网格含81,773顶点和104个原生形态键，两个目标场景共享几何、动画及材质。独立验收从两机位各重渲染三帧，与交付视频对应帧的PSNR为42.30–42.73 dB。",
-          "detail": "包内保留完整相对资源和重新构建入口；工程无需访问原运行的candidate目录。该核查说明工程与成片一致，正式总分由视觉50分、场景要素40分、音画同步10分直接相加。"
-        }
-      ],
-      "score_url": "assets/models/astra6-xhigh/score.json"
+      "score_url": "files/score.json"
     }
-  ],
-  "scoring_policy": "visual_50_plus_scene_elements_40_plus_sync_10; engineering_reported_separately",
-  "scoring_policy_id": "multiface-legacy-v1",
-  "scoring_rules_url": "scoring-legacy.html",
-  "current_scoring_rules_url": "scoring.html",
-  "score_scope": "已完成CPU运行的冻结历史成绩，不是现行checklist规则的结果。"
+  ]
 }

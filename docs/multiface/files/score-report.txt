@@ -1,5 +1,0 @@
-gpt-6.2-sol xhigh + Codex
-Visual: 30.182023881/50
-Scene Element Fidelity: 13.903846154/40
-AV sync: 9.354198768/10
-Total: 53.440068803/100

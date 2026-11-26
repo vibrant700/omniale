@@ -18,24 +18,3 @@ document.querySelectorAll('.comparison-view').forEach(group=>{
 });
 document.querySelectorAll('[data-view-tab]').forEach(button=>button.addEventListener('click',()=>{mediaControllers.forEach(c=>c.stop());document.querySelectorAll('[data-view-tab]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelectorAll('.comparison-view').forEach(g=>{g.hidden=g.dataset.view!==button.dataset.viewTab;});}));
 document.addEventListener('play',event=>{if(event.target.closest('.comparison-view'))return;mediaControllers.forEach(c=>c.stop());document.querySelectorAll('video,audio').forEach(v=>{if(v!==event.target)v.pause();});},true);
-
-// Each model owns its scores, videos, steps and findings. Future records do not
-// inherit the default model's media or claims.
-const modelSelect=document.querySelector('[data-model-select]');
-if(modelSelect)fetch('models.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error('Model data unavailable');return r.json();}).then(data=>{
- const models=data.models.filter(m=>m.id&&m.name&&m.scores&&m.views&&m.steps&&m.findings);if(!models.length)return;
- document.querySelector('[data-leaderboard]').innerHTML=models.map(m=>`<tr data-model="${esc(m.id)}"><th scope="row">${esc(m.name)}</th><td>${esc(m.reasoning)}</td><td>${esc(m.framework)}</td><td class="num">${score(m.scores.visual)}</td><td class="num">${score(m.scores.elements)}</td><td class="num">${score(m.scores.sync)}</td><td class="num"><strong class="score-value">${score(m.scores.total)}</strong></td></tr>`).join('');
- modelSelect.replaceChildren(...models.map(m=>{const option=document.createElement('option');option.value=m.id;option.textContent=`${m.name} · ${m.reasoning} · ${m.framework}`;return option;}));let currentId=null;
- function selectModel(id,changeURL){const m=models.find(x=>x.id===id)||models.find(x=>x.id===data.default_model)||models[0];modelSelect.value=m.id;if(currentId===m.id)return;currentId=m.id;
- document.querySelector('[data-runtime]').textContent=`约${Math.round(m.runtime.seconds/60)}分钟 · ${m.runtime.tool_calls}次工具调用`;
- document.querySelectorAll('.comparison-view').forEach(g=>{const media=m.views[g.dataset.view];if(!media)return;g.dispatchEvent(new Event('modelchange'));const pred=g.querySelector('[data-prediction]');g.querySelector('[data-output-label]').textContent=`${m.name} · ${m.reasoning} · 重建成片`;if(pred.getAttribute('src')!==media.video){pred.poster=media.poster;pred.src=media.video;pred.load();}});
- document.querySelector('[data-region-rows]').innerHTML=m.regions.map(r=>`<tr><th scope="row">${esc(r.name)}</th><td class="num">${score(r.score)} / ${r.maximum}</td></tr>`).join('');document.querySelector('[data-delivery]').href=m.delivery.url;document.querySelector('[data-readme]').href=m.delivery.readme;document.querySelector('[data-result-summary]').textContent=m.delivery.summary||'查看下方工程与交付说明。';
- document.querySelector('[data-score-data]').href=m.score_url||'files/score.json';
- document.querySelector('[data-results-link]').href=`results.html#${m.id}`;
- document.querySelector('[data-traces-link]').href=`traces.html#${m.id}`;
- document.querySelector('[data-execution-intro]').textContent=`${m.name}以${m.reasoning}运行，通过代码调用Python、FFmpeg与后台Blender完成制作。`;
- document.querySelector('[data-execution-steps]').innerHTML=m.steps.map((s,i)=>`<article class="step"><span class="step-no">${i+1}</span><div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p><p class="step-source"><a href="${esc(s.evidence_url||`${m.trace_url||'traces.html'}#${s.trace}`)}">查看对应执行证据 ↗</a></p></div></article>`).join('');
- document.querySelector('[data-findings]').innerHTML=m.findings.map((f,i)=>`<article class="finding"><h3>${i+1}. ${esc(f.title)}</h3><p>${esc(f.text)}</p><details><summary>详细分析</summary><div class="detail-body"><p>${esc(f.detail)}</p>${f.image?`<figure><img loading="lazy" src="${esc(f.image)}" alt="${esc(f.caption)}"><figcaption>${esc(f.caption)}</figcaption></figure>`:''}</div></details></article>`).join('');
- if(changeURL){const url=new URL(location.href);url.searchParams.set('model',m.id);history.replaceState(null,'',url);}}
- selectModel(new URLSearchParams(location.search).get('model')||data.default_model,false);modelSelect.addEventListener('change',()=>selectModel(modelSelect.value,true));
-}).catch(()=>{modelSelect.disabled=true;});

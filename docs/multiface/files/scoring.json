@@ -323,10 +323,5 @@
     "affects_total_score": false,
     "is_eligibility_gate": false,
     "reporting": "Reported separately in model delivery notes and analysis; original engineering observations remain unchanged."
-  },
-  "historical_policy": {
-    "id": "multiface-legacy-v1",
-    "rules": "scoring-legacy.json",
-    "scope": "已发布CPU运行的历史成绩；不按本规则推算音画同步分或总分。"
   }
 }

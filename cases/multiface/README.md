@@ -1,19 +1,11 @@
-# Multiface 动态三维头部重建案例
+# Multiface 动态三维场景重建
 
-展示页： https://vibrant700.github.io/omniale/multiface/
+展示页：https://vibrant700.github.io/omniale/multiface/
 
-已完成实验：gpt-6.1-sol / xhigh / Codex CLI 0.142.4。CPU 4 核、8 GB，后台 Blender 5.3。
-Agent 自行完成，累计 107 次工具调用；无外部墙钟时限。时长 3047.39 秒。
+当前公开案例为Astra 6.2 xhigh通过官方Codex从空工程完成的RTX 4090 D GPU运行。成片、执行过程、工程与分析均对应astra62-xhigh-gpu-fresh01。
 
-`docs/multiface/` 包含可直接播放的三个输入视角、原声、两个保留视角的真值与提交对照、指标与分数记录。
-`build.py`、`render.py` 等是封存提交中的实际代码；完整 Blender 工程及依赖见页面链接的 Release 附件。
-现行评分见 [SCORING.md](SCORING.md)，采用九个独立checklist分项。页面保留的CPU成绩属于历史口径。
-`evaluate_visual.py`、`evaluate_avsync.py` 为历史客观指标评测入口，保留当时目录约定，需按本地素材、运行时与缓存目录适配后使用。
-图像/视频原始指标与合成分分别保留；合成分是事后约定、未经专家校准的换算，不是准确率。
-`task.txt` 展示委托、素材、制作要求与交付，评分依据单独列在页面结果部分。
+评分源见[SCORING.md](SCORING.md)，九个分项独立列分；只公开已完成裁定的成绩。公开页面不保留CPU历史测评。
 
-素材来源：Multiface, Meta / Facebook Research, https://github.com/facebookresearch/multiface 。
-素材及衍生媒体按 CC BY-NC 4.0 使用：https://creativecommons.org/licenses/by-nc/4.0/ 。
-网页预览将原始无声画面缩小到 668×1024 并附加题目原声；Agent 的两支 MP4 保持封存字节不变。
-评测使用原始无损帧，不使用页面压缩预览。保留视角在本次求解时完全隔离，现在仅为结果分析公开。
-本案例使用一段约3.47秒的短表演，各模型运行独立归档；结果不能据此推广到长序列或整个模型的能力。
+[本次制作源码](astra62-xhigh-gpu-fresh01/)包含原始build.py及恢复缓存的Python／C++代码；完整scene.blend、缓存、104张UV图集、两支视频及依赖资源通过页面Release链接提供。
+
+素材来自Meta Multiface，序列SEN_a_good_morrow_to_you_my_boy；原素材及衍生媒体遵循CC BY-NC 4.0。仅使用一段约3.47秒的短表演，结果不能直接推广到长序列。
