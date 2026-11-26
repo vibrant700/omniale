@@ -73,8 +73,8 @@
     },
     {
       "file": "assets/SCORING.md",
-      "bytes": 5339,
-      "sha256": "8547267467ae75c0f53380fa7e0c82c7cbebed6ef86eddcbc180ac0dc09e87c7"
+      "bytes": 5299,
+      "sha256": "828569b42ea8f5ab2e49ee432c21a73f1d36ba31338d16bd417b466d34d28327"
     },
     {
       "file": "assets/TASK.md",
@@ -93,8 +93,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 27966,
-      "sha256": "f5a37b68194b6408f3a738b7d1a54c7eac4168381ddb3a8d4babbbfd71831231"
+      "bytes": 27866,
+      "sha256": "42891c27aff83d54dbbfca43035f3263ec24e2b33edc78b33bd3f6ee59a79dd3"
     },
     {
       "file": "models.json",

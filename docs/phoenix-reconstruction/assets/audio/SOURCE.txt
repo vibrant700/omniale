@@ -1,2 +1,0 @@
-These are original procedural sound-design sources generated from deterministic random noise and elementary oscillators for this task. They are synthetic effects, not recordings of a real animal. No third-party samples are used. To the extent copyright applies, dedicated under CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/ .
-You may choose and process the supplied sources as needed.

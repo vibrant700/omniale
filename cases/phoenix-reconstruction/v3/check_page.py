@@ -42,6 +42,9 @@ def main():
     if args.playwright_runtime:sys.path.insert(0,str(args.playwright_runtime))
     from playwright.sync_api import sync_playwright
     site=args.repo/'docs/phoenix-reconstruction/v3';text=(site/'index.html').read_text(encoding='utf-8')
+    assert not (site.parent/'v2').exists() and not (site.parent/'assets').exists() and not (site.parent/'results').exists()
+    assert 'V1' not in text and 'V2' not in text
+    assert 'location.replace' in (site.parent/'index.html').read_text(encoding='utf-8')
     links=Links();links.feed(text)
     for ref in links.refs:
         u=urlsplit(ref)
@@ -124,6 +127,14 @@ def main():
             report['viewports'].append({'width':width,'horizontal_overflow':False})
         page.set_viewport_size({'width':1440,'height':1000});page.goto(args.url,wait_until='networkidle')
         page.locator('#results').scroll_into_view_if_needed();page.screenshot(path=str(args.output/'results-desktop.png'))
+        root_url=args.url.replace('/v3/','/')
+        page.goto(root_url,wait_until='domcontentloaded')
+        page.wait_for_url('**/phoenix-reconstruction/v3/')
+        page.wait_for_function("document.querySelector('.score-display strong')?.textContent==='39.25'")
+        assert page.locator('.site-return a').count()==1
+        assert page.request.get(root_url+'v2/index.html').status==404
+        assert page.request.get(root_url+'assets/TASK.md').status==404
+        report['current_only_entry']='pass'
         assert not report['console_errors'],report['console_errors'];assert not bad,bad
         browser.close()
     (args.output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

@@ -182,17 +182,19 @@ def main():
     catalog=repo/'docs/index.html';text=catalog.read_text(encoding='utf-8')
     match=re.search(r'<a class="case-card" href="phoenix-reconstruction[^\"]*">.*?</a>',text,re.S);assert match
     card=match.group()
-    card=re.sub(r'href="phoenix-reconstruction[^\"]*"','href="phoenix-reconstruction/v3/"',card,count=1)
+    card=re.sub(r'href="phoenix-reconstruction[^\"]*"','href="phoenix-reconstruction/"',card,count=1)
     card=re.sub(r'src="phoenix-reconstruction[^\"]*"','src="phoenix-reconstruction/v3/assets/reference/I1-poster.jpg"',card,count=1)
     card=re.sub(r'<p>.*?</p>','<p>根据三路同步录像重建六秒凤凰动画，自行寻找声音素材，使用 REAPER 完成拟音与混音，交付可编辑工程和分轨。</p>',card,count=1,flags=re.S)
     card=re.sub(r'<div class="status">.*?</div>','<div class="status"><span class="status-dot"></span>V3 · Astra 6.2 xhigh ＋ Codex · 39.25 / 100 · 含模型音效评审</div>',card,count=1,flags=re.S)
     card=re.sub(r'<span class="enter">.*?</span>','<span class="enter">查看题目、成片、声音工程与客观核验 →</span>',card,count=1,flags=re.S)
     catalog.write_text(text[:match.start()]+card+text[match.end():],encoding='utf-8')
-    for p in [repo/'cases/phoenix-reconstruction/index.html',repo/'docs/phoenix-reconstruction/index.html']:
-        text=p.read_text(encoding='utf-8')
-        if 'href="v3/index.html"' not in text:text=text.replace('</nav>','<a href="v3/index.html">V3 · 六秒动画与自主拟音 →</a></nav>',1)
-        p.write_text(text,encoding='utf-8')
     parent=site.parent
+    (parent/'index.html').write_text('''<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>凤凰角色重建与自主拟音 · OmniALE</title><link rel="canonical" href="https://vibrant700.github.io/omniale/phoenix-reconstruction/v3/"><script>location.replace('v3/'+location.search+location.hash);</script><meta http-equiv="refresh" content="0;url=v3/"></head><body><p><a href="v3/">凤凰角色重建与自主拟音</a></p></body></html>
+''',encoding='utf-8')
+    (parent/'ATTRIBUTION.md').write_text('# 素材署名\n\n当前案例的素材和交付署名见 [素材与交付署名](v3/ATTRIBUTION.md)。\n',encoding='utf-8')
+    assert not (parent/'v2').exists(),'Archive legacy public pages before building'
+    assert not (parent/'assets').exists() and not (parent/'results').exists(),'Archive legacy public media before building'
     write(parent/'manifest.json',{'case':'phoenix-reconstruction','files':[{'file':p.relative_to(parent).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(parent.rglob('*')) if p.is_file() and p.name!='manifest.json']})
     print(json.dumps({'page':str(site/'index.html'),'models':len(models),'input_files':len(INPUTS),'public_result_scope':'objective_metrics_and_user_supplied_audio_review','audio_judge_reports_published':True},ensure_ascii=True))
 
