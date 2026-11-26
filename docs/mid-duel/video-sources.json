@@ -1,0 +1,58 @@
+{
+  "case_id": "kpl2024-ag-wolves-g7-mid-duel",
+  "tracks": [
+    {
+      "file": "changsheng.mp4",
+      "player": "长生",
+      "hero": "王昭君",
+      "team": "成都AG超玩会",
+      "part": 32,
+      "cid": 26619150599,
+      "source_url": "https://www.bilibili.com/video/BV1b5DWYEEe7/?p=32",
+      "source_cut_start_s": 250.0,
+      "source_cut_end_s": 1201.5,
+      "duration_s": 951.515215,
+      "video_duration_s": 951.5,
+      "video_frames": 28545,
+      "width": 854,
+      "height": 480,
+      "fps": "30/1",
+      "audio_codec": "aac",
+      "bytes": 249291244,
+      "sha256": "135d019c8d9b176a363110a2fa4a5cdca55342c55cc1a8ab60fcf2f94bfd54f0"
+    },
+    {
+      "file": "xiangyu.mp4",
+      "player": "向鱼",
+      "hero": "不知火舞",
+      "team": "重庆狼队",
+      "part": 8,
+      "cid": 26618235885,
+      "source_url": "https://www.bilibili.com/video/BV1b5DWYEEe7/?p=8",
+      "source_cut_start_s": 50.0,
+      "source_cut_end_s": 1002.5,
+      "duration_s": 952.506009,
+      "video_duration_s": 952.5,
+      "video_frames": 28575,
+      "width": 854,
+      "height": 480,
+      "fps": "30/1",
+      "audio_codec": "aac",
+      "bytes": 252328351,
+      "sha256": "b0b6fa90388f2aa8af138a5c5a4eff21c9aedf49e9b786087f39e2f54fcb846f"
+    }
+  ],
+  "task_version": "av-v2",
+  "distribution_status": "ready",
+  "task_file": "input/task.md",
+  "task_sha256": "0350e2b2b82ad1af9a285415e262e283dd3dbc08fa5ecb5ddbd7973d58cc78c4",
+  "additional_required_inputs": [
+    {
+      "file": "commentary.m4a",
+      "status": "prepared",
+      "sha256": "74caa2956afbdcefd1a948ef75043283247a6a4807a42bbbed19b8415ed275ce",
+      "bytes": 19297600
+    }
+  ],
+  "note": "Two original POVs and same-game broadcast audio, calibrated to Changsheng playback using five clock anchors. No answer references in candidate."
+}

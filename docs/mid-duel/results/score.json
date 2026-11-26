@@ -1,0 +1,157 @@
+{
+  "case_id": "kpl2024-ag-wolves-g7-mid-duel-av",
+  "status": "final_adjudicated",
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "xhigh",
+  "framework": "Codex CLI 0.142.4",
+  "elapsed_seconds": 8870.688,
+  "total_points": 41,
+  "maximum_points": 100,
+  "components": {
+    "damage_dealt": 3,
+    "damage_taken": 6,
+    "synchronization": 10,
+    "audiovisual": 12,
+    "production": 10
+  },
+  "terminal_damage": {
+    "changsheng": {
+      "damage_dealt": {
+        "estimate": 38682,
+        "reference": 85004,
+        "points": 0,
+        "relative_error_pct": 54.4939
+      },
+      "damage_taken": {
+        "estimate": 37785,
+        "reference": 61327,
+        "points": 0,
+        "relative_error_pct": 38.3877
+      }
+    },
+    "xiangyu": {
+      "damage_dealt": {
+        "estimate": 38169,
+        "reference": 50063,
+        "points": 3,
+        "relative_error_pct": 23.7581
+      },
+      "damage_taken": {
+        "estimate": 34499,
+        "reference": 42769,
+        "points": 6,
+        "relative_error_pct": 19.3364
+      }
+    }
+  },
+  "synchronization_checks": [
+    {
+      "phase": "开局",
+      "match_clock": "00:14",
+      "max_offset_s": 0.1,
+      "points": 2
+    },
+    {
+      "phase": "前期交战",
+      "match_clock": "01:00",
+      "max_offset_s": 0.1,
+      "points": 2
+    },
+    {
+      "phase": "中期蓝区交战",
+      "match_clock": "08:20",
+      "max_offset_s": 0.033333,
+      "points": 2
+    },
+    {
+      "phase": "后期争夺资源",
+      "match_clock": "12:10",
+      "max_offset_s": 0.0,
+      "points": 2
+    },
+    {
+      "phase": "决胜推进前交战",
+      "match_clock": "15:10",
+      "max_offset_s": 0.066667,
+      "points": 2
+    }
+  ],
+  "audiovisual_nodes": [
+    {
+      "id": "xiangyu-peel",
+      "target_player": "xiangyu",
+      "caption": 1,
+      "rendered_player": 1,
+      "visual_event": 1,
+      "start": 0,
+      "end": 0,
+      "points": 3
+    },
+    {
+      "id": "changsheng-freeze",
+      "target_player": "changsheng",
+      "caption": 1,
+      "rendered_player": 1,
+      "visual_event": 1,
+      "start": 0,
+      "end": 0,
+      "points": 3
+    },
+    {
+      "id": "xiangyu-entry",
+      "target_player": "xiangyu",
+      "caption": 1,
+      "rendered_player": 1,
+      "visual_event": 1,
+      "start": 1,
+      "end": 0,
+      "points": 4
+    },
+    {
+      "id": "changsheng-protect",
+      "target_player": "changsheng",
+      "caption": 0,
+      "rendered_player": 1,
+      "visual_event": 0,
+      "start": 1,
+      "end": 0,
+      "points": 2
+    }
+  ],
+  "negative_penalty": 0,
+  "audio_tool": {
+    "model": "qwen3.8-omni-flash",
+    "calls": 33,
+    "completed": 32,
+    "failed": 1,
+    "role": "Solver listening assistance; not the scoring judge",
+    "gemini_used": false
+  },
+  "evaluation_roles": {
+    "numeric": "Script calculates damage bands and measured clock differences.",
+    "semantic_and_visual": "The AI evaluation assistant checks key subtitle facts, actual borders, visible actions and presentation, then records observations for script aggregation.",
+    "reference": "Official Tencent integer hero-damage statistics; audiovisual nodes frozen before the solver run using Whisper-small and Qwen observations, without human-certified forced alignment.",
+    "adjudication": "The human user awards both unresolved start-time points because reference precision does not establish a solver error."
+  },
+  "timing_policy_note": "向鱼深位站位与长生保护一诺两处话语起点参考区间跨过 ±1 秒阈值；按最终裁定，参考标注不确定不扣分，两项各计 1 分。",
+  "multi_player_rule": "A supported compound utterance can highlight both players, as allowed in the issued task. Both caption and visible action must support the additional player.",
+  "source_audio_alignment_note": "Broadcast audio was calibrated to Changsheng playback by the task author before distribution; retaining it does not demonstrate independent broadcast alignment.",
+  "original_video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration_seconds": 951.509,
+    "bytes": 582860530,
+    "sha256": "e167110cf79a716da1926c75eaab28e70d814f803a70e46fa36b80ace7643b64"
+  },
+  "delivery": {
+    "timeline_points": 312,
+    "subtitles": 125,
+    "highlights": 27
+  },
+  "production": {
+    "layout": 4,
+    "motion": 3,
+    "audio_readability": 3
+  }
+}

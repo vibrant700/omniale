@@ -1,0 +1,47 @@
+{
+  "scoring_video": "Sealed original 1080p submission, unchanged",
+  "original_sha256": "e167110cf79a716da1926c75eaab28e70d814f803a70e46fa36b80ace7643b64",
+  "web_preview": {
+    "width": 1280,
+    "height": 720,
+    "duration_s": 951.509,
+    "bytes": 81272576,
+    "sha256": "25609176b8be40e1ccfeb48fe8a2580d7476636d2438ba23764fb66675aa7a88",
+    "video": "H.264 580kbps, maximum650kbps",
+    "audio": "AAC96kbps transcode; original supplied official commentary"
+  },
+  "audio_checks": [
+    {
+      "start_s": 20,
+      "window_s": 5,
+      "same_time_pcm_correlation": 0.9961748864780187
+    },
+    {
+      "start_s": 158,
+      "window_s": 5,
+      "same_time_pcm_correlation": 0.9902510007487371
+    },
+    {
+      "start_s": 560,
+      "window_s": 5,
+      "same_time_pcm_correlation": 0.990106642711063
+    },
+    {
+      "start_s": 702,
+      "window_s": 5,
+      "same_time_pcm_correlation": 0.9858802768526606
+    },
+    {
+      "start_s": 714,
+      "window_s": 5,
+      "same_time_pcm_correlation": 0.971847693534602
+    },
+    {
+      "start_s": 900,
+      "window_s": 5,
+      "same_time_pcm_correlation": 0.9964856381033296
+    }
+  ],
+  "full_preview_decode": "passed",
+  "browser_check": "Desktop1440px and mobile390px: tabs, keyboard, deep links, downloads, playback and seeks passed."
+}

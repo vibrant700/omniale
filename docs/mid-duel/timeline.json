@@ -1,0 +1,4071 @@
+{
+  "points": [
+    {
+      "t_s": 0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 0
+        },
+        "xiangyu": {
+          "damage_dealt": 0,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 26.67,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 128
+        },
+        "xiangyu": {
+          "damage_dealt": 0,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 26.76,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 128
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 26.83,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 307
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 27.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 405
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 27.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 503
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 28.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 601
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 28.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 699
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 28.67,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 0,
+          "damage_taken": 989
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 29.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 250,
+          "damage_taken": 989
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 37.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 550,
+          "damage_taken": 989
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 37.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 700,
+          "damage_taken": 989
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 0
+        }
+      }
+    },
+    {
+      "t_s": 39.83,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 700,
+          "damage_taken": 989
+        },
+        "xiangyu": {
+          "damage_dealt": 290,
+          "damage_taken": 419
+        }
+      }
+    },
+    {
+      "t_s": 41.67,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 700,
+          "damage_taken": 1388
+        },
+        "xiangyu": {
+          "damage_dealt": 689,
+          "damage_taken": 419
+        }
+      }
+    },
+    {
+      "t_s": 44.83,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 700,
+          "damage_taken": 1787
+        },
+        "xiangyu": {
+          "damage_dealt": 1088,
+          "damage_taken": 419
+        }
+      }
+    },
+    {
+      "t_s": 46.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 846,
+          "damage_taken": 1787
+        },
+        "xiangyu": {
+          "damage_dealt": 1088,
+          "damage_taken": 419
+        }
+      }
+    },
+    {
+      "t_s": 47.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 846,
+          "damage_taken": 2037
+        },
+        "xiangyu": {
+          "damage_dealt": 1088,
+          "damage_taken": 419
+        }
+      }
+    },
+    {
+      "t_s": 48.33,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 846,
+          "damage_taken": 2436
+        },
+        "xiangyu": {
+          "damage_dealt": 1487,
+          "damage_taken": 419
+        }
+      }
+    },
+    {
+      "t_s": 48.663,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 846,
+          "damage_taken": 2436
+        },
+        "xiangyu": {
+          "damage_dealt": 1487,
+          "damage_taken": 969
+        }
+      }
+    },
+    {
+      "t_s": 49.163,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 846,
+          "damage_taken": 2436
+        },
+        "xiangyu": {
+          "damage_dealt": 1487,
+          "damage_taken": 1169
+        }
+      }
+    },
+    {
+      "t_s": 49.33,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 846,
+          "damage_taken": 2436
+        },
+        "xiangyu": {
+          "damage_dealt": 1487,
+          "damage_taken": 1469
+        }
+      }
+    },
+    {
+      "t_s": 52.17,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 846,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1469
+        }
+      }
+    },
+    {
+      "t_s": 64.83,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 846,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1585
+        }
+      }
+    },
+    {
+      "t_s": 81.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 1246,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1585
+        }
+      }
+    },
+    {
+      "t_s": 105.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 1434,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1585
+        }
+      }
+    },
+    {
+      "t_s": 105.798,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 1434,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1735
+        }
+      }
+    },
+    {
+      "t_s": 105.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 1872,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1735
+        }
+      }
+    },
+    {
+      "t_s": 106.133,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 1872,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 106.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2184,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 106.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2378,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 108.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 2835
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 116.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3057
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 117.83,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 1886,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 118.029,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 2553,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 135.953,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 3220,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 136.961,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 3387,
+          "damage_taken": 1985
+        }
+      }
+    },
+    {
+      "t_s": 137.631,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 3387,
+          "damage_taken": 2201
+        }
+      }
+    },
+    {
+      "t_s": 139.81,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 3387,
+          "damage_taken": 2590
+        }
+      }
+    },
+    {
+      "t_s": 140.145,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 4387,
+          "damage_taken": 2590
+        }
+      }
+    },
+    {
+      "t_s": 140.48,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 4387,
+          "damage_taken": 3090
+        }
+      }
+    },
+    {
+      "t_s": 151.014,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 2628,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 4387,
+          "damage_taken": 3534
+        }
+      }
+    },
+    {
+      "t_s": 151.1,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3072,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 4387,
+          "damage_taken": 3534
+        }
+      }
+    },
+    {
+      "t_s": 153.134,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3072,
+          "damage_taken": 3724
+        },
+        "xiangyu": {
+          "damage_dealt": 5034,
+          "damage_taken": 3534
+        }
+      }
+    },
+    {
+      "t_s": 153.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3072,
+          "damage_taken": 4371
+        },
+        "xiangyu": {
+          "damage_dealt": 5034,
+          "damage_taken": 3534
+        }
+      }
+    },
+    {
+      "t_s": 153.184,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3072,
+          "damage_taken": 4371
+        },
+        "xiangyu": {
+          "damage_dealt": 5377,
+          "damage_taken": 3534
+        }
+      }
+    },
+    {
+      "t_s": 153.25,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3516,
+          "damage_taken": 4371
+        },
+        "xiangyu": {
+          "damage_dealt": 5377,
+          "damage_taken": 3534
+        }
+      }
+    },
+    {
+      "t_s": 153.351,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3516,
+          "damage_taken": 4371
+        },
+        "xiangyu": {
+          "damage_dealt": 5377,
+          "damage_taken": 3978
+        }
+      }
+    },
+    {
+      "t_s": 153.518,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3516,
+          "damage_taken": 4371
+        },
+        "xiangyu": {
+          "damage_dealt": 5377,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 153.685,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3516,
+          "damage_taken": 4371
+        },
+        "xiangyu": {
+          "damage_dealt": 5612,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 154.83,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3516,
+          "damage_taken": 4439
+        },
+        "xiangyu": {
+          "damage_dealt": 5612,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 154.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3783,
+          "damage_taken": 4439
+        },
+        "xiangyu": {
+          "damage_dealt": 5612,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 154.867,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 3783,
+          "damage_taken": 4439
+        },
+        "xiangyu": {
+          "damage_dealt": 5680,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 155.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4116,
+          "damage_taken": 4439
+        },
+        "xiangyu": {
+          "damage_dealt": 5680,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 168.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4461,
+          "damage_taken": 4439
+        },
+        "xiangyu": {
+          "damage_dealt": 5680,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 169.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4461,
+          "damage_taken": 4674
+        },
+        "xiangyu": {
+          "damage_dealt": 5680,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 170.17,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4461,
+          "damage_taken": 5240
+        },
+        "xiangyu": {
+          "damage_dealt": 5680,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 170.363,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4461,
+          "damage_taken": 5240
+        },
+        "xiangyu": {
+          "damage_dealt": 6246,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 170.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4461,
+          "damage_taken": 5838
+        },
+        "xiangyu": {
+          "damage_dealt": 6246,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 170.547,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4461,
+          "damage_taken": 5838
+        },
+        "xiangyu": {
+          "damage_dealt": 6468,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 170.714,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4461,
+          "damage_taken": 5838
+        },
+        "xiangyu": {
+          "damage_dealt": 6742,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 170.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4619,
+          "damage_taken": 6132
+        },
+        "xiangyu": {
+          "damage_dealt": 6742,
+          "damage_taken": 4145
+        }
+      }
+    },
+    {
+      "t_s": 171.048,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4619,
+          "damage_taken": 6132
+        },
+        "xiangyu": {
+          "damage_dealt": 6742,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 171.215,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 4619,
+          "damage_taken": 6132
+        },
+        "xiangyu": {
+          "damage_dealt": 7199,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 171.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5102,
+          "damage_taken": 6132
+        },
+        "xiangyu": {
+          "damage_dealt": 7199,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 171.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5102,
+          "damage_taken": 6308
+        },
+        "xiangyu": {
+          "damage_dealt": 7199,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 172.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5102,
+          "damage_taken": 6641
+        },
+        "xiangyu": {
+          "damage_dealt": 7199,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 173.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5388,
+          "damage_taken": 6641
+        },
+        "xiangyu": {
+          "damage_dealt": 7199,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 173.238,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5388,
+          "damage_taken": 6641
+        },
+        "xiangyu": {
+          "damage_dealt": 7765,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 176.056,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5388,
+          "damage_taken": 6641
+        },
+        "xiangyu": {
+          "damage_dealt": 7987,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 176.454,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5388,
+          "damage_taken": 6641
+        },
+        "xiangyu": {
+          "damage_dealt": 8553,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 208.83,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5388,
+          "damage_taken": 7337
+        },
+        "xiangyu": {
+          "damage_dealt": 8553,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 209.009,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5388,
+          "damage_taken": 7337
+        },
+        "xiangyu": {
+          "damage_dealt": 9249,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 243.67,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5536,
+          "damage_taken": 7337
+        },
+        "xiangyu": {
+          "damage_dealt": 9249,
+          "damage_taken": 4423
+        }
+      }
+    },
+    {
+      "t_s": 243.93,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5536,
+          "damage_taken": 7337
+        },
+        "xiangyu": {
+          "damage_dealt": 9249,
+          "damage_taken": 4571
+        }
+      }
+    },
+    {
+      "t_s": 254.83,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5536,
+          "damage_taken": 7337
+        },
+        "xiangyu": {
+          "damage_dealt": 9249,
+          "damage_taken": 5359
+        }
+      }
+    },
+    {
+      "t_s": 255.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5536,
+          "damage_taken": 7525
+        },
+        "xiangyu": {
+          "damage_dealt": 9249,
+          "damage_taken": 5359
+        }
+      }
+    },
+    {
+      "t_s": 255.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5536,
+          "damage_taken": 7713
+        },
+        "xiangyu": {
+          "damage_dealt": 9249,
+          "damage_taken": 5359
+        }
+      }
+    },
+    {
+      "t_s": 255.663,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5536,
+          "damage_taken": 7713
+        },
+        "xiangyu": {
+          "damage_dealt": 9249,
+          "damage_taken": 5594
+        }
+      }
+    },
+    {
+      "t_s": 255.73,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5536,
+          "damage_taken": 7713
+        },
+        "xiangyu": {
+          "damage_dealt": 9645,
+          "damage_taken": 5594
+        }
+      }
+    },
+    {
+      "t_s": 255.8,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5830,
+          "damage_taken": 7713
+        },
+        "xiangyu": {
+          "damage_dealt": 9645,
+          "damage_taken": 5594
+        }
+      }
+    },
+    {
+      "t_s": 255.93,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5830,
+          "damage_taken": 7713
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 5594
+        }
+      }
+    },
+    {
+      "t_s": 255.997,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 5830,
+          "damage_taken": 7713
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6300
+        }
+      }
+    },
+    {
+      "t_s": 256.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 6226,
+          "damage_taken": 7713
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6300
+        }
+      }
+    },
+    {
+      "t_s": 256.497,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 6226,
+          "damage_taken": 7713
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 257.17,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 6226,
+          "damage_taken": 7876
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 257.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 6476,
+          "damage_taken": 7876
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 258.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 6476,
+          "damage_taken": 8047
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 258.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 6726,
+          "damage_taken": 8047
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 259.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 6966,
+          "damage_taken": 8047
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 259.9,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7113,
+          "damage_taken": 8047
+        },
+        "xiangyu": {
+          "damage_dealt": 9939,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 260.663,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7113,
+          "damage_taken": 8047
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 261.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7353,
+          "damage_taken": 8047
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6476
+        }
+      }
+    },
+    {
+      "t_s": 261.497,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7353,
+          "damage_taken": 8047
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 263.33,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7353,
+          "damage_taken": 8210
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 263.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7603,
+          "damage_taken": 8381
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 263.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7603,
+          "damage_taken": 8610
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 263.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7853,
+          "damage_taken": 8610
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 264.33,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 7853,
+          "damage_taken": 8795
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 265.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 8795
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 265.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 8971
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 267.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 9206
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 267.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 9559
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 267.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 9677
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 267.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 10030
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 267.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 10618
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 268.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 10794
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 268.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 11029
+        },
+        "xiangyu": {
+          "damage_dealt": 10106,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 268.33,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 11029
+        },
+        "xiangyu": {
+          "damage_dealt": 10606,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 268.497,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 11029
+        },
+        "xiangyu": {
+          "damage_dealt": 10939,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 268.663,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 11029
+        },
+        "xiangyu": {
+          "damage_dealt": 11356,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 272.33,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 11029
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 6711
+        }
+      }
+    },
+    {
+      "t_s": 272.663,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8173,
+          "damage_taken": 11029
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7005
+        }
+      }
+    },
+    {
+      "t_s": 347.1,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8553,
+          "damage_taken": 11029
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7005
+        }
+      }
+    },
+    {
+      "t_s": 347.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8553,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7005
+        }
+      }
+    },
+    {
+      "t_s": 347.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 8953,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7005
+        }
+      }
+    },
+    {
+      "t_s": 348.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 9408,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7005
+        }
+      }
+    },
+    {
+      "t_s": 348.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7005
+        }
+      }
+    },
+    {
+      "t_s": 351.15,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7380
+        }
+      }
+    },
+    {
+      "t_s": 351.649,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7568
+        }
+      }
+    },
+    {
+      "t_s": 352.481,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 7932
+        }
+      }
+    },
+    {
+      "t_s": 352.648,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 8174
+        }
+      }
+    },
+    {
+      "t_s": 353.147,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 8527
+        }
+      }
+    },
+    {
+      "t_s": 353.647,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 8762
+        }
+      }
+    },
+    {
+      "t_s": 353.813,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 9233
+        }
+      }
+    },
+    {
+      "t_s": 354.312,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 9586
+        }
+      }
+    },
+    {
+      "t_s": 354.645,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 9939
+        }
+      }
+    },
+    {
+      "t_s": 355.661,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10008,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 10318
+        }
+      }
+    },
+    {
+      "t_s": 355.8,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10387,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 10318
+        }
+      }
+    },
+    {
+      "t_s": 481.401,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10387,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 10469
+        }
+      }
+    },
+    {
+      "t_s": 481.535,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10387,
+          "damage_taken": 11156
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 10869
+        }
+      }
+    },
+    {
+      "t_s": 482.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10387,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 10869
+        }
+      }
+    },
+    {
+      "t_s": 483.039,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10387,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 11202
+        }
+      }
+    },
+    {
+      "t_s": 483.2,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10538,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 12079,
+          "damage_taken": 11202
+        }
+      }
+    },
+    {
+      "t_s": 483.206,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10538,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 12879,
+          "damage_taken": 11202
+        }
+      }
+    },
+    {
+      "t_s": 483.541,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10538,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 12879,
+          "damage_taken": 11402
+        }
+      }
+    },
+    {
+      "t_s": 484.042,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10538,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 12879,
+          "damage_taken": 11602
+        }
+      }
+    },
+    {
+      "t_s": 484.811,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 10538,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 13888,
+          "damage_taken": 11602
+        }
+      }
+    },
+    {
+      "t_s": 486.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 11094,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 13888,
+          "damage_taken": 11602
+        }
+      }
+    },
+    {
+      "t_s": 486.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 11538,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 13888,
+          "damage_taken": 11602
+        }
+      }
+    },
+    {
+      "t_s": 487.05,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 11538,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 14414,
+          "damage_taken": 11602
+        }
+      }
+    },
+    {
+      "t_s": 488.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 11982,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 14414,
+          "damage_taken": 11602
+        }
+      }
+    },
+    {
+      "t_s": 488.053,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 11982,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 14414,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 488.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 12426,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 14414,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 488.387,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 12426,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 15303,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 488.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 12870,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 15303,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 489.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 13203,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 15303,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 489.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 13536,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 15303,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 490.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 13869,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 15303,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 490.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 14202,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 15303,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 490.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 14535,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 15303,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 491.061,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 14535,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 16678,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 491.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 14910,
+          "damage_taken": 11718
+        },
+        "xiangyu": {
+          "damage_dealt": 16678,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 491.17,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 14910,
+          "damage_taken": 12276
+        },
+        "xiangyu": {
+          "damage_dealt": 16678,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 491.228,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 14910,
+          "damage_taken": 12276
+        },
+        "xiangyu": {
+          "damage_dealt": 17236,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 508.15,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 14910,
+          "damage_taken": 12569
+        },
+        "xiangyu": {
+          "damage_dealt": 17236,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 508.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 14910,
+          "damage_taken": 12819
+        },
+        "xiangyu": {
+          "damage_dealt": 17236,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 508.96,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 15679,
+          "damage_taken": 12819
+        },
+        "xiangyu": {
+          "damage_dealt": 17236,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 510.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 15679,
+          "damage_taken": 13007
+        },
+        "xiangyu": {
+          "damage_dealt": 17236,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 510.08,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 15679,
+          "damage_taken": 13007
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 12069
+        }
+      }
+    },
+    {
+      "t_s": 510.114,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 15679,
+          "damage_taken": 13007
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 12629
+        }
+      }
+    },
+    {
+      "t_s": 510.281,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 15679,
+          "damage_taken": 13007
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 12949
+        }
+      }
+    },
+    {
+      "t_s": 510.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16579,
+          "damage_taken": 13319
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 12949
+        }
+      }
+    },
+    {
+      "t_s": 510.448,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16579,
+          "damage_taken": 13319
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 13949
+        }
+      }
+    },
+    {
+      "t_s": 510.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16579,
+          "damage_taken": 13507
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 13949
+        }
+      }
+    },
+    {
+      "t_s": 510.615,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16579,
+          "damage_taken": 13507
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 14718
+        }
+      }
+    },
+    {
+      "t_s": 510.7,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 13507
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 14718
+        }
+      }
+    },
+    {
+      "t_s": 510.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 13945
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 14718
+        }
+      }
+    },
+    {
+      "t_s": 511.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 14145
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 14718
+        }
+      }
+    },
+    {
+      "t_s": 512.119,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 14145
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 15333
+        }
+      }
+    },
+    {
+      "t_s": 512.186,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 14145
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 16156
+        }
+      }
+    },
+    {
+      "t_s": 512.286,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 14145
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 512.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 14270
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 513.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 14395
+        },
+        "xiangyu": {
+          "damage_dealt": 18005,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 603.967,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 14395
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 608.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 16979,
+          "damage_taken": 15352
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 609.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 17854,
+          "damage_taken": 15352
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 610.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 17854,
+          "damage_taken": 16138
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 610.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 18354,
+          "damage_taken": 16567
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 610.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 18354,
+          "damage_taken": 17086
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 610.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 19905,
+          "damage_taken": 17086
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 610.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 19905,
+          "damage_taken": 19009
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 611.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 19905,
+          "damage_taken": 19778
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 611.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 20205,
+          "damage_taken": 19778
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 611.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 20505,
+          "damage_taken": 19778
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 612.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20009
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 613.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20471
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 613.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 19140,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 618.971,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 19426,
+          "damage_taken": 16387
+        }
+      }
+    },
+    {
+      "t_s": 619.306,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 19426,
+          "damage_taken": 16627
+        }
+      }
+    },
+    {
+      "t_s": 619.44,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 19426,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 619.641,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 20069,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 624.263,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 21043,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 630.694,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 22017,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 706.317,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 23573,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 706.982,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 20779
+        },
+        "xiangyu": {
+          "damage_dealt": 24359,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 707.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21130,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 24359,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 707.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21380,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 24359,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 708.3,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21842,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 24359,
+          "damage_taken": 16815
+        }
+      }
+    },
+    {
+      "t_s": 708.314,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 21842,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 24359,
+          "damage_taken": 17898
+        }
+      }
+    },
+    {
+      "t_s": 708.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 22467,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 24359,
+          "damage_taken": 17898
+        }
+      }
+    },
+    {
+      "t_s": 708.48,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 22467,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 24667,
+          "damage_taken": 18065
+        }
+      }
+    },
+    {
+      "t_s": 708.646,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 22467,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 19065
+        }
+      }
+    },
+    {
+      "t_s": 708.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 23092,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 19065
+        }
+      }
+    },
+    {
+      "t_s": 708.813,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 23092,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 19398
+        }
+      }
+    },
+    {
+      "t_s": 708.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 23592,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 19398
+        }
+      }
+    },
+    {
+      "t_s": 709.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 23967,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 19398
+        }
+      }
+    },
+    {
+      "t_s": 709.312,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 23967,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 19565
+        }
+      }
+    },
+    {
+      "t_s": 709.479,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 23967,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 20648
+        }
+      }
+    },
+    {
+      "t_s": 709.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24342,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 20648
+        }
+      }
+    },
+    {
+      "t_s": 709.645,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24342,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25129,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 709.811,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24342,
+          "damage_taken": 21688
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 709.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24342,
+          "damage_taken": 22021
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 710.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24717,
+          "damage_taken": 22021
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 711.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24717,
+          "damage_taken": 22271
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 711.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24717,
+          "damage_taken": 22604
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 712.1,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24717,
+          "damage_taken": 22876
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 712.26,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 24717,
+          "damage_taken": 23145
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 712.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25092,
+          "damage_taken": 23145
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 712.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25092,
+          "damage_taken": 23385
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 713.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25092,
+          "damage_taken": 23625
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 713.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25092,
+          "damage_taken": 23853
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 713.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25467,
+          "damage_taken": 23853
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 714.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25467,
+          "damage_taken": 24020
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 714.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25467,
+          "damage_taken": 24187
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 723.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25467,
+          "damage_taken": 24427
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 723.3,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25922,
+          "damage_taken": 24427
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 723.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25922,
+          "damage_taken": 24747
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 815.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 25922,
+          "damage_taken": 25636
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 816.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 26455,
+          "damage_taken": 25636
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 817.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 26884,
+          "damage_taken": 25636
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 818.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 27598,
+          "damage_taken": 25636
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 819.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 27598,
+          "damage_taken": 25833
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 819.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 27598,
+          "damage_taken": 26333
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 819.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 27598,
+          "damage_taken": 27500
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 819.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 27598,
+          "damage_taken": 28000
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 820.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 27598,
+          "damage_taken": 28250
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 820.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 27598,
+          "damage_taken": 28833
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 820.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 28027,
+          "damage_taken": 28833
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 820.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 28583,
+          "damage_taken": 29250
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 820.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 28983,
+          "damage_taken": 29250
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 821.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 29427,
+          "damage_taken": 29417
+        },
+        "xiangyu": {
+          "damage_dealt": 25504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 821.146,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 29427,
+          "damage_taken": 29417
+        },
+        "xiangyu": {
+          "damage_dealt": 26196,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 821.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 29427,
+          "damage_taken": 29667
+        },
+        "xiangyu": {
+          "damage_dealt": 26196,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 821.312,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 29427,
+          "damage_taken": 29667
+        },
+        "xiangyu": {
+          "damage_dealt": 26504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 821.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 29427,
+          "damage_taken": 30772
+        },
+        "xiangyu": {
+          "damage_dealt": 26504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 821.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 29802,
+          "damage_taken": 30772
+        },
+        "xiangyu": {
+          "damage_dealt": 26504,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 821.861,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 29802,
+          "damage_taken": 30772
+        },
+        "xiangyu": {
+          "damage_dealt": 27453,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 822.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30328,
+          "damage_taken": 30772
+        },
+        "xiangyu": {
+          "damage_dealt": 27453,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 822.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30757,
+          "damage_taken": 30772
+        },
+        "xiangyu": {
+          "damage_dealt": 27453,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 822.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30757,
+          "damage_taken": 31022
+        },
+        "xiangyu": {
+          "damage_dealt": 27453,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 822.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30757,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 27453,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 822.71,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30757,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 28159,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 823.974,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30757,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 29294,
+          "damage_taken": 22148
+        }
+      }
+    },
+    {
+      "t_s": 824.008,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30757,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 29294,
+          "damage_taken": 22331
+        }
+      }
+    },
+    {
+      "t_s": 824.1,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30940,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 29294,
+          "damage_taken": 22331
+        }
+      }
+    },
+    {
+      "t_s": 824.141,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 30940,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 29294,
+          "damage_taken": 22695
+        }
+      }
+    },
+    {
+      "t_s": 824.6,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31123,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 29294,
+          "damage_taken": 22695
+        }
+      }
+    },
+    {
+      "t_s": 824.64,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31123,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 29738,
+          "damage_taken": 22695
+        }
+      }
+    },
+    {
+      "t_s": 824.706,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31123,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 29738,
+          "damage_taken": 22878
+        }
+      }
+    },
+    {
+      "t_s": 824.806,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31123,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 30687,
+          "damage_taken": 24333
+        }
+      }
+    },
+    {
+      "t_s": 825.1,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 30687,
+          "damage_taken": 24333
+        }
+      }
+    },
+    {
+      "t_s": 825.106,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 31029,
+          "damage_taken": 24333
+        }
+      }
+    },
+    {
+      "t_s": 825.306,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 31029,
+          "damage_taken": 25243
+        }
+      }
+    },
+    {
+      "t_s": 825.638,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 31029,
+          "damage_taken": 25591
+        }
+      }
+    },
+    {
+      "t_s": 825.805,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 31029,
+          "damage_taken": 26200
+        }
+      }
+    },
+    {
+      "t_s": 825.971,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 31029,
+          "damage_taken": 26700
+        }
+      }
+    },
+    {
+      "t_s": 826.138,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 31329,
+          "damage_taken": 27283
+        }
+      }
+    },
+    {
+      "t_s": 826.304,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 31329,
+          "damage_taken": 27950
+        }
+      }
+    },
+    {
+      "t_s": 908.839,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 31439
+        },
+        "xiangyu": {
+          "damage_dealt": 31329,
+          "damage_taken": 28405
+        }
+      }
+    },
+    {
+      "t_s": 909.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 31329,
+          "damage_taken": 28405
+        }
+      }
+    },
+    {
+      "t_s": 909.671,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 31758,
+          "damage_taken": 28587
+        }
+      }
+    },
+    {
+      "t_s": 910.003,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31306,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 32472,
+          "damage_taken": 28587
+        }
+      }
+    },
+    {
+      "t_s": 910.1,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31488,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 32472,
+          "damage_taken": 28587
+        }
+      }
+    },
+    {
+      "t_s": 910.169,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31488,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 32472,
+          "damage_taken": 28951
+        }
+      }
+    },
+    {
+      "t_s": 910.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31852,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 32472,
+          "damage_taken": 28951
+        }
+      }
+    },
+    {
+      "t_s": 910.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 31852,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 32472,
+          "damage_taken": 29315
+        }
+      }
+    },
+    {
+      "t_s": 911.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 32397,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 32472,
+          "damage_taken": 29315
+        }
+      }
+    },
+    {
+      "t_s": 911.663,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 32397,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 33472,
+          "damage_taken": 29315
+        }
+      }
+    },
+    {
+      "t_s": 911.763,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 32397,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 33472,
+          "damage_taken": 29499
+        }
+      }
+    },
+    {
+      "t_s": 911.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 32670,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 33472,
+          "damage_taken": 29499
+        }
+      }
+    },
+    {
+      "t_s": 911.995,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 32670,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 33772,
+          "damage_taken": 29499
+        }
+      }
+    },
+    {
+      "t_s": 912.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 33125,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 33772,
+          "damage_taken": 29499
+        }
+      }
+    },
+    {
+      "t_s": 912.493,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 33125,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 33772,
+          "damage_taken": 29681
+        }
+      }
+    },
+    {
+      "t_s": 913.157,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 33125,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 35058,
+          "damage_taken": 29681
+        }
+      }
+    },
+    {
+      "t_s": 913.655,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 33125,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 35058,
+          "damage_taken": 30045
+        }
+      }
+    },
+    {
+      "t_s": 913.987,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 33125,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 35058,
+          "damage_taken": 30954
+        }
+      }
+    },
+    {
+      "t_s": 914.0,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 33958,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 35058,
+          "damage_taken": 30954
+        }
+      }
+    },
+    {
+      "t_s": 914.485,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 33958,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 35058,
+          "damage_taken": 31318
+        }
+      }
+    },
+    {
+      "t_s": 914.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 34420,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 35058,
+          "damage_taken": 31318
+        }
+      }
+    },
+    {
+      "t_s": 914.601,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 34420,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 36072,
+          "damage_taken": 31318
+        }
+      }
+    },
+    {
+      "t_s": 914.651,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 34420,
+          "damage_taken": 32239
+        },
+        "xiangyu": {
+          "damage_dealt": 36072,
+          "damage_taken": 31863
+        }
+      }
+    },
+    {
+      "t_s": 915.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 34420,
+          "damage_taken": 33406
+        },
+        "xiangyu": {
+          "damage_dealt": 36072,
+          "damage_taken": 31863
+        }
+      }
+    },
+    {
+      "t_s": 915.298,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 34420,
+          "damage_taken": 33406
+        },
+        "xiangyu": {
+          "damage_dealt": 36558,
+          "damage_taken": 31863
+        }
+      }
+    },
+    {
+      "t_s": 915.481,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 34420,
+          "damage_taken": 33406
+        },
+        "xiangyu": {
+          "damage_dealt": 36558,
+          "damage_taken": 32318
+        }
+      }
+    },
+    {
+      "t_s": 915.647,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 34420,
+          "damage_taken": 33406
+        },
+        "xiangyu": {
+          "damage_dealt": 36558,
+          "damage_taken": 33318
+        }
+      }
+    },
+    {
+      "t_s": 915.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 34965,
+          "damage_taken": 33406
+        },
+        "xiangyu": {
+          "damage_dealt": 36558,
+          "damage_taken": 33318
+        }
+      }
+    },
+    {
+      "t_s": 915.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 35783,
+          "damage_taken": 33406
+        },
+        "xiangyu": {
+          "damage_dealt": 36558,
+          "damage_taken": 33318
+        }
+      }
+    },
+    {
+      "t_s": 915.979,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 35783,
+          "damage_taken": 33406
+        },
+        "xiangyu": {
+          "damage_dealt": 37740,
+          "damage_taken": 33863
+        }
+      }
+    },
+    {
+      "t_s": 916.145,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 35783,
+          "damage_taken": 33406
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 916.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 36147,
+          "damage_taken": 34573
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 917.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 36147,
+          "damage_taken": 35323
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 929.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 36861,
+          "damage_taken": 35323
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 929.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 37305,
+          "damage_taken": 35323
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 930.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 37305,
+          "damage_taken": 35959
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 930.5,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 37305,
+          "damage_taken": 36323
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 930.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 37305,
+          "damage_taken": 36596
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 931.167,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 37305,
+          "damage_taken": 36778
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 931.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 37638,
+          "damage_taken": 36778
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 931.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 37638,
+          "damage_taken": 36952
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 931.833,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 37638,
+          "damage_taken": 37785
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 933.667,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 38082,
+          "damage_taken": 37785
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    },
+    {
+      "t_s": 934.333,
+      "players": {
+        "changsheng": {
+          "damage_dealt": 38682,
+          "damage_taken": 37785
+        },
+        "xiangyu": {
+          "damage_dealt": 38169,
+          "damage_taken": 34499
+        }
+      }
+    }
+  ],
+  "final": {
+    "changsheng": {
+      "damage_dealt": 38682,
+      "damage_taken": 37785
+    },
+    "xiangyu": {
+      "damage_dealt": 38169,
+      "damage_taken": 34499
+    }
+  },
+  "method": "依据双视角可辨跳字与英雄血条刻度重建。部分命中为估算值，遮挡、画外与来源不明的伤害可能漏计；不是官方逐点战报。"
+}
