@@ -1,0 +1,222 @@
+{
+  "task_version": "v2-av",
+  "status": "graded",
+  "solver_model": "gpt-6.2-astra",
+  "reasoning_effort": "xhigh",
+  "framework": "Codex CLI 0.142.4",
+  "elapsed_seconds": 6448.953,
+  "total_points": 31.75,
+  "maximum_points": 100,
+  "output_points": 4.5,
+  "damage_taken_points": 2.25,
+  "synchronization_points": 7,
+  "audiovisual_points": 11,
+  "production_points": 7,
+  "weights": {
+    "damage_dealt": 30,
+    "damage_taken": 30,
+    "synchronization": 10,
+    "audiovisual": 20,
+    "production": 10
+  },
+  "audio_observer_model": "qwen3.8-omni-flash",
+  "listen_audio_calls": 35,
+  "judge_models": null,
+  "gemini_used": false,
+  "terminal_damage": {
+    "xuanran": {
+      "damage_dealt": {
+        "estimate": 27841,
+        "reference": 58000,
+        "points": 0.0,
+        "relative_error_pct": 51.9983
+      },
+      "damage_taken": {
+        "estimate": 31299,
+        "reference": 55700,
+        "points": 0.0,
+        "relative_error_pct": 43.8079
+      }
+    },
+    "zhongyi": {
+      "damage_dealt": {
+        "estimate": 28628,
+        "reference": 53100,
+        "points": 0.0,
+        "relative_error_pct": 46.0866
+      },
+      "damage_taken": {
+        "estimate": 46727,
+        "reference": 95700,
+        "points": 0.0,
+        "relative_error_pct": 51.1735
+      }
+    },
+    "changsheng": {
+      "damage_dealt": {
+        "estimate": 59896,
+        "reference": 66000,
+        "points": 4.5,
+        "relative_error_pct": 9.2485
+      },
+      "damage_taken": {
+        "estimate": 41577,
+        "reference": 50900,
+        "points": 2.25,
+        "relative_error_pct": 18.3163
+      }
+    },
+    "yinuo": {
+      "damage_dealt": {
+        "estimate": 57737,
+        "reference": 129600,
+        "points": 0.0,
+        "relative_error_pct": 55.4498
+      },
+      "damage_taken": {
+        "estimate": 33902,
+        "reference": 68100,
+        "points": 0.0,
+        "relative_error_pct": 50.2173
+      }
+    },
+    "dashuai": {
+      "damage_dealt": {
+        "estimate": 16061,
+        "reference": 27600,
+        "points": 0.0,
+        "relative_error_pct": 41.808
+      },
+      "damage_taken": {
+        "estimate": 28643,
+        "reference": 61100,
+        "points": 0.0,
+        "relative_error_pct": 53.1211
+      }
+    }
+  },
+  "audiovisual": {
+    "nodes": [
+      {
+        "id": "xuanran",
+        "target_player": "xuanran",
+        "caption": 1,
+        "rendered_player": 1,
+        "visual_event": 1,
+        "timing_points_range": [
+          0,
+          0
+        ],
+        "points_range": [
+          3,
+          3
+        ]
+      },
+      {
+        "id": "zhongyi",
+        "target_player": "zhongyi",
+        "caption": 1,
+        "rendered_player": 0,
+        "visual_event": 0,
+        "timing_points_range": [
+          0,
+          0
+        ],
+        "points_range": [
+          1,
+          1
+        ]
+      },
+      {
+        "id": "changsheng",
+        "target_player": "changsheng",
+        "caption": 1,
+        "rendered_player": 1,
+        "visual_event": 1,
+        "timing_points_range": [
+          0,
+          0
+        ],
+        "points_range": [
+          3,
+          3
+        ]
+      },
+      {
+        "id": "yinuo",
+        "target_player": "yinuo",
+        "caption": 1,
+        "rendered_player": 1,
+        "visual_event": 1,
+        "timing_points_range": [
+          0,
+          0
+        ],
+        "points_range": [
+          3,
+          3
+        ]
+      },
+      {
+        "id": "dashuai",
+        "target_player": "dashuai",
+        "caption": 1,
+        "rendered_player": 0,
+        "visual_event": 0,
+        "timing_points_range": [
+          0,
+          0
+        ],
+        "points_range": [
+          1,
+          1
+        ]
+      }
+    ],
+    "negative_penalty": 0,
+    "negative_policy": "只对明确误亮扣分；相邻重点话语的合理收尾不作为误亮。"
+  },
+  "synchronization": [
+    {
+      "phase": "开局",
+      "match_clock": "00:14",
+      "max_offset_s": 0.233567,
+      "points": 2
+    },
+    {
+      "phase": "前期河道交战",
+      "match_clock": "02:00",
+      "max_offset_s": 0.133467,
+      "points": 2
+    },
+    {
+      "phase": "中期龙区团战",
+      "match_clock": "10:43",
+      "max_offset_s": null,
+      "points": 0
+    },
+    {
+      "phase": "后期龙区团战",
+      "match_clock": "16:29",
+      "max_offset_s": 0.6006,
+      "points": 1
+    },
+    {
+      "phase": "推水晶前",
+      "match_clock": "16:55",
+      "max_offset_s": 0.133467,
+      "points": 2
+    }
+  ],
+  "production": {
+    "layout": 4,
+    "motion": 1,
+    "audio_readability": 2
+  },
+  "scoring_artifact": {
+    "resolution": "1920x1080",
+    "duration_s": 1023.643,
+    "sha256": "dc1b7f541fc54d45ce96eaf5d2e56a456c547425f33578ccc92fc9d246384b6d"
+  },
+  "scoring_basis": "伤害按官方终值逐人分档；同步按实际时钟帧核对；声画与成片按成片中实际呈现的字幕、亮框、操作和动态榜记录。未调用模型裁判。"
+}

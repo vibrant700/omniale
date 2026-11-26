@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="OmniALE benchmark 案例：同步五路 KPL 选手视角，估算英雄伤害并制作双榜复盘大屏。">
+  <meta name="description" content="OmniALE benchmark 案例：同步五路 KPL 选手视角，估算英雄伤害，结合官播解说制作字幕与选手高亮的双榜复盘大屏。">
   <title>AG 五人第一视角战术大屏 · OmniALE</title>
   <link rel="stylesheet" href="case.css?v=kpl-7">
-  <script src="case.js?v=kpl-1" defer></script>
+  <script src="case.js?v=kpl-3" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">跳至正文</a>
@@ -15,7 +15,7 @@
     <header class="case-head">
       <p class="series">OmniALE / 王者荣耀赛事复盘</p>
       <h1>AG 五人第一视角<br class="mobile-only">战术大屏</h1>
-      <p class="lead">对齐五路选手录像，估算全队对敌方英雄的累计输出与承伤，制作一支随交战更新双榜的复盘视频。</p>
+      <p class="lead">对齐五路选手录像，估算全队对敌方英雄的累计输出与承伤，结合官播解说呈现重点字幕与选手窗口高亮，制作声画联动的双榜复盘视频。</p>
       <p class="match">2026 KPL 年度总决赛 · 成都 AG 超玩会 vs 济南 RW 侠 · 第一局</p>
     </header>
     <nav class="sections" aria-label="章节">
@@ -28,27 +28,30 @@
 
     <section id="task">
       <div class="section-heading"><h2>任务定义</h2><a href="task-package.zip" download>下载题包（ZIP） ↗</a></div>
+      <p class="result-note" data-task-version="v2-av"><strong>声画联动任务。</strong>五路视角结合官播主声道、解说重点字幕与选手窗口高亮。本轮 Astra xhigh + Codex 得 <strong>31.75/100</strong>。</p>
       <dl class="task-list">
-        <div><dt>输入</dt><dd>五路选手第一视角录像，有原声，保留至水晶告破。素材保留各自的播放起点和时间偏移。</dd></div>
-        <div><dt>委托</dt><dd>以轩染录像的播放时间为基准同步五路。在同屏大屏叠加累计输出与累计承伤两张榜，随交战更新点数、队内占比与排名。</dd></div>
-        <div><dt>交付</dt><dd><code>submission/dashboard.mp4</code> 大屏成片与 <code>submission/timeline.json</code> 累计时间轴。</dd></div>
+        <div><dt>输入</dt><dd>五路选手第一视角录像与同局官播中文解说音轨。五路保留至水晶告破，保留各自的播放起点和时间偏移。</dd></div>
+        <div><dt>委托</dt><dd>以轩染录像的播放时间为基准同步五路。在同屏大屏叠加累计输出与累计承伤两张榜，随交战更新点数、队内占比与排名；以官播为主声道，生成底部重点字幕，并在解说关键操作时高亮对应选手窗口。</dd></div>
+        <div><dt>交付</dt><dd><code>submission/dashboard.mp4</code> 大屏成片与 <code>submission/timeline.json</code> 累计时间轴，以及 <code>submission/commentary.json</code> 字幕与高亮时间轴。</dd></div>
       </dl>
       <details>
-        <summary>五路输入录像</summary>
+        <summary>五路输入录像与官播音轨</summary>
         <div class="details-body sources">
           <a href="https://www.bilibili.com/video/BV1kwHp6dEkR/?p=1">轩染 · 夏洛特 ↗</a>
           <a href="https://www.bilibili.com/video/BV1kwHp6dEkR/?p=4">钟意 · 大司命 ↗</a>
           <a href="https://www.bilibili.com/video/BV1kwHp6dEkR/?p=7">长生 · 不知火舞 ↗</a>
           <a href="https://www.bilibili.com/video/BV1kwHp6dEkR/?p=10">一诺 · 艾琳 ↗</a>
           <a href="https://www.bilibili.com/video/BV1kwHp6dEkR/?p=13">大帅 · 盾山 ↗</a>
-          <p class="caption">以上链接指向源录像分 P。题包中的五个文件分别裁到水晶告破。</p>
+          <a href="https://www.bilibili.com/video/BV1tyH76XEgz/?p=1">同局官播解说来源 ↗</a>
+          <a href="media/commentary.m4a" download>下载本题官播音轨（M4A） ↗</a>
+          <p class="caption">五路视频按题包所列地址和截取信息准备；官播解说以单独音轨发放。官播画面供出题端核对，不作为参测视频输入。</p>
         </div>
       </details>
       <details class="task-original">
         <summary>任务委托原文</summary>
         <div class="details-body brief">
           <h3>制作 AG 五人第一视角「战术大屏」复盘视频</h3>
-          <p>我们正在制作一期《王者荣耀》2026 KPL 年度总决赛（成都 AG 超玩会 vs 济南 RW 侠，第一局）的 AG 全队视角复盘视频。附件提供了 AG 五名选手本局截至水晶告破的第一视角录像。</p>
+          <p>我们正在制作一期《王者荣耀》2026 KPL 年度总决赛（成都 AG 超玩会 vs 济南 RW 侠，第一局）的 AG 全队视角复盘视频。附件提供了 AG 五名选手本局截至水晶告破的第一视角录像，以及同局官播中文解说音轨 <code>commentary.m4a</code>。</p>
           <div class="table-wrap" tabindex="0" role="region" aria-label="选手第一视角录像文件">
             <table>
               <thead><tr><th scope="col">文件名</th><th scope="col">选手和英雄</th></tr></thead>
@@ -63,6 +66,10 @@
           </div>
           <p>请将这五路第一视角合成为一个同屏同步的监控大屏，以 <code>xuanran.mp4</code> 的播放时间为成片和数据的共同时间基准，完整保留对局至水晶告破，并标明各路画面所属选手。</p>
           <p>请在大屏中叠加实时更新的<strong>全队对敌方英雄累计输出排行榜</strong>和<strong>承受敌方英雄累计伤害排行榜</strong>，用动态条形图展示五名选手的累计数值（整数点数）、队内占比（精确到 0.1%）及实时排名变化。</p>
+          <h4>官播解说与窗口高亮</h4>
+          <p>将官播解说与五路画面对齐，以官播作为主声道，关闭五路录像自带音轨，避免重复解说或回声。在大屏底部增加随解说更新的战况／解说重点字幕，准确保留关键事实，可压缩口头重复，不补写未出现的判断。</p>
+          <p>当解说强调 AG 选手的关键操作或团战贡献时，结合实际画面判断对应选手，<strong>同步高亮其第一视角窗口</strong>。涉及多名 AG 选手时可以高亮对应多个窗口；只谈对手、泛谈局势或指代无法确定时，不要强行高亮 AG 选手。</p>
+          <p>高亮使用清晰的描边或等效标记，保留窗口内关键游戏信息。重点话语开始后及时触发，话语结束后恢复普通状态，不能全程常亮。解说可能晚于操作发生，须分别记录话语与操作的时间，不要为了凑同时而改写解说或移动画面中的操作。</p>
           <h4>交付物</h4>
           <ul>
             <li><code>submission/dashboard.mp4</code>：可发布的复盘大屏成片。</li>
@@ -74,6 +81,7 @@
                 <li><code>final</code> 为终场时五名选手的 <code>players</code> 对象。</li>
               </ul>
             </li>
+            <li><code>submission/commentary.json</code>：字幕与高亮时间轴，所有时间以轩染录像为基准。<code>subtitles</code> 每条包含 <code>start_s</code>、<code>end_s</code>、<code>text</code>，按开始时间排序且不重叠；<code>highlights</code> 每条包含 <code>start_s</code>、<code>end_s</code>、<code>players</code>、<code>subtitle_index</code>、<code>event_start_s</code>、<code>visual_evidence</code>。选手数组非空、不重复；字幕索引从 0 开始；各区间位于成片内。操作时间与画面证据说明支持指代判断，字幕和亮框必须实际呈现在成片中。</li>
           </ul>
         </div>
       </details>
@@ -82,270 +90,99 @@
         <ol>
           <li><strong>伤害跳字能看见，逐帧读准很难。</strong>团战中输出和承伤跳字一闪而过，跨帧飘动并相互重叠，还混杂着小兵、野怪、防御塔和回血数字。一诺（艾琳）这样的高频远程输出尤其容易漏算。粗抽帧会错过短暂跳字，只量血条也会漏掉与回血同时发生的伤害。</li>
           <li><strong>同一笔伤害可能出现在多路画面里。</strong>同一波团战会出现在多个队友的屏幕上，选手阵亡后还会切到队友观战视角。需要识别出手者和受击者，对跨视角的同一笔伤害去重，并把观战画面中的伤害计入实际参与的选手。</li>
-          <li><strong>五路原片的播放时间有偏移。</strong>不同录像的片头相差几秒。Agent 需要对齐局内时钟，再选择同步音轨，避免多路原声混合后出现回声。</li>
+          <li><strong>五路原片的播放时间有偏移。</strong>不同录像的片头相差几秒。Agent 需要对齐局内时钟与官播音轨，避免多路原声混合后出现回声。</li>
+          <li><strong>解说中的人物指代必须回到画面确认。</strong>要听出重点话语，并结合五路画面中的英雄、动作及交战过程判断“他”指谁；解说可能晚于操作，不能把话语时间与操作时间混为一谈。</li>
           <li><strong>五人的伤害量级不同，误差会传到双榜。</strong>本局官方输出约从 2.7 万跨到 12.9 万。沿用同一个经验比例容易估错，任何一人的误差都会影响队内占比，也可能改变排名。最后还要把五路画面和两张动态榜合成为 1080p 成片。</li>
         </ol>
         <h3>可解释性</h3>
         <ol>
-          <li><strong>画面有跳字，单人单项误差在 ±5% 内可得满分。</strong>输出和承伤都有可观察的跳字。视频压缩、团战遮挡和官方 0.1K 的显示精度都会影响估算。片尾榜单与时间轴一致后，估算值与官方显示值的偏差在 ±5% 内，该项得 8 分。</li>
-          <li><strong>每个分项都有对应的核验对象。</strong>80 分对应 KPL 官方赛后统计的 10 个终场数值，10 分对应五个关键时刻的五路时钟帧差，10 分对应成片的布局避让、动态榜流畅度、音轨与可读性。</li>
+          <li><strong>画面有跳字，单人单项误差在 ±5% 内可得满分。</strong>输出和承伤都有可观察的跳字。视频压缩、团战遮挡和官方 0.1K 的显示精度都会影响估算。片尾榜单与时间轴一致后，估算值与官方显示值的偏差在 ±5% 内，v2 中该项得 6 分。</li>
+          <li><strong>每个分项都有对应的核验对象。</strong>60 分对应官方赛后统计的 10 个终场数值，10 分对应五处五路时钟帧差，20 分对应解说重点、选手与可见操作关联及高亮时间，10 分对应成片质量。</li>
         </ol>
       </div>
     </section>
 
     <section id="scoring">
       <div class="section-heading"><h2>评分标准</h2></div>
-      <div class="score-formula"><strong>满分 100</strong><span>终场输出 40 ＋ 终场承伤 40 ＋ 五路同步 10 ＋ 成片质量 10</span></div>
-
+      <div class="score-formula"><strong>v2 满分 100</strong><span>输出 30 ＋ 承伤 30 ＋ 五路同步 10 ＋ 声画联动 20 ＋ 成片 10</span></div>
       <details class="rubric-detail">
-        <summary>终场输出与承伤 · 各 40 分</summary>
+        <summary>终场输出与承伤 · 各 30 分</summary>
         <div class="details-body">
           <ol class="rubric-steps">
-            <li><strong>验证交付与时间轴。</strong>成片须能完整解码，时长与轩染原片相差不超过 0.25 秒。时间轴包含五人两项非负整数；首条从 0 秒、零累计开始，时间严格递增且小于原片时长 1023.622563 秒，各项累计不递减，末条与 <code>final</code> 一致。成片不通过则本题得 0 分；时间轴不通过则输出与承伤均为 0 分。</li>
-            <li><strong>核对片尾双榜。</strong>在成片第 1023.25 秒读取两榜的五人点数、顺序和队内占比，分别与 <code>timeline.json</code> 的 <code>final</code> 核对。名次按点数降序排列，同分按题面选手顺序。队内占比为个人点数 ÷ 五人同项点数之和 × 100%，分母为零时为 0%，允许显示到 0.1% 产生的舍入误差。整张榜通过核对后，该项进入误差评分。</li>
-            <li><strong>逐人计算绝对相对误差。</strong>取提交点数与官方点数之差的绝对值，除以官方点数，再乘以 100%。官方以 0.1K 显示，按显示值换算为点数。 <a href="https://www.bilibili.com/video/BV1tyH76XEgz/?p=1&amp;t=2020">官方赛后统计 ↗</a></li>
-            <li><strong>分档后相加。</strong>五人的输出分相加得到终场输出分，五人的承伤分相加得到终场承伤分。</li>
+            <li><strong>检查成片与时间轴。</strong>成片须完整解码，时长与轩染原片 1023.622563 秒相差不超过 0.25 秒。时间轴首条为 0 秒、五人两项零累计；时间严格递增且小于原片时长，点数为非负整数、累计不递减，末条与 <code>final</code> 一致。成片不通过则整题 0 分；伤害时间轴不通过则输出与承伤均为 0 分。</li>
+            <li><strong>核对实际双榜。</strong>在第 1023.25 秒读取五人点数、排名与占比，与 <code>final</code> 逐项核对。点数降序排列，同分按题面选手顺序；队内占比为个人点数 ÷ 五人同项总数 × 100%，总数为零时为 0%，允许显示至 0.1% 的舍入误差。对应榜单不吻合，该伤害项不计分。</li>
+            <li><strong>逐人分档后加总。</strong>统计对敌方英雄的输出与所受英雄伤害，官方以 0.1K 显示并换算为点数。绝对相对误差为 |提交值 − 官方值| ÷ 官方值 × 100%。每人每项按 ≤5%、≤10%、≤15%、≤20%、≤30%、其余／缺失，依次得 6、4.5、3.75、2.25、1.5、0 分；五人的该项分数相加。 <a href="https://www.bilibili.com/video/BV1tyH76XEgz/?p=1&amp;t=2020">官方赛后统计 ↗</a></li>
           </ol>
-          <div class="table-wrap" tabindex="0" role="region" aria-label="伤害评分分档">
-            <table class="bands">
-              <thead><tr><th scope="row">相对误差</th><th scope="col">≤5%</th><th scope="col">(5%, 10%]</th><th scope="col">(10%, 15%]</th><th scope="col">(15%, 20%]</th><th scope="col">(20%, 30%]</th><th scope="col">&gt;30% 或缺失</th></tr></thead>
-              <tbody><tr><th scope="row">单人单项</th><td>8</td><td>6</td><td>5</td><td>3</td><td>2</td><td>0</td></tr></tbody>
-            </table>
-          </div>
+        </div>
+      </details>
+      <details class="rubric-detail">
+        <summary>声画联动 · 20 分</summary>
+        <div class="details-body">
+          <p>轩染、钟意、长生、一诺、大帅各一处真实解说重点，共五处，每人 4 分。五个评分节点分别覆盖五名不同选手；同一人的多次高亮不能替代其他人的节点。音频话语与画面操作分别定位，按轩染录像播放时间核对。</p>
+          <dl class="rubric-rows">
+            <div><dt>1 分</dt><dd>字幕在对应话语期间保留关键事实，允许同义压缩，不补写相反或无依据事实。</dd></div>
+            <div><dt>2 分</dt><dd>正确选手集合与实际亮框得 1 分；对应可见操作、事件定位和指代解释成立得 1 分。</dd></div>
+            <div><dt>1 分</dt><dd>高亮起点与话语起点、终点与话语终点的绝对误差均 ≤1 秒。</dd></div>
+          </dl>
+          <p>每条高亮最多匹配一个节点，每个节点最多匹配一条高亮。另抽查五个只谈对手、泛谈局势或无重点话语的负例区间，每处明确误亮扣 1 分，本项最低 0 分；相邻重点话语的合理收尾不作为误亮。额外的正确高亮不扣分，未标注内容不擅自作为错误。字幕、亮框及对应时间均须在成片中实际呈现；只填正确 JSON 不得分。</p>
+        </div>
+      </details>
+      <details class="rubric-detail">
+        <summary>五路同步 · 10 分；成片质量 · 10 分</summary>
+        <div class="details-body">
+          <p><strong>五路同步：</strong>抽查五处同一局内时钟跳秒帧的最早、最晚差：≤0.5 秒得 2 分，(0.5, 1.5] 秒得 1 分，其余或任一路不可核对得 0 分，五点相加。</p>
+          <p><strong>布局避让，0–4 分：</strong>五路、双榜、字幕分区清晰稳定且避开关键游戏信息得 4 分；整体清晰、仅局部留白或轻微遮挡得 3 分；多处拥挤但仍可分辨得 2 分；多数区域难以同时看清得 1 分；画面或榜单无法使用得 0 分。</p>
+          <p><strong>动态榜，0–3 分：</strong>条形随点数平滑伸缩、名次换位可跟踪、点数按时间轴及时刷新，三个条件各 1 分。</p>
+          <p><strong>视听呈现可用性，0–3 分：</strong>官播主声道连续清楚、与字幕同步且无五路混音回声，榜单和字幕可读；全部成立得 3 分，均可用但有轻微问题得 2 分，仅音轨或文字可用得 1 分，两者均不可用得 0 分。三项成片分相加，满分 10 分。</p>
         </div>
       </details>
 
-      <details class="rubric-detail">
-        <summary>五路同步 · 10 分</summary>
-        <div class="details-body">
-          <p>抽查开局、前期、中期、后期交战和推水晶前。每次记录五路局内时钟首次跳到指定读数的成片时间戳，用最晚的时间戳减去最早的时间戳，得到该点的最大时差。五个抽查点各 2 分，得分相加。</p>
-          <dl class="rubric-rows">
-            <div><dt>2 分</dt><dd>最大时差 ≤0.5 秒。</dd></div>
-            <div><dt>1 分</dt><dd>最大时差 &gt;0.5 秒且 ≤1.5 秒。</dd></div>
-            <div><dt>0 分</dt><dd>最大时差 &gt;1.5 秒，或任一路缺失、黑屏、时钟跳秒帧无法辨认。</dd></div>
-          </dl>
-        </div>
-      </details>
-
-      <details class="rubric-detail">
-        <summary>成片质量 · 10 分</summary>
-        <div class="details-body">
-          <h4>布局与信息避让 · 0–4 分</h4>
-          <dl class="rubric-rows">
-            <div><dt>4 分</dt><dd>五路画面与双榜分区清晰、位置稳定，避开关键游戏界面。</dd></div>
-            <div><dt>3 分</dt><dd>整体清晰，有局部留白或小幅遮挡。</dd></div>
-            <div><dt>2 分</dt><dd>多处拥挤，画面和榜单仍可分辨。</dd></div>
-            <div><dt>1 分</dt><dd>多数区域难以同时看清。</dd></div>
-            <div><dt>0 分</dt><dd>画面或榜单无法使用。</dd></div>
-          </dl>
-          <h4>动态排行榜流畅度 · 0–3 分</h4>
-          <p>三个条件各计 1 分，满足几项就得几分。</p>
-          <ul class="rubric-steps">
-            <li>条形图随数值变化平滑伸缩。</li>
-            <li>名次变化时，选手的行位置过渡清楚，换位前后容易跟踪。</li>
-            <li>累计点数及时按提交时间轴刷新。</li>
-          </ul>
-          <h4>音轨处理与可读性 · 0–3 分</h4>
-          <dl class="rubric-rows">
-            <div><dt>3 分</dt><dd>原声同步、清晰且无混音回声，点数与百分比在正常观看尺寸下可直接读出。</dd></div>
-            <div><dt>2 分</dt><dd>音轨与榜单均可用，有轻微听感或可读性问题。</dd></div>
-            <div><dt>1 分</dt><dd>音轨与榜单中只有一项可用。</dd></div>
-            <div><dt>0 分</dt><dd>音轨和榜单均无法使用。</dd></div>
-          </dl>
-          <p>成片质量分为上述三项之和。</p>
-        </div>
-      </details>
     </section>
 
     <section id="results">
       <div class="section-heading"><h2>测试结果</h2></div>
-      <p class="result-note">两轮使用同一题面、五路原片和评分标准，均从独立上下文开始，执行框架为 Codex CLI 0.142.4。原始交付均为 1080p，以下为保留交付音轨的完整 720p 网页预览。</p>
-      <div class="table-wrap" tabindex="0" role="region" aria-label="测试结果">
-        <table class="results">
-          <thead><tr><th scope="col">受测系统</th><th scope="col">输出 / 40</th><th scope="col">承伤 / 40</th><th scope="col">同步 / 10</th><th scope="col">成片 / 10</th><th scope="col">总分 / 100</th><th scope="col">实耗时</th></tr></thead>
-          <tbody>
-            <tr><th scope="row"><a href="#astra-results">GPT‑6.2 Astra xhigh + Codex</a></th><td>11</td><td>2</td><td>10</td><td>8</td><td class="total">31</td><td>1 小时 3 分 53 秒</td></tr>
-            <tr><th scope="row"><a href="#sol62-results">GPT‑6.2 Sol xhigh + Codex</a></th><td>0</td><td>0</td><td>10</td><td>9</td><td class="total">19</td><td>3 小时 35 分 35 秒</td></tr>
-          </tbody>
-        </table>
+      <h3>v2 · 声画联动</h3>
+      <p class="result-note">同局五路视角加官播解说，新增重点字幕与选手窗口高亮。评分使用 1080p 原始交付，网页提供完整 720p 有声预览。</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="v2 声画联动测试结果">
+        <table class="results results-v2"><thead><tr><th scope="col">受测系统</th><th scope="col">输出 / 30</th><th scope="col">承伤 / 30</th><th scope="col">同步 / 10</th><th scope="col">声画 / 20</th><th scope="col">成片 / 10</th><th scope="col">总分 / 100</th><th scope="col">实耗时</th></tr></thead>
+        <tbody><tr><th scope="row"><a href="#astrav2-results">GPT‑6.2 Astra xhigh + Codex</a></th><td>4.5</td><td>2.25</td><td>7</td><td>11</td><td>7</td><td class="total">31.75</td><td>1 小时 47 分 29 秒</td></tr></tbody></table>
       </div>
-      <div class="model-switcher" role="group" aria-label="交付展示模型" hidden>
-        <button type="button" data-model-switch="astra" aria-pressed="true">GPT‑6.2 Astra xhigh</button>
-        <button type="button" data-model-switch="sol62" aria-pressed="false">GPT‑6.2 Sol xhigh</button>
+      <p class="result-note">本轮使用固定 Qwen（qwen3.8-omni-flash）听音工具 35 次，没有 Gemini，也未调用模型裁判。伤害按官方终值、同步按时钟帧差计算；声画与成片按实际呈现逐项核对。</p>
+      <div data-model-panel="astrav2">
+      <div class="section-heading model-heading"><h3 id="astrav2-results">GPT‑6.2 Astra xhigh · v2</h3><a href="models/astra62-xhigh-v2/results/score.json" download>下载最终评分（JSON） ↗</a></div>
+      <dl class="facts"><div><dt>运行用时</dt><dd>1 小时 47 分 29 秒</dd></div><div><dt>执行框架</dt><dd>Codex CLI 0.142.4</dd></div><div><dt>累计时间轴</dt><dd>403 个时间点</dd></div><div><dt>解说交付</dt><dd>132 条字幕 · 40 条高亮</dd></div></dl>
+      <figure id="astrav2-delivery" class="delivery"><video controls playsinline preload="none" poster="models/astra62-xhigh-v2/media/dashboard.jpg" src="models/astra62-xhigh-v2/media/dashboard.mp4" aria-label="GPT‑6.2 Astra v2 声画联动五路复盘视频"></video><figcaption>完整模型交付预览 · 17 分 03.64 秒 · 720p · 官播主声道（网页音频转码）</figcaption></figure>
+      <p class="result-note"><a href="models/astra62-xhigh-v2/timeline.json" download>下载伤害时间轴 ↗</a> · <a href="models/astra62-xhigh-v2/commentary.json" download>下载字幕与高亮时间轴 ↗</a>。评分原片为 1080p；其官播 AAC 载荷与题目音轨完全一致。</p>
+      <details><summary>逐选手终场伤害 · 输出 4.5 / 30，承伤 2.25 / 30</summary><div class="details-body"><div class="table-wrap" tabindex="0" role="region" aria-label="v2 逐选手伤害结果"><table class="player-results"><thead><tr><th scope="col">选手</th><th scope="col">输出估算 / 官方</th><th scope="col">输出分 / 6</th><th scope="col">承伤估算 / 官方</th><th scope="col">承伤分 / 6</th></tr></thead><tbody><tr><th scope="row">轩染</th><td>27,841 / 58,000</td><td>0</td><td>31,299 / 55,700</td><td>0</td></tr><tr><th scope="row">钟意</th><td>28,628 / 53,100</td><td>0</td><td>46,727 / 95,700</td><td>0</td></tr><tr><th scope="row">长生</th><td>59,896 / 66,000</td><td>4.5</td><td>41,577 / 50,900</td><td>2.25</td></tr><tr><th scope="row">一诺</th><td>57,737 / 129,600</td><td>0</td><td>33,902 / 68,100</td><td>0</td></tr><tr><th scope="row">大帅</th><td>16,061 / 27,600</td><td>0</td><td>28,643 / 61,100</td><td>0</td></tr></tbody></table></div></div></details>
+      <details id="astrav2-av-results"><summary>声画联动 · 11 / 20</summary><div class="details-body"><div class="table-wrap" tabindex="0" role="region" aria-label="v2 五名选手声画结果"><table class="player-results"><thead><tr><th scope="col">选手</th><th scope="col">字幕 / 1</th><th scope="col">亮框 / 1</th><th scope="col">事件 / 1</th><th scope="col">对时 / 1</th><th scope="col">小计</th><th scope="col">证据</th></tr></thead><tbody><tr><th scope="row">轩染</th><td>1</td><td>1</td><td>1</td><td>0</td><td>3 / 4</td><td><a href="models/astra62-xhigh-v2/results/highlight-xuanran.png">成片帧 ↗</a></td></tr><tr><th scope="row">钟意</th><td>1</td><td>0</td><td>0</td><td>0</td><td>1 / 4</td><td><a href="models/astra62-xhigh-v2/results/missed-zhongyi.png">成片帧 ↗</a></td></tr><tr><th scope="row">长生</th><td>1</td><td>1</td><td>1</td><td>0</td><td>3 / 4</td><td><a href="models/astra62-xhigh-v2/results/highlight-changsheng.png">成片帧 ↗</a></td></tr><tr><th scope="row">一诺</th><td>1</td><td>1</td><td>1</td><td>0</td><td>3 / 4</td><td><a href="models/astra62-xhigh-v2/results/highlight-yinuo.png">成片帧 ↗</a></td></tr><tr><th scope="row">大帅</th><td>1</td><td>0</td><td>0</td><td>0</td><td>1 / 4</td><td><a href="models/astra62-xhigh-v2/results/missed-dashuai.png">成片帧 ↗</a></td></tr></tbody></table></div><p class="result-note">每人一个独立节点。钟意与大帅对应话语有字幕，但未亮起目标窗口；其余三处选手与操作关联成立，亮框起止未同时满足 ±1 秒。五个节点合计 11 分，负例扣分为 0；相邻重点话语的合理收尾不计为误亮。</p></div></details>
+      <details id="astrav2-sync-results"><summary>五路时钟抽查 · 7 / 10</summary><div class="details-body"><div class="table-wrap" tabindex="0" role="region" aria-label="v2 五路同步结果"><table class="player-results"><thead><tr><th scope="col">局内钟</th><th scope="col">最大时差 / 核对结果</th><th scope="col">得分</th><th scope="col">证据</th></tr></thead><tbody><tr><th scope="row">00:14</th><td>0.2336 秒</td><td>2 / 2</td><td><a href="models/astra62-xhigh-v2/results/clock-17.png">时钟帧 ↗</a></td></tr><tr><th scope="row">02:00</th><td>0.1335 秒</td><td>2 / 2</td><td><a href="models/astra62-xhigh-v2/results/clock-123.png">时钟帧 ↗</a></td></tr><tr><th scope="row">10:43</th><td>钟意时钟被遮挡，无法核对</td><td>0 / 2</td><td><a href="models/astra62-xhigh-v2/results/clock-646.png">时钟帧 ↗</a></td></tr><tr><th scope="row">16:29</th><td>0.6006 秒</td><td>1 / 2</td><td><a href="models/astra62-xhigh-v2/results/clock-992.png">时钟帧 ↗</a></td></tr><tr><th scope="row">16:55</th><td>0.1335 秒</td><td>2 / 2</td><td><a href="models/astra62-xhigh-v2/results/clock-1018.png">时钟帧 ↗</a></td></tr></tbody></table></div><p class="result-note">10:43 的钟意时钟被击杀提示遮挡，无法可靠确定跳秒帧；按任一路不可核对得 0 分。16:29 的最大时差约 0.601 秒，超过 0.5 秒满分阈值。</p></div></details>
+      <details id="astrav2-quality-results"><summary>成片质量 · 7 / 10</summary><div class="details-body"><div class="table-wrap" tabindex="0" role="region" aria-label="v2 成片质量结果"><table class="quality-results"><thead><tr><th scope="col">评分项</th><th scope="col">得分</th><th scope="col">依据</th></tr></thead><tbody><tr><th scope="row">布局与信息避让</th><td>4 / 4</td><td>五路、双榜与字幕分区清晰，关键游戏 HUD 可读。</td></tr><tr><th scope="row">动态排行榜流畅度</th><td>1 / 3</td><td>点数及时刷新；条长伸缩和名次换位直接跳变。 <a href="models/astra62-xhigh-v2/results/motion-rank-swap.png">连续帧 ↗</a></td></tr><tr><th scope="row">视听呈现可用性</th><td>2 / 3</td><td>官播主声道完整，文字可读；部分重点字幕延后数秒。</td></tr></tbody></table></div></div></details>
       </div>
-      <div data-model-panel="astra">
-      <div class="section-heading model-heading"><h3 id="astra-results">GPT‑6.2 Astra xhigh</h3><a href="timeline.json" download>下载 Astra 时间轴 ↗</a></div>
-      <dl class="facts">
-        <div><dt>运行用时</dt><dd>1 小时 3 分 53 秒</dd></div>
-        <div><dt>执行框架</dt><dd>Codex CLI 0.142.4</dd></div>
-        <div><dt>时间轴</dt><dd>468 个时间点</dd></div>
-      </dl>
-      <figure id="delivery" class="delivery">
-        <video controls playsinline preload="none" poster="media/dashboard.jpg" src="media/dashboard.mp4" aria-label="GPT‑6.2 Astra 的五路同屏复盘视频"></video>
-        <figcaption>模型交付的整局复盘 · 17 分 03 秒 · 网页预览 720p · 轩染原声</figcaption>
-      </figure>
-      <details>
-        <summary>逐选手伤害估算与得分</summary>
-        <div class="details-body table-wrap" tabindex="0" role="region" aria-label="逐选手终场伤害">
-          <table class="player-results">
-            <thead><tr><th scope="col">选手</th><th scope="col">输出估算 / 官方</th><th scope="col">输出分 / 8</th><th scope="col">承伤估算 / 官方</th><th scope="col">承伤分 / 8</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">轩染</th><td>48,991 / 58,000</td><td>3</td><td>38,649 / 55,700</td><td>0</td></tr>
-              <tr><th scope="row">钟意</th><td>30,531 / 53,100</td><td>0</td><td>52,326 / 95,700</td><td>0</td></tr>
-              <tr><th scope="row">长生</th><td>37,150 / 66,000</td><td>0</td><td>38,473 / 50,900</td><td>2</td></tr>
-              <tr><th scope="row">一诺</th><td>46,988 / 129,600</td><td>0</td><td>47,532 / 68,100</td><td>0</td></tr>
-              <tr><th scope="row">大帅</th><td>26,945 / 27,600</td><td>8</td><td>34,250 / 61,100</td><td>0</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-      <details id="sync-results">
-        <summary>五路时钟抽查 · 10 / 10</summary>
-        <div class="details-body">
-          <p class="result-note">各机位记录的时间戳和最大时差均以秒计。 <a href="results/sync.json" download>下载同步评分记录（JSON）</a></p>
-          <div class="table-wrap" tabindex="0" role="region" aria-label="五路时钟抽查结果">
-            <table class="sync-results">
-              <thead><tr><th scope="col">阶段</th><th scope="col">局内钟</th><th scope="col">轩染</th><th scope="col">钟意</th><th scope="col">长生</th><th scope="col">一诺</th><th scope="col">大帅</th><th scope="col">最大时差</th><th scope="col">得分 / 2</th><th scope="col">证据</th></tr></thead>
-              <tbody>
-              <tr><th scope="row">开局</th><td>00:14</td><td>16.6166</td><td>16.6166</td><td>16.6166</td><td>16.5832</td><td>16.6166</td><td>0.0334</td><td>2</td><td><a href="results/clock-frames/clock-frames-17.jpg" aria-label="开局抽查帧">查看帧 ↗</a></td></tr>
-              <tr><th scope="row">前期河道交战</th><td>02:00</td><td>122.6225</td><td>122.5891</td><td>122.6225</td><td>122.5891</td><td>122.6225</td><td>0.0334</td><td>2</td><td><a href="results/clock-frames/clock-frames-123.jpg" aria-label="前期河道交战抽查帧">查看帧 ↗</a></td></tr>
-              <tr><th scope="row">中期龙区团战</th><td>10:43</td><td>645.6116</td><td>645.6450</td><td>645.5449</td><td>645.5783</td><td>645.6116</td><td>0.1001</td><td>2</td><td><a href="results/clock-frames/clock-frames-646.jpg" aria-label="中期龙区团战抽查帧">查看帧 ↗</a></td></tr>
-              <tr><th scope="row">后期龙区团战</th><td>16:29</td><td>991.6240</td><td>991.5572</td><td>991.5572</td><td>991.5572</td><td>991.7241</td><td>0.1669</td><td>2</td><td><a href="results/clock-frames/clock-frames-992.jpg" aria-label="后期龙区团战抽查帧">查看帧 ↗</a></td></tr>
-              <tr><th scope="row">推水晶前</th><td>16:55</td><td>1017.5832</td><td>1017.5832</td><td>1017.5499</td><td>1017.5499</td><td>1017.7501</td><td>0.2002</td><td>2</td><td><a href="results/clock-frames/clock-frames-1018.jpg" aria-label="推水晶前抽查帧">查看帧 ↗</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </details>
-      <details id="video-quality-results">
-        <summary>成片质量评分 · 8 / 10</summary>
-        <div class="details-body">
-          <p class="result-note"><a href="results/video-quality.json" download>下载成片评分记录（JSON）</a></p>
-          <div class="table-wrap" tabindex="0" role="region" aria-label="成片质量评分结果">
-            <table class="quality-results">
-              <thead><tr><th scope="col">评分项</th><th scope="col">得分 / 满分</th><th scope="col">给分依据</th></tr></thead>
-              <tbody>
-              <tr><th scope="row">布局与信息避让</th><td>4 / 4</td><td>五路画面与两张榜单分区清晰，窗口位置稳定，榜单避开关键游戏界面。 <a href="results/../media/dashboard.jpg">截图 ↗</a></td></tr>
-              <tr><th scope="row">动态排行榜流畅度</th><td>1 / 3</td><td>数值随时间轴更新。条长和榜单行位置在刷新时直接切换，伸缩与换位两项各失 1 分。</td></tr>
-              <tr><th scope="row">音轨处理与可读性</th><td>3 / 3</td><td>成片沿用轩染单路原声，AAC 音频载荷与原片一致。两榜点数和百分比清晰可读。 <a href="results/terminal-boards.png">截图 ↗</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </details>
 
-      </div>
-      <div data-model-panel="sol62">
-      <div class="section-heading model-heading"><h3 id="sol62-results">GPT‑6.2 Sol xhigh</h3><a href="models/sol62-xhigh/timeline.json" download>下载 Sol 时间轴 ↗</a></div>
-      <dl class="facts">
-        <div><dt>运行用时</dt><dd>3 小时 35 分 35 秒</dd></div>
-        <div><dt>执行框架</dt><dd>Codex CLI 0.142.4</dd></div>
-        <div><dt>时间轴</dt><dd>20 个时间点 · 19 条伤害样本</dd></div>
-      </dl>
-      <p class="result-note">Sol 将伤害统计限定为“已核实片段”，榜单显示样本小计与样本占比，未完成题目要求的全场累计。输出与承伤均得 0 分。 <a href="models/sol62-xhigh/results/score.json" download>下载本轮评分结果（JSON）</a></p>
-      <figure id="sol62-delivery" class="delivery">
-        <video controls playsinline preload="none" poster="models/sol62-xhigh/media/dashboard.jpg" src="models/sol62-xhigh/media/dashboard.mp4" aria-label="GPT‑6.2 Sol 的五路同屏复盘视频"></video>
-        <figcaption>Sol 原始交付的整局预览 · 17 分 03 秒 · 网页预览 720p · 轩染单路原声</figcaption>
-      </figure>
-      <details>
-        <summary>逐选手样本小计与得分</summary>
-        <div class="details-body">
-          <p class="result-note">下表展示模型实际记录的片段小计；“未收录”对应画面上的破折号及 JSON 中的 0。完整双榜的五人终场值未交付。 <a href="models/sol62-xhigh/results/terminal-boards.png">片尾双榜截图 ↗</a></p>
-          <div class="table-wrap" tabindex="0" role="region" aria-label="Sol 逐选手伤害样本小计">
-            <table class="player-results">
-              <thead><tr><th scope="col">选手</th><th scope="col">输出小计 / 官方</th><th scope="col">输出分 / 8</th><th scope="col">承伤小计 / 官方</th><th scope="col">承伤分 / 8</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">轩染</th><td>未收录 / 58,000</td><td>0</td><td>154 / 55,700</td><td>0</td></tr>
-                <tr><th scope="row">钟意</th><td>1,452 / 53,100</td><td>0</td><td>1,308 / 95,700</td><td>0</td></tr>
-                <tr><th scope="row">长生</th><td>5,797 / 66,000</td><td>0</td><td>未收录 / 50,900</td><td>0</td></tr>
-                <tr><th scope="row">一诺</th><td>1,561 / 129,600</td><td>0</td><td>217 / 68,100</td><td>0</td></tr>
-                <tr><th scope="row">大帅</th><td>536 / 27,600</td><td>0</td><td>未收录 / 61,100</td><td>0</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </details>
-      <details id="sol62-sync-results">
-        <summary>五路时钟抽查 · 10 / 10</summary>
-        <div class="details-body">
-          <p class="result-note">遇到特效遮挡，以最后一次旧读数与第一次清晰新读数夹定跳秒区间。记录时差和区间端点的最坏时差均处于 0.5 秒档内。 <a href="models/sol62-xhigh/results/sync.json" download>下载逐机位同步记录（JSON）</a></p>
-          <div class="table-wrap" tabindex="0" role="region" aria-label="Sol 五路时钟抽查结果">
-            <table class="sync-results">
-              <thead><tr><th scope="col">阶段</th><th scope="col">局内钟</th><th scope="col">记录时差 / 秒</th><th scope="col">区间最坏时差 / 秒</th><th scope="col">得分 / 2</th><th scope="col">证据</th></tr></thead>
-              <tbody><tr><th scope="row">开局</th><td>00:14</td><td>0.0668</td><td>0.1001</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-17.png">查看帧 ↗</a></td></tr>
-                <tr><th scope="row">前期河道交战</th><td>02:00</td><td>0.1001</td><td>0.1335</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-123.png">查看帧 ↗</a></td></tr>
-                <tr><th scope="row">中期龙区团战</th><td>10:43</td><td>0.2669</td><td>0.3003</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-646.png">查看帧 ↗</a></td></tr>
-                <tr><th scope="row">后期龙区团战</th><td>16:29</td><td>0.1669</td><td>0.2002</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-992.png">查看帧 ↗</a></td></tr>
-                <tr><th scope="row">推水晶前</th><td>16:55</td><td>0.2002</td><td>0.2336</td><td>2</td><td><a href="models/sol62-xhigh/results/clock-frames/clock-boundary-1018.png">查看帧 ↗</a></td></tr></tbody>
-            </table>
-          </div>
-        </div>
-      </details>
-      <details id="sol62-video-quality-results">
-        <summary>成片质量评分 · 9 / 10</summary>
-        <div class="details-body">
-          <p class="result-note"><a href="models/sol62-xhigh/results/video-quality.json" download>下载成片评分记录（JSON）</a></p>
-          <div class="table-wrap" tabindex="0" role="region" aria-label="Sol 成片质量评分结果">
-            <table class="quality-results">
-              <thead><tr><th scope="col">评分项</th><th scope="col">得分 / 满分</th><th scope="col">给分依据</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">布局与信息避让</th><td>4 / 4</td><td>五路标识与双榜分区清晰、稳定，关键游戏界面与榜单文字可读。 <a href="models/sol62-xhigh/media/dashboard.jpg">截图 ↗</a></td></tr>
-                <tr><th scope="row">动态排行榜流畅度</th><td>2 / 3</td><td>条形长度有过渡，点数随时间轴刷新；名次变化时行位置直接跳变，换位项失 1 分。 <a href="models/sol62-xhigh/results/motion-overtake.png">连续帧 ↗</a></td></tr>
-                <tr><th scope="row">音轨处理与可读性</th><td>3 / 3</td><td>轩染单路原声，三段抽样波形与原片的相关系数均高于 0.9997。已显示点数、占比及缺失标记可读。 <a href="models/sol62-xhigh/results/terminal-boards.png">截图 ↗</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </details>
-      </div>
     </section>
 
     <section id="execution">
       <div class="section-heading"><h2>agent执行过程</h2></div>
-      <div class="model-switcher" role="group" aria-label="执行过程模型" hidden>
-        <button type="button" data-model-switch="astra" aria-pressed="true">GPT‑6.2 Astra xhigh</button>
-        <button type="button" data-model-switch="sol62" aria-pressed="false">GPT‑6.2 Sol xhigh</button>
-      </div>
-      <div data-model-panel="astra">
-      <h3>GPT‑6.2 Astra xhigh</h3>
-      <ol class="steps">
-        <li><h3>对齐局内时钟</h3><p>从五路录像抽取时钟区域，匹配跳秒位置，估计各路相对轩染录像的时间偏移。</p></li>
-        <li><h3>追踪血条并分配伤害</h3><p>每秒采样 5 帧，通过英雄名牌跨机位合并血条记录，利用千血刻度把血条变化换算成点数。参考锁定目标、距离及命中特效，将敌方损血分配给可能出手的选手。</p></li>
-        <li><h3>渲染战术大屏</h3><p>将估算写入累计时间轴，由同一数据驱动双榜与队伍伤害增量图，再合成五路画面和轩染原声。</p></li>
-      </ol>
-      </div>
-      <div data-model-panel="sol62">
-      <h3>GPT‑6.2 Sol xhigh</h3>
-      <ol class="steps">
-        <li><h3>核对时钟与音轨</h3><p>抽取各路时钟、首尾画面和音轨，计算相对轩染的固定偏移，区分选手视角与末尾转播镜头。</p></li>
-        <li><h3>逐条读取伤害样本</h3><p>放大查看开局、对线和团战中的伤害跳字，只记录能够辨认点数并归因于敌方英雄的片段，最终收录 19 条事件及其录像时间。</p></li>
-        <li><h3>生成片段小计双榜</h3><p>将事件写入 20 个时间点，以已收录点数计算占比；未收录的选手在画面上显示破折号。交付中注明“伤害统计未达到全场覆盖”。</p></li>
-        <li><h3>合成与抽检</h3><p>输出 1080p 五路大屏与轩染单路原声。对选手接入和片尾定格作标记，并抽检片头、团战和水晶告破画面。</p></li>
-      </ol>
-      </div>
+
+      <div data-model-panel="astrav2"><h3>GPT‑6.2 Astra xhigh · v2</h3><ol class="steps">
+      <li><h3>对齐五路时钟与官播</h3><p>抽取局内时钟与首尾画面，计算各路相对轩染的偏移，并将官播音轨作为唯一主声道。</p></li>
+      <li><h3>用血条变化重建累计伤害</h3><p>以每秒 5 帧检测自身、敌方血条和锁定目标，估计生命上限，跨视角合并损血记录，再根据距离、目标及可见操作分配伤害，生成 403 个累计点。</p></li>
+      <li><h3>听解说并关联画面</h3><p>调用固定 Qwen 听音工具 35 次，结合五路画面整理 132 条重点字幕、40 条高亮记录，在 JSON 中分别记录话语区间与操作时间。</p></li>
+      <li><h3>合成并检查交付</h3><p>生成 1080p 五路大屏、累计双榜、底部字幕与选手亮框。整轮使用 84 次 Astra 模型请求、211 次工具调用，实耗时 1 小时 47 分 29 秒。</p></li></ol></div>
+
     </section>
 
     <section id="analysis">
       <div class="section-heading"><h2>失分分析</h2></div>
-      <div class="model-switcher" role="group" aria-label="失分分析模型" hidden>
-        <button type="button" data-model-switch="astra" aria-pressed="true">GPT‑6.2 Astra xhigh</button>
-        <button type="button" data-model-switch="sol62" aria-pressed="false">GPT‑6.2 Sol xhigh</button>
+
+      <div data-model-panel="astrav2">
+      <h3>伤害统计：十项终值均低估</h3><p>一诺输出为 <strong>57,737</strong> 点，官方为 <strong>129,600</strong> 点，低估 <strong>55.45%</strong>。只有长生输出误差 9.25%、承伤误差 18.32% 落入得分档位，其余八项误差超过 30%，伤害部分合计 <strong>6.75/60</strong>。 <a href="models/astra62-xhigh-v2/results/terminal-boards.png">片尾双榜 ↗</a></p>
+      <p>实际脚本通过 5 fps 血条检测、血量上限估计和多人归属启发式分摊重建伤害，并过滤小幅下降和短轨迹。小额连续命中、遮挡、护盾及同期回血都容易漏计；生命净下降也不能完整等同于所受伤害。官方只提供终场总量，不能据此量化赛中每一类错误漏了多少点。</p>
+      <h3>声画关联：有字幕，未必有对应亮框</h3><p>钟意被集火和大帅盾山合体的重点字幕已呈现，但对应话语期间没有亮起目标选手窗口，两处各仅得字幕 <strong>1/4</strong>。轩染、长生、一诺的选手与操作关联成立，各得 <strong>3/4</strong>；高亮起止没有同时落在话语边界 ±1 秒内。</p>
+      <p>轩染的相邻高亮记录在视频中连成约 26.8 秒的连续亮框。JSON 虽然分段，画面上并没有针对新重点重新触发。解说事后复盘的操作定位与话语定位可以分别正确，但仍须控制实际亮框的起止。</p>
+      <h3>同步和动态榜：局部帧差与直接跳变</h3><p>16:29 的五路跳秒差约 <strong>0.601 秒</strong>；10:43 的钟意时钟受提示遮挡，无法核对。动态榜的点数更新可用，但条长伸缩、行位置换位直接跳变。部分重点字幕延后数秒，视听呈现可用性得 <strong>2/3</strong>。</p>
       </div>
-      <div data-model-panel="astra">
-      <h3>Astra：十项伤害总量均低估</h3>
-      <p>最大偏差来自一诺的输出，模型估算 <strong>46,988</strong> 点，官方为 <strong>129,600</strong> 点，低估 <strong>63.74%</strong>。模型的终场输出榜将一诺排在第二，官方排在第一。</p>
-      <p>估算脚本对血条读数做平滑，忽略低于血条长度 2.5% 的净掉血，并用距离等线索分配伤害。持续小额命中、同期回血和远程攻击都可能被漏计。这里的官方参考提供终场总量，赛中数值由模型估算。</p>
-      <h3>Astra：条长与名次直接跳变</h3>
-      <p>条形长度和行位置均直接切换，动态排行榜流畅度得 <strong>1/3</strong>。布局避让 <strong>4/4</strong>，音轨与可读性 <strong>3/3</strong>。</p>
-      </div>
-      <div data-model-panel="sol62">
-      <h3>Sol：用样本小计替代全场累计</h3>
-      <p>只记录 19 条伤害事件，输出和承伤均未达到全场覆盖。长生的输出小计为 <strong>5,797</strong> 点，官显终值为 <strong>66,000</strong> 点；其余选手也只有零散样本或未收录。样本占比不能满足全场队内占比要求，终场输出与承伤均得 <strong>0/40</strong>。</p>
-      <h3>Sol：时间轴末点超出原片时长</h3>
-      <p>末条时间为 <code>1023.623</code> 秒，原片基准为 <code>1023.622563</code> 秒，超出 <code>0.000437</code> 秒，未通过严格边界检查。即使单独将声明的小计与官显终值比较，也没有任何单项进入 30% 以内的得分区间。</p>
-      <h3>Sol：名次换位仍直接跳变</h3>
-      <p>条形长度已有过渡，但行位置仍直接跳变，动态排行榜流畅度得 <strong>2/3</strong>。布局避让 <strong>4/4</strong>，音轨与可读性 <strong>3/3</strong>。</p>
-      </div>
+
     </section>
     <footer><a href="../">← 返回案例汇总</a><a href="#main">回到顶部 ↑</a></footer>
   </main>

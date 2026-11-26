@@ -1,0 +1,37 @@
+{
+  "points": 7,
+  "maximum": 10,
+  "checks": [
+    {
+      "phase": "开局",
+      "match_clock": "00:14",
+      "max_offset_s": 0.233567,
+      "points": 2
+    },
+    {
+      "phase": "前期河道交战",
+      "match_clock": "02:00",
+      "max_offset_s": 0.133467,
+      "points": 2
+    },
+    {
+      "phase": "中期龙区团战",
+      "match_clock": "10:43",
+      "max_offset_s": null,
+      "points": 0
+    },
+    {
+      "phase": "后期龙区团战",
+      "match_clock": "16:29",
+      "max_offset_s": 0.6006,
+      "points": 1
+    },
+    {
+      "phase": "推水晶前",
+      "match_clock": "16:55",
+      "max_offset_s": 0.133467,
+      "points": 2
+    }
+  ],
+  "note": "读数按实际成片首次可辨认的跳秒帧记录。10:43 的钟意时钟被击杀提示遮挡，无法可靠确定跳秒帧，按不可核对规则得 0 分。16:29 的时差超过 0.5 秒。"
+}

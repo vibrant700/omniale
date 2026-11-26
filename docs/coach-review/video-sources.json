@@ -1,0 +1,119 @@
+{
+  "source": "https://www.bilibili.com/video/BV1kwHp6dEkR/",
+  "tracks": [
+    {
+      "file": "xuanran.mp4",
+      "part": 1,
+      "cid": 42477226265,
+      "requested_cut_s": 1023.5,
+      "duration_s": 1023.622563,
+      "sha256": "a891b1e2fe2f24fbc8a1d3bdacdfb5f88424e7f43736b762bb85fe2c9332073f",
+      "bytes": 120435310,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 852,
+        "height": 480
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "url": "https://www.bilibili.com/video/BV1kwHp6dEkR/?p=1"
+    },
+    {
+      "file": "zhongyi.mp4",
+      "part": 4,
+      "cid": 42482664264,
+      "requested_cut_s": 1021.867,
+      "duration_s": 1021.987375,
+      "sha256": "b3b9010364c497082030aa9c74ea8553cd202423061509ca71a7a09bca5a5903",
+      "bytes": 120608543,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 852,
+        "height": 480
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "url": "https://www.bilibili.com/video/BV1kwHp6dEkR/?p=4"
+    },
+    {
+      "file": "changsheng.mp4",
+      "part": 7,
+      "cid": 42482796678,
+      "requested_cut_s": 1023.467,
+      "duration_s": 1023.589,
+      "sha256": "5e28fae30e10c4e227324bce34662c2632ce1ca479deb7a27ebc3d51c81d9466",
+      "bytes": 121049253,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 852,
+        "height": 480
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "url": "https://www.bilibili.com/video/BV1kwHp6dEkR/?p=7"
+    },
+    {
+      "file": "yinuo.mp4",
+      "part": 10,
+      "cid": 42487382145,
+      "requested_cut_s": 1023.7,
+      "duration_s": 1023.822688,
+      "sha256": "a629e7817eddbbaca742738dc7a20955e836a2d8728abfa2ef622e80e92759d7",
+      "bytes": 121052014,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 852,
+        "height": 480
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "url": "https://www.bilibili.com/video/BV1kwHp6dEkR/?p=10"
+    },
+    {
+      "file": "dashuai.mp4",
+      "part": 13,
+      "cid": 42488693155,
+      "requested_cut_s": 1019.367,
+      "duration_s": 1019.46825,
+      "sha256": "1ba8cbd64df8425f0d639e05986da212d610bc40f14b0ac6e13446b66c6f7e54",
+      "bytes": 121258104,
+      "video": {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 852,
+        "height": 480
+      },
+      "audio": {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      },
+      "url": "https://www.bilibili.com/video/BV1kwHp6dEkR/?p=13"
+    }
+  ],
+  "task_version": "v2-av",
+  "commentary": {
+    "source_start_s": 802.0,
+    "duration_s": 1023.622563,
+    "codec": "AAC stream copy",
+    "file": "commentary.m4a",
+    "bytes": 41179446,
+    "sha256": "884d811c757586cc05dfe3c9ae3f33bb107332cabfcd6bb31bcdb02f0725f3a4",
+    "source_url": "https://www.bilibili.com/video/BV1tyH76XEgz/?p=1",
+    "cid": 42460709754,
+    "official_video_supplied_to_candidate": false,
+    "download_url": "https://vibrant700.github.io/omniale/coach-review/media/commentary.m4a",
+    "cut_note": "Official broadcast P1 playback seconds 802.000 to 1825.622563; AAC stream copy. Five source-clock comparisons confirm the matching game. Model must verify synchronization."
+  }
+}

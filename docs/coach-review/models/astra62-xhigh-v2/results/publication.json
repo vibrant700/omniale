@@ -1,0 +1,49 @@
+{
+  "original_submission": {
+    "width": 1920,
+    "height": 1080,
+    "duration_s": 1023.643,
+    "sha256": "dc1b7f541fc54d45ce96eaf5d2e56a456c547425f33578ccc92fc9d246384b6d"
+  },
+  "web_preview": {
+    "width": 1280,
+    "height": 720,
+    "duration_s": 1023.642667,
+    "bytes": 89941224,
+    "sha256": "3fbc9fc018d7396961b28e172767cca166a03e00d4619267aff7401007db4366",
+    "audio": "Supplied official commentary, AAC 96 kbps transcode",
+    "video": "H.264, CRF 30, maxrate 600 kbps, full duration"
+  },
+  "audio_validation": {
+    "method": "Sequentially decode original input and web preview, then compare five windows at identical playback times; no input-side fast seek.",
+    "observations": [
+      {
+        "start_s": 20,
+        "window_s": 5,
+        "same_pts_waveform_correlation": 0.9788694566675618
+      },
+      {
+        "start_s": 362,
+        "window_s": 5,
+        "same_pts_waveform_correlation": 0.9902022853510037
+      },
+      {
+        "start_s": 667,
+        "window_s": 5,
+        "same_pts_waveform_correlation": 0.9949233729387363
+      },
+      {
+        "start_s": 824,
+        "window_s": 5,
+        "same_pts_waveform_correlation": 0.9833442829543522
+      },
+      {
+        "start_s": 990,
+        "window_s": 5,
+        "same_pts_waveform_correlation": 0.982212190468796
+      }
+    ]
+  },
+  "original_submission_audio": "Original AAC payload hash equals the supplied commentary, independently checked before publication.",
+  "scoring_uses": "Original sealed 1080p video; preview is a separate artifact."
+}

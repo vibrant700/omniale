@@ -1,1 +1,0 @@
-请完成 candidate/task.md。输入文件在 candidate/，中间文件可存放在 scratch/。

@@ -1,0 +1,14 @@
+{
+  "points": 7,
+  "maximum": 10,
+  "breakdown": {
+    "layout": 4,
+    "motion": 1,
+    "audio_readability": 2
+  },
+  "reasons": {
+    "layout": "五路、双榜与字幕分区清晰，关键 HUD 可读。",
+    "motion": "点数及时刷新；条形伸缩和行换位直接跳变。",
+    "audio_readability": "官播主声道完整，文字清楚；部分重点字幕延后数秒。"
+  }
+}
