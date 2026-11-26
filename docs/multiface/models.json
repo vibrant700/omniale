@@ -674,5 +674,9 @@
       "score_url": "assets/models/astra6-xhigh/score.json"
     }
   ],
-  "scoring_policy": "visual_50_plus_scene_elements_40_plus_sync_10; engineering_reported_separately"
+  "scoring_policy": "visual_50_plus_scene_elements_40_plus_sync_10; engineering_reported_separately",
+  "scoring_policy_id": "multiface-legacy-v1",
+  "scoring_rules_url": "scoring-legacy.html",
+  "current_scoring_rules_url": "scoring.html",
+  "score_scope": "已完成CPU运行的冻结历史成绩，不是现行checklist规则的结果。"
 }
