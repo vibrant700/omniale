@@ -16,7 +16,7 @@
     <p class="lead">根据三个同步参考机位，重建六秒变速拍翼动画，为指定新机位制作有声镜头。声音素材由 agent 自行寻找，三维与声音工程均需可编辑。</p>
     <div class="meta-row"><span class="tag">三机位输入 → 单机位成片</span><span class="tag">6 秒 · 180 帧 · 30 fps</span><span class="tag">Blender ＋ REAPER</span><span class="tag">自主选材 · 多轨交付</span></div>
   </header>
-  <nav class="section-nav" aria-label="章节"><a href="#task">一、任务定义</a><a href="#scoring">二、评分标准</a><a href="#results">三、模型交付与客观结果</a><a href="#execution">四、执行与核验</a><a href="#analysis">五、逐帧分析</a></nav>
+  <nav class="section-nav" aria-label="章节"><a href="#task">一、任务定义</a><a href="#scoring">二、评分标准</a><a href="#results">三、模型交付与评分</a><a href="#execution">四、执行与核验</a><a href="#analysis">五、逐帧分析</a></nav>
 
   <section class="section" id="task">
     <div class="section-heading"><h2><span class="sec-no">01</span>任务定义</h2><a class="heading-link" href="assets/agent-input.zip" download>实验原始输入 · <!--PACKAGE_SIZE--> ↓</a></div>
@@ -70,7 +70,7 @@
     <details><summary>音效设计与同步 · 20 分</summary><div class="detail-body">
       <p>实际听看完整有声成片，使用无损混音、分轨与工程定位证据。同步与动态依据提交画面的实际动作判断，不重复扣除视觉重建误差。每项满足得 2 分，不满足得 0 分。</p>
       <div class="table-wrap"><table><thead><tr><th>检查项</th><th>判定机理</th><th>满分</th></tr></thead><tbody><!--AUDIO_CHECKLIST--></tbody></table></div>
-      <p>每项保留音画时间依据；波形与频谱用于辅助定位。自动同步判断须通过时间平移和节奏对照检查；无法可靠判断的项目由人工听看裁定。不使用参考音轨波形匹配，也不规定运动速度到声音参数的唯一函数。</p>
+      <p>每项保留音画时间依据；波形与频谱用于辅助定位。时间平移与节奏对照可用于检查自动评审的同步判断能力。不使用参考音轨波形匹配，也不规定运动速度到声音参数的唯一函数。本次声音评分采用委托方指定的模型评审报告，校准与人工复核情况在结果区单独说明。</p>
     </div></details>
     <details><summary>工程与来源核验 · 独立验收</summary><div class="detail-body"><p>独立重开三维与声音工程，检查资源解析、骨骼与蒙皮、素材片段和处理设置；核对成片规格、素材来源及许可；将工程移至独立目录重新输出，检查分轨求和与完整混音的一致性。声音类别、轨道数量与工程命名由制作方决定。</p></div></details>
     <p class="note media-note">阈值与线性换算用于本案例的诊断评分，未作专家质量分界校准；十帧抽样不覆盖全部帧间瑕疵。当前计分权重为 30／30／20／20，视觉测量定义保持一致。</p>
@@ -78,9 +78,9 @@
   </section>
 
   <section class="section" id="results">
-    <div class="section-heading"><h2><span class="sec-no">03</span>模型交付与客观结果</h2></div>
-    <p class="result-scope">本页结果报告三项客观指标及工程核验，客观小计满分 80。音效评价规则列于上方评分标准。</p>
-    <div class="table-wrap leaderboard-wrap" tabindex="0" role="region" aria-label="模型客观指标表，可横向滚动"><table class="leaderboard"><caption>实际完成的模型实验</caption><thead><tr><th>模型</th><th>推理强度</th><th>框架</th><th>二维覆盖度 / 30</th><th>三维 F1 / 30</th><th>外观 / 20</th><th>客观小计 / 80</th></tr></thead><tbody><!--MODEL_ROWS--></tbody></table></div>
+    <div class="section-heading"><h2><span class="sec-no">03</span>模型交付与评分</h2></div>
+    <p class="result-scope">三项客观指标由固定脚本计算；音效按委托方提供并指定采用的 Gemini 4 Neon 报告计分，十项判定各占 2 分。声音报告未执行同步对照校准，未经人工复核。</p>
+    <div class="table-wrap leaderboard-wrap" tabindex="0" role="region" aria-label="模型评分表，可横向滚动"><table class="leaderboard"><caption>实际完成的模型实验</caption><thead><tr><th>模型</th><th>推理强度</th><th>框架</th><th>二维覆盖度 / 30</th><th>三维 F1 / 30</th><th>外观 / 20</th><th>音效 / 20</th><th>合计 / 100</th></tr></thead><tbody><!--MODEL_ROWS--></tbody></table></div>
     <div class="model-control"><label for="model-select">查看模型交付</label><select id="model-select"><!--MODEL_OPTIONS--></select><span class="note">成片、工程、评分 JSON 与逐帧对照随模型切换。</span></div>
     <!--MODEL_PANELS-->
   </section>

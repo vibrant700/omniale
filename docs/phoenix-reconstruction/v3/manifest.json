@@ -73,8 +73,8 @@
     },
     {
       "file": "assets/SCORING.md",
-      "bytes": 5264,
-      "sha256": "fb1e3429a3294b6887df842247f2d56113222fb2f5598c9b47d17f5cba71e081"
+      "bytes": 5339,
+      "sha256": "8547267467ae75c0f53380fa7e0c82c7cbebed6ef86eddcbc180ac0dc09e87c7"
     },
     {
       "file": "assets/TASK.md",
@@ -93,13 +93,13 @@
     },
     {
       "file": "index.html",
-      "bytes": 24323,
-      "sha256": "1ef434f0837660f1c09fb517cdb5cce059aedea2a29b661e0ee64e97373d5269"
+      "bytes": 27966,
+      "sha256": "f5a37b68194b6408f3a738b7d1a54c7eac4168381ddb3a8d4babbbfd71831231"
     },
     {
       "file": "models.json",
-      "bytes": 217,
-      "sha256": "b07c0c1685566f5456066e7f6c78599d0beee5a7692f0bc61dc6f4d4b8c03614"
+      "bytes": 232,
+      "sha256": "0feee9096f1ea19bb3aebe53601286aa9630b54691b3aab1f603e2429a9eb13c"
     },
     {
       "file": "results/astra62-xhigh/comparison/comparison-sheet.jpg",
@@ -217,6 +217,21 @@
       "sha256": "5ee274fb4cd6454aa7be6f0771ea1981155223d949f3aea4bc40deebf11ea5d8"
     },
     {
+      "file": "results/astra62-xhigh/gemini-neon-audio/audio-review-original.json",
+      "bytes": 6473,
+      "sha256": "a52c163fc834ebee86ab68bdadbd60fb37e2e0e9330e4cd1a4a443a023f85921"
+    },
+    {
+      "file": "results/astra62-xhigh/gemini-neon-audio/audio-score.json",
+      "bytes": 6570,
+      "sha256": "6450d7a5aa1546b6b89b47609c5688d99922ed53143ea6994370deb5343d9efd"
+    },
+    {
+      "file": "results/astra62-xhigh/gemini-neon-audio/prompt.md",
+      "bytes": 3372,
+      "sha256": "0a942e9232b8fc44b5a68a1622bc2d0ccf67dc8a7c5527e1d7d2128a8161af8d"
+    },
+    {
       "file": "results/astra62-xhigh/geometry_metrics.json",
       "bytes": 20050,
       "sha256": "feea26b8aaa56433deb1e34743b849706beb37ead850f0ede581a3519994b871"
@@ -268,8 +283,8 @@
     },
     {
       "file": "results/astra62-xhigh/score.json",
-      "bytes": 2729,
-      "sha256": "4fc64a026aff6631a6b271f31765fc133fbf90886d2b6068a39c14c982419c47"
+      "bytes": 3240,
+      "sha256": "b6fec6d35f9c32d2d3a371e10f6ad261ee31866af0cc1909c05e0d72d4aeded3"
     },
     {
       "file": "results/astra62-xhigh/T1.mp4",

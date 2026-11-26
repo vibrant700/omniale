@@ -1,11 +1,15 @@
 """Verify public-file boundaries, media playback, model controls and mobile layout."""
 import argparse
+import atexit
+from functools import partial
 import hashlib
 from html.parser import HTMLParser
+from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 import json
 from pathlib import Path
 import re
 import sys
+import threading
 from urllib.parse import unquote,urlsplit
 import zipfile
 
@@ -26,7 +30,15 @@ def main():
     p.add_argument('--output',required=True,type=Path)
     p.add_argument('--playwright-runtime',type=Path)
     p.add_argument('--browser',required=True,type=Path)
+    p.add_argument('--serve',action='store_true',help='Serve this checkout on an automatically selected local port')
     args=p.parse_args();args.output.mkdir(parents=True,exist_ok=True)
+    if args.serve:
+        class QuietHandler(SimpleHTTPRequestHandler):
+            def log_message(self,*args):pass
+        server=ThreadingHTTPServer(('127.0.0.1',0),partial(QuietHandler,directory=str(args.repo/'docs')))
+        threading.Thread(target=server.serve_forever,daemon=True).start()
+        atexit.register(server.server_close);atexit.register(server.shutdown)
+        args.url=f'http://127.0.0.1:{server.server_port}/phoenix-reconstruction/v3/'
     if args.playwright_runtime:sys.path.insert(0,str(args.playwright_runtime))
     from playwright.sync_api import sync_playwright
     site=args.repo/'docs/phoenix-reconstruction/v3';text=(site/'index.html').read_text(encoding='utf-8')
@@ -41,11 +53,19 @@ def main():
         path=site/row['file'];assert path.stat().st_size==row['bytes'] and hashlib.sha256(path.read_bytes()).hexdigest()==row['sha256'],row['file']
     score=json.loads((site/'results/astra62-xhigh/score.json').read_text(encoding='utf-8'))
     assert score['task_weights']=={'view_coverage':30,'geometry':30,'appearance':20,'audio':20}
-    assert score['result_scope']=='objective_metrics_and_engineering'
-    assert set(score['scores'])=={'view_coverage','geometry','appearance','non_audio_subtotal'}
+    assert score['result_scope']=='objective_metrics_and_user_supplied_audio_review'
+    assert set(score['scores'])=={'view_coverage','geometry','appearance','non_audio_subtotal','audio','full_total_100'}
     assert round(score['scores']['non_audio_subtotal'],2)==25.25
-    assert not any(s in text for s in ['39.25','初评','待定','二次重测','尚未运行模型实验'])
-    assert not list(site.rglob('*audio-score*')) and not list(site.rglob('*.glb'))
+    assert score['scores']['audio']==14 and round(score['scores']['full_total_100'],2)==39.25
+    assert sum(score['scores'][k] for k in ['view_coverage','geometry','appearance','audio'])==score['scores']['full_total_100']
+    audio_dir=site/'results/astra62-xhigh/gemini-neon-audio'
+    audio=json.loads((audio_dir/'audio-score.json').read_text(encoding='utf-8'))
+    original=json.loads((audio_dir/'audio-review-original.json').read_text(encoding='utf-8'))
+    assert original['total']==7 and audio['total']==sum(x['score'] for x in audio['items'])==14
+    assert hashlib.sha256((audio_dir/'audio-review-original.json').read_bytes()).hexdigest()==audio['original_report_sha256']
+    assert audio['human_review_confirmed'] is False and audio['calibration_check']['controls_run'] is False
+    assert not any(s in text for s in ['初评','待定','二次重测','尚未运行模型实验'])
+    assert not list(site.rglob('*.glb'))
     for path in site.rglob('*'):
         if path.suffix.lower() in ['.json','.md','.html','.js','.css','.txt']:
             body=path.read_text(encoding='utf-8',errors='replace')
@@ -71,7 +91,7 @@ def main():
         assert page.locator('#task-context li').count()==6
         assert page.evaluate("document.querySelector('#task-context').previousElementSibling.matches('details')")
         assert page.locator('#task-context li').nth(5).inner_text().startswith('针对本题目标机位的重建，三个参考机位的覆盖是充分的')
-        assert page.locator('.leaderboard tbody tr td').all_text_contents()==['xhigh','Codex','15.75','7.95','1.55','25.25']
+        assert page.locator('.leaderboard tbody tr td').all_text_contents()==['xhigh','Codex','15.75','7.95','1.55','14.00','39.25']
         assert page.locator('#model-select option').count()==1
         page.select_option('#model-select','astra62-xhigh')
         assert page.locator('[data-model-panel]:visible').count()==3
@@ -84,7 +104,9 @@ def main():
         assert page.locator('[data-frame="0"]').get_attribute('aria-pressed')=='true'
         page.locator('[data-frame-link]').click();assert page.locator('dialog').is_visible()
         page.keyboard.press('Escape');assert not page.locator('dialog').is_visible()
-        assert page.locator('.result-downloads a[download]').count()==4
+        assert page.locator('.result-downloads a[download]').count()==6
+        assert page.locator('#results').get_by_text('音效逐项评分 · 14 / 20',exact=True).count()==1
+        assert page.locator('.result-scope').inner_text().endswith('声音报告未执行同步对照校准，未经人工复核。')
         for index in range(page.locator('video,audio').count()):
             state=page.evaluate('''async index => {
               const m=document.querySelectorAll('video,audio')[index];m.muted=true;m.load();

@@ -5,6 +5,6 @@
     "model": "gpt-6.2-astra",
     "effort": "xhigh",
     "framework": "Codex",
-    "public_result_scope": "objective_metrics_and_engineering"
+    "public_result_scope": "objective_metrics_and_user_supplied_audio_review"
   }
 ]

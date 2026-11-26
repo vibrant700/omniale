@@ -6,7 +6,10 @@
     "effort": "xhigh",
     "framework": "Codex",
     "run": "astra62-xhigh-codex-gpu01",
-    "public_result_scope": "objective_metrics_and_engineering",
+    "public_result_scope": "objective_metrics_and_user_supplied_audio_review",
+    "audio_review_dir": "evaluation/gemini-neon-audio/final-review",
+    "audio_original_maximum": 10,
+    "audio_score_adopted": true,
     "audio_project": "Foley/Phoenix.rpp",
     "mix": "Prints/Phoenix_Full.wav",
     "stems": [

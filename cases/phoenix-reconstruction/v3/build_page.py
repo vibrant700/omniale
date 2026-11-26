@@ -61,7 +61,7 @@ def main():
     mechanisms=mechanisms.replace('；证据不足记“无法判定”，不是 0 分，也不计为有效总分，须补充有效媒体或人工复核后裁定','；证据不足时补充有效媒体或人工听看裁定')
     mechanisms=mechanisms.replace('对按旧版每项 0／1 分提交的原始评审，保留原文件，以原判定乘 2 生成单独的权重换算记录，不声称重新评审。','')
     scoring='# 凤凰 V3 评分机制\n\n二维覆盖度 30、三维几何 F1 30、成片外观 20、音效 20，总分 100。\n\n'+mechanisms
-    scoring+='\n每项音效判断保留音画时间依据。自动同步判断须通过时间平移和节奏对照检查；不能可靠判断时由人工听看裁定。工程编辑、资源解析、混音重构与素材来源独立验收，不另加分。\n'
+    scoring+='\n每项音效判断保留音画时间依据。时间平移与节奏对照可用于检查自动同步判断能力。本次按委托方指定采用的模型报告计分，原始报告中的校准与人工复核标记如实保留。工程编辑、资源解析、混音重构与素材来源独立验收，不另加分。\n'
     (assets/'SCORING.md').write_text(scoring,encoding='utf-8')
     checklist=[]
     for line in source.splitlines():
@@ -71,7 +71,7 @@ def main():
     assert len(checklist)==10
     rows=[];options=[];panels=[];execution=[];analysis=[]
     for index,model in enumerate(models):
-        assert model['public_result_scope']=='objective_metrics_and_engineering'
+        assert model['public_result_scope']=='objective_metrics_and_user_supplied_audio_review' and model['audio_score_adopted']
         ident=model['id'];label=model['label'];run=case/'runs'/model['run'];evaluation=run/'evaluation';delivery=run/'remote-delivery'
         record=read(run/'run_record.json');rawscore=read(evaluation/'score.json');manifest=read(run/'delivery-manifest.json')['files']
         verify=read(evaluation/'final-verification.json');audit=read(evaluation/'reaper-engineering-audit.json')
@@ -89,9 +89,32 @@ def main():
         for name in ['geometry_metrics.json','image_metrics.json']:shutil.copyfile(evaluation/name,dest/name)
         raw=rawscore['raw'];scores={k:rawscore['scores'][k] for k in ['view_coverage','geometry','appearance','non_audio_subtotal']}
         assert abs(sum(scores[k] for k in ['view_coverage','geometry','appearance'])-scores['non_audio_subtotal'])<1e-10
+        review_dir=run/model['audio_review_dir'];audio_report=read(review_dir/'audio-score.json')
+        assert audio_report['status']=='scored' and len(audio_report['items'])==10
+        assert {x['id'] for x in audio_report['items']}=={f'A{k}' for k in range(1,11)}
+        assert audio_report['total']==sum(x['score'] for x in audio_report['items'])
+        assert audio_report['media_access']['media_sha256']['T1.mp4']==sha(delivery/'T1.mp4')
+        for name,item in read(review_dir/'media-manifest.json')['files'].items():
+            p=review_dir/name if name in ['prompt.md','audio-score.json'] else delivery/name
+            assert p.is_file() and p.stat().st_size==item['bytes'] and sha(p)==item['sha256'],name
+        factor=WEIGHTS['audio']/model['audio_original_maximum']
+        audio_items=[{**x,'original_score':x['score'],'score':x['score']*factor,'maximum':2} for x in audio_report['items']]
+        assert all(x['score'] in [0,2] for x in audio_items)
+        scores['audio']=audio_report['total']*factor;scores['full_total_100']=scores['non_audio_subtotal']+scores['audio']
+        review_public=dest/'gemini-neon-audio';review_public.mkdir(exist_ok=True)
+        shutil.copyfile(review_dir/'audio-score.json',review_public/'audio-review-original.json')
+        shutil.copyfile(review_dir/'prompt.md',review_public/'prompt.md')
+        weighted_review={'review_type':'user_supplied_model_review_weighted','requested_model':audio_report['requested_model'],'reviewer_identity':audio_report['reviewer_identity'],
+                         'adopted_for_page_at_user_request':True,'original_report':'audio-review-original.json','original_report_sha256':sha(review_dir/'audio-score.json'),
+                         'prompt_sha256':sha(review_dir/'prompt.md'),'original_total':audio_report['total'],'original_maximum':model['audio_original_maximum'],
+                         'total':scores['audio'],'maximum':20,'items':audio_items,'human_review_confirmed':audio_report['human_review_confirmed'],
+                         'calibration_check':audio_report['calibration_check'],'raw_execution_trace_provided':False}
+        write(review_public/'audio-score.json',weighted_review)
         public_score={'task_version':'phoenix-multiview-v3','model':model['model'],'effort':model['effort'],'framework':model['framework'],
-                      'result_scope':'objective_metrics_and_engineering','scoring_revision':protocol['revision'],'scores':scores,
-                      'maxima':{'view_coverage':30,'geometry':30,'appearance':20,'non_audio_subtotal':80},'task_weights':WEIGHTS,'frames':FRAMES,'raw':raw,
+                      'result_scope':model['public_result_scope'],'scoring_revision':protocol['revision'],'scores':scores,
+                      'maxima':{'view_coverage':30,'geometry':30,'appearance':20,'audio':20,'non_audio_subtotal':80,'full_total_100':100},'task_weights':WEIGHTS,'frames':FRAMES,'raw':raw,
+                      'audio_review':{'source':'User-supplied Gemini 4 Neon report, adopted at user request','original_report_sha256':sha(review_dir/'audio-score.json'),
+                                      'weighted_report':'gemini-neon-audio/audio-score.json','human_review_confirmed':False,'calibration_controls_run':False,'raw_execution_trace_provided':False},
                       'protocol_sha256':sha(assets/'protocol.json'),'submission_files_sha256':{n:v['sha256'] for n,v in manifest.items()}}
         write(dest/'score.json',public_score)
         engineering=read(evaluation/'engineering.json')
@@ -121,19 +144,21 @@ def main():
         shutil.copyfile(evaluation/'comparison-overview.jpg',comparison/'comparison-sheet.jpg')
         base=f'results/{ident}';hidden='' if index==0 else ' hidden'
         options.append(f'<option value="{esc(ident)}">{esc(label)} · {esc(model["effort"])} · {esc(model["framework"])}</option>')
-        rows.append(f'<tr data-result-model="{esc(ident)}"><th scope="row"><a href="#model-{esc(ident)}" data-select-model="{esc(ident)}">{esc(label)}</a></th><td>{esc(model["effort"])}</td><td>{esc(model["framework"])}</td><td>{scores["view_coverage"]:.2f}</td><td>{scores["geometry"]:.2f}</td><td>{scores["appearance"]:.2f}</td><td><strong class="score-value">{scores["non_audio_subtotal"]:.2f}</strong></td></tr>')
+        rows.append(f'<tr data-result-model="{esc(ident)}"><th scope="row"><a href="#model-{esc(ident)}" data-select-model="{esc(ident)}">{esc(label)}</a></th><td>{esc(model["effort"])}</td><td>{esc(model["framework"])}</td><td>{scores["view_coverage"]:.2f}</td><td>{scores["geometry"]:.2f}</td><td>{scores["appearance"]:.2f}</td><td>{scores["audio"]:.2f}</td><td><strong class="score-value">{scores["full_total_100"]:.2f}</strong></td></tr>')
         audio_players=''.join(f'<figure><figcaption><strong>{esc(title)}</strong><span>{caption}</span></figcaption><audio controls preload="metadata" src="{base}/{esc(name)}" aria-label="{esc(label)} {esc(title)}"></audio></figure>' for name,title,caption in
             [(model['mix'],'完整混音','REAPER 实际导出')]+[(stem['file'],stem['title'],'模型自行设计的声部') for stem in model['stems']])
         downloads=''.join(f'<a href="{base}/{name}" download><strong>{title} ↓</strong><span>{caption}</span></a>' for name,title,caption in [
-            ('score.json','score.json','当前权重下的客观分数与原始指标'),('geometry_metrics.json','geometry_metrics.json','十帧三维 P、R 与表面 F1'),('image_metrics.json','image_metrics.json','40 个轮廓 IoU 与十帧 RGB SSIM'),('engineering.json','engineering.json','工程打开、资源、分轨及迁移重导核验')])
+            ('score.json','score.json','完整分项、合计及评委来源'),('geometry_metrics.json','geometry_metrics.json','十帧三维 P、R 与表面 F1'),('image_metrics.json','image_metrics.json','40 个轮廓 IoU 与十帧 RGB SSIM'),('engineering.json','engineering.json','工程打开、资源、分轨及迁移重导核验'),('gemini-neon-audio/audio-score.json','audio-score.json','十项声音判定与 20 分制换算'),('gemini-neon-audio/audio-review-original.json','audio-review-original.json','委托方提供的原始 Gemini 报告')])
+        audio_rows=''.join(f'<tr><td>{esc(x["id"])} · {esc(x["name"])}</td><td>{x["score"]:g}/2</td><td>{esc(x["reason"])}</td></tr>' for x in audio_items)
         panels.append(f'''<div class="model-panel" data-model-panel="{ident}" id="model-{ident}"{hidden}>
           <div class="model-heading"><h3>{esc(label)} · {esc(model['effort'])} ＋ {esc(model['framework'])}</h3><span>实际交付 · 六秒完整成片</span></div>
           <div class="delivery-layout"><figure><video controls playsinline preload="metadata" poster="{base}/poster.jpg" src="{base}/T1.mp4" aria-label="{esc(label)} 实际交付有声成片"></video><figcaption><strong>T1 · 实际交付</strong><a href="{base}/T1.mp4" download>下载原片 ↓</a></figcaption></figure>
-          <aside class="delivery-summary"><h3>三项客观指标小计</h3><div class="score-display"><strong>{scores['non_audio_subtotal']:.2f}</strong><span>/ 80</span></div><p>四机位轮廓 IoU {raw['mean_IoU']:.4f}<br>三维表面 F1 {raw['mean_F1']:.4f}<br>前景 RGB SSIM {raw['mean_RGB_SSIM']:.4f}</p><p>成片和工程保留模型原始交付；数值由固定脚本测量并独立复算。</p><div class="inline-links"><a href="#{ident}-score-files">评分 JSON ↓</a><a href="{base}/README.md">原始说明 ↗</a></div></aside></div>
+          <aside class="delivery-summary"><h3>客观指标 ＋ 音效模型评审</h3><div class="score-display"><strong>{scores['full_total_100']:.2f}</strong><span>/ 100</span></div><p>二维覆盖度 {scores['view_coverage']:.2f}/30<br>三维几何 F1 {scores['geometry']:.2f}/30<br>成片外观 {scores['appearance']:.2f}/20<br>Gemini 4 Neon 音效 {scores['audio']:g}/20</p><p>客观小计 {scores['non_audio_subtotal']:.2f}/80；声音采用委托方指定的模型评审。原始报告 {audio_report['total']}/10 按当前权重换算。</p><div class="inline-links"><a href="#{ident}-score-files">评分 JSON ↓</a><a href="{base}/README.md">原始说明 ↗</a></div></aside></div>
           <div class="inline-links native-files"><a href="{base}/delivery.zip" download>完整原始交付 · {(dest/'delivery.zip').stat().st_size/1024**2:.1f} MB ↓</a><a href="{base}/scene.blend" download>Blender 工程 ↓</a><a href="{base}/{esc(model['audio_project'])}" download>REAPER 工程 ↓</a></div>
           <p class="note media-note">打开 REAPER 工程需保留完整交付包中的素材相对位置。</p>
           <h3>模型的声音交付</h3><p class="note">以下声部划分来自模型实际工程；题面未指定这些声音类别或轨道名称。</p><div class="audio-grid">{audio_players}</div>
-          <div class="json-downloads result-downloads" id="{ident}-score-files"><h3>本次客观评分与核验 JSON</h3><p>轮廓、三维表面与成片外观的原始逐帧测量，及独立工程核验记录。</p><div class="download-grid">{downloads}</div></div>
+          <details><summary>音效逐项评分 · {scores['audio']:g} / 20</summary><div class="detail-body"><div class="table-wrap"><table><thead><tr><th>项目</th><th>得分</th><th>报告依据</th></tr></thead><tbody>{audio_rows}</tbody></table></div><p class="note">评分来源：委托方提供并指定采用的 Gemini 4 Neon 报告。报告声明观看实际视频，并听取混音、分轨和原始录音；未执行时间平移或节奏对照，未经人工复核，未附原始调用轨迹。原始逐项判定与时间依据保留在下方 JSON。</p><p><a href="{base}/gemini-neon-audio/prompt.md">评审提示词原文 ↗</a></p></div></details>
+          <div class="json-downloads result-downloads" id="{ident}-score-files"><h3>本次评分与核验 JSON</h3><p>客观原始测量、声音逐项判定与权重换算，以及独立工程核验记录。</p><div class="download-grid">{downloads}</div></div>
           </div>''')
         execution.append(f'''<div class="model-panel" data-model-panel="{ident}"{hidden}><p class="model-section-label">{esc(label)} · {esc(model['effort'])} ＋ {esc(model['framework'])}</p>
           <dl class="runtime-list"><div><dt>模型与环境</dt><dd>{esc(model['model'])} · {esc(model['effort'])}；官方 Codex CLI 0.142.4；Blender 4.5.3 LTS、REAPER 7.86、RTX 4090 D 24GB、八核 CPU 亲和性。</dd></div><div><dt>执行规模</dt><dd>{int(record['elapsed_seconds']//60)} 分 {record['elapsed_seconds']%60:.2f} 秒 · {record['tool_calls']} 次工具调用。独立新上下文，无人工制作辅导，未设工具次数与墙钟时限。</dd></div><div><dt>选材条件</dt><dd>允许访问公共互联网寻找录音；输入未提供音效、原始角色、目标机位视频或历史提交。运行中补齐环境说明列出的 SoundFile 依赖，修复记录内部归档。</dd></div><div><dt>核验分工</dt><dd>固定脚本计算客观指标；独立重开工程、检查资源和动画姿态，复制 REAPER 工程至新目录重导混音，再逐样本比较。</dd></div></dl>
@@ -160,7 +185,7 @@ def main():
     card=re.sub(r'href="phoenix-reconstruction[^\"]*"','href="phoenix-reconstruction/v3/"',card,count=1)
     card=re.sub(r'src="phoenix-reconstruction[^\"]*"','src="phoenix-reconstruction/v3/assets/reference/I1-poster.jpg"',card,count=1)
     card=re.sub(r'<p>.*?</p>','<p>根据三路同步录像重建六秒凤凰动画，自行寻找声音素材，使用 REAPER 完成拟音与混音，交付可编辑工程和分轨。</p>',card,count=1,flags=re.S)
-    card=re.sub(r'<div class="status">.*?</div>','<div class="status"><span class="status-dot"></span>V3 · Astra 6.2 xhigh ＋ Codex · 客观指标 25.25 / 80</div>',card,count=1,flags=re.S)
+    card=re.sub(r'<div class="status">.*?</div>','<div class="status"><span class="status-dot"></span>V3 · Astra 6.2 xhigh ＋ Codex · 39.25 / 100 · 含模型音效评审</div>',card,count=1,flags=re.S)
     card=re.sub(r'<span class="enter">.*?</span>','<span class="enter">查看题目、成片、声音工程与客观核验 →</span>',card,count=1,flags=re.S)
     catalog.write_text(text[:match.start()]+card+text[match.end():],encoding='utf-8')
     for p in [repo/'cases/phoenix-reconstruction/index.html',repo/'docs/phoenix-reconstruction/index.html']:
@@ -169,6 +194,6 @@ def main():
         p.write_text(text,encoding='utf-8')
     parent=site.parent
     write(parent/'manifest.json',{'case':'phoenix-reconstruction','files':[{'file':p.relative_to(parent).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(parent.rglob('*')) if p.is_file() and p.name!='manifest.json']})
-    print(json.dumps({'page':str(site/'index.html'),'models':len(models),'input_files':len(INPUTS),'public_result_scope':'objective_metrics_and_engineering','audio_judge_reports_published':False},ensure_ascii=True))
+    print(json.dumps({'page':str(site/'index.html'),'models':len(models),'input_files':len(INPUTS),'public_result_scope':'objective_metrics_and_user_supplied_audio_review','audio_judge_reports_published':True},ensure_ascii=True))
 
 if __name__=='__main__':main()

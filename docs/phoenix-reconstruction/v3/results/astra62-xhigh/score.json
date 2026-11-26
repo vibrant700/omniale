@@ -3,19 +3,23 @@
   "model": "gpt-6.2-astra",
   "effort": "xhigh",
   "framework": "Codex",
-  "result_scope": "objective_metrics_and_engineering",
+  "result_scope": "objective_metrics_and_user_supplied_audio_review",
   "scoring_revision": "phoenix-v3-iou30-f130-ssim20-audio20-r1",
   "scores": {
     "view_coverage": 15.750582420749389,
     "geometry": 7.950242453219939,
     "appearance": 1.5457623898983002,
-    "non_audio_subtotal": 25.246587263867628
+    "non_audio_subtotal": 25.246587263867628,
+    "audio": 14.0,
+    "full_total_100": 39.246587263867625
   },
   "maxima": {
     "view_coverage": 30,
     "geometry": 30,
     "appearance": 20,
-    "non_audio_subtotal": 80
+    "audio": 20,
+    "non_audio_subtotal": 80,
+    "full_total_100": 100
   },
   "task_weights": {
     "view_coverage": 30,
@@ -39,6 +43,14 @@
     "mean_IoU": 0.5250194140249796,
     "mean_F1": 0.265008081773998,
     "mean_RGB_SSIM": 0.07728811949491501
+  },
+  "audio_review": {
+    "source": "User-supplied Gemini 4 Neon report, adopted at user request",
+    "original_report_sha256": "a52c163fc834ebee86ab68bdadbd60fb37e2e0e9330e4cd1a4a443a023f85921",
+    "weighted_report": "gemini-neon-audio/audio-score.json",
+    "human_review_confirmed": false,
+    "calibration_controls_run": false,
+    "raw_execution_trace_provided": false
   },
   "protocol_sha256": "899ace46de854d50ac1ce767ef018e1089d007ddb8fea0c06220d65a6b46c26e",
   "submission_files_sha256": {

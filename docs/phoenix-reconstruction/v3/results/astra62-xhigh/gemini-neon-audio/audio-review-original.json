@@ -1,0 +1,131 @@
+{
+  "status": "scored",
+  "review_stage": "strict_preliminary_model_review",
+  "requested_model": "gemini-4-neon",
+  "reviewer_identity": "Gemini 4 Neon (strict re-audit: T1.mp4 + lossless mix + 4 stems + raw Foley/Media sources)",
+  "human_review_confirmed": false,
+  "calibration_check": {
+    "controls_run": false,
+    "note": "未执行 ±250ms 音频平移对照版或等间隔振翅对照版；按 V3 SCORING.md 要求，本结果为严格标准下的模型初评，正式成绩仍需指定人工复核确认。"
+  },
+  "media_access": {
+    "original_mp4_directly_viewed": true,
+    "final_mix_wav_heard": true,
+    "stems_heard": [
+      "01_Pressure.wav",
+      "02_Primaries.wav",
+      "03_Quills.wav",
+      "04_Slipstream.wav"
+    ],
+    "raw_sources_heard": [
+      "Bat-flapping.wav",
+      "Net.wav",
+      "Miss-1.ogg"
+    ],
+    "media_sha256": {
+      "T1.mp4": "0238166673a51815dde593b71d663fe1c2f3e545fd0fbf724bafa2d02e028c74",
+      "Phoenix_Full.wav": "496dc8e70aae2bd0acfad5aa9f57f8e4625f03f42ef9155e17e86e5937d364b5",
+      "01_Pressure.wav": "70cbf8033b932d805f676eb00009a4562a8d40a9cd7f3256ef97cd7b05eee5bf",
+      "02_Primaries.wav": "3d3f156815929a97840d32c372eb83d335bdcb65d03ab056cad795395de53019",
+      "03_Quills.wav": "a6197e5189b08be68e64ea10c03a4b176a57e80076d1a612d94606a12fb32e70",
+      "04_Slipstream.wav": "e1a813b354af51f3161a5d503df216c54af036357ee214d7a3b3b8499422da99"
+    }
+  },
+  "items": [
+    {
+      "id": "A1",
+      "name": "声音质感",
+      "pass": false,
+      "score": 0,
+      "time_range_s": [0.4, 5.0],
+      "reason": "总混音被粗粝的程序合成宽带风噪主导；外源素材（Bat-flapping、Net、Miss-1）本身偏短闷拍打或挥空声，缺乏真实羽毛空气切割感，导致 3.2–4.8s 加速段呈现明显的“拉风箱/吹气”合成噪声质感，与大型凤凰羽翼的视觉语境贴合度不足。",
+      "evidence": "试听 Phoenix_Full.wav 与原始素材对比可见，全段听感以宽带白噪/带通呼啸为主，加速段尤为明显地表现为机械吹气感而非真实羽翼振翅。"
+    },
+    {
+      "id": "A2",
+      "name": "单次动作同步",
+      "pass": true,
+      "score": 1,
+      "time_range_s": [0.4, 4.9],
+      "reason": "主要振翅声的出现区间与感知重心均落在 T1.mp4 对应下拍阶段，未出现持续可感知的提前或滞后。",
+      "evidence": "0.4–0.9s、1.6–2.1s 两次慢速大拍及 2.65–4.7s 加速下拍的声画位置基本吻合。"
+    },
+    {
+      "id": "A3",
+      "name": "连续节奏跟随",
+      "pass": true,
+      "score": 1,
+      "time_range_s": [0.4, 5.0],
+      "reason": "声音事件间隔跟随画面“慢拍 → 加速连拍 → 停止”的变化，未用固定等间隔替代变速动作，无明显漏拍或多拍。",
+      "evidence": "0.4–2.1s 间隔约 1.2s，2.65–4.7s 连续加密至约 0.4–0.45s，5.0s 前及时停止。"
+    },
+    {
+      "id": "A4",
+      "name": "力度变化",
+      "pass": false,
+      "score": 0,
+      "time_range_s": [3.2, 4.8],
+      "reason": "画面在 3.2–4.8s 扑翼幅度已明显收小，但总混音中高频高密度扫风与高电平底噪叠加，导致该段整体听感响度依然偏满、压迫感强，未能与“大幅重拍 → 小幅轻拍”的动作力度回落形成自然呼应。",
+      "evidence": "对比 0.4–2.1s 与 3.2–4.7s，后段画面幅度显著收窄，但 Phoenix_Full.wav 能量密度未有效收敛，直至 4.8s 以后才突然减弱。"
+    },
+    {
+      "id": "A5",
+      "name": "持续时间变化",
+      "pass": true,
+      "score": 1,
+      "time_range_s": [0.4, 4.9],
+      "reason": "单次扫风与拍击的持续时间随动作提速明显缩短，未用同一固定包络覆盖全片。",
+      "evidence": "01_Pressure 与 02_Primaries 分轨显示 0.4–2.1s 单拍包络较长，3.2–4.7s 明显压缩变短。"
+    },
+    {
+      "id": "A6",
+      "name": "音色变化",
+      "pass": true,
+      "score": 1,
+      "time_range_s": [0.4, 6.0],
+      "reason": "频谱明暗随运动状态存在可辨变化：前段偏低沉厚重，加速段偏中高频明亮，滑翔段转为平稳风声；虽整体受宽带噪声质感拖累，但明暗变化本身客观可辨且时机吻合。",
+      "evidence": "0.4–2.1s 低中频能量占优，2.7–4.7s 高频成分上升，5.0–6.0s 扑翼瞬态退出。"
+    },
+    {
+      "id": "A7",
+      "name": "滑翔处理",
+      "pass": true,
+      "score": 1,
+      "time_range_s": [4.9, 6.0],
+      "reason": "画面进入水平滑翔后，周期性拍翼声准确停止，仅保留滑翔气流声；虽 5.0–6.0s 风声电平略偏粗响，但符合滑翔停止拍翼的核心要求。",
+      "evidence": "01_Pressure、02_Primaries、03_Quills 在 5.0s 前静默，仅 04_Slipstream 延续至 6.0s。"
+    },
+    {
+      "id": "A8",
+      "name": "衔接与首尾",
+      "pass": true,
+      "score": 1,
+      "time_range_s": [0.0, 6.0],
+      "reason": "片头起音、段间拼接及片尾淡出无明显剪辑点击、爆音或硬截断；4.7–5.1s 从密集噪声切回滑翔风声时落差略快，但仍在连贯范围内。",
+      "evidence": "0.0–0.4s 与 5.7–6.0s 起落平滑，全段无明显接缝跳变。"
+    },
+    {
+      "id": "A9",
+      "name": "音频洁净度",
+      "pass": true,
+      "score": 1,
+      "time_range_s": [0.0, 6.0],
+      "reason": "总混音与四条分轨无明显削波失真、数字故障、爆音或外源录音杂音穿帮。",
+      "evidence": "覆盖 0.0–6.0s 完整 Phoenix_Full.wav 及四条分轨，未发现破音或无关环境杂音。"
+    },
+    {
+      "id": "A10",
+      "name": "混音层次",
+      "pass": false,
+      "score": 0,
+      "time_range_s": [2.7, 4.9],
+      "reason": "04_Slipstream 与 01_Pressure 的宽带风噪电平过高，在总混音中持续遮蔽了 02_Primaries 和 03_Quills 的主拍击与羽片细节，导致中后段声音发糊、层次不清。",
+      "evidence": "单听 02_Primaries 与 03_Quills 可辨清晰拍击细节，但在 Phoenix_Full.wav 的 2.7–4.9s 几乎被宽带风噪吞没；5.0–6.0s 滑翔底噪亦偏响。"
+    }
+  ],
+  "total": 7,
+  "confidence": "high",
+  "limitations": [
+    "本次为加听原始外源素材（Foley/Media）后的严格标准复评；仍属模型初评，未执行 ±250ms 音频平移及等间隔节奏负对照校准，正式成绩需指定人工复核确认。"
+  ]
+}
