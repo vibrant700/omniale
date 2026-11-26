@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "scoring_policy_id": "multiface-checklist-v2",
+  "schema_version": 3,
+  "scoring_policy_id": "multiface-checklist-syncnet-v3",
   "models": [
     {
       "id": "astra62-xhigh-gpu-fresh01",
@@ -55,6 +55,12 @@
           "name": "背景",
           "maximum": 10,
           "score": 0.15384615384615385
+        },
+        {
+          "id": "C9",
+          "name": "音画同步",
+          "score": 18.063290746298154,
+          "maximum": 20
         }
       ],
       "runtime": {
@@ -123,7 +129,10 @@
           "detail": "形态键与共享UV外观描述这段表演，口内和眼部主要依赖浅表几何与逐帧观测外观。它们不是可独立驱动的牙齿、眼球或面部骨骼；工程核查独立列示，不参与计分。"
         }
       ],
-      "score_url": "files/score.json"
+      "score_url": "files/score.json",
+      "total": 55.01349679025421,
+      "maximum": 100,
+      "audio_evaluator": "SyncNet v2"
     }
   ]
 }

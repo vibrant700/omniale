@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "policy_id": "multiface-checklist-syncnet-v3",
+  "model": "SyncNet v2",
+  "score": 18.063290746298154,
+  "maximum": 20,
+  "views": {
+    "T1": {
+      "score": 17.882319496661495,
+      "maximum": 20,
+      "reference_zero_lag_distance": 6.152046203613281,
+      "static_zero_lag_distance": 12.36498737335205,
+      "submission_zero_lag_distance": 6.809897422790527,
+      "best_offset_ms": 0,
+      "LSE_D": 6.809897422790527,
+      "LSE_C": 6.587584495544434,
+      "feature_windows": 81,
+      "detection_coverage": 1,
+      "shift_controls_passed": true,
+      "submitted_mp4_sha256": "031e07cdcd4984b6c22f601a81fd8d09595cf8c332e54e2de39e56734029df69"
+    },
+    "T2": {
+      "score": 18.244261995934814,
+      "maximum": 20,
+      "reference_zero_lag_distance": 7.342865467071533,
+      "static_zero_lag_distance": 14.123849868774414,
+      "submission_zero_lag_distance": 7.938147068023682,
+      "best_offset_ms": 0,
+      "LSE_D": 7.938147068023682,
+      "LSE_C": 5.845565319061279,
+      "feature_windows": 81,
+      "detection_coverage": 1,
+      "shift_controls_passed": true,
+      "submitted_mp4_sha256": "1e19f7adfb94ae29cc278fec547e19f1bce3ea37a11f194091c1289bc78ce96d"
+    }
+  },
+  "formula": "每机位得分＝20 × clip((D静止 − D提交)／(D静止 − D原片), 0, 1)，两个机位等权平均。D为同一SyncNet模型的零偏移距离。",
+  "method": "画面按原时间戳从30fps采样到25fps，音轨转16kHz单声道。用原片配原声和静止首帧配原声作归一化参照；原片音轨提前／延后200、400毫秒的控制检查均通过。提交音画不作平移、变速或最佳偏移校正。",
+  "limitations": "这是本案例约定的分数换算，未经专业质量阈值校准，不代表同步正确率。最佳偏移为0只表示40毫秒搜索网格上的整体对齐，不证明每一时刻的唇形均准确。",
+  "measurement_reused": true,
+  "source_measurement_sha256": "8621861288f2d49ed7ad91c3a0746e84d0589b39491a81fb7b1fcf4a44dd7a26",
+  "source_protocol_sha256": "d2ca15e6d889aec9ba0df21039c138f9d1b56b5c56b84daee5f5121ea5919d9b",
+  "implementation_commit": "907c0b579c2e2d83f0eae1b2ac9e720cde4e5623",
+  "weights": [
+    {
+      "name": "sfd_face.pth",
+      "sha256": "d54a87c2b7543b64729c9a25eafd188da15fd3f6e02f0ecec76ae1b30d86c491"
+    },
+    {
+      "name": "syncnet_v2.model",
+      "sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442"
+    }
+  ]
+}

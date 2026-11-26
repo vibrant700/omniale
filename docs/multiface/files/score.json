@@ -1,5 +1,5 @@
 {
-  "policy_id": "multiface-checklist-v2",
+  "policy_id": "multiface-checklist-syncnet-v3",
   "model": "gpt-6.2-astra",
   "reasoning": "xhigh",
   "framework": "Codex",
@@ -52,6 +52,12 @@
       "name": "背景",
       "maximum": 10,
       "score": 0.15384615384615385
+    },
+    {
+      "id": "C9",
+      "name": "音画同步",
+      "score": 18.063290746298154,
+      "maximum": 20
     }
   ],
   "subchecks": {
@@ -1039,12 +1045,21 @@
       "judgments": 8112,
       "excluded_unobservable": 18,
       "excluded_uncertain": 8
+    },
+    "audio": {
+      "model": "SyncNet v2",
+      "method": "zero-lag reference/static normalization",
+      "implementation_commit": "907c0b579c2e2d83f0eae1b2ac9e720cde4e5623"
     }
   },
   "aggregation": {
     "visual": "每个子项、每个机位按通过数／（通过数＋失败数）计分，排除参考不可观察和无法可靠裁定的判断；在可评价机位间等权平均，再乘子项分值。两机位均无有效判断时，不自动给分。",
-    "audio": "评委必须同时听到实际交付音轨并看到视频，按原时间轴、正常速度连续播放两个机位，结合带原声参考定位证据。整体对齐与全程同步稳定按完整机位各给一次通过／失败判断；发音与口型对应、起止与停顿对应按参考预先标出的可辨事件逐个判断。每小项先计算各机位的通过比例，再等权平均可评价机位并乘5分。参考不可观察和无法可靠裁定的事件排除；每项保留机位、时间范围、判决及理由，两机位均无有效判断时不自动给分。",
+    "audio": "每机位得分＝20 × clip((D静止 − D提交)／(D静止 − D原片), 0, 1)，两个机位等权平均。D为同一SyncNet模型的零偏移距离。",
     "total": "九个分项得分直接相加；使用未舍入数值计算，展示保留两位小数。"
   },
-  "engineering_affects_score": false
+  "engineering_affects_score": false,
+  "total": 55.01349679025421,
+  "maximum": 100,
+  "status": "complete",
+  "av_sync_data": "avsync-score.json"
 }

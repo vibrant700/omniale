@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "policy_id": "multiface-checklist-v2",
+  "schema_version": 3,
+  "policy_id": "multiface-checklist-syncnet-v3",
   "maximum": 100,
   "dimensions": [
     {
@@ -283,45 +283,46 @@
       "title": "遮挡与时序",
       "description": "人物与背景的遮挡关系及时间变化对应参考，静态背景无额外漂移或闪烁。",
       "maximum": 2
-    },
-    {
-      "id": "C9.1",
-      "title": "整体对齐",
-      "description": "正常速度听看完整视频，语音与嘴部运动在整体上同步，无持续可感知的声音领先或滞后。",
-      "maximum": 5
-    },
-    {
-      "id": "C9.2",
-      "title": "发音与口型对应",
-      "description": "结合参考中的可辨发音，检查对应时刻的张口、闭口及口型转折是否与实际听到的语音对应。",
-      "maximum": 5
-    },
-    {
-      "id": "C9.3",
-      "title": "起止与停顿对应",
-      "description": "语音开始、结束及可辨停顿与嘴部运动的开始、停止及恢复对应。",
-      "maximum": 5
-    },
-    {
-      "id": "C9.4",
-      "title": "全程同步稳定",
-      "description": "对照开头、中段和结尾连续听看，音画对应关系保持稳定，无逐渐错开或局部跳变。",
-      "maximum": 5
     }
   ],
   "aggregation": {
     "visual": "每个子项、每个机位按通过数／（通过数＋失败数）计分，排除参考不可观察和无法可靠裁定的判断；在可评价机位间等权平均，再乘子项分值。两机位均无有效判断时，不自动给分。",
-    "audio": "评委必须同时听到实际交付音轨并看到视频，按原时间轴、正常速度连续播放两个机位，结合带原声参考定位证据。整体对齐与全程同步稳定按完整机位各给一次通过／失败判断；发音与口型对应、起止与停顿对应按参考预先标出的可辨事件逐个判断。每小项先计算各机位的通过比例，再等权平均可评价机位并乘5分。参考不可观察和无法可靠裁定的事件排除；每项保留机位、时间范围、判决及理由，两机位均无有效判断时不自动给分。",
+    "audio": "每机位得分＝20 × clip((D静止 − D提交)／(D静止 − D原片), 0, 1)，两个机位等权平均。D为同一SyncNet模型的零偏移距离。",
     "total": "九个分项得分直接相加；使用未舍入数值计算，展示保留两位小数。"
   },
   "judge_requirements": {
     "visual": "具备图像理解能力的评委，对照原始参考与提交帧逐帧判断；不将目测声称为精确像素或几何测量。",
-    "audio": "具备音视频听看能力的评委，实际听看参考与交付视频；单独记录评委名称与版本。"
+    "audio": "SyncNet v2预训练音视频匹配模型；零偏移距离计分，控制检查与诊断独立记录。"
   },
-  "objective_metrics_in_score": false,
+  "objective_metrics_in_score": {
+    "visual": false,
+    "av_sync": "SyncNet v2"
+  },
   "engineering_validation": {
     "affects_total_score": false,
     "is_eligibility_gate": false,
     "reporting": "Reported separately in model delivery notes and analysis; original engineering observations remain unchanged."
+  },
+  "av_sync": {
+    "model": "SyncNet v2",
+    "maximum": 20,
+    "formula": "每机位得分＝20 × clip((D静止 − D提交)／(D静止 − D原片), 0, 1)，两个机位等权平均。D为同一SyncNet模型的零偏移距离。",
+    "method": "画面按原时间戳从30fps采样到25fps，音轨转16kHz单声道。用原片配原声和静止首帧配原声作归一化参照；原片音轨提前／延后200、400毫秒的控制检查均通过。提交音画不作平移、变速或最佳偏移校正。",
+    "limitations": "这是本案例约定的分数换算，未经专业质量阈值校准，不代表同步正确率。最佳偏移为0只表示40毫秒搜索网格上的整体对齐，不证明每一时刻的唇形均准确。",
+    "implementation_commit": "907c0b579c2e2d83f0eae1b2ac9e720cde4e5623",
+    "weights": [
+      {
+        "name": "sfd_face.pth",
+        "sha256": "d54a87c2b7543b64729c9a25eafd188da15fd3f6e02f0ecec76ae1b30d86c491"
+      },
+      {
+        "name": "syncnet_v2.model",
+        "sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442"
+      }
+    ],
+    "input_fps": 30,
+    "analysis_fps": 25,
+    "audio_sample_rate": 16000,
+    "offset_resolution_ms": 40
   }
 }
