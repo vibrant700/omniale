@@ -1,0 +1,19 @@
+[
+  {
+    "id": "astra62-xhigh",
+    "label": "Astra 6.2",
+    "model": "gpt-6.2-astra",
+    "effort": "xhigh",
+    "framework": "Codex",
+    "run": "astra62-xhigh-codex-gpu01",
+    "public_result_scope": "objective_metrics_and_engineering",
+    "audio_project": "Foley/Phoenix.rpp",
+    "mix": "Prints/Phoenix_Full.wav",
+    "stems": [
+      {"file":"Prints/01_Pressure.wav","title":"01 · Pressure"},
+      {"file":"Prints/02_Primaries.wav","title":"02 · Primaries"},
+      {"file":"Prints/03_Quills.wav","title":"03 · Quills"},
+      {"file":"Prints/04_Slipstream.wav","title":"04 · Slipstream"}
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "astra62-xhigh",
+    "label": "Astra 6.2",
+    "model": "gpt-6.2-astra",
+    "effort": "xhigh",
+    "framework": "Codex",
+    "public_result_scope": "objective_metrics_and_engineering"
+  }
+]

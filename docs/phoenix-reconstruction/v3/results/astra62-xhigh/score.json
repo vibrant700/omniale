@@ -1,0 +1,63 @@
+{
+  "task_version": "phoenix-multiview-v3",
+  "model": "gpt-6.2-astra",
+  "effort": "xhigh",
+  "framework": "Codex",
+  "result_scope": "objective_metrics_and_engineering",
+  "scoring_revision": "phoenix-v3-iou30-f130-ssim20-audio20-r1",
+  "scores": {
+    "view_coverage": 15.750582420749389,
+    "geometry": 7.950242453219939,
+    "appearance": 1.5457623898983002,
+    "non_audio_subtotal": 25.246587263867628
+  },
+  "maxima": {
+    "view_coverage": 30,
+    "geometry": 30,
+    "appearance": 20,
+    "non_audio_subtotal": 80
+  },
+  "task_weights": {
+    "view_coverage": 30,
+    "geometry": 30,
+    "appearance": 20,
+    "audio": 20
+  },
+  "frames": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    99,
+    119,
+    139,
+    159,
+    179
+  ],
+  "raw": {
+    "mean_IoU": 0.5250194140249796,
+    "mean_F1": 0.265008081773998,
+    "mean_RGB_SSIM": 0.07728811949491501
+  },
+  "protocol_sha256": "899ace46de854d50ac1ce767ef018e1089d007ddb8fea0c06220d65a6b46c26e",
+  "submission_files_sha256": {
+    "scene.blend": "0d489857880bd057b0eeaa2496b0aff67726a15eee8fc63195792c4eccc9d17e",
+    "T1.mp4": "0238166673a51815dde593b71d663fe1c2f3e545fd0fbf724bafa2d02e028c74",
+    "README.md": "ffa42d79c326e04c49341e585744e6e0e28dad3d05f3290688603e22f4fc1d8f",
+    "Foley/Phoenix.rpp": "5ee274fb4cd6454aa7be6f0771ea1981155223d949f3aea4bc40deebf11ea5d8",
+    "Foley/Media/Bat-flapping.wav": "6ad6c5a5949d9c3b0fbc11302bcc322b9abd30300252956c6ff3a086c2e5d190",
+    "Foley/Media/Miss-1.ogg": "93024f27ebd096469256f451c6e21d77b91645d446d1deab86e0dda2ed3bb915",
+    "Foley/Media/Net.wav": "6334355360322e478443c872db3bd1f5a52f93ce514c33f67854213ae2f8d2ec",
+    "Foley/Media/Air displacement 01.wav": "dfbba6735dd103a6d98c8affc9e432225885bd217b3a8422bd509e1967e43f0a",
+    "Foley/Media/Air displacement 02.wav": "fd2e79a2e91151a663344de761395c2fa13b2536f06b659dabbf09b9ea92c0ae",
+    "Foley/Media/Air displacement 03.wav": "1f59cf0400cd0b6241b80d4b14c19ef1960672f4cbd039a19051d8e170ac1d34",
+    "Foley/Media/Laminar flow.wav": "365b512a2e3d1af41c2021d3f92a0e75c095daf7af4d973d71d5b30f1861a1a6",
+    "Foley/Licenses/GPL-2.0.txt": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+    "Prints/Phoenix_Full.wav": "496dc8e70aae2bd0acfad5aa9f57f8e4625f03f42ef9155e17e86e5937d364b5",
+    "Prints/01_Pressure.wav": "70cbf8033b932d805f676eb00009a4562a8d40a9cd7f3256ef97cd7b05eee5bf",
+    "Prints/02_Primaries.wav": "3d3f156815929a97840d32c372eb83d335bdcb65d03ab056cad795395de53019",
+    "Prints/03_Quills.wav": "a6197e5189b08be68e64ea10c03a4b176a57e80076d1a612d94606a12fb32e70",
+    "Prints/04_Slipstream.wav": "e1a813b354af51f3161a5d503df216c54af036357ee214d7a3b3b8499422da99"
+  }
+}

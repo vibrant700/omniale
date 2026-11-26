@@ -1,0 +1,296 @@
+{
+  "frames": {
+    "0": {
+      "I1": {
+        "IoU": 0.5973555928721652,
+        "reference_pixels": 49589,
+        "candidate_pixels": 48388
+      },
+      "I2": {
+        "IoU": 0.471729403838513,
+        "reference_pixels": 45828,
+        "candidate_pixels": 39366
+      },
+      "I3": {
+        "IoU": 0.6749473969999321,
+        "reference_pixels": 48271,
+        "candidate_pixels": 50437
+      },
+      "T1": {
+        "IoU": 0.5484095174107453,
+        "reference_pixels": 32128,
+        "candidate_pixels": 34706,
+        "appearance": {
+          "SSIM": 0.09821481257677078,
+          "pixels": 46182
+        }
+      }
+    },
+    "20": {
+      "I1": {
+        "IoU": 0.5689796453505523,
+        "reference_pixels": 48389,
+        "candidate_pixels": 47347
+      },
+      "I2": {
+        "IoU": 0.4868574218016597,
+        "reference_pixels": 38178,
+        "candidate_pixels": 41015
+      },
+      "I3": {
+        "IoU": 0.513995895434512,
+        "reference_pixels": 46013,
+        "candidate_pixels": 43988
+      },
+      "T1": {
+        "IoU": 0.439911291247658,
+        "reference_pixels": 36621,
+        "candidate_pixels": 38695,
+        "appearance": {
+          "SSIM": 0.06934939324855804,
+          "pixels": 55249
+        }
+      }
+    },
+    "40": {
+      "I1": {
+        "IoU": 0.6240444288319031,
+        "reference_pixels": 49288,
+        "candidate_pixels": 47799
+      },
+      "I2": {
+        "IoU": 0.48263273552137237,
+        "reference_pixels": 44957,
+        "candidate_pixels": 38705
+      },
+      "I3": {
+        "IoU": 0.6473605032822757,
+        "reference_pixels": 46884,
+        "candidate_pixels": 49480
+      },
+      "T1": {
+        "IoU": 0.5596472299104002,
+        "reference_pixels": 32114,
+        "candidate_pixels": 34380,
+        "appearance": {
+          "SSIM": 0.08914212882518768,
+          "pixels": 45589
+        }
+      }
+    },
+    "60": {
+      "I1": {
+        "IoU": 0.6082117585393553,
+        "reference_pixels": 47965,
+        "candidate_pixels": 44081
+      },
+      "I2": {
+        "IoU": 0.5405027932960894,
+        "reference_pixels": 40475,
+        "candidate_pixels": 37838
+      },
+      "I3": {
+        "IoU": 0.5534869810650667,
+        "reference_pixels": 41048,
+        "candidate_pixels": 42062
+      },
+      "T1": {
+        "IoU": 0.5187042359901811,
+        "reference_pixels": 35944,
+        "candidate_pixels": 36442,
+        "appearance": {
+          "SSIM": 0.06931724399328232,
+          "pixels": 50229
+        }
+      }
+    },
+    "80": {
+      "I1": {
+        "IoU": 0.4828898037197677,
+        "reference_pixels": 38281,
+        "candidate_pixels": 42406
+      },
+      "I2": {
+        "IoU": 0.4185546341018864,
+        "reference_pixels": 39604,
+        "candidate_pixels": 38225
+      },
+      "I3": {
+        "IoU": 0.5509580761316872,
+        "reference_pixels": 49329,
+        "candidate_pixels": 47153
+      },
+      "T1": {
+        "IoU": 0.4638109305760709,
+        "reference_pixels": 31460,
+        "candidate_pixels": 33946,
+        "appearance": {
+          "SSIM": 0.06737438589334488,
+          "pixels": 47673
+        }
+      }
+    },
+    "99": {
+      "I1": {
+        "IoU": 0.40576218924648294,
+        "reference_pixels": 29405,
+        "candidate_pixels": 28951
+      },
+      "I2": {
+        "IoU": 0.3397824792075713,
+        "reference_pixels": 31673,
+        "candidate_pixels": 29058
+      },
+      "I3": {
+        "IoU": 0.5181430573362354,
+        "reference_pixels": 52384,
+        "candidate_pixels": 49450
+      },
+      "T1": {
+        "IoU": 0.39862008144632066,
+        "reference_pixels": 25818,
+        "candidate_pixels": 28103,
+        "appearance": {
+          "SSIM": 0.07250363379716873,
+          "pixels": 41393
+        }
+      }
+    },
+    "119": {
+      "I1": {
+        "IoU": 0.5438822991473682,
+        "reference_pixels": 28097,
+        "candidate_pixels": 29303
+      },
+      "I2": {
+        "IoU": 0.44771478712040286,
+        "reference_pixels": 40920,
+        "candidate_pixels": 34975
+      },
+      "I3": {
+        "IoU": 0.5762890153474737,
+        "reference_pixels": 46265,
+        "candidate_pixels": 45144
+      },
+      "T1": {
+        "IoU": 0.4500170881749829,
+        "reference_pixels": 24891,
+        "candidate_pixels": 26022,
+        "appearance": {
+          "SSIM": 0.07290149480104446,
+          "pixels": 37992
+        }
+      }
+    },
+    "139": {
+      "I1": {
+        "IoU": 0.5269192088501509,
+        "reference_pixels": 34741,
+        "candidate_pixels": 33581
+      },
+      "I2": {
+        "IoU": 0.46756408420449663,
+        "reference_pixels": 37465,
+        "candidate_pixels": 34271
+      },
+      "I3": {
+        "IoU": 0.5643761214296106,
+        "reference_pixels": 48651,
+        "candidate_pixels": 48126
+      },
+      "T1": {
+        "IoU": 0.44076873727371624,
+        "reference_pixels": 24324,
+        "candidate_pixels": 27329,
+        "appearance": {
+          "SSIM": 0.0711730495095253,
+          "pixels": 38556
+        }
+      }
+    },
+    "159": {
+      "I1": {
+        "IoU": 0.5991953385127636,
+        "reference_pixels": 29023,
+        "candidate_pixels": 28612
+      },
+      "I2": {
+        "IoU": 0.5394267788392985,
+        "reference_pixels": 40071,
+        "candidate_pixels": 35501
+      },
+      "I3": {
+        "IoU": 0.6172984516817939,
+        "reference_pixels": 45686,
+        "candidate_pixels": 45190
+      },
+      "T1": {
+        "IoU": 0.5278844395684769,
+        "reference_pixels": 24810,
+        "candidate_pixels": 25326,
+        "appearance": {
+          "SSIM": 0.08133099973201752,
+          "pixels": 34924
+        }
+      }
+    },
+    "179": {
+      "I1": {
+        "IoU": 0.5993615544760583,
+        "reference_pixels": 29023,
+        "candidate_pixels": 28594
+      },
+      "I2": {
+        "IoU": 0.5398183225385963,
+        "reference_pixels": 40071,
+        "candidate_pixels": 35531
+      },
+      "I3": {
+        "IoU": 0.6174324660995836,
+        "reference_pixels": 45686,
+        "candidate_pixels": 45204
+      },
+      "T1": {
+        "IoU": 0.5275297845760079,
+        "reference_pixels": 24809,
+        "candidate_pixels": 25323,
+        "appearance": {
+          "SSIM": 0.08157405257225037,
+          "pixels": 34931
+        }
+      }
+    }
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "Pillow": "13.0.0",
+    "scikit-image": "0.25.2"
+  },
+  "video": {
+    "frames": 180,
+    "fps": "30/1",
+    "duration": "6.000000",
+    "audio_streams": 1,
+    "sha256": "0238166673a51815dde593b71d663fe1c2f3e545fd0fbf724bafa2d02e028c74"
+  },
+  "fixed_crop": [
+    279,
+    76,
+    917,
+    666
+  ],
+  "audio_scored": false,
+  "controls": {
+    "identical_reference": {
+      "SSIM": 1.0,
+      "pixels": 46182
+    },
+    "blank_candidate": {
+      "SSIM": 0.24684128165245056,
+      "pixels": 46182
+    },
+    "empty_candidate_IoU": 0
+  },
+  "mean_IoU": 0.5250194140249796,
+  "mean_SSIM": 0.07728811949491501
+}

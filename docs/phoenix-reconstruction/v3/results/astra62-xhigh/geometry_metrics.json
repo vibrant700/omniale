@@ -1,0 +1,655 @@
+{
+  "protocol": "phoenix-variable-flight-v2-iou-f1-rgb-ssim-audio",
+  "reference_diagonal": 6.492710972788047,
+  "primary_tolerance_fraction": 0.005,
+  "frames": {
+    "0": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 39233,
+      "submission_visible_samples": 42063,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.33704,
+          "recall": 0.27716,
+          "f1": 0.30418106935851513
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.5258,
+          "recall": 0.45222,
+          "f1": 0.4862421545571665
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.8332,
+          "recall": 0.7425,
+          "f1": 0.785239576061433
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.98582,
+          "recall": 0.97192,
+          "f1": 0.9788206548366994
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.3054228181537218,
+          "recall": 0.2784135804042515,
+          "f1": 0.29129345326656847
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.48294225328673657,
+          "recall": 0.4505900644865292,
+          "f1": 0.46620556548229275
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.8075505788935644,
+          "recall": 0.7482731374098336,
+          "f1": 0.7767826122634804
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.9831443311223641,
+          "recall": 0.9740014783473097,
+          "f1": 0.9785515492087279
+        }
+      },
+      "mean_visible_reference_to_submission": 0.09441371477807423,
+      "mean_visible_submission_to_reference": 0.08276436608000319,
+      "controls": {
+        "reference_self_max_distance": 2.1230886204648414e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.05
+      }
+    },
+    "20": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 37996,
+      "submission_visible_samples": 37477,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.24472,
+          "recall": 0.20954,
+          "f1": 0.225767748866288
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.47618,
+          "recall": 0.41032,
+          "f1": 0.44080355916525665
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.79988,
+          "recall": 0.66956,
+          "f1": 0.7289411650696864
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.99718,
+          "recall": 0.942,
+          "f1": 0.9688049175424663
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.2339034607892841,
+          "recall": 0.19404674176229078,
+          "f1": 0.2121190932144228
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.4614029938362195,
+          "recall": 0.39169912622381303,
+          "f1": 0.423703435433921
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.7779704885663207,
+          "recall": 0.6561480155805874,
+          "f1": 0.7118850928664407
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.9962376924513702,
+          "recall": 0.9375197389198863,
+          "f1": 0.965987239326962
+        }
+      },
+      "mean_visible_reference_to_submission": 0.11688293608763337,
+      "mean_visible_submission_to_reference": 0.08537098040777032,
+      "controls": {
+        "reference_self_max_distance": 1.7020795439748326e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.062
+      }
+    },
+    "40": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 39320,
+      "submission_visible_samples": 42037,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.34936,
+          "recall": 0.28256,
+          "f1": 0.31242929991138113
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.53486,
+          "recall": 0.45966,
+          "f1": 0.49441689981096404
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.85388,
+          "recall": 0.7641,
+          "f1": 0.8064991013485951
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.98826,
+          "recall": 0.97412,
+          "f1": 0.9811390568595277
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.31705402383614434,
+          "recall": 0.2815361139369278,
+          "f1": 0.2982413245596565
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.4899731189190475,
+          "recall": 0.4550356052899288,
+          "f1": 0.4718585321627558
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.8314342127173681,
+          "recall": 0.7777721261444558,
+          "f1": 0.8037084365847204
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.9869400765991865,
+          "recall": 0.9779501525940997,
+          "f1": 0.9824245488845192
+        }
+      },
+      "mean_visible_reference_to_submission": 0.09126019698494665,
+      "mean_visible_submission_to_reference": 0.0791984106914062,
+      "controls": {
+        "reference_self_max_distance": 1.3514129193481494e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.049
+      }
+    },
+    "60": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 37975,
+      "submission_visible_samples": 37385,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.31738,
+          "recall": 0.2435,
+          "f1": 0.27557420482099554
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.61612,
+          "recall": 0.53154,
+          "f1": 0.5707133206698848
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.88528,
+          "recall": 0.77038,
+          "f1": 0.8238430672964256
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.9992,
+          "recall": 0.94756,
+          "f1": 0.9726950954406296
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.307075030092283,
+          "recall": 0.216036866359447,
+          "f1": 0.2536341753584691
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.5997592617359904,
+          "recall": 0.4943252139565504,
+          "f1": 0.5419620366926433
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.8687174000267487,
+          "recall": 0.7324555628703094,
+          "f1": 0.7947884544097594
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.9989300521599572,
+          "recall": 0.9315865701119157,
+          "f1": 0.9640837176302307
+        }
+      },
+      "mean_visible_reference_to_submission": 0.10830314599216441,
+      "mean_visible_submission_to_reference": 0.06723186764420072,
+      "controls": {
+        "reference_self_max_distance": 2.4769678930169903e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.079
+      }
+    },
+    "80": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 38855,
+      "submission_visible_samples": 40015,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.30374,
+          "recall": 0.2484,
+          "f1": 0.2732966856232115
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.53788,
+          "recall": 0.42838,
+          "f1": 0.4769255363980709
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.7861,
+          "recall": 0.67406,
+          "f1": 0.7257815116151655
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.98406,
+          "recall": 0.94574,
+          "f1": 0.9645195402632397
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.2904410845932775,
+          "recall": 0.25574572127139367,
+          "f1": 0.2719914280923064
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.5163813569911283,
+          "recall": 0.4385021232788573,
+          "f1": 0.4742658683302488
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.7612895164313382,
+          "recall": 0.6964354651910951,
+          "f1": 0.7274198154042305
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.9800824690740972,
+          "recall": 0.9519238193282717,
+          "f1": 0.9657979405327834
+        }
+      },
+      "mean_visible_reference_to_submission": 0.10866882538441185,
+      "mean_visible_submission_to_reference": 0.0887987203925507,
+      "controls": {
+        "reference_self_max_distance": 2.327635826304686e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.08
+      }
+    },
+    "99": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 36474,
+      "submission_visible_samples": 34850,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.15344,
+          "recall": 0.1057,
+          "f1": 0.12517255537547273
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.33244,
+          "recall": 0.23482,
+          "f1": 0.27523026760215774
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.67726,
+          "recall": 0.5383,
+          "f1": 0.5998372075422028
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.99112,
+          "recall": 0.93824,
+          "f1": 0.9639553310942488
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.1102725968436155,
+          "recall": 0.08691122443384329,
+          "f1": 0.09720804020419681
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.2648780487804878,
+          "recall": 0.20178757471075287,
+          "f1": 0.22906807944268628
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.6039885222381636,
+          "recall": 0.5081702034325821,
+          "f1": 0.551951736981792
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.9872596843615495,
+          "recall": 0.9229588199813565,
+          "f1": 0.9540270196544295
+        }
+      },
+      "mean_visible_reference_to_submission": 0.15220546254045508,
+      "mean_visible_submission_to_reference": 0.12216493727938386,
+      "controls": {
+        "reference_self_max_distance": 2.4620757699267415e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.132
+      }
+    },
+    "119": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 37299,
+      "submission_visible_samples": 33302,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.31532,
+          "recall": 0.27324,
+          "f1": 0.2927757129264646
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.55552,
+          "recall": 0.4582,
+          "f1": 0.5021885017559089
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.89178,
+          "recall": 0.80284,
+          "f1": 0.8449760479635552
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 1.0,
+          "recall": 0.99992,
+          "f1": 0.9999599983999361
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.26556963545732987,
+          "recall": 0.24740609667819513,
+          "f1": 0.2561662971120463
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.4769082937961684,
+          "recall": 0.42371109145017294,
+          "f1": 0.44873858368203523
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.8649930935078974,
+          "recall": 0.7875278157591357,
+          "f1": 0.8244447834298902
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 1.0,
+          "recall": 0.9998927585189952,
+          "f1": 0.9999463763841596
+        }
+      },
+      "mean_visible_reference_to_submission": 0.08333259516400034,
+      "mean_visible_submission_to_reference": 0.07400802123919056,
+      "controls": {
+        "reference_self_max_distance": 2.9811633339704713e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.103
+      }
+    },
+    "139": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 36400,
+      "submission_visible_samples": 32914,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.2454,
+          "recall": 0.19466,
+          "f1": 0.21710477662136982
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.53736,
+          "recall": 0.42594,
+          "f1": 0.4752063083151666
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.88542,
+          "recall": 0.78,
+          "f1": 0.8293734913715458
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.99994,
+          "recall": 0.97462,
+          "f1": 0.9871176594279232
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.20514066962386826,
+          "recall": 0.15777472527472527,
+          "f1": 0.17836671162226536
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.47657531749407545,
+          "recall": 0.36678571428571427,
+          "f1": 0.41453425437291935
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.8524336148751291,
+          "recall": 0.7459890109890109,
+          "f1": 0.79566705201098
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 0.9999088533754633,
+          "recall": 0.9701648351648352,
+          "f1": 0.9848123078417759
+        }
+      },
+      "mean_visible_reference_to_submission": 0.10446445622120049,
+      "mean_visible_submission_to_reference": 0.080333288990353,
+      "controls": {
+        "reference_self_max_distance": 9.618177045922494e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.123
+      }
+    },
+    "159": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 36640,
+      "submission_visible_samples": 33252,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.45186,
+          "recall": 0.37304,
+          "f1": 0.4086843360407322
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.69346,
+          "recall": 0.57366,
+          "f1": 0.6278967479007513
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.93598,
+          "recall": 0.8606,
+          "f1": 0.8967086219372363
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.42595934079153136,
+          "recall": 0.3636735807860262,
+          "f1": 0.39235992953643894
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.6336160230963551,
+          "recall": 0.5521015283842795,
+          "f1": 0.5900568382806467
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.9201852520149164,
+          "recall": 0.8506550218340612,
+          "f1": 0.8840551202766308
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "mean_visible_reference_to_submission": 0.06753284947346087,
+      "mean_visible_submission_to_reference": 0.0566776477622614,
+      "controls": {
+        "reference_self_max_distance": 3.040165665879613e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.122
+      }
+    },
+    "179": {
+      "reference_triangles": 60487,
+      "submission_triangles": 46114,
+      "reference_visible_samples": 36707,
+      "submission_visible_samples": 33166,
+      "all_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.45042,
+          "recall": 0.38002,
+          "f1": 0.4122359433553297
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.69558,
+          "recall": 0.57464,
+          "f1": 0.6293525392451701
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.93626,
+          "recall": 0.8619,
+          "f1": 0.8975424812030075
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "input_visible_surface": {
+        "0.005": {
+          "tolerance": 0.03246355486394024,
+          "precision": 0.4295664234456974,
+          "recall": 0.37197264826872256,
+          "f1": 0.3987003647736089
+        },
+        "0.01": {
+          "tolerance": 0.06492710972788047,
+          "precision": 0.638093228004583,
+          "recall": 0.551611409267987,
+          "f1": 0.5917090573856877
+        },
+        "0.02": {
+          "tolerance": 0.12985421945576095,
+          "precision": 0.9210034372550202,
+          "recall": 0.8520990546762198,
+          "f1": 0.8852124023397803
+        },
+        "0.05": {
+          "tolerance": 0.32463554863940236,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "mean_visible_reference_to_submission": 0.06732688444145786,
+      "mean_visible_submission_to_reference": 0.05628061720358301,
+      "controls": {
+        "reference_self_max_distance": 2.831465621966345e-07,
+        "shifted_reference_recall_at_primary_threshold": 0.123
+      }
+    }
+  },
+  "alignment": "Fixed coordinates and time; no registration",
+  "mean_F1": 0.265008081773998,
+  "mean_F1_diagnostic": {
+    "0.005": 0.265008081773998,
+    "0.01": 0.46521022512658367,
+    "0.02": 0.7755915506567704,
+    "0.05": 0.9795630699463589
+  }
+}

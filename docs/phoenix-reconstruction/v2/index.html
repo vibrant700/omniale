@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="凤凰重建案例 V2：从三路同步变速拍翼录像重建可编辑三维角色，制作单一目标机位的六秒有声动画。">
+  <meta name="theme-color" content="#f4f3ee"><link rel="icon" href="data:,">
+  <title>凤凰角色重建 V2 · OmniALE</title><link rel="stylesheet" href="../style.css">
+</head>
+<body><a class="skip" href="#main">跳至正文</a>
+<main id="main" class="case-main">
+  <nav class="site-return" aria-label="返回导航"><a href="../../index.html">← 案例目录</a><a href="../index.html">V1 · 原题与历史实验 ↗</a><a href="../v3/index.html">V3 · 最新任务与实际交付 →</a></nav>
+  <header class="case-head">
+    <p class="eyebrow">OMNIALE · PHOENIX RECONSTRUCTION · V2</p>
+    <h1>凤凰角色重建<span class="title-part">与变速拍翼有声动画</span></h1>
+    <p class="lead">从三个同步机位恢复可编辑的动态角色，为指定新机位制作有声镜头。拍翼节奏与幅度连续变化，最后过渡到展翼滑翔。</p>
+    <div class="meta-row"><span class="tag">三机位输入 → 单机位成片</span><span class="tag">6 秒 · 180 帧 · 30 fps</span><span class="tag">1280 × 720 · Blender</span><span class="tag">历史输入版本</span></div>
+  </header>
+  <nav class="section-nav" aria-label="章节"><a href="#task">一、任务定义</a><a href="#scoring">二、评分标准</a><a href="#results">三、版本说明</a></nav>
+  <section class="section" id="task">
+    <div class="section-heading"><h2><span class="sec-no">01</span>任务定义</h2><a class="heading-link" href="assets/agent-input.zip" download>完整输入 · 6.0 MB ↓</a></div>
+    <div class="reference-grid">
+      <figure><video controls playsinline preload="metadata" poster="assets/reference/I1-poster.jpg" src="assets/reference/I1.mp4" aria-label="参考机位 I1"></video><figcaption><span>I1 · 参考机位</span><a href="assets/reference/I1.mp4" download>MP4 ↓</a></figcaption></figure>
+      <figure><video controls playsinline preload="metadata" poster="assets/reference/I2-poster.jpg" src="assets/reference/I2.mp4" aria-label="参考机位 I2"></video><figcaption><span>I2 · 参考机位</span><a href="assets/reference/I2.mp4" download>MP4 ↓</a></figcaption></figure>
+      <figure><video controls playsinline preload="metadata" poster="assets/reference/I3-poster.jpg" src="assets/reference/I3.mp4" aria-label="参考机位 I3"></video><figcaption><span>I3 · 参考机位</span><a href="assets/reference/I3.mp4" download>MP4 ↓</a></figcaption></figure>
+    </div>
+    <p class="note media-note">三个视频使用相同时间轴、光照和渲染设置。输入包含录像、配置和音效，不包含逐帧图片、原始模型、Blender 工程或目标机位真值。</p>
+    <dl class="task-files">
+      <div><dt>委托背景</dt><dd>工作室只有三个同步参考录像，需要补制指定新机位的有声镜头，并保留可继续修改的三维工程。</dd></div>
+      <div><dt>制作任务</dt><dd>使用 Blender 重建角色形体、外观与骨骼动画；按目标相机 T1 输出 6 秒成片，自主完成声音设计和混音。</dd></div>
+      <div><dt>附件配置</dt><dd><a href="assets/cameras.json">相机参数</a>、<a href="assets/timeline.json">时间轴</a>、<a href="assets/scene_setup.json">场景配置</a>、五段音效与素材说明。</dd></div>
+      <div><dt>交付要求</dt><dd><code>scene.blend</code>、有声 <code>T1.mp4</code>、可重新输出的声音工程或脚本及资源、<code>README.md</code>。成片只有目标机位 T1，1280×720、30 fps、180 帧。</dd></div>
+    </dl>
+    <details><summary>任务委托原文</summary><div class="detail-body"><p><a href="assets/TASK.md" download>下载 TASK.md ↓</a></p><pre tabindex="0"><code># 凤凰角色重建与新机位有声动画制作
+
+工作室只有一段凤凰动画的三个同步参考机位视频，需要补制指定新机位的有声镜头，并保留可继续修改的三维工程。
+
+请使用 Blender，根据参考录像重建凤凰的形体、外观及骨骼动画，按附件中的目标相机 T1 和时间轴输出视频。结合提供的音效素材自主完成声音设计和混音，使声音的节奏、强弱和音色变化与画面中的实际动作自然对应。
+
+提供的材料：
+
+- 三个同步参考机位视频。
+- 参考机位与目标机位的相机参数、时间轴及场景配置。
+- 音效素材及来源说明。
+
+成片要求为 **1280×720、30 fps、180 帧、6 秒**。保持指定机位、画幅、坐标和动作时间关系。
+
+请交付至 `submission/`：
+
+- `scene.blend`：可编辑的角色、材质、骨骼动画及目标相机，包含或附带所需资源。
+- `T1.mp4`：目标机位的有声成片。
+- 可修改并重新输出的声音制作工程或脚本，以及所需资源；也可包含在 Blender 工程中。
+- `README.md`：工程打开、编辑和重新输出说明，以及素材署名。
+</code></pre></div></details>
+    <div class="task-context">
+      <h3>难点</h3><ul>
+        <li><strong>多个视角要还原为同一份动态资产</strong>：展开的双翼、层叠羽片与细长尾羽不断改变遮挡关系，形体、深度、羽片朝向和材质需要在参考与目标机位下同时成立。</li>
+        <li><strong>动作不再能用固定周期重复</strong>：拍翼频率与幅度连续变化，并过渡到滑翔。骨骼相位、翼面扭转与尾羽运动需要在同一时间轴上吻合。</li>
+        <li><strong>声音要响应动作的变化</strong>：没有音效放置时间表，需要自行组织声音事件、包络、持续时间与音色变化，并处理拍翼到滑翔的衔接。</li>
+      </ul>
+      <h3>可解性</h3><ul>
+        <li><strong>参考录像来自完整的 Blender 三维动画</strong>：角色、骨骼、材质和统一光照已在同一渲染体系中实现，重建结果可通过相同工具与设置核对。</li>
+        <li><strong>相机、时间轴和场景配置均已给定</strong>：三个参考视频同步，目标机位明确；六秒片段可反复逐帧核对，声音素材也已提供。</li>
+        <li><strong>针对本题目标机位的重建，三个参考机位的覆盖是充分的</strong>：I1 与 I2 从相反方位观察，I3 补充较高视角；目标 T1 的方位角为 25°，位于 I1（−45°）与 I3（60°）之间，动画过程还会进一步显露羽片和身体结构。</li>
+      </ul>
+    </div>
+    <h3>提供的音效素材</h3><div class="audio-grid"><figure><figcaption><strong>air_long</strong><span>持续气流</span></figcaption><audio controls preload="metadata" aria-label="试听 air_long" src="assets/audio/air_long.wav"></audio></figure><figure><figcaption><strong>air_low</strong><span>低频气流</span></figcaption><audio controls preload="metadata" aria-label="试听 air_low" src="assets/audio/air_low.wav"></audio></figure><figure><figcaption><strong>feather_rustle</strong><span>羽片摩擦</span></figcaption><audio controls preload="metadata" aria-label="试听 feather_rustle" src="assets/audio/feather_rustle.wav"></audio></figure><figure><figcaption><strong>sweep_broad</strong><span>宽幅扫风</span></figcaption><audio controls preload="metadata" aria-label="试听 sweep_broad" src="assets/audio/sweep_broad.wav"></audio></figure><figure><figcaption><strong>sweep_light</strong><span>轻扫风</span></figcaption><audio controls preload="metadata" aria-label="试听 sweep_light" src="assets/audio/sweep_light.wav"></audio></figure></div>
+    <p class="note">沿用原版五段原创程序合成音效，采用 CC0。选用、处理、分层及混音由 agent 决定。<a href="assets/audio/SOURCE.txt">来源说明 ↗</a></p>
+  </section>
+  <section class="section" id="scoring">
+    <div class="section-heading"><h2><span class="sec-no">02</span>评分标准</h2><a class="heading-link" href="assets/SCORING.md">评分机制原文 ↗</a></div>
+    <div class="total-score"><h3>总分 · 满分 100</h3><p class="total-equation">机位二维覆盖度 30 ＋ 三维几何 F1 30 ＋ 成片外观 30 ＋ 音效设计与同步 10</p><p>前三项使用固定脚本；音效由 Gemini 4 Neon 评审。工程可用性单独核验。</p></div>
+    <p class="note media-note">视觉抽样帧：0、20、40、60、80、99、119、139、159、179；每帧等权。音效评审覆盖全部六秒。</p>
+    <details open><summary>机位二维覆盖度 · 30 分</summary><div class="detail-body"><p>评测端打开交付的 <code>scene.blend</code>，使用固定相机 I1、I2、I3、T1 各补渲染十帧。使用 Cycles、64 采样、固定种子 17，关闭降噪、运动模糊、合成与序列编辑输出。以 α ≥ 0.5 提取前景掩膜，与对应参考 RGBA 帧的前景掩膜比较。</p><p>每对掩膜计算 IoU＝交集面积／并集面积。四机位、十时刻的 40 个 IoU 等权平均，得分为 <strong>30 × mean₄₀(IoU)</strong>。四机位用于评测三维工程，要求交付的成片只有 T1。</p></div></details><details><summary>三维几何 F1 · 30 分</summary><div class="detail-body"><p>在参考工程和交付工程的十个对应姿态，提取经过骨骼和修改器求值后的世界坐标网格。对使用透明纹理的三角形按 UV 细分为 4×4 微三角形，保留中心点 α ≥ 0.5 的部分；不透明表面完整保留。</p><p>每份合并表面按面积采样 50,000 点，参考与候选的随机种子分别为 20261124＋帧号、20271124＋帧号。通过 I1、I2、I3 的透视投影及 BVH 首次相交测试，保留至少一个参考机位可见的样本。可见性误差容差为 D×10⁻⁴，D 为本版参考全动画联合包围盒对角线。</p><p>通过 Blender BVH 计算样本到另一份完整有效表面的最近距离，距离容差 τ＝0.005D。精确率 P 为候选可见样本到参考表面距离不超过 τ 的比例；召回率 R 为参考可见样本到候选表面距离不超过 τ 的比例。</p><p>每帧 F1＝2PR／(P＋R)，两者均为零时 F1＝0。得分为 <strong>30 × mean₁₀(F1)</strong>。</p></div></details><details><summary>成片外观 · 30 分</summary><div class="detail-body"><p>直接解码实际交付的 <code>T1.mp4</code>，抽取同一组十帧，与参考 T1 原始 RGBA 帧合成至背景色 <code>#202630</code> 后比较。实际成片不能用工程重新渲染的画面替代。</p><p>比较区域为三者的并集：参考 α ≥ 0.5，交付工程 T1 补渲染 α ≥ 0.5，以及成片任一 RGB 通道偏离背景超过 8/255 的像素。固定裁框由本版全部 180 帧参考前景的联合范围外扩 24 像素确定，并在模型测试前冻结；有前景落在裁框外时使用完整画布。</p><p>RGB SSIM 使用高斯窗口 σ＝1.5、总体协方差。分别计算 RGB 三通道的空间相似度图，对通道取平均后在前景并集内取均值，再对十帧取均值。得分为 <strong>30 × clip(mean₁₀(SSIM), 0, 1)</strong>。</p></div></details><details><summary>音效设计与同步 · 10 分</summary><div class="detail-body"><p>由 Gemini 4 Neon 结合源音效和完整提交成片评审。评审材料隐去模型身份、已有分数和制作方自述。必须实际感知最终音频，并观察完整视频或全部带时间戳的顺序帧；无法接收媒体时不产生有效分数。</p><div class="table-wrap"><table><thead><tr><th>项目</th><th>判定机理</th><th>满分</th></tr></thead><tbody><tr><td>A1 选材与音色</td><td>声音质感、频段和层次与可见动作、角色体量及风格相适配</td><td>2</td></tr><tr><td>A2 动作同步</td><td>可闻事件的感知重心、间隔与可见运动阶段及节奏变化对应</td><td>2</td></tr><tr><td>A3 包络与动态</td><td>音量包络、持续时间及音色明暗变化与实际运动强弱连贯呼应</td><td>2</td></tr><tr><td>A4 衔接与首尾</td><td>动作转换、声音层衔接和片头片尾连续自然，无突兀拼接或截断</td><td>2</td></tr><tr><td>A5 混音质量</td><td>电平、动态和频段层次清晰，无明显失真、爆音或遮蔽</td><td>2</td></tr></tbody></table></div><p>每项按 0 分（未满足）、1 分（部分满足）、2 分（满足）判定，记录可追溯的音画时间证据，五项相加。不使用标准音轨波形匹配；同步与动态以提交画面的实际动作判断，不重复扣除相对参考动画的重建误差，也不规定骨骼速度到响度或滤波截止频率的唯一函数。</p></div></details><details><summary>工程核验</summary><div class="detail-body"><p>独立重新打开工程，检查资源解析、可编辑网格、骨架与蒙皮、时间轴、目标机位、声音制作资源和重新输出说明。核验不增加分数。缺失必需交付时明确记录，不能将不可测项目伪装成有效完整评分。</p><p>本版尚未运行模型实验。阈值及线性映射属于案例诊断评分，未作专家质量分界校准；十帧视觉抽样不能覆盖全部帧间瑕疵。</p></div></details>
+    <p class="inline-links"><a href="assets/protocol.json">本版固定评分配置 ↗</a><a href="assets/input-manifest.json">输入文件校验清单 ↗</a></p>
+  </section>
+  <section class="section" id="results">
+    <div class="section-heading"><h2><span class="sec-no">03</span>版本说明</h2></div>
+    <p>本页保留提供音效的六秒输入版本与计分规则。采用自主选材、REAPER 多轨交付的最新任务及实际结果见 <a href="../v3/index.html">V3 凤凰重建与自主拟音</a>；原版结果见 <a href="../index.html#results">V1 历史版本</a>。</p>
+  </section>
+  <footer class="case-footer"><p>模型参考：phoenix bird / NORBERTO-3D · CC BY 4.0。新版调整了动画速度、幅度和滑翔终态。</p><p class="footer-links"><a href="../ATTRIBUTION.md">素材署名与授权</a><a href="../../index.html">返回案例目录</a><a href="../index.html">V1 历史版本</a></p></footer>
+</main></body></html>

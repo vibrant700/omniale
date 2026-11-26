@@ -9,7 +9,7 @@
 | [装配录像理解与图解手册](https://vibrant700.github.io/omniale/assembly-manual/) | 理解远程指导录像，回答操作问题，并整理带截图标注的手册 | 问题回答、Word／PDF 手册与可编辑标注 |
 | [Multiface 动态三维重建](https://vibrant700.github.io/omniale/multiface/) | 根据三个同步视角及原声重建动态场景，在目标机位渲染视频 | 三维工程与目标视角有声视频 |
 | [SCV 机甲重建与展示片](https://vibrant700.github.io/omniale/scv-showcase/) | 根据六方向参考图重建机甲，结合指定配乐和音效制作展示片 | 可编辑三维资产与有声展示视频 |
-| [凤凰角色重建与新机位有声动画](https://vibrant700.github.io/omniale/phoenix-reconstruction/) | 根据三个同步参考录像重建凤凰形体与骨骼动画，制作指定新机位有声镜头 | Blender 工程、T1 有声视频与声音制作脚本 |
+| [凤凰角色重建与新机位有声动画](https://vibrant700.github.io/omniale/phoenix-reconstruction/v3/) | 根据三个同步参考录像重建变速拍翼动画，自主寻找声音素材并使用 REAPER 拟音 | Blender 与 REAPER 工程、有声视频、无损混音与分轨 |
 
 ## 仓库结构
 

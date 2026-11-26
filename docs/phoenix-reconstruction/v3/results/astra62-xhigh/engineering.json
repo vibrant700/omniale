@@ -1,0 +1,69 @@
+{
+  "video": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 180,
+    "duration_s": 6.0,
+    "full_decode_passed": true,
+    "audio_streams": 1,
+    "audio_sample_rate": "48000",
+    "audio_channels": 2,
+    "sha256": "0238166673a51815dde593b71d663fe1c2f3e545fd0fbf724bafa2d02e028c74"
+  },
+  "blender": {
+    "version": "4.5.3 LTS",
+    "armatures": [
+      {
+        "name": "PHOENIX  /  flight skeleton",
+        "bones": 30
+      }
+    ],
+    "unique_sampled_skinned_states": 10,
+    "camera_T1_matrix_max_abs_difference": 1.6391277313232422e-07,
+    "resources_standalone_resolved": true,
+    "images": [
+      {
+        "name": "flame.png",
+        "packed": true,
+        "resolved": true
+      },
+      {
+        "name": "mantle.png",
+        "packed": true,
+        "resolved": true
+      },
+      {
+        "name": "ocellus.png",
+        "packed": true,
+        "resolved": true
+      },
+      {
+        "name": "wing_livery.png",
+        "packed": true,
+        "resolved": true
+      }
+    ]
+  },
+  "reaper": {
+    "version": "7.86/linux-x86_64",
+    "tracks": 4,
+    "items": 44,
+    "relocated_project_opened": true,
+    "rerender_max_error": 0.0,
+    "rerender_rms_error": 0.0
+  },
+  "stem_reconstruction": {
+    "stem_files": [
+      "Prints/01_Pressure.wav",
+      "Prints/02_Primaries.wav",
+      "Prints/03_Quills.wav",
+      "Prints/04_Slipstream.wav"
+    ],
+    "max_absolute_error": 3.166496753692627e-08,
+    "rms_error": 1.876959097741202e-09,
+    "tolerance": 1e-05,
+    "passed": true
+  },
+  "note": "工程核验与声音听感评价分别报告。"
+}

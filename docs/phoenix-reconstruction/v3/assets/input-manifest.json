@@ -1,0 +1,47 @@
+{
+  "version": "phoenix-multiview-v3",
+  "files": {
+    "ASSET-ATTRIBUTION.txt": {
+      "bytes": 258,
+      "sha256": "524e491105ebf62a09ad9d99ea2fd1190896ebde43a2d1e3cb585ba44d3654cf"
+    },
+    "cameras.json": {
+      "bytes": 6081,
+      "sha256": "1e6f10f68b402753fd52d861e12b75a4c9278d0a66f367a9fbfadeaa60338599"
+    },
+    "ENVIRONMENT.md": {
+      "bytes": 1465,
+      "sha256": "8a6e68b30cb41ee060df37e24bae0633f4dc83f98abee576f4a4401f57a96dec"
+    },
+    "INPUT-USE.md": {
+      "bytes": 260,
+      "sha256": "58a385a8ad2f4acbb99df85b5a842f536eca4235a711bd33ce000a3510856284"
+    },
+    "reference/I1.mp4": {
+      "bytes": 1863434,
+      "sha256": "33ac7af73d4adeba7192a6beb7fc00048bc1c3ea43a264103de2de1dc648d716"
+    },
+    "reference/I2.mp4": {
+      "bytes": 1983179,
+      "sha256": "bccddf9f65b281cc29cdd84fac79fc7c7c5b7972f6225f4e44556575835881dc"
+    },
+    "reference/I3.mp4": {
+      "bytes": 2057800,
+      "sha256": "e72b98a352c28f60aaa4d22545b23e814d6ac6747f847af369748a7410ea5fc9"
+    },
+    "scene_setup.json": {
+      "bytes": 1801,
+      "sha256": "3eb22edaeae385418e05776f409112c776624aa4b58fc87863f19d80a5d20325"
+    },
+    "TASK.md": {
+      "bytes": 1608,
+      "sha256": "a6e92a7e2b50b76ed5dc2672064fb84841d7a8dbb888d6996f8bce1eb6893b80"
+    },
+    "timeline.json": {
+      "bytes": 17313,
+      "sha256": "e4f24a0d4ee4f6aad73bee05481804d5a6fe89550baff3391b812fd7ebf41ab5"
+    }
+  },
+  "archive_sha256": "1510debf9963818b52f876a00ff789e0713d84b6412b6621c9244b6aa9d1e3c7",
+  "original_experiment_input": true
+}

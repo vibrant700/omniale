@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="从三个同步机位重建六秒凤凰动画，自主寻找声音素材并使用 REAPER 拟音。查看题目、评分机制、模型实际交付与十帧核验。">
+  <meta name="theme-color" content="#f4f3ee"><link rel="icon" href="data:,">
+  <title>凤凰角色重建与自主拟音 · OmniALE</title>
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="style.css"><script defer src="../app.js"></script>
+</head>
+<body><a class="skip" href="#main">跳至正文</a>
+<main id="main" class="case-main">
+  <nav class="site-return" aria-label="返回导航"><a href="../../index.html">← 案例目录</a><div><a href="../index.html">V1 历史版本</a><a href="../v2/index.html">V2 输入版本</a></div></nav>
+  <header class="case-head">
+    <p class="eyebrow">OMNIALE · PHOENIX RECONSTRUCTION · V3</p>
+    <h1>凤凰角色重建<span class="title-part">与自主拟音</span></h1>
+    <p class="lead">根据三个同步参考机位，重建六秒变速拍翼动画，为指定新机位制作有声镜头。声音素材由 agent 自行寻找，三维与声音工程均需可编辑。</p>
+    <div class="meta-row"><span class="tag">三机位输入 → 单机位成片</span><span class="tag">6 秒 · 180 帧 · 30 fps</span><span class="tag">Blender ＋ REAPER</span><span class="tag">自主选材 · 多轨交付</span></div>
+  </header>
+  <nav class="section-nav" aria-label="章节"><a href="#task">一、任务定义</a><a href="#scoring">二、评分标准</a><a href="#results">三、模型交付与客观结果</a><a href="#execution">四、执行与核验</a><a href="#analysis">五、逐帧分析</a></nav>
+
+  <section class="section" id="task">
+    <div class="section-heading"><h2><span class="sec-no">01</span>任务定义</h2><a class="heading-link" href="assets/agent-input.zip" download>实验原始输入 · 5.6 MB ↓</a></div>
+    <div class="reference-grid">
+      <figure><video controls playsinline preload="metadata" poster="assets/reference/I1-poster.jpg" src="assets/reference/I1.mp4" aria-label="参考机位 I1"></video><figcaption><span>I1 · 参考机位</span><a href="assets/reference/I1.mp4" download>MP4 ↓</a></figcaption></figure>
+      <figure><video controls playsinline preload="metadata" poster="assets/reference/I2-poster.jpg" src="assets/reference/I2.mp4" aria-label="参考机位 I2"></video><figcaption><span>I2 · 参考机位</span><a href="assets/reference/I2.mp4" download>MP4 ↓</a></figcaption></figure>
+      <figure><video controls playsinline preload="metadata" poster="assets/reference/I3-poster.jpg" src="assets/reference/I3.mp4" aria-label="参考机位 I3"></video><figcaption><span>I3 · 参考机位</span><a href="assets/reference/I3.mp4" download>MP4 ↓</a></figcaption></figure>
+    </div>
+    <p class="note media-note">三个参考视频使用同一时间轴、光照与渲染配置。拍翼节奏与幅度连续变化，末段进入滑翔。输入只含录像、配置和环境说明，不提供声音素材、逐帧图片、原始模型或 Blender 工程。</p>
+    <dl class="task-files">
+      <div><dt>委托任务</dt><dd>使用 Blender 重建角色、外观与骨骼动画，按指定 T1 机位输出有声成片；自行寻找素材，使用 REAPER 完成拟音和混音。</dd></div>
+      <div><dt>附件与工具</dt><dd><a href="assets/cameras.json">相机参数</a>、<a href="assets/timeline.json">时间轴</a>、<a href="assets/scene_setup.json">场景配置</a>及 <a href="assets/ENVIRONMENT.md">实验环境说明</a>。提供 GPU、Blender、REAPER 与 FFmpeg。</dd></div>
+      <div><dt>交付要求</dt><dd>可编辑的 Blender 与 REAPER 工程、有声成片、无损混音和可重构混音的分轨、所用素材及简要说明。声音类别与声部分组由 agent 自行设计。</dd></div>
+      <div><dt>成片规格</dt><dd>1280 × 720、30 fps、180 帧、6 秒；仅输出目标机位 T1。</dd></div>
+    </dl>
+    <details><summary>任务委托原文</summary><div class="detail-body"><p><a href="assets/TASK.md" download>下载实验 TASK.md ↓</a></p><pre tabindex="0"><code># 凤凰角色重建与自主拟音
+
+工作室需要根据三个同步参考机位视频，补制一段指定新机位的凤凰动画，并完成声音制作，保留可继续修改的三维与声音工程。
+
+请使用 Blender 重建凤凰的形体、外观及骨骼动画，按照附件中的目标相机 T1、时间轴和场景配置输出成片。使用 REAPER 自主完成拟音与混音，使声音与角色动作自然对应，并保留可编辑的多轨工程。
+
+提供材料：
+
+- 三个同步参考机位视频 I1、I2、I3。
+- 参考与目标相机参数、时间轴、场景配置及素材署名。
+- 预装并配置的 REAPER 声音制作环境、内置效果器及 FFmpeg，使用入口见 `ENVIRONMENT.md`。
+- 交付与评分说明。
+
+本题不提供音效。成片为 **1280×720、30 fps、180 帧、6 秒**，只需输出目标机位 T1。保持附件规定的机位、坐标和动作时间关系。
+
+自行检索、试听并选用可合法使用的录音素材，可以结合程序合成。不得使用现成整段配音或其他提交结果。成片只制作动作相关音效，不加入音乐、对白或旁白。
+
+请交付至 `submission/`：
+
+- `scene.blend`：可编辑的 Blender 工程及完整资源。
+- `T1.mp4`：目标机位有声成片。
+- 可编辑的 REAPER 工程及所用素材。
+- 无损完整混音和分轨，分轨应能重构混音。
+- 简要说明：工程打开与重新输出方式、分轨对应关系，以及素材来源和许可。
+
+仅依据提供的观察资料重建角色，不获取对应的原始模型、贴图、骨骼动画或目标画面。
+</code></pre></div></details>
+    <div class="task-context" id="task-context">
+      <h3>难点</h3><ul>
+        <li><strong>多视角观察需要还原为同一份动态资产</strong>：双翼、层叠羽片和细长尾翎不断改变遮挡关系，形体深度、羽片朝向与材质需要在参考和目标机位下同时成立。</li>
+        <li><strong>动作包含连续变化的节奏与幅度</strong>：从较慢的大幅振翅到更快的小幅拍翼，再过渡到滑翔，翼根、腕部和尾羽需要保持同一时间关系。</li>
+        <li><strong>声音内容与层次需要自主设计</strong>：没有预选音效或声音时间表，agent 需要寻找素材、判断适配性，组织动作对应的声音变化，并交付可继续修改的多轨工程。</li>
+      </ul>
+      <h3>可解性</h3><ul>
+        <li><strong>参考录像来自完整的 Blender 三维动画</strong>：角色、骨骼、材质与光照已在统一渲染体系中实现，交付工程可用同一组机位和时间点核验。</li>
+        <li><strong>相机、场景与时间轴均已给定</strong>：参考视频同步，目标机位明确；提供可执行的三维与声音工具，六秒片段可以反复核对。</li>
+        <li><strong>针对本题目标机位的重建，三个参考机位的覆盖是充分的</strong>：I1 与 I2 从相反方位观察，I3 补充较高视角；目标 T1 的方位角为 25°，位于 I1（−45°）与 I3（60°）之间，动画过程还会进一步显露羽片和身体结构。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="scoring">
+    <div class="section-heading"><h2><span class="sec-no">02</span>评分标准</h2><a class="heading-link" href="assets/SCORING.md">评分机制原文 ↗</a></div>
+    <div class="total-score"><h3>评分构成 · 满分 100</h3><p class="total-equation">二维覆盖度 30 ＋ 三维几何 F1 30 ＋ 成片外观 20 ＋ 音效 20</p><p>三维、轮廓与外观由固定脚本计算；声音使用十项 checklist，每项 2 分。工程可编辑性、分轨重构及素材来源单独验收。</p></div>
+    <p class="note media-note">视觉固定抽取零基帧 0、20、40、60、80、99、119、139、159、179。各帧等权，不重新缩放、配准或平移时间。声音检查覆盖完整六秒。</p>
+    <details open><summary>机位二维覆盖度 · 30 分</summary><div class="detail-body">
+      <p>评测端打开提交的 Blender 工程，按 I1、I2、I3、T1 四个相机各补渲染十帧，使用 Cycles 64 采样、固定种子 17，关闭降噪、运动模糊、合成与序列编辑输出。以 α ≥ 0.5 提取前景掩膜，与参考对应掩膜计算交集面积／并集面积。</p>
+      <p class="equation">IoU = |M<sub>提交</sub> ∩ M<sub>参考</sub>| / |M<sub>提交</sub> ∪ M<sub>参考</sub>|<br>得分 = 30 × mean<sub>四机位 × 十帧</sub>(IoU)</p>
+      <p class="note media-note">四机位用于核验三维工程；要求交付的成片只有 T1。</p>
+    </div></details>
+    <details><summary>三维几何 F1 · 30 分</summary><div class="detail-body">
+      <p>在十个对应姿态提取世界坐标下经骨骼及修改器求值的网格。透明纹理三角形按 UV 细分为 4×4 微三角形，保留中心 α ≥ 0.5 的部分。每份表面按面积采样 50,000 点，保留至少一个参考机位可见的样本，再通过 BVH 求到对方完整有效表面的最近距离。</p>
+      <p>距离容差 τ = 0.005D，D 为参考全动画联合包围盒对角线。P 为提交样本到参考表面距离不超过 τ 的比例，R 为参考样本到提交表面距离不超过 τ 的比例。</p>
+      <p class="equation">F1 = 2PR / (P + R)<br>得分 = 30 × mean<sub>十帧</sub>(F1)</p>
+      <p class="note media-note">P + R 为零时 F1 记为零；此项直接比较三维表面。</p>
+    </div></details>
+    <details><summary>成片外观 · 20 分</summary><div class="detail-body">
+      <p>直接解码实际交付的 T1.mp4，在相同十帧计算 RGB SSIM。参考 RGBA 合成至背景 #202630；比较区域为参考前景、工程补渲染前景及成片非背景像素的并集。使用固定裁框 [279, 76, 917, 666)，有前景落在框外时使用完整画布。</p>
+      <p>使用高斯窗口 σ = 1.5、总体协方差，分别计算 RGB 三通道相似度图，对通道平均后在前景并集内取均值，再对十帧等权平均。</p>
+      <p class="equation">得分 = 20 × clip(mean<sub>十帧</sub>(RGB SSIM), 0, 1)</p>
+    </div></details>
+    <details><summary>音效设计与同步 · 20 分</summary><div class="detail-body">
+      <p>实际听看完整有声成片，使用无损混音、分轨与工程定位证据。同步与动态依据提交画面的实际动作判断，不重复扣除视觉重建误差。每项满足得 2 分，不满足得 0 分。</p>
+      <div class="table-wrap"><table><thead><tr><th>检查项</th><th>判定机理</th><th>满分</th></tr></thead><tbody><tr><td>A1 · 声音质感</td><td>主要声音在质感、频段和体量上符合角色及可见运动的视觉语境，未出现明显无关声源</td><td>2</td></tr><tr><td>A2 · 单次动作同步</td><td>主要振翅声的出现区间及感知重心落在相应可见运动阶段，无持续可感知的提前或滞后</td><td>2</td></tr><tr><td>A3 · 连续节奏跟随</td><td>连续声音事件的间隔跟随实际拍翼节奏变化，无明显漏拍、额外拍点或固定等间隔替代变速动作</td><td>2</td></tr><tr><td>A4 · 力度变化</td><td>不同运动阶段的声音强弱有可辨变化，并与动作力度和幅度形成连贯、可解释的呼应</td><td>2</td></tr><tr><td>A5 · 持续时间变化</td><td>主要声音包络与动作持续区间相适应，不同阶段的持续时间变化合理，未用完全相同的固定包络覆盖所有动作</td><td>2</td></tr><tr><td>A6 · 音色变化</td><td>声音的频谱明暗或质感随运动状态产生可辨且连贯的变化，变化时机与动作相符</td><td>2</td></tr><tr><td>A7 · 滑翔处理</td><td>实际画面进入滑翔后，主要周期性拍翼声随之停止或合理衰减，剩余声部与持续运动相适应</td><td>2</td></tr><tr><td>A8 · 衔接与首尾</td><td>声音片段之间、片头及片尾无明显剪辑跳变、点击或不合理截断；动作转换时衔接连续</td><td>2</td></tr><tr><td>A9 · 音频洁净度</td><td>无明显削波失真、爆音、数字故障或非设计意图的突发噪声</td><td>2</td></tr><tr><td>A10 · 混音层次</td><td>各声部形成与运动相适应的声音层次，主要动作清楚可辨，整体音量和频段关系协调，无持续遮蔽</td><td>2</td></tr></tbody></table></div>
+      <p>每项保留音画时间依据；波形与频谱用于辅助定位。自动同步判断须通过时间平移和节奏对照检查；无法可靠判断的项目由人工听看裁定。不使用参考音轨波形匹配，也不规定运动速度到声音参数的唯一函数。</p>
+    </div></details>
+    <details><summary>工程与来源核验 · 独立验收</summary><div class="detail-body"><p>独立重开三维与声音工程，检查资源解析、骨骼与蒙皮、素材片段和处理设置；核对成片规格、素材来源及许可；将工程移至独立目录重新输出，检查分轨求和与完整混音的一致性。声音类别、轨道数量与工程命名由制作方决定。</p></div></details>
+    <p class="note media-note">阈值与线性换算用于本案例的诊断评分，未作专家质量分界校准；十帧抽样不覆盖全部帧间瑕疵。当前计分权重为 30／30／20／20，视觉测量定义保持一致。</p>
+    <p class="inline-links"><a href="assets/protocol.json">测量与计分配置 ↗</a><a href="assets/input-manifest.json">原始输入校验清单 ↗</a></p>
+  </section>
+
+  <section class="section" id="results">
+    <div class="section-heading"><h2><span class="sec-no">03</span>模型交付与客观结果</h2></div>
+    <p class="result-scope">本页结果报告三项客观指标及工程核验，客观小计满分 80。音效评价规则列于上方评分标准。</p>
+    <div class="table-wrap leaderboard-wrap" tabindex="0" role="region" aria-label="模型客观指标表，可横向滚动"><table class="leaderboard"><caption>实际完成的模型实验</caption><thead><tr><th>模型</th><th>推理强度</th><th>框架</th><th>二维覆盖度 / 30</th><th>三维 F1 / 30</th><th>外观 / 20</th><th>客观小计 / 80</th></tr></thead><tbody><tr data-result-model="astra62-xhigh"><th scope="row"><a href="#model-astra62-xhigh" data-select-model="astra62-xhigh">Astra 6.2</a></th><td>xhigh</td><td>Codex</td><td>15.75</td><td>7.95</td><td>1.55</td><td><strong class="score-value">25.25</strong></td></tr></tbody></table></div>
+    <div class="model-control"><label for="model-select">查看模型交付</label><select id="model-select"><option value="astra62-xhigh">Astra 6.2 · xhigh · Codex</option></select><span class="note">成片、工程、评分 JSON 与逐帧对照随模型切换。</span></div>
+    <div class="model-panel" data-model-panel="astra62-xhigh" id="model-astra62-xhigh">
+          <div class="model-heading"><h3>Astra 6.2 · xhigh ＋ Codex</h3><span>实际交付 · 六秒完整成片</span></div>
+          <div class="delivery-layout"><figure><video controls playsinline preload="metadata" poster="results/astra62-xhigh/poster.jpg" src="results/astra62-xhigh/T1.mp4" aria-label="Astra 6.2 实际交付有声成片"></video><figcaption><strong>T1 · 实际交付</strong><a href="results/astra62-xhigh/T1.mp4" download>下载原片 ↓</a></figcaption></figure>
+          <aside class="delivery-summary"><h3>三项客观指标小计</h3><div class="score-display"><strong>25.25</strong><span>/ 80</span></div><p>四机位轮廓 IoU 0.5250<br>三维表面 F1 0.2650<br>前景 RGB SSIM 0.0773</p><p>成片和工程保留模型原始交付；数值由固定脚本测量并独立复算。</p><div class="inline-links"><a href="#astra62-xhigh-score-files">评分 JSON ↓</a><a href="results/astra62-xhigh/README.md">原始说明 ↗</a></div></aside></div>
+          <div class="inline-links native-files"><a href="results/astra62-xhigh/delivery.zip" download>完整原始交付 · 13.2 MB ↓</a><a href="results/astra62-xhigh/scene.blend" download>Blender 工程 ↓</a><a href="results/astra62-xhigh/Foley/Phoenix.rpp" download>REAPER 工程 ↓</a></div>
+          <p class="note media-note">打开 REAPER 工程需保留完整交付包中的素材相对位置。</p>
+          <h3>模型的声音交付</h3><p class="note">以下声部划分来自模型实际工程；题面未指定这些声音类别或轨道名称。</p><div class="audio-grid"><figure><figcaption><strong>完整混音</strong><span>REAPER 实际导出</span></figcaption><audio controls preload="metadata" src="results/astra62-xhigh/Prints/Phoenix_Full.wav" aria-label="Astra 6.2 完整混音"></audio></figure><figure><figcaption><strong>01 · Pressure</strong><span>模型自行设计的声部</span></figcaption><audio controls preload="metadata" src="results/astra62-xhigh/Prints/01_Pressure.wav" aria-label="Astra 6.2 01 · Pressure"></audio></figure><figure><figcaption><strong>02 · Primaries</strong><span>模型自行设计的声部</span></figcaption><audio controls preload="metadata" src="results/astra62-xhigh/Prints/02_Primaries.wav" aria-label="Astra 6.2 02 · Primaries"></audio></figure><figure><figcaption><strong>03 · Quills</strong><span>模型自行设计的声部</span></figcaption><audio controls preload="metadata" src="results/astra62-xhigh/Prints/03_Quills.wav" aria-label="Astra 6.2 03 · Quills"></audio></figure><figure><figcaption><strong>04 · Slipstream</strong><span>模型自行设计的声部</span></figcaption><audio controls preload="metadata" src="results/astra62-xhigh/Prints/04_Slipstream.wav" aria-label="Astra 6.2 04 · Slipstream"></audio></figure></div>
+          <div class="json-downloads result-downloads" id="astra62-xhigh-score-files"><h3>本次客观评分与核验 JSON</h3><p>轮廓、三维表面与成片外观的原始逐帧测量，及独立工程核验记录。</p><div class="download-grid"><a href="results/astra62-xhigh/score.json" download><strong>score.json ↓</strong><span>当前权重下的客观分数与原始指标</span></a><a href="results/astra62-xhigh/geometry_metrics.json" download><strong>geometry_metrics.json ↓</strong><span>十帧三维 P、R 与表面 F1</span></a><a href="results/astra62-xhigh/image_metrics.json" download><strong>image_metrics.json ↓</strong><span>40 个轮廓 IoU 与十帧 RGB SSIM</span></a><a href="results/astra62-xhigh/engineering.json" download><strong>engineering.json ↓</strong><span>工程打开、资源、分轨及迁移重导核验</span></a></div></div>
+          </div>
+  </section>
+  <section class="section" id="execution"><div class="section-heading"><h2><span class="sec-no">04</span>执行与独立核验</h2></div><div class="model-panel" data-model-panel="astra62-xhigh"><p class="model-section-label">Astra 6.2 · xhigh ＋ Codex</p>
+          <dl class="runtime-list"><div><dt>模型与环境</dt><dd>gpt-6.2-astra · xhigh；官方 Codex CLI 0.142.4；Blender 4.5.3 LTS、REAPER 7.86、RTX 4090 D 24GB、八核 CPU 亲和性。</dd></div><div><dt>执行规模</dt><dd>48 分 37.68 秒 · 210 次工具调用。独立新上下文，无人工制作辅导，未设工具次数与墙钟时限。</dd></div><div><dt>选材条件</dt><dd>允许访问公共互联网寻找录音；输入未提供音效、原始角色、目标机位视频或历史提交。运行中补齐环境说明列出的 SoundFile 依赖，修复记录内部归档。</dd></div><div><dt>核验分工</dt><dd>固定脚本计算客观指标；独立重开工程、检查资源和动画姿态，复制 REAPER 工程至新目录重导混音，再逐样本比较。</dd></div></dl>
+          <ul class="verified-list"><li>17 个原始交付文件逐一核验 SHA-256；输入未修改，封存前后交付稳定。</li><li>Blender：30 根骨骼，十个抽样时刻有 10 个不同蒙皮状态，4 张纹理完整打包。</li><li>REAPER：4 轨、44 个片段，各轨保留效果器；迁移重导混音与提交混音逐样本一致。</li><li>4 份分轨相加的最大绝对误差为 3.17e-08，低于 10<sup>−5</sup> 的重构容差。</li></ul></div></section>
+  <section class="section" id="analysis"><div class="section-heading"><h2><span class="sec-no">05</span>逐帧分析</h2></div><p>左侧为评测参考，右侧为模型实际交付，时间和显示尺度一致。对照图用于结果说明，不属于模型的候选输入。</p><div class="model-panel" data-model-panel="astra62-xhigh"><h3>Astra 6.2 · 十个对应时刻</h3>
+          <div class="frame-inspector" data-frame-inspector data-frame-root="results/astra62-xhigh/comparison/" data-label="Astra 6.2"><div class="frame-toolbar"><strong data-frame-title>帧 00 · 0.000 s</strong><span>左：评测参考　右：实际交付</span></div><div class="frame-buttons" role="group" aria-label="选择评分帧"><button type="button" data-frame="0" aria-pressed="true">00</button><button type="button" data-frame="20" aria-pressed="false">20</button><button type="button" data-frame="40" aria-pressed="false">40</button><button type="button" data-frame="60" aria-pressed="false">60</button><button type="button" data-frame="80" aria-pressed="false">80</button><button type="button" data-frame="99" aria-pressed="false">99</button><button type="button" data-frame="119" aria-pressed="false">119</button><button type="button" data-frame="139" aria-pressed="false">139</button><button type="button" data-frame="159" aria-pressed="false">159</button><button type="button" data-frame="179" aria-pressed="false">179</button></div>
+          <a class="image-zoom" data-frame-link data-zoom data-title="Astra 6.2 · 帧 00" href="results/astra62-xhigh/comparison/frame-00.webp"><img data-frame-image src="results/astra62-xhigh/comparison/frame-00.webp" alt="左参考凤凰，右实际重建，同时间同尺度" width="1276" height="590" loading="lazy"></a><p class="metric-strip" data-frame-metrics>逐帧原始指标</p><p class="frame-observation" data-frame-observation>本帧对应测量。</p></div>
+          <p class="inline-links"><a href="results/astra62-xhigh/comparison/comparison-sheet.jpg" data-zoom data-title="Astra 6.2 · 十帧总览">十帧总览 ↗</a><a href="results/astra62-xhigh/comparison/frame-data.json">逐帧数据 JSON ↗</a></p>
+          <div class="findings-grid"><article><span class="finding-number">01 / 几何</span><h3>整体姿态已建立</h3><p>角色具备完整骨架、拍翼和滑翔过程。表面 F1 为 0.2650，对照中的翼面弯曲、身体体积与尾翎布局仍有可见差异。</p></article><article><span class="finding-number">02 / 外观</span><h3>细节与颜色仍有偏差</h3><p>羽翼与眼斑尾翎能够辨识，参考和交付的尾翎底色、羽片排列及受光层次仍不一致；前景 RGB SSIM 为 0.0773。</p></article><article><span class="finding-number">03 / 工程</span><h3>声音制作可继续修改</h3><p>模型自主组织 4 个声部与 44 个片段，保留变速、淡化、声像和效果器。工程迁移重导与分轨重构均已核验。</p></article></div></div></section>
+  <footer class="case-footer"><p>视觉参考：NORBERTO-3D 的 phoenix bird，CC BY 4.0。参考动画调整拍翼速度、幅度和滑翔终态。声音由 agent 自主选材与制作，交付中的来源、作者和许可见原始 README。</p><p class="footer-links"><a href="ATTRIBUTION.md">素材与交付署名</a><a href="manifest.json">公开文件校验清单</a><a href="../../index.html">案例目录</a><a href="https://github.com/vibrant700/omniale">GitHub ↗</a></p></footer>
+</main>
+<dialog id="image-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><strong id="dialog-title">逐帧对照</strong><button id="close-dialog" type="button">关闭 ×</button></div><img id="dialog-image" alt=""><p class="note">左参考 · 右实际交付；按 Esc 关闭。</p></dialog>
+</body></html>
