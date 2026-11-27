@@ -1,4 +1,4 @@
-"""Build the V3 case from allowlisted inputs, sealed deliveries and completed measurements."""
+"""Build the Phoenix case from allowlisted inputs, sealed deliveries and completed measurements."""
 import argparse
 import hashlib
 import html
@@ -33,7 +33,7 @@ def main():
     parser.add_argument('--reference-archive',required=True,type=Path)
     parser.add_argument('--repo',type=Path,default=HERE.parents[2])
     args=parser.parse_args();case=args.archive.resolve();reference=args.reference_archive.resolve();repo=args.repo.resolve()
-    site=repo/'docs/phoenix-reconstruction/v3';site.mkdir(parents=True,exist_ok=True)
+    site=repo/'docs/phoenix-reconstruction';site.mkdir(parents=True,exist_ok=True)
     assets=site/'assets';assets.mkdir(exist_ok=True)
     models=read(HERE/'models.json');assert models
     freeze=read(case/'runs'/models[0]['run']/'input-freeze.json')
@@ -60,7 +60,7 @@ def main():
     mechanisms=source[source.index('视觉固定抽取'):source.index('### 评审步骤与有效性')]
     mechanisms=mechanisms.replace('；证据不足记“无法判定”，不是 0 分，也不计为有效总分，须补充有效媒体或人工复核后裁定','；证据不足时补充有效媒体或人工听看裁定')
     mechanisms=mechanisms.replace('对按旧版每项 0／1 分提交的原始评审，保留原文件，以原判定乘 2 生成单独的权重换算记录，不声称重新评审。','')
-    scoring='# 凤凰 V3 评分机制\n\n二维覆盖度 30、三维几何 F1 30、成片外观 20、音效 20，总分 100。\n\n'+mechanisms
+    scoring='# 凤凰评分机制\n\n二维覆盖度 30、三维几何 F1 30、成片外观 20、音效 20，总分 100。\n\n'+mechanisms
     scoring+='\n每项音效判断保留音画时间依据。时间平移与节奏对照可用于检查自动同步判断能力。本次按委托方指定采用的模型报告计分，原始报告中的校准与人工复核标记如实保留。工程编辑、资源解析、混音重构与素材来源独立验收，不另加分。\n'
     (assets/'SCORING.md').write_text(scoring,encoding='utf-8')
     checklist=[]
@@ -174,7 +174,7 @@ def main():
             'AUDIO_CHECKLIST':''.join(checklist),'MODEL_ROWS':''.join(rows),'MODEL_OPTIONS':''.join(options),'MODEL_PANELS':''.join(panels),'EXECUTION_PANELS':''.join(execution),'ANALYSIS_PANELS':''.join(analysis)}
     for name,value in values.items():page=page.replace('<!--'+name+'-->',value)
     assert not re.search(r'<!--[A-Z_]+-->',page)
-    (site/'index.html').write_text(page,encoding='utf-8');shutil.copyfile(HERE/'style.css',site/'style.css')
+    (site/'index.html').write_text(page,encoding='utf-8');shutil.copyfile(HERE/'style.css',site/'case.css')
     write(site/'models.json',[{k:m[k] for k in ['id','label','model','effort','framework','public_result_scope']} for m in models])
     (site/'ATTRIBUTION.md').write_text('# 素材与交付署名\n\n视觉参考：phoenix bird / NORBERTO-3D，Sketchfab，CC BY 4.0。参考渲染调整了动画速度、幅度与滑翔终态。\n\n模型交付的声音使用 The Battle for Wesnoth 中的录音及模型自行合成的气流，依原始交付 README 署名，相关 GPL v2 或更高版本许可随交付包提供。实际文件、作者、来源和处理说明见各模型原始 README。\n\n评测端原始模型、参考 Blender 工程、完整目标机位真值及未审核工具轨迹不在公开文件中。\n',encoding='utf-8')
     write(site/'manifest.json',{'task_version':'phoenix-multiview-v3','files':[{'file':p.relative_to(site).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(site.rglob('*')) if p.is_file() and p!=site/'manifest.json']})
@@ -183,19 +183,16 @@ def main():
     match=re.search(r'<a class="case-card" href="phoenix-reconstruction[^\"]*">.*?</a>',text,re.S);assert match
     card=match.group()
     card=re.sub(r'href="phoenix-reconstruction[^\"]*"','href="phoenix-reconstruction/"',card,count=1)
-    card=re.sub(r'src="phoenix-reconstruction[^\"]*"','src="phoenix-reconstruction/v3/assets/reference/I1-poster.jpg"',card,count=1)
+    card=re.sub(r'src="phoenix-reconstruction[^\"]*"','src="phoenix-reconstruction/assets/reference/I1-poster.jpg"',card,count=1)
     card=re.sub(r'<p>.*?</p>','<p>根据三路同步录像重建六秒凤凰动画，自行寻找声音素材，使用 REAPER 完成拟音与混音，交付可编辑工程和分轨。</p>',card,count=1,flags=re.S)
-    card=re.sub(r'<div class="status">.*?</div>','<div class="status"><span class="status-dot"></span>V3 · Astra 6.2 xhigh ＋ Codex · 39.25 / 100 · 含模型音效评审</div>',card,count=1,flags=re.S)
+    card=re.sub(r'<div class="status">.*?</div>','<div class="status"><span class="status-dot"></span>Astra 6.2 xhigh ＋ Codex · 39.25 / 100 · 含模型音效评审</div>',card,count=1,flags=re.S)
     card=re.sub(r'<span class="enter">.*?</span>','<span class="enter">查看题目、成片、声音工程与客观核验 →</span>',card,count=1,flags=re.S)
     catalog.write_text(text[:match.start()]+card+text[match.end():],encoding='utf-8')
-    parent=site.parent
-    (parent/'index.html').write_text('''<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>凤凰角色重建与自主拟音 · OmniALE</title><link rel="canonical" href="https://vibrant700.github.io/omniale/phoenix-reconstruction/v3/"><script>location.replace('v3/'+location.search+location.hash);</script><meta http-equiv="refresh" content="0;url=v3/"></head><body><p><a href="v3/">凤凰角色重建与自主拟音</a></p></body></html>
-''',encoding='utf-8')
-    (parent/'ATTRIBUTION.md').write_text('# 素材署名\n\n当前案例的素材和交付署名见 [素材与交付署名](v3/ATTRIBUTION.md)。\n',encoding='utf-8')
-    assert not (parent/'v2').exists(),'Archive legacy public pages before building'
-    assert not (parent/'assets').exists() and not (parent/'results').exists(),'Archive legacy public media before building'
-    write(parent/'manifest.json',{'case':'phoenix-reconstruction','files':[{'file':p.relative_to(parent).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(parent.rglob('*')) if p.is_file() and p.name!='manifest.json']})
+    # Keep existing incoming links working while the canonical page has no version suffix.
+    legacy=site/'v3';legacy.mkdir(exist_ok=True)
+    (legacy/'index.html').write_text('''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>凤凰角色重建与自主拟音 · OmniALE</title><link rel="canonical" href="https://vibrant700.github.io/omniale/phoenix-reconstruction/"><script>location.replace('../'+location.search+location.hash);</script><meta http-equiv="refresh" content="0;url=../"></head><body><a href="../">凤凰角色重建与自主拟音</a></body></html>''',encoding='utf-8')
+    assert not (site/'v2').exists(),'Legacy pages must remain archived'
+    write(site/'manifest.json',{'task_version':'phoenix-multiview-v3','files':[{'file':p.relative_to(site).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(site.rglob('*')) if p.is_file() and p!=site/'manifest.json']})
     print(json.dumps({'page':str(site/'index.html'),'models':len(models),'input_files':len(INPUTS),'public_result_scope':'objective_metrics_and_user_supplied_audio_review','audio_judge_reports_published':True},ensure_ascii=True))
 
 if __name__=='__main__':main()

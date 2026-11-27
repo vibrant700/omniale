@@ -25,7 +25,7 @@ class Links(HTMLParser):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--url',default='http://127.0.0.1:8898/phoenix-reconstruction/v3/')
+    p.add_argument('--url',default='http://127.0.0.1:8898/phoenix-reconstruction/')
     p.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[3])
     p.add_argument('--output',required=True,type=Path)
     p.add_argument('--playwright-runtime',type=Path)
@@ -38,13 +38,14 @@ def main():
         server=ThreadingHTTPServer(('127.0.0.1',0),partial(QuietHandler,directory=str(args.repo/'docs')))
         threading.Thread(target=server.serve_forever,daemon=True).start()
         atexit.register(server.server_close);atexit.register(server.shutdown)
-        args.url=f'http://127.0.0.1:{server.server_port}/phoenix-reconstruction/v3/'
+        args.url=f'http://127.0.0.1:{server.server_port}/phoenix-reconstruction/'
     if args.playwright_runtime:sys.path.insert(0,str(args.playwright_runtime))
     from playwright.sync_api import sync_playwright
-    site=args.repo/'docs/phoenix-reconstruction/v3';text=(site/'index.html').read_text(encoding='utf-8')
-    assert not (site.parent/'v2').exists() and not (site.parent/'assets').exists() and not (site.parent/'results').exists()
-    assert 'V1' not in text and 'V2' not in text
-    assert 'location.replace' in (site.parent/'index.html').read_text(encoding='utf-8')
+    site=args.repo/'docs/phoenix-reconstruction';text=(site/'index.html').read_text(encoding='utf-8')
+    assert not (site/'v2').exists() and not (site/'v3/assets').exists() and not (site/'v3/results').exists()
+    assert all(v not in text for v in ['V1','V2','V3'])
+    assert 'location.replace' not in text
+    assert 'location.replace' in (site/'v3/index.html').read_text(encoding='utf-8')
     links=Links();links.feed(text)
     for ref in links.refs:
         u=urlsplit(ref)
@@ -88,7 +89,7 @@ def main():
         page=browser.new_page(viewport={'width':1440,'height':1000},device_scale_factor=1)
         page.on('pageerror',lambda e:report['console_errors'].append(str(e)))
         bad=[];page.on('response',lambda r:bad.append({'status':r.status,'url':r.url}) if r.status>=400 else None)
-        page.goto(args.url,wait_until='networkidle')
+        page.goto(args.url,wait_until='domcontentloaded')
         assert page.title()=='凤凰角色重建与自主拟音 · OmniALE'
         page.wait_for_function("document.querySelector('[data-frame-metrics]').textContent.includes('I1')")
         assert page.locator('#task-context li').count()==6
@@ -121,19 +122,19 @@ def main():
             if state['width']:assert (state['width'],state['height'])==(1280,720),state
             report['media'].append(state)
         for width,height in [(1440,1000),(390,844),(375,812)]:
-            page.set_viewport_size({'width':width,'height':height});page.goto(args.url,wait_until='networkidle')
+            page.set_viewport_size({'width':width,'height':height});page.goto(args.url,wait_until='domcontentloaded')
             assert not page.evaluate('document.documentElement.scrollWidth>window.innerWidth'),width
             page.screenshot(path=str(args.output/f'page-{width}.png'),full_page=True)
             report['viewports'].append({'width':width,'horizontal_overflow':False})
-        page.set_viewport_size({'width':1440,'height':1000});page.goto(args.url,wait_until='networkidle')
+        page.set_viewport_size({'width':1440,'height':1000});page.goto(args.url,wait_until='domcontentloaded')
         page.locator('#results').scroll_into_view_if_needed();page.screenshot(path=str(args.output/'results-desktop.png'))
-        root_url=args.url.replace('/v3/','/')
-        page.goto(root_url,wait_until='domcontentloaded')
-        page.wait_for_url('**/phoenix-reconstruction/v3/')
+        root_url=args.url
+        page.goto(root_url+'v3/',wait_until='domcontentloaded')
+        page.wait_for_url('**/phoenix-reconstruction/',wait_until='domcontentloaded')
         page.wait_for_function("document.querySelector('.score-display strong')?.textContent==='39.25'")
         assert page.locator('.site-return a').count()==1
         assert page.request.get(root_url+'v2/index.html').status==404
-        assert page.request.get(root_url+'assets/TASK.md').status==404
+        assert page.request.get(root_url+'v3/assets/TASK.md').status==404
         report['current_only_entry']='pass'
         assert not report['console_errors'],report['console_errors'];assert not bad,bad
         browser.close()
