@@ -1,0 +1,1942 @@
+{
+  "timebase": "所有时间位置为从测试视频首帧起算的秒数；start/end、donor_span、区间均为左闭右开。donor_span 是素材在输入 WAV 中的位置，不是额外的修改范围。",
+  "actual_modified_intervals_s": [
+    [
+      3.12,
+      6.2
+    ],
+    [
+      26.96,
+      30.04
+    ],
+    [
+      33.76,
+      37.32
+    ],
+    [
+      69.05,
+      72.94
+    ],
+    [
+      78.48,
+      82.34
+    ]
+  ],
+  "localization": "比较零起点音轨的多频带瞬态、两声道宽度与连续帧动作。另以短窗内 PCM 整数幅值直方图的周期性辅助定界：五段核心的增益重映射与相邻正常段不同，边缘约有 0.03 秒过渡。estimated_replacement_core_s 是声学估计，非已知原声真值；actual_modified_intervals_s 是包含本次边界淡变的实际编辑范围。",
+  "splices": "仅在上述五段内混音；每段首尾各 0.012 秒内与原轨交接。区间外不变速、不做整体增益或母带处理。",
+  "project": "打开 repair.rpp，媒体均在相邻 assets/。Location.wav 是整条输入录音，原轨只播放保留部分和边界淡变。其余 WAV 是按轨分装的立体声采样卷，每个击打或短句为独立 item；带宽整理、局部时长和尾音处理已写入卷内，可分别移动、修剪或调增益。Room 是由选定段的局部混音和前一段尾声生成的低电平短反射返回，没有单独的 donor_span。Picture.mp4 是无声的对位画面。",
+  "edits": [
+    {
+      "id": "R1",
+      "start_s": 3.12,
+      "end_s": 6.2,
+      "title": "从左侧鼓面移入中央",
+      "estimated_replacement_core_s": [
+        3.15,
+        6.17
+      ],
+      "diagnosis": "3.12 前后的低鼓尾声和立体声宽度发生断接。俯视下约 3.60 左侧的槌由褐色鼓面移向白色中央鼓面，随后两槌的起落很小；错配声中突出的固定强拍并未反映这种换位。小镲在 3.96、4.36、4.76、5.20、5.60、6.00 左右有一系列摆动。",
+      "reconstruction": "左侧鼓最后一击与中央弱击分别取自同场轻奏；将换位后的双手、低通的底鼓和高通的踩镲闭合声分别剪入。用 2.94 和 6.23 附近的低频起音夹定脉冲，保留两手不同的力度。",
+      "uncertainty": "初段槌高很小，鼓皮弱音和脚踏同时发生时不能逐一分辨，按相邻力度及拍间距估计。",
+      "peak_dBFS": -11.893,
+      "items": [
+        {
+          "layer": "Room",
+          "event": "Short stereo reflections",
+          "start": 3.12,
+          "end": 6.2,
+          "donor_span": [],
+          "gain": 1
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - soft answer",
+          "start": 3.142,
+          "end": 3.315,
+          "donor_span": [
+            2.099,
+            2.272
+          ],
+          "gain": 0.7
+        },
+        {
+          "layer": "Heads",
+          "event": "Middle tom - last stroke",
+          "start": 3.334,
+          "end": 3.519,
+          "donor_span": [
+            2.711,
+            2.896
+          ],
+          "gain": 1.1
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 3.343,
+          "end": 3.532,
+          "donor_span": [
+            6.64,
+            6.829
+          ],
+          "gain": 0.58
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - ghost",
+          "start": 3.542,
+          "end": 3.724,
+          "donor_span": [
+            1.592,
+            1.774
+          ],
+          "gain": 0.62
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 3.749,
+          "end": 3.849,
+          "donor_span": [
+            6.422,
+            6.522
+          ],
+          "gain": 0.47
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 3.754,
+          "end": 3.943,
+          "donor_span": [
+            7.863,
+            8.052
+          ],
+          "gain": 0.66
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 3.956,
+          "end": 4.144,
+          "donor_span": [
+            8.074,
+            8.262
+          ],
+          "gain": 0.57
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 3.964,
+          "end": 4.098,
+          "donor_span": [
+            6.835,
+            6.969
+          ],
+          "gain": 0.36
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 4.161,
+          "end": 4.329,
+          "donor_span": [
+            7.672,
+            7.84
+          ],
+          "gain": 0.5
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 4.166,
+          "end": 4.355,
+          "donor_span": [
+            6.224,
+            6.413
+          ],
+          "gain": 0.66
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 4.373,
+          "end": 4.584,
+          "donor_span": [
+            6.93,
+            7.141
+          ],
+          "gain": 0.44
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 4.376,
+          "end": 4.51,
+          "donor_span": [
+            8.502,
+            8.636
+          ],
+          "gain": 0.43
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 4.573,
+          "end": 4.745,
+          "donor_span": [
+            8.502,
+            8.674
+          ],
+          "gain": 0.52
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 4.581,
+          "end": 4.77,
+          "donor_span": [
+            8.29,
+            8.479
+          ],
+          "gain": 0.79
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 4.776,
+          "end": 4.874,
+          "donor_span": [
+            6.421,
+            6.519
+          ],
+          "gain": 0.7
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 4.784,
+          "end": 4.918,
+          "donor_span": [
+            6.835,
+            6.969
+          ],
+          "gain": 0.51
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 4.984,
+          "end": 5.172,
+          "donor_span": [
+            7.443,
+            7.631
+          ],
+          "gain": 0.53
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 4.989,
+          "end": 5.178,
+          "donor_span": [
+            6.64,
+            6.829
+          ],
+          "gain": 0.83
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 5.19,
+          "end": 5.375,
+          "donor_span": [
+            8.073,
+            8.258
+          ],
+          "gain": 0.69
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 5.196,
+          "end": 5.33,
+          "donor_span": [
+            7.672,
+            7.806
+          ],
+          "gain": 0.6
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 5.389,
+          "end": 5.579,
+          "donor_span": [
+            6.927,
+            7.117
+          ],
+          "gain": 0.5
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 5.401,
+          "end": 5.59,
+          "donor_span": [
+            7.863,
+            8.052
+          ],
+          "gain": 0.84
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 5.596,
+          "end": 5.772,
+          "donor_span": [
+            7.67,
+            7.846
+          ],
+          "gain": 0.65
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 5.606,
+          "end": 5.74,
+          "donor_span": [
+            8.075,
+            8.209
+          ],
+          "gain": 0.7
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 5.798,
+          "end": 5.896,
+          "donor_span": [
+            6.422,
+            6.52
+          ],
+          "gain": 0.72
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 5.815,
+          "end": 6.004,
+          "donor_span": [
+            8.703,
+            8.892
+          ],
+          "gain": 0.81
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre - alternating tap",
+          "start": 6.008,
+          "end": 6.185,
+          "donor_span": [
+            8.502,
+            8.679
+          ],
+          "gain": 0.65
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 6.015,
+          "end": 6.149,
+          "donor_span": [
+            8.502,
+            8.636
+          ],
+          "gain": 0.79
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "start_s": 26.96,
+      "end_s": 30.04,
+      "title": "两手交错与底鼓拍点",
+      "estimated_replacement_core_s": [
+        27.003,
+        30.003
+      ],
+      "diagnosis": "侧视可见近侧手在约 27.0、27.4 和 28.3 附近分别落下，后半段有更大的抬槌；原配声的反复重音与这些落点脱开。26.70 与 30.08 附近的底鼓及区间两侧细分连续，核心内突然变成另一种较宽声像。",
+      "reconstruction": "将两端正常低鼓脉冲间分成八个略不等长的拍，以半拍为单元，在同一侧面机位的正常乐句中按双手位置及运动变化匹配。做局部时长、响度调整与短重叠，单元内部保留原演奏的双击和轻音。",
+      "uncertainty": "腕部遮住部分槌尖，小装饰音的数目与强度属于动作相似重建；核心入口的量化差别较弱，边缘为近似判断。",
+      "peak_dBFS": -3.84,
+      "items": [
+        {
+          "layer": "Articulation",
+          "event": "Pickup cell",
+          "start": 26.96,
+          "end": 27.097,
+          "donor_span": [
+            15.166145,
+            15.395353
+          ],
+          "gain": 1.33
+        },
+        {
+          "layer": "Articulation",
+          "event": "Downbeat cell",
+          "start": 27.087,
+          "end": 27.31,
+          "donor_span": [
+            14.508847,
+            14.73866
+          ],
+          "gain": 1.33
+        },
+        {
+          "layer": "Articulation",
+          "event": "Pickup cell",
+          "start": 27.3,
+          "end": 27.523,
+          "donor_span": [
+            31.49177,
+            31.702728
+          ],
+          "gain": 1.33
+        },
+        {
+          "layer": "Articulation",
+          "event": "Downbeat cell",
+          "start": 27.513,
+          "end": 27.7335,
+          "donor_span": [
+            31.290214,
+            31.501276
+          ],
+          "gain": 0.89319
+        },
+        {
+          "layer": "Articulation",
+          "event": "Pickup cell",
+          "start": 27.7235,
+          "end": 27.944,
+          "donor_span": [
+            30.280476,
+            30.502018
+          ],
+          "gain": 0.95255
+        },
+        {
+          "layer": "Articulation",
+          "event": "Downbeat cell",
+          "start": 27.934,
+          "end": 28.153,
+          "donor_span": [
+            14.947773,
+            15.176731
+          ],
+          "gain": 0.80432
+        },
+        {
+          "layer": "Articulation",
+          "event": "Pickup cell",
+          "start": 28.143,
+          "end": 28.362,
+          "donor_span": [
+            15.599856,
+            15.825148
+          ],
+          "gain": 1.33
+        },
+        {
+          "layer": "Articulation",
+          "event": "Downbeat cell",
+          "start": 28.352,
+          "end": 28.578,
+          "donor_span": [
+            15.814896,
+            16.045604
+          ],
+          "gain": 0.96065
+        },
+        {
+          "layer": "Articulation",
+          "event": "Pickup cell",
+          "start": 28.568,
+          "end": 28.794,
+          "donor_span": [
+            30.280604,
+            30.501896
+          ],
+          "gain": 0.9522
+        },
+        {
+          "layer": "Articulation",
+          "event": "Downbeat cell",
+          "start": 28.784,
+          "end": 29.0075,
+          "donor_span": [
+            26.277293,
+            26.487709
+          ],
+          "gain": 0.8
+        },
+        {
+          "layer": "Articulation",
+          "event": "Pickup cell",
+          "start": 28.9975,
+          "end": 29.221,
+          "donor_span": [
+            26.059918,
+            26.287085
+          ],
+          "gain": 1.20804
+        },
+        {
+          "layer": "Articulation",
+          "event": "Downbeat cell",
+          "start": 29.211,
+          "end": 29.4365,
+          "donor_span": [
+            14.94793,
+            15.176576
+          ],
+          "gain": 0.80379
+        },
+        {
+          "layer": "Articulation",
+          "event": "Pickup cell",
+          "start": 29.4265,
+          "end": 29.652,
+          "donor_span": [
+            30.280593,
+            30.501905
+          ],
+          "gain": 0.95213
+        },
+        {
+          "layer": "Articulation",
+          "event": "Downbeat cell",
+          "start": 29.642,
+          "end": 29.8655,
+          "donor_span": [
+            13.256176,
+            13.471821
+          ],
+          "gain": 0.97169
+        },
+        {
+          "layer": "Articulation",
+          "event": "Pickup cell",
+          "start": 29.8555,
+          "end": 30.04,
+          "donor_span": [
+            16.035336,
+            16.266169
+          ],
+          "gain": 1.23765
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "start_s": 33.76,
+      "end_s": 37.32,
+      "title": "中央军鼓收束至滚奏",
+      "estimated_replacement_core_s": [
+        33.79,
+        37.29
+      ],
+      "diagnosis": "俯视中双手回到同一鼓面，抬槌幅度逐渐收小，最终与 37.32 之后持续的弱滚奏连为一体。小镲在约 33.96、34.40、34.80 和 35.48 摆动后趋静；错配乐句仍有独立而清楚的低音重击。",
+      "reconstruction": "用同场中央鼓、底鼓和镲脚补出较分明的起音，然后降低鼓皮击打力度。35.54 起按手部动作拼接正常段不同的压奏回弹片段，以重叠渐变连接至原有滚奏；低鼓层先行退出。",
+      "uncertainty": "细密回弹快于视频帧率，不能从画面逐粒计数；使用真实滚奏的微时序重建密度。",
+      "peak_dBFS": -7.926,
+      "items": [
+        {
+          "layer": "Room",
+          "event": "Short stereo reflections",
+          "start": 33.76,
+          "end": 37.32,
+          "donor_span": [],
+          "gain": 1
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 33.78,
+          "end": 33.961,
+          "donor_span": [
+            32.952,
+            33.133
+          ],
+          "gain": 0.86
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 33.783,
+          "end": 34.017,
+          "donor_span": [
+            32.12,
+            32.354
+          ],
+          "gain": 0.84
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 33.897,
+          "end": 33.959,
+          "donor_span": [
+            33.691,
+            33.753
+          ],
+          "gain": 0.62
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 33.993,
+          "end": 34.143,
+          "donor_span": [
+            33.584,
+            33.734
+          ],
+          "gain": 0.89
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 34.005,
+          "end": 34.189,
+          "donor_span": [
+            33.145,
+            33.329
+          ],
+          "gain": 0.84
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 34.157,
+          "end": 34.249,
+          "donor_span": [
+            31.912,
+            32.004
+          ],
+          "gain": 0.5
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 34.198,
+          "end": 34.432,
+          "donor_span": [
+            31.7,
+            31.934
+          ],
+          "gain": 0.74
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 34.273,
+          "end": 34.378,
+          "donor_span": [
+            32.623,
+            32.728
+          ],
+          "gain": 0.56
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 34.42,
+          "end": 34.523,
+          "donor_span": [
+            33.582,
+            33.685
+          ],
+          "gain": 0.64
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 34.421,
+          "end": 34.571,
+          "donor_span": [
+            32.752,
+            32.902
+          ],
+          "gain": 0.87
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 34.516,
+          "end": 34.58,
+          "donor_span": [
+            33.69,
+            33.754
+          ],
+          "gain": 0.62
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 34.621,
+          "end": 34.855,
+          "donor_span": [
+            32.542,
+            32.776
+          ],
+          "gain": 0.7
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 34.628,
+          "end": 34.805,
+          "donor_span": [
+            32.947,
+            33.124
+          ],
+          "gain": 0.78
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 34.822,
+          "end": 34.972,
+          "donor_span": [
+            31.81,
+            31.96
+          ],
+          "gain": 0.77
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 34.825,
+          "end": 35.008,
+          "donor_span": [
+            33.145,
+            33.328
+          ],
+          "gain": 0.61
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 35.019,
+          "end": 35.125,
+          "donor_span": [
+            33.582,
+            33.688
+          ],
+          "gain": 0.63
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 35.054,
+          "end": 35.288,
+          "donor_span": [
+            32.116,
+            32.35
+          ],
+          "gain": 0.46
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 35.122,
+          "end": 35.242,
+          "donor_span": [
+            32.625,
+            32.745
+          ],
+          "gain": 0.52
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 35.269,
+          "end": 35.435,
+          "donor_span": [
+            33.145,
+            33.311
+          ],
+          "gain": 0.53
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 35.402,
+          "end": 35.504,
+          "donor_span": [
+            33.583,
+            33.685
+          ],
+          "gain": 0.47
+        },
+        {
+          "layer": "Hats",
+          "event": "Foot hat",
+          "start": 35.506,
+          "end": 35.656,
+          "donor_span": [
+            33.585,
+            33.735
+          ],
+          "gain": 0.72
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - release to edge",
+          "start": 35.506,
+          "end": 35.64,
+          "donor_span": [
+            33.148,
+            33.282
+          ],
+          "gain": 0.5
+        },
+        {
+          "layer": "Rolls",
+          "event": "Press roll - rebound",
+          "start": 35.536,
+          "end": 35.759,
+          "donor_span": [
+            39.31,
+            39.533
+          ],
+          "gain": 0.94
+        },
+        {
+          "layer": "Rolls",
+          "event": "Press roll - rebound",
+          "start": 35.726,
+          "end": 35.995,
+          "donor_span": [
+            38.99,
+            39.259
+          ],
+          "gain": 1.03
+        },
+        {
+          "layer": "Rolls",
+          "event": "Press roll - rebound",
+          "start": 35.956,
+          "end": 36.247,
+          "donor_span": [
+            38.553,
+            38.844
+          ],
+          "gain": 1.18
+        },
+        {
+          "layer": "Rolls",
+          "event": "Press roll - rebound",
+          "start": 36.203,
+          "end": 36.513,
+          "donor_span": [
+            37.628,
+            37.938
+          ],
+          "gain": 1.12
+        },
+        {
+          "layer": "Rolls",
+          "event": "Press roll - rebound",
+          "start": 36.468,
+          "end": 36.763,
+          "donor_span": [
+            38.194,
+            38.489
+          ],
+          "gain": 1.18
+        },
+        {
+          "layer": "Rolls",
+          "event": "Press roll - rebound",
+          "start": 36.72,
+          "end": 37.026,
+          "donor_span": [
+            37.692,
+            37.998
+          ],
+          "gain": 0.99
+        },
+        {
+          "layer": "Rolls",
+          "event": "Press roll - rebound",
+          "start": 36.981,
+          "end": 37.195,
+          "donor_span": [
+            38.412,
+            38.626
+          ],
+          "gain": 1.08
+        },
+        {
+          "layer": "Rolls",
+          "event": "Press roll - rebound",
+          "start": 37.155,
+          "end": 37.32,
+          "donor_span": [
+            37.433,
+            37.619
+          ],
+          "gain": 1.05
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "start_s": 69.05,
+      "end_s": 72.94,
+      "title": "从中央向两侧镲片展开",
+      "estimated_replacement_core_s": [
+        69.08,
+        72.91
+      ],
+      "diagnosis": "从中央快速交替开始，伸臂后可见左内镲约 69.98 开始摆动，较外侧镲约 70.39 接入；约 71.45 上方右镲及 72.32 大右镲分别开始明显晃动。错配声的瞬态和短衰减没有呈现这组左右交接。",
+      "reconstruction": "先接续正常中央强奏的短击打组，再按画面分层放置军鼓、脚踏和独立镲尾。镲击由本场后段抽取，限制后续鼓击泄漏并保留双声道相位；脚踏由较宽间距过渡到尾端较密的低频脉冲。",
+      "uncertainty": "可确定镲被激发的区域和大致帧，连续晃动中的二次轻触与看不见的脚踏按上下文推断。",
+      "peak_dBFS": -1.031,
+      "items": [
+        {
+          "layer": "Articulation",
+          "event": "Centre - accented group",
+          "start": 69.05,
+          "end": 69.186,
+          "donor_span": [
+            67.468,
+            67.611
+          ],
+          "gain": 0.893
+        },
+        {
+          "layer": "Articulation",
+          "event": "Centre - accented group",
+          "start": 69.171,
+          "end": 69.377,
+          "donor_span": [
+            68.803,
+            69.009
+          ],
+          "gain": 0.9306
+        },
+        {
+          "layer": "Articulation",
+          "event": "Centre - accented group",
+          "start": 69.363,
+          "end": 69.558,
+          "donor_span": [
+            67.82,
+            68.015
+          ],
+          "gain": 0.9212
+        },
+        {
+          "layer": "Articulation",
+          "event": "Centre - accented group",
+          "start": 69.545,
+          "end": 69.762,
+          "donor_span": [
+            68.405,
+            68.622
+          ],
+          "gain": 0.9682
+        },
+        {
+          "layer": "Articulation",
+          "event": "Centre - accented group",
+          "start": 69.75,
+          "end": 69.965,
+          "donor_span": [
+            68.619,
+            68.834
+          ],
+          "gain": 0.8648
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 69.963,
+          "end": 70.108,
+          "donor_span": [
+            68.009,
+            68.154
+          ],
+          "gain": 0.9494
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 69.977,
+          "end": 70.054,
+          "donor_span": [
+            68.347,
+            68.424
+          ],
+          "gain": 0.6674
+        },
+        {
+          "layer": "Metals",
+          "event": "Inner left crash",
+          "start": 69.977,
+          "end": 70.367,
+          "donor_span": [
+            83.505,
+            83.895
+          ],
+          "gain": 0.987
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.069,
+          "end": 70.136,
+          "donor_span": [
+            67.317,
+            67.384
+          ],
+          "gain": 0.5264
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 70.169,
+          "end": 70.314,
+          "donor_span": [
+            73.218,
+            73.363
+          ],
+          "gain": 0.7426
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.188,
+          "end": 70.27,
+          "donor_span": [
+            68.621,
+            68.703
+          ],
+          "gain": 0.6298
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.274,
+          "end": 70.34,
+          "donor_span": [
+            68.735,
+            68.801
+          ],
+          "gain": 0.6204
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 70.368,
+          "end": 70.513,
+          "donor_span": [
+            67.616,
+            67.761
+          ],
+          "gain": 0.9494
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.381,
+          "end": 70.454,
+          "donor_span": [
+            67.536,
+            67.609
+          ],
+          "gain": 0.7896
+        },
+        {
+          "layer": "Metals",
+          "event": "Outer left cymbal",
+          "start": 70.383,
+          "end": 70.849,
+          "donor_span": [
+            84.315,
+            84.781
+          ],
+          "gain": 0.9212
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.487,
+          "end": 70.566,
+          "donor_span": [
+            67.32,
+            67.399
+          ],
+          "gain": 0.5734
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 70.566,
+          "end": 70.711,
+          "donor_span": [
+            73.359,
+            73.504
+          ],
+          "gain": 0.7144
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.576,
+          "end": 70.668,
+          "donor_span": [
+            67.688,
+            67.78
+          ],
+          "gain": 0.5922
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.661,
+          "end": 70.732,
+          "donor_span": [
+            67.947,
+            68.018
+          ],
+          "gain": 0.658
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 70.759,
+          "end": 70.904,
+          "donor_span": [
+            68.401,
+            68.546
+          ],
+          "gain": 0.94
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.777,
+          "end": 70.866,
+          "donor_span": [
+            68.348,
+            68.437
+          ],
+          "gain": 0.7238
+        },
+        {
+          "layer": "Metals",
+          "event": "Left cymbal - answer",
+          "start": 70.777,
+          "end": 71.142,
+          "donor_span": [
+            83.123,
+            83.488
+          ],
+          "gain": 0.8272
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 70.901,
+          "end": 70.967,
+          "donor_span": [
+            67.536,
+            67.602
+          ],
+          "gain": 0.6204
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 70.957,
+          "end": 71.102,
+          "donor_span": [
+            73.495,
+            73.64
+          ],
+          "gain": 0.7708
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 71.0,
+          "end": 71.088,
+          "donor_span": [
+            67.316,
+            67.404
+          ],
+          "gain": 0.5734
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 71.097,
+          "end": 71.166,
+          "donor_span": [
+            67.946,
+            68.015
+          ],
+          "gain": 0.6204
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 71.156,
+          "end": 71.301,
+          "donor_span": [
+            67.222,
+            67.367
+          ],
+          "gain": 0.94
+        },
+        {
+          "layer": "Metals",
+          "event": "Left cymbal - accent",
+          "start": 71.158,
+          "end": 71.526,
+          "donor_span": [
+            82.388,
+            82.756
+          ],
+          "gain": 0.9024
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 71.188,
+          "end": 71.258,
+          "donor_span": [
+            68.734,
+            68.804
+          ],
+          "gain": 0.752
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 71.296,
+          "end": 71.377,
+          "donor_span": [
+            67.318,
+            67.399
+          ],
+          "gain": 0.5922
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 71.36,
+          "end": 71.505,
+          "donor_span": [
+            73.633,
+            73.778
+          ],
+          "gain": 0.8366
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 71.418,
+          "end": 71.498,
+          "donor_span": [
+            68.348,
+            68.428
+          ],
+          "gain": 0.6956
+        },
+        {
+          "layer": "Metals",
+          "event": "Upper right crash",
+          "start": 71.451,
+          "end": 72.586,
+          "donor_span": [
+            85.825,
+            86.96
+          ],
+          "gain": 0.8178
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 71.507,
+          "end": 71.652,
+          "donor_span": [
+            73.779,
+            73.924
+          ],
+          "gain": 0.9024
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 71.594,
+          "end": 71.642,
+          "donor_span": [
+            67.487,
+            67.535
+          ],
+          "gain": 0.5358
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 71.673,
+          "end": 71.818,
+          "donor_span": [
+            73.922,
+            74.067
+          ],
+          "gain": 0.8178
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 71.75,
+          "end": 71.814,
+          "donor_span": [
+            67.538,
+            67.602
+          ],
+          "gain": 0.705
+        },
+        {
+          "layer": "Metals",
+          "event": "Upper right - second touch",
+          "start": 71.799,
+          "end": 72.179,
+          "donor_span": [
+            83.505,
+            83.885
+          ],
+          "gain": 0.6768
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 71.832,
+          "end": 71.977,
+          "donor_span": [
+            74.063,
+            74.208
+          ],
+          "gain": 0.9306
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 71.965,
+          "end": 72.035,
+          "donor_span": [
+            68.35,
+            68.42
+          ],
+          "gain": 0.611
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 71.988,
+          "end": 72.133,
+          "donor_span": [
+            73.498,
+            73.643
+          ],
+          "gain": 0.8648
+        },
+        {
+          "layer": "Metals",
+          "event": "Upper right - rebound",
+          "start": 72.001,
+          "end": 72.451,
+          "donor_span": [
+            84.316,
+            84.766
+          ],
+          "gain": 0.6768
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 72.093,
+          "end": 72.18,
+          "donor_span": [
+            68.618,
+            68.705
+          ],
+          "gain": 0.6016
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 72.152,
+          "end": 72.297,
+          "donor_span": [
+            74.211,
+            74.356
+          ],
+          "gain": 0.8554
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 72.27,
+          "end": 72.35,
+          "donor_span": [
+            68.348,
+            68.428
+          ],
+          "gain": 0.564
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 72.306,
+          "end": 72.451,
+          "donor_span": [
+            74.351,
+            74.496
+          ],
+          "gain": 0.94
+        },
+        {
+          "layer": "Metals",
+          "event": "Large right cymbal",
+          "start": 72.311,
+          "end": 72.94,
+          "donor_span": [
+            85.824,
+            86.974
+          ],
+          "gain": 0.8178
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 72.464,
+          "end": 72.609,
+          "donor_span": [
+            73.636,
+            73.781
+          ],
+          "gain": 0.8554
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 72.471,
+          "end": 72.551,
+          "donor_span": [
+            67.945,
+            68.025
+          ],
+          "gain": 0.4982
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 72.606,
+          "end": 72.751,
+          "donor_span": [
+            73.779,
+            73.924
+          ],
+          "gain": 0.9306
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare - under cymbals",
+          "start": 72.689,
+          "end": 72.757,
+          "donor_span": [
+            67.536,
+            67.604
+          ],
+          "gain": 0.4888
+        },
+        {
+          "layer": "Metals",
+          "event": "Top cymbal - accent",
+          "start": 72.731,
+          "end": 72.94,
+          "donor_span": [
+            84.802,
+            85.601
+          ],
+          "gain": 0.8084
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 72.752,
+          "end": 72.897,
+          "donor_span": [
+            74.496,
+            74.641
+          ],
+          "gain": 0.9118
+        },
+        {
+          "layer": "Pedal",
+          "event": "Bass drum",
+          "start": 72.886,
+          "end": 72.94,
+          "donor_span": [
+            73.092,
+            73.237
+          ],
+          "gain": 0.94
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "start_s": 78.48,
+      "end_s": 82.34,
+      "title": "通鼓行进与左右镲回答",
+      "estimated_replacement_core_s": [
+        78.51,
+        82.31
+      ],
+      "diagnosis": "前一小节已在左侧低鼓面上演奏。此处手在不同鼓面间移动，左侧镲组约 78.63、78.91 开始摇动，右侧约 79.47 和上方约 80.39 相继响应，再向左回落，约 81.96 左下大镲振动。原来的重复乐句与该空间顺序不合。",
+      "reconstruction": "从相邻的通鼓段取得不同音高和力度的真实击打；保留若干通鼓与底鼓同击，较短的回答用独立采样。镲声按激发帧分别定位，保留衰减重叠，在开头承接上一镲的余音。",
+      "uncertainty": "鼓件相邻且偶有遮挡，通鼓音高选择、单次击打力度和镲尾长度为近似匹配。",
+      "peak_dBFS": -0.752,
+      "items": [
+        {
+          "layer": "Metals",
+          "event": "Carry from previous crash",
+          "start": 78.48,
+          "end": 78.939,
+          "donor_span": [
+            76.263,
+            76.873
+          ],
+          "gain": 0.7644
+        },
+        {
+          "layer": "Room",
+          "event": "Short stereo reflections",
+          "start": 78.48,
+          "end": 82.34,
+          "donor_span": [],
+          "gain": 0.91
+        },
+        {
+          "layer": "Heads",
+          "event": "Floor tom",
+          "start": 78.481,
+          "end": 78.596,
+          "donor_span": [
+            77.887,
+            78.002
+          ],
+          "gain": 0.7644
+        },
+        {
+          "layer": "Heads",
+          "event": "Floor tom + bass",
+          "start": 78.62,
+          "end": 78.753,
+          "donor_span": [
+            77.157,
+            77.29
+          ],
+          "gain": 0.91
+        },
+        {
+          "layer": "Metals",
+          "event": "Outer left dark cymbal",
+          "start": 78.626,
+          "end": 79.009,
+          "donor_span": [
+            83.122,
+            83.505
+          ],
+          "gain": 0.8736
+        },
+        {
+          "layer": "Heads",
+          "event": "Middle tom",
+          "start": 78.77,
+          "end": 78.9,
+          "donor_span": [
+            76.992,
+            77.122
+          ],
+          "gain": 0.6825
+        },
+        {
+          "layer": "Heads",
+          "event": "Tom + bass",
+          "start": 78.904,
+          "end": 79.079,
+          "donor_span": [
+            78.048,
+            78.223
+          ],
+          "gain": 0.8008
+        },
+        {
+          "layer": "Metals",
+          "event": "Upper left crash",
+          "start": 78.91,
+          "end": 79.389,
+          "donor_span": [
+            84.315,
+            84.794
+          ],
+          "gain": 0.8008
+        },
+        {
+          "layer": "Heads",
+          "event": "Middle tom",
+          "start": 79.071,
+          "end": 79.177,
+          "donor_span": [
+            76.868,
+            76.974
+          ],
+          "gain": 0.7644
+        },
+        {
+          "layer": "Heads",
+          "event": "Tom",
+          "start": 79.206,
+          "end": 79.341,
+          "donor_span": [
+            77.734,
+            77.869
+          ],
+          "gain": 0.8372
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre accent",
+          "start": 79.349,
+          "end": 79.454,
+          "donor_span": [
+            68.803,
+            68.908
+          ],
+          "gain": 0.7735
+        },
+        {
+          "layer": "Metals",
+          "event": "Large right cymbal",
+          "start": 79.466,
+          "end": 80.626,
+          "donor_span": [
+            85.823,
+            86.983
+          ],
+          "gain": 0.8645
+        },
+        {
+          "layer": "Heads",
+          "event": "Bass + centre",
+          "start": 79.482,
+          "end": 79.737,
+          "donor_span": [
+            83.12,
+            83.375
+          ],
+          "gain": 0.8554
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare and bass",
+          "start": 79.733,
+          "end": 79.901,
+          "donor_span": [
+            67.615,
+            67.783
+          ],
+          "gain": 0.7735
+        },
+        {
+          "layer": "Metals",
+          "event": "Upper right cymbal",
+          "start": 79.76,
+          "end": 80.15,
+          "donor_span": [
+            83.505,
+            83.895
+          ],
+          "gain": 0.9373
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre answer",
+          "start": 79.92,
+          "end": 80.04,
+          "donor_span": [
+            68.401,
+            68.521
+          ],
+          "gain": 0.6552
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare",
+          "start": 80.036,
+          "end": 80.109,
+          "donor_span": [
+            67.533,
+            67.606
+          ],
+          "gain": 0.7371
+        },
+        {
+          "layer": "Metals",
+          "event": "Near right cymbal",
+          "start": 80.042,
+          "end": 80.412,
+          "donor_span": [
+            82.387,
+            82.757
+          ],
+          "gain": 0.7735
+        },
+        {
+          "layer": "Heads",
+          "event": "Snare",
+          "start": 80.195,
+          "end": 80.265,
+          "donor_span": [
+            68.733,
+            68.803
+          ],
+          "gain": 0.7553
+        },
+        {
+          "layer": "Heads",
+          "event": "Bass + centre",
+          "start": 80.33,
+          "end": 80.57,
+          "donor_span": [
+            83.121,
+            83.361
+          ],
+          "gain": 0.8099
+        },
+        {
+          "layer": "Metals",
+          "event": "Top cymbal",
+          "start": 80.386,
+          "end": 81.166,
+          "donor_span": [
+            84.804,
+            85.584
+          ],
+          "gain": 0.8554
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre",
+          "start": 80.513,
+          "end": 80.586,
+          "donor_span": [
+            67.535,
+            67.608
+          ],
+          "gain": 0.6643
+        },
+        {
+          "layer": "Heads",
+          "event": "Centre",
+          "start": 80.665,
+          "end": 80.741,
+          "donor_span": [
+            68.348,
+            68.424
+          ],
+          "gain": 0.6916
+        },
+        {
+          "layer": "Heads",
+          "event": "Middle tom",
+          "start": 80.802,
+          "end": 80.911,
+          "donor_span": [
+            76.868,
+            76.977
+          ],
+          "gain": 0.7098
+        },
+        {
+          "layer": "Heads",
+          "event": "Tom + bass",
+          "start": 80.956,
+          "end": 81.186,
+          "donor_span": [
+            83.503,
+            83.733
+          ],
+          "gain": 0.8736
+        },
+        {
+          "layer": "Metals",
+          "event": "Inner left crash",
+          "start": 80.957,
+          "end": 81.351,
+          "donor_span": [
+            83.505,
+            83.899
+          ],
+          "gain": 0.8736
+        },
+        {
+          "layer": "Heads",
+          "event": "Tom",
+          "start": 81.163,
+          "end": 81.293,
+          "donor_span": [
+            77.734,
+            77.864
+          ],
+          "gain": 0.7826
+        },
+        {
+          "layer": "Metals",
+          "event": "Upper left cymbal",
+          "start": 81.323,
+          "end": 81.787,
+          "donor_span": [
+            84.315,
+            84.779
+          ],
+          "gain": 0.8099
+        },
+        {
+          "layer": "Heads",
+          "event": "Low accent",
+          "start": 81.337,
+          "end": 81.506,
+          "donor_span": [
+            76.26,
+            76.429
+          ],
+          "gain": 0.8645
+        },
+        {
+          "layer": "Heads",
+          "event": "Tom",
+          "start": 81.477,
+          "end": 81.604,
+          "donor_span": [
+            76.992,
+            77.119
+          ],
+          "gain": 0.7371
+        },
+        {
+          "layer": "Metals",
+          "event": "Outer left dark cymbal",
+          "start": 81.616,
+          "end": 81.994,
+          "donor_span": [
+            83.123,
+            83.501
+          ],
+          "gain": 0.8645
+        },
+        {
+          "layer": "Heads",
+          "event": "Floor tom + bass",
+          "start": 81.625,
+          "end": 81.773,
+          "donor_span": [
+            77.157,
+            77.305
+          ],
+          "gain": 0.9282
+        },
+        {
+          "layer": "Heads",
+          "event": "Floor tom",
+          "start": 81.784,
+          "end": 81.911,
+          "donor_span": [
+            77.887,
+            78.014
+          ],
+          "gain": 0.819
+        },
+        {
+          "layer": "Heads",
+          "event": "Floor tom + bass",
+          "start": 81.951,
+          "end": 82.125,
+          "donor_span": [
+            78.049,
+            78.223
+          ],
+          "gain": 0.91
+        },
+        {
+          "layer": "Metals",
+          "event": "Low left crash",
+          "start": 81.952,
+          "end": 82.34,
+          "donor_span": [
+            85.823,
+            86.973
+          ],
+          "gain": 0.91
+        },
+        {
+          "layer": "Heads",
+          "event": "Low tom",
+          "start": 82.133,
+          "end": 82.246,
+          "donor_span": [
+            76.868,
+            76.981
+          ],
+          "gain": 0.728
+        },
+        {
+          "layer": "Heads",
+          "event": "Tom pickup",
+          "start": 82.243,
+          "end": 82.34,
+          "donor_span": [
+            76.994,
+            77.145
+          ],
+          "gain": 0.7098
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "duration_s": 87.0,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "samples_per_channel": 4176000,
+    "wav_encoding": "24-bit signed PCM",
+    "all_samples_finite": true,
+    "peak_sample_linear": 0.9170194864273071,
+    "peak_sample_dBFS": -0.752,
+    "unchanged_outside_edits": "将输入与输出按同一满幅比例解码后，全部未编辑采样完全相等。",
+    "picture": "H.264 视频流直接复制；FFmpeg 解码的 2175 个帧校验值及各帧时间记录与输入完全相同，852×480，25 fps。",
+    "mp4_audio": "ALAC，解码至 24 位 PCM 后与 repaired.wav 完全相同。",
+    "session": "REAPER 7.86，9 轨、173 个媒体 item、5 个区域。将工程和素材复制到另一目录后用 -renderproject 离线渲染；交付 WAV 即该次 48 kHz 立体声渲染。",
+    "decoded_audio_s24le_sha256": "d1366f2ac8b61f2f0b221bde29835e1d2742182c84ab6b916cf8622db6c5598d"
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "title": "Drum AV Repair",
+  "solver": "gpt-6.2-astra",
+  "effort": "xhigh",
+  "framework": "Codex CLI 0.142.4",
+  "total": 57.02,
+  "regions": [
+    {
+      "id": "E1",
+      "title": "轻击与换鼓",
+      "window": [
+        1.62,
+        7.7
+      ],
+      "local": [
+        1.5,
+        4.58
+      ],
+      "support": [
+        3.12,
+        6.2
+      ],
+      "media": {
+        "reference": "assets/clips/E1-reference.mp4",
+        "repaired": "assets/clips/E1-repaired.mp4",
+        "corrupted": "assets/clips/E1-corrupted.mp4"
+      },
+      "scores": {
+        "correspondence": 6.52,
+        "blending": 3.25,
+        "quality": 2.5,
+        "total": 12.27
+      },
+      "analysis": [
+        "主要军鼓与底鼓拍点贴合，较轻的装饰音与弱击细节被简化。",
+        "进入和退出边界没有明显点击；连续轻击间仍能听到采样拼接的生硬感。",
+        "相对原声略偏干、偏薄，短尾声和重复采样影响了现场连贯感。"
+      ],
+      "diagnostics": {
+        "onsets_ref": 15,
+        "onsets_rep": 14,
+        "f1_30ms": 0.759,
+        "f1_50ms": 0.828,
+        "f1_50ms_corrupted": 0.333,
+        "p50": 0.857,
+        "r50": 0.8,
+        "mean_err50_ms": 11.7,
+        "flux_corr_rep": 0.496,
+        "flux_corr_corrupted": -0.036,
+        "band_corr_diagnostic_only": {
+          "Kick": 0.537,
+          "Snare": 0.311,
+          "Tom": 0.186,
+          "Cym": 0.465
+        },
+        "rms_ref_db": -28.28,
+        "rms_rep_db": -29.75,
+        "rms_diff_db": -1.47,
+        "seam_L_rep_vs_ref": [
+          0.0109,
+          0.0109
+        ],
+        "seam_R_rep_vs_ref": [
+          0.004,
+          0.0062
+        ]
+      }
+    },
+    {
+      "id": "E2",
+      "title": "快速交替节奏",
+      "window": [
+        25.47,
+        31.54
+      ],
+      "local": [
+        1.5,
+        4.57
+      ],
+      "support": [
+        26.97,
+        30.04
+      ],
+      "media": {
+        "reference": "assets/clips/E2-reference.mp4",
+        "repaired": "assets/clips/E2-repaired.mp4",
+        "corrupted": "assets/clips/E2-corrupted.mp4"
+      },
+      "scores": {
+        "correspondence": 6.52,
+        "blending": 4.0,
+        "quality": 3.0,
+        "total": 13.52
+      },
+      "analysis": [
+        "重拍和军鼓重音基本对应；参考检测到16个起音，修复检测到13个，快速细分与弱音有所简化。",
+        "两端衔接较自然，片段内部仍有轻微的拼接质感。",
+        "五段中鼓组音色较自然，但连续击打的样本重复仍可辨。"
+      ],
+      "diagnostics": {
+        "onsets_ref": 16,
+        "onsets_rep": 13,
+        "f1_30ms": 0.759,
+        "f1_50ms": 0.828,
+        "f1_50ms_corrupted": 0.074,
+        "p50": 0.923,
+        "r50": 0.75,
+        "mean_err50_ms": 13.3,
+        "flux_corr_rep": 0.373,
+        "flux_corr_corrupted": -0.055,
+        "band_corr_diagnostic_only": {
+          "Kick": 0.581,
+          "Snare": 0.269,
+          "Tom": 0.413,
+          "Cym": 0.478
+        },
+        "rms_ref_db": -19.34,
+        "rms_rep_db": -19.72,
+        "rms_diff_db": -0.38,
+        "seam_L_rep_vs_ref": [
+          0.0515,
+          0.0515
+        ],
+        "seam_R_rep_vs_ref": [
+          0.029,
+          0.0305
+        ]
+      }
+    },
+    {
+      "id": "E3",
+      "title": "弱奏与滚奏",
+      "window": [
+        32.26,
+        38.82
+      ],
+      "local": [
+        1.5,
+        5.06
+      ],
+      "support": [
+        33.76,
+        37.32
+      ],
+      "media": {
+        "reference": "assets/clips/E3-reference.mp4",
+        "repaired": "assets/clips/E3-repaired.mp4",
+        "corrupted": "assets/clips/E3-corrupted.mp4"
+      },
+      "scores": {
+        "correspondence": 4.05,
+        "blending": 1.5,
+        "quality": 2.5,
+        "total": 8.05
+      },
+      "analysis": [
+        "滚奏前的军鼓与嗵鼓击打偏弱，核心区整体电平比原声低5.54 dB。",
+        "进入修复段时能量下降明显，滚奏起始处略脱节，退出相对自然。",
+        "滚奏保留了一部分真实质感，但前半段较薄、较闷，动态起伏不足。"
+      ],
+      "diagnostics": {
+        "onsets_ref": 11,
+        "onsets_rep": 11,
+        "f1_30ms": 0.545,
+        "f1_50ms": 0.818,
+        "f1_50ms_corrupted": 0.261,
+        "p50": 0.818,
+        "r50": 0.818,
+        "mean_err50_ms": 22.2,
+        "flux_corr_rep": 0.285,
+        "flux_corr_corrupted": -0.073,
+        "band_corr_diagnostic_only": {
+          "Kick": 0.272,
+          "Snare": 0.323,
+          "Tom": -0.075,
+          "Cym": 0.477
+        },
+        "rms_ref_db": -23.18,
+        "rms_rep_db": -28.72,
+        "rms_diff_db": -5.54,
+        "seam_L_rep_vs_ref": [
+          0.0188,
+          0.0188
+        ],
+        "seam_R_rep_vs_ref": [
+          0.0198,
+          0.0198
+        ]
+      }
+    },
+    {
+      "id": "E4",
+      "title": "快速过门",
+      "window": [
+        67.55,
+        74.44
+      ],
+      "local": [
+        1.5,
+        5.39
+      ],
+      "support": [
+        69.05,
+        72.94
+      ],
+      "media": {
+        "reference": "assets/clips/E4-reference.mp4",
+        "repaired": "assets/clips/E4-repaired.mp4",
+        "corrupted": "assets/clips/E4-corrupted.mp4"
+      },
+      "scores": {
+        "correspondence": 1.87,
+        "blending": 2.0,
+        "quality": 1.5,
+        "total": 5.37
+      },
+      "analysis": [
+        "快速嗵鼓和军鼓过门的顺序混杂，仅保留了大幅度镲击的宏观重音。",
+        "入口出现质感变化，出口能量跳变明显，段内拼接有断裂感。",
+        "密集叠层显得拥挤，连续击打存在明显的机械重复与镲片叠层伪影。"
+      ],
+      "diagnostics": {
+        "onsets_ref": 16,
+        "onsets_rep": 16,
+        "f1_30ms": 0.375,
+        "f1_50ms": 0.5,
+        "f1_50ms_corrupted": 0.258,
+        "p50": 0.5,
+        "r50": 0.5,
+        "mean_err50_ms": 20.0,
+        "flux_corr_rep": 0.013,
+        "flux_corr_corrupted": -0.028,
+        "band_corr_diagnostic_only": {
+          "Kick": 0.17,
+          "Snare": 0.371,
+          "Tom": 0.064,
+          "Cym": 0.388
+        },
+        "rms_ref_db": -16.76,
+        "rms_rep_db": -17.14,
+        "rms_diff_db": -0.38,
+        "seam_L_rep_vs_ref": [
+          0.0982,
+          0.0637
+        ],
+        "seam_R_rep_vs_ref": [
+          0.161,
+          0.0938
+        ]
+      }
+    },
+    {
+      "id": "E5",
+      "title": "高潮与镲片切换",
+      "window": [
+        76.98,
+        83.84
+      ],
+      "local": [
+        1.5,
+        5.36
+      ],
+      "support": [
+        78.48,
+        82.34
+      ],
+      "media": {
+        "reference": "assets/clips/E5-reference.mp4",
+        "repaired": "assets/clips/E5-repaired.mp4",
+        "corrupted": "assets/clips/E5-corrupted.mp4"
+      },
+      "scores": {
+        "correspondence": 2.32,
+        "blending": 3.5,
+        "quality": 2.0,
+        "total": 7.82
+      },
+      "analysis": [
+        "保留了镲片密集的高潮能量，但嗵鼓、军鼓及左右镲交替层次被模糊。",
+        "参考检测到22个起音，修复检测到16个；部分起音的时间也存在错位。",
+        "入口较自然，出口的镲片密度略变；整体金属声较浑浊，高潮重音爆发力不足。"
+      ],
+      "diagnostics": {
+        "onsets_ref": 22,
+        "onsets_rep": 16,
+        "f1_30ms": 0.368,
+        "f1_50ms": 0.632,
+        "f1_50ms_corrupted": 0.324,
+        "p50": 0.75,
+        "r50": 0.545,
+        "mean_err50_ms": 25.0,
+        "flux_corr_rep": 0.09,
+        "flux_corr_corrupted": -0.033,
+        "band_corr_diagnostic_only": {
+          "Kick": 0.154,
+          "Snare": 0.136,
+          "Tom": 0.222,
+          "Cym": 0.203
+        },
+        "rms_ref_db": -15.43,
+        "rms_rep_db": -15.34,
+        "rms_diff_db": 0.08,
+        "seam_L_rep_vs_ref": [
+          0.1091,
+          0.0969
+        ],
+        "seam_R_rep_vs_ref": [
+          0.1002,
+          0.1002
+        ]
+      }
+    }
+  ]
+}

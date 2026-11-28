@@ -1,0 +1,119 @@
+{
+  "localization_10": 9.9935,
+  "localization_mIoU": 0.999351,
+  "correspondence_45": 21.28,
+  "blending_22_5": 14.25,
+  "quality_22_5": 11.5,
+  "grand_total_100": 57.02,
+  "per_spot": {
+    "E1": {
+      "correspondence_9": {
+        "onset_formula_4_5": 3.52,
+        "structure_3_0": 2.0,
+        "dynamics_1_5": 1.0,
+        "subtotal": 6.52
+      },
+      "blending_4_5": {
+        "loudness_match_1_5": 0.75,
+        "seam_entry_1_0": 1.0,
+        "seam_exit_1_0": 1.0,
+        "internal_1_0": 0.5,
+        "subtotal": 3.25
+      },
+      "quality_4_5": {
+        "timbre_2_5": 1.5,
+        "artifact_free_2_0": 1.0,
+        "subtotal": 2.5
+      },
+      "spot_total_18": 12.27
+    },
+    "E2": {
+      "correspondence_9": {
+        "onset_formula_4_5": 3.52,
+        "structure_3_0": 2.0,
+        "dynamics_1_5": 1.0,
+        "subtotal": 6.52
+      },
+      "blending_4_5": {
+        "loudness_match_1_5": 1.5,
+        "seam_entry_1_0": 1.0,
+        "seam_exit_1_0": 1.0,
+        "internal_1_0": 0.5,
+        "subtotal": 4.0
+      },
+      "quality_4_5": {
+        "timbre_2_5": 2.0,
+        "artifact_free_2_0": 1.0,
+        "subtotal": 3.0
+      },
+      "spot_total_18": 13.52
+    },
+    "E3": {
+      "correspondence_9": {
+        "onset_formula_4_5": 2.05,
+        "structure_3_0": 1.5,
+        "dynamics_1_5": 0.5,
+        "subtotal": 4.05
+      },
+      "blending_4_5": {
+        "loudness_match_1_5": 0.0,
+        "seam_entry_1_0": 0.0,
+        "seam_exit_1_0": 1.0,
+        "internal_1_0": 0.5,
+        "subtotal": 1.5
+      },
+      "quality_4_5": {
+        "timbre_2_5": 1.5,
+        "artifact_free_2_0": 1.0,
+        "subtotal": 2.5
+      },
+      "spot_total_18": 8.05
+    },
+    "E4": {
+      "correspondence_9": {
+        "onset_formula_4_5": 0.87,
+        "structure_3_0": 0.5,
+        "dynamics_1_5": 0.5,
+        "subtotal": 1.87
+      },
+      "blending_4_5": {
+        "loudness_match_1_5": 1.5,
+        "seam_entry_1_0": 0.5,
+        "seam_exit_1_0": 0.0,
+        "internal_1_0": 0.0,
+        "subtotal": 2.0
+      },
+      "quality_4_5": {
+        "timbre_2_5": 1.0,
+        "artifact_free_2_0": 0.5,
+        "subtotal": 1.5
+      },
+      "spot_total_18": 5.37
+    },
+    "E5": {
+      "correspondence_9": {
+        "onset_formula_4_5": 0.82,
+        "structure_3_0": 1.0,
+        "dynamics_1_5": 0.5,
+        "subtotal": 2.32
+      },
+      "blending_4_5": {
+        "loudness_match_1_5": 1.5,
+        "seam_entry_1_0": 1.0,
+        "seam_exit_1_0": 0.5,
+        "internal_1_0": 0.5,
+        "subtotal": 3.5
+      },
+      "quality_4_5": {
+        "timbre_2_5": 1.0,
+        "artifact_free_2_0": 1.0,
+        "subtotal": 2.0
+      },
+      "spot_total_18": 7.82
+    }
+  },
+  "judge_roles": {
+    "objective": "deterministic script: localization, onset timing, overall level",
+    "subjective": "Gemini 4 Neon (Medium): structure, dynamics, joins, timbre, artifacts"
+  }
+}

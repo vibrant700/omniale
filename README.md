@@ -10,6 +10,7 @@
 | [Multiface 动态三维重建](https://vibrant700.github.io/omniale/multiface/) | 根据三个同步视角及原声重建动态场景，在目标机位渲染视频 | 三维工程与目标视角有声视频 |
 | [SCV 机甲重建与展示片](https://vibrant700.github.io/omniale/scv-showcase/) | 根据六方向参考图重建机甲，结合指定配乐和音效制作展示片 | 可编辑三维资产与有声展示视频 |
 | [凤凰角色重建与新机位有声动画](https://vibrant700.github.io/omniale/phoenix-reconstruction/) | 根据三个同步参考录像重建变速拍翼动画，自主寻找声音素材并使用 REAPER 拟音 | Blender 与 REAPER 工程、有声视频、无损混音与分轨 |
+| [架子鼓现场独奏音画修复](https://vibrant700.github.io/omniale/drum-av-repair/) | 定位87秒独奏中的五处错误配声，依据动作重建同场鼓声 | 完整音轨、修复成片、REAPER 工程与修改记录 |
 
 ## 仓库结构
 
