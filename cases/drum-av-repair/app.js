@@ -143,4 +143,4 @@ function tick() {
   }
   requestAnimationFrame(tick);
 }
-fetch('assets/case-data.json').then(r => { if (!r.ok) throw Error(r.status); return r.json(); }).then(data => { caseData = data; setMode('independent'); renderRegion(); tick(); }).catch(() => { status.textContent = '对照数据加载失败，请刷新页面。'; });
+fetch('assets/case-data.json?v=20261128g', { cache: 'no-cache' }).then(r => { if (!r.ok) throw Error(r.status); return r.json(); }).then(data => { caseData = data; setMode('independent'); renderRegion(); tick(); }).catch(() => { status.textContent = '对照数据加载失败，请刷新页面。'; });

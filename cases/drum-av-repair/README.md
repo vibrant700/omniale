@@ -8,8 +8,8 @@ paired audiovisual evidence and production workflow. Task difficulty and
 solvability appear at the bottom of the task-definition section.
 
 The four peer score categories are localization (10), performance correspondence
-(45), transitions and level match (22.5), and timbre consistency and added
-artifacts (22.5). The displayed Astra score is 57.02/100, taken from the user's
+(50), transitions and continuity (20), and timbre consistency and added
+artifacts (20). The displayed Astra score is 65.33/100, taken from the user's
 reviewed release bundle. Subjective grades were supplied by the user's Gemini
 evaluation; this builder does not request or change judgments.
 
