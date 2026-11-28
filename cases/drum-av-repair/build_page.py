@@ -69,6 +69,7 @@ def main():
     public_score={k:v for k,v in score.items() if k not in ['calibration_baselines','reconstruction_90']};public_score['judge_roles']=score['judge_roles']
     dump(assets/'score-summary.json',public_score)
     copy(HERE/'SCORING.md',assets/'scoring.md')
+    copy(HERE/'GEMINI_JUDGE_PROMPT.zh-CN.md',assets/'gemini-judge-prompt.zh-CN.md')
     (assets/'favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#315c48"/><circle cx="20" cy="20" r="11" fill="none" stroke="#f7f7f0" stroke-width="3"/></svg>',encoding='utf-8')
     page=(HERE/'index.template.html').read_text(encoding='utf-8')
     bars=[]
@@ -80,6 +81,7 @@ def main():
         buttons.append(f'<button type="button" data-region="{i}" aria-pressed="{"true" if i==0 else "false"}"><strong>{r["id"]} · {r["title"]}</strong><span>{r["support"][0]:.2f}–{r["support"][1]:.2f} s</span></button>')
     first=regions[0];fs=first['scores'];metrics=''.join(f'<div><strong>{v:.2f}</strong><span>{label}</span></div>' for v,label in [(fs['total'],'本段得分 / 18'),(fs['correspondence'],'演奏与声音对应 / 10'),(fs['blending'],'自然衔接 / 4'),(fs['quality'],'同源音色与伪影 / 4')])
     replacements=dict(CORRESPONDENCE=f'{score["correspondence_50"]:.2f}',TASK=html.escape((assets/'TASK.md').read_text(encoding='utf-8')),TOTAL=f'{score["grand_total_100"]:.2f}',BARS=''.join(bars),SCORE_ROWS=''.join(rows),REGION_BUTTONS=''.join(buttons),INITIAL_METRICS=metrics,INITIAL_ANALYSIS=''.join('<li>'+html.escape(t)+'</li>' for t in first['analysis']))
+    replacements['GEMINI_PROMPT']=html.escape((assets/'gemini-judge-prompt.zh-CN.md').read_text(encoding='utf-8'))
     for k,v in replacements.items():page=page.replace('@@'+k+'@@',v)
     assert '@@' not in page
     (SITE/'index.html').write_text(page,encoding='utf-8')
