@@ -85,11 +85,12 @@ def main():
     (SITE/'index.html').write_text(page,encoding='utf-8')
     catalog=REPO/'docs/index.html';s=catalog.read_text(encoding='utf-8')
     if 'href="drum-av-repair/"' not in s:
-        card='<a class="case-card" href="drum-av-repair/"><div class="case-cover" style="padding:0;background:#18231d"><img src="drum-av-repair/assets/hero.jpg" alt="现场架子鼓独奏的音画修复" style="width:100%;height:100%;object-fit:cover" loading="lazy"><span class="mono" style="position:absolute;left:14px;top:12px;background:#f5f6ef;padding:4px 8px">09 / DRUM AV REPAIR</span></div><div><div class="eyebrow">音视频联合理解与现场声音修复</div><h3>从演奏动作，重建五处鼓声。</h3><p>在87秒现场独奏中定位五处错误配声，利用正常录音重建击打与延音，交付完整音轨、成片和可编辑 REAPER 工程。</p><div class="status"><span class="status-dot"></span>Astra 6.2 xhigh ＋ Codex · @@TOTAL@@ / 100</div><span class="enter">查看任务、五处对照和评分 →</span></div></a>'
+        card='<a class="case-card" href="drum-av-repair/"><div class="case-cover" style="padding:0;background:#18231d"><img src="drum-av-repair/assets/hero.jpg" alt="现场架子鼓独奏的音画修复" style="width:100%;height:100%;object-fit:cover" loading="lazy"><span class="mono" style="position:absolute;left:14px;top:12px;background:#f5f6ef;padding:4px 8px">09 / DRUM AV REPAIR</span></div><div><div class="eyebrow">音视频联合理解与演奏拟音</div><h3>从演奏动作，完成五处拟音。</h3><p>在87秒现场独奏中定位五处错误配声，利用正常录音为击打与延音重新拟音，交付完整音轨、成片和可编辑 REAPER 工程。</p><div class="status"><span class="status-dot"></span>Astra 6.2 xhigh ＋ Codex · @@TOTAL@@ / 100</div><span class="enter">查看任务、五处对照和评分 →</span></div></a>'
         card=card.replace('@@TOTAL@@',f'{score["grand_total_100"]:.2f}')
         marker='<p class="catalog-note">';assert marker in s;s=s.replace(marker,card+marker,1)
         count=len(re.findall(r'class="case-card"',s));s=re.sub(r'\d+ CASES',f'{count:02d} CASES',s);catalog.write_text(s,encoding='utf-8')
     catalog_html=catalog.read_text(encoding='utf-8')
+    catalog_html=re.sub(r'(<a class="case-card" href="drum-av-repair/">.*?</a>)',lambda m:m[0].replace('音视频联合理解与现场声音修复','音视频联合理解与演奏拟音').replace('从演奏动作，重建五处鼓声。','从演奏动作，完成五处拟音。').replace('利用正常录音重建击打与延音','利用正常录音为击打与延音重新拟音'),catalog_html,flags=re.S)
     catalog_html=re.sub(r'(<a class="case-card" href="drum-av-repair/">.*?Codex · )[\d.]+( / 100)',lambda m:m[1]+f'{score["grand_total_100"]:.2f}'+m[2],catalog_html,flags=re.S)
     catalog.write_text(catalog_html,encoding='utf-8')
     print(json.dumps(dict(site=str(SITE),files=sum(p.is_file() for p in SITE.rglob('*')),total_megabytes=round(sum(p.stat().st_size for p in SITE.rglob('*') if p.is_file())/1e6,1),score=score['grand_total_100']),ensure_ascii=False))
