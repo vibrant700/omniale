@@ -30,9 +30,12 @@ def main():
     assert doc.index('本题难点')<doc.index('可解性')<doc.index('id="scoring"')
     assert not re.search(r'重建.{0,12}90|待人工|有待.{0,8}复核|待定|@@',doc)
     data=json.loads((SITE/'assets/case-data.json').read_text(encoding='utf-8'))
-    assert data['total']==57.02 and len(data['regions'])==5
+    score=json.loads((SITE/'assets/score-summary.json').read_text(encoding='utf-8'))
+    assert data['total']==score['grand_total_100'] and len(data['regions'])==5
+    assert sum(score['weights'].values())==100
+    assert not score['reference_audio_in_scored_metrics']
     for r in data['regions']:
-        assert abs(sum(r['scores'][k] for k in ['correspondence','blending','quality'])-r['scores']['total'])<.001
+        assert abs(sum(r['scores'][k] for k in ['correspondence','blending','quality'])-r['scores']['total'])<.006
         for p in r['media'].values():assert (SITE/p).exists(),p
     with zipfile.ZipFile(SITE/'assets/candidate.zip') as z:
         assert set(z.namelist())=={'candidate/TASK.md','candidate/TOOLS.md','candidate/media/test_corrupted.mp4','candidate/media/test_corrupted.wav'}

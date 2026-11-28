@@ -3,7 +3,7 @@
   "solver": "gpt-6.2-astra",
   "effort": "xhigh",
   "framework": "Codex CLI 0.142.4",
-  "total": 57.02,
+  "total": 62.43,
   "regions": [
     {
       "id": "E1",
@@ -26,15 +26,15 @@
         "corrupted": "assets/clips/E1-corrupted.mp4"
       },
       "scores": {
-        "correspondence": 6.52,
-        "blending": 3.25,
-        "quality": 2.5,
-        "total": 12.27
+        "correspondence": 8.222222,
+        "blending": 3.0,
+        "quality": 2.2,
+        "total": 13.42
       },
       "analysis": [
-        "主要军鼓与底鼓拍点贴合，较轻的装饰音与弱击细节被简化。",
-        "进入和退出边界没有明显点击；连续轻击间仍能听到采样拼接的生硬感。",
-        "相对原声略偏干、偏薄，短尾声和重复采样影响了现场连贯感。"
+        "主要军鼓重拍与可见动作基本对应，轻击与装饰音细节有所简化。",
+        "进入和退出没有明显点击；连续轻击之间仍有采样拼接的生硬感。",
+        "相对前后正常录音略偏干、偏薄，尾声和重复采样影响现场感。"
       ],
       "diagnostics": {
         "onsets_ref": 15,
@@ -87,15 +87,15 @@
         "corrupted": "assets/clips/E2-corrupted.mp4"
       },
       "scores": {
-        "correspondence": 6.52,
-        "blending": 4.0,
-        "quality": 3.0,
-        "total": 13.52
+        "correspondence": 7.777778,
+        "blending": 3.0,
+        "quality": 2.6,
+        "total": 13.38
       },
       "analysis": [
-        "重拍和军鼓重音基本对应；参考检测到16个起音，修复检测到13个，快速细分与弱音有所简化。",
-        "两端衔接较自然，片段内部仍有轻微的拼接质感。",
-        "五段中鼓组音色较自然，但连续击打的样本重复仍可辨。"
+        "主要军鼓击打多处对应；部分可见重击缺失或偏弱，收尾重音不足。",
+        "两端衔接自然，片段内部仍有轻微拼接质感。",
+        "五处中鼓组音色较自然，连续击打的样本重复仍可辨。"
       ],
       "diagnostics": {
         "onsets_ref": 16,
@@ -148,15 +148,15 @@
         "corrupted": "assets/clips/E3-corrupted.mp4"
       },
       "scores": {
-        "correspondence": 4.05,
-        "blending": 1.5,
-        "quality": 2.5,
-        "total": 8.05
+        "correspondence": 6.666667,
+        "blending": 2.0,
+        "quality": 2.2,
+        "total": 10.87
       },
       "analysis": [
-        "滚奏前的军鼓与嗵鼓击打偏弱，核心区整体电平比原声低5.54 dB。",
-        "进入修复段时能量下降明显，滚奏起始处略脱节，退出相对自然。",
-        "滚奏保留了一部分真实质感，但前半段较薄、较闷，动态起伏不足。"
+        "双棒持续在中央军鼓，单打转滚奏的结构基本保留，前半段动态与单击清晰度不足。",
+        "进入修复段时能量下降明显，退出相对自然；段内仍有拼贴感。",
+        "前半段声音较薄、较闷，滚奏保留部分现场质感。"
       ],
       "diagnostics": {
         "onsets_ref": 11,
@@ -209,15 +209,15 @@
         "corrupted": "assets/clips/E4-corrupted.mp4"
       },
       "scores": {
-        "correspondence": 1.87,
-        "blending": 2.0,
-        "quality": 1.5,
-        "total": 5.37
+        "correspondence": 3.777778,
+        "blending": 0.5,
+        "quality": 1.3,
+        "total": 5.58
       },
       "analysis": [
-        "快速嗵鼓和军鼓过门的顺序混杂，仅保留了大幅度镲击的宏观重音。",
-        "入口出现质感变化，出口能量跳变明显，段内拼接有断裂感。",
-        "密集叠层显得拥挤，连续击打存在明显的机械重复与镲片叠层伪影。"
+        "快速军鼓连击中出现空档，连续数次左上镲击缺少对应镲声；右侧部分动作对应较好。",
+        "进入和退出均有质感变化，段内快速过门拼接有明显断裂。",
+        "密集叠层拥挤，连续击打存在机械重复和镲片叠层伪影。"
       ],
       "diagnostics": {
         "onsets_ref": 16,
@@ -270,15 +270,15 @@
         "corrupted": "assets/clips/E5-corrupted.mp4"
       },
       "scores": {
-        "correspondence": 2.32,
-        "blending": 3.5,
-        "quality": 2.0,
-        "total": 7.82
+        "correspondence": 4.888889,
+        "blending": 2.5,
+        "quality": 1.8,
+        "total": 9.19
       },
       "analysis": [
-        "保留了镲片密集的高潮能量，但嗵鼓、军鼓及左右镲交替层次被模糊。",
-        "参考检测到22个起音，修复检测到16个；部分起音的时间也存在错位。",
-        "入口较自然，出口的镲片密度略变；整体金属声较浑浊，高潮重音爆发力不足。"
+        "右侧与高潮主拍大致对应，左侧大镲多处缺失或偏弱，双臂重击爆发力不足。",
+        "入口自然，出口镲片密度略有变化；段内有轻微拼贴感。",
+        "高潮镲片延音较浑浊，现场音色与动态层次仍有差距。"
       ],
       "diagnostics": {
         "onsets_ref": 22,

@@ -61,9 +61,9 @@ function renderRegion() {
   $('#baseline-caption').textContent = $('#baseline-kind').value === 'reference' ? '干净参考' : '错误输入 · 修复前';
   $('#region-metrics').innerHTML = [
     [number(r.scores.total), '本段得分 / 18'],
-    [number(r.scores.correspondence), '演奏与声音对应 / 9'],
-    [number(r.scores.blending), '衔接与电平 / 4.5'],
-    [number(r.scores.quality), '同源音色与伪影 / 4.5']
+    [number(r.scores.correspondence), '演奏与声音对应 / 10'],
+    [number(r.scores.blending), '自然衔接 / 4'],
+    [number(r.scores.quality), '同源音色与伪影 / 4']
   ].map(([v,k]) => `<div><strong>${v}</strong><span>${k}</span></div>`).join('');
   $('#region-analysis').replaceChildren(...r.analysis.map(text => { const li = document.createElement('li'); li.textContent = text; return li; }));
   document.querySelectorAll('[data-region]').forEach(b => b.setAttribute('aria-pressed', Number(b.dataset.region) === selected ? 'true' : 'false'));

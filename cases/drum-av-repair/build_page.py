@@ -18,11 +18,11 @@ REPO=HERE.parents[1]
 SITE=REPO/'docs/drum-av-repair'
 TITLES=['轻击与换鼓','快速交替节奏','弱奏与滚奏','快速过门','高潮与镲片切换']
 ANALYSIS=[
- ['主要军鼓与底鼓拍点贴合，较轻的装饰音与弱击细节被简化。','进入和退出边界没有明显点击；连续轻击间仍能听到采样拼接的生硬感。','相对原声略偏干、偏薄，短尾声和重复采样影响了现场连贯感。'],
- ['重拍和军鼓重音基本对应；参考检测到16个起音，修复检测到13个，快速细分与弱音有所简化。','两端衔接较自然，片段内部仍有轻微的拼接质感。','五段中鼓组音色较自然，但连续击打的样本重复仍可辨。'],
- ['滚奏前的军鼓与嗵鼓击打偏弱，核心区整体电平比原声低5.54 dB。','进入修复段时能量下降明显，滚奏起始处略脱节，退出相对自然。','滚奏保留了一部分真实质感，但前半段较薄、较闷，动态起伏不足。'],
- ['快速嗵鼓和军鼓过门的顺序混杂，仅保留了大幅度镲击的宏观重音。','入口出现质感变化，出口能量跳变明显，段内拼接有断裂感。','密集叠层显得拥挤，连续击打存在明显的机械重复与镲片叠层伪影。'],
- ['保留了镲片密集的高潮能量，但嗵鼓、军鼓及左右镲交替层次被模糊。','参考检测到22个起音，修复检测到16个；部分起音的时间也存在错位。','入口较自然，出口的镲片密度略变；整体金属声较浑浊，高潮重音爆发力不足。']
+ ['主要军鼓重拍与可见动作基本对应，轻击与装饰音细节有所简化。','进入和退出没有明显点击；连续轻击之间仍有采样拼接的生硬感。','相对前后正常录音略偏干、偏薄，尾声和重复采样影响现场感。'],
+ ['主要军鼓击打多处对应；部分可见重击缺失或偏弱，收尾重音不足。','两端衔接自然，片段内部仍有轻微拼接质感。','五处中鼓组音色较自然，连续击打的样本重复仍可辨。'],
+ ['双棒持续在中央军鼓，单打转滚奏的结构基本保留，前半段动态与单击清晰度不足。','进入修复段时能量下降明显，退出相对自然；段内仍有拼贴感。','前半段声音较薄、较闷，滚奏保留部分现场质感。'],
+ ['快速军鼓连击中出现空档，连续数次左上镲击缺少对应镲声；右侧部分动作对应较好。','进入和退出均有质感变化，段内快速过门拼接有明显断裂。','密集叠层拥挤，连续击打存在机械重复和镲片叠层伪影。'],
+ ['右侧与高潮主拍大致对应，左侧大镲多处缺失或偏弱，双臂重击爆发力不足。','入口自然，出口镲片密度略有变化；段内有轻微拼贴感。','高潮镲片延音较浑浊，现场音色与动态层次仍有差距。']
 ]
 
 def dump(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -58,36 +58,40 @@ def main():
     zipfiles(assets/'reaper-project.zip',project)
     regions=[]
     for i,(eid,s) in enumerate(review['spots'].items()):
-        w=s['window_sec'];local=s['repair_local_sec'];result=score['per_spot'][eid]
-        for kind in ['reference','repaired']:preview(ff,ev/s['clip_'+kind],clips/f'{eid}-{kind}.mp4')
+        support=s['support_sec'];w=[round(support[0]-1.5,2),round(support[1]+1.5,2)];local=[1.5,round(support[1]-support[0]+1.5,2)];result=score['per_spot'][eid]
+        for kind in ['reference','repaired']:preview(ff,ev/'clips'/f'{eid}_{kind}.mp4',clips/f'{eid}-{kind}.mp4')
         corrupt=clips/f'{eid}-corrupted.mp4'
         if not corrupt.exists():cmd(ff,'-ss',w[0],'-i',bundle/'candidate/media/test_corrupted.mp4','-t',w[1]-w[0],'-map','0:v:0','-map','0:a:0','-c:v','libx264','-preset','fast','-crf','18','-c:a','aac','-b:a','256k','-movflags','+faststart',corrupt)
         poster(ff,ev/s['clip_repaired'],max(1.6,local[0]+.4),assets/f'{eid}-poster.jpg')
-        regions.append(dict(id=eid,title=TITLES[i],window=w,local=local,support=[round(w[0]+local[0],2),round(w[0]+local[1],2)],media={k:f'assets/clips/{eid}-{k}.mp4' for k in ['reference','repaired','corrupted']},scores=dict(correspondence=result['correspondence_9']['subtotal'],blending=result['blending_4_5']['subtotal'],quality=result['quality_4_5']['subtotal'],total=result['spot_total_18']),analysis=ANALYSIS[i],diagnostics=diag[eid]))
+        regions.append(dict(id=eid,title=TITLES[i],window=w,local=local,support=[round(w[0]+local[0],2),round(w[0]+local[1],2)],media={k:f'assets/clips/{eid}-{k}.mp4' for k in ['reference','repaired','corrupted']},scores=dict(correspondence=result['correspondence']['subtotal'],blending=result['blending']['subtotal'],quality=result['quality']['subtotal'],total=result['spot_total_18']),analysis=ANALYSIS[i],diagnostics=diag[eid]))
     data=dict(title='Drum AV Repair',solver='gpt-6.2-astra',effort='xhigh',framework='Codex CLI 0.142.4',total=score['grand_total_100'],regions=regions)
     dump(assets/'case-data.json',data)
-    public_score={k:v for k,v in score.items() if k not in ['calibration_baselines','reconstruction_90']};public_score['judge_roles']=dict(objective='deterministic script: localization, onset timing, overall level',subjective='Gemini 4 Neon (Medium): structure, dynamics, joins, timbre, artifacts')
+    public_score={k:v for k,v in score.items() if k not in ['calibration_baselines','reconstruction_90']};public_score['judge_roles']=score['judge_roles']
     dump(assets/'score-summary.json',public_score)
     copy(HERE/'SCORING.md',assets/'scoring.md')
     (assets/'favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#315c48"/><circle cx="20" cy="20" r="11" fill="none" stroke="#f7f7f0" stroke-width="3"/></svg>',encoding='utf-8')
     page=(HERE/'index.template.html').read_text(encoding='utf-8')
     bars=[]
-    for key,label,mx in [('localization_10','五处定位',10),('correspondence_45','演奏与声音对应',45),('blending_22_5','自然衔接与电平匹配',22.5),('quality_22_5','同源音色与无新增伪影',22.5)]:
+    for key,label,mx in [('localization_10','五处定位',10),('correspondence_50','演奏与声音对应',50),('blending_20','自然衔接与连续性',20),('quality_20','同源音色与无新增伪影',20)]:
         value=score[key];bars.append(f'<div class="bar-row"><div class="bar-label"><span>{label}</span><b>{value:.2f} / {mx:g}</b></div><div class="bar-track" role="meter" aria-label="{label}" aria-valuemin="0" aria-valuemax="{mx}" aria-valuenow="{value}"><i style="width:{value/mx*100:.3f}%"></i></div></div>')
     rows=[];buttons=[]
     for i,r in enumerate(regions):
         s=r['scores'];rows.append(f'<tr><th scope="row"><a href="#comparison" data-jump="{i}">{r["id"]} · {r["title"]}</a></th><td>{r["support"][0]:.2f}–{r["support"][1]:.2f} s</td><td>{s["correspondence"]:.2f}</td><td>{s["blending"]:.2f}</td><td>{s["quality"]:.2f}</td><td class="total-cell">{s["total"]:.2f}</td></tr>')
         buttons.append(f'<button type="button" data-region="{i}" aria-pressed="{"true" if i==0 else "false"}"><strong>{r["id"]} · {r["title"]}</strong><span>{r["support"][0]:.2f}–{r["support"][1]:.2f} s</span></button>')
-    first=regions[0];fs=first['scores'];metrics=''.join(f'<div><strong>{v:.2f}</strong><span>{label}</span></div>' for v,label in [(fs['total'],'本段得分 / 18'),(fs['correspondence'],'演奏与声音对应 / 9'),(fs['blending'],'衔接与电平 / 4.5'),(fs['quality'],'同源音色与伪影 / 4.5')])
-    replacements=dict(TASK=html.escape((assets/'TASK.md').read_text(encoding='utf-8')),TOTAL=f'{score["grand_total_100"]:.2f}',BARS=''.join(bars),SCORE_ROWS=''.join(rows),REGION_BUTTONS=''.join(buttons),INITIAL_METRICS=metrics,INITIAL_ANALYSIS=''.join('<li>'+html.escape(t)+'</li>' for t in first['analysis']))
+    first=regions[0];fs=first['scores'];metrics=''.join(f'<div><strong>{v:.2f}</strong><span>{label}</span></div>' for v,label in [(fs['total'],'本段得分 / 18'),(fs['correspondence'],'演奏与声音对应 / 10'),(fs['blending'],'自然衔接 / 4'),(fs['quality'],'同源音色与伪影 / 4')])
+    replacements=dict(CORRESPONDENCE=f'{score["correspondence_50"]:.2f}',TASK=html.escape((assets/'TASK.md').read_text(encoding='utf-8')),TOTAL=f'{score["grand_total_100"]:.2f}',BARS=''.join(bars),SCORE_ROWS=''.join(rows),REGION_BUTTONS=''.join(buttons),INITIAL_METRICS=metrics,INITIAL_ANALYSIS=''.join('<li>'+html.escape(t)+'</li>' for t in first['analysis']))
     for k,v in replacements.items():page=page.replace('@@'+k+'@@',v)
     assert '@@' not in page
     (SITE/'index.html').write_text(page,encoding='utf-8')
     catalog=REPO/'docs/index.html';s=catalog.read_text(encoding='utf-8')
     if 'href="drum-av-repair/"' not in s:
-        card='<a class="case-card" href="drum-av-repair/"><div class="case-cover" style="padding:0;background:#18231d"><img src="drum-av-repair/assets/hero.jpg" alt="现场架子鼓独奏的音画修复" style="width:100%;height:100%;object-fit:cover" loading="lazy"><span class="mono" style="position:absolute;left:14px;top:12px;background:#f5f6ef;padding:4px 8px">09 / DRUM AV REPAIR</span></div><div><div class="eyebrow">音视频联合理解与现场声音修复</div><h3>从演奏动作，重建五处鼓声。</h3><p>在87秒现场独奏中定位五处错误配声，利用正常录音重建击打与延音，交付完整音轨、成片和可编辑 REAPER 工程。</p><div class="status"><span class="status-dot"></span>Astra 6.2 xhigh ＋ Codex · 57.02 / 100</div><span class="enter">查看任务、五处对照和评分 →</span></div></a>'
+        card='<a class="case-card" href="drum-av-repair/"><div class="case-cover" style="padding:0;background:#18231d"><img src="drum-av-repair/assets/hero.jpg" alt="现场架子鼓独奏的音画修复" style="width:100%;height:100%;object-fit:cover" loading="lazy"><span class="mono" style="position:absolute;left:14px;top:12px;background:#f5f6ef;padding:4px 8px">09 / DRUM AV REPAIR</span></div><div><div class="eyebrow">音视频联合理解与现场声音修复</div><h3>从演奏动作，重建五处鼓声。</h3><p>在87秒现场独奏中定位五处错误配声，利用正常录音重建击打与延音，交付完整音轨、成片和可编辑 REAPER 工程。</p><div class="status"><span class="status-dot"></span>Astra 6.2 xhigh ＋ Codex · @@TOTAL@@ / 100</div><span class="enter">查看任务、五处对照和评分 →</span></div></a>'
+        card=card.replace('@@TOTAL@@',f'{score["grand_total_100"]:.2f}')
         marker='<p class="catalog-note">';assert marker in s;s=s.replace(marker,card+marker,1)
         count=len(re.findall(r'class="case-card"',s));s=re.sub(r'\d+ CASES',f'{count:02d} CASES',s);catalog.write_text(s,encoding='utf-8')
+    catalog_html=catalog.read_text(encoding='utf-8')
+    catalog_html=re.sub(r'(<a class="case-card" href="drum-av-repair/">.*?Codex · )[\d.]+( / 100)',lambda m:m[1]+f'{score["grand_total_100"]:.2f}'+m[2],catalog_html,flags=re.S)
+    catalog.write_text(catalog_html,encoding='utf-8')
     print(json.dumps(dict(site=str(SITE),files=sum(p.is_file() for p in SITE.rglob('*')),total_megabytes=round(sum(p.stat().st_size for p in SITE.rglob('*') if p.is_file())/1e6,1),score=score['grand_total_100']),ensure_ascii=False))
 
 if __name__=='__main__':main()

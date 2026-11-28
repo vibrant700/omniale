@@ -1,119 +1,414 @@
 {
+  "protocol": "25fps-context-10-50-20-20-v1",
+  "scoring_mode": "linear_reweighting_of_saved_25fps_Gemini_judgments",
+  "source_review_sha256": "fcbd04e6ee4d9a74abdaa8cd6bf4ccbc463ce7ca182975927d60b4ba96c10c59",
+  "judge_roles": {
+    "localization": "deterministic tIoU matching against injected intervals (10 points)",
+    "perceptual": "saved Gemini 4 Neon (Medium) 25fps frame/audio review (90 points)"
+  },
+  "reference_audio_in_scored_metrics": false,
+  "rounding": "Aggregate unrounded subitems, then round to two decimals; displayed row sums may differ by 0.01.",
+  "weights": {
+    "localization": 10,
+    "correspondence": 50,
+    "blending": 20,
+    "quality": 20
+  },
   "localization_10": 9.9935,
   "localization_mIoU": 0.999351,
-  "correspondence_45": 21.28,
-  "blending_22_5": 14.25,
-  "quality_22_5": 11.5,
-  "grand_total_100": 57.02,
+  "correspondence_50": 31.33,
+  "blending_20": 11.0,
+  "quality_20": 10.1,
+  "grand_total_100": 62.43,
   "per_spot": {
     "E1": {
-      "correspondence_9": {
-        "onset_formula_4_5": 3.52,
-        "structure_3_0": 2.0,
-        "dynamics_1_5": 1.0,
-        "subtotal": 6.52
+      "correspondence": {
+        "maximum": 10.0,
+        "items": {
+          "timing_4_5": {
+            "label": "动作与声音时序",
+            "source_score": 4.0,
+            "source_maximum": 4.5,
+            "maximum": 4,
+            "weighted_score": 3.555556
+          },
+          "structure_3_0": {
+            "label": "鼓件与声部结构",
+            "source_score": 2.5,
+            "source_maximum": 3,
+            "maximum": 4,
+            "weighted_score": 3.333333
+          },
+          "dynamics_1_5": {
+            "label": "重轻音与动态",
+            "source_score": 1.0,
+            "source_maximum": 1.5,
+            "maximum": 2,
+            "weighted_score": 1.333333
+          }
+        },
+        "subtotal": 8.222222
       },
-      "blending_4_5": {
-        "loudness_match_1_5": 0.75,
-        "seam_entry_1_0": 1.0,
-        "seam_exit_1_0": 1.0,
-        "internal_1_0": 0.5,
-        "subtotal": 3.25
-      },
-      "quality_4_5": {
-        "timbre_2_5": 1.5,
-        "artifact_free_2_0": 1.0,
-        "subtotal": 2.5
-      },
-      "spot_total_18": 12.27
-    },
-    "E2": {
-      "correspondence_9": {
-        "onset_formula_4_5": 3.52,
-        "structure_3_0": 2.0,
-        "dynamics_1_5": 1.0,
-        "subtotal": 6.52
-      },
-      "blending_4_5": {
-        "loudness_match_1_5": 1.5,
-        "seam_entry_1_0": 1.0,
-        "seam_exit_1_0": 1.0,
-        "internal_1_0": 0.5,
-        "subtotal": 4.0
-      },
-      "quality_4_5": {
-        "timbre_2_5": 2.0,
-        "artifact_free_2_0": 1.0,
+      "blending": {
+        "maximum": 4.0,
+        "items": {
+          "seam_entry_1_0": {
+            "label": "进入接缝",
+            "source_score": 1.0,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 1.0
+          },
+          "seam_exit_1_0": {
+            "label": "退出接缝",
+            "source_score": 1.0,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 1.0
+          },
+          "internal_continuity_1_0": {
+            "label": "段内拼接连续性",
+            "source_score": 0.5,
+            "source_maximum": 1,
+            "maximum": 2,
+            "weighted_score": 1.0
+          }
+        },
         "subtotal": 3.0
       },
-      "spot_total_18": 13.52
+      "quality": {
+        "maximum": 4.0,
+        "items": {
+          "timbre_realism_2_5": {
+            "label": "同源音色与空间",
+            "source_score": 1.5,
+            "source_maximum": 2.5,
+            "maximum": 2,
+            "weighted_score": 1.2
+          },
+          "artifact_free_2_0": {
+            "label": "无新增处理伪影",
+            "source_score": 1.0,
+            "source_maximum": 2,
+            "maximum": 2,
+            "weighted_score": 1.0
+          }
+        },
+        "subtotal": 2.2
+      },
+      "spot_total_18": 13.42
+    },
+    "E2": {
+      "correspondence": {
+        "maximum": 10.0,
+        "items": {
+          "timing_4_5": {
+            "label": "动作与声音时序",
+            "source_score": 3.5,
+            "source_maximum": 4.5,
+            "maximum": 4,
+            "weighted_score": 3.111111
+          },
+          "structure_3_0": {
+            "label": "鼓件与声部结构",
+            "source_score": 2.5,
+            "source_maximum": 3,
+            "maximum": 4,
+            "weighted_score": 3.333333
+          },
+          "dynamics_1_5": {
+            "label": "重轻音与动态",
+            "source_score": 1.0,
+            "source_maximum": 1.5,
+            "maximum": 2,
+            "weighted_score": 1.333333
+          }
+        },
+        "subtotal": 7.777778
+      },
+      "blending": {
+        "maximum": 4.0,
+        "items": {
+          "seam_entry_1_0": {
+            "label": "进入接缝",
+            "source_score": 1.0,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 1.0
+          },
+          "seam_exit_1_0": {
+            "label": "退出接缝",
+            "source_score": 1.0,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 1.0
+          },
+          "internal_continuity_1_0": {
+            "label": "段内拼接连续性",
+            "source_score": 0.5,
+            "source_maximum": 1,
+            "maximum": 2,
+            "weighted_score": 1.0
+          }
+        },
+        "subtotal": 3.0
+      },
+      "quality": {
+        "maximum": 4.0,
+        "items": {
+          "timbre_realism_2_5": {
+            "label": "同源音色与空间",
+            "source_score": 2.0,
+            "source_maximum": 2.5,
+            "maximum": 2,
+            "weighted_score": 1.6
+          },
+          "artifact_free_2_0": {
+            "label": "无新增处理伪影",
+            "source_score": 1.0,
+            "source_maximum": 2,
+            "maximum": 2,
+            "weighted_score": 1.0
+          }
+        },
+        "subtotal": 2.6
+      },
+      "spot_total_18": 13.38
     },
     "E3": {
-      "correspondence_9": {
-        "onset_formula_4_5": 2.05,
-        "structure_3_0": 1.5,
-        "dynamics_1_5": 0.5,
-        "subtotal": 4.05
+      "correspondence": {
+        "maximum": 10.0,
+        "items": {
+          "timing_4_5": {
+            "label": "动作与声音时序",
+            "source_score": 3.0,
+            "source_maximum": 4.5,
+            "maximum": 4,
+            "weighted_score": 2.666667
+          },
+          "structure_3_0": {
+            "label": "鼓件与声部结构",
+            "source_score": 2.5,
+            "source_maximum": 3,
+            "maximum": 4,
+            "weighted_score": 3.333333
+          },
+          "dynamics_1_5": {
+            "label": "重轻音与动态",
+            "source_score": 0.5,
+            "source_maximum": 1.5,
+            "maximum": 2,
+            "weighted_score": 0.666667
+          }
+        },
+        "subtotal": 6.666667
       },
-      "blending_4_5": {
-        "loudness_match_1_5": 0.0,
-        "seam_entry_1_0": 0.0,
-        "seam_exit_1_0": 1.0,
-        "internal_1_0": 0.5,
-        "subtotal": 1.5
+      "blending": {
+        "maximum": 4.0,
+        "items": {
+          "seam_entry_1_0": {
+            "label": "进入接缝",
+            "source_score": 0.0,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 0.0
+          },
+          "seam_exit_1_0": {
+            "label": "退出接缝",
+            "source_score": 1.0,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 1.0
+          },
+          "internal_continuity_1_0": {
+            "label": "段内拼接连续性",
+            "source_score": 0.5,
+            "source_maximum": 1,
+            "maximum": 2,
+            "weighted_score": 1.0
+          }
+        },
+        "subtotal": 2.0
       },
-      "quality_4_5": {
-        "timbre_2_5": 1.5,
-        "artifact_free_2_0": 1.0,
-        "subtotal": 2.5
+      "quality": {
+        "maximum": 4.0,
+        "items": {
+          "timbre_realism_2_5": {
+            "label": "同源音色与空间",
+            "source_score": 1.5,
+            "source_maximum": 2.5,
+            "maximum": 2,
+            "weighted_score": 1.2
+          },
+          "artifact_free_2_0": {
+            "label": "无新增处理伪影",
+            "source_score": 1.0,
+            "source_maximum": 2,
+            "maximum": 2,
+            "weighted_score": 1.0
+          }
+        },
+        "subtotal": 2.2
       },
-      "spot_total_18": 8.05
+      "spot_total_18": 10.87
     },
     "E4": {
-      "correspondence_9": {
-        "onset_formula_4_5": 0.87,
-        "structure_3_0": 0.5,
-        "dynamics_1_5": 0.5,
-        "subtotal": 1.87
+      "correspondence": {
+        "maximum": 10.0,
+        "items": {
+          "timing_4_5": {
+            "label": "动作与声音时序",
+            "source_score": 2.0,
+            "source_maximum": 4.5,
+            "maximum": 4,
+            "weighted_score": 1.777778
+          },
+          "structure_3_0": {
+            "label": "鼓件与声部结构",
+            "source_score": 1.0,
+            "source_maximum": 3,
+            "maximum": 4,
+            "weighted_score": 1.333333
+          },
+          "dynamics_1_5": {
+            "label": "重轻音与动态",
+            "source_score": 0.5,
+            "source_maximum": 1.5,
+            "maximum": 2,
+            "weighted_score": 0.666667
+          }
+        },
+        "subtotal": 3.777778
       },
-      "blending_4_5": {
-        "loudness_match_1_5": 1.5,
-        "seam_entry_1_0": 0.5,
-        "seam_exit_1_0": 0.0,
-        "internal_1_0": 0.0,
-        "subtotal": 2.0
+      "blending": {
+        "maximum": 4.0,
+        "items": {
+          "seam_entry_1_0": {
+            "label": "进入接缝",
+            "source_score": 0.5,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 0.5
+          },
+          "seam_exit_1_0": {
+            "label": "退出接缝",
+            "source_score": 0.0,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 0.0
+          },
+          "internal_continuity_1_0": {
+            "label": "段内拼接连续性",
+            "source_score": 0.0,
+            "source_maximum": 1,
+            "maximum": 2,
+            "weighted_score": 0.0
+          }
+        },
+        "subtotal": 0.5
       },
-      "quality_4_5": {
-        "timbre_2_5": 1.0,
-        "artifact_free_2_0": 0.5,
-        "subtotal": 1.5
+      "quality": {
+        "maximum": 4.0,
+        "items": {
+          "timbre_realism_2_5": {
+            "label": "同源音色与空间",
+            "source_score": 1.0,
+            "source_maximum": 2.5,
+            "maximum": 2,
+            "weighted_score": 0.8
+          },
+          "artifact_free_2_0": {
+            "label": "无新增处理伪影",
+            "source_score": 0.5,
+            "source_maximum": 2,
+            "maximum": 2,
+            "weighted_score": 0.5
+          }
+        },
+        "subtotal": 1.3
       },
-      "spot_total_18": 5.37
+      "spot_total_18": 5.58
     },
     "E5": {
-      "correspondence_9": {
-        "onset_formula_4_5": 0.82,
-        "structure_3_0": 1.0,
-        "dynamics_1_5": 0.5,
-        "subtotal": 2.32
+      "correspondence": {
+        "maximum": 10.0,
+        "items": {
+          "timing_4_5": {
+            "label": "动作与声音时序",
+            "source_score": 2.5,
+            "source_maximum": 4.5,
+            "maximum": 4,
+            "weighted_score": 2.222222
+          },
+          "structure_3_0": {
+            "label": "鼓件与声部结构",
+            "source_score": 1.5,
+            "source_maximum": 3,
+            "maximum": 4,
+            "weighted_score": 2.0
+          },
+          "dynamics_1_5": {
+            "label": "重轻音与动态",
+            "source_score": 0.5,
+            "source_maximum": 1.5,
+            "maximum": 2,
+            "weighted_score": 0.666667
+          }
+        },
+        "subtotal": 4.888889
       },
-      "blending_4_5": {
-        "loudness_match_1_5": 1.5,
-        "seam_entry_1_0": 1.0,
-        "seam_exit_1_0": 0.5,
-        "internal_1_0": 0.5,
-        "subtotal": 3.5
+      "blending": {
+        "maximum": 4.0,
+        "items": {
+          "seam_entry_1_0": {
+            "label": "进入接缝",
+            "source_score": 1.0,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 1.0
+          },
+          "seam_exit_1_0": {
+            "label": "退出接缝",
+            "source_score": 0.5,
+            "source_maximum": 1,
+            "maximum": 1,
+            "weighted_score": 0.5
+          },
+          "internal_continuity_1_0": {
+            "label": "段内拼接连续性",
+            "source_score": 0.5,
+            "source_maximum": 1,
+            "maximum": 2,
+            "weighted_score": 1.0
+          }
+        },
+        "subtotal": 2.5
       },
-      "quality_4_5": {
-        "timbre_2_5": 1.0,
-        "artifact_free_2_0": 1.0,
-        "subtotal": 2.0
+      "quality": {
+        "maximum": 4.0,
+        "items": {
+          "timbre_realism_2_5": {
+            "label": "同源音色与空间",
+            "source_score": 1.0,
+            "source_maximum": 2.5,
+            "maximum": 2,
+            "weighted_score": 0.8
+          },
+          "artifact_free_2_0": {
+            "label": "无新增处理伪影",
+            "source_score": 1.0,
+            "source_maximum": 2,
+            "maximum": 2,
+            "weighted_score": 1.0
+          }
+        },
+        "subtotal": 1.8
       },
-      "spot_total_18": 7.82
+      "spot_total_18": 9.19
     }
   },
-  "judge_roles": {
-    "objective": "deterministic script: localization, onset timing, overall level",
-    "subjective": "Gemini 4 Neon (Medium): structure, dynamics, joins, timbre, artifacts"
+  "diagnostics": {
+    "path": "objective_diag.json",
+    "used_in_score": false
   }
 }
