@@ -68,13 +68,7 @@ def main():
     dump(assets/'case-data.json',data)
     public_score={k:v for k,v in score.items() if k not in ['calibration_baselines','reconstruction_90']};public_score['judge_roles']=dict(objective='deterministic script: localization, onset timing, overall level',subjective='Gemini 4 Neon (Medium): structure, dynamics, joins, timbre, artifacts')
     dump(assets/'score-summary.json',public_score)
-    scoring=(ev/'EVAL_10_90.zh-CN.md').read_text(encoding='utf-8')
-    # Public scoring document uses the same four peer categories as the page.
-    start=scoring.index('## 一、');end=scoring.index('## 二、')
-    scoring='# 架子鼓音画修复 · 评分规则\n\n'+scoring[start:end]
-    scoring=scoring.replace('### 2. 五处重建（90 分，五处等权，每处 18 分）','### 2. 演奏、衔接与音色（五处等权）').replace('（从严版）','')
-    scoring=re.sub(r'见 \[REPORT.zh-CN.md\]\(REPORT.zh-CN.md\)','见页面技术交付核验',scoring)
-    (assets/'scoring.md').write_text(scoring,encoding='utf-8')
+    copy(HERE/'SCORING.md',assets/'scoring.md')
     (assets/'favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#315c48"/><circle cx="20" cy="20" r="11" fill="none" stroke="#f7f7f0" stroke-width="3"/></svg>',encoding='utf-8')
     page=(HERE/'index.template.html').read_text(encoding='utf-8')
     bars=[]

@@ -5,7 +5,7 @@
 <meta name="description" content="OmniALE 架子鼓音画修复案例：从 87 秒现场独奏中定位五处错误配声，依据演奏动作重建音轨，交付可编辑 REAPER 工程。查看 Astra 6.2 xhigh 成片、57.02 分评测与逐段对照。">
 <meta name="theme-color" content="#f7f7f0"><meta property="og:title" content="Drum AV Repair · 架子鼓音画修复 · OmniALE"><meta property="og:description" content="五处错误配声，一段连续演奏。从动作理解到声音重建。"><meta property="og:image" content="https://vibrant700.github.io/omniale/drum-av-repair/assets/hero.jpg">
 <title>Drum AV Repair · 架子鼓音画修复 · OmniALE</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20261128b"><script src="app.js?v=20261128c" defer></script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=20261128d"><script src="app.js?v=20261128c" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">跳至任务内容</a>
@@ -70,9 +70,40 @@
 <div class="section-heading"><div><div class="section-label">02 / EVALUATION</div><h2>评测方法</h2></div><p>定位占 10 分，五处重建等权，各占 18 分。脚本核对时间与电平，Gemini 对照实际音视频评价演奏和声音。</p></div>
 <div class="rubric-grid"><article><div class="rubric-number">10<small>分</small></div><h3>五处定位</h3><p>预测区间与隐藏错误区间做一对一 tIoU 匹配。漏报、多报与边界偏差均影响得分。</p><span class="rubric-tag">程序计算</span></article><article><div class="rubric-number">45<small>分</small></div><h3>演奏与声音对应</h3><p>起音时序、鼓件与声部结构，以及重轻音和动态轮廓。每处 9 分。</p><span class="rubric-tag">程序 + GEMINI</span></article><article><div class="rubric-number">22.5<small>分</small></div><h3>自然衔接与电平</h3><p>整体响度匹配、进入和退出接缝，以及段内素材拼接连续性。每处 4.5 分。</p><span class="rubric-tag">程序 + GEMINI</span></article><article><div class="rubric-number">22.5<small>分</small></div><h3>同源音色与伪影</h3><p>相对原录音评价音色、空间一致性，以及修复新增的机械重复或处理伪影。每处 4.5 分。</p><span class="rubric-tag">GEMINI</span></article></div>
 <p class="scoring-note">总计 40 分由脚本计算，60 分由 Gemini 音视频对照评审。干净原声同时用于起音、电平和听感参照；每段包含前后各 1.5 秒上下文。视频逐帧一致、音轨规格、正常区域保护和工程重放单列为技术交付核验。</p>
-<details><summary>详细评分规则<span>10 ＋ 45 ＋ 22.5 ＋ 22.5 ＝ 100 分</span></summary><div class="detail-body scoring-detail"><h4>定位 · 10 分</h4><p><code>定位分 = 10 × 2W / (5 + P)</code>，W 为一对一匹配 tIoU 之和，P 为提交区间数。恰好五条时，每处最高 2 分。</p><div class="table-scroll"><table class="rule-table"><thead><tr><th>每处评分项</th><th>满分</th><th>评分依据</th></tr></thead><tbody>
-<tr><td>起音时序</td><td>4.5</td><td>与干净原声比较 Onset@30ms F1；≤0.25 为 0 分，≥0.90 为满分，中间线性换算，不另扣整体偏移。</td></tr><tr><td>鼓件与声部结构</td><td>3.0</td><td>实际音画对照：主要鼓件、演奏序列、同时击打与声部层次，是否存在明显缺失或混淆。</td></tr><tr><td>重轻音与动态</td><td>1.5</td><td>弱击、装饰音、重音、滚奏与高潮起伏是否保持。</td></tr><tr><td>整体电平匹配</td><td>1.5</td><td>核心区与原声 RMS 差：≤0.8 dB 得1.5分，≤1.8 dB 得0.75分，≤3 dB 得0.25分，其余0分。</td></tr><tr><td>进入与退出接缝</td><td>2.0</td><td>每端 1 分：自然 1，轻微可辨 0.5，明显硬切、截尾或质感阶跃 0。</td></tr><tr><td>段内拼接连续性</td><td>1.0</td><td>连贯 1，轻微拼贴感 0.5，明显断裂或静音空隙 0。</td></tr><tr><td>同源音色与空间</td><td>2.5</td><td>相对同场原录音检查鼓组音色、频响与房间混响的一致性。</td></tr><tr><td>无新增处理伪影</td><td>2.0</td><td>检查机械重复、拼贴、异常叠层与新增失真。</td></tr>
-</tbody></table></div><h4>评委分工</h4><p>确定性脚本负责定位、起音和电平；Gemini 4 Neon（Medium）对照修复与干净参考的有声片段给出结构、动态、衔接和音色评分；程序汇总已保存评审结果。Sol 6.1 审查定位与技术核验记录。</p><p>波形与频带相关用作辅助诊断，不直接当作逐鼓件正确率。声音质量相对同片原录音评价，不以棚录音质要求现场素材。</p><a class="file-link" href="assets/scoring.md">阅读完整评分细则 ↗</a></div></details>
+<details><summary>详细评分规则<span>10 ＋ 45 ＋ 22.5 ＋ 22.5 ＝ 100 分</span></summary><div class="detail-body scoring-detail">
+<p class="rubric-intro">四个大项分别计分。演奏对应、自然衔接和同源音色均对五处错误区间等权评价；下列子项以“每处”计分，再汇总到各大项。阈值是本题固定的操作性评分尺度，用于统一比较，不代表普适的听觉感知界限。</p>
+<section class="rule-block" aria-labelledby="rule-localization"><div class="rule-heading"><div class="section-label">A / LOCALIZATION</div><h4 id="rule-localization">五处定位 <span>10 分 · 每处最高 2 分</span></h4></div>
+<p>预测区间与五个隐藏错误区间做一对一匹配，最大化 tIoU 之和 W。提交区间数为 P：<code>定位分 = 10 × 2W / (5 + P)</code>。</p>
+<div class="rule-rationale"><strong>为什么这样计分</strong><p>tIoU 衡量预测和真值的交集占并集的比例，既惩罚边界偏差，也惩罚把修改范围报得过宽。一对一匹配避免同一处重复得分；分母同时考虑五个真值和全部预测，漏报、多报都会降低总分。恰好五条时，每处得分为 <code>2 × tIoU</code>，无需人为选一个“命中就满分”的阈值。</p></div></section>
+<section class="rule-block" aria-labelledby="rule-performance"><div class="rule-heading"><div class="section-label">B / PERFORMANCE CORRESPONDENCE</div><h4 id="rule-performance">演奏与声音对应 <span>45 分 · 每处 9 分 × 5</span></h4></div>
+<div class="table-scroll"><table class="rule-table"><thead><tr><th>子项</th><th>每处满分</th><th>评分规则</th></tr></thead><tbody>
+<tr><td>起音时序</td><td>4.5</td><td>将修复音频与干净原声的检测起音在 ±30 ms 内做一对一匹配，计算 Precision、Recall 和 F1。F1≤0.25 为0分，F1≥0.90 为4.5分，其间按 <code>4.5 × (F1 − 0.25) / 0.65</code> 线性换算，不再额外扣整体偏移。</td></tr>
+<tr><td>鼓件与声部结构</td><td>3.0</td><td>依据实际声画对照，从3分起扣：主要鼓件错类、过门顺序错乱或主要重击缺失，每项主要结构缺陷扣1分；同时击打或左右镲层次混淆，轻微扣0.5分、明显扣1分；可辨装饰音缺失或密度异常扣0.5–1分。累计最低0分。</td></tr>
+<tr><td>重轻音与动态</td><td>1.5</td><td>原演奏强弱关系保留得1.5分；少量弱击或装饰音偏弱扣0.5分；明显动态塌陷、高潮重音不足或强弱失真扣1分；整体平板、无相应动态变化扣1.5分。按最符合的档位计一次。</td></tr>
+</tbody></table></div>
+<div class="rule-rationale"><strong>为什么采用这些阈值</strong><ul>
+<li><b>±30 ms：</b>用于约束鼓击起音的时间误差，避免把相邻快速击打随意配对。当前音频分析步长为10 ms，30 ms提供约三个步长的余量，以容纳起音检测和音色包络差异。这是音频对音频的容差，不是从25 fps画面读取的30 ms精度；±50 ms的结果保留作诊断，不参与这项计分。</li>
+<li><b>F1＝0.25 与0.90：</b>0.25以下只体现少量匹配，不给时序分；0.90以上按近完整匹配给满分，为轻击、滚奏等难检测事件留出余量。两者之间线性给分，避免跨一个档位就大幅跳分。它们是本题选定的评分锚点，不能仅凭数值宣称等同于人类听感或逐击准确率。</li>
+<li><b>结构与动态的0.5／1分级差：</b>0.5分对应局部细节或轻微层次问题，1分对应主要结构或明显动态问题，区分“细节简化”和“演奏主体改变”。同一个漏击在起音F1中影响覆盖，在结构项中只有额外可辨的鼓件或乐句后果才扣分；动态项只评价实际发出声音的强弱关系。</li>
+</ul></div></section>
+<section class="rule-block" aria-labelledby="rule-transition"><div class="rule-heading"><div class="section-label">C / TRANSITIONS & LEVEL</div><h4 id="rule-transition">自然衔接与电平匹配 <span>22.5 分 · 每处 4.5 分 × 5</span></h4></div>
+<div class="table-scroll"><table class="rule-table"><thead><tr><th>子项</th><th>每处满分</th><th>评分规则</th></tr></thead><tbody>
+<tr><td>整体电平匹配</td><td>1.5</td><td>计算修复核心区与干净原声的RMS电平绝对差。≤0.8 dB得1.5分；(0.8, 1.8] dB得0.75分；(1.8, 3.0] dB得0.25分；>3.0 dB得0分。测量前不做响度归一化。</td></tr>
+<tr><td>进入与退出接缝</td><td>2.0</td><td>每端最高1分：无明确硬切、爆音或质感阶跃得1分；轻微可辨过渡痕迹得0.5分；明显硬切、截尾或电平／质感跳变得0分。两端分别判断。</td></tr>
+<tr><td>段内拼接连续性</td><td>1.0</td><td>连贯如连续演奏得1分；轻微拼贴感得0.5分；明显断裂或非演奏所需的静音空隙得0分。</td></tr>
+</tbody></table></div>
+<div class="rule-rationale"><strong>为什么采用这些阈值</strong><ul>
+<li><b>0.8／1.8／3.0 dB：</b>将整体电平差分成接近、轻度偏离、明显偏离和严重偏离四档。对应RMS幅值比约为1.10、1.23、1.41（变轻时取倒数），让读者能理解误差量级。0.8与1.8 dB是本题设定的档位；3 dB对应约1.41倍幅值，代表较大的整体变化。它们不构成普适的可闻阈值，RMS也不等同于感知响度。</li>
+<li><b>1／0.5／0分：</b>分别对应无明确缺陷、局部轻微缺陷和明显破坏连续性。每端单独评分，避免一个自然出口掩盖明显的入口错误；段内再检查素材之间的连续性。</li>
+<li><b>前后各1.5秒：</b>为两端提供原演奏的响度、音色和尾声参照，而非只听孤立修复段。正常演奏原本就有的强拍或停顿，不当作编辑接缝扣分。核心区整体电平差与边界瞬间的跳变分别记录，不能只凭一个RMS数值推断接缝有误。</li>
+</ul></div></section>
+<section class="rule-block" aria-labelledby="rule-timbre"><div class="rule-heading"><div class="section-label">D / TIMBRE & ARTIFACTS</div><h4 id="rule-timbre">同源音色与无新增伪影 <span>22.5 分 · 每处 4.5 分 × 5</span></h4></div>
+<div class="table-scroll"><table class="rule-table"><thead><tr><th>子项</th><th>每处满分</th><th>评分规则</th></tr></thead><tbody>
+<tr><td>同源音色与空间</td><td>2.5</td><td>与同片原录音的鼓组音色、房间混响及频响质感一致得2.5分；基本一致、细听略少自然连贯感得2分；明显偏干、薄或闷得1.5分；明显浑浊或空间脱节得1分；完全不像同一录音得0分。</td></tr>
+<tr><td>无新增处理伪影</td><td>2.0</td><td>无新增机械重复或处理伪影得2分；偶有轻微重复采样感得1.5分；连续击打有可辨重复或拼贴感得1分；明显“机关枪”感或异常叠层得0.5分；严重新增失真、不可用得0分。</td></tr>
+</tbody></table></div>
+<div class="rule-rationale"><strong>为什么这样分档</strong><p>以干净原声与同片正常上下文作为相对参照，只扣修复新增的缺陷。音色项区分“同源一致”“轻微差异”“明确改变”和“来源脱节”；伪影项以0.5分递进，区分偶发、持续可辨、明显和不可用。分值是描述性等级，不对应某个频谱距离阈值；原素材已有的压缩质感不扣作新增失真，波形不同也不直接扣分。边界连续性归上一大项，段内持续的音色或处理问题归本项。</p></div></section>
+<h4>评委分工</h4><p>确定性脚本负责定位、起音和电平；Gemini 4 Neon（Medium）对照修复与干净参考的有声片段给出结构、动态、衔接和音色评分；程序汇总已保存评审结果。Sol 6.1审查定位与技术核验记录。</p><a class="file-link" href="assets/scoring.md">下载完整评分细则 ↗</a></div></details>
 </section></div>
 
 <section class="section wrap" id="results">
